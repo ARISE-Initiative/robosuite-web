@@ -1,0 +1,2786 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>robosuite.utils &mdash; robosuite 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script src="../static/jquery.js"></script>
+        <script src="../static/underscore.js"></script>
+        <script src="../static/doctools.js"></script>
+        <script src="../static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="robosuite.wrappers" href="robosuite.wrappers.html" />
+    <link rel="prev" title="robosuite.robots" href="robosuite.robots.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> robosuite
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demos.html">Demo Showcases</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/robots.html">Robots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/controllers.html">Controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Simulation API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/robot.html">Robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/device.html">Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/controller.html">Controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modeling API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/gripper_model.html">Gripper Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Source API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="robosuite.html">robosuite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="robosuite.controllers.html">robosuite.controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.devices.html">robosuite.devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.environments.html">robosuite.environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.html">robosuite.models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.robots.html">robosuite.robots</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">robosuite.utils</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.utils.control_utils">robosuite.utils.control_utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.utils.errors">robosuite.utils.errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.utils.input_utils">robosuite.utils.input_utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.utils.mjcf_utils">robosuite.utils.mjcf_utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.utils.mjmod">robosuite.utils.mjmod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.utils.mujoco_py_renderer">robosuite.utils.mujoco_py_renderer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.utils.numba">robosuite.utils.numba</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.utils.transform_utils">robosuite.utils.transform_utils</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.wrappers.html">robosuite.wrappers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Algorithms</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Projects using robosuite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">robosuite</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="robosuite.html">robosuite</a> &raquo;</li>
+        
+      <li>robosuite.utils</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/source/robosuite.utils.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="robosuite-utils">
+<h1>robosuite.utils<a class="headerlink" href="#robosuite-utils" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-robosuite.utils.control_utils">
+<span id="robosuite-utils-control-utils"></span><h2>robosuite.utils.control_utils<a class="headerlink" href="#module-robosuite.utils.control_utils" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.utils.control_utils.Buffer">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.control_utils.</code><code class="sig-name descname">Buffer</code><a class="headerlink" href="#robosuite.utils.control_utils.Buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Abstract class for different kinds of data buffers. Minimum API should have a “push” and “clear” method</p>
+<dl class="py method">
+<dt id="robosuite.utils.control_utils.Buffer.clear">
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.control_utils.Buffer.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.control_utils.Buffer.push">
+<code class="sig-name descname">push</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.control_utils.Buffer.push" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pushes a new &#64;value to the buffer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> – Value to push to the buffer</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.utils.control_utils.DeltaBuffer">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.control_utils.</code><code class="sig-name descname">DeltaBuffer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dim</span></em>, <em class="sig-param"><span class="n">init_value</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.control_utils.DeltaBuffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.utils.control_utils.Buffer" title="robosuite.utils.control_utils.Buffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.utils.control_utils.Buffer</span></code></a></p>
+<p>Simple 2-length buffer object to streamline grabbing delta values between “current” and “last” values</p>
+<p>Constructs delta object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> (<em>int</em>) – Size of numerical arrays being inputted</p></li>
+<li><p><strong>init_value</strong> (<em>None</em><em> or </em><em>Iterable</em>) – Initial value to fill “last” value with initially.
+If None (default), last array will be filled with zeros</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.utils.control_utils.DeltaBuffer.average">
+<em class="property">property </em><code class="sig-name descname">average</code><a class="headerlink" href="#robosuite.utils.control_utils.DeltaBuffer.average" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the average between the current and last value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Averaged value of all elements in buffer</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float or np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.control_utils.DeltaBuffer.clear">
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.control_utils.DeltaBuffer.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clears last and current value</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.control_utils.DeltaBuffer.delta">
+<em class="property">property </em><code class="sig-name descname">delta</code><a class="headerlink" href="#robosuite.utils.control_utils.DeltaBuffer.delta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the delta between last value and current value. If abs_value is set to True, then returns
+the absolute value between the values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>abs_value</strong> (<em>bool</em>) – Whether to return absolute value or not</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>difference between current and last value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float or np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.control_utils.DeltaBuffer.push">
+<code class="sig-name descname">push</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.control_utils.DeltaBuffer.push" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pushes a new value into the buffer; current becomes last and &#64;value becomes current</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>int</em><em> or </em><em>float</em><em> or </em><em>array</em>) – Value(s) to push into the array (taken as a single new element)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.utils.control_utils.RingBuffer">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.control_utils.</code><code class="sig-name descname">RingBuffer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dim</span></em>, <em class="sig-param"><span class="n">length</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.control_utils.RingBuffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.utils.control_utils.Buffer" title="robosuite.utils.control_utils.Buffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.utils.control_utils.Buffer</span></code></a></p>
+<p>Simple RingBuffer object to hold values to average (useful for, e.g.: filtering D component in PID control)</p>
+<p>Note that the buffer object is a 2D numpy array, where each row corresponds to
+individual entries into the buffer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> (<em>int</em>) – Size of entries being added. This is, e.g.: the size of a state vector that is to be stored</p></li>
+<li><p><strong>length</strong> (<em>int</em>) – Size of the ring buffer</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.utils.control_utils.RingBuffer.average">
+<em class="property">property </em><code class="sig-name descname">average</code><a class="headerlink" href="#robosuite.utils.control_utils.RingBuffer.average" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the average of components in buffer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Averaged value of all elements in buffer</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float or np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.control_utils.RingBuffer.clear">
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.control_utils.RingBuffer.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clears buffer and reset pointer</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.control_utils.RingBuffer.push">
+<code class="sig-name descname">push</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.control_utils.RingBuffer.push" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pushes a new value into the buffer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>int</em><em> or </em><em>float</em><em> or </em><em>array</em>) – Value(s) to push into the array (taken as a single new element)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.control_utils.nullspace_torques">
+<code class="sig-prename descclassname">robosuite.utils.control_utils.</code><code class="sig-name descname">nullspace_torques</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mass_matrix</span></em>, <em class="sig-param"><span class="n">nullspace_matrix</span></em>, <em class="sig-param"><span class="n">initial_joint</span></em>, <em class="sig-param"><span class="n">joint_pos</span></em>, <em class="sig-param"><span class="n">joint_vel</span></em>, <em class="sig-param"><span class="n">joint_kp</span><span class="o">=</span><span class="default_value">10</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.control_utils.nullspace_torques" title="Permalink to this definition">¶</a></dt>
+<dd><p>For a robot with redundant DOF(s), a nullspace exists which is orthogonal to the remainder of the controllable
+subspace of the robot’s joints. Therefore, an additional secondary objective that does not impact the original
+controller objective may attempt to be maintained using these nullspace torques.</p>
+<p>This utility function specifically calculates nullspace torques that attempt to maintain a given robot joint
+positions &#64;initial_joint with zero velocity using proportinal gain &#64;joint_kp</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>&#64;mass_matrix, &#64;nullspace_matrix, &#64;joint_pos, and &#64;joint_vel should reflect the robot’s state at the current</p>
+</dd>
+</dl>
+<p>timestep</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mass_matrix</strong> (<em>np.array</em>) – 2d array representing the mass matrix of the robot</p></li>
+<li><p><strong>nullspace_matrix</strong> (<em>np.array</em>) – 2d array representing the nullspace matrix of the robot</p></li>
+<li><p><strong>initial_joint</strong> (<em>np.array</em>) – Joint configuration to be used for calculating nullspace torques</p></li>
+<li><p><strong>joint_pos</strong> (<em>np.array</em>) – Current joint positions</p></li>
+<li><p><strong>joint_vel</strong> (<em>np.array</em>) – Current joint velocities</p></li>
+<li><p><strong>joint_kp</strong> (<em>float</em>) – Proportional control gain when calculating nullspace torques</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>nullspace torques</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.control_utils.opspace_matrices">
+<code class="sig-prename descclassname">robosuite.utils.control_utils.</code><code class="sig-name descname">opspace_matrices</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mass_matrix</span></em>, <em class="sig-param"><span class="n">J_full</span></em>, <em class="sig-param"><span class="n">J_pos</span></em>, <em class="sig-param"><span class="n">J_ori</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.control_utils.opspace_matrices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the relevant matrices used in the operational space control algorithm</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mass_matrix</strong> (<em>np.array</em>) – 2d array representing the mass matrix of the robot</p></li>
+<li><p><strong>J_full</strong> (<em>np.array</em>) – 2d array representing the full Jacobian matrix of the robot</p></li>
+<li><p><strong>J_pos</strong> (<em>np.array</em>) – 2d array representing the position components of the Jacobian matrix of the robot</p></li>
+<li><p><strong>J_ori</strong> (<em>np.array</em>) – 2d array representing the orientation components of the Jacobian matrix of the robot</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>(np.array): full lambda matrix (as 2d array)</p></li>
+<li><p>(np.array): position components of lambda matrix (as 2d array)</p></li>
+<li><p>(np.array): orientation components of lambda matrix (as 2d array)</p></li>
+<li><p>(np.array): nullspace matrix (as 2d array)</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>4-tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.control_utils.orientation_error">
+<code class="sig-prename descclassname">robosuite.utils.control_utils.</code><code class="sig-name descname">orientation_error</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">desired</span></em>, <em class="sig-param"><span class="n">current</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.control_utils.orientation_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function calculates a 3-dimensional orientation error vector for use in the
+impedance controller. It does this by computing the delta rotation between the
+inputs and converting that rotation to exponential coordinates (axis-angle
+representation, where the 3d vector is axis * angle).
+See <a class="reference external" href="https://en.wikipedia.org/wiki/Axis%E2%80%93angle_representation">https://en.wikipedia.org/wiki/Axis%E2%80%93angle_representation</a> for more information.
+Optimized function to determine orientation error from matrices</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>desired</strong> (<em>np.array</em>) – 2d array representing target orientation matrix</p></li>
+<li><p><strong>current</strong> (<em>np.array</em>) – 2d array representing current orientation matrix</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>2d array representing orientation error as a matrix</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.control_utils.set_goal_orientation">
+<code class="sig-prename descclassname">robosuite.utils.control_utils.</code><code class="sig-name descname">set_goal_orientation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">delta</span></em>, <em class="sig-param"><span class="n">current_orientation</span></em>, <em class="sig-param"><span class="n">orientation_limit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">set_ori</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.control_utils.set_goal_orientation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates and returns the desired goal orientation, clipping the result accordingly to &#64;orientation_limits.
+&#64;delta and &#64;current_orientation must be specified if a relative goal is requested, else &#64;set_ori must be
+an orientation matrix specified to define a global orientation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>delta</strong> (<em>np.array</em>) – Desired relative change in orientation, in axis-angle form [ax, ay, az]</p></li>
+<li><p><strong>current_orientation</strong> (<em>np.array</em>) – Current orientation, in rotation matrix form</p></li>
+<li><p><strong>orientation_limit</strong> (<em>None</em><em> or </em><em>np.array</em>) – 2d array defining the (min, max) limits of permissible orientation goal commands</p></li>
+<li><p><strong>set_ori</strong> (<em>None</em><em> or </em><em>np.array</em>) – If set, will ignore &#64;delta and set the goal orientation to this value</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>calculated goal orientation in absolute coordinates</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – [Invalid orientation_limit shape]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.control_utils.set_goal_position">
+<code class="sig-prename descclassname">robosuite.utils.control_utils.</code><code class="sig-name descname">set_goal_position</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">delta</span></em>, <em class="sig-param"><span class="n">current_position</span></em>, <em class="sig-param"><span class="n">position_limit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">set_pos</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.control_utils.set_goal_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates and returns the desired goal position, clipping the result accordingly to &#64;position_limits.
+&#64;delta and &#64;current_position must be specified if a relative goal is requested, else &#64;set_pos must be
+specified to define a global goal position</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>delta</strong> (<em>np.array</em>) – Desired relative change in position</p></li>
+<li><p><strong>current_position</strong> (<em>np.array</em>) – Current position</p></li>
+<li><p><strong>position_limit</strong> (<em>None</em><em> or </em><em>np.array</em>) – 2d array defining the (min, max) limits of permissible position goal commands</p></li>
+<li><p><strong>set_pos</strong> (<em>None</em><em> or </em><em>np.array</em>) – If set, will ignore &#64;delta and set the goal position to this value</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>calculated goal position in absolute coordinates</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – [Invalid position_limit shape]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.utils.errors">
+<span id="robosuite-utils-errors"></span><h2>robosuite.utils.errors<a class="headerlink" href="#module-robosuite.utils.errors" title="Permalink to this headline">¶</a></h2>
+<dl class="py exception">
+<dt id="robosuite.utils.errors.RandomizationError">
+<em class="property">exception </em><code class="sig-prename descclassname">robosuite.utils.errors.</code><code class="sig-name descname">RandomizationError</code><a class="headerlink" href="#robosuite.utils.errors.RandomizationError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.utils.errors.robosuiteError" title="robosuite.utils.errors.robosuiteError"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.utils.errors.robosuiteError</span></code></a></p>
+<p>Exception raised for really really bad RNG.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="robosuite.utils.errors.SimulationError">
+<em class="property">exception </em><code class="sig-prename descclassname">robosuite.utils.errors.</code><code class="sig-name descname">SimulationError</code><a class="headerlink" href="#robosuite.utils.errors.SimulationError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.utils.errors.robosuiteError" title="robosuite.utils.errors.robosuiteError"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.utils.errors.robosuiteError</span></code></a></p>
+<p>Exception raised for errors during runtime.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="robosuite.utils.errors.XMLError">
+<em class="property">exception </em><code class="sig-prename descclassname">robosuite.utils.errors.</code><code class="sig-name descname">XMLError</code><a class="headerlink" href="#robosuite.utils.errors.XMLError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.utils.errors.robosuiteError" title="robosuite.utils.errors.robosuiteError"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.utils.errors.robosuiteError</span></code></a></p>
+<p>Exception raised for errors related to xml.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="robosuite.utils.errors.robosuiteError">
+<em class="property">exception </em><code class="sig-prename descclassname">robosuite.utils.errors.</code><code class="sig-name descname">robosuiteError</code><a class="headerlink" href="#robosuite.utils.errors.robosuiteError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Base class for exceptions in robosuite.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.utils.input_utils">
+<span id="robosuite-utils-input-utils"></span><h2>robosuite.utils.input_utils<a class="headerlink" href="#module-robosuite.utils.input_utils" title="Permalink to this headline">¶</a></h2>
+<p>Utility functions for grabbing user inputs</p>
+<dl class="py function">
+<dt id="robosuite.utils.input_utils.choose_controller">
+<code class="sig-prename descclassname">robosuite.utils.input_utils.</code><code class="sig-name descname">choose_controller</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.input_utils.choose_controller" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints out controller options, and returns the requested controller name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Chosen controller name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.input_utils.choose_environment">
+<code class="sig-prename descclassname">robosuite.utils.input_utils.</code><code class="sig-name descname">choose_environment</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.input_utils.choose_environment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints out environment options, and returns the selected env_name choice</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Chosen environment name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.input_utils.choose_multi_arm_config">
+<code class="sig-prename descclassname">robosuite.utils.input_utils.</code><code class="sig-name descname">choose_multi_arm_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.input_utils.choose_multi_arm_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints out multi-arm environment configuration options, and returns the requested config name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Requested multi-arm configuration name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.input_utils.choose_robots">
+<code class="sig-prename descclassname">robosuite.utils.input_utils.</code><code class="sig-name descname">choose_robots</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">exclude_bimanual</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.input_utils.choose_robots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints out robot options, and returns the requested robot. Restricts options to single-armed robots if
+&#64;exclude_bimanual is set to True (False by default)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>exclude_bimanual</strong> (<em>bool</em>) – If set, excludes bimanual robots from the robot options</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested robot name</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.input_utils.input2action">
+<code class="sig-prename descclassname">robosuite.utils.input_utils.</code><code class="sig-name descname">input2action</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">device</span></em>, <em class="sig-param"><span class="n">robot</span></em>, <em class="sig-param"><span class="n">active_arm</span><span class="o">=</span><span class="default_value">'right'</span></em>, <em class="sig-param"><span class="n">env_configuration</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.input_utils.input2action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts an input from an active device into a valid action sequence that can be fed into an env.step() call</p>
+<p>If a reset is triggered from the device, immediately returns None. Else, returns the appropriate action</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>device</strong> (<a class="reference internal" href="robosuite.devices.html#robosuite.devices.device.Device" title="robosuite.devices.device.Device"><em>Device</em></a>) – A device from which user inputs can be converted into actions. Can be either a Spacemouse or
+Keyboard device class</p></li>
+<li><p><strong>robot</strong> (<a class="reference internal" href="robosuite.robots.html#robosuite.robots.robot.Robot" title="robosuite.robots.robot.Robot"><em>Robot</em></a>) – Which robot we’re controlling</p></li>
+<li><p><strong>active_arm</strong> (<em>str</em>) – Only applicable for multi-armed setups (e.g.: multi-arm environments or bimanual robots).
+Allows inputs to be converted correctly if the control type (e.g.: IK) is dependent on arm choice.
+Choices are {right, left}</p></li>
+<li><p><strong>env_configuration</strong> (<em>str</em><em> or </em><em>None</em>) – Only applicable for multi-armed environments. Allows inputs to be converted
+correctly if the control type (e.g.: IK) is dependent on the environment setup. Options are:
+{bimanual, single-arm-parallel, single-arm-opposed}</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><dl class="simple">
+<dt>(None or np.array): Action interpreted from &#64;device including any gripper action(s). None if we get a</dt><dd><p>reset signal from the device</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>(None or int): 1 if desired close, -1 if desired open gripper state. None if get a reset signal from the</dt><dd><p>device</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>2-tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.utils.mjcf_utils">
+<span id="robosuite-utils-mjcf-utils"></span><h2>robosuite.utils.mjcf_utils<a class="headerlink" href="#module-robosuite.utils.mjcf_utils" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.utils.mjcf_utils.CustomMaterial">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">CustomMaterial</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">texture</span></em>, <em class="sig-param"><span class="n">tex_name</span></em>, <em class="sig-param"><span class="n">mat_name</span></em>, <em class="sig-param"><span class="n">tex_attrib</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mat_attrib</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.CustomMaterial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Simple class to instantiate the necessary parameters to define an appropriate texture / material combo</p>
+<p>Instantiates a nested dict holding necessary components for procedurally generating a texture / material combo</p>
+<dl class="simple">
+<dt>Please see <a class="reference external" href="http://www.mujoco.org/book/XMLreference.html#asset">http://www.mujoco.org/book/XMLreference.html#asset</a> for specific details on</dt><dd><p>attributes expected for Mujoco texture / material tags, respectively</p>
+</dd>
+</dl>
+<p>Note that the values in &#64;tex_attrib and &#64;mat_attrib can be in string or array / numerical form.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>texture</strong> (<em>str</em><em> or </em><em>4-array</em>) – Name of texture file to be imported. If a string, should be part of ALL_TEXTURES
+If texture is a 4-array, then this argument will be interpreted as an rgba tuple value and a template
+png will be procedurally generated during object instantiation, with any additional
+texture / material attributes specified.
+Note the RGBA values are expected to be floats between 0 and 1</p></li>
+<li><p><strong>tex_name</strong> (<em>str</em>) – Name to reference the imported texture</p></li>
+<li><p><strong>mat_name</strong> (<em>str</em>) – Name to reference the imported material</p></li>
+<li><p><strong>tex_attrib</strong> (<em>dict</em>) – Any other optional mujoco texture specifications.</p></li>
+<li><p><strong>mat_attrib</strong> (<em>dict</em>) – Any other optional mujoco material specifications.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – [Invalid texture]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.mjcf_utils.array_to_string">
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">array_to_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">array</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.array_to_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a numeric array into the string format in mujoco.</p>
+<p class="rubric">Examples</p>
+<p>[0, 1, 2] =&gt; “0 1 2”</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.mjcf_utils.new_actuator">
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">new_actuator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">joint</span></em>, <em class="sig-param"><span class="n">act_type</span><span class="o">=</span><span class="default_value">'actuator'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.new_actuator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an actuator tag with attributes specified by &#64;**kwargs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>joint</strong> (<em>str</em>) – type of actuator transmission.
+see all types here: <a class="reference external" href="http://mujoco.org/book/modeling.html#actuator">http://mujoco.org/book/modeling.html#actuator</a></p></li>
+<li><p><strong>act_type</strong> (<em>str</em>) – actuator type. Defaults to “actuator”</p></li>
+<li><p><strong>**kwargs</strong> (<em>dict</em>) – Any additional specified attributes for the new joint</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>new actuator xml element</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ET.Element</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.mjcf_utils.new_body">
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">new_body</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pos</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.new_body" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a body element with attributes specified by &#64;**kwargs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – body name.</p></li>
+<li><p><strong>pos</strong> (<em>3-array</em>) – (x,y,z) 3d position of the body frame.</p></li>
+<li><p><strong>**kwargs</strong> (<em>dict</em>) – Any additional specified attributes for the new body</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>new body xml element</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ET.Element</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.mjcf_utils.new_geom">
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">new_geom</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geom_type</span></em>, <em class="sig-param"><span class="n">size</span></em>, <em class="sig-param"><span class="n">pos</span><span class="o">=</span><span class="default_value">0, 0, 0</span></em>, <em class="sig-param"><span class="n">rgba</span><span class="o">=</span><span class="default_value">[1, 0, 0, 1]</span></em>, <em class="sig-param"><span class="n">group</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.new_geom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a geom element with attributes specified by &#64;**kwargs.</p>
+<dl class="simple">
+<dt>NOTE: With the exception of &#64;geom_type, &#64;size, and &#64;pos, if any arg is set to</dt><dd><p>None, the value will automatically be popped before passing the values
+to create the appropriate XML</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>geom_type</strong> (<em>str</em>) – type of the geom.
+see all types here: <a class="reference external" href="http://mujoco.org/book/modeling.html#geom">http://mujoco.org/book/modeling.html#geom</a></p></li>
+<li><p><strong>size</strong> (<em>array of float</em>) – geom size parameters.</p></li>
+<li><p><strong>pos</strong> (<em>3-array</em>) – (x,y,z) 3d position of the site.</p></li>
+<li><p><strong>rgba</strong> (<em>4-array</em>) – (r,g,b,a) color and transparency. Defaults to solid red.</p></li>
+<li><p><strong>group</strong> (<em>int</em>) – the integrer group that the geom belongs to. useful for
+separating visual and physical elements.</p></li>
+<li><p><strong>**kwargs</strong> (<em>dict</em>) – Any additional specified attributes for the new geom</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>new geom xml element</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ET.Element</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.mjcf_utils.new_inertial">
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">new_inertial</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pos</span><span class="o">=</span><span class="default_value">0, 0, 0</span></em>, <em class="sig-param"><span class="n">mass</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.new_inertial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a inertial element with attributes specified by &#64;**kwargs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – [NOT USED]</p></li>
+<li><p><strong>pos</strong> (<em>3-array</em>) – (x,y,z) 3d position of the inertial frame.</p></li>
+<li><p><strong>mass</strong> (<em>float</em>) – The mass of inertial</p></li>
+<li><p><strong>**kwargs</strong> (<em>dict</em>) – Any additional specified attributes for the new inertial element</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>new inertial xml element</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ET.Element</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.mjcf_utils.new_joint">
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">new_joint</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.new_joint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a joint tag with attributes specified by &#64;**kwargs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> (<em>dict</em>) – Specified attributes for the new joint</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>new joint xml element</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ET.Element</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.mjcf_utils.new_site">
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">new_site</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">rgba</span><span class="o">=</span><span class="default_value">[1, 0, 0, 1]</span></em>, <em class="sig-param"><span class="n">pos</span><span class="o">=</span><span class="default_value">0, 0, 0</span></em>, <em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">0.005</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.new_site" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a site element with attributes specified by &#64;**kwargs.</p>
+<dl class="simple">
+<dt>NOTE: With the exception of &#64;name, &#64;pos, and &#64;size, if any arg is set to</dt><dd><p>None, the value will automatically be popped before passing the values
+to create the appropriate XML</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – site name.</p></li>
+<li><p><strong>rgba</strong> (<em>4-array</em>) – (r,g,b,a) color and transparency. Defaults to solid red.</p></li>
+<li><p><strong>pos</strong> (<em>3-array</em>) – (x,y,z) 3d position of the site.</p></li>
+<li><p><strong>size</strong> (<em>array of float</em>) – site size (sites are spherical by default).</p></li>
+<li><p><strong>**kwargs</strong> (<em>dict</em>) – Any additional specified attributes for the new site</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>new site xml element</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ET.Element</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.mjcf_utils.postprocess_model_xml">
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">postprocess_model_xml</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xml_str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.postprocess_model_xml" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function postprocesses the model.xml collected from a MuJoCo demonstration
+in order to make sure that the STL files can be found.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>xml_str</strong> (<em>str</em>) – Mujoco sim demonstration XML file as string</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Post-processed xml file as string</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.mjcf_utils.set_alpha">
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">set_alpha</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em>, <em class="sig-param"><span class="n">alpha</span><span class="o">=</span><span class="default_value">0.1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.set_alpha" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets all a(lpha) field of the rgba attribute to be &#64;alpha
+for &#64;node and all subnodes
+used for managing display</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<em>ET.Element</em>) – Specific node element within XML tree</p></li>
+<li><p><strong>alpha</strong> (<em>float</em>) – Value to set alpha value of rgba tuple</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.mjcf_utils.string_to_array">
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">string_to_array</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.string_to_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a array string in mujoco xml to np.array.</p>
+<p class="rubric">Examples</p>
+<p>“0 1 2” =&gt; [0, 1, 2]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>string</strong> (<em>str</em>) – String to convert to an array</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Numerical array equivalent of &#64;string</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.mjcf_utils.xml_path_completion">
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">xml_path_completion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xml_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.xml_path_completion" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Takes in a local xml path and returns a full path.</dt><dd><p>if &#64;xml_path is absolute, do nothing
+if &#64;xml_path is not absolute, load xml that is shipped by the package</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>xml_path</strong> (<em>str</em>) – local xml path</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Full (absolute) xml path</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.utils.mjmod">
+<span id="robosuite-utils-mjmod"></span><h2>robosuite.utils.mjmod<a class="headerlink" href="#module-robosuite.utils.mjmod" title="Permalink to this headline">¶</a></h2>
+<p>Modder classes used for domain randomization. Largely based off of the mujoco-py
+implementation below.</p>
+<p><a class="reference external" href="https://github.com/openai/mujoco-py/blob/1fe312b09ae7365f0dd9d4d0e453f8da59fae0bf/mujoco_py/modder.py">https://github.com/openai/mujoco-py/blob/1fe312b09ae7365f0dd9d4d0e453f8da59fae0bf/mujoco_py/modder.py</a></p>
+<dl class="py class">
+<dt id="robosuite.utils.mjmod.BaseModder">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.mjmod.</code><code class="sig-name descname">BaseModder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sim</span></em>, <em class="sig-param"><span class="n">random_state</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.BaseModder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class meant to modify simulation attributes mid-sim.</p>
+<p>Using &#64;random_state ensures that sampling here won’t be affected
+by sampling that happens outside of the modders.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sim</strong> (<em>MjSim</em>) – simulation object</p></li>
+<li><p><strong>random_state</strong> (<em>RandomState</em>) – instance of np.random.RandomState, specific
+seed used to randomize these modifications without impacting other
+numpy seeds / randomizations</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.BaseModder.model">
+<em class="property">property </em><code class="sig-name descname">model</code><a class="headerlink" href="#robosuite.utils.mjmod.BaseModder.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+MjModel: Mujoco sim model</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.BaseModder.update_sim">
+<code class="sig-name descname">update_sim</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sim</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.BaseModder.update_sim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setter function to update internal sim variable</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sim</strong> (<em>MjSim</em>) – MjSim object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.utils.mjmod.CameraModder">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.mjmod.</code><code class="sig-name descname">CameraModder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sim</span></em>, <em class="sig-param"><span class="n">random_state</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">camera_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">randomize_position</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">randomize_rotation</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">randomize_fovy</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">position_perturbation_size</span><span class="o">=</span><span class="default_value">0.01</span></em>, <em class="sig-param"><span class="n">rotation_perturbation_size</span><span class="o">=</span><span class="default_value">0.087</span></em>, <em class="sig-param"><span class="n">fovy_perturbation_size</span><span class="o">=</span><span class="default_value">5.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.CameraModder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.utils.mjmod.BaseModder" title="robosuite.utils.mjmod.BaseModder"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.utils.mjmod.BaseModder</span></code></a></p>
+<p>Modder for modifying camera attributes in mujoco sim</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sim</strong> (<em>MjSim</em>) – MjSim object</p></li>
+<li><p><strong>random_state</strong> (<em>None</em><em> or </em><em>RandomState</em>) – instance of np.random.RandomState</p></li>
+<li><p><strong>camera_names</strong> (<em>None</em><em> or </em><em>list of str</em>) – list of camera names to use for randomization. If not provided,
+all cameras are used for randomization.</p></li>
+<li><p><strong>randomize_position</strong> (<em>bool</em>) – if True, randomize camera position</p></li>
+<li><p><strong>randomize_rotation</strong> (<em>bool</em>) – if True, randomize camera rotation</p></li>
+<li><p><strong>randomize_fovy</strong> (<em>bool</em>) – if True, randomize camera fovy</p></li>
+<li><p><strong>position_perturbation_size</strong> (<em>float</em>) – size of camera position perturbations to each dimension</p></li>
+<li><p><strong>rotation_perturbation_size</strong> (<em>float</em>) – magnitude of camera rotation perturbations in axis-angle.
+Default corresponds to around 5 degrees.</p></li>
+<li><p><strong>fovy_perturbation_size</strong> (<em>float</em>) – magnitude of camera fovy perturbations (corresponds to focusing)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – [No randomization selected]</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.CameraModder.get_camid">
+<code class="sig-name descname">get_camid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.CameraModder.get_camid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grabs unique id number of a specific camera</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of the camera</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>id of camera. -1 if not found</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.CameraModder.get_fovy">
+<code class="sig-name descname">get_fovy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.CameraModder.get_fovy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grabs fovy of a specific camera</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of the camera</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>vertical field of view of the camera, expressed in degrees</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – Invalid camera name</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.CameraModder.get_pos">
+<code class="sig-name descname">get_pos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.CameraModder.get_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grabs position of a specific camera</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of the camera</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(x,y,z) position of the camera</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – Invalid camera name</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.CameraModder.get_quat">
+<code class="sig-name descname">get_quat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.CameraModder.get_quat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grabs orientation of a specific camera</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of the camera</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(w,x,y,z) orientation of the camera, expressed in quaternions</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – Invalid camera name</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.CameraModder.randomize">
+<code class="sig-name descname">randomize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.CameraModder.randomize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Randomizes all requested camera values within the sim</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.CameraModder.restore_defaults">
+<code class="sig-name descname">restore_defaults</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.CameraModder.restore_defaults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reloads the saved parameter values.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.CameraModder.save_defaults">
+<code class="sig-name descname">save_defaults</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.CameraModder.save_defaults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uses the current MjSim state and model to save default parameter values.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.CameraModder.set_fovy">
+<code class="sig-name descname">set_fovy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.CameraModder.set_fovy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets fovy of a specific camera</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of the camera</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – vertical field of view of the camera, expressed in degrees</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>AssertionError</strong> – Invalid camera name</p></li>
+<li><p><strong>AssertionError</strong> – Invalid value</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.CameraModder.set_pos">
+<code class="sig-name descname">set_pos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.CameraModder.set_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets position of a specific camera</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of the camera</p></li>
+<li><p><strong>value</strong> (<em>np.array</em>) – (x,y,z) position of the camera</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>AssertionError</strong> – Invalid camera name</p></li>
+<li><p><strong>AssertionError</strong> – Invalid value</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.CameraModder.set_quat">
+<code class="sig-name descname">set_quat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.CameraModder.set_quat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets orientation of a specific camera</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of the camera</p></li>
+<li><p><strong>value</strong> (<em>np.array</em>) – (w,x,y,z) orientation of the camera, expressed in quaternions</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>AssertionError</strong> – Invalid camera name</p></li>
+<li><p><strong>AssertionError</strong> – Invalid value</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.utils.mjmod.LightingModder">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.mjmod.</code><code class="sig-name descname">LightingModder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sim</span></em>, <em class="sig-param"><span class="n">random_state</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">light_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">randomize_position</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">randomize_direction</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">randomize_specular</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">randomize_ambient</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">randomize_diffuse</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">randomize_active</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">position_perturbation_size</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">direction_perturbation_size</span><span class="o">=</span><span class="default_value">0.35</span></em>, <em class="sig-param"><span class="n">specular_perturbation_size</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">ambient_perturbation_size</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">diffuse_perturbation_size</span><span class="o">=</span><span class="default_value">0.1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.LightingModder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.utils.mjmod.BaseModder" title="robosuite.utils.mjmod.BaseModder"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.utils.mjmod.BaseModder</span></code></a></p>
+<p>Modder to modify lighting within a Mujoco simulation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sim</strong> (<em>MjSim</em>) – MjSim object</p></li>
+<li><p><strong>random_state</strong> (<em>RandomState</em>) – instance of np.random.RandomState</p></li>
+<li><p><strong>light_names</strong> (<em>None</em><em> or </em><em>list of str</em>) – list of lights to use for randomization. If not provided, all
+lights in the model are randomized.</p></li>
+<li><p><strong>randomize_position</strong> (<em>bool</em>) – If True, randomizes position of lighting</p></li>
+<li><p><strong>randomize_direction</strong> (<em>bool</em>) – If True, randomizes direction of lighting</p></li>
+<li><p><strong>randomize_specular</strong> (<em>bool</em>) – If True, randomizes specular attribute of lighting</p></li>
+<li><p><strong>randomize_ambient</strong> (<em>bool</em>) – If True, randomizes ambient attribute of lighting</p></li>
+<li><p><strong>randomize_diffuse</strong> (<em>bool</em>) – If True, randomizes diffuse attribute of lighting</p></li>
+<li><p><strong>randomize_active</strong> (<em>bool</em>) – If True, randomizes active nature of lighting</p></li>
+<li><p><strong>position_perturbation_size</strong> (<em>float</em>) – Magnitude of position randomization</p></li>
+<li><p><strong>direction_perturbation_size</strong> (<em>float</em>) – Magnitude of direction randomization</p></li>
+<li><p><strong>specular_perturbation_size</strong> (<em>float</em>) – Magnitude of specular attribute randomization</p></li>
+<li><p><strong>ambient_perturbation_size</strong> (<em>float</em>) – Magnitude of ambient attribute randomization</p></li>
+<li><p><strong>diffuse_perturbation_size</strong> (<em>float</em>) – Magnitude of diffuse attribute randomization</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.LightingModder.get_active">
+<code class="sig-name descname">get_active</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.LightingModder.get_active" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grabs active nature of a specific light source</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of the lighting source</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Whether light source is active (1) or not (0)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – Invalid light name</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.LightingModder.get_ambient">
+<code class="sig-name descname">get_ambient</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.LightingModder.get_ambient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grabs ambient attribute of a specific light source</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of the lighting source</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(r,g,b) ambient color of lighting source</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – Invalid light name</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.LightingModder.get_diffuse">
+<code class="sig-name descname">get_diffuse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.LightingModder.get_diffuse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grabs diffuse attribute of a specific light source</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of the lighting source</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(r,g,b) diffuse color of lighting source</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – Invalid light name</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.LightingModder.get_dir">
+<code class="sig-name descname">get_dir</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.LightingModder.get_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grabs direction of a specific light source</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of the lighting source</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(x,y,z) direction of lighting source</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – Invalid light name</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.LightingModder.get_lightid">
+<code class="sig-name descname">get_lightid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.LightingModder.get_lightid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grabs unique id number of a specific light source</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of the lighting source</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>id of lighting source. -1 if not found</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.LightingModder.get_pos">
+<code class="sig-name descname">get_pos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.LightingModder.get_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grabs position of a specific light source</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of the lighting source</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(x,y,z) position of lighting source</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – Invalid light name</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.LightingModder.get_specular">
+<code class="sig-name descname">get_specular</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.LightingModder.get_specular" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grabs specular attribute of a specific light source</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of the lighting source</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(r,g,b) specular color of lighting source</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – Invalid light name</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.LightingModder.randomize">
+<code class="sig-name descname">randomize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.LightingModder.randomize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Randomizes all requested lighting values within the sim</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.LightingModder.restore_defaults">
+<code class="sig-name descname">restore_defaults</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.LightingModder.restore_defaults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reloads the saved parameter values.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.LightingModder.save_defaults">
+<code class="sig-name descname">save_defaults</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.LightingModder.save_defaults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uses the current MjSim state and model to save default parameter values.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.LightingModder.set_active">
+<code class="sig-name descname">set_active</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.LightingModder.set_active" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets active nature of a specific light source</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of the lighting source</p></li>
+<li><p><strong>value</strong> (<em>int</em>) – Whether light source is active (1) or not (0)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – Invalid light name</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.LightingModder.set_ambient">
+<code class="sig-name descname">set_ambient</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.LightingModder.set_ambient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets ambient attribute of a specific light source</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of the lighting source</p></li>
+<li><p><strong>value</strong> (<em>np.array</em>) – (r,g,b) ambient color to set lighting source to</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>AssertionError</strong> – Invalid light name</p></li>
+<li><p><strong>AssertionError</strong> – Invalid &#64;value</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.LightingModder.set_diffuse">
+<code class="sig-name descname">set_diffuse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.LightingModder.set_diffuse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets diffuse attribute of a specific light source</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of the lighting source</p></li>
+<li><p><strong>value</strong> (<em>np.array</em>) – (r,g,b) diffuse color to set lighting source to</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>AssertionError</strong> – Invalid light name</p></li>
+<li><p><strong>AssertionError</strong> – Invalid &#64;value</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.LightingModder.set_dir">
+<code class="sig-name descname">set_dir</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.LightingModder.set_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets direction of a specific light source</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of the lighting source</p></li>
+<li><p><strong>value</strong> (<em>np.array</em>) – (ax,ay,az) direction to set lighting source to</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>AssertionError</strong> – Invalid light name</p></li>
+<li><p><strong>AssertionError</strong> – Invalid &#64;value</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.LightingModder.set_pos">
+<code class="sig-name descname">set_pos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.LightingModder.set_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets position of a specific light source</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of the lighting source</p></li>
+<li><p><strong>value</strong> (<em>np.array</em>) – (x,y,z) position to set lighting source to</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>AssertionError</strong> – Invalid light name</p></li>
+<li><p><strong>AssertionError</strong> – Invalid &#64;value</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.LightingModder.set_specular">
+<code class="sig-name descname">set_specular</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.LightingModder.set_specular" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets specular attribute of a specific light source</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of the lighting source</p></li>
+<li><p><strong>value</strong> (<em>np.array</em>) – (r,g,b) specular color to set lighting source to</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>AssertionError</strong> – Invalid light name</p></li>
+<li><p><strong>AssertionError</strong> – Invalid &#64;value</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.utils.mjmod.PhysicalParameterModder">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.mjmod.</code><code class="sig-name descname">PhysicalParameterModder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sim</span></em>, <em class="sig-param"><span class="n">random_state</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.PhysicalParameterModder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.utils.mjmod.BaseModder" title="robosuite.utils.mjmod.BaseModder"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.utils.mjmod.BaseModder</span></code></a></p>
+<p>Modder for various physical parameters of the mujoco model
+can use to modify parameters stored in MjModel (ie friction, damping, etc.) as
+well as optimizer parameters like global friction multipliers (eg solimp, solref, etc)
+To modify a parameteter, use the parameter to be changed as a keyword argument to
+self.mod and the new value as the value for that argument. Supports arbitray many
+modifications in a single step.</p>
+<dl class="field-list simple">
+<dt class="field-odd">NOTE</dt>
+<dd class="field-odd"><p>It is necesary to perform sim.forward after performing the modification.</p>
+</dd>
+<dt class="field-even">NOTE</dt>
+<dd class="field-even"><p>Some parameters might not be able to be changed. users are to verify that
+after the call to forward that the parameter is indeed changed.</p>
+</dd>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sim</strong> (<em>MjSim</em>) – Mujoco sim instance</p></li>
+<li><p><strong>random_state</strong> (<em>RandomState</em>) – instance of np.random.RandomState, specific
+seed used to randomize these modifications without impacting other
+numpy seeds / randomizations</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.PhysicalParameterModder.mod">
+<code class="sig-name descname">mod</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.PhysicalParameterModder.mod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to actually mod. Assumes passing in keyword arguments with key being the parameter to
+modify and the value being the value to set
+Feel free to add more as we see fit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> (<em>dict</em>) – Physical parameters to actually modify mid-sim</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.PhysicalParameterModder.opt">
+<em class="property">property </em><code class="sig-name descname">opt</code><a class="headerlink" href="#robosuite.utils.mjmod.PhysicalParameterModder.opt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+?: MjModel sim options</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.utils.mjmod.Texture">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.mjmod.</code><code class="sig-name descname">Texture</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">tex_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.Texture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Helper class for operating on the MuJoCo textures.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>MjModel</em>) – Mujoco sim model</p></li>
+<li><p><strong>tex_id</strong> (<em>int</em>) – id of specific texture in mujoco sim</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.Texture.bitmap">
+<em class="property">property </em><code class="sig-name descname">bitmap</code><a class="headerlink" href="#robosuite.utils.mjmod.Texture.bitmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grabs color bitmap associated with this texture from the mujoco sim.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>3d-array representing the rgb texture bitmap</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="robosuite.utils.mjmod.Texture.height">
+<code class="sig-name descname">height</code><a class="headerlink" href="#robosuite.utils.mjmod.Texture.height" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="robosuite.utils.mjmod.Texture.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#robosuite.utils.mjmod.Texture.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="robosuite.utils.mjmod.Texture.tex_adr">
+<code class="sig-name descname">tex_adr</code><a class="headerlink" href="#robosuite.utils.mjmod.Texture.tex_adr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="robosuite.utils.mjmod.Texture.tex_rgb">
+<code class="sig-name descname">tex_rgb</code><a class="headerlink" href="#robosuite.utils.mjmod.Texture.tex_rgb" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="robosuite.utils.mjmod.Texture.type">
+<code class="sig-name descname">type</code><a class="headerlink" href="#robosuite.utils.mjmod.Texture.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="robosuite.utils.mjmod.Texture.width">
+<code class="sig-name descname">width</code><a class="headerlink" href="#robosuite.utils.mjmod.Texture.width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.utils.mjmod.TextureModder">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.mjmod.</code><code class="sig-name descname">TextureModder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sim</span></em>, <em class="sig-param"><span class="n">random_state</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geom_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">randomize_local</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">randomize_material</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">local_rgb_interpolation</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">local_material_interpolation</span><span class="o">=</span><span class="default_value">0.2</span></em>, <em class="sig-param"><span class="n">texture_variations</span><span class="o">=</span><span class="default_value">'rgb', 'checker', 'noise', 'gradient'</span></em>, <em class="sig-param"><span class="n">randomize_skybox</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.TextureModder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.utils.mjmod.BaseModder" title="robosuite.utils.mjmod.BaseModder"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.utils.mjmod.BaseModder</span></code></a></p>
+<dl class="simple">
+<dt>Modify textures in model. Example use:</dt><dd><p>sim = MjSim(…)
+modder = TextureModder(sim)
+modder.whiten_materials()  # ensures materials won’t impact colors
+modder.set_checker(‘some_geom’, (255, 0, 0), (0, 0, 0))
+modder.rand_all(‘another_geom’)</p>
+</dd>
+</dl>
+<p>Note: in order for the textures to take full effect, you’ll need to set
+the rgba values for all materials to [1, 1, 1, 1], otherwise the texture
+colors will be modulated by the material colors. Call the
+<cite>whiten_materials</cite> helper method to set all material colors to white.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sim</strong> (<em>MjSim</em>) – MjSim object</p></li>
+<li><p><strong>random_state</strong> (<em>RandomState</em>) – instance of np.random.RandomState</p></li>
+<li><p><strong>geom_names</strong> (<em>[</em><em>string</em><em>]</em>) – list of geom names to use for randomization. If not provided,
+all geoms are used for randomization.</p></li>
+<li><p><strong>randomize_local</strong> (<em>bool</em>) – if True, constrain RGB color variations to be close to the
+original RGB colors per geom and texture. Otherwise, RGB color values will
+be sampled uniformly at random.</p></li>
+<li><p><strong>randomize_material</strong> (<em>bool</em>) – if True, randomizes material properties associated with a
+given texture (reflectance, shininess, specular)</p></li>
+<li><p><strong>local_rgb_interpolation</strong> (<em>float</em>) – determines the size of color variations from
+the base geom colors when &#64;randomize_local is True.</p></li>
+<li><p><strong>local_material_interpolation</strong> (<em>float</em>) – determines the size of material variations from
+the base material when &#64;randomize_local and &#64;randomize_material are both True.</p></li>
+<li><p><strong>texture_variations</strong> (<em>list of str</em>) – a list of texture variation strings. Each string
+must be either ‘rgb’, ‘checker’, ‘noise’, or ‘gradient’ and corresponds to
+a specific kind of texture randomization. For each geom that has a material
+and texture, a random variation from this list is sampled and applied.</p></li>
+<li><p><strong>randomize_skybox</strong> (<em>bool</em>) – if True, apply texture variations to the skybox as well.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.TextureModder.get_checker_matrices">
+<code class="sig-name descname">get_checker_matrices</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.TextureModder.get_checker_matrices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grabs checker pattern matrix associated with &#64;name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of geom</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>3d-array representing rgb checker pattern</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.TextureModder.get_geom_rgb">
+<code class="sig-name descname">get_geom_rgb</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.TextureModder.get_geom_rgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grabs rgb color of a specific geom</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of the geom</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(r,g,b) geom colors</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.TextureModder.get_material">
+<code class="sig-name descname">get_material</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.TextureModder.get_material" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grabs material of a specific geom</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of the geom</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(reflectance, shininess, specular) material properties associated with the geom</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.TextureModder.get_rand_rgb">
+<code class="sig-name descname">get_rand_rgb</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.TextureModder.get_rand_rgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grabs a batch of random rgb tuple combos</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – How many sets of rgb tuples to randomly generate</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>if n &gt; 1, each tuple entry is a rgb tuple. else, single (r,g,b) array</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array or n-tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.TextureModder.get_texture">
+<code class="sig-name descname">get_texture</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.TextureModder.get_texture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grabs texture of a specific geom</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of the geom</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>texture associated with the geom</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#robosuite.utils.mjmod.Texture" title="robosuite.utils.mjmod.Texture">Texture</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.TextureModder.rand_checker">
+<code class="sig-name descname">rand_checker</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.TextureModder.rand_checker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a random checker pattern for a specific geom</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of the geom to randomize for</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.TextureModder.rand_gradient">
+<code class="sig-name descname">rand_gradient</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.TextureModder.rand_gradient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a random gradient pattern for a specific geom</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of the geom to randomize for</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.TextureModder.rand_noise">
+<code class="sig-name descname">rand_noise</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.TextureModder.rand_noise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a random RGB noise pattern for a specific geom</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of the geom to randomize for</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.TextureModder.rand_rgb">
+<code class="sig-name descname">rand_rgb</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.TextureModder.rand_rgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a random RGB color for a specific geom</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of the geom to randomize for</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.TextureModder.randomize">
+<code class="sig-name descname">randomize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.TextureModder.randomize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides mujoco-py implementation to also randomize color
+for geoms that have no material.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.TextureModder.restore_defaults">
+<code class="sig-name descname">restore_defaults</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.TextureModder.restore_defaults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reloads the saved parameter values.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.TextureModder.save_defaults">
+<code class="sig-name descname">save_defaults</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.TextureModder.save_defaults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uses the current MjSim state and model to save default parameter values.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.TextureModder.set_checker">
+<code class="sig-name descname">set_checker</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">rgb1</span></em>, <em class="sig-param"><span class="n">rgb2</span></em>, <em class="sig-param"><span class="n">perturb</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.TextureModder.set_checker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the two checker matrices to create a checker
+pattern from the two colors, and set it as
+the texture for geom &#64;name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of geom</p></li>
+<li><p><strong>rgb1</strong> (<em>3-array</em>) – (r,g,b) value for one half of checker pattern</p></li>
+<li><p><strong>rgb2</strong> (<em>3-array</em>) – (r,g,b) value for other half of checker pattern</p></li>
+<li><p><strong>perturb</strong> (<em>bool</em>) – Whether to perturb the resulting checker pattern or not</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.TextureModder.set_geom_rgb">
+<code class="sig-name descname">set_geom_rgb</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">rgb</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.TextureModder.set_geom_rgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets rgb color of a specific geom</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of the geom</p></li>
+<li><p><strong>rgb</strong> (<em>np.array</em>) – (r,g,b) geom colors</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.TextureModder.set_gradient">
+<code class="sig-name descname">set_gradient</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">rgb1</span></em>, <em class="sig-param"><span class="n">rgb2</span></em>, <em class="sig-param"><span class="n">vertical</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">perturb</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.TextureModder.set_gradient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a linear gradient from rgb1 to rgb2.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of geom</p></li>
+<li><p><strong>rgb1</strong> (<em>3-array</em>) – start color</p></li>
+<li><p><strong>rgb2</strong> (<em>3- array</em>) – end color</p></li>
+<li><p><strong>vertical</strong> (<em>bool</em>) – if True, the gradient in the positive
+y-direction, if False it’s in the positive x-direction.</p></li>
+<li><p><strong>perturb</strong> (<em>bool</em>) – Whether to perturb the resulting gradient pattern or not</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.TextureModder.set_material">
+<code class="sig-name descname">set_material</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">material</span></em>, <em class="sig-param"><span class="n">perturb</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.TextureModder.set_material" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the material that corresponds to geom &#64;name.</p>
+<p>If &#64;perturb is True, then use the computed material
+to perturb the default material slightly, instead
+of replacing it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of the geom</p></li>
+<li><p><strong>material</strong> (<em>np.array</em>) – (reflectance, shininess, specular) material properties associated with the geom</p></li>
+<li><p><strong>perturb</strong> (<em>bool</em>) – Whether to perturb the inputted material properties or not</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.TextureModder.set_noise">
+<code class="sig-name descname">set_noise</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">rgb1</span></em>, <em class="sig-param"><span class="n">rgb2</span></em>, <em class="sig-param"><span class="n">fraction</span><span class="o">=</span><span class="default_value">0.9</span></em>, <em class="sig-param"><span class="n">perturb</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.TextureModder.set_noise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the texture bitmap for geom &#64;name to a noise pattern</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – name of geom</p></li>
+<li><p><strong>rgb1</strong> (<em>3-array</em>) – background color</p></li>
+<li><p><strong>rgb2</strong> (<em>3-array</em>) – color of random noise foreground color</p></li>
+<li><p><strong>fraction</strong> (<em>float</em>) – fraction of pixels with foreground color</p></li>
+<li><p><strong>perturb</strong> (<em>bool</em>) – Whether to perturb the resulting color pattern or not</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.TextureModder.set_rgb">
+<code class="sig-name descname">set_rgb</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">rgb</span></em>, <em class="sig-param"><span class="n">perturb</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.TextureModder.set_rgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Just set the texture bitmap for geom &#64;name
+to a constant rgb value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of geom</p></li>
+<li><p><strong>rgb</strong> (<em>3-array</em>) – desired (r,g,b) color</p></li>
+<li><p><strong>perturb</strong> (<em>bool</em>) – Whether to perturb the resulting color pattern or not</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.TextureModder.set_texture">
+<code class="sig-name descname">set_texture</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">bitmap</span></em>, <em class="sig-param"><span class="n">perturb</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.TextureModder.set_texture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the bitmap for the texture that corresponds
+to geom &#64;name.</p>
+<p>If &#64;perturb is True, then use the computed bitmap
+to perturb the default bitmap slightly, instead
+of replacing it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of the geom</p></li>
+<li><p><strong>bitmap</strong> (<em>np.array</em>) – 3d-array representing rgb pixel-wise values</p></li>
+<li><p><strong>perturb</strong> (<em>bool</em>) – Whether to perturb the inputted bitmap or not</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.TextureModder.upload_texture">
+<code class="sig-name descname">upload_texture</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.TextureModder.upload_texture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uploads the texture to the GPU so it’s available in the rendering.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name of geom</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.TextureModder.whiten_materials">
+<code class="sig-name descname">whiten_materials</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.TextureModder.whiten_materials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extends modder.TextureModder to also whiten geom_rgba</p>
+<p>Helper method for setting all material colors to white, otherwise
+the texture modifications won’t take full effect.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.utils.mujoco_py_renderer">
+<span id="robosuite-utils-mujoco-py-renderer"></span><h2>robosuite.utils.mujoco_py_renderer<a class="headerlink" href="#module-robosuite.utils.mujoco_py_renderer" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.utils.mujoco_py_renderer.CustomMjViewer">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.mujoco_py_renderer.</code><code class="sig-name descname">CustomMjViewer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sim</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mujoco_py_renderer.CustomMjViewer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">mujoco_py.mjviewer.MjViewer</span></code></p>
+<p>Custom class extending the vanilla MjViewer class to add additional key-stroke callbacks</p>
+<dl class="py method">
+<dt id="robosuite.utils.mujoco_py_renderer.CustomMjViewer.key_callback">
+<code class="sig-name descname">key_callback</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">window</span></em>, <em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">scancode</span></em>, <em class="sig-param"><span class="n">action</span></em>, <em class="sig-param"><span class="n">mods</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mujoco_py_renderer.CustomMjViewer.key_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes key callbacks from the glfw renderer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>window</strong> (<em>GLFWwindow</em>) – GLFW window instance</p></li>
+<li><p><strong>key</strong> (<em>int</em>) – keycode</p></li>
+<li><p><strong>scancode</strong> (<em>int</em>) – scancode</p></li>
+<li><p><strong>action</strong> (<em>int</em>) – action code</p></li>
+<li><p><strong>mods</strong> (<em>int</em>) – mods</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="robosuite.utils.mujoco_py_renderer.CustomMjViewer.keypress">
+<code class="sig-name descname">keypress</code><em class="property"> = {}</em><a class="headerlink" href="#robosuite.utils.mujoco_py_renderer.CustomMjViewer.keypress" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="robosuite.utils.mujoco_py_renderer.CustomMjViewer.keyrepeat">
+<code class="sig-name descname">keyrepeat</code><em class="property"> = {}</em><a class="headerlink" href="#robosuite.utils.mujoco_py_renderer.CustomMjViewer.keyrepeat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="robosuite.utils.mujoco_py_renderer.CustomMjViewer.keyup">
+<code class="sig-name descname">keyup</code><em class="property"> = {}</em><a class="headerlink" href="#robosuite.utils.mujoco_py_renderer.CustomMjViewer.keyup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.utils.mujoco_py_renderer.MujocoPyRenderer">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.mujoco_py_renderer.</code><code class="sig-name descname">MujocoPyRenderer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sim</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mujoco_py_renderer.MujocoPyRenderer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Mujoco-py renderer object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sim</strong> – MjSim object</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.utils.mujoco_py_renderer.MujocoPyRenderer.add_keypress_callback">
+<code class="sig-name descname">add_keypress_callback</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">fn</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mujoco_py_renderer.MujocoPyRenderer.add_keypress_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows for custom callback functions for the viewer. Called on key down.
+Parameter ‘any’ will ensure that the callback is called on any key down,
+and block default mujoco viewer callbacks from executing, except for
+the ESC callback to close the viewer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>int</em>) – keycode</p></li>
+<li><p><strong>fn</strong> (<em>function handle</em>) – function callback to associate with the keypress</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mujoco_py_renderer.MujocoPyRenderer.add_keyrepeat_callback">
+<code class="sig-name descname">add_keyrepeat_callback</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">fn</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mujoco_py_renderer.MujocoPyRenderer.add_keyrepeat_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows for custom callback functions for the viewer. Called on key repeat.
+Parameter ‘any’ will ensure that the callback is called on any key repeat,
+and block default mujoco viewer callbacks from executing, except for
+the ESC callback to close the viewer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>int</em>) – keycode</p></li>
+<li><p><strong>fn</strong> (<em>function handle</em>) – function callback to associate with the keypress</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mujoco_py_renderer.MujocoPyRenderer.add_keyup_callback">
+<code class="sig-name descname">add_keyup_callback</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">fn</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mujoco_py_renderer.MujocoPyRenderer.add_keyup_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows for custom callback functions for the viewer. Called on key up.
+Parameter ‘any’ will ensure that the callback is called on any key up,
+and block default mujoco viewer callbacks from executing, except for
+the ESC callback to close the viewer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>int</em>) – keycode</p></li>
+<li><p><strong>fn</strong> (<em>function handle</em>) – function callback to associate with the keypress</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mujoco_py_renderer.MujocoPyRenderer.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mujoco_py_renderer.MujocoPyRenderer.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Destroys the open window and renders (pun intended) the viewer useless.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mujoco_py_renderer.MujocoPyRenderer.render">
+<code class="sig-name descname">render</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mujoco_py_renderer.MujocoPyRenderer.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renders the screen</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mujoco_py_renderer.MujocoPyRenderer.set_camera">
+<code class="sig-name descname">set_camera</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">camera_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mujoco_py_renderer.MujocoPyRenderer.set_camera" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the camera view to the specified camera ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>camera_id</strong> (<em>int</em>) – id of the camera to set the current viewer to</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.utils.numba">
+<span id="robosuite-utils-numba"></span><h2>robosuite.utils.numba<a class="headerlink" href="#module-robosuite.utils.numba" title="Permalink to this headline">¶</a></h2>
+<p>Numba utils.</p>
+<dl class="py function">
+<dt id="robosuite.utils.numba.jit_decorator">
+<code class="sig-prename descclassname">robosuite.utils.numba.</code><code class="sig-name descname">jit_decorator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">func</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.numba.jit_decorator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.utils.transform_utils">
+<span id="robosuite-utils-transform-utils"></span><h2>robosuite.utils.transform_utils<a class="headerlink" href="#module-robosuite.utils.transform_utils" title="Permalink to this headline">¶</a></h2>
+<p>Utility functions of matrix and vector transformations.</p>
+<p>NOTE: convention for quaternions is (x, y, z, w)</p>
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.axisangle2quat">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">axisangle2quat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vec</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.axisangle2quat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts scaled axis-angle to quat.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vec</strong> (<em>np.array</em>) – (ax,ay,az) axis-angle exponential coordinates</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(x,y,z,w) vec4 float angles</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.clip_rotation">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">clip_rotation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quat</span></em>, <em class="sig-param"><span class="n">limit</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.clip_rotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Limits a (delta) rotation to a specified limit</p>
+<p>Converts rotation to axis-angle, clips, then re-converts back into quaternion</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>quat</strong> (<em>np.array</em>) – (x,y,z,w) rotation being clipped</p></li>
+<li><p><strong>limit</strong> (<em>float</em>) – Value to limit rotation by – magnitude (scalar, in radians)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>(np.array) Clipped rotation quaternion (x, y, z, w)</p></li>
+<li><p>(bool) whether the value was clipped or not</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>2-tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.clip_translation">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">clip_translation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dpos</span></em>, <em class="sig-param"><span class="n">limit</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.clip_translation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Limits a translation (delta position) to a specified limit</p>
+<p>Scales down the norm of the dpos to ‘limit’ if norm(dpos) &gt; limit, else returns immediately</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dpos</strong> (<em>n-array</em>) – n-dim Translation being clipped (e,g.: (x, y, z)) – numpy array</p></li>
+<li><p><strong>limit</strong> (<em>float</em>) – Value to limit translation by – magnitude (scalar, in same units as input)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>(np.array) Clipped translation (same dimension as inputs)</p></li>
+<li><p>(bool) whether the value was clipped or not</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>2-tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.convert_quat">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">convert_quat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">q</span></em>, <em class="sig-param"><span class="n">to</span><span class="o">=</span><span class="default_value">'xyzw'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.convert_quat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts quaternion from one convention to another.
+The convention to convert TO is specified as an optional argument.
+If to == ‘xyzw’, then the input is in ‘wxyz’ format, and vice-versa.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q</strong> (<em>np.array</em>) – a 4-dim array corresponding to a quaternion</p></li>
+<li><p><strong>to</strong> (<em>str</em>) – either ‘xyzw’ or ‘wxyz’, determining which convention to convert to.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.euler2mat">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">euler2mat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">euler</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.euler2mat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts euler angles into rotation matrix form</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>euler</strong> (<em>np.array</em>) – (r,p,y) angles</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>3x3 rotation matrix</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – [Invalid input shape]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.force_in_A_to_force_in_B">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">force_in_A_to_force_in_B</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">force_A</span></em>, <em class="sig-param"><span class="n">torque_A</span></em>, <em class="sig-param"><span class="n">pose_A_in_B</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.force_in_A_to_force_in_B" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts linear and rotational force at a point in frame A to the equivalent in frame B.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>force_A</strong> (<em>np.array</em>) – (fx,fy,fz) linear force in A</p></li>
+<li><p><strong>torque_A</strong> (<em>np.array</em>) – (tx,ty,tz) rotational force (moment) in A</p></li>
+<li><p><strong>pose_A_in_B</strong> (<em>np.array</em>) – 4x4 matrix corresponding to the pose of A in frame B</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>(np.array) (fx,fy,fz) linear forces in frame B</p></li>
+<li><p>(np.array) (tx,ty,tz) moments in frame B</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>2-tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.get_orientation_error">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">get_orientation_error</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">target_orn</span></em>, <em class="sig-param"><span class="n">current_orn</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.get_orientation_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the difference between two quaternion orientations as a 3 DOF numpy array.
+For use in an impedance controller / task-space PD controller.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target_orn</strong> (<em>np.array</em>) – (x, y, z, w) desired quaternion orientation</p></li>
+<li><p><strong>current_orn</strong> (<em>np.array</em>) – (x, y, z, w) current quaternion orientation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>(ax,ay,az) current orientation error, corresponds to</dt><dd><p>(target_orn - current_orn)</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>orn_error (np.array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.get_pose_error">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">get_pose_error</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">target_pose</span></em>, <em class="sig-param"><span class="n">current_pose</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.get_pose_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the error corresponding to target pose - current pose as a 6-dim vector.
+The first 3 components correspond to translational error while the last 3 components
+correspond to the rotational error.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target_pose</strong> (<em>np.array</em>) – a 4x4 homogenous matrix for the target pose</p></li>
+<li><p><strong>current_pose</strong> (<em>np.array</em>) – a 4x4 homogenous matrix for the current pose</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>6-dim pose error.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.make_pose">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">make_pose</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">translation</span></em>, <em class="sig-param"><span class="n">rotation</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.make_pose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes a homogeneous pose matrix from a translation vector and a rotation matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>translation</strong> (<em>np.array</em>) – (x,y,z) translation value</p></li>
+<li><p><strong>rotation</strong> (<em>np.array</em>) – a 3x3 matrix representing rotation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a 4x4 homogeneous matrix</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pose (np.array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.mat2euler">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">mat2euler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rmat</span></em>, <em class="sig-param"><span class="n">axes</span><span class="o">=</span><span class="default_value">'sxyz'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.mat2euler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts given rotation matrix to euler angles in radian.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rmat</strong> (<em>np.array</em>) – 3x3 rotation matrix</p></li>
+<li><p><strong>axes</strong> (<em>str</em>) – One of 24 axis sequences as string or encoded tuple (see top of this module)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(r,p,y) converted euler angles in radian vec3 float</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.mat2pose">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">mat2pose</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hmat</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.mat2pose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a homogeneous 4x4 matrix into pose.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>hmat</strong> (<em>np.array</em>) – a 4x4 homogeneous matrix</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>(np.array) (x,y,z) position array in cartesian coordinates</p></li>
+<li><p>(np.array) (x,y,z,w) orientation array in quaternion form</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>2-tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.mat2quat">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">mat2quat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rmat</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.mat2quat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts given rotation matrix to quaternion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>rmat</strong> (<em>np.array</em>) – 3x3 rotation matrix</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(x,y,z,w) float quaternion angles</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.mat4">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">mat4</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">array</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.mat4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts an array to 4x4 matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>array</strong> (<em>n-array</em>) – the array in form of vec, list, or tuple</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a 4x4 numpy matrix</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.matrix_inverse">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">matrix_inverse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">matrix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.matrix_inverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to have an efficient matrix inversion function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>matrix</strong> (<em>np.array</em>) – 2d-array representing a matrix</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>2d-array representing the matrix inverse</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.pose2mat">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">pose2mat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pose</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.pose2mat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts pose to homogeneous matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pose</strong> (<em>2-tuple</em>) – a (pos, orn) tuple where pos is vec3 float cartesian, and
+orn is vec4 float quaternion.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>4x4 homogeneous matrix</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.pose_in_A_to_pose_in_B">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">pose_in_A_to_pose_in_B</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pose_A</span></em>, <em class="sig-param"><span class="n">pose_A_in_B</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.pose_in_A_to_pose_in_B" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a homogenous matrix corresponding to a point C in frame A
+to a homogenous matrix corresponding to the same point C in frame B.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pose_A</strong> (<em>np.array</em>) – 4x4 matrix corresponding to the pose of C in frame A</p></li>
+<li><p><strong>pose_A_in_B</strong> (<em>np.array</em>) – 4x4 matrix corresponding to the pose of A in frame B</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>4x4 matrix corresponding to the pose of C in frame B</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.pose_inv">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">pose_inv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pose</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.pose_inv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the inverse of a homogeneous matrix corresponding to the pose of some
+frame B in frame A. The inverse is the pose of frame A in frame B.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pose</strong> (<em>np.array</em>) – 4x4 matrix for the pose to inverse</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>4x4 matrix for the inverse pose</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.quat2axisangle">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">quat2axisangle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quat</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.quat2axisangle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts quaternion to axis-angle format.
+Returns a unit vector direction scaled by its angle in radians.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>quat</strong> (<em>np.array</em>) – (x,y,z,w) vec4 float angles</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(ax,ay,az) axis-angle exponential coordinates</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.quat2mat">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">quat2mat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quaternion</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.quat2mat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts given quaternion to matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>quaternion</strong> (<em>np.array</em>) – (x,y,z,w) vec4 float angles</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>3x3 rotation matrix</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.quat_conjugate">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">quat_conjugate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quaternion</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.quat_conjugate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return conjugate of quaternion.</p>
+<p>E.g.:
+&gt;&gt;&gt; q0 = random_quaternion()
+&gt;&gt;&gt; q1 = quat_conjugate(q0)
+&gt;&gt;&gt; q1[3] == q0[3] and all(q1[:3] == -q0[:3])
+True</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>quaternion</strong> (<em>np.array</em>) – (x,y,z,w) quaternion</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(x,y,z,w) quaternion conjugate</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.quat_distance">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">quat_distance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quaternion1</span></em>, <em class="sig-param"><span class="n">quaternion0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.quat_distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns distance between two quaternions, such that distance * quaternion0 = quaternion1</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>quaternion1</strong> (<em>np.array</em>) – (x,y,z,w) quaternion</p></li>
+<li><p><strong>quaternion0</strong> (<em>np.array</em>) – (x,y,z,w) quaternion</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(x,y,z,w) quaternion distance</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.quat_inverse">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">quat_inverse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quaternion</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.quat_inverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return inverse of quaternion.</p>
+<p>E.g.:
+&gt;&gt;&gt; q0 = random_quaternion()
+&gt;&gt;&gt; q1 = quat_inverse(q0)
+&gt;&gt;&gt; np.allclose(quat_multiply(q0, q1), [0, 0, 0, 1])
+True</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>quaternion</strong> (<em>np.array</em>) – (x,y,z,w) quaternion</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(x,y,z,w) quaternion inverse</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.quat_multiply">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">quat_multiply</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quaternion1</span></em>, <em class="sig-param"><span class="n">quaternion0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.quat_multiply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return multiplication of two quaternions (q1 * q0).</p>
+<p>E.g.:
+&gt;&gt;&gt; q = quat_multiply([1, -2, 3, 4], [-5, 6, 7, 8])
+&gt;&gt;&gt; np.allclose(q, [-44, -14, 48, 28])
+True</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>quaternion1</strong> (<em>np.array</em>) – (x,y,z,w) quaternion</p></li>
+<li><p><strong>quaternion0</strong> (<em>np.array</em>) – (x,y,z,w) quaternion</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(x,y,z,w) multiplied quaternion</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.quat_slerp">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">quat_slerp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quat0</span></em>, <em class="sig-param"><span class="n">quat1</span></em>, <em class="sig-param"><span class="n">fraction</span></em>, <em class="sig-param"><span class="n">shortestpath</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.quat_slerp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return spherical linear interpolation between two quaternions.</p>
+<p>E.g.:
+&gt;&gt;&gt; q0 = random_quat()
+&gt;&gt;&gt; q1 = random_quat()
+&gt;&gt;&gt; q = quat_slerp(q0, q1, 0.0)
+&gt;&gt;&gt; np.allclose(q, q0)
+True</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">quat_slerp</span><span class="p">(</span><span class="n">q0</span><span class="p">,</span> <span class="n">q1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">q1</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">quat_slerp</span><span class="p">(</span><span class="n">q0</span><span class="p">,</span> <span class="n">q1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">angle</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">acos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">q0</span><span class="p">,</span> <span class="n">q</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">acos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">q0</span><span class="p">,</span> <span class="n">q1</span><span class="p">))</span> <span class="o">/</span> <span class="n">angle</span><span class="p">)</span> <span class="ow">or</span>         <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">acos</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">q0</span><span class="p">,</span> <span class="n">q1</span><span class="p">))</span> <span class="o">/</span> <span class="n">angle</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>quat0</strong> (<em>np.array</em>) – (x,y,z,w) quaternion startpoint</p></li>
+<li><p><strong>quat1</strong> (<em>np.array</em>) – (x,y,z,w) quaternion endpoint</p></li>
+<li><p><strong>fraction</strong> (<em>float</em>) – fraction of interpolation to calculate</p></li>
+<li><p><strong>shortestpath</strong> (<em>bool</em>) – If True, will calculate the shortest path</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(x,y,z,w) quaternion distance</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.random_axis_angle">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">random_axis_angle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">angle_limit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">random_state</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.random_axis_angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Samples an axis-angle rotation by first sampling a random axis
+and then sampling an angle. If &#64;angle_limit is provided, the size
+of the rotation angle is constrained.</p>
+<p>If &#64;random_state is provided (instance of np.random.RandomState), it
+will be used to generate random numbers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>angle_limit</strong> (<em>None</em><em> or </em><em>float</em>) – If set, determines magnitude limit of angles to generate</p></li>
+<li><p><strong>random_state</strong> (<em>None</em><em> or </em><em>RandomState</em>) – RNG to use if specified</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – [Invalid RNG]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.random_quat">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">random_quat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rand</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.random_quat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return uniform random unit quaternion.</p>
+<p>E.g.:
+&gt;&gt;&gt; q = random_quat()
+&gt;&gt;&gt; np.allclose(1.0, vector_norm(q))
+True
+&gt;&gt;&gt; q = random_quat(np.random.random(3))
+&gt;&gt;&gt; q.shape
+(4,)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>rand</strong> (<em>3-array</em><em> or </em><em>None</em>) – If specified, must be three independent random variables that are uniformly distributed
+between 0 and 1.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(x,y,z,w) random quaternion</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.rotation_matrix">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">rotation_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">angle</span></em>, <em class="sig-param"><span class="n">direction</span></em>, <em class="sig-param"><span class="n">point</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.rotation_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns matrix to rotate about axis defined by point and direction.</p>
+<dl>
+<dt>E.g.:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">angle</span> <span class="o">=</span> <span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">direc</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">point</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R0</span> <span class="o">=</span> <span class="n">rotation_matrix</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">direc</span><span class="p">,</span> <span class="n">point</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R1</span> <span class="o">=</span> <span class="n">rotation_matrix</span><span class="p">(</span><span class="n">angle</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">direc</span><span class="p">,</span> <span class="n">point</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_same_transform</span><span class="p">(</span><span class="n">R0</span><span class="p">,</span> <span class="n">R1</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">R0</span> <span class="o">=</span> <span class="n">rotation_matrix</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">direc</span><span class="p">,</span> <span class="n">point</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R1</span> <span class="o">=</span> <span class="n">rotation_matrix</span><span class="p">(</span><span class="o">-</span><span class="n">angle</span><span class="p">,</span> <span class="o">-</span><span class="n">direc</span><span class="p">,</span> <span class="n">point</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_same_transform</span><span class="p">(</span><span class="n">R0</span><span class="p">,</span> <span class="n">R1</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">I</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">numpy</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">rotation_matrix</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">direc</span><span class="p">))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">numpy</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="mf">2.</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="n">rotation_matrix</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>
+<span class="gp">... </span>                                               <span class="n">direc</span><span class="p">,</span> <span class="n">point</span><span class="p">)))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>angle</strong> (<em>float</em>) – Magnitude of rotation</p></li>
+<li><p><strong>direction</strong> (<em>np.array</em>) – (ax,ay,az) axis about which to rotate</p></li>
+<li><p><strong>point</strong> (<em>None</em><em> or </em><em>np.array</em>) – If specified, is the (x,y,z) point about which the rotation will occur</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>4x4 homogeneous matrix that includes the desired rotation</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.unit_vector">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">unit_vector</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">axis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.unit_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns ndarray normalized by length, i.e. eucledian norm, along axis.</p>
+<dl>
+<dt>E.g.:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v0</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">unit_vector</span><span class="p">(</span><span class="n">v0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">numpy</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v0</span> <span class="o">/</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">v0</span><span class="p">))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v0</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">unit_vector</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">/</span> <span class="n">numpy</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">v0</span><span class="o">*</span><span class="n">v0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">numpy</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">unit_vector</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">/</span> <span class="n">numpy</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">v0</span><span class="o">*</span><span class="n">v0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">numpy</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">unit_vector</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">v1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">numpy</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">unit_vector</span><span class="p">([]))</span>
+<span class="go">[]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">unit_vector</span><span class="p">([</span><span class="mf">1.0</span><span class="p">]))</span>
+<span class="go">[1.0]</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>np.array</em>) – data to normalize</p></li>
+<li><p><strong>axis</strong> (<em>None</em><em> or </em><em>int</em>) – If specified, determines specific axis along data to normalize</p></li>
+<li><p><strong>out</strong> (<em>None</em><em> or </em><em>np.array</em>) – If specified, will store computation in this variable</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>If &#64;out is not specified, will return normalized vector. Otherwise, stores the output in &#64;out</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None or np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.vec">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">vec</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.vec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts value tuple into a numpy vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>values</strong> (<em>n-array</em>) – a tuple of numbers</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>vector of given values</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.transform_utils.vel_in_A_to_vel_in_B">
+<code class="sig-prename descclassname">robosuite.utils.transform_utils.</code><code class="sig-name descname">vel_in_A_to_vel_in_B</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vel_A</span></em>, <em class="sig-param"><span class="n">ang_vel_A</span></em>, <em class="sig-param"><span class="n">pose_A_in_B</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.transform_utils.vel_in_A_to_vel_in_B" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts linear and angular velocity of a point in frame A to the equivalent in frame B.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vel_A</strong> (<em>np.array</em>) – (vx,vy,vz) linear velocity in A</p></li>
+<li><p><strong>ang_vel_A</strong> (<em>np.array</em>) – (wx,wy,wz) angular velocity in A</p></li>
+<li><p><strong>pose_A_in_B</strong> (<em>np.array</em>) – 4x4 matrix corresponding to the pose of A in frame B</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>(np.array) (vx,vy,vz) linear velocities in frame B</p></li>
+<li><p>(np.array) (wx,wy,wz) angular velocities in frame B</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>2-tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="robosuite.wrappers.html" class="btn btn-neutral float-right" title="robosuite.wrappers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="robosuite.robots.html" class="btn btn-neutral float-left" title="robosuite.robots" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright Stanford Univeristy and The University of Texas at Austin 2020
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

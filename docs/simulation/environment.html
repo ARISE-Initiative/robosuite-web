@@ -1,0 +1,713 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Environment &mdash; robosuite 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script src="../static/jquery.js"></script>
+        <script src="../static/underscore.js"></script>
+        <script src="../static/doctools.js"></script>
+        <script src="../static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Device" href="device.html" />
+    <link rel="prev" title="Robot" href="robot.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> robosuite
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demos.html">Demo Showcases</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/robots.html">Robots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/controllers.html">Controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Simulation API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="robot.html">Robot</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#base-environment">Base Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#robot-environment">Robot Environment</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="device.html">Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controller.html">Controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modeling API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/gripper_model.html">Gripper Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Source API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/robosuite.html">robosuite</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Algorithms</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Projects using robosuite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">robosuite</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Environment</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/simulation/environment.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="environment">
+<h1>Environment<a class="headerlink" href="#environment" title="Permalink to this headline">¶</a></h1>
+<p>The MujocoEnv class defines a top-level simulation object encapsulating a MjSim object. Robosuite uses
+class extensions of this base class, namely, RobotEnv which additionally encompasses Robot objects and the top-level
+task environments which capture specific ManipulationTask instances and additional objects.</p>
+<div class="section" id="base-environment">
+<h2>Base Environment<a class="headerlink" href="#base-environment" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.environments.base.MujocoEnv">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.base.</code><code class="sig-name descname">MujocoEnv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">has_renderer</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">has_offscreen_renderer</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_camera</span><span class="o">=</span><span class="default_value">'frontview'</span></em>, <em class="sig-param"><span class="n">render_collision_mesh</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">render_visual_mesh</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">control_freq</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">horizon</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">ignore_done</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">hard_reset</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes a Mujoco Environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>has_renderer</strong> (<em>bool</em>) – If true, render the simulation state in
+a viewer instead of headless mode.</p></li>
+<li><p><strong>has_offscreen_renderer</strong> (<em>bool</em>) – True if using off-screen rendering.</p></li>
+<li><p><strong>render_camera</strong> (<em>str</em>) – Name of camera to render if <cite>has_renderer</cite> is True. Setting this value to ‘None’
+will result in the default angle being applied, which is useful as it can be dragged / panned by
+the user using the mouse</p></li>
+<li><p><strong>render_collision_mesh</strong> (<em>bool</em>) – True if rendering collision meshes
+in camera. False otherwise.</p></li>
+<li><p><strong>render_visual_mesh</strong> (<em>bool</em>) – True if rendering visual meshes
+in camera. False otherwise.</p></li>
+<li><p><strong>control_freq</strong> (<em>float</em>) – how many control signals to receive
+in every simulated second. This sets the amount of simulation time
+that passes between every action input.</p></li>
+<li><p><strong>horizon</strong> (<em>int</em>) – Every episode lasts for exactly &#64;horizon timesteps.</p></li>
+<li><p><strong>ignore_done</strong> (<em>bool</em>) – True if never terminating the environment (ignore &#64;horizon).</p></li>
+<li><p><strong>hard_reset</strong> (<em>bool</em>) – If True, re-loads model, sim, and render object upon a reset call, else,
+only calls sim.reset and resets all robosuite-internal variables</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – [Invalid renderer selection]</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.environments.base.MujocoEnv.initialize_time">
+<code class="sig-name descname">initialize_time</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">control_freq</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.initialize_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the time constants used for simulation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>control_freq</strong> (<em>float</em>) – Hz rate to run control loop at within the simulation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.base.MujocoEnv.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets simulation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Environment observation space after reset occurs</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>OrderedDict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.base.MujocoEnv.step">
+<code class="sig-name descname">step</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes a step in simulation with control command &#64;action.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>action</strong> (<em>np.array</em>) – Action to execute within the environment</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>(OrderedDict) observations from the environment</p></li>
+<li><p>(float) reward from the environment</p></li>
+<li><p>(bool) whether the current episode is completed or not</p></li>
+<li><p>(dict) misc information</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>4-tuple</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – [Steps past episode termination]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.base.MujocoEnv.reward">
+<code class="sig-name descname">reward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.reward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reward should be a function of state and action</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>action</strong> (<em>np.array</em>) – Action to execute within the environment</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Reward from environment</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.base.MujocoEnv.render">
+<code class="sig-name descname">render</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renders to an on-screen window.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.base.MujocoEnv.observation_spec">
+<code class="sig-name descname">observation_spec</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.observation_spec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an observation as observation specification.</p>
+<p>An alternative design is to return an OrderedDict where the keys
+are the observation names and the values are the shapes of observations.
+We leave this alternative implementation commented out, as we find the
+current design is easier to use in practice.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Observations from the environment</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>OrderedDict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.base.MujocoEnv.action_spec">
+<em class="property">property </em><code class="sig-name descname">action_spec</code><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.action_spec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Action specification should be implemented in subclasses.</p>
+<p>Action space is represented by a tuple of (low, high), which are two numpy
+vectors that specify the min/max action limits per dimension.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.base.MujocoEnv.action_dim">
+<em class="property">property </em><code class="sig-name descname">action_dim</code><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.action_dim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Size of the action space
+:returns: Action space dimension
+:rtype: int</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.base.MujocoEnv.reset_from_xml_string">
+<code class="sig-name descname">reset_from_xml_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xml_string</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.reset_from_xml_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reloads the environment from an XML description of the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>xml_string</strong> (<em>str</em>) – Filepath to the xml file that will be loaded directly into the sim</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.base.MujocoEnv.find_contacts">
+<code class="sig-name descname">find_contacts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geoms_1</span></em>, <em class="sig-param"><span class="n">geoms_2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.find_contacts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds contact between two geom groups.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>geoms_1</strong> (<em>list of str</em>) – a list of geom names</p></li>
+<li><p><strong>geoms_2</strong> (<em>list of str</em>) – another list of geom names</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>iterator of all contacts between &#64;geoms_1 and &#64;geoms_2</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>generator</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.base.MujocoEnv.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do any cleanup necessary here.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="robot-environment">
+<h2>Robot Environment<a class="headerlink" href="#robot-environment" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.environments.robot_env.RobotEnv">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.robot_env.</code><code class="sig-name descname">RobotEnv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robots</span></em>, <em class="sig-param"><span class="n">controller_configs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gripper_types</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">gripper_visualizations</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">initialization_noise</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_camera_obs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">use_indicator_object</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">has_renderer</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">has_offscreen_renderer</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_camera</span><span class="o">=</span><span class="default_value">'frontview'</span></em>, <em class="sig-param"><span class="n">render_collision_mesh</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">render_visual_mesh</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">control_freq</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">horizon</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">ignore_done</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">hard_reset</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">camera_names</span><span class="o">=</span><span class="default_value">'agentview'</span></em>, <em class="sig-param"><span class="n">camera_heights</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_widths</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_depths</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.robot_env.RobotEnv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes a robot environment in Mujoco.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robots</strong> – Specification for specific robot arm(s) to be instantiated within this env
+(e.g: “Sawyer” would generate one arm; [“Panda”, “Panda”, “Sawyer”] would generate three robot arms)</p></li>
+<li><p><strong>controller_configs</strong> (<em>str</em><em> or </em><em>list of dict</em>) – If set, contains relevant controller parameters for creating a
+custom controller. Else, uses the default controller for this specific task. Should either be single
+dict if same controller is to be used for all robots or else it should be a list of the same length as
+“robots” param</p></li>
+<li><p><strong>gripper_types</strong> (<em>None</em><em> or </em><em>str</em><em> or </em><em>list of str</em>) – type of gripper, used to instantiate
+gripper models from gripper factory. Default is “default”, which is the default grippers(s) associated
+with the robot(s) the ‘robots’ specification. None removes the gripper, and any other (valid) model
+overrides the default gripper. Should either be single str if same gripper type is to be used for all
+robots or else it should be a list of the same length as “robots” param</p></li>
+<li><p><strong>gripper_visualizations</strong> (<em>bool</em><em> or </em><em>list of bool</em>) – True if using gripper visualization.
+Useful for teleoperation. Should either be single bool if gripper visualization is to be used for all
+robots or else it should be a list of the same length as “robots” param</p></li>
+<li><p><strong>initialization_noise</strong> (<em>dict</em><em> or </em><em>list of dict</em>) – <p>Dict containing the initialization noise parameters.
+The expected keys and corresponding value types are specified below:</p>
+<dl class="field-list simple">
+<dt class="field-odd"><cite>’magnitude’</cite></dt>
+<dd class="field-odd"><p>The scale factor of uni-variate random noise applied to each of a robot’s given initial
+joint positions. Setting this value to <cite>None</cite> or 0.0 results in no noise being applied.
+If “gaussian” type of noise is applied then this magnitude scales the standard deviation applied,
+If “uniform” type of noise is applied then this magnitude sets the bounds of the sampling range</p>
+</dd>
+<dt class="field-even"><cite>’type’</cite></dt>
+<dd class="field-even"><p>Type of noise to apply. Can either specify “gaussian” or “uniform”</p>
+</dd>
+</dl>
+<p>Should either be single dict if same noise value is to be used for all robots or else it should be a
+list of the same length as “robots” param</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>Specifying “default” will automatically use the default noise settings.
+Specifying None will automatically create the required dict with “magnitude” set to 0.0.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>use_camera_obs</strong> (<em>bool</em>) – if True, every observation includes rendered image(s)</p></li>
+<li><p><strong>use_indicator_object</strong> (<em>bool</em>) – if True, sets up an indicator object that
+is useful for debugging.</p></li>
+<li><p><strong>has_renderer</strong> (<em>bool</em>) – If true, render the simulation state in
+a viewer instead of headless mode.</p></li>
+<li><p><strong>has_offscreen_renderer</strong> (<em>bool</em>) – True if using off-screen rendering</p></li>
+<li><p><strong>render_camera</strong> (<em>str</em>) – Name of camera to render if <cite>has_renderer</cite> is True. Setting this value to ‘None’
+will result in the default angle being applied, which is useful as it can be dragged / panned by
+the user using the mouse</p></li>
+<li><p><strong>render_collision_mesh</strong> (<em>bool</em>) – True if rendering collision meshes in camera. False otherwise.</p></li>
+<li><p><strong>render_visual_mesh</strong> (<em>bool</em>) – True if rendering visual meshes in camera. False otherwise.</p></li>
+<li><p><strong>control_freq</strong> (<em>float</em>) – how many control signals to receive in every second. This sets the amount of
+simulation time that passes between every action input.</p></li>
+<li><p><strong>horizon</strong> (<em>int</em>) – Every episode lasts for exactly &#64;horizon timesteps.</p></li>
+<li><p><strong>ignore_done</strong> (<em>bool</em>) – True if never terminating the environment (ignore &#64;horizon).</p></li>
+<li><p><strong>hard_reset</strong> (<em>bool</em>) – If True, re-loads model, sim, and render object upon a reset call, else,
+only calls sim.reset and resets all robosuite-internal variables</p></li>
+<li><p><strong>camera_names</strong> (<em>str</em><em> or </em><em>list of str</em>) – <p>name of camera to be rendered. Should either be single str if
+same name is to be used for all cameras’ rendering or else it should be a list of cameras to render.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>At least one camera must be specified if &#64;use_camera_obs is True.</p>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>To render all robots’ cameras of a certain type (e.g.: “robotview” or “eye_in_hand”), use the
+convention “all-{name}” (e.g.: “all-robotview”) to automatically render all camera images from each
+robot’s camera list).</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>camera_heights</strong> (<em>int</em><em> or </em><em>list of int</em>) – height of camera frame. Should either be single int if
+same height is to be used for all cameras’ frames or else it should be a list of the same length as
+“camera names” param.</p></li>
+<li><p><strong>camera_widths</strong> (<em>int</em><em> or </em><em>list of int</em>) – width of camera frame. Should either be single int if
+same width is to be used for all cameras’ frames or else it should be a list of the same length as
+“camera names” param.</p></li>
+<li><p><strong>camera_depths</strong> (<em>bool</em><em> or </em><em>list of bool</em>) – True if rendering RGB-D, and RGB otherwise. Should either be single
+bool if same depth setting is to be used for all cameras or else it should be a list of the same length as
+“camera names” param.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ValueError</strong> – [Camera obs require offscreen renderer]</p></li>
+<li><p><strong>ValueError</strong> – [Camera name must be specified to use camera obs]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.environments.robot_env.RobotEnv.move_indicator">
+<code class="sig-name descname">move_indicator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pos</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.robot_env.RobotEnv.move_indicator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets 3d position of indicator object to &#64;pos.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pos</strong> (<em>3-tuple</em>) – (x,y,z) values to place the indicator within the env</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.robot_env.RobotEnv._pre_action">
+<code class="sig-name descname">_pre_action</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span></em>, <em class="sig-param"><span class="n">policy_step</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.robot_env.RobotEnv._pre_action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides the superclass method to control the robot(s) within this enviornment using their respective
+controllers using the passed actions and gripper control.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>action</strong> (<em>np.array</em>) – The control to apply to the robot(s). Note that this should be a flat 1D array that
+encompasses all actions to be distributed to each robot if there are multiple. For each section of the
+action space assigned to a single robot, the first &#64;self.robots[i].controller.control_dim dimensions
+should be the desired controller actions and if the robot has a gripper, the next
+&#64;self.robots[i].gripper.dof dimensions should be actuation controls for the gripper.</p></li>
+<li><p><strong>policy_step</strong> (<em>bool</em>) – Whether a new policy step (action) is being taken</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – [Invalid action dimension]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.robot_env.RobotEnv._post_action">
+<code class="sig-name descname">_post_action</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.robot_env.RobotEnv._post_action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run any necessary visualization after running the action</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>action</strong> (<em>np.array</em>) – Action being passed during this timestep</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>(float) reward from the environment</p></li>
+<li><p>(bool) whether the current episode is completed or not</p></li>
+<li><p>(dict) empty dict to be filled with information by subclassed method</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>3-tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.robot_env.RobotEnv._get_observation">
+<code class="sig-name descname">_get_observation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.robot_env.RobotEnv._get_observation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an OrderedDict containing observations [(name_string, np.array), …].</p>
+<p>Important keys:</p>
+<blockquote>
+<div><p><cite>‘robot-state’</cite>: contains robot-centric information.</p>
+<p><cite>‘image’</cite>: requires &#64;self.use_camera_obs to be True. Contains a rendered frame from the simulation.</p>
+<p><cite>‘depth’</cite>: requires &#64;self.use_camera_obs and &#64;self.camera_depth to be True.
+Contains a rendered depth map from the simulation</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Observations from the environment</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>OrderedDict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.robot_env.RobotEnv._check_gripper_contact">
+<code class="sig-name descname">_check_gripper_contact</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.robot_env.RobotEnv._check_gripper_contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether each gripper is in contact with an object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if the specific gripper is in contact with an object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list of bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.robot_env.RobotEnv._check_arm_contact">
+<code class="sig-name descname">_check_arm_contact</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.robot_env.RobotEnv._check_arm_contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether each robot arm is in contact with an object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if the specific gripper is in contact with an object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list of bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.robot_env.RobotEnv._check_q_limits">
+<code class="sig-name descname">_check_q_limits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.robot_env.RobotEnv._check_q_limits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if each robot arm is either very close or at the joint limits</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if the specific arm is near its joint limits</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list of bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.robot_env.RobotEnv._visualization">
+<code class="sig-name descname">_visualization</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.robot_env.RobotEnv._visualization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do any needed visualization here</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.robot_env.RobotEnv._load_robots">
+<code class="sig-name descname">_load_robots</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.robot_env.RobotEnv._load_robots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiates robots and stores them within the self.robots attribute</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.robot_env.RobotEnv._check_robot_configuration">
+<code class="sig-name descname">_check_robot_configuration</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robots</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.robot_env.RobotEnv._check_robot_configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sanity check to make sure inputted robots and the corresponding requested task/configuration combo is legal.
+Should be implemented in every specific task module</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>robots</strong> (<em>str</em><em> or </em><em>list of str</em>) – Inputted requested robots at the task-level environment</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="device.html" class="btn btn-neutral float-right" title="Device" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="robot.html" class="btn btn-neutral float-left" title="Robot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright Stanford Univeristy and The University of Texas at Austin 2020
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

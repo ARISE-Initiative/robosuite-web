@@ -1,0 +1,506 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Gripper Model &mdash; robosuite 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script src="../static/jquery.js"></script>
+        <script src="../static/underscore.js"></script>
+        <script src="../static/doctools.js"></script>
+        <script src="../static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Object Model" href="object_model.html" />
+    <link rel="prev" title="Robot Model" href="robot_model.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> robosuite
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demos.html">Demo Showcases</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/robots.html">Robots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/controllers.html">Controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Simulation API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/robot.html">Robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/device.html">Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/controller.html">Controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modeling API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="robot_model.html">Robot Model</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Gripper Model</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#base-gripper-model">Base Gripper Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="object_model.html">Object Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena.html">Arena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="task.html">Task</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Source API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/robosuite.html">robosuite</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Algorithms</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Projects using robosuite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">robosuite</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Gripper Model</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/modeling/gripper_model.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="gripper-model">
+<h1>Gripper Model<a class="headerlink" href="#gripper-model" title="Permalink to this headline">¶</a></h1>
+<p>The <cite>GripperModel</cite> class serves as a direct intermediary class that reads in information from a corresponding gripper XML file and also contains relevant hard-coded information from that XML. In conjunction with the <cite>RobotModel</cite> class, this serves as the core modeling component of the higher-level Robot class used in simulation.</p>
+<div class="section" id="base-gripper-model">
+<h2>Base Gripper Model<a class="headerlink" href="#base-gripper-model" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.models.grippers.gripper_model.GripperModel">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.grippers.gripper_model.</code><code class="sig-name descname">GripperModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">idn</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for grippers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fname</strong> (<em>str</em>) – Path to relevant xml file to create this gripper instance</p></li>
+<li><p><strong>idn</strong> (<em>int</em><em> or </em><em>str</em>) – Number or some other unique identification string for this gripper instance</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.models.grippers.gripper_model.GripperModel.hide_visualization">
+<code class="sig-name descname">hide_visualization</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.hide_visualization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hides all visualization geoms and sites.
+This should be called before rendering to agents</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.grippers.gripper_model.GripperModel.format_action">
+<code class="sig-name descname">format_action</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.format_action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given (-1,1) abstract control as np-array
+returns the (-1,1) control signals
+for underlying actuators as 1-d np array</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.grippers.gripper_model.GripperModel.naming_prefix">
+<em class="property">property </em><code class="sig-name descname">naming_prefix</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.naming_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a standardized prefix to append to all xml names to prevent naming collisions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Prefix unique to this gripper based on its ID</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.grippers.gripper_model.GripperModel.visualization_sites">
+<em class="property">property </em><code class="sig-name descname">visualization_sites</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.visualization_sites" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grabs a dict of sites corresponding to the geoms
+used to aid visualization by human. (usually “site” and “cylinder”)
+(and should be hidden from robots)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="field-list simple">
+<dt class="field-odd"><cite>‘grip_site’ (str)</cite></dt>
+<dd class="field-odd"><p>Name of grip actuation intersection location site</p>
+</dd>
+<dt class="field-even"><cite>’grip_cylinder’ (str)</cite></dt>
+<dd class="field-even"><p>Name of grip actuation z-axis location site</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.grippers.gripper_model.GripperModel.sensors">
+<em class="property">property </em><code class="sig-name descname">sensors</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.sensors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grabs a dict of sensor names for each gripper (usually “force_ee” and “torque_ee”)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="field-list simple">
+<dt class="field-odd"><cite>‘force_ee’ (str)</cite></dt>
+<dd class="field-odd"><p>Name of force eef sensor for this gripper</p>
+</dd>
+<dt class="field-even"><cite>’torque_ee’ (str)</cite></dt>
+<dd class="field-even"><p>Name of torque eef sensor for this gripper</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.grippers.gripper_model.GripperModel.dof">
+<em class="property">property </em><code class="sig-name descname">dof</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.dof" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the number of DOF of the gripper</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>gripper DOF</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.grippers.gripper_model.GripperModel.init_qpos">
+<em class="property">property </em><code class="sig-name descname">init_qpos</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.init_qpos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the default rest (open) qpos of the gripper</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Default init qpos of this gripper</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.grippers.gripper_model.GripperModel.speed">
+<em class="property">property </em><code class="sig-name descname">speed</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>How quickly the gripper opens / closes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Speed of the gripper</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.grippers.gripper_model.GripperModel._joints">
+<em class="property">property </em><code class="sig-name descname">_joints</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel._joints" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of joint names of the gripper. Note that these are the raw string names directly pulled from
+a gripper’s corresponding XML file, NOT the adjusted name with an auto-generated naming prefix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Raw XML joint names for this gripper</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.grippers.gripper_model.GripperModel._actuators">
+<em class="property">property </em><code class="sig-name descname">_actuators</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel._actuators" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of actuator names of the gripper. Note that these are the raw string names directly pulled from
+a gripper’s corresponding XML file, NOT the adjusted name with an auto-generated naming prefix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Raw XML actuator names for this gripper</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.grippers.gripper_model.GripperModel._contact_geoms">
+<em class="property">property </em><code class="sig-name descname">_contact_geoms</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel._contact_geoms" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of names corresponding to the geoms used to determine contact with the gripper. Note that these
+are the raw string names directly pulled from a gripper’s corresponding XML file, NOT the adjusted name with
+an auto-generated naming prefix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Raw XML relevant contact geoms for this gripper</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.grippers.gripper_model.GripperModel._visualization_geoms">
+<em class="property">property </em><code class="sig-name descname">_visualization_geoms</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel._visualization_geoms" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of sites corresponding to the geoms used to aid visualization by human (and should be
+hidden from robots). Note that these are the raw string names directly pulled from a gripper’s corresponding
+XML file, NOT the adjusted name with an auto-generated naming prefix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Raw XML relevant visualization geoms for this gripper</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.grippers.gripper_model.GripperModel._important_geoms">
+<em class="property">property </em><code class="sig-name descname">_important_geoms</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel._important_geoms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Geoms corresponding to important components of the gripper (by default, left_finger and right_finger).
+Note that these are the raw string names directly pulled from a gripper’s corresponding XML file,
+NOT the adjusted name with an auto-generated naming prefix</p>
+<p>Note that this should be a dict of lists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Raw XML important geoms, where each set of geoms are grouped as a list and are
+organized by keyword string entries into a dict</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict of list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="object_model.html" class="btn btn-neutral float-right" title="Object Model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="robot_model.html" class="btn btn-neutral float-left" title="Robot Model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright Stanford Univeristy and The University of Texas at Austin 2020
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

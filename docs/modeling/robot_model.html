@@ -1,0 +1,563 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Robot Model &mdash; robosuite 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script src="../static/jquery.js"></script>
+        <script src="../static/underscore.js"></script>
+        <script src="../static/doctools.js"></script>
+        <script src="../static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Gripper Model" href="gripper_model.html" />
+    <link rel="prev" title="Controller" href="../simulation/controller.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> robosuite
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demos.html">Demo Showcases</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/robots.html">Robots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/controllers.html">Controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Simulation API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/robot.html">Robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/device.html">Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/controller.html">Controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modeling API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Robot Model</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#base-robot-model">Base Robot Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gripper_model.html">Gripper Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="object_model.html">Object Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena.html">Arena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="task.html">Task</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Source API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/robosuite.html">robosuite</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Algorithms</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Projects using robosuite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">robosuite</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Robot Model</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/modeling/robot_model.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="robot-model">
+<h1>Robot Model<a class="headerlink" href="#robot-model" title="Permalink to this headline">¶</a></h1>
+<p>The RobotModel class serves as a direct intermediary class that reads in information from a corresponding robot XML
+file and also contains relevant hard-coded information from that XML. In conjunction with the GripperModel class, this
+serves as the core modeling component of the higher-level Robot class used in simulation.</p>
+<div class="section" id="base-robot-model">
+<h2>Base Robot Model<a class="headerlink" href="#base-robot-model" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.models.robots.robot_model.RobotModel">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.robots.robot_model.</code><code class="sig-name descname">RobotModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">idn</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">bottom_offset</span><span class="o">=</span><span class="default_value">0, 0, 0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for all robot models.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fname</strong> (<em>str</em>) – Path to relevant xml file from which to create this robot instance</p></li>
+<li><p><strong>idn</strong> (<em>int</em><em> or </em><em>str</em>) – Number or some other unique identification string for this robot instance</p></li>
+<li><p><strong>bottom_offset</strong> (<em>3-array of float</em>) – x,y,z offset desired from initial coordinates</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.models.robots.robot_model.RobotModel.add_gripper">
+<code class="sig-name descname">add_gripper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gripper</span></em>, <em class="sig-param"><span class="n">arm_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.add_gripper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mounts gripper to arm.</p>
+<p>Throws error if robot already has a gripper or gripper type is incorrect.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gripper</strong> (<em>MujocoGripper</em>) – gripper MJCF model</p></li>
+<li><p><strong>arm_name</strong> (<em>str</em>) – name of arm mount – defaults to self.eef_name if not specified</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – [Multiple grippers]</p></li>
+<li><p><a class="reference internal" href="../source/robosuite.utils.html#robosuite.utils.errors.XMLError" title="robosuite.utils.errors.XMLError"><strong>XMLError</strong></a> – [No / invalid actuator]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.robots.robot_model.RobotModel.set_base_xpos">
+<code class="sig-name descname">set_base_xpos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pos</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.set_base_xpos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Places the robot on position &#64;pos.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pos</strong> (<em>3-array</em>) – (x,y,z) position to place robot base</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.robots.robot_model.RobotModel.set_base_ori">
+<code class="sig-name descname">set_base_ori</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rot</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.set_base_ori" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotates robot by rotation &#64;rot from its original orientation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>rot</strong> (<em>3-array</em>) – (r,p,y) euler angles specifying the orientation for the robot base</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.robots.robot_model.RobotModel.set_joint_attribute">
+<code class="sig-name descname">set_joint_attribute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.set_joint_attribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets joint attributes, e.g.: friction loss, damping, etc.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attrib</strong> (<em>str</em>) – Attribute to set for all joints</p></li>
+<li><p><strong>values</strong> (<em>n-array</em>) – Values to set for each joint</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – [Inconsistent dimension sizes]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.robots.robot_model.RobotModel.correct_naming">
+<code class="sig-name descname">correct_naming</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">names</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.correct_naming" title="Permalink to this definition">¶</a></dt>
+<dd><p>Corrects all xml names by adding the naming prefix to it and returns the name-corrected values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>names</strong> (<em>str</em><em>, </em><em>list</em><em>, or </em><em>dict</em>) – Name(s) to be corrected</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>TypeError</strong> – [Invalid input type]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.robots.robot_model.RobotModel.naming_prefix">
+<em class="property">property </em><code class="sig-name descname">naming_prefix</code><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.naming_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a standardized prefix to append to all xml names to prevent naming collisions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Prefix unique to this robot based on its ID</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.robots.robot_model.RobotModel.joints">
+<em class="property">property </em><code class="sig-name descname">joints</code><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.joints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+list: Prefix-adjusted joint names for this robot</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.robots.robot_model.RobotModel.eef_name">
+<em class="property">property </em><code class="sig-name descname">eef_name</code><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.eef_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+str: Prefix-adjusted eef name for this robot</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.robots.robot_model.RobotModel.robot_base">
+<em class="property">property </em><code class="sig-name descname">robot_base</code><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.robot_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+str: Prefix-adjusted base name for this robot</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.robots.robot_model.RobotModel.actuators">
+<em class="property">property </em><code class="sig-name descname">actuators</code><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.actuators" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+list: Prefix-adjusted actuator names for this robot</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.robots.robot_model.RobotModel.contact_geoms">
+<em class="property">property </em><code class="sig-name descname">contact_geoms</code><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.contact_geoms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+list: Prefix-adjusted contact geom names for this robot</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.robots.robot_model.RobotModel.dof">
+<em class="property">property </em><code class="sig-name descname">dof</code><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.dof" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the number of DOF of the robot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>robot DOF</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.robots.robot_model.RobotModel.gripper">
+<em class="property">property </em><code class="sig-name descname">gripper</code><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.gripper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the default gripper type for this robot that gets added to end effector</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Default gripper name to add to this robot</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.robots.robot_model.RobotModel.default_controller_config">
+<em class="property">property </em><code class="sig-name descname">default_controller_config</code><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.default_controller_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the name of default controller config file in the controllers/config directory for this robot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>filename of default controller config for this robot</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.robots.robot_model.RobotModel.init_qpos">
+<em class="property">property </em><code class="sig-name descname">init_qpos</code><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.init_qpos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the default rest qpos of this robot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Default init qpos of this robot</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.robots.robot_model.RobotModel.base_xpos_offset">
+<em class="property">property </em><code class="sig-name descname">base_xpos_offset</code><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.base_xpos_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the dict of various (x,y,z) tuple offsets relative to specific arenas placed at (0,0,0)
+Assumes robot is facing forwards (in the +x direction) when determining offset. Should have entries for each
+arena case; i.e.: “bins”, “empty”, and “table”)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="field-list simple">
+<dt class="field-odd"><cite>‘bins’</cite></dt>
+<dd class="field-odd"><p>(x,y,z) robot offset if placed in bins arena</p>
+</dd>
+<dt class="field-even"><cite>’empty’</cite></dt>
+<dd class="field-even"><p>(x,y,z) robot offset if placed in the empty arena</p>
+</dd>
+<dt class="field-odd"><cite>’table’</cite></dt>
+<dd class="field-odd"><p>lambda function that takes in table_length and returns corresponding (x,y,z) offset
+if placed in the table arena</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.robots.robot_model.RobotModel.arm_type">
+<em class="property">property </em><code class="sig-name descname">arm_type</code><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.arm_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type of robot arm. Should be either “bimanual” or “single” (or something else if it gets added in the future)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Type of robot</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.robots.robot_model.RobotModel._root">
+<em class="property">property </em><code class="sig-name descname">_root</code><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel._root" title="Permalink to this definition">¶</a></dt>
+<dd><p>Root name of the mujoco xml body. Note that these are the raw string names directly pulled from a
+robot’s corresponding XML file, NOT the adjusted name with an auto-generated naming prefix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Raw XML root name for this robot</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.robots.robot_model.RobotModel._links">
+<em class="property">property </em><code class="sig-name descname">_links</code><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel._links" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of xml link names for this robot. Note that these are the raw string names directly pulled from a
+robot’s corresponding XML file, NOT the adjusted name with an auto-generated naming prefix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Raw XML link names for this robot</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="gripper_model.html" class="btn btn-neutral float-right" title="Gripper Model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../simulation/controller.html" class="btn btn-neutral float-left" title="Controller" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright Stanford Univeristy and The University of Texas at Austin 2020
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

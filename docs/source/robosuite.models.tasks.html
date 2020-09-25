@@ -1,0 +1,683 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>robosuite.models.tasks &mdash; robosuite 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script src="../static/jquery.js"></script>
+        <script src="../static/underscore.js"></script>
+        <script src="../static/doctools.js"></script>
+        <script src="../static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="robosuite.robots" href="robosuite.robots.html" />
+    <link rel="prev" title="robosuite.models.robots" href="robosuite.models.robots.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> robosuite
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demos.html">Demo Showcases</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/robots.html">Robots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/controllers.html">Controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Simulation API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/robot.html">Robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/device.html">Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/controller.html">Controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modeling API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/gripper_model.html">Gripper Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Source API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="robosuite.html">robosuite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="robosuite.controllers.html">robosuite.controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.devices.html">robosuite.devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.environments.html">robosuite.environments</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="robosuite.models.html">robosuite.models</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="robosuite.models.arenas.html">robosuite.models.arenas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.models.grippers.html">robosuite.models.grippers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.models.objects.html">robosuite.models.objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.models.robots.html">robosuite.models.robots</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">robosuite.models.tasks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.models.tasks.manipulation_task">robosuite.models.tasks.manipulation_task</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.models.tasks.placement_sampler">robosuite.models.tasks.placement_sampler</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.models.html#module-robosuite.models.base">robosuite.models.base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.models.html#module-robosuite.models.world">robosuite.models.world</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.robots.html">robosuite.robots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.utils.html">robosuite.utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.wrappers.html">robosuite.wrappers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Algorithms</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Projects using robosuite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">robosuite</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="robosuite.html">robosuite</a> &raquo;</li>
+        
+          <li><a href="robosuite.models.html">robosuite.models</a> &raquo;</li>
+        
+      <li>robosuite.models.tasks</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/source/robosuite.models.tasks.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="robosuite-models-tasks">
+<h1>robosuite.models.tasks<a class="headerlink" href="#robosuite-models-tasks" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-robosuite.models.tasks.manipulation_task">
+<span id="robosuite-models-tasks-manipulation-task"></span><h2>robosuite.models.tasks.manipulation_task<a class="headerlink" href="#module-robosuite.models.tasks.manipulation_task" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.models.tasks.manipulation_task.ManipulationTask">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.tasks.manipulation_task.</code><code class="sig-name descname">ManipulationTask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mujoco_arena</span></em>, <em class="sig-param"><span class="n">mujoco_robots</span></em>, <em class="sig-param"><span class="n">mujoco_objects</span></em>, <em class="sig-param"><span class="n">visual_objects</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">initializer</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.manipulation_task.ManipulationTask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="robosuite.models.html#robosuite.models.world.MujocoWorldBase" title="robosuite.models.world.MujocoWorldBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.world.MujocoWorldBase</span></code></a></p>
+<p>Creates MJCF model for a manipulation task performed, usually on a table top (or similar surface).</p>
+<p>A manipulation task consists of one or more robots interacting with a variable number of
+objects placed on a table. This class combines the robot(s), the arena, and the objects
+into a single MJCF model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mujoco_arena</strong> (<a class="reference internal" href="robosuite.models.arenas.html#robosuite.models.arenas.arena.Arena" title="robosuite.models.arenas.arena.Arena"><em>Arena</em></a>) – MJCF model of robot workspace</p></li>
+<li><p><strong>mujoco_robots</strong> (<em>list of RobotModel</em>) – MJCF model of robot model(s) (list)</p></li>
+<li><p><strong>mujoco_objects</strong> (<em>OrderedDict of MujocoObject</em>) – a list of MJCF models of physical objects</p></li>
+<li><p><strong>visual_objects</strong> (<em>OrderedDict of MujocoObject</em>) – a list of MJCF models of visual-only objects that do not
+participate in collisions</p></li>
+<li><p><strong>initializer</strong> (<a class="reference internal" href="#robosuite.models.tasks.placement_sampler.ObjectPositionSampler" title="robosuite.models.tasks.placement_sampler.ObjectPositionSampler"><em>ObjectPositionSampler</em></a>) – placement sampler to initialize object positions.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – [Invalid input object type]</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.models.tasks.manipulation_task.ManipulationTask.merge_arena">
+<code class="sig-name descname">merge_arena</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mujoco_arena</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.manipulation_task.ManipulationTask.merge_arena" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds arena model to the MJCF model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mujoco_arena</strong> (<a class="reference internal" href="robosuite.models.arenas.html#robosuite.models.arenas.arena.Arena" title="robosuite.models.arenas.arena.Arena"><em>Arena</em></a>) – arena to merge into this MJCF model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.tasks.manipulation_task.ManipulationTask.merge_objects">
+<code class="sig-name descname">merge_objects</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mujoco_objects</span></em>, <em class="sig-param"><span class="n">is_visual</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.manipulation_task.ManipulationTask.merge_objects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds object models to the MJCF model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mujoco_objects</strong> (<em>OrderedDict</em><em> or </em><a class="reference internal" href="robosuite.models.objects.html#robosuite.models.objects.objects.MujocoObject" title="robosuite.models.objects.objects.MujocoObject"><em>MujocoObject</em></a>) – objects to merge into this MJCF model</p></li>
+<li><p><strong>is_visual</strong> (<em>bool</em>) – Whether the object is a visual object or not</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.tasks.manipulation_task.ManipulationTask.merge_robot">
+<code class="sig-name descname">merge_robot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mujoco_robot</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.manipulation_task.ManipulationTask.merge_robot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds robot model to the MJCF model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mujoco_robot</strong> (<a class="reference internal" href="robosuite.models.robots.html#robosuite.models.robots.robot_model.RobotModel" title="robosuite.models.robots.robot_model.RobotModel"><em>RobotModel</em></a>) – robot to merge into this MJCF model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.tasks.manipulation_task.ManipulationTask.place_objects">
+<code class="sig-name descname">place_objects</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.manipulation_task.ManipulationTask.place_objects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Places objects randomly until no collisions or max iterations hit.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.models.tasks.placement_sampler">
+<span id="robosuite-models-tasks-placement-sampler"></span><h2>robosuite.models.tasks.placement_sampler<a class="headerlink" href="#module-robosuite.models.tasks.placement_sampler" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.models.tasks.placement_sampler.ObjectPositionSampler">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.tasks.placement_sampler.</code><code class="sig-name descname">ObjectPositionSampler</code><a class="headerlink" href="#robosuite.models.tasks.placement_sampler.ObjectPositionSampler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class of object placement sampler.</p>
+<dl class="py method">
+<dt id="robosuite.models.tasks.placement_sampler.ObjectPositionSampler.sample">
+<code class="sig-name descname">sample</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.placement_sampler.ObjectPositionSampler.sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sampling function to place objects. Should be implemented by subclasses</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.tasks.placement_sampler.ObjectPositionSampler.setup">
+<code class="sig-name descname">setup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mujoco_objects</span></em>, <em class="sig-param"><span class="n">table_top_offset</span></em>, <em class="sig-param"><span class="n">table_size</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.placement_sampler.ObjectPositionSampler.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required setup for this sampler</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mujoco_objects</strong> (<em>OrderedDict of MujocoObject</em>) – a list of MJCF models of physical objects</p></li>
+<li><p><strong>table_top_offset</strong> (<em>3-array of float</em>) – (x,y,z) offset values for the table</p></li>
+<li><p><strong>table_size</strong> (<em>3-array of float</em>) – (x,y,z) fullsize values for the table</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.models.tasks.placement_sampler.SequentialCompositeSampler">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.tasks.placement_sampler.</code><code class="sig-name descname">SequentialCompositeSampler</code><a class="headerlink" href="#robosuite.models.tasks.placement_sampler.SequentialCompositeSampler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.models.tasks.placement_sampler.ObjectPositionSampler" title="robosuite.models.tasks.placement_sampler.ObjectPositionSampler"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.tasks.placement_sampler.ObjectPositionSampler</span></code></a></p>
+<p>Samples position for each object sequentially. Allows chaining
+multiple placement initializers together - so that object locations can
+be sampled on top of other objects or relative to other object placements.</p>
+<dl class="py method">
+<dt id="robosuite.models.tasks.placement_sampler.SequentialCompositeSampler.append_sampler">
+<code class="sig-name descname">append_sampler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">object_name</span></em>, <em class="sig-param"><span class="n">sampler</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.placement_sampler.SequentialCompositeSampler.append_sampler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new placement initializer with corresponding objects and arguments</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>object_name</strong> (<em>str</em>) – Name of object to add</p></li>
+<li><p><strong>sampler</strong> (<a class="reference internal" href="#robosuite.models.tasks.placement_sampler.ObjectPositionSampler" title="robosuite.models.tasks.placement_sampler.ObjectPositionSampler"><em>ObjectPositionSampler</em></a>) – sampler to add</p></li>
+<li><p><strong>**kwargs</strong> – Additional arguments to pass to the sampler</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – [Object name in samplers]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.tasks.placement_sampler.SequentialCompositeSampler.hide">
+<code class="sig-name descname">hide</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">object_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.placement_sampler.SequentialCompositeSampler.hide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper method to remove an object from the workspace.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>object_name</strong> (<em>str</em>) – Name of object to hide</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.tasks.placement_sampler.SequentialCompositeSampler.sample">
+<code class="sig-name descname">sample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fixtures</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_placements</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.placement_sampler.SequentialCompositeSampler.sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sample from each placement initializer sequentially, in the order
+that they were appended.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fixtures</strong> (<em>dict</em>) – current dictionary of object placements in the scene. Used to make sure
+generated placements are valid.</p></li>
+<li><p><strong>return_placements</strong> (<em>bool</em>) – if True, return the updated dictionary
+of object placements.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>(list) list of placed object positions</p></li>
+<li><p>(list) list of placed object quaternions</p></li>
+<li><dl class="simple">
+<dt>(dict) if &#64;return_placements is True, returns a dictionary of all</dt><dd><p>object placements, including the ones placed by this sampler.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>2-tuple or 3-tuple</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="robosuite.utils.html#robosuite.utils.errors.RandomizationError" title="robosuite.utils.errors.RandomizationError"><strong>RandomizationError</strong></a> – [Cannot place all objects]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.tasks.placement_sampler.SequentialCompositeSampler.sample_on_top">
+<code class="sig-name descname">sample_on_top</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">object_name</span></em>, <em class="sig-param"><span class="n">surface_name</span><span class="o">=</span><span class="default_value">'table'</span></em>, <em class="sig-param"><span class="n">x_range</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">y_range</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rotation</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rotation_axis</span><span class="o">=</span><span class="default_value">'z'</span></em>, <em class="sig-param"><span class="n">z_offset</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">ensure_object_boundary_in_range</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.placement_sampler.SequentialCompositeSampler.sample_on_top" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sample placement on top of a surface object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>object_name</strong> (<em>str</em>) – Name of object to sample for</p></li>
+<li><p><strong>surface_name</strong> (<em>str</em>) – Name of object upon which the position will be sampled</p></li>
+<li><p><strong>x_range</strong> (<em>2-array of float</em>) – override the x_range used to uniformly place objects
+if None, default to x-range of table. Note that this is with respect to (0,0) = center of table.</p></li>
+<li><p><strong>y_range</strong> (<em>2-array of float</em>) – override the y_range used to uniformly place objects
+if None default to y-range of table. Note that this is with respect to (0,0) = center of table.</p></li>
+<li><p><strong>rotation</strong> (<em>None</em><em> or </em><em>float</em><em> or </em><em>Iterable</em>) – <dl class="field-list simple">
+<dt class="field-odd"><cite>None</cite></dt>
+<dd class="field-odd"><p>Add uniform random random rotation</p>
+</dd>
+<dt class="field-even"><cite>Iterable (a,b)</cite></dt>
+<dd class="field-even"><p>Uniformly randomize rotation angle between a and b (in radians)</p>
+</dd>
+<dt class="field-odd"><cite>value</cite></dt>
+<dd class="field-odd"><p>Add fixed angle rotation</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>rotation_axis</strong> (<em>str</em>) – Can be ‘x’, ‘y’, or ‘z’. Axis about which to apply the requested rotation</p></li>
+<li><p><strong>z_offset</strong> (<em>float</em>) – Add a small z-offset to placements. This is useful for fixed objects
+that do not move (i.e. no free joint) to place them above the table.</p></li>
+<li><p><strong>ensure_object_boundary_in_range</strong> (<em>bool</em>) – <dl class="field-list simple">
+<dt class="field-odd"><cite>True</cite></dt>
+<dd class="field-odd"><p>The center of object is at position:
+[uniform(min x_range + radius, max x_range - radius)], [uniform(min x_range + radius, max x_range - radius)]</p>
+</dd>
+<dt class="field-even"><cite>False</cite></dt>
+<dd class="field-even"><p>[uniform(min x_range, max x_range)], [uniform(min x_range, max x_range)]</p>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.tasks.placement_sampler.SequentialCompositeSampler.setup">
+<code class="sig-name descname">setup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mujoco_objects</span></em>, <em class="sig-param"><span class="n">table_top_offset</span></em>, <em class="sig-param"><span class="n">table_size</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.placement_sampler.SequentialCompositeSampler.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides super implementation so that we can setup all placement
+initializers we own.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mujoco_objects</strong> (<em>OrderedDict of MujocoObject</em>) – a list of MJCF models of physical objects</p></li>
+<li><p><strong>table_top_offset</strong> (<em>3-array of float</em>) – (x,y,z) offset values for the table</p></li>
+<li><p><strong>table_size</strong> (<em>3-array of float</em>) – (x,y,z) fullsize values for the table</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – [Mujoco Objects is not OrderedDict]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.models.tasks.placement_sampler.UniformRandomSampler">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.tasks.placement_sampler.</code><code class="sig-name descname">UniformRandomSampler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x_range</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">y_range</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ensure_object_boundary_in_range</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">rotation</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rotation_axis</span><span class="o">=</span><span class="default_value">'z'</span></em>, <em class="sig-param"><span class="n">z_offset</span><span class="o">=</span><span class="default_value">0.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.placement_sampler.UniformRandomSampler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.models.tasks.placement_sampler.ObjectPositionSampler" title="robosuite.models.tasks.placement_sampler.ObjectPositionSampler"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.tasks.placement_sampler.ObjectPositionSampler</span></code></a></p>
+<p>Places all objects within the table uniformly random.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_range</strong> (<em>2-array of float</em>) – override the x_range used to uniformly place objects
+if None, default to x-range of table. Note that this is with respect to (0,0) = center of table.</p></li>
+<li><p><strong>y_range</strong> (<em>2-array of float</em>) – override the y_range used to uniformly place objects
+if None default to y-range of table. Note that this is with respect to (0,0) = center of table.</p></li>
+<li><p><strong>ensure_object_boundary_in_range</strong> (<em>bool</em>) – <dl class="field-list simple">
+<dt class="field-odd"><cite>True</cite></dt>
+<dd class="field-odd"><p>The center of object is at position:
+[uniform(min x_range + radius, max x_range - radius)], [uniform(min x_range + radius, max x_range - radius)]</p>
+</dd>
+<dt class="field-even"><cite>False</cite></dt>
+<dd class="field-even"><p>[uniform(min x_range, max x_range)], [uniform(min x_range, max x_range)]</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>rotation</strong> (<em>None</em><em> or </em><em>float</em><em> or </em><em>Iterable</em>) – <dl class="field-list simple">
+<dt class="field-odd"><cite>None</cite></dt>
+<dd class="field-odd"><p>Add uniform random random rotation</p>
+</dd>
+<dt class="field-even"><cite>Iterable (a,b)</cite></dt>
+<dd class="field-even"><p>Uniformly randomize rotation angle between a and b (in radians)</p>
+</dd>
+<dt class="field-odd"><cite>value</cite></dt>
+<dd class="field-odd"><p>Add fixed angle rotation</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>rotation_axis</strong> (<em>str</em>) – Can be ‘x’, ‘y’, or ‘z’. Axis about which to apply the requested rotation</p></li>
+<li><p><strong>z_offset</strong> (<em>float</em>) – Add a small z-offset to placements. This is useful for fixed objects
+that do not move (i.e. no free joint) to place them above the table.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.models.tasks.placement_sampler.UniformRandomSampler.sample">
+<code class="sig-name descname">sample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fixtures</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_placements</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">reference_object_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sample_on_top</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.placement_sampler.UniformRandomSampler.sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uniformly sample on a surface (not necessarily table surface).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fixtures</strong> (<em>dict</em>) – current dictionary of object placements in the scene. Used to make sure
+generated placements are valid.</p></li>
+<li><p><strong>return_placements</strong> (<em>bool</em>) – if True, return the updated dictionary
+of object placements.</p></li>
+<li><p><strong>reference_object_name</strong> (<em>str</em>) – if provided, sample placement relative to this object’s
+placement (which must be provided in &#64;fixtures).</p></li>
+<li><p><strong>sample_on_top</strong> (<em>bool</em>) – if True, sample placement on top of the reference object.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>(list) list of placed object positions</p></li>
+<li><p>(list) list of placed object quaternions</p></li>
+<li><dl class="simple">
+<dt>(dict) if &#64;return_placements is True, returns a dictionary of all</dt><dd><p>object placements, including the ones placed by this sampler.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>2-tuple or 3-tuple</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="robosuite.utils.html#robosuite.utils.errors.RandomizationError" title="robosuite.utils.errors.RandomizationError"><strong>RandomizationError</strong></a> – [Cannot place all objects]</p></li>
+<li><p><strong>AssertionError</strong> – [Reference object name does not exist]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.tasks.placement_sampler.UniformRandomSampler.sample_quat">
+<code class="sig-name descname">sample_quat</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.placement_sampler.UniformRandomSampler.sample_quat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Samples the orientation for a given object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>sampled (r,p,y) euler angle orientation</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – [Invalid rotation axis]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.tasks.placement_sampler.UniformRandomSampler.sample_x">
+<code class="sig-name descname">sample_x</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">object_horizontal_radius</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.placement_sampler.UniformRandomSampler.sample_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Samples the x location for a given object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>object_horizontal_radius</strong> (<em>float</em>) – Radius of the object currently being sampled for</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sampled x position</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.tasks.placement_sampler.UniformRandomSampler.sample_y">
+<code class="sig-name descname">sample_y</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">object_horizontal_radius</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.placement_sampler.UniformRandomSampler.sample_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Samples the y location for a given object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>object_horizontal_radius</strong> (<em>float</em>) – Radius of the object currently being sampled for</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sampled y position</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="robosuite.robots.html" class="btn btn-neutral float-right" title="robosuite.robots" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="robosuite.models.robots.html" class="btn btn-neutral float-left" title="robosuite.models.robots" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright Stanford Univeristy and The University of Texas at Austin 2020
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

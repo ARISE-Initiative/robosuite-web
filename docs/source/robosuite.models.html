@@ -1,0 +1,522 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>robosuite.models &mdash; robosuite 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script src="../static/jquery.js"></script>
+        <script src="../static/underscore.js"></script>
+        <script src="../static/doctools.js"></script>
+        <script src="../static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="robosuite.models.arenas" href="robosuite.models.arenas.html" />
+    <link rel="prev" title="robosuite.environments" href="robosuite.environments.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> robosuite
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demos.html">Demo Showcases</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/robots.html">Robots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/controllers.html">Controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Simulation API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/robot.html">Robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/device.html">Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/controller.html">Controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modeling API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/gripper_model.html">Gripper Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Source API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="robosuite.html">robosuite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="robosuite.controllers.html">robosuite.controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.devices.html">robosuite.devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.environments.html">robosuite.environments</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">robosuite.models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.models.arenas.html">robosuite.models.arenas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.models.grippers.html">robosuite.models.grippers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.models.objects.html">robosuite.models.objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.models.robots.html">robosuite.models.robots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.models.tasks.html">robosuite.models.tasks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.models.base">robosuite.models.base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.models.world">robosuite.models.world</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.robots.html">robosuite.robots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.utils.html">robosuite.utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.wrappers.html">robosuite.wrappers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Algorithms</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Projects using robosuite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">robosuite</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="robosuite.html">robosuite</a> &raquo;</li>
+        
+      <li>robosuite.models</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/source/robosuite.models.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="robosuite-models">
+<h1>robosuite.models<a class="headerlink" href="#robosuite-models" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="robosuite.models.arenas.html">robosuite.models.arenas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.arenas.html#module-robosuite.models.arenas.arena">robosuite.models.arenas.arena</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.arenas.html#module-robosuite.models.arenas.bins_arena">robosuite.models.arenas.bins_arena</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.arenas.html#module-robosuite.models.arenas.empty_arena">robosuite.models.arenas.empty_arena</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.arenas.html#module-robosuite.models.arenas.pegs_arena">robosuite.models.arenas.pegs_arena</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.arenas.html#module-robosuite.models.arenas.table_arena">robosuite.models.arenas.table_arena</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.arenas.html#module-robosuite.models.arenas.wipe_arena">robosuite.models.arenas.wipe_arena</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="robosuite.models.grippers.html">robosuite.models.grippers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.grippers.html#module-robosuite.models.grippers.gripper_factory">robosuite.models.grippers.gripper_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.grippers.html#module-robosuite.models.grippers.gripper_model">robosuite.models.grippers.gripper_model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.grippers.html#module-robosuite.models.grippers.gripper_tester">robosuite.models.grippers.gripper_tester</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.grippers.html#module-robosuite.models.grippers.jaco_three_finger_gripper">robosuite.models.grippers.jaco_three_finger_gripper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.grippers.html#module-robosuite.models.grippers.null_gripper">robosuite.models.grippers.null_gripper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.grippers.html#module-robosuite.models.grippers.panda_gripper">robosuite.models.grippers.panda_gripper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.grippers.html#module-robosuite.models.grippers.rethink_gripper">robosuite.models.grippers.rethink_gripper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.grippers.html#module-robosuite.models.grippers.robotiq_140_gripper">robosuite.models.grippers.robotiq_140_gripper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.grippers.html#module-robosuite.models.grippers.robotiq_85_gripper">robosuite.models.grippers.robotiq_85_gripper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.grippers.html#module-robosuite.models.grippers.robotiq_three_finger_gripper">robosuite.models.grippers.robotiq_three_finger_gripper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.grippers.html#module-robosuite.models.grippers.wiping_gripper">robosuite.models.grippers.wiping_gripper</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="robosuite.models.objects.html">robosuite.models.objects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.objects.html#module-robosuite.models.objects.generated_objects">robosuite.models.objects.generated_objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.objects.html#module-robosuite.models.objects.objects">robosuite.models.objects.objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.objects.html#module-robosuite.models.objects.xml_objects">robosuite.models.objects.xml_objects</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="robosuite.models.robots.html">robosuite.models.robots</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.robots.html#module-robosuite.models.robots.baxter_robot">robosuite.models.robots.baxter_robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.robots.html#module-robosuite.models.robots.iiwa_robot">robosuite.models.robots.iiwa_robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.robots.html#module-robosuite.models.robots.jaco_robot">robosuite.models.robots.jaco_robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.robots.html#module-robosuite.models.robots.kinova3_robot">robosuite.models.robots.kinova3_robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.robots.html#module-robosuite.models.robots.panda_robot">robosuite.models.robots.panda_robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.robots.html#module-robosuite.models.robots.robot_model">robosuite.models.robots.robot_model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.robots.html#module-robosuite.models.robots.sawyer_robot">robosuite.models.robots.sawyer_robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.robots.html#module-robosuite.models.robots.ur5e_robot">robosuite.models.robots.ur5e_robot</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="robosuite.models.tasks.html">robosuite.models.tasks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.tasks.html#module-robosuite.models.tasks.manipulation_task">robosuite.models.tasks.manipulation_task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.tasks.html#module-robosuite.models.tasks.placement_sampler">robosuite.models.tasks.placement_sampler</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="module-robosuite.models.base">
+<span id="robosuite-models-base"></span><h2>robosuite.models.base<a class="headerlink" href="#module-robosuite.models.base" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.models.base.MujocoXML">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.base.</code><code class="sig-name descname">MujocoXML</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.base.MujocoXML" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class of Mujoco xml file
+Wraps around ElementTree and provides additional functionality for merging different models.
+Specially, we keep track of &lt;worldbody/&gt;, &lt;actuator/&gt; and &lt;asset/&gt;</p>
+<p>When initialized, loads a mujoco xml from file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fname</strong> (<em>str</em>) – path to the MJCF xml file.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.models.base.MujocoXML.add_prefix">
+<code class="sig-name descname">add_prefix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">tags</span><span class="o">=</span><span class="default_value">'body', 'joint', 'sensor', 'site', 'geom', 'camera', 'actuator', 'tendon', 'asset', 'mesh', 'texture', 'material'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.base.MujocoXML.add_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility method to add prefix to all body names to prevent name clashes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prefix</strong> (<em>str</em>) – Prefix to be appended to all requested elements in this XML</p></li>
+<li><p><strong>tags</strong> (<em>list</em><em> or </em><em>tuple</em>) – Tags to be searched in the XML. All elements with specified tags will have “prefix”
+prepended to it</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.base.MujocoXML.create_default_element">
+<code class="sig-name descname">create_default_element</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.base.MujocoXML.create_default_element" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a &lt;&#64;name/&gt; tag under root if there is none.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name to generate default element</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Node that was created</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ET.Element</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.base.MujocoXML.get_element_names">
+<code class="sig-name descname">get_element_names</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">root</span></em>, <em class="sig-param"><span class="n">element_type</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.base.MujocoXML.get_element_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Searches recursively through the &#64;root and returns a list of names of the specified &#64;element_type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>root</strong> (<em>ET.Element</em>) – Root of the xml element tree to start recursively searching through
+(e.g.: <cite>self.worldbody</cite>)</p></li>
+<li><p><strong>element_type</strong> (<em>str</em>) – Name of element to return names of. (e.g.: “site”, “geom”, etc.)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>names that correspond to the specified &#64;element_type</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.base.MujocoXML.get_model">
+<code class="sig-name descname">get_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'mujoco_py'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.base.MujocoXML.get_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a MjModel instance from the current xml tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mode</strong> (<em>str</em>) – Mode with which to interpret xml tree</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>generated model from xml</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>MjModel</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – [Invalid mode]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.base.MujocoXML.get_xml">
+<code class="sig-name descname">get_xml</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.base.MujocoXML.get_xml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads a string of the MJCF XML file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>XML tree read in from file</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.base.MujocoXML.merge">
+<code class="sig-name descname">merge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">others</span></em>, <em class="sig-param"><span class="n">merge_body</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.base.MujocoXML.merge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default merge method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>others</strong> (<a class="reference internal" href="#robosuite.models.base.MujocoXML" title="robosuite.models.base.MujocoXML"><em>MujocoXML</em></a><em> or </em><em>list of MujocoXML</em>) – other xmls to merge into this one
+raises XML error if &#64;others is not a MujocoXML instance.
+merges &lt;worldbody/&gt;, &lt;actuator/&gt; and &lt;asset/&gt; of &#64;others into &#64;self</p></li>
+<li><p><strong>merge_body</strong> (<em>bool</em>) – True if merging child bodies of &#64;others</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="robosuite.utils.html#robosuite.utils.errors.XMLError" title="robosuite.utils.errors.XMLError"><strong>XMLError</strong></a> – [Invalid XML instance]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.base.MujocoXML.merge_asset">
+<code class="sig-name descname">merge_asset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.base.MujocoXML.merge_asset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merges other files in a custom logic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#robosuite.models.base.MujocoXML" title="robosuite.models.base.MujocoXML"><em>MujocoXML</em></a>) – other xml file whose assets will be merged into this one</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.base.MujocoXML.resolve_asset_dependency">
+<code class="sig-name descname">resolve_asset_dependency</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.base.MujocoXML.resolve_asset_dependency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts every file dependency into absolute path so when we merge we don’t break things.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.base.MujocoXML.save_model">
+<code class="sig-name descname">save_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">pretty</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.base.MujocoXML.save_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the xml to file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fname</strong> (<em>str</em>) – output file location</p></li>
+<li><p><strong>pretty</strong> (<em>bool</em>) – If True, (attempts!! to) pretty print the output</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.models.world">
+<span id="robosuite-models-world"></span><h2>robosuite.models.world<a class="headerlink" href="#module-robosuite.models.world" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.models.world.MujocoWorldBase">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.world.</code><code class="sig-name descname">MujocoWorldBase</code><a class="headerlink" href="#robosuite.models.world.MujocoWorldBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.models.base.MujocoXML" title="robosuite.models.base.MujocoXML"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.base.MujocoXML</span></code></a></p>
+<p>Base class to inherit all mujoco worlds from.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="robosuite.models.arenas.html" class="btn btn-neutral float-right" title="robosuite.models.arenas" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="robosuite.environments.html" class="btn btn-neutral float-left" title="robosuite.environments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright Stanford Univeristy and The University of Texas at Austin 2020
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

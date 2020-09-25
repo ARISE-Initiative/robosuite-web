@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Projects using robosuite &mdash; robosuite 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/theme_overrides.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+        <script src="static/jquery.js"></script>
+        <script src="static/underscore.js"></script>
+        <script src="static/doctools.js"></script>
+        <script src="static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Acknowledgements" href="acknowledgement.html" />
+    <link rel="prev" title="RoboTurk Datasets" href="algorithms/roboturk.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> robosuite
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demos.html">Demo Showcases</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/robots.html">Robots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/controllers.html">Controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/devices.html">I/O Devices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Simulation API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="simulation/robot.html">Robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simulation/environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simulation/device.html">Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simulation/controller.html">Controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modeling API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modeling/robot_model.html">Robot Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeling/gripper_model.html">Gripper Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeling/object_model.html">Object Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeling/arena.html">Arena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeling/task.html">Task</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Source API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="source/robosuite.html">robosuite</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Algorithms</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="algorithms/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms/roboturk.html">RoboTurk Datasets</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Projects using robosuite</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#reinforcement-learning">Reinforcement Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#imitation-learning-and-batch-offline-reinforcement-learning">Imitation Learning and Batch (Offline) Reinforcement Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#benchmarks">Benchmarks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sim2real">Sim2Real</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgement.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">robosuite</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Projects using robosuite</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="sources/references.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="projects-using-robosuite">
+<h1>Projects using robosuite<a class="headerlink" href="#projects-using-robosuite" title="Permalink to this headline">¶</a></h1>
+<p>A list of references of projects and papers that use <strong>robosuite</strong>. If you would like to add your work to this list, please send the paper information to Yuke Zhu (<a class="reference external" href="mailto:yukez&#37;&#52;&#48;cs&#46;utexas&#46;edu">yukez<span>&#64;</span>cs<span>&#46;</span>utexas<span>&#46;</span>edu</a>).</p>
+<div class="section" id="reinforcement-learning">
+<h2>Reinforcement Learning<a class="headerlink" href="#reinforcement-learning" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://svl.stanford.edu/assets/papers/fan2018corl.pdf">SURREAL: Open-Source Reinforcement Learning Framework and Robot Manipulation Benchmark</a>. Linxi Fan*, Yuke Zhu*, Jiren Zhu, Zihua Liu, Orien Zeng, Anchit Gupta, Joan Creus-Costa, Silvio Savarese, Li Fei-Fei</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1909.12989">SURREAL-System: Fully-Integrated Stack for Distributed Deep Reinforcement Learning</a>. Linxi Fan*, Yuke Zhu*, Jiren Zhu, Zihua Liu, Orien Zeng, Anchit Gupta, Joan Creus-Costa, Silvio Savarese, Li Fei-Fei</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1906.08880">Variable Impedance Control in End-Effector Space: An Action Space for Reinforcement Learning in Contact-Rich Tasks</a>. Roberto Martín-Martín, Michelle A. Lee, Rachel Gardner, Silvio Savarese, Jeannette Bohg, Animesh Garg</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1910.05396">Network Randomization: A Simple Technique for Generalization in Deep Reinforcement Learning</a>. Kimin Lee, Kibok Lee, Jinwoo Shin, Honglak Lee</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1909.13874">Efficient Bimanual Manipulation Using Learned Task Schemas</a>. Rohan Chitnis, Shubham Tulsiani, Saurabh Gupta, Abhinav Gupta</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2002.05189">Intrinsic Motivation for Encouraging Synergistic Behavior</a>. Rohan Chitnis, Shubham Tulsiani, Saurabh Gupta, Abhinav Gupta</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2006.13205">Long-Horizon Visual Planning with Goal-Conditioned Hierarchical Predictors</a>. Karl Pertsch, Oleh Rybkin, Frederik Ebert, Chelsea Finn, Dinesh Jayaraman, Sergey Levine</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2003.02740">Balance Between Efficient and Effective Learning: Dense2Sparse Reward Shaping for Robot Manipulation with Environment Uncertainty</a>. Yongle Luo, Kun Dong, Lili Zhao, Zhiyong Sun, Chao Zhou, Bo Song</p></li>
+<li><p><a class="reference external" href="http://rllab.snu.ac.kr/publications/papers/2020_icra_gads.pdf">Hierarchical 6-DoF Grasping with Approaching Direction Selection</a>. Yunho Choi, Hogun Kee, Kyungjae Lee, JaeGoo Choy, Junhong Min, Sohee Lee, and Songhwai Oh</p></li>
+</ul>
+</div>
+<div class="section" id="imitation-learning-and-batch-offline-reinforcement-learning">
+<h2>Imitation Learning and Batch (Offline) Reinforcement Learning<a class="headerlink" href="#imitation-learning-and-batch-offline-reinforcement-learning" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://arxiv.org/abs/1811.02790">RoboTurk: A Crowdsourcing Platform for Robotic Skill Learning through Imitation</a>. Ajay Mandlekar, Yuke Zhu, Animesh Garg, Jonathan Booher, Max Spero, Albert Tung, Julian Gao, John Emmons, Anchit Gupta, Emre Orbay, Silvio Savarese, Li Fei-Fei</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1911.05321">IRIS: Implicit Reinforcement without Interaction at Scale for Learning Control from Offline Robot Manipulation Data</a>. Ajay Mandlekar, Fabio Ramos, Byron Boots, Silvio Savarese, Li Fei-Fei, Animesh Garg, Dieter Fox</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1912.07670">To Follow or not to Follow: Selective Imitation Learning from Observations</a>. Youngwoon Lee, Edward S. Hu, Zhengyu Yang, Joseph J. Lim</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2006.16232">Learning Robot Skills with Temporal Variational Inference</a>. Tanmay Shankar, Abhinav Gupta</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2008.07682">Residual Learning from Demonstration</a>. Todor Davchev, Kevin Sebastian Luck, Michael Burke, Franziska Meier, Stefan Schaal, Subramanian Ramamoorthy</p></li>
+</ul>
+</div>
+<div class="section" id="benchmarks">
+<h2>Benchmarks<a class="headerlink" href="#benchmarks" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://arxiv.org/abs/1911.07246">IKEA Furniture Assembly Environment for Long-Horizon Complex Manipulation Tasks</a>. Youngwoon Lee, Edward S. Hu, Zhengyu Yang, Alex Yin, Joseph J. Lim</p></li>
+</ul>
+</div>
+<div class="section" id="sim2real">
+<h2>Sim2Real<a class="headerlink" href="#sim2real" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://arxiv.org/abs/2008.06686">Crossing the Gap: A Deep Dive into Zero-Shot Sim-to-Real Transfer for Dynamics</a>. Eugene Valassakis, Zihan Ding, Edward Johns</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="acknowledgement.html" class="btn btn-neutral float-right" title="Acknowledgements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="algorithms/roboturk.html" class="btn btn-neutral float-left" title="RoboTurk Datasets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright Stanford Univeristy and The University of Texas at Austin 2020
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
