@@ -25,7 +25,7 @@ videoId: "robosuite-video-faster.mp4"
 @inproceedings{robosuite2020,
   title={robosuite: A Modular Simulation Framework and Benchmark for Robot Learning},
   author={Yuke Zhu and Josiah Wong and Ajay Mandlekar and Roberto Mart\'{i}n-Mart\'{i}n},
-  booktitle={arXiv technical report},
+  booktitle={arXiv preprint arXiv:2009.12293},
   year={2020}
 }
 ```
