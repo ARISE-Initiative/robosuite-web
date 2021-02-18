@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Device &mdash; robosuite 1.0.0 documentation</title>
+  <title>Device &mdash; robosuite 1.2.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.0.0
+                1.2.0
               </div>
             
           
@@ -106,6 +106,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/renderers.html">Renderers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Simulation API</span></p>
 <ul class="current">
@@ -114,15 +115,15 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Device</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#base-device">Base Device</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#keyboard-device">Keyboard Device</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#spacemouse-device">Spacemouse Device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spacemouse-device">SpaceMouse Device</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="controller.html">Controller</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Modeling API</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/mujoco_model.html">Mujoco Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modeling/gripper_model.html">Gripper Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
@@ -135,6 +136,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
@@ -232,7 +234,7 @@
 </style>
 <div class="section" id="device">
 <h1>Device<a class="headerlink" href="#device" title="Permalink to this headline">¶</a></h1>
-<p>Devices allow for direct real-time interfacing with the MuJoCo simulation. The current support devices are Keyboard and Spacemouse.</p>
+<p>Devices allow for direct real-time interfacing with the MuJoCo simulation. The current support devices are <code class="docutils literal notranslate"><span class="pre">Keyboard</span></code> and <code class="docutils literal notranslate"><span class="pre">SpaceMouse</span></code>.</p>
 <div class="section" id="base-device">
 <h2>Base Device<a class="headerlink" href="#base-device" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
@@ -328,7 +330,7 @@ start receiving commands.</p>
 
 </div>
 <div class="section" id="spacemouse-device">
-<h2>Spacemouse Device<a class="headerlink" href="#spacemouse-device" title="Permalink to this headline">¶</a></h2>
+<h2>SpaceMouse Device<a class="headerlink" href="#spacemouse-device" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="robosuite.devices.spacemouse.SpaceMouse">
 <em class="property">class </em><code class="sig-prename descclassname">robosuite.devices.spacemouse.</code><code class="sig-name descname">SpaceMouse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vendor_id</span><span class="o">=</span><span class="default_value">9583</span></em>, <em class="sig-param"><span class="n">product_id</span><span class="o">=</span><span class="default_value">50735</span></em>, <em class="sig-param"><span class="n">pos_sensitivity</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">rot_sensitivity</span><span class="o">=</span><span class="default_value">1.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse" title="Permalink to this definition">¶</a></dt>

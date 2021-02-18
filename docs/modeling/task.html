@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Task &mdash; robosuite 1.0.0 documentation</title>
+  <title>Task &mdash; robosuite 1.2.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.0.0
+                1.2.0
               </div>
             
           
@@ -106,6 +106,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/renderers.html">Renderers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Simulation API</span></p>
 <ul>
@@ -116,12 +117,12 @@
 </ul>
 <p class="caption"><span class="caption-text">Modeling API</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="mujoco_model.html">Mujoco Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="robot_model.html">Robot Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gripper_model.html">Gripper Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="object_model.html">Object Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arena.html">Arena</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Task</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#manipulation-task">Manipulation Task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#base-task">Base Task</a></li>
 </ul>
 </li>
 </ul>
@@ -133,6 +134,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
@@ -230,27 +232,22 @@
 </style>
 <div class="section" id="task">
 <h1>Task<a class="headerlink" href="#task" title="Permalink to this headline">¶</a></h1>
-<p>The Task class is responsible for integrating a given Arena, RobotModel, and set of MujocoObjects into a single element
-tree that is then parsed and converted into an MjSim object. It is also responsible for placing the objects within
-the simulation.</p>
-<div class="section" id="manipulation-task">
-<h2>Manipulation Task<a class="headerlink" href="#manipulation-task" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">Task</span></code> class is responsible for integrating a given <code class="docutils literal notranslate"><span class="pre">Arena</span></code>, <code class="docutils literal notranslate"><span class="pre">RobotModel</span></code>, and set of <code class="docutils literal notranslate"><span class="pre">MujocoObjects</span></code> into a single element tree that is then parsed and converted into an <code class="docutils literal notranslate"><span class="pre">MjSim</span></code> object.</p>
+<div class="section" id="base-task">
+<h2>Base Task<a class="headerlink" href="#base-task" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="robosuite.models.tasks.ManipulationTask">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.tasks.</code><code class="sig-name descname">ManipulationTask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mujoco_arena</span></em>, <em class="sig-param"><span class="n">mujoco_robots</span></em>, <em class="sig-param"><span class="n">mujoco_objects</span></em>, <em class="sig-param"><span class="n">visual_objects</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">initializer</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.ManipulationTask" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates MJCF model for a manipulation task performed, usually on a table top (or similar surface).</p>
-<p>A manipulation task consists of one or more robots interacting with a variable number of
-objects placed on a table. This class combines the robot(s), the arena, and the objects
+<dt id="robosuite.models.tasks.task.Task">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.tasks.task.</code><code class="sig-name descname">Task</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mujoco_arena</span></em>, <em class="sig-param"><span class="n">mujoco_robots</span></em>, <em class="sig-param"><span class="n">mujoco_objects</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.task.Task" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates MJCF model for a task performed.</p>
+<p>A task consists of one or more robots interacting with a variable number of
+objects. This class combines the robot(s), the arena, and the objects
 into a single MJCF model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>mujoco_arena</strong> (<a class="reference internal" href="../source/robosuite.models.arenas.html#robosuite.models.arenas.arena.Arena" title="robosuite.models.arenas.arena.Arena"><em>Arena</em></a>) – MJCF model of robot workspace</p></li>
-<li><p><strong>mujoco_robots</strong> (<em>list of RobotModel</em>) – MJCF model of robot model(s) (list)</p></li>
-<li><p><strong>mujoco_objects</strong> (<em>OrderedDict of MujocoObject</em>) – a list of MJCF models of physical objects</p></li>
-<li><p><strong>visual_objects</strong> (<em>OrderedDict of MujocoObject</em>) – a list of MJCF models of visual-only objects that do not
-participate in collisions</p></li>
-<li><p><strong>initializer</strong> (<a class="reference internal" href="../source/robosuite.models.tasks.html#robosuite.models.tasks.placement_sampler.ObjectPositionSampler" title="robosuite.models.tasks.placement_sampler.ObjectPositionSampler"><em>ObjectPositionSampler</em></a>) – placement sampler to initialize object positions.</p></li>
+<li><p><strong>mujoco_robots</strong> (<a class="reference internal" href="../source/robosuite.models.robots.html#robosuite.models.robots.robot_model.RobotModel" title="robosuite.models.robots.robot_model.RobotModel"><em>RobotModel</em></a><em> or </em><em>list of RobotModel</em>) – MJCF model of robot model(s) (list)</p></li>
+<li><p><strong>mujoco_objects</strong> (<em>None</em><em> or </em><a class="reference internal" href="../source/robosuite.models.objects.html#robosuite.models.objects.objects.MujocoObject" title="robosuite.models.objects.objects.MujocoObject"><em>MujocoObject</em></a><em> or </em><em>list of MujocoObject</em>) – a list of MJCF models of physical objects</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -258,8 +255,14 @@ participate in collisions</p></li>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="robosuite.models.tasks.ManipulationTask.merge_robot">
-<code class="sig-name descname">merge_robot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mujoco_robot</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.ManipulationTask.merge_robot" title="Permalink to this definition">¶</a></dt>
+<dt id="robosuite.models.tasks.task.Task.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mujoco_arena</span></em>, <em class="sig-param"><span class="n">mujoco_robots</span></em>, <em class="sig-param"><span class="n">mujoco_objects</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.task.Task.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.tasks.task.Task.merge_robot">
+<code class="sig-name descname">merge_robot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mujoco_robot</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.task.Task.merge_robot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds robot model to the MJCF model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -269,8 +272,8 @@ participate in collisions</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.models.tasks.ManipulationTask.merge_arena">
-<code class="sig-name descname">merge_arena</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mujoco_arena</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.ManipulationTask.merge_arena" title="Permalink to this definition">¶</a></dt>
+<dt id="robosuite.models.tasks.task.Task.merge_arena">
+<code class="sig-name descname">merge_arena</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mujoco_arena</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.task.Task.merge_arena" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds arena model to the MJCF model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -280,23 +283,14 @@ participate in collisions</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.models.tasks.ManipulationTask.merge_objects">
-<code class="sig-name descname">merge_objects</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mujoco_objects</span></em>, <em class="sig-param"><span class="n">is_visual</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.ManipulationTask.merge_objects" title="Permalink to this definition">¶</a></dt>
+<dt id="robosuite.models.tasks.task.Task.merge_objects">
+<code class="sig-name descname">merge_objects</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mujoco_objects</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.task.Task.merge_objects" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds object models to the MJCF model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>mujoco_objects</strong> (<em>OrderedDict</em><em> or </em><a class="reference internal" href="../source/robosuite.models.objects.html#robosuite.models.objects.objects.MujocoObject" title="robosuite.models.objects.objects.MujocoObject"><em>MujocoObject</em></a>) – objects to merge into this MJCF model</p></li>
-<li><p><strong>is_visual</strong> (<em>bool</em>) – Whether the object is a visual object or not</p></li>
-</ul>
+<dd class="field-odd"><p><strong>mujoco_objects</strong> (<em>list of MujocoObject</em>) – objects to merge into this MJCF model</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.tasks.ManipulationTask.place_objects">
-<code class="sig-name descname">place_objects</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.tasks.ManipulationTask.place_objects" title="Permalink to this definition">¶</a></dt>
-<dd><p>Places objects randomly until no collisions or max iterations hit.</p>
 </dd></dl>
 
 </dd></dl>

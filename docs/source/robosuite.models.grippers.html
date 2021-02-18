@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>robosuite.models.grippers &mdash; robosuite 1.0.0 documentation</title>
+  <title>robosuite.models.grippers &mdash; robosuite 1.2.0 documentation</title>
   
 
   
@@ -40,8 +40,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="robosuite.models.objects" href="robosuite.models.objects.html" />
-    <link rel="prev" title="robosuite.models.arenas" href="robosuite.models.arenas.html" /> 
+    <link rel="next" title="robosuite.models.mounts" href="robosuite.models.mounts.html" />
+    <link rel="prev" title="robosuite.models.arenas" href="robosuite.models.arenas.html" />
 </head>
 
 <body class="wy-body-for-nav">
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.0.0
+                1.2.0
               </div>
             
           
@@ -106,6 +106,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/renderers.html">Renderers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Simulation API</span></p>
 <ul>
@@ -116,8 +117,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Modeling API</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/mujoco_model.html">Mujoco Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modeling/gripper_model.html">Gripper Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
@@ -125,35 +126,24 @@
 <p class="caption"><span class="caption-text">Source API</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="robosuite.html">robosuite</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="robosuite.controllers.html">robosuite.controllers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.devices.html">robosuite.devices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.environments.html">robosuite.environments</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="robosuite.models.html">robosuite.models</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="robosuite.models.arenas.html">robosuite.models.arenas</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">robosuite.models.grippers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.models.grippers.gripper_factory">robosuite.models.grippers.gripper_factory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.models.grippers.gripper_model">robosuite.models.grippers.gripper_model</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.models.grippers.gripper_tester">robosuite.models.grippers.gripper_tester</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.models.grippers.jaco_three_finger_gripper">robosuite.models.grippers.jaco_three_finger_gripper</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.models.grippers.null_gripper">robosuite.models.grippers.null_gripper</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.models.grippers.panda_gripper">robosuite.models.grippers.panda_gripper</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.models.grippers.rethink_gripper">robosuite.models.grippers.rethink_gripper</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.models.grippers.robotiq_140_gripper">robosuite.models.grippers.robotiq_140_gripper</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.models.grippers.robotiq_85_gripper">robosuite.models.grippers.robotiq_85_gripper</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.models.grippers.robotiq_three_finger_gripper">robosuite.models.grippers.robotiq_three_finger_gripper</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.models.grippers.wiping_gripper">robosuite.models.grippers.wiping_gripper</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="robosuite.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="robosuite.controllers.html">robosuite.controllers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.devices.html">robosuite.devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.environments.html">robosuite.environments</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="robosuite.models.html">robosuite.models</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="robosuite.models.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.models.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.models.html#module-robosuite.models.base">robosuite.models.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.models.html#module-robosuite.models.world">robosuite.models.world module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.models.html#module-robosuite.models">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="robosuite.models.objects.html">robosuite.models.objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="robosuite.models.robots.html">robosuite.models.robots</a></li>
-<li class="toctree-l3"><a class="reference internal" href="robosuite.models.tasks.html">robosuite.models.tasks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="robosuite.models.html#module-robosuite.models.base">robosuite.models.base</a></li>
-<li class="toctree-l3"><a class="reference internal" href="robosuite.models.html#module-robosuite.models.world">robosuite.models.world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.robots.html">robosuite.robots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.utils.html">robosuite.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.wrappers.html">robosuite.wrappers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.robots.html">robosuite.robots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.utils.html">robosuite.utils</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.wrappers.html">robosuite.wrappers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.html#module-robosuite">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -161,6 +151,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
@@ -260,10 +251,13 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="robosuite-models-grippers">
-<h1>robosuite.models.grippers<a class="headerlink" href="#robosuite-models-grippers" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="robosuite-models-grippers-package">
+<h1>robosuite.models.grippers<a class="headerlink" href="#robosuite-models-grippers-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="module-robosuite.models.grippers.gripper_factory">
-<span id="robosuite-models-grippers-gripper-factory"></span><h2>robosuite.models.grippers.gripper_factory<a class="headerlink" href="#module-robosuite.models.grippers.gripper_factory" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-models-grippers-gripper-factory-module"></span><h2>robosuite.models.grippers.gripper_factory module<a class="headerlink" href="#module-robosuite.models.grippers.gripper_factory" title="Permalink to this headline">¶</a></h2>
 <p>Defines a string based method of initializing grippers</p>
 <dl class="py function">
 <dt id="robosuite.models.grippers.gripper_factory.gripper_factory">
@@ -291,12 +285,12 @@
 
 </div>
 <div class="section" id="module-robosuite.models.grippers.gripper_model">
-<span id="robosuite-models-grippers-gripper-model"></span><h2>robosuite.models.grippers.gripper_model<a class="headerlink" href="#module-robosuite.models.grippers.gripper_model" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-models-grippers-gripper-model-module"></span><h2>robosuite.models.grippers.gripper_model module<a class="headerlink" href="#module-robosuite.models.grippers.gripper_model" title="Permalink to this headline">¶</a></h2>
 <p>Defines the base class of all grippers</p>
 <dl class="py class">
 <dt id="robosuite.models.grippers.gripper_model.GripperModel">
 <em class="property">class </em><code class="sig-prename descclassname">robosuite.models.grippers.gripper_model.</code><code class="sig-name descname">GripperModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">idn</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="robosuite.models.html#robosuite.models.base.MujocoXML" title="robosuite.models.base.MujocoXML"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.base.MujocoXML</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="robosuite.models.html#robosuite.models.base.MujocoXMLModel" title="robosuite.models.base.MujocoXMLModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.base.MujocoXMLModel</span></code></a></p>
 <p>Base class for grippers</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -306,6 +300,36 @@
 </ul>
 </dd>
 </dl>
+<dl class="py method">
+<dt id="robosuite.models.grippers.gripper_model.GripperModel.bottom_offset">
+<em class="property">property </em><code class="sig-name descname">bottom_offset</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.bottom_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns vector from model root body to model bottom.
+Useful for, e.g. placing models on a surface.
+By default, this corresponds to the root_body’s base offset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(dx, dy, dz) offset vector</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.grippers.gripper_model.GripperModel.contact_geom_rgba">
+<em class="property">property </em><code class="sig-name descname">contact_geom_rgba</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.contact_geom_rgba" title="Permalink to this definition">¶</a></dt>
+<dd><p>RGBA color to assign to all contact geoms for this model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(r,g,b,a) values from 0 to 1 for this model’s set of contact geoms</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>4-array</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt id="robosuite.models.grippers.gripper_model.GripperModel.dof">
 <em class="property">property </em><code class="sig-name descname">dof</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.dof" title="Permalink to this definition">¶</a></dt>
@@ -329,10 +353,19 @@ for underlying actuators as 1-d np array</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.models.grippers.gripper_model.GripperModel.hide_visualization">
-<code class="sig-name descname">hide_visualization</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.hide_visualization" title="Permalink to this definition">¶</a></dt>
-<dd><p>Hides all visualization geoms and sites.
-This should be called before rendering to agents</p>
+<dt id="robosuite.models.grippers.gripper_model.GripperModel.horizontal_radius">
+<em class="property">property </em><code class="sig-name descname">horizontal_radius</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.horizontal_radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns maximum distance from model root body to any radial point of the model.</p>
+<p>Helps us put models programmatically without them flying away due to a huge initial contact force.
+Must be defined by subclass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>radius</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -352,35 +385,13 @@ This should be called before rendering to agents</p>
 <dl class="py method">
 <dt id="robosuite.models.grippers.gripper_model.GripperModel.naming_prefix">
 <em class="property">property </em><code class="sig-name descname">naming_prefix</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.naming_prefix" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generates a standardized prefix to append to all xml names to prevent naming collisions</p>
+<dd><p>Generates a standardized prefix to prevent naming collisions</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Prefix unique to this gripper based on its ID</p>
+<dd class="field-odd"><p>Prefix unique to this model.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.grippers.gripper_model.GripperModel.sensors">
-<em class="property">property </em><code class="sig-name descname">sensors</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.sensors" title="Permalink to this definition">¶</a></dt>
-<dd><p>Grabs a dict of sensor names for each gripper (usually “force_ee” and “torque_ee”)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><dl class="field-list simple">
-<dt class="field-odd"><cite>‘force_ee’ (str)</cite></dt>
-<dd class="field-odd"><p>Name of force eef sensor for this gripper</p>
-</dd>
-<dt class="field-even"><cite>’torque_ee’ (str)</cite></dt>
-<dd class="field-even"><p>Name of torque eef sensor for this gripper</p>
-</dd>
-</dl>
-</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -400,25 +411,17 @@ This should be called before rendering to agents</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.models.grippers.gripper_model.GripperModel.visualization_sites">
-<em class="property">property </em><code class="sig-name descname">visualization_sites</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.visualization_sites" title="Permalink to this definition">¶</a></dt>
-<dd><p>Grabs a dict of sites corresponding to the geoms
-used to aid visualization by human. (usually “site” and “cylinder”)
-(and should be hidden from robots)</p>
+<dt id="robosuite.models.grippers.gripper_model.GripperModel.top_offset">
+<em class="property">property </em><code class="sig-name descname">top_offset</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.top_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns vector from model root body to model top.
+Useful for, e.g. placing models on a surface.
+Must be defined by subclass.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><dl class="field-list simple">
-<dt class="field-odd"><cite>‘grip_site’ (str)</cite></dt>
-<dd class="field-odd"><p>Name of grip actuation intersection location site</p>
+<dd class="field-odd"><p>(dx, dy, dz) offset vector</p>
 </dd>
-<dt class="field-even"><cite>’grip_cylinder’ (str)</cite></dt>
-<dd class="field-even"><p>Name of grip actuation z-axis location site</p>
-</dd>
-</dl>
-</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
 </dd>
 </dl>
 </dd></dl>
@@ -427,7 +430,7 @@ used to aid visualization by human. (usually “site” and “cylinder”)
 
 </div>
 <div class="section" id="module-robosuite.models.grippers.gripper_tester">
-<span id="robosuite-models-grippers-gripper-tester"></span><h2>robosuite.models.grippers.gripper_tester<a class="headerlink" href="#module-robosuite.models.grippers.gripper_tester" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-models-grippers-gripper-tester-module"></span><h2>robosuite.models.grippers.gripper_tester module<a class="headerlink" href="#module-robosuite.models.grippers.gripper_tester" title="Permalink to this headline">¶</a></h2>
 <p>Defines GripperTester that is used to test the physical properties of various grippers</p>
 <dl class="py class">
 <dt id="robosuite.models.grippers.gripper_tester.GripperTester">
@@ -509,7 +512,7 @@ must be larger than gripper_low_pos</p></li>
 
 </div>
 <div class="section" id="module-robosuite.models.grippers.jaco_three_finger_gripper">
-<span id="robosuite-models-grippers-jaco-three-finger-gripper"></span><h2>robosuite.models.grippers.jaco_three_finger_gripper<a class="headerlink" href="#module-robosuite.models.grippers.jaco_three_finger_gripper" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-models-grippers-jaco-three-finger-gripper-module"></span><h2>robosuite.models.grippers.jaco_three_finger_gripper module<a class="headerlink" href="#module-robosuite.models.grippers.jaco_three_finger_gripper" title="Permalink to this headline">¶</a></h2>
 <p>Gripper for Kinova’s Jaco robot arm (has three fingers).</p>
 <dl class="py class">
 <dt id="robosuite.models.grippers.jaco_three_finger_gripper.JacoThreeFingerDexterousGripper">
@@ -622,20 +625,6 @@ all -1 =&gt; open, all 1 =&gt; closed</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="robosuite.models.grippers.jaco_three_finger_gripper.JacoThreeFingerGripperBase.dof">
-<em class="property">property </em><code class="sig-name descname">dof</code><a class="headerlink" href="#robosuite.models.grippers.jaco_three_finger_gripper.JacoThreeFingerGripperBase.dof" title="Permalink to this definition">¶</a></dt>
-<dd><p>Defines the number of DOF of the gripper</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>gripper DOF</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt id="robosuite.models.grippers.jaco_three_finger_gripper.JacoThreeFingerGripperBase.format_action">
 <code class="sig-name descname">format_action</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.grippers.jaco_three_finger_gripper.JacoThreeFingerGripperBase.format_action" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given (-1,1) abstract control as np-array
@@ -661,7 +650,7 @@ for underlying actuators as 1-d np array</p>
 
 </div>
 <div class="section" id="module-robosuite.models.grippers.null_gripper">
-<span id="robosuite-models-grippers-null-gripper"></span><h2>robosuite.models.grippers.null_gripper<a class="headerlink" href="#module-robosuite.models.grippers.null_gripper" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-models-grippers-null-gripper-module"></span><h2>robosuite.models.grippers.null_gripper module<a class="headerlink" href="#module-robosuite.models.grippers.null_gripper" title="Permalink to this headline">¶</a></h2>
 <p>Null Gripper (if we don’t want to attach gripper to robot eef).</p>
 <dl class="py class">
 <dt id="robosuite.models.grippers.null_gripper.NullGripper">
@@ -673,20 +662,6 @@ for underlying actuators as 1-d np array</p>
 <dd class="field-odd"><p><strong>idn</strong> (<em>int</em><em> or </em><em>str</em>) – Number or some other unique identification string for this gripper instance</p>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="robosuite.models.grippers.null_gripper.NullGripper.dof">
-<em class="property">property </em><code class="sig-name descname">dof</code><a class="headerlink" href="#robosuite.models.grippers.null_gripper.NullGripper.dof" title="Permalink to this definition">¶</a></dt>
-<dd><p>Defines the number of DOF of the gripper</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>gripper DOF</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
 <dl class="py method">
 <dt id="robosuite.models.grippers.null_gripper.NullGripper.format_action">
 <code class="sig-name descname">format_action</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.grippers.null_gripper.NullGripper.format_action" title="Permalink to this definition">¶</a></dt>
@@ -713,7 +688,7 @@ for underlying actuators as 1-d np array</p>
 
 </div>
 <div class="section" id="module-robosuite.models.grippers.panda_gripper">
-<span id="robosuite-models-grippers-panda-gripper"></span><h2>robosuite.models.grippers.panda_gripper<a class="headerlink" href="#module-robosuite.models.grippers.panda_gripper" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-models-grippers-panda-gripper-module"></span><h2>robosuite.models.grippers.panda_gripper module<a class="headerlink" href="#module-robosuite.models.grippers.panda_gripper" title="Permalink to this headline">¶</a></h2>
 <p>Gripper for Franka’s Panda (has two fingers).</p>
 <dl class="py class">
 <dt id="robosuite.models.grippers.panda_gripper.PandaGripper">
@@ -776,20 +751,6 @@ for underlying actuators as 1-d np array</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="robosuite.models.grippers.panda_gripper.PandaGripperBase.dof">
-<em class="property">property </em><code class="sig-name descname">dof</code><a class="headerlink" href="#robosuite.models.grippers.panda_gripper.PandaGripperBase.dof" title="Permalink to this definition">¶</a></dt>
-<dd><p>Defines the number of DOF of the gripper</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>gripper DOF</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt id="robosuite.models.grippers.panda_gripper.PandaGripperBase.format_action">
 <code class="sig-name descname">format_action</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.grippers.panda_gripper.PandaGripperBase.format_action" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given (-1,1) abstract control as np-array
@@ -815,7 +776,7 @@ for underlying actuators as 1-d np array</p>
 
 </div>
 <div class="section" id="module-robosuite.models.grippers.rethink_gripper">
-<span id="robosuite-models-grippers-rethink-gripper"></span><h2>robosuite.models.grippers.rethink_gripper<a class="headerlink" href="#module-robosuite.models.grippers.rethink_gripper" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-models-grippers-rethink-gripper-module"></span><h2>robosuite.models.grippers.rethink_gripper module<a class="headerlink" href="#module-robosuite.models.grippers.rethink_gripper" title="Permalink to this headline">¶</a></h2>
 <p>Gripper with two fingers for Rethink Robots.</p>
 <dl class="py class">
 <dt id="robosuite.models.grippers.rethink_gripper.RethinkGripper">
@@ -878,20 +839,6 @@ for underlying actuators as 1-d np array</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="robosuite.models.grippers.rethink_gripper.RethinkGripperBase.dof">
-<em class="property">property </em><code class="sig-name descname">dof</code><a class="headerlink" href="#robosuite.models.grippers.rethink_gripper.RethinkGripperBase.dof" title="Permalink to this definition">¶</a></dt>
-<dd><p>Defines the number of DOF of the gripper</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>gripper DOF</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt id="robosuite.models.grippers.rethink_gripper.RethinkGripperBase.format_action">
 <code class="sig-name descname">format_action</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.grippers.rethink_gripper.RethinkGripperBase.format_action" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given (-1,1) abstract control as np-array
@@ -917,7 +864,7 @@ for underlying actuators as 1-d np array</p>
 
 </div>
 <div class="section" id="module-robosuite.models.grippers.robotiq_140_gripper">
-<span id="robosuite-models-grippers-robotiq-140-gripper"></span><h2>robosuite.models.grippers.robotiq_140_gripper<a class="headerlink" href="#module-robosuite.models.grippers.robotiq_140_gripper" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-models-grippers-robotiq-140-gripper-module"></span><h2>robosuite.models.grippers.robotiq_140_gripper module<a class="headerlink" href="#module-robosuite.models.grippers.robotiq_140_gripper" title="Permalink to this headline">¶</a></h2>
 <p>Gripper with 140mm Jaw width from Robotiq (has two fingers).</p>
 <dl class="py class">
 <dt id="robosuite.models.grippers.robotiq_140_gripper.Robotiq140Gripper">
@@ -980,20 +927,6 @@ for underlying actuators as 1-d np array</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="robosuite.models.grippers.robotiq_140_gripper.Robotiq140GripperBase.dof">
-<em class="property">property </em><code class="sig-name descname">dof</code><a class="headerlink" href="#robosuite.models.grippers.robotiq_140_gripper.Robotiq140GripperBase.dof" title="Permalink to this definition">¶</a></dt>
-<dd><p>Defines the number of DOF of the gripper</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>gripper DOF</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt id="robosuite.models.grippers.robotiq_140_gripper.Robotiq140GripperBase.format_action">
 <code class="sig-name descname">format_action</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.grippers.robotiq_140_gripper.Robotiq140GripperBase.format_action" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given (-1,1) abstract control as np-array
@@ -1019,7 +952,7 @@ for underlying actuators as 1-d np array</p>
 
 </div>
 <div class="section" id="module-robosuite.models.grippers.robotiq_85_gripper">
-<span id="robosuite-models-grippers-robotiq-85-gripper"></span><h2>robosuite.models.grippers.robotiq_85_gripper<a class="headerlink" href="#module-robosuite.models.grippers.robotiq_85_gripper" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-models-grippers-robotiq-85-gripper-module"></span><h2>robosuite.models.grippers.robotiq_85_gripper module<a class="headerlink" href="#module-robosuite.models.grippers.robotiq_85_gripper" title="Permalink to this headline">¶</a></h2>
 <p>6-DoF gripper with its open/close variant</p>
 <dl class="py class">
 <dt id="robosuite.models.grippers.robotiq_85_gripper.Robotiq85Gripper">
@@ -1082,20 +1015,6 @@ for underlying actuators as 1-d np array</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="robosuite.models.grippers.robotiq_85_gripper.Robotiq85GripperBase.dof">
-<em class="property">property </em><code class="sig-name descname">dof</code><a class="headerlink" href="#robosuite.models.grippers.robotiq_85_gripper.Robotiq85GripperBase.dof" title="Permalink to this definition">¶</a></dt>
-<dd><p>Defines the number of DOF of the gripper</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>gripper DOF</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt id="robosuite.models.grippers.robotiq_85_gripper.Robotiq85GripperBase.format_action">
 <code class="sig-name descname">format_action</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.grippers.robotiq_85_gripper.Robotiq85GripperBase.format_action" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given (-1,1) abstract control as np-array
@@ -1121,7 +1040,7 @@ for underlying actuators as 1-d np array</p>
 
 </div>
 <div class="section" id="module-robosuite.models.grippers.robotiq_three_finger_gripper">
-<span id="robosuite-models-grippers-robotiq-three-finger-gripper"></span><h2>robosuite.models.grippers.robotiq_three_finger_gripper<a class="headerlink" href="#module-robosuite.models.grippers.robotiq_three_finger_gripper" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-models-grippers-robotiq-three-finger-gripper-module"></span><h2>robosuite.models.grippers.robotiq_three_finger_gripper module<a class="headerlink" href="#module-robosuite.models.grippers.robotiq_three_finger_gripper" title="Permalink to this headline">¶</a></h2>
 <p>Gripper with 11-DoF controlling three fingers and its open/close variant.</p>
 <dl class="py class">
 <dt id="robosuite.models.grippers.robotiq_three_finger_gripper.RobotiqThreeFingerDexterousGripper">
@@ -1235,20 +1154,6 @@ all -1 =&gt; open, all 1 =&gt; closed</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="robosuite.models.grippers.robotiq_three_finger_gripper.RobotiqThreeFingerGripperBase.dof">
-<em class="property">property </em><code class="sig-name descname">dof</code><a class="headerlink" href="#robosuite.models.grippers.robotiq_three_finger_gripper.RobotiqThreeFingerGripperBase.dof" title="Permalink to this definition">¶</a></dt>
-<dd><p>Defines the number of DOF of the gripper</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>gripper DOF</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt id="robosuite.models.grippers.robotiq_three_finger_gripper.RobotiqThreeFingerGripperBase.format_action">
 <code class="sig-name descname">format_action</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.grippers.robotiq_three_finger_gripper.RobotiqThreeFingerGripperBase.format_action" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given (-1,1) abstract control as np-array
@@ -1274,7 +1179,7 @@ for underlying actuators as 1-d np array</p>
 
 </div>
 <div class="section" id="module-robosuite.models.grippers.wiping_gripper">
-<span id="robosuite-models-grippers-wiping-gripper"></span><h2>robosuite.models.grippers.wiping_gripper<a class="headerlink" href="#module-robosuite.models.grippers.wiping_gripper" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-models-grippers-wiping-gripper-module"></span><h2>robosuite.models.grippers.wiping_gripper module<a class="headerlink" href="#module-robosuite.models.grippers.wiping_gripper" title="Permalink to this headline">¶</a></h2>
 <p>Gripper without fingers to wipe a surface</p>
 <dl class="py class">
 <dt id="robosuite.models.grippers.wiping_gripper.WipingGripper">
@@ -1286,20 +1191,6 @@ for underlying actuators as 1-d np array</p>
 <dd class="field-odd"><p><strong>idn</strong> (<em>int</em><em> or </em><em>str</em>) – Number or some other unique identification string for this gripper instance</p>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="robosuite.models.grippers.wiping_gripper.WipingGripper.dof">
-<em class="property">property </em><code class="sig-name descname">dof</code><a class="headerlink" href="#robosuite.models.grippers.wiping_gripper.WipingGripper.dof" title="Permalink to this definition">¶</a></dt>
-<dd><p>Defines the number of DOF of the gripper</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>gripper DOF</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
 <dl class="py method">
 <dt id="robosuite.models.grippers.wiping_gripper.WipingGripper.format_action">
 <code class="sig-name descname">format_action</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.grippers.wiping_gripper.WipingGripper.format_action" title="Permalink to this definition">¶</a></dt>
@@ -1325,6 +1216,9 @@ for underlying actuators as 1-d np array</p>
 </dd></dl>
 
 </div>
+<div class="section" id="module-robosuite.models.grippers">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robosuite.models.grippers" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 
 
@@ -1335,7 +1229,7 @@ for underlying actuators as 1-d np array</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="robosuite.models.objects.html" class="btn btn-neutral float-right" title="robosuite.models.objects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="robosuite.models.mounts.html" class="btn btn-neutral float-right" title="robosuite.models.mounts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="robosuite.models.arenas.html" class="btn btn-neutral float-left" title="robosuite.models.arenas" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

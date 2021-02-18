@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>robosuite.robots &mdash; robosuite 1.0.0 documentation</title>
+  <title>robosuite.robots &mdash; robosuite 1.2.0 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="robosuite.utils" href="robosuite.utils.html" />
-    <link rel="prev" title="robosuite.models.tasks" href="robosuite.models.tasks.html" /> 
+    <link rel="prev" title="robosuite.models.tasks" href="robosuite.models.tasks.html" />
 </head>
 
 <body class="wy-body-for-nav">
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.0.0
+                1.2.0
               </div>
             
           
@@ -106,6 +106,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/renderers.html">Renderers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Simulation API</span></p>
 <ul>
@@ -116,8 +117,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Modeling API</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/mujoco_model.html">Mujoco Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modeling/gripper_model.html">Gripper Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
@@ -125,18 +126,25 @@
 <p class="caption"><span class="caption-text">Source API</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="robosuite.html">robosuite</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="robosuite.controllers.html">robosuite.controllers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.devices.html">robosuite.devices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.environments.html">robosuite.environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.models.html">robosuite.models</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">robosuite.robots</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.robots.bimanual">robosuite.robots.bimanual</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.robots.robot">robosuite.robots.robot</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.robots.single_arm">robosuite.robots.single_arm</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="robosuite.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="robosuite.controllers.html">robosuite.controllers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.devices.html">robosuite.devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.environments.html">robosuite.environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.models.html">robosuite.models</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">robosuite.robots</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.robots.bimanual">robosuite.robots.bimanual module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.robots.manipulator">robosuite.robots.manipulator module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.robots.robot">robosuite.robots.robot module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.robots.single_arm">robosuite.robots.single_arm module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.robots">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.utils.html">robosuite.utils</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.wrappers.html">robosuite.wrappers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.utils.html">robosuite.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.wrappers.html">robosuite.wrappers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.html#module-robosuite">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -144,6 +152,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
@@ -241,14 +250,17 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="robosuite-robots">
-<h1>robosuite.robots<a class="headerlink" href="#robosuite-robots" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="robosuite-robots-package">
+<h1>robosuite.robots<a class="headerlink" href="#robosuite-robots-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="module-robosuite.robots.bimanual">
-<span id="robosuite-robots-bimanual"></span><h2>robosuite.robots.bimanual<a class="headerlink" href="#module-robosuite.robots.bimanual" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-robots-bimanual-module"></span><h2>robosuite.robots.bimanual module<a class="headerlink" href="#module-robosuite.robots.bimanual" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="robosuite.robots.bimanual.Bimanual">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.robots.bimanual.</code><code class="sig-name descname">Bimanual</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robot_type</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">idn</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">controller_config</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">initial_qpos</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">initialization_noise</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gripper_type</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">gripper_visualization</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">control_freq</span><span class="o">=</span><span class="default_value">10</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.bimanual.Bimanual" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#robosuite.robots.robot.Robot" title="robosuite.robots.robot.Robot"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.robots.robot.Robot</span></code></a></p>
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.robots.bimanual.</code><code class="sig-name descname">Bimanual</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robot_type</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">idn</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">controller_config</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">initial_qpos</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">initialization_noise</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mount_type</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">gripper_type</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">control_freq</span><span class="o">=</span><span class="default_value">20</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.bimanual.Bimanual" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.robots.manipulator.Manipulator" title="robosuite.robots.manipulator.Manipulator"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.robots.manipulator.Manipulator</span></code></a></p>
 <p>Initializes a bimanual robot simulation object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -283,20 +295,14 @@ If “uniform” type of noise is applied then this magnitude sets the bounds of
 </dd>
 </dl>
 </p></li>
+<li><p><strong>mount_type</strong> (<em>str</em>) – type of mount, used to instantiate mount models from mount factory.
+Default is “default”, which is the default mount associated with this robot’s corresponding model.
+None results in no mount, and any other (valid) model overrides the default mount.</p></li>
 <li><p><strong>gripper_type</strong> (<em>str</em><em> or </em><em>list of str --&gt; dict</em>) – <p>type of gripper, used to instantiate
 gripper models from gripper factory. Default is “default”, which is the default gripper associated
 within the ‘robot’ specification. None removes the gripper, and any other (valid) model overrides the
 default gripper. Should either be single str if same gripper type is to be used for both arms or else
 it should be a list of length 2</p>
-<dl class="field-list simple">
-<dt class="field-odd">NOTE</dt>
-<dd class="field-odd"><p>In the latter case, assumes convention of [right, left]</p>
-</dd>
-</dl>
-</p></li>
-<li><p><strong>gripper_visualization</strong> (<em>bool</em><em> or </em><em>list of bool --&gt; dict</em>) – <p>True if using gripper visualization.
-Useful for teleoperation. Should either be single bool if gripper visualization is to be used for both
-arms or else it should be a list of length 2</p>
 <dl class="field-list simple">
 <dt class="field-odd">NOTE</dt>
 <dd class="field-odd"><p>In the latter case, assumes convention of [right, left]</p>
@@ -309,20 +315,6 @@ that passes between every action input.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="robosuite.robots.bimanual.Bimanual.action_dim">
-<em class="property">property </em><code class="sig-name descname">action_dim</code><a class="headerlink" href="#robosuite.robots.bimanual.Bimanual.action_dim" title="Permalink to this definition">¶</a></dt>
-<dd><p>Action space dimension for this robot (controller dimension + gripper dof)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>action dimension</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
 <dl class="py method">
 <dt id="robosuite.robots.bimanual.Bimanual.action_limits">
 <em class="property">property </em><code class="sig-name descname">action_limits</code><a class="headerlink" href="#robosuite.robots.bimanual.Bimanual.action_limits" title="Permalink to this definition">¶</a></dt>
@@ -383,13 +375,6 @@ dimensions should be actuation controls for the gripper.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.robots.bimanual.Bimanual.dof">
-<em class="property">property </em><code class="sig-name descname">dof</code><a class="headerlink" href="#robosuite.robots.bimanual.Bimanual.dof" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns:
-int: degrees of freedom of the robot (with grippers).</p>
-</dd></dl>
-
-<dl class="py method">
 <dt id="robosuite.robots.bimanual.Bimanual.ee_force">
 <em class="property">property </em><code class="sig-name descname">ee_force</code><a class="headerlink" href="#robosuite.robots.bimanual.Bimanual.ee_force" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns:
@@ -411,48 +396,6 @@ dict: each arm-specific entry specifies the torque applied at the torque sensor 
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.robots.bimanual.Bimanual.get_observations">
-<code class="sig-name descname">get_observations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">di</span><span class="p">:</span> <span class="n">collections.OrderedDict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.bimanual.Bimanual.get_observations" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns an OrderedDict containing robot observations [(name_string, np.array), …].</p>
-<p>Important keys:</p>
-<blockquote>
-<div><p><cite>‘robot-state’</cite>: contains robot-centric information.</p>
-</div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>di</strong> (<em>OrderedDict</em>) – Current set of observations from the environment</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Augmented set of observations that include this robot’s proprioceptive observations</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>OrderedDict</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.robots.bimanual.Bimanual.grip_action">
-<code class="sig-name descname">grip_action</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gripper_action</span></em>, <em class="sig-param"><span class="n">arm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.bimanual.Bimanual.grip_action" title="Permalink to this definition">¶</a></dt>
-<dd><p>Executes gripper &#64;action for specified &#64;arm</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>gripper_action</strong> (<em>float</em>) – Value between [-1,1] to send to gripper</p></li>
-<li><p><strong>arm</strong> (<em>str</em>) – “left” or “right”; arm to execute action</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.robots.bimanual.Bimanual.js_energy">
-<em class="property">property </em><code class="sig-name descname">js_energy</code><a class="headerlink" href="#robosuite.robots.bimanual.Bimanual.js_energy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns:
-np.array: the energy consumed by each joint between previous and current steps</p>
-</dd></dl>
-
-<dl class="py method">
 <dt id="robosuite.robots.bimanual.Bimanual.load_model">
 <code class="sig-name descname">load_model</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.bimanual.Bimanual.load_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads robot and optionally add grippers.</p>
@@ -471,21 +414,46 @@ deterministic reset (e.g.: hard reset from xml file)</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="robosuite.robots.bimanual.Bimanual.setup_observables">
+<code class="sig-name descname">setup_observables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.bimanual.Bimanual.setup_observables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets up observables to be used for this robot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dictionary mapping observable names to its corresponding Observable object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>OrderedDict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="robosuite.robots.bimanual.Bimanual.setup_references">
 <code class="sig-name descname">setup_references</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.bimanual.Bimanual.setup_references" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets up necessary reference for robots, grippers, and objects.</p>
 <p>Note that this should get called during every reset from the environment</p>
 </dd></dl>
 
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.robots.manipulator">
+<span id="robosuite-robots-manipulator-module"></span><h2>robosuite.robots.manipulator module<a class="headerlink" href="#module-robosuite.robots.manipulator" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.robots.manipulator.Manipulator">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.robots.manipulator.</code><code class="sig-name descname">Manipulator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robot_type</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">idn</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">initial_qpos</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">initialization_noise</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mount_type</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">control_freq</span><span class="o">=</span><span class="default_value">20</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.manipulator.Manipulator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.robots.robot.Robot" title="robosuite.robots.robot.Robot"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.robots.robot.Robot</span></code></a></p>
+<p>Initializes a manipulator robot simulation object, as defined by a single corresponding robot arm XML and
+associated gripper XML</p>
 <dl class="py method">
-<dt id="robosuite.robots.bimanual.Bimanual.torque_limits">
-<em class="property">property </em><code class="sig-name descname">torque_limits</code><a class="headerlink" href="#robosuite.robots.bimanual.Bimanual.torque_limits" title="Permalink to this definition">¶</a></dt>
-<dd><p>Torque lower/upper limits per dimension.</p>
+<dt id="robosuite.robots.manipulator.Manipulator.action_limits">
+<em class="property">property </em><code class="sig-name descname">action_limits</code><a class="headerlink" href="#robosuite.robots.manipulator.Manipulator.action_limits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Action lower/upper limits per dimension.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><ul class="simple">
-<li><p>(np.array) minimum (low) torque values</p></li>
-<li><p>(np.array) maximum (high) torque values</p></li>
+<li><p>(np.array) minimum (low) action values</p></li>
+<li><p>(np.array) maximum (high) action values</p></li>
 </ul>
 </p>
 </dd>
@@ -496,21 +464,96 @@ deterministic reset (e.g.: hard reset from xml file)</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.robots.bimanual.Bimanual.visualize_gripper">
-<code class="sig-name descname">visualize_gripper</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.bimanual.Bimanual.visualize_gripper" title="Permalink to this definition">¶</a></dt>
-<dd><p>Visualizes the gripper site(s) if applicable.</p>
+<dt id="robosuite.robots.manipulator.Manipulator.control">
+<code class="sig-name descname">control</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span></em>, <em class="sig-param"><span class="n">policy_step</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.manipulator.Manipulator.control" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actuate the robot with the
+passed joint velocities and gripper control.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>action</strong> (<em>np.array</em>) – The control to apply to the robot. The first &#64;self.robot_model.dof dimensions should
+be the desired normalized joint velocities and if the robot has a gripper, the next &#64;self.gripper.dof
+dimensions should be actuation controls for the gripper.</p></li>
+<li><p><strong>policy_step</strong> (<em>bool</em>) – Whether a new policy step (action) is being taken</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.robots.manipulator.Manipulator.dof">
+<em class="property">property </em><code class="sig-name descname">dof</code><a class="headerlink" href="#robosuite.robots.manipulator.Manipulator.dof" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+int: degrees of freedom of the robot (with grippers).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.robots.manipulator.Manipulator.ee_force">
+<em class="property">property </em><code class="sig-name descname">ee_force</code><a class="headerlink" href="#robosuite.robots.manipulator.Manipulator.ee_force" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+np.array or dict: either single value or arm-specific entries specifying the force applied at the force sensor</p>
+<blockquote>
+<div><p>at the robot arm’s eef</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.robots.manipulator.Manipulator.ee_ft_integral">
+<em class="property">property </em><code class="sig-name descname">ee_ft_integral</code><a class="headerlink" href="#robosuite.robots.manipulator.Manipulator.ee_ft_integral" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+float or dict: either single value or arm-specific entries specifying the integral over time of the applied</p>
+<blockquote>
+<div><p>ee force-torque for that arm</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.robots.manipulator.Manipulator.ee_torque">
+<em class="property">property </em><code class="sig-name descname">ee_torque</code><a class="headerlink" href="#robosuite.robots.manipulator.Manipulator.ee_torque" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+np.array or dict: either single value or arm-specific entries specifying the torque applied at the torque</p>
+<blockquote>
+<div><p>sensor at the robot arm’s eef</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.robots.manipulator.Manipulator.grip_action">
+<code class="sig-name descname">grip_action</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gripper</span></em>, <em class="sig-param"><span class="n">gripper_action</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.manipulator.Manipulator.grip_action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes &#64;gripper_action for specified &#64;gripper</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gripper</strong> (<a class="reference internal" href="robosuite.models.grippers.html#robosuite.models.grippers.gripper_model.GripperModel" title="robosuite.models.grippers.gripper_model.GripperModel"><em>GripperModel</em></a>) – Gripper to execute action for</p></li>
+<li><p><strong>gripper_action</strong> (<em>float</em>) – Value between [-1,1] to send to gripper</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.robots.manipulator.Manipulator.visualize">
+<code class="sig-name descname">visualize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vis_settings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.manipulator.Manipulator.visualize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do any necessary visualization for this manipulator</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vis_settings</strong> (<em>dict</em>) – Visualization keywords mapped to T/F, determining whether that specific
+component should be visualized. Should have “robots” and “grippers” keyword as well as any other
+robot-specific options specified.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
 </div>
 <div class="section" id="module-robosuite.robots.robot">
-<span id="robosuite-robots-robot"></span><h2>robosuite.robots.robot<a class="headerlink" href="#module-robosuite.robots.robot" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-robots-robot-module"></span><h2>robosuite.robots.robot module<a class="headerlink" href="#module-robosuite.robots.robot" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="robosuite.robots.robot.Robot">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.robots.robot.</code><code class="sig-name descname">Robot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robot_type</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">idn</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">initial_qpos</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">initialization_noise</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.robot.Robot" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.robots.robot.</code><code class="sig-name descname">Robot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robot_type</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">idn</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">initial_qpos</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">initialization_noise</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mount_type</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">control_freq</span><span class="o">=</span><span class="default_value">20</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.robot.Robot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Initializes a robot simulation object, as defined by a single corresponding robot arm XML and associated gripper XML</p>
+<p>Initializes a robot simulation object, as defined by a single corresponding robot XML</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -535,19 +578,51 @@ If “uniform” type of noise is applied then this magnitude sets the bounds of
 </dd>
 </dl>
 </p></li>
+<li><p><strong>mount_type</strong> (<em>str</em>) – type of mount, used to instantiate mount models from mount factory.
+Default is “default”, which is the default mount associated with this robot’s corresponding model.
+None results in no mount, and any other (valid) model overrides the default mount.</p></li>
+<li><p><strong>control_freq</strong> (<em>float</em>) – how many control signals to receive
+in every second. This sets the amount of simulation time
+that passes between every action input.</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py method">
 <dt id="robosuite.robots.robot.Robot.action_dim">
 <em class="property">property </em><code class="sig-name descname">action_dim</code><a class="headerlink" href="#robosuite.robots.robot.Robot.action_dim" title="Permalink to this definition">¶</a></dt>
-<dd><p>Action space dimension for this robot (controller dimension + gripper dof)</p>
+<dd><p>Action space dimension for this robot</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="robosuite.robots.robot.Robot.action_limits">
 <em class="property">property </em><code class="sig-name descname">action_limits</code><a class="headerlink" href="#robosuite.robots.robot.Robot.action_limits" title="Permalink to this definition">¶</a></dt>
 <dd><p>Action lower/upper limits per dimension.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>(np.array) minimum (low) action values</p></li>
+<li><p>(np.array) maximum (high) action values</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>2-tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.robots.robot.Robot.check_q_limits">
+<code class="sig-name descname">check_q_limits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.robot.Robot.check_q_limits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if this robot is either very close or at the joint limits</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this arm is near its joint limits</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -575,16 +650,6 @@ int: the active DoF of the robot (Number of robot joints + active gripper DoF).<
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.robots.robot.Robot.get_observations">
-<code class="sig-name descname">get_observations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">di</span><span class="p">:</span> <span class="n">collections.OrderedDict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.robot.Robot.get_observations" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns an OrderedDict containing robot observations [(name_string, np.array), …].</p>
-<p>Important keys:</p>
-<blockquote>
-<div><p><cite>‘robot-state’</cite>: contains robot-centric information.</p>
-</div></blockquote>
-</dd></dl>
-
-<dl class="py method">
 <dt id="robosuite.robots.robot.Robot.get_sensor_measurement">
 <code class="sig-name descname">get_sensor_measurement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sensor_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.robot.Robot.get_sensor_measurement" title="Permalink to this definition">¶</a></dt>
 <dd><p>Grabs relevant sensor data from the sim object</p>
@@ -606,6 +671,13 @@ int: the active DoF of the robot (Number of robot joints + active gripper DoF).<
 <em class="property">property </em><code class="sig-name descname">joint_indexes</code><a class="headerlink" href="#robosuite.robots.robot.Robot.joint_indexes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns:
 list: mujoco internal indexes for the robot joints</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.robots.robot.Robot.js_energy">
+<em class="property">property </em><code class="sig-name descname">js_energy</code><a class="headerlink" href="#robosuite.robots.robot.Robot.js_energy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+np.array: the energy consumed by each joint between previous and current steps</p>
 </dd></dl>
 
 <dl class="py method">
@@ -670,6 +742,20 @@ deterministic reset (e.g.: hard reset from xml file)</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="robosuite.robots.robot.Robot.setup_observables">
+<code class="sig-name descname">setup_observables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.robot.Robot.setup_observables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets up observables to be used for this robot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dictionary mapping observable names to its corresponding Observable object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>OrderedDict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="robosuite.robots.robot.Robot.setup_references">
 <code class="sig-name descname">setup_references</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.robot.Robot.setup_references" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets up necessary reference for robots, grippers, and objects.</p>
@@ -678,24 +764,43 @@ deterministic reset (e.g.: hard reset from xml file)</p>
 <dl class="py method">
 <dt id="robosuite.robots.robot.Robot.torque_limits">
 <em class="property">property </em><code class="sig-name descname">torque_limits</code><a class="headerlink" href="#robosuite.robots.robot.Robot.torque_limits" title="Permalink to this definition">¶</a></dt>
-<dd><p>Action lower/upper limits per dimension.</p>
+<dd><p>Torque lower/upper limits per dimension.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>(np.array) minimum (low) torque values</p></li>
+<li><p>(np.array) maximum (high) torque values</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>2-tuple</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.robots.robot.Robot.visualize_gripper">
-<code class="sig-name descname">visualize_gripper</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.robot.Robot.visualize_gripper" title="Permalink to this definition">¶</a></dt>
-<dd><p>Do any needed visualization here.</p>
+<dt id="robosuite.robots.robot.Robot.visualize">
+<code class="sig-name descname">visualize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vis_settings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.robot.Robot.visualize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do any necessary visualization for this robot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vis_settings</strong> (<em>dict</em>) – Visualization keywords mapped to T/F, determining whether that specific
+component should be visualized. Should have “robots” keyword as well as any other robot-specific
+options specified.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
 </div>
 <div class="section" id="module-robosuite.robots.single_arm">
-<span id="robosuite-robots-single-arm"></span><h2>robosuite.robots.single_arm<a class="headerlink" href="#module-robosuite.robots.single_arm" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-robots-single-arm-module"></span><h2>robosuite.robots.single_arm module<a class="headerlink" href="#module-robosuite.robots.single_arm" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="robosuite.robots.single_arm.SingleArm">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.robots.single_arm.</code><code class="sig-name descname">SingleArm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robot_type</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">idn</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">controller_config</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">initial_qpos</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">initialization_noise</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gripper_type</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">gripper_visualization</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">control_freq</span><span class="o">=</span><span class="default_value">10</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.single_arm.SingleArm" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#robosuite.robots.robot.Robot" title="robosuite.robots.robot.Robot"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.robots.robot.Robot</span></code></a></p>
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.robots.single_arm.</code><code class="sig-name descname">SingleArm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robot_type</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">idn</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">controller_config</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">initial_qpos</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">initialization_noise</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mount_type</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">gripper_type</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">control_freq</span><span class="o">=</span><span class="default_value">20</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.single_arm.SingleArm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.robots.manipulator.Manipulator" title="robosuite.robots.manipulator.Manipulator"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.robots.manipulator.Manipulator</span></code></a></p>
 <p>Initializes a single-armed robot simulation object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -723,32 +828,19 @@ If “uniform” type of noise is applied then this magnitude sets the bounds of
 </dd>
 </dl>
 </p></li>
+<li><p><strong>mount_type</strong> (<em>str</em>) – type of mount, used to instantiate mount models from mount factory.
+Default is “default”, which is the default mount associated with this robot’s corresponding model.
+None results in no mount, and any other (valid) model overrides the default mount.</p></li>
 <li><p><strong>gripper_type</strong> (<em>str</em>) – type of gripper, used to instantiate
 gripper models from gripper factory. Default is “default”, which is the default gripper associated
 within the ‘robot’ specification. None removes the gripper, and any other (valid) model overrides the
 default gripper</p></li>
-<li><p><strong>gripper_visualization</strong> (<em>bool</em>) – True if using gripper visualization.
-Useful for teleoperation.</p></li>
 <li><p><strong>control_freq</strong> (<em>float</em>) – how many control signals to receive
 in every second. This sets the amount of simulation time
 that passes between every action input.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="robosuite.robots.single_arm.SingleArm.action_dim">
-<em class="property">property </em><code class="sig-name descname">action_dim</code><a class="headerlink" href="#robosuite.robots.single_arm.SingleArm.action_dim" title="Permalink to this definition">¶</a></dt>
-<dd><p>Action space dimension for this robot (controller dimension + gripper dof)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>action dimension</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
 <dl class="py method">
 <dt id="robosuite.robots.single_arm.SingleArm.action_limits">
 <em class="property">property </em><code class="sig-name descname">action_limits</code><a class="headerlink" href="#robosuite.robots.single_arm.SingleArm.action_limits" title="Permalink to this definition">¶</a></dt>
@@ -788,13 +880,6 @@ dimensions should be actuation controls for the gripper.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.robots.single_arm.SingleArm.dof">
-<em class="property">property </em><code class="sig-name descname">dof</code><a class="headerlink" href="#robosuite.robots.single_arm.SingleArm.dof" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns:
-int: degrees of freedom of the robot (with grippers).</p>
-</dd></dl>
-
-<dl class="py method">
 <dt id="robosuite.robots.single_arm.SingleArm.ee_force">
 <em class="property">property </em><code class="sig-name descname">ee_force</code><a class="headerlink" href="#robosuite.robots.single_arm.SingleArm.ee_force" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns:
@@ -812,45 +897,6 @@ np.array: the integral over time of the applied ee force-torque</p>
 <dt id="robosuite.robots.single_arm.SingleArm.ee_torque">
 <em class="property">property </em><code class="sig-name descname">ee_torque</code><a class="headerlink" href="#robosuite.robots.single_arm.SingleArm.ee_torque" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns torque applied at the torque sensor at the robot arm’s eef</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.robots.single_arm.SingleArm.get_observations">
-<code class="sig-name descname">get_observations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">di</span><span class="p">:</span> <span class="n">collections.OrderedDict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.single_arm.SingleArm.get_observations" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns an OrderedDict containing robot observations [(name_string, np.array), …].</p>
-<p>Important keys:</p>
-<blockquote>
-<div><p><cite>‘robot-state’</cite>: contains robot-centric information.</p>
-</div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>di</strong> (<em>OrderedDict</em>) – Current set of observations from the environment</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Augmented set of observations that include this robot’s proprioceptive observations</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>OrderedDict</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.robots.single_arm.SingleArm.grip_action">
-<code class="sig-name descname">grip_action</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gripper_action</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.single_arm.SingleArm.grip_action" title="Permalink to this definition">¶</a></dt>
-<dd><p>Executes gripper &#64;action for specified &#64;arm</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>gripper_action</strong> (<em>float</em>) – Value between [-1,1] to send to gripper</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.robots.single_arm.SingleArm.js_energy">
-<em class="property">property </em><code class="sig-name descname">js_energy</code><a class="headerlink" href="#robosuite.robots.single_arm.SingleArm.js_energy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns:
-np.array: the energy consumed by each joint between previous and current steps</p>
 </dd></dl>
 
 <dl class="py method">
@@ -872,38 +918,31 @@ deterministic reset (e.g.: hard reset from xml file)</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="robosuite.robots.single_arm.SingleArm.setup_observables">
+<code class="sig-name descname">setup_observables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.single_arm.SingleArm.setup_observables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets up observables to be used for this robot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dictionary mapping observable names to its corresponding Observable object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>OrderedDict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="robosuite.robots.single_arm.SingleArm.setup_references">
 <code class="sig-name descname">setup_references</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.single_arm.SingleArm.setup_references" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets up necessary reference for robots, grippers, and objects.</p>
 <p>Note that this should get called during every reset from the environment</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.robots.single_arm.SingleArm.torque_limits">
-<em class="property">property </em><code class="sig-name descname">torque_limits</code><a class="headerlink" href="#robosuite.robots.single_arm.SingleArm.torque_limits" title="Permalink to this definition">¶</a></dt>
-<dd><p>Torque lower/upper limits per dimension.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><ul class="simple">
-<li><p>(np.array) minimum (low) torque values</p></li>
-<li><p>(np.array) maximum (high) torque values</p></li>
-</ul>
-</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>2-tuple</p>
-</dd>
-</dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.robots.single_arm.SingleArm.visualize_gripper">
-<code class="sig-name descname">visualize_gripper</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.robots.single_arm.SingleArm.visualize_gripper" title="Permalink to this definition">¶</a></dt>
-<dd><p>Visualizes the gripper site(s) if applicable.</p>
-</dd></dl>
-
-</dd></dl>
-
+</div>
+<div class="section" id="module-robosuite.robots">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robosuite.robots" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 

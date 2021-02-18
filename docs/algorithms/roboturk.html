@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>RoboTurk Datasets &mdash; robosuite 1.0.0 documentation</title>
+  <title>RoboTurk Datasets &mdash; robosuite 1.2.0 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Projects using robosuite" href="../references.html" />
-    <link rel="prev" title="Human Demonstrations" href="demonstrations.html" /> 
+    <link rel="prev" title="Sim-to-Real Transfer" href="sim2real.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.0.0
+                1.2.0
               </div>
             
           
@@ -106,6 +106,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/renderers.html">Renderers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Simulation API</span></p>
 <ul>
@@ -116,8 +117,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Modeling API</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/mujoco_model.html">Mujoco Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modeling/gripper_model.html">Gripper Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
@@ -130,8 +131,9 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="benchmarking.html">Benchmarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sim2real.html">Sim-to-Real Transfer</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">RoboTurk Datasets</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#updated-datasets-compatible-with-v1-0">Updated Datasets compatible with v1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#updated-datasets-compatible-with-v1-0">Updated Datasets compatible with v1.0+</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#original-datasets-compatible-with-v0-3">Original Datasets compatible with v0.3</a></li>
 </ul>
 </li>
@@ -233,8 +235,8 @@
 <h1>RoboTurk Datasets<a class="headerlink" href="#roboturk-datasets" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://roboturk.stanford.edu/">RoboTurk</a> is a crowdsourcing platform developed in order to enabled collecting large-scale manipulation datasets. Below, we describe RoboTurk datasets that are compatible with robosuite.</p>
 <div class="section" id="updated-datasets-compatible-with-v1-0">
-<h2>Updated Datasets compatible with v1.0<a class="headerlink" href="#updated-datasets-compatible-with-v1-0" title="Permalink to this headline">¶</a></h2>
-<p>We are currently in the process of reformatting the demonstrations. These datasets will be made available soon.</p>
+<h2>Updated Datasets compatible with v1.0+<a class="headerlink" href="#updated-datasets-compatible-with-v1-0" title="Permalink to this headline">¶</a></h2>
+<p>We are currently in the process of organizing a standardized dataset for our benchmarking tasks, which will be made available soon and compatible with v1.2.0+. In the meantime, we have provided a <a class="reference external" href="https://drive.google.com/drive/folders/1LLkuFnRdqQ6xn1cYzkbJUs_DreaAvN7i?usp=sharing">small-scale dataset</a> of expert demonstrations on two of our tasks.</p>
 </div>
 <div class="section" id="original-datasets-compatible-with-v0-3">
 <h2>Original Datasets compatible with v0.3<a class="headerlink" href="#original-datasets-compatible-with-v0-3" title="Permalink to this headline">¶</a></h2>
@@ -298,7 +300,7 @@
         <a href="../references.html" class="btn btn-neutral float-right" title="Projects using robosuite" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="demonstrations.html" class="btn btn-neutral float-left" title="Human Demonstrations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="sim2real.html" class="btn btn-neutral float-left" title="Sim-to-Real Transfer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

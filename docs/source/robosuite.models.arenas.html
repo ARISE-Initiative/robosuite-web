@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>robosuite.models.arenas &mdash; robosuite 1.0.0 documentation</title>
+  <title>robosuite.models.arenas &mdash; robosuite 1.2.0 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="robosuite.models.grippers" href="robosuite.models.grippers.html" />
-    <link rel="prev" title="robosuite.models" href="robosuite.models.html" /> 
+    <link rel="prev" title="robosuite.models" href="robosuite.models.html" />
 </head>
 
 <body class="wy-body-for-nav">
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.0.0
+                1.2.0
               </div>
             
           
@@ -106,6 +106,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/renderers.html">Renderers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Simulation API</span></p>
 <ul>
@@ -116,8 +117,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Modeling API</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/mujoco_model.html">Mujoco Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modeling/gripper_model.html">Gripper Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
@@ -125,30 +126,24 @@
 <p class="caption"><span class="caption-text">Source API</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="robosuite.html">robosuite</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="robosuite.controllers.html">robosuite.controllers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.devices.html">robosuite.devices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.environments.html">robosuite.environments</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="robosuite.models.html">robosuite.models</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">robosuite.models.arenas</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.models.arenas.arena">robosuite.models.arenas.arena</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.models.arenas.bins_arena">robosuite.models.arenas.bins_arena</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.models.arenas.empty_arena">robosuite.models.arenas.empty_arena</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.models.arenas.pegs_arena">robosuite.models.arenas.pegs_arena</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.models.arenas.table_arena">robosuite.models.arenas.table_arena</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.models.arenas.wipe_arena">robosuite.models.arenas.wipe_arena</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="robosuite.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="robosuite.controllers.html">robosuite.controllers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.devices.html">robosuite.devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.environments.html">robosuite.environments</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="robosuite.models.html">robosuite.models</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="robosuite.models.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.models.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.models.html#module-robosuite.models.base">robosuite.models.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.models.html#module-robosuite.models.world">robosuite.models.world module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.models.html#module-robosuite.models">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="robosuite.models.grippers.html">robosuite.models.grippers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="robosuite.models.objects.html">robosuite.models.objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="robosuite.models.robots.html">robosuite.models.robots</a></li>
-<li class="toctree-l3"><a class="reference internal" href="robosuite.models.tasks.html">robosuite.models.tasks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="robosuite.models.html#module-robosuite.models.base">robosuite.models.base</a></li>
-<li class="toctree-l3"><a class="reference internal" href="robosuite.models.html#module-robosuite.models.world">robosuite.models.world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.robots.html">robosuite.robots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.utils.html">robosuite.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.wrappers.html">robosuite.wrappers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.robots.html">robosuite.robots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.utils.html">robosuite.utils</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.wrappers.html">robosuite.wrappers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.html#module-robosuite">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -156,6 +151,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
@@ -255,19 +251,33 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="robosuite-models-arenas">
-<h1>robosuite.models.arenas<a class="headerlink" href="#robosuite-models-arenas" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="robosuite-models-arenas-package">
+<h1>robosuite.models.arenas<a class="headerlink" href="#robosuite-models-arenas-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="module-robosuite.models.arenas.arena">
-<span id="robosuite-models-arenas-arena"></span><h2>robosuite.models.arenas.arena<a class="headerlink" href="#module-robosuite.models.arenas.arena" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-models-arenas-arena-module"></span><h2>robosuite.models.arenas.arena module<a class="headerlink" href="#module-robosuite.models.arenas.arena" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="robosuite.models.arenas.arena.Arena">
 <em class="property">class </em><code class="sig-prename descclassname">robosuite.models.arenas.arena.</code><code class="sig-name descname">Arena</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.arenas.arena.Arena" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robosuite.models.html#robosuite.models.base.MujocoXML" title="robosuite.models.base.MujocoXML"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.base.MujocoXML</span></code></a></p>
 <p>Base arena class.</p>
 <dl class="py method">
-<dt id="robosuite.models.arenas.arena.Arena.add_pos_indicator">
-<code class="sig-name descname">add_pos_indicator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.arenas.arena.Arena.add_pos_indicator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adds a new position indicator.</p>
+<dt id="robosuite.models.arenas.arena.Arena.set_camera">
+<code class="sig-name descname">set_camera</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">camera_name</span></em>, <em class="sig-param"><span class="n">pos</span></em>, <em class="sig-param"><span class="n">quat</span></em>, <em class="sig-param"><span class="n">camera_attribs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.arenas.arena.Arena.set_camera" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a camera with &#64;camera_name. If the camera already exists, then this overwrites its pos and quat values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>camera_name</strong> (<em>str</em>) – Camera name to search for / create</p></li>
+<li><p><strong>pos</strong> (<em>3-array</em>) – (x,y,z) coordinates of camera in world frame</p></li>
+<li><p><strong>quat</strong> (<em>4-array</em>) – (w,x,y,z) quaternion of camera in world frame</p></li>
+<li><p><strong>camera_attribs</strong> (<em>dict</em>) – If specified, should be additional keyword-mapped attributes for this camera.
+See <a class="reference external" href="http://www.mujoco.org/book/XMLreference.html#camera">http://www.mujoco.org/book/XMLreference.html#camera</a> for exact attribute specifications.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -285,7 +295,7 @@
 
 </div>
 <div class="section" id="module-robosuite.models.arenas.bins_arena">
-<span id="robosuite-models-arenas-bins-arena"></span><h2>robosuite.models.arenas.bins_arena<a class="headerlink" href="#module-robosuite.models.arenas.bins_arena" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-models-arenas-bins-arena-module"></span><h2>robosuite.models.arenas.bins_arena module<a class="headerlink" href="#module-robosuite.models.arenas.bins_arena" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="robosuite.models.arenas.bins_arena.BinsArena">
 <em class="property">class </em><code class="sig-prename descclassname">robosuite.models.arenas.bins_arena.</code><code class="sig-name descname">BinsArena</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bin1_pos</span><span class="o">=</span><span class="default_value">0.1, - 0.5, 0.8</span></em>, <em class="sig-param"><span class="n">table_full_size</span><span class="o">=</span><span class="default_value">0.39, 0.49, 0.82</span></em>, <em class="sig-param"><span class="n">table_friction</span><span class="o">=</span><span class="default_value">1, 0.005, 0.0001</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.arenas.bins_arena.BinsArena" title="Permalink to this definition">¶</a></dt>
@@ -310,7 +320,7 @@
 
 </div>
 <div class="section" id="module-robosuite.models.arenas.empty_arena">
-<span id="robosuite-models-arenas-empty-arena"></span><h2>robosuite.models.arenas.empty_arena<a class="headerlink" href="#module-robosuite.models.arenas.empty_arena" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-models-arenas-empty-arena-module"></span><h2>robosuite.models.arenas.empty_arena module<a class="headerlink" href="#module-robosuite.models.arenas.empty_arena" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="robosuite.models.arenas.empty_arena.EmptyArena">
 <em class="property">class </em><code class="sig-prename descclassname">robosuite.models.arenas.empty_arena.</code><code class="sig-name descname">EmptyArena</code><a class="headerlink" href="#robosuite.models.arenas.empty_arena.EmptyArena" title="Permalink to this definition">¶</a></dt>
@@ -320,7 +330,7 @@
 
 </div>
 <div class="section" id="module-robosuite.models.arenas.pegs_arena">
-<span id="robosuite-models-arenas-pegs-arena"></span><h2>robosuite.models.arenas.pegs_arena<a class="headerlink" href="#module-robosuite.models.arenas.pegs_arena" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-models-arenas-pegs-arena-module"></span><h2>robosuite.models.arenas.pegs_arena module<a class="headerlink" href="#module-robosuite.models.arenas.pegs_arena" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="robosuite.models.arenas.pegs_arena.PegsArena">
 <em class="property">class </em><code class="sig-prename descclassname">robosuite.models.arenas.pegs_arena.</code><code class="sig-name descname">PegsArena</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table_full_size</span><span class="o">=</span><span class="default_value">0.45, 0.69, 0.05</span></em>, <em class="sig-param"><span class="n">table_friction</span><span class="o">=</span><span class="default_value">1, 0.005, 0.0001</span></em>, <em class="sig-param"><span class="n">table_offset</span><span class="o">=</span><span class="default_value">0, 0, 0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.arenas.pegs_arena.PegsArena" title="Permalink to this definition">¶</a></dt>
@@ -340,7 +350,7 @@ Note that the z value sets the upper limit of the table</p></li>
 
 </div>
 <div class="section" id="module-robosuite.models.arenas.table_arena">
-<span id="robosuite-models-arenas-table-arena"></span><h2>robosuite.models.arenas.table_arena<a class="headerlink" href="#module-robosuite.models.arenas.table_arena" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-models-arenas-table-arena-module"></span><h2>robosuite.models.arenas.table_arena module<a class="headerlink" href="#module-robosuite.models.arenas.table_arena" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="robosuite.models.arenas.table_arena.TableArena">
 <em class="property">class </em><code class="sig-prename descclassname">robosuite.models.arenas.table_arena.</code><code class="sig-name descname">TableArena</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table_full_size</span><span class="o">=</span><span class="default_value">0.8, 0.8, 0.05</span></em>, <em class="sig-param"><span class="n">table_friction</span><span class="o">=</span><span class="default_value">1, 0.005, 0.0001</span></em>, <em class="sig-param"><span class="n">table_offset</span><span class="o">=</span><span class="default_value">0, 0, 0.8</span></em>, <em class="sig-param"><span class="n">has_legs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">xml</span><span class="o">=</span><span class="default_value">'arenas/table_arena.xml'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.arenas.table_arena.TableArena" title="Permalink to this definition">¶</a></dt>
@@ -382,12 +392,12 @@ Note that the z value sets the upper limit of the table</p></li>
 
 </div>
 <div class="section" id="module-robosuite.models.arenas.wipe_arena">
-<span id="robosuite-models-arenas-wipe-arena"></span><h2>robosuite.models.arenas.wipe_arena<a class="headerlink" href="#module-robosuite.models.arenas.wipe_arena" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-models-arenas-wipe-arena-module"></span><h2>robosuite.models.arenas.wipe_arena module<a class="headerlink" href="#module-robosuite.models.arenas.wipe_arena" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="robosuite.models.arenas.wipe_arena.WipeArena">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.arenas.wipe_arena.</code><code class="sig-name descname">WipeArena</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table_full_size</span><span class="o">=</span><span class="default_value">0.8, 0.8, 0.05</span></em>, <em class="sig-param"><span class="n">table_friction</span><span class="o">=</span><span class="default_value">0.01, 0.005, 0.0001</span></em>, <em class="sig-param"><span class="n">table_offset</span><span class="o">=</span><span class="default_value">0, 0, 0.8</span></em>, <em class="sig-param"><span class="n">coverage_factor</span><span class="o">=</span><span class="default_value">0.9</span></em>, <em class="sig-param"><span class="n">num_sensors</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">table_friction_std</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">line_width</span><span class="o">=</span><span class="default_value">0.02</span></em>, <em class="sig-param"><span class="n">two_clusters</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.arenas.wipe_arena.WipeArena" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.arenas.wipe_arena.</code><code class="sig-name descname">WipeArena</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table_full_size</span><span class="o">=</span><span class="default_value">0.8, 0.8, 0.05</span></em>, <em class="sig-param"><span class="n">table_friction</span><span class="o">=</span><span class="default_value">0.01, 0.005, 0.0001</span></em>, <em class="sig-param"><span class="n">table_offset</span><span class="o">=</span><span class="default_value">0, 0, 0.8</span></em>, <em class="sig-param"><span class="n">coverage_factor</span><span class="o">=</span><span class="default_value">0.9</span></em>, <em class="sig-param"><span class="n">num_markers</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">table_friction_std</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">line_width</span><span class="o">=</span><span class="default_value">0.02</span></em>, <em class="sig-param"><span class="n">two_clusters</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.arenas.wipe_arena.WipeArena" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robosuite.models.arenas.table_arena.TableArena" title="robosuite.models.arenas.table_arena.TableArena"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.arenas.table_arena.TableArena</span></code></a></p>
-<p>Workspace that contains an empty table with tactile sensors on its surface.</p>
+<p>Workspace that contains an empty table with visual markers on its surface.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -396,7 +406,7 @@ Note that the z value sets the upper limit of the table</p></li>
 <li><p><strong>table_offset</strong> (<em>3-tuple</em>) – (x,y,z) offset from center of arena when placing table.
 Note that the z value sets the upper limit of the table</p></li>
 <li><p><strong>coverage_factor</strong> (<em>float</em>) – Fraction of table that will be sampled for dirt placement</p></li>
-<li><p><strong>num_sensors</strong> (<em>int</em>) – Number of dirt (peg) particles to generate in a path on the table</p></li>
+<li><p><strong>num_markers</strong> (<em>int</em>) – Number of dirt (peg) particles to generate in a path on the table</p></li>
 <li><p><strong>table_friction_std</strong> (<em>float</em>) – Standard deviation to sample for the peg friction</p></li>
 <li><p><strong>line_width</strong> (<em>float</em>) – Diameter of dirt path trace</p></li>
 <li><p><strong>two_clusters</strong> (<em>bool</em>) – If set, will generate two separate dirt paths with half the number of sensors in each</p></li>
@@ -412,11 +422,11 @@ Note that the z value sets the upper limit of the table</p></li>
 <dl class="py method">
 <dt id="robosuite.models.arenas.wipe_arena.WipeArena.reset_arena">
 <code class="sig-name descname">reset_arena</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sim</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.arenas.wipe_arena.WipeArena.reset_arena" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reset the tactile sensor locations in the environment. Requires &#64;sim (MjSim) reference to be passed in so that
+<dd><p>Reset the visual marker locations in the environment. Requires &#64;sim (MjSim) reference to be passed in so that
 the Mujoco sim can be directly modified</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>sim</strong> (<em>MjSim</em>) – Simulation instance containing this arena and tactile sensors</p>
+<dd class="field-odd"><p><strong>sim</strong> (<em>MjSim</em>) – Simulation instance containing this arena and visual markers</p>
 </dd>
 </dl>
 </dd></dl>
@@ -455,6 +465,9 @@ recent dirt position is defined by &#64;pos</p>
 
 </dd></dl>
 
+</div>
+<div class="section" id="module-robosuite.models.arenas">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robosuite.models.arenas" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>robosuite.controllers &mdash; robosuite 1.0.0 documentation</title>
+  <title>robosuite.controllers &mdash; robosuite 1.2.0 documentation</title>
   
 
   
@@ -40,8 +40,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="robosuite.devices" href="robosuite.devices.html" />
-    <link rel="prev" title="robosuite" href="robosuite.html" /> 
+    <link rel="next" title="robosuite.controllers.interpolators" href="robosuite.controllers.interpolators.html" />
+    <link rel="prev" title="robosuite" href="robosuite.html" />
 </head>
 
 <body class="wy-body-for-nav">
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.0.0
+                1.2.0
               </div>
             
           
@@ -106,6 +106,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/renderers.html">Renderers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Simulation API</span></p>
 <ul>
@@ -116,8 +117,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Modeling API</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/mujoco_model.html">Mujoco Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modeling/gripper_model.html">Gripper Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
@@ -125,22 +126,29 @@
 <p class="caption"><span class="caption-text">Source API</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="robosuite.html">robosuite</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">robosuite.controllers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.controllers.base_controller">robosuite.controllers.base_controller</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.controllers.controller_factory">robosuite.controllers.controller_factory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.controllers.ik">robosuite.controllers.ik</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.controllers.joint_pos">robosuite.controllers.joint_pos</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.controllers.joint_tor">robosuite.controllers.joint_tor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.controllers.joint_vel">robosuite.controllers.joint_vel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.controllers.osc">robosuite.controllers.osc</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="robosuite.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">robosuite.controllers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.controllers.base_controller">robosuite.controllers.base_controller module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.controllers.controller_factory">robosuite.controllers.controller_factory module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.controllers.ik">robosuite.controllers.ik module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.controllers.joint_pos">robosuite.controllers.joint_pos module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.controllers.joint_tor">robosuite.controllers.joint_tor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.controllers.joint_vel">robosuite.controllers.joint_vel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.controllers.osc">robosuite.controllers.osc module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.controllers">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.devices.html">robosuite.devices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.environments.html">robosuite.environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.models.html">robosuite.models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.robots.html">robosuite.robots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.utils.html">robosuite.utils</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.wrappers.html">robosuite.wrappers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.devices.html">robosuite.devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.environments.html">robosuite.environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.models.html">robosuite.models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.robots.html">robosuite.robots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.utils.html">robosuite.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.wrappers.html">robosuite.wrappers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.html#module-robosuite">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -148,6 +156,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
@@ -245,10 +254,27 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="robosuite-controllers">
-<h1>robosuite.controllers<a class="headerlink" href="#robosuite-controllers" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="robosuite-controllers-package">
+<h1>robosuite.controllers<a class="headerlink" href="#robosuite-controllers-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="robosuite.controllers.interpolators.html">robosuite.controllers.interpolators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.controllers.interpolators.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.controllers.interpolators.html#module-robosuite.controllers.interpolators.base_interpolator">robosuite.controllers.interpolators.base_interpolator module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.controllers.interpolators.html#module-robosuite.controllers.interpolators.linear_interpolator">robosuite.controllers.interpolators.linear_interpolator module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.controllers.interpolators.html#module-robosuite.controllers.interpolators">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="module-robosuite.controllers.base_controller">
-<span id="robosuite-controllers-base-controller"></span><h2>robosuite.controllers.base_controller<a class="headerlink" href="#module-robosuite.controllers.base_controller" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-controllers-base-controller-module"></span><h2>robosuite.controllers.base_controller module<a class="headerlink" href="#module-robosuite.controllers.base_controller" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="robosuite.controllers.base_controller.Controller">
 <em class="property">class </em><code class="sig-prename descclassname">robosuite.controllers.base_controller.</code><code class="sig-name descname">Controller</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sim</span></em>, <em class="sig-param"><span class="n">eef_name</span></em>, <em class="sig-param"><span class="n">joint_indexes</span></em>, <em class="sig-param"><span class="n">actuator_range</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller" title="Permalink to this definition">¶</a></dt>
@@ -460,7 +486,7 @@ behavior, such as with OSC where self.initial_joints is used for determine nulls
 
 </div>
 <div class="section" id="module-robosuite.controllers.controller_factory">
-<span id="robosuite-controllers-controller-factory"></span><h2>robosuite.controllers.controller_factory<a class="headerlink" href="#module-robosuite.controllers.controller_factory" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-controllers-controller-factory-module"></span><h2>robosuite.controllers.controller_factory module<a class="headerlink" href="#module-robosuite.controllers.controller_factory" title="Permalink to this headline">¶</a></h2>
 <p>Set of functions that streamline controller initialization process</p>
 <dl class="py function">
 <dt id="robosuite.controllers.controller_factory.controller_factory">
@@ -541,7 +567,7 @@ specifics before re-initializing each individual controller again</p>
 
 </div>
 <div class="section" id="module-robosuite.controllers.ik">
-<span id="robosuite-controllers-ik"></span><h2>robosuite.controllers.ik<a class="headerlink" href="#module-robosuite.controllers.ik" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-controllers-ik-module"></span><h2>robosuite.controllers.ik module<a class="headerlink" href="#module-robosuite.controllers.ik" title="Permalink to this headline">¶</a></h2>
 <hr class="docutils" />
 <p>NOTE: requires pybullet module.</p>
 <p>Run <cite>pip install pybullet==2.6.9</cite>.</p>
@@ -592,7 +618,7 @@ robot arm link coordinate system and the end effector coordinate system (i.e: th
 positional inputs will be clipped</p></li>
 <li><p><strong>ik_ori_limit</strong> (<em>float</em>) – Limit (radians) above which the magnitude of a given action’s
 orientation inputs will be clipped</p></li>
-<li><p><strong>interpolator</strong> (<em>Interpolator</em>) – Interpolator object to be used for interpolating from the current state to
+<li><p><strong>interpolator</strong> (<a class="reference internal" href="robosuite.controllers.interpolators.html#robosuite.controllers.interpolators.base_interpolator.Interpolator" title="robosuite.controllers.interpolators.base_interpolator.Interpolator"><em>Interpolator</em></a>) – Interpolator object to be used for interpolating from the current state to
 the goal state during each timestep between inputted actions</p></li>
 <li><p><strong>converge_steps</strong> (<em>int</em>) – How many iterations to run the pybullet inverse kinematics solver to converge to a
 solution</p></li>
@@ -876,7 +902,7 @@ behavior, such as with OSC where self.initial_joints is used for determine nulls
 
 </div>
 <div class="section" id="module-robosuite.controllers.joint_pos">
-<span id="robosuite-controllers-joint-pos"></span><h2>robosuite.controllers.joint_pos<a class="headerlink" href="#module-robosuite.controllers.joint_pos" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-controllers-joint-pos-module"></span><h2>robosuite.controllers.joint_pos module<a class="headerlink" href="#module-robosuite.controllers.joint_pos" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="robosuite.controllers.joint_pos.JointPositionController">
 <em class="property">class </em><code class="sig-prename descclassname">robosuite.controllers.joint_pos.</code><code class="sig-name descname">JointPositionController</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sim</span></em>, <em class="sig-param"><span class="n">eef_name</span></em>, <em class="sig-param"><span class="n">joint_indexes</span></em>, <em class="sig-param"><span class="n">actuator_range</span></em>, <em class="sig-param"><span class="n">input_max</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">input_min</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">output_max</span><span class="o">=</span><span class="default_value">0.05</span></em>, <em class="sig-param"><span class="n">output_min</span><span class="o">=</span><span class="default_value">- 0.05</span></em>, <em class="sig-param"><span class="n">kp</span><span class="o">=</span><span class="default_value">50</span></em>, <em class="sig-param"><span class="n">damping_ratio</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">impedance_mode</span><span class="o">=</span><span class="default_value">'fixed'</span></em>, <em class="sig-param"><span class="n">kp_limits</span><span class="o">=</span><span class="default_value">0, 300</span></em>, <em class="sig-param"><span class="n">damping_ratio_limits</span><span class="o">=</span><span class="default_value">0, 100</span></em>, <em class="sig-param"><span class="n">policy_freq</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">qpos_limits</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interpolator</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.joint_pos.JointPositionController" title="Permalink to this definition">¶</a></dt>
@@ -938,7 +964,7 @@ or a 2-list of list (specific min / max for each damping_ratio dim)</p></li>
 <li><p><strong>qpos_limits</strong> (<em>2-list of float</em><em> or </em><em>2-list of Iterable of floats</em>) – Limits (rad) below and above which the magnitude
 of a calculated goal joint position will be clipped. Can be either be a 2-list (same min/max value for all
 joint dims), or a 2-list of list (specific min/max values for each dim)</p></li>
-<li><p><strong>interpolator</strong> (<em>Interpolator</em>) – Interpolator object to be used for interpolating from the current joint position to
+<li><p><strong>interpolator</strong> (<a class="reference internal" href="robosuite.controllers.interpolators.html#robosuite.controllers.interpolators.base_interpolator.Interpolator" title="robosuite.controllers.interpolators.base_interpolator.Interpolator"><em>Interpolator</em></a>) – Interpolator object to be used for interpolating from the current joint position to
 the goal joint position during each timestep between inputted actions</p></li>
 <li><p><strong>**kwargs</strong> – Does nothing; placeholder to “sink” any additional arguments so that instantiating this controller
 via an argument dict that has additional extraneous arguments won’t raise an error</p></li>
@@ -1051,7 +1077,7 @@ internally before executing the proceeding control loop.</p>
 
 </div>
 <div class="section" id="module-robosuite.controllers.joint_tor">
-<span id="robosuite-controllers-joint-tor"></span><h2>robosuite.controllers.joint_tor<a class="headerlink" href="#module-robosuite.controllers.joint_tor" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-controllers-joint-tor-module"></span><h2>robosuite.controllers.joint_tor module<a class="headerlink" href="#module-robosuite.controllers.joint_tor" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="robosuite.controllers.joint_tor.JointTorqueController">
 <em class="property">class </em><code class="sig-prename descclassname">robosuite.controllers.joint_tor.</code><code class="sig-name descname">JointTorqueController</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sim</span></em>, <em class="sig-param"><span class="n">eef_name</span></em>, <em class="sig-param"><span class="n">joint_indexes</span></em>, <em class="sig-param"><span class="n">actuator_range</span></em>, <em class="sig-param"><span class="n">input_max</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">input_min</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">output_max</span><span class="o">=</span><span class="default_value">0.05</span></em>, <em class="sig-param"><span class="n">output_min</span><span class="o">=</span><span class="default_value">- 0.05</span></em>, <em class="sig-param"><span class="n">policy_freq</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">torque_limits</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interpolator</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.joint_tor.JointTorqueController" title="Permalink to this definition">¶</a></dt>
@@ -1098,7 +1124,7 @@ each dimension). If the latter, dimension should be the same as the control dime
 of a calculated goal joint torque will be clipped. Can be either be a 2-list (same min/max value for all
 joint dims), or a 2-list of list (specific min/max values for each dim)
 If not specified, will automatically set the limits to the actuator limits for this robot arm</p></li>
-<li><p><strong>interpolator</strong> (<em>Interpolator</em>) – Interpolator object to be used for interpolating from the current joint torques to
+<li><p><strong>interpolator</strong> (<a class="reference internal" href="robosuite.controllers.interpolators.html#robosuite.controllers.interpolators.base_interpolator.Interpolator" title="robosuite.controllers.interpolators.base_interpolator.Interpolator"><em>Interpolator</em></a>) – Interpolator object to be used for interpolating from the current joint torques to
 the goal joint torques during each timestep between inputted actions</p></li>
 <li><p><strong>**kwargs</strong> – Does nothing; placeholder to “sink” any additional arguments so that instantiating this controller
 via an argument dict that has additional extraneous arguments won’t raise an error</p></li>
@@ -1157,7 +1183,7 @@ via an argument dict that has additional extraneous arguments won’t raise an e
 
 </div>
 <div class="section" id="module-robosuite.controllers.joint_vel">
-<span id="robosuite-controllers-joint-vel"></span><h2>robosuite.controllers.joint_vel<a class="headerlink" href="#module-robosuite.controllers.joint_vel" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-controllers-joint-vel-module"></span><h2>robosuite.controllers.joint_vel module<a class="headerlink" href="#module-robosuite.controllers.joint_vel" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="robosuite.controllers.joint_vel.JointVelocityController">
 <em class="property">class </em><code class="sig-prename descclassname">robosuite.controllers.joint_vel.</code><code class="sig-name descname">JointVelocityController</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sim</span></em>, <em class="sig-param"><span class="n">eef_name</span></em>, <em class="sig-param"><span class="n">joint_indexes</span></em>, <em class="sig-param"><span class="n">actuator_range</span></em>, <em class="sig-param"><span class="n">input_max</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">input_min</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">output_max</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">output_min</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">kp</span><span class="o">=</span><span class="default_value">0.25</span></em>, <em class="sig-param"><span class="n">policy_freq</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">velocity_limits</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interpolator</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.joint_vel.JointVelocityController" title="Permalink to this definition">¶</a></dt>
@@ -1203,7 +1229,7 @@ Can be either be a scalar (same value for all action dims), or a list (specific 
 <li><p><strong>velocity_limits</strong> (<em>2-list of float</em><em> or </em><em>2-list of list of floats</em>) – Limits (m/s) below and above which the magnitude
 of a calculated goal joint velocity will be clipped. Can be either be a 2-list (same min/max value for all
 joint dims), or a 2-list of list (specific min/max values for each dim)</p></li>
-<li><p><strong>interpolator</strong> (<em>Interpolator</em>) – Interpolator object to be used for interpolating from the current joint velocities
+<li><p><strong>interpolator</strong> (<a class="reference internal" href="robosuite.controllers.interpolators.html#robosuite.controllers.interpolators.base_interpolator.Interpolator" title="robosuite.controllers.interpolators.base_interpolator.Interpolator"><em>Interpolator</em></a>) – Interpolator object to be used for interpolating from the current joint velocities
 to the goal joint velocities during each timestep between inputted actions</p></li>
 <li><p><strong>**kwargs</strong> – Does nothing; placeholder to “sink” any additional arguments so that instantiating this controller
 via an argument dict that has additional extraneous arguments won’t raise an error</p></li>
@@ -1262,7 +1288,7 @@ via an argument dict that has additional extraneous arguments won’t raise an e
 
 </div>
 <div class="section" id="module-robosuite.controllers.osc">
-<span id="robosuite-controllers-osc"></span><h2>robosuite.controllers.osc<a class="headerlink" href="#module-robosuite.controllers.osc" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-controllers-osc-module"></span><h2>robosuite.controllers.osc module<a class="headerlink" href="#module-robosuite.controllers.osc" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="robosuite.controllers.osc.OperationalSpaceController">
 <em class="property">class </em><code class="sig-prename descclassname">robosuite.controllers.osc.</code><code class="sig-name descname">OperationalSpaceController</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sim</span></em>, <em class="sig-param"><span class="n">eef_name</span></em>, <em class="sig-param"><span class="n">joint_indexes</span></em>, <em class="sig-param"><span class="n">actuator_range</span></em>, <em class="sig-param"><span class="n">input_max</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">input_min</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">output_max</span><span class="o">=</span><span class="default_value">0.05, 0.05, 0.05, 0.5, 0.5, 0.5</span></em>, <em class="sig-param"><span class="n">output_min</span><span class="o">=</span><span class="default_value">- 0.05, - 0.05, - 0.05, - 0.5, - 0.5, - 0.5</span></em>, <em class="sig-param"><span class="n">kp</span><span class="o">=</span><span class="default_value">150</span></em>, <em class="sig-param"><span class="n">damping_ratio</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">impedance_mode</span><span class="o">=</span><span class="default_value">'fixed'</span></em>, <em class="sig-param"><span class="n">kp_limits</span><span class="o">=</span><span class="default_value">0, 300</span></em>, <em class="sig-param"><span class="n">damping_ratio_limits</span><span class="o">=</span><span class="default_value">0, 100</span></em>, <em class="sig-param"><span class="n">policy_freq</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">position_limits</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">orientation_limits</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interpolator_pos</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interpolator_ori</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">control_ori</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">control_delta</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">uncouple_pos_ori</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.osc.OperationalSpaceController" title="Permalink to this definition">¶</a></dt>
@@ -1330,11 +1356,13 @@ for all cartesian dims), or a 2-list of list (specific min/max values for each d
 <li><p><strong>orientation_limits</strong> (<em>2-list of float</em><em> or </em><em>2-list of Iterable of floats</em>) – Limits (rad) below and above which the
 magnitude of a calculated goal eef orientation will be clipped. Can be either be a 2-list
 (same min/max value for all joint dims), or a 2-list of list (specific min/mx values for each dim)</p></li>
-<li><p><strong>interpolator_pos</strong> (<em>Interpolator</em>) – Interpolator object to be used for interpolating from the current position to
+<li><p><strong>interpolator_pos</strong> (<a class="reference internal" href="robosuite.controllers.interpolators.html#robosuite.controllers.interpolators.base_interpolator.Interpolator" title="robosuite.controllers.interpolators.base_interpolator.Interpolator"><em>Interpolator</em></a>) – Interpolator object to be used for interpolating from the current position to
 the goal position during each timestep between inputted actions</p></li>
-<li><p><strong>interpolator_ori</strong> (<em>Interpolator</em>) – Interpolator object to be used for interpolating from the current orientation
+<li><p><strong>interpolator_ori</strong> (<a class="reference internal" href="robosuite.controllers.interpolators.html#robosuite.controllers.interpolators.base_interpolator.Interpolator" title="robosuite.controllers.interpolators.base_interpolator.Interpolator"><em>Interpolator</em></a>) – Interpolator object to be used for interpolating from the current orientation
 to the goal orientation during each timestep between inputted actions</p></li>
 <li><p><strong>control_ori</strong> (<em>bool</em>) – Whether inputted actions will control both pos and ori or exclusively pos</p></li>
+<li><p><strong>control_delta</strong> (<em>bool</em>) – Whether to control the robot using delta or absolute commands (where absolute commands
+are taken in the world coordinate frame)</p></li>
 <li><p><strong>uncouple_pos_ori</strong> (<em>bool</em>) – Whether to decouple torques meant to control pos and torques meant to control ori</p></li>
 <li><p><strong>**kwargs</strong> – Does nothing; placeholder to “sink” any additional arguments so that instantiating this controller
 via an argument dict that has additional extraneous arguments won’t raise an error</p></li>
@@ -1444,8 +1472,24 @@ internally before executing the proceeding control loop.</p>
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt id="robosuite.controllers.osc.OperationalSpaceController.update_initial_joints">
+<code class="sig-name descname">update_initial_joints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">initial_joints</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.osc.OperationalSpaceController.update_initial_joints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the internal attribute self.initial_joints. This is useful for updating changes in controller-specific
+behavior, such as with OSC where self.initial_joints is used for determine nullspace actions</p>
+<p>This function can also be extended by subclassed controllers for additional controller-specific updates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>initial_joints</strong> (<em>Iterable</em>) – Array of joint position values to update the initial joints</p>
+</dd>
+</dl>
 </dd></dl>
 
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.controllers">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robosuite.controllers" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -1457,7 +1501,7 @@ internally before executing the proceeding control loop.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="robosuite.devices.html" class="btn btn-neutral float-right" title="robosuite.devices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="robosuite.controllers.interpolators.html" class="btn btn-neutral float-right" title="robosuite.controllers.interpolators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="robosuite.html" class="btn btn-neutral float-left" title="robosuite" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

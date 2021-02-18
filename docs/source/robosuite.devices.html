@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>robosuite.devices &mdash; robosuite 1.0.0 documentation</title>
+  <title>robosuite.devices &mdash; robosuite 1.2.0 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="robosuite.environments" href="robosuite.environments.html" />
-    <link rel="prev" title="robosuite.controllers" href="robosuite.controllers.html" /> 
+    <link rel="prev" title="robosuite.controllers.interpolators" href="robosuite.controllers.interpolators.html" />
 </head>
 
 <body class="wy-body-for-nav">
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.0.0
+                1.2.0
               </div>
             
           
@@ -106,6 +106,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/renderers.html">Renderers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Simulation API</span></p>
 <ul>
@@ -116,8 +117,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Modeling API</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/mujoco_model.html">Mujoco Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modeling/gripper_model.html">Gripper Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
@@ -125,18 +126,24 @@
 <p class="caption"><span class="caption-text">Source API</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="robosuite.html">robosuite</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="robosuite.controllers.html">robosuite.controllers</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">robosuite.devices</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.devices.device">robosuite.devices.device</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.devices.keyboard">robosuite.devices.keyboard</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.devices.spacemouse">robosuite.devices.spacemouse</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="robosuite.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="robosuite.controllers.html">robosuite.controllers</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">robosuite.devices</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.devices.device">robosuite.devices.device module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.devices.keyboard">robosuite.devices.keyboard module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.devices.spacemouse">robosuite.devices.spacemouse module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.devices">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.environments.html">robosuite.environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.models.html">robosuite.models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.robots.html">robosuite.robots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.utils.html">robosuite.utils</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.wrappers.html">robosuite.wrappers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.environments.html">robosuite.environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.models.html">robosuite.models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.robots.html">robosuite.robots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.utils.html">robosuite.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.wrappers.html">robosuite.wrappers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.html#module-robosuite">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -144,6 +151,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
@@ -241,10 +249,13 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="robosuite-devices">
-<h1>robosuite.devices<a class="headerlink" href="#robosuite-devices" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="robosuite-devices-package">
+<h1>robosuite.devices<a class="headerlink" href="#robosuite-devices-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="module-robosuite.devices.device">
-<span id="robosuite-devices-device"></span><h2>robosuite.devices.device<a class="headerlink" href="#module-robosuite.devices.device" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-devices-device-module"></span><h2>robosuite.devices.device module<a class="headerlink" href="#module-robosuite.devices.device" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="robosuite.devices.device.Device">
 <em class="property">class </em><code class="sig-prename descclassname">robosuite.devices.device.</code><code class="sig-name descname">Device</code><a class="headerlink" href="#robosuite.devices.device.Device" title="Permalink to this definition">¶</a></dt>
@@ -268,7 +279,7 @@ start receiving commands.</p>
 
 </div>
 <div class="section" id="module-robosuite.devices.keyboard">
-<span id="robosuite-devices-keyboard"></span><h2>robosuite.devices.keyboard<a class="headerlink" href="#module-robosuite.devices.keyboard" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-devices-keyboard-module"></span><h2>robosuite.devices.keyboard module<a class="headerlink" href="#module-robosuite.devices.keyboard" title="Permalink to this headline">¶</a></h2>
 <p>Driver class for Keyboard controller.</p>
 <dl class="py class">
 <dt id="robosuite.devices.keyboard.Keyboard">
@@ -342,7 +353,7 @@ start receiving commands.</p>
 
 </div>
 <div class="section" id="module-robosuite.devices.spacemouse">
-<span id="robosuite-devices-spacemouse"></span><h2>robosuite.devices.spacemouse<a class="headerlink" href="#module-robosuite.devices.spacemouse" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-devices-spacemouse-module"></span><h2>robosuite.devices.spacemouse module<a class="headerlink" href="#module-robosuite.devices.spacemouse" title="Permalink to this headline">¶</a></h2>
 <p>Driver class for SpaceMouse controller.</p>
 <p>This class provides a driver support to SpaceMouse on Mac OS X.
 In particular, we assume you are using a SpaceMouse Wireless by default.</p>
@@ -527,6 +538,9 @@ start receiving commands.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="module-robosuite.devices">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robosuite.devices" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 
 
@@ -540,7 +554,7 @@ start receiving commands.</p>
         <a href="robosuite.environments.html" class="btn btn-neutral float-right" title="robosuite.environments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="robosuite.controllers.html" class="btn btn-neutral float-left" title="robosuite.controllers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="robosuite.controllers.interpolators.html" class="btn btn-neutral float-left" title="robosuite.controllers.interpolators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
