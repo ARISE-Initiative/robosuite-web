@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>robosuite.controllers.interpolators &mdash; robosuite 1.2.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script src="../static/jquery.js"></script>
+        <script src="../static/underscore.js"></script>
+        <script src="../static/doctools.js"></script>
+        <script src="../static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="robosuite.devices" href="robosuite.devices.html" />
+    <link rel="prev" title="robosuite.controllers" href="robosuite.controllers.html" />
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> robosuite
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demos.html">Demo Showcases</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/robots.html">Robots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/controllers.html">Controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/renderers.html">Renderers</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Simulation API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/robot.html">Robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/device.html">Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/controller.html">Controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modeling API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/mujoco_model.html">Mujoco Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Source API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="robosuite.html">robosuite</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="robosuite.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="robosuite.controllers.html">robosuite.controllers</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="robosuite.controllers.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.controllers.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.controllers.html#module-robosuite.controllers.base_controller">robosuite.controllers.base_controller module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.controllers.html#module-robosuite.controllers.controller_factory">robosuite.controllers.controller_factory module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.controllers.html#module-robosuite.controllers.ik">robosuite.controllers.ik module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.controllers.html#module-robosuite.controllers.joint_pos">robosuite.controllers.joint_pos module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.controllers.html#module-robosuite.controllers.joint_tor">robosuite.controllers.joint_tor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.controllers.html#module-robosuite.controllers.joint_vel">robosuite.controllers.joint_vel module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.controllers.html#module-robosuite.controllers.osc">robosuite.controllers.osc module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.controllers.html#module-robosuite.controllers">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.devices.html">robosuite.devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.environments.html">robosuite.environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.models.html">robosuite.models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.robots.html">robosuite.robots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.utils.html">robosuite.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.wrappers.html">robosuite.wrappers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.html#module-robosuite">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Algorithms</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Projects using robosuite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">robosuite</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="robosuite.html">robosuite</a> &raquo;</li>
+        
+          <li><a href="robosuite.controllers.html">robosuite.controllers</a> &raquo;</li>
+        
+      <li>robosuite.controllers.interpolators</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/source/robosuite.controllers.interpolators.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="robosuite-controllers-interpolators-package">
+<h1>robosuite.controllers.interpolators<a class="headerlink" href="#robosuite-controllers-interpolators-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-robosuite.controllers.interpolators.base_interpolator">
+<span id="robosuite-controllers-interpolators-base-interpolator-module"></span><h2>robosuite.controllers.interpolators.base_interpolator module<a class="headerlink" href="#module-robosuite.controllers.interpolators.base_interpolator" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.controllers.interpolators.base_interpolator.Interpolator">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.controllers.interpolators.base_interpolator.</code><code class="sig-name descname">Interpolator</code><a class="headerlink" href="#robosuite.controllers.interpolators.base_interpolator.Interpolator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>General interpolator interface.</p>
+<dl class="py method">
+<dt id="robosuite.controllers.interpolators.base_interpolator.Interpolator.get_interpolated_goal">
+<em class="property">abstract </em><code class="sig-name descname">get_interpolated_goal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.interpolators.base_interpolator.Interpolator.get_interpolated_goal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides the next step in interpolation given the remaining steps.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Next interpolated step</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.controllers.interpolators.linear_interpolator">
+<span id="robosuite-controllers-interpolators-linear-interpolator-module"></span><h2>robosuite.controllers.interpolators.linear_interpolator module<a class="headerlink" href="#module-robosuite.controllers.interpolators.linear_interpolator" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.controllers.interpolators.linear_interpolator.LinearInterpolator">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.controllers.interpolators.linear_interpolator.</code><code class="sig-name descname">LinearInterpolator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ndim</span></em>, <em class="sig-param"><span class="n">controller_freq</span></em>, <em class="sig-param"><span class="n">policy_freq</span></em>, <em class="sig-param"><span class="n">ramp_ratio</span><span class="o">=</span><span class="default_value">0.2</span></em>, <em class="sig-param"><span class="n">use_delta_goal</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ori_interpolate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.interpolators.linear_interpolator.LinearInterpolator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.controllers.interpolators.base_interpolator.Interpolator" title="robosuite.controllers.interpolators.base_interpolator.Interpolator"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.controllers.interpolators.base_interpolator.Interpolator</span></code></a></p>
+<p>Simple class for implementing a linear interpolator.</p>
+<p>Abstracted to interpolate n-dimensions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ndim</strong> (<em>int</em>) – Number of dimensions to interpolate</p></li>
+<li><p><strong>controller_freq</strong> (<em>float</em>) – Frequency (Hz) of the controller</p></li>
+<li><p><strong>policy_freq</strong> (<em>float</em>) – Frequency (Hz) of the policy model</p></li>
+<li><p><strong>ramp_ratio</strong> (<em>float</em>) – <p>Percentage of interpolation timesteps across which we will interpolate to a goal position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>Num total interpolation steps will be equal to np.floor(ramp_ratio * controller_freq / policy_freq)
+i.e.: how many controller steps we get per action space update</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>ori_interpolate</strong> (<em>None</em><em> or </em><em>str</em>) – <p>If set, assumes that we are interpolating angles (orientation)
+Specified string determines assumed type of input:</p>
+<blockquote>
+<div><p><cite>’euler’</cite>: Euler orientation inputs
+<cite>‘quat’</cite>: Quaternion inputs</p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.controllers.interpolators.linear_interpolator.LinearInterpolator.get_interpolated_goal">
+<code class="sig-name descname">get_interpolated_goal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.interpolators.linear_interpolator.LinearInterpolator.get_interpolated_goal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides the next step in interpolation given the remaining steps.</p>
+<p>NOTE: If this interpolator is for orientation, it is assumed to be receiving either euler angles or quaternions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Next position in the interpolated trajectory</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.controllers.interpolators.linear_interpolator.LinearInterpolator.set_goal">
+<code class="sig-name descname">set_goal</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">goal</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.interpolators.linear_interpolator.LinearInterpolator.set_goal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes a requested (absolute) goal and updates internal parameters for next interpolation step</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>np.array</strong> – Requested goal (absolute value). Should be same dimension as self.dim</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.controllers.interpolators.linear_interpolator.LinearInterpolator.set_states">
+<code class="sig-name descname">set_states</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dim</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ori</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.interpolators.linear_interpolator.LinearInterpolator.set_states" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates self.dim and self.ori_interpolate.</p>
+<p>Initializes self.start and self.goal with correct dimensions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ndim</strong> (<em>None</em><em> or </em><em>int</em>) – Number of dimensions to interpolate</p></li>
+<li><p><strong>ori_interpolate</strong> (<em>None</em><em> or </em><em>str</em>) – <p>If set, assumes that we are interpolating angles (orientation)
+Specified string determines assumed type of input:</p>
+<blockquote>
+<div><p><cite>’euler’</cite>: Euler orientation inputs
+<cite>‘quat’</cite>: Quaternion inputs</p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.controllers.interpolators">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robosuite.controllers.interpolators" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="robosuite.devices.html" class="btn btn-neutral float-right" title="robosuite.devices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="robosuite.controllers.html" class="btn btn-neutral float-left" title="robosuite.controllers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright Stanford Univeristy and The University of Texas at Austin 2020
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

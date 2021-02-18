@@ -1,0 +1,2031 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>robosuite.environments.manipulation &mdash; robosuite 1.2.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script src="../static/jquery.js"></script>
+        <script src="../static/underscore.js"></script>
+        <script src="../static/doctools.js"></script>
+        <script src="../static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="robosuite.models" href="robosuite.models.html" />
+    <link rel="prev" title="robosuite.environments" href="robosuite.environments.html" />
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> robosuite
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demos.html">Demo Showcases</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/robots.html">Robots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/controllers.html">Controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/renderers.html">Renderers</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Simulation API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/robot.html">Robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/device.html">Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/controller.html">Controller</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modeling API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/mujoco_model.html">Mujoco Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Source API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="robosuite.html">robosuite</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="robosuite.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="robosuite.controllers.html">robosuite.controllers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.devices.html">robosuite.devices</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="robosuite.environments.html">robosuite.environments</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="robosuite.environments.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.environments.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.environments.html#module-robosuite.environments.base">robosuite.environments.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.environments.html#module-robosuite.environments.robot_env">robosuite.environments.robot_env module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.environments.html#module-robosuite.environments">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.models.html">robosuite.models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.robots.html">robosuite.robots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.utils.html">robosuite.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.wrappers.html">robosuite.wrappers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.html#module-robosuite">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Algorithms</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Projects using robosuite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">robosuite</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="robosuite.html">robosuite</a> &raquo;</li>
+        
+          <li><a href="robosuite.environments.html">robosuite.environments</a> &raquo;</li>
+        
+      <li>robosuite.environments.manipulation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/source/robosuite.environments.manipulation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="robosuite-environments-manipulation-package">
+<h1>robosuite.environments.manipulation<a class="headerlink" href="#robosuite-environments-manipulation-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-robosuite.environments.manipulation.door">
+<span id="robosuite-environments-manipulation-door-module"></span><h2>robosuite.environments.manipulation.door module<a class="headerlink" href="#module-robosuite.environments.manipulation.door" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.environments.manipulation.door.Door">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.manipulation.door.</code><code class="sig-name descname">Door</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robots</span></em>, <em class="sig-param"><span class="n">env_configuration</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">controller_configs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gripper_types</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">initialization_noise</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">use_latch</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">use_camera_obs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">use_object_obs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">reward_scale</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">reward_shaping</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">placement_initializer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">has_renderer</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">has_offscreen_renderer</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_camera</span><span class="o">=</span><span class="default_value">'frontview'</span></em>, <em class="sig-param"><span class="n">render_collision_mesh</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">render_visual_mesh</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_gpu_device_id</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">control_freq</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">horizon</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">ignore_done</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">hard_reset</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">camera_names</span><span class="o">=</span><span class="default_value">'agentview'</span></em>, <em class="sig-param"><span class="n">camera_heights</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_widths</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_depths</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.door.Door" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.environments.manipulation.single_arm_env.SingleArmEnv" title="robosuite.environments.manipulation.single_arm_env.SingleArmEnv"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.environments.manipulation.single_arm_env.SingleArmEnv</span></code></a></p>
+<p>This class corresponds to the door opening task for a single robot arm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robots</strong> (<em>str</em><em> or </em><em>list of str</em>) – Specification for specific robot arm(s) to be instantiated within this env
+(e.g: “Sawyer” would generate one arm; [“Panda”, “Panda”, “Sawyer”] would generate three robot arms)
+Note: Must be a single single-arm robot!</p></li>
+<li><p><strong>env_configuration</strong> (<em>str</em>) – Specifies how to position the robots within the environment (default is “default”).
+For most single arm environments, this argument has no impact on the robot setup.</p></li>
+<li><p><strong>controller_configs</strong> (<em>str</em><em> or </em><em>list of dict</em>) – If set, contains relevant controller parameters for creating a
+custom controller. Else, uses the default controller for this specific task. Should either be single
+dict if same controller is to be used for all robots or else it should be a list of the same length as
+“robots” param</p></li>
+<li><p><strong>gripper_types</strong> (<em>str</em><em> or </em><em>list of str</em>) – type of gripper, used to instantiate
+gripper models from gripper factory. Default is “default”, which is the default grippers(s) associated
+with the robot(s) the ‘robots’ specification. None removes the gripper, and any other (valid) model
+overrides the default gripper. Should either be single str if same gripper type is to be used for all
+robots or else it should be a list of the same length as “robots” param</p></li>
+<li><p><strong>initialization_noise</strong> (<em>dict</em><em> or </em><em>list of dict</em>) – <p>Dict containing the initialization noise parameters.
+The expected keys and corresponding value types are specified below:</p>
+<dl class="field-list simple">
+<dt class="field-odd"><cite>’magnitude’</cite></dt>
+<dd class="field-odd"><p>The scale factor of uni-variate random noise applied to each of a robot’s given initial
+joint positions. Setting this value to <cite>None</cite> or 0.0 results in no noise being applied.
+If “gaussian” type of noise is applied then this magnitude scales the standard deviation applied,
+If “uniform” type of noise is applied then this magnitude sets the bounds of the sampling range</p>
+</dd>
+<dt class="field-even"><cite>’type’</cite></dt>
+<dd class="field-even"><p>Type of noise to apply. Can either specify “gaussian” or “uniform”</p>
+</dd>
+</dl>
+<p>Should either be single dict if same noise value is to be used for all robots or else it should be a
+list of the same length as “robots” param</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>Specifying “default” will automatically use the default noise settings.
+Specifying None will automatically create the required dict with “magnitude” set to 0.0.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>use_latch</strong> (<em>bool</em>) – if True, uses a spring-loaded handle and latch to “lock” the door closed initially
+Otherwise, door is instantiated with a fixed handle</p></li>
+<li><p><strong>use_camera_obs</strong> (<em>bool</em>) – if True, every observation includes rendered image(s)</p></li>
+<li><p><strong>use_object_obs</strong> (<em>bool</em>) – if True, include object (cube) information in
+the observation.</p></li>
+<li><p><strong>reward_scale</strong> (<em>None</em><em> or </em><em>float</em>) – Scales the normalized reward function by the amount specified.
+If None, environment reward remains unnormalized</p></li>
+<li><p><strong>reward_shaping</strong> (<em>bool</em>) – if True, use dense rewards.</p></li>
+<li><p><strong>placement_initializer</strong> (<a class="reference internal" href="robosuite.utils.html#robosuite.utils.placement_samplers.ObjectPositionSampler" title="robosuite.utils.placement_samplers.ObjectPositionSampler"><em>ObjectPositionSampler</em></a>) – if provided, will
+be used to place objects on every reset, else a UniformRandomSampler
+is used by default.</p></li>
+<li><p><strong>has_renderer</strong> (<em>bool</em>) – If true, render the simulation state in
+a viewer instead of headless mode.</p></li>
+<li><p><strong>has_offscreen_renderer</strong> (<em>bool</em>) – True if using off-screen rendering</p></li>
+<li><p><strong>render_camera</strong> (<em>str</em>) – Name of camera to render if <cite>has_renderer</cite> is True. Setting this value to ‘None’
+will result in the default angle being applied, which is useful as it can be dragged / panned by
+the user using the mouse</p></li>
+<li><p><strong>render_collision_mesh</strong> (<em>bool</em>) – True if rendering collision meshes in camera. False otherwise.</p></li>
+<li><p><strong>render_visual_mesh</strong> (<em>bool</em>) – True if rendering visual meshes in camera. False otherwise.</p></li>
+<li><p><strong>render_gpu_device_id</strong> (<em>int</em>) – corresponds to the GPU device id to use for offscreen rendering.
+Defaults to -1, in which case the device will be inferred from environment variables
+(GPUS or CUDA_VISIBLE_DEVICES).</p></li>
+<li><p><strong>control_freq</strong> (<em>float</em>) – how many control signals to receive in every second. This sets the amount of
+simulation time that passes between every action input.</p></li>
+<li><p><strong>horizon</strong> (<em>int</em>) – Every episode lasts for exactly &#64;horizon timesteps.</p></li>
+<li><p><strong>ignore_done</strong> (<em>bool</em>) – True if never terminating the environment (ignore &#64;horizon).</p></li>
+<li><p><strong>hard_reset</strong> (<em>bool</em>) – If True, re-loads model, sim, and render object upon a reset call, else,
+only calls sim.reset and resets all robosuite-internal variables</p></li>
+<li><p><strong>camera_names</strong> (<em>str</em><em> or </em><em>list of str</em>) – <p>name of camera to be rendered. Should either be single str if
+same name is to be used for all cameras’ rendering or else it should be a list of cameras to render.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>At least one camera must be specified if &#64;use_camera_obs is True.</p>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>To render all robots’ cameras of a certain type (e.g.: “robotview” or “eye_in_hand”), use the
+convention “all-{name}” (e.g.: “all-robotview”) to automatically render all camera images from each
+robot’s camera list).</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>camera_heights</strong> (<em>int</em><em> or </em><em>list of int</em>) – height of camera frame. Should either be single int if
+same height is to be used for all cameras’ frames or else it should be a list of the same length as
+“camera names” param.</p></li>
+<li><p><strong>camera_widths</strong> (<em>int</em><em> or </em><em>list of int</em>) – width of camera frame. Should either be single int if
+same width is to be used for all cameras’ frames or else it should be a list of the same length as
+“camera names” param.</p></li>
+<li><p><strong>camera_depths</strong> (<em>bool</em><em> or </em><em>list of bool</em>) – True if rendering RGB-D, and RGB otherwise. Should either be single
+bool if same depth setting is to be used for all cameras or else it should be a list of the same length as
+“camera names” param.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>AssertionError</strong> – [Invalid number of robots specified]</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.environments.manipulation.door.Door.reward">
+<code class="sig-name descname">reward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.door.Door.reward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reward function for the task.</p>
+<p>Sparse un-normalized reward:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>a discrete reward of 1.0 is provided if the door is opened</p></li>
+</ul>
+</div></blockquote>
+<p>Un-normalized summed components if using reward shaping:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Reaching: in [0, 0.25], proportional to the distance between door handle and robot arm</p></li>
+<li><p>Rotating: in [0, 0.25], proportional to angle rotated by door handled
+- Note that this component is only relevant if the environment is using the locked door version</p></li>
+</ul>
+</div></blockquote>
+<p>Note that a successfully completed task (door opened) will return 1.0 irregardless of whether the environment
+is using sparse or shaped rewards</p>
+<p>Note that the final reward is normalized and scaled by reward_scale / 1.0 as
+well so that the max score is equal to reward_scale</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>action</strong> (<em>np.array</em>) – [NOT USED]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>reward value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.manipulation.door.Door.visualize">
+<code class="sig-name descname">visualize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vis_settings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.door.Door.visualize" title="Permalink to this definition">¶</a></dt>
+<dd><p>In addition to super call, visualize gripper site proportional to the distance to the door handle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vis_settings</strong> (<em>dict</em>) – Visualization keywords mapped to T/F, determining whether that specific
+component should be visualized. Should have “grippers” keyword as well as any other relevant
+options specified.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.environments.manipulation.lift">
+<span id="robosuite-environments-manipulation-lift-module"></span><h2>robosuite.environments.manipulation.lift module<a class="headerlink" href="#module-robosuite.environments.manipulation.lift" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.environments.manipulation.lift.Lift">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.manipulation.lift.</code><code class="sig-name descname">Lift</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robots</span></em>, <em class="sig-param"><span class="n">env_configuration</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">controller_configs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gripper_types</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">initialization_noise</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">table_full_size</span><span class="o">=</span><span class="default_value">0.8, 0.8, 0.05</span></em>, <em class="sig-param"><span class="n">table_friction</span><span class="o">=</span><span class="default_value">1.0, 0.005, 0.0001</span></em>, <em class="sig-param"><span class="n">use_camera_obs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">use_object_obs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">reward_scale</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">reward_shaping</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">placement_initializer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">has_renderer</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">has_offscreen_renderer</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_camera</span><span class="o">=</span><span class="default_value">'frontview'</span></em>, <em class="sig-param"><span class="n">render_collision_mesh</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">render_visual_mesh</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_gpu_device_id</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">control_freq</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">horizon</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">ignore_done</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">hard_reset</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">camera_names</span><span class="o">=</span><span class="default_value">'agentview'</span></em>, <em class="sig-param"><span class="n">camera_heights</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_widths</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_depths</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.lift.Lift" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.environments.manipulation.single_arm_env.SingleArmEnv" title="robosuite.environments.manipulation.single_arm_env.SingleArmEnv"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.environments.manipulation.single_arm_env.SingleArmEnv</span></code></a></p>
+<p>This class corresponds to the lifting task for a single robot arm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robots</strong> (<em>str</em><em> or </em><em>list of str</em>) – Specification for specific robot arm(s) to be instantiated within this env
+(e.g: “Sawyer” would generate one arm; [“Panda”, “Panda”, “Sawyer”] would generate three robot arms)
+Note: Must be a single single-arm robot!</p></li>
+<li><p><strong>env_configuration</strong> (<em>str</em>) – Specifies how to position the robots within the environment (default is “default”).
+For most single arm environments, this argument has no impact on the robot setup.</p></li>
+<li><p><strong>controller_configs</strong> (<em>str</em><em> or </em><em>list of dict</em>) – If set, contains relevant controller parameters for creating a
+custom controller. Else, uses the default controller for this specific task. Should either be single
+dict if same controller is to be used for all robots or else it should be a list of the same length as
+“robots” param</p></li>
+<li><p><strong>gripper_types</strong> (<em>str</em><em> or </em><em>list of str</em>) – type of gripper, used to instantiate
+gripper models from gripper factory. Default is “default”, which is the default grippers(s) associated
+with the robot(s) the ‘robots’ specification. None removes the gripper, and any other (valid) model
+overrides the default gripper. Should either be single str if same gripper type is to be used for all
+robots or else it should be a list of the same length as “robots” param</p></li>
+<li><p><strong>initialization_noise</strong> (<em>dict</em><em> or </em><em>list of dict</em>) – <p>Dict containing the initialization noise parameters.
+The expected keys and corresponding value types are specified below:</p>
+<dl class="field-list simple">
+<dt class="field-odd"><cite>’magnitude’</cite></dt>
+<dd class="field-odd"><p>The scale factor of uni-variate random noise applied to each of a robot’s given initial
+joint positions. Setting this value to <cite>None</cite> or 0.0 results in no noise being applied.
+If “gaussian” type of noise is applied then this magnitude scales the standard deviation applied,
+If “uniform” type of noise is applied then this magnitude sets the bounds of the sampling range</p>
+</dd>
+<dt class="field-even"><cite>’type’</cite></dt>
+<dd class="field-even"><p>Type of noise to apply. Can either specify “gaussian” or “uniform”</p>
+</dd>
+</dl>
+<p>Should either be single dict if same noise value is to be used for all robots or else it should be a
+list of the same length as “robots” param</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>Specifying “default” will automatically use the default noise settings.
+Specifying None will automatically create the required dict with “magnitude” set to 0.0.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>table_full_size</strong> (<em>3-tuple</em>) – x, y, and z dimensions of the table.</p></li>
+<li><p><strong>table_friction</strong> (<em>3-tuple</em>) – the three mujoco friction parameters for
+the table.</p></li>
+<li><p><strong>use_camera_obs</strong> (<em>bool</em>) – if True, every observation includes rendered image(s)</p></li>
+<li><p><strong>use_object_obs</strong> (<em>bool</em>) – if True, include object (cube) information in
+the observation.</p></li>
+<li><p><strong>reward_scale</strong> (<em>None</em><em> or </em><em>float</em>) – Scales the normalized reward function by the amount specified.
+If None, environment reward remains unnormalized</p></li>
+<li><p><strong>reward_shaping</strong> (<em>bool</em>) – if True, use dense rewards.</p></li>
+<li><p><strong>placement_initializer</strong> (<a class="reference internal" href="robosuite.utils.html#robosuite.utils.placement_samplers.ObjectPositionSampler" title="robosuite.utils.placement_samplers.ObjectPositionSampler"><em>ObjectPositionSampler</em></a>) – if provided, will
+be used to place objects on every reset, else a UniformRandomSampler
+is used by default.</p></li>
+<li><p><strong>has_renderer</strong> (<em>bool</em>) – If true, render the simulation state in
+a viewer instead of headless mode.</p></li>
+<li><p><strong>has_offscreen_renderer</strong> (<em>bool</em>) – True if using off-screen rendering</p></li>
+<li><p><strong>render_camera</strong> (<em>str</em>) – Name of camera to render if <cite>has_renderer</cite> is True. Setting this value to ‘None’
+will result in the default angle being applied, which is useful as it can be dragged / panned by
+the user using the mouse</p></li>
+<li><p><strong>render_collision_mesh</strong> (<em>bool</em>) – True if rendering collision meshes in camera. False otherwise.</p></li>
+<li><p><strong>render_visual_mesh</strong> (<em>bool</em>) – True if rendering visual meshes in camera. False otherwise.</p></li>
+<li><p><strong>render_gpu_device_id</strong> (<em>int</em>) – corresponds to the GPU device id to use for offscreen rendering.
+Defaults to -1, in which case the device will be inferred from environment variables
+(GPUS or CUDA_VISIBLE_DEVICES).</p></li>
+<li><p><strong>control_freq</strong> (<em>float</em>) – how many control signals to receive in every second. This sets the amount of
+simulation time that passes between every action input.</p></li>
+<li><p><strong>horizon</strong> (<em>int</em>) – Every episode lasts for exactly &#64;horizon timesteps.</p></li>
+<li><p><strong>ignore_done</strong> (<em>bool</em>) – True if never terminating the environment (ignore &#64;horizon).</p></li>
+<li><p><strong>hard_reset</strong> (<em>bool</em>) – If True, re-loads model, sim, and render object upon a reset call, else,
+only calls sim.reset and resets all robosuite-internal variables</p></li>
+<li><p><strong>camera_names</strong> (<em>str</em><em> or </em><em>list of str</em>) – <p>name of camera to be rendered. Should either be single str if
+same name is to be used for all cameras’ rendering or else it should be a list of cameras to render.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>At least one camera must be specified if &#64;use_camera_obs is True.</p>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>To render all robots’ cameras of a certain type (e.g.: “robotview” or “eye_in_hand”), use the
+convention “all-{name}” (e.g.: “all-robotview”) to automatically render all camera images from each
+robot’s camera list).</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>camera_heights</strong> (<em>int</em><em> or </em><em>list of int</em>) – height of camera frame. Should either be single int if
+same height is to be used for all cameras’ frames or else it should be a list of the same length as
+“camera names” param.</p></li>
+<li><p><strong>camera_widths</strong> (<em>int</em><em> or </em><em>list of int</em>) – width of camera frame. Should either be single int if
+same width is to be used for all cameras’ frames or else it should be a list of the same length as
+“camera names” param.</p></li>
+<li><p><strong>camera_depths</strong> (<em>bool</em><em> or </em><em>list of bool</em>) – True if rendering RGB-D, and RGB otherwise. Should either be single
+bool if same depth setting is to be used for all cameras or else it should be a list of the same length as
+“camera names” param.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>AssertionError</strong> – [Invalid number of robots specified]</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.environments.manipulation.lift.Lift.reward">
+<code class="sig-name descname">reward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.lift.Lift.reward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reward function for the task.</p>
+<p>Sparse un-normalized reward:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>a discrete reward of 2.25 is provided if the cube is lifted</p></li>
+</ul>
+</div></blockquote>
+<p>Un-normalized summed components if using reward shaping:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Reaching: in [0, 1], to encourage the arm to reach the cube</p></li>
+<li><p>Grasping: in {0, 0.25}, non-zero if arm is grasping the cube</p></li>
+<li><p>Lifting: in {0, 1}, non-zero if arm has lifted the cube</p></li>
+</ul>
+</div></blockquote>
+<p>The sparse reward only consists of the lifting component.</p>
+<p>Note that the final reward is normalized and scaled by
+reward_scale / 2.25 as well so that the max score is equal to reward_scale</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>action</strong> (<em>np array</em>) – [NOT USED]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>reward value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.manipulation.lift.Lift.visualize">
+<code class="sig-name descname">visualize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vis_settings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.lift.Lift.visualize" title="Permalink to this definition">¶</a></dt>
+<dd><p>In addition to super call, visualize gripper site proportional to the distance to the cube.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vis_settings</strong> (<em>dict</em>) – Visualization keywords mapped to T/F, determining whether that specific
+component should be visualized. Should have “grippers” keyword as well as any other relevant
+options specified.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.environments.manipulation.manipulation_env">
+<span id="robosuite-environments-manipulation-manipulation-env-module"></span><h2>robosuite.environments.manipulation.manipulation_env module<a class="headerlink" href="#module-robosuite.environments.manipulation.manipulation_env" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.environments.manipulation.manipulation_env.ManipulationEnv">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.manipulation.manipulation_env.</code><code class="sig-name descname">ManipulationEnv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robots</span></em>, <em class="sig-param"><span class="n">env_configuration</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">controller_configs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mount_types</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">gripper_types</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">initialization_noise</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_camera_obs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">has_renderer</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">has_offscreen_renderer</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_camera</span><span class="o">=</span><span class="default_value">'frontview'</span></em>, <em class="sig-param"><span class="n">render_collision_mesh</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">render_visual_mesh</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_gpu_device_id</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">control_freq</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">horizon</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">ignore_done</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">hard_reset</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">camera_names</span><span class="o">=</span><span class="default_value">'agentview'</span></em>, <em class="sig-param"><span class="n">camera_heights</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_widths</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_depths</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.manipulation_env.ManipulationEnv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="robosuite.environments.html#robosuite.environments.robot_env.RobotEnv" title="robosuite.environments.robot_env.RobotEnv"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.environments.robot_env.RobotEnv</span></code></a></p>
+<p>Initializes a manipulation-specific robot environment in Mujoco.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robots</strong> – Specification for specific robot arm(s) to be instantiated within this env
+(e.g: “Sawyer” would generate one arm; [“Panda”, “Panda”, “Sawyer”] would generate three robot arms)</p></li>
+<li><p><strong>env_configuration</strong> (<em>str</em>) – Specifies how to position the robot(s) within the environment. Default is “default”,
+which should be interpreted accordingly by any subclasses.</p></li>
+<li><p><strong>controller_configs</strong> (<em>str</em><em> or </em><em>list of dict</em>) – If set, contains relevant controller parameters for creating a
+custom controller. Else, uses the default controller for this specific task. Should either be single
+dict if same controller is to be used for all robots or else it should be a list of the same length as
+“robots” param</p></li>
+<li><p><strong>mount_types</strong> (<em>None</em><em> or </em><em>str</em><em> or </em><em>list of str</em>) – type of mount, used to instantiate mount models from mount factory.
+Default is “default”, which is the default mount associated with the robot(s) the ‘robots’ specification.
+None results in no mount, and any other (valid) model overrides the default mount. Should either be
+single str if same mount type is to be used for all robots or else it should be a list of the same
+length as “robots” param</p></li>
+<li><p><strong>gripper_types</strong> (<em>None</em><em> or </em><em>str</em><em> or </em><em>list of str</em>) – type of gripper, used to instantiate
+gripper models from gripper factory. Default is “default”, which is the default grippers(s) associated
+with the robot(s) the ‘robots’ specification. None removes the gripper, and any other (valid) model
+overrides the default gripper. Should either be single str if same gripper type is to be used for all
+robots or else it should be a list of the same length as “robots” param</p></li>
+<li><p><strong>initialization_noise</strong> (<em>dict</em><em> or </em><em>list of dict</em>) – <p>Dict containing the initialization noise parameters.
+The expected keys and corresponding value types are specified below:</p>
+<dl class="field-list simple">
+<dt class="field-odd"><cite>’magnitude’</cite></dt>
+<dd class="field-odd"><p>The scale factor of uni-variate random noise applied to each of a robot’s given initial
+joint positions. Setting this value to <cite>None</cite> or 0.0 results in no noise being applied.
+If “gaussian” type of noise is applied then this magnitude scales the standard deviation applied,
+If “uniform” type of noise is applied then this magnitude sets the bounds of the sampling range</p>
+</dd>
+<dt class="field-even"><cite>’type’</cite></dt>
+<dd class="field-even"><p>Type of noise to apply. Can either specify “gaussian” or “uniform”</p>
+</dd>
+</dl>
+<p>Should either be single dict if same noise value is to be used for all robots or else it should be a
+list of the same length as “robots” param</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>Specifying “default” will automatically use the default noise settings.
+Specifying None will automatically create the required dict with “magnitude” set to 0.0.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>use_camera_obs</strong> (<em>bool</em>) – if True, every observation includes rendered image(s)</p></li>
+<li><p><strong>has_renderer</strong> (<em>bool</em>) – If true, render the simulation state in
+a viewer instead of headless mode.</p></li>
+<li><p><strong>has_offscreen_renderer</strong> (<em>bool</em>) – True if using off-screen rendering</p></li>
+<li><p><strong>render_camera</strong> (<em>str</em>) – Name of camera to render if <cite>has_renderer</cite> is True. Setting this value to ‘None’
+will result in the default angle being applied, which is useful as it can be dragged / panned by
+the user using the mouse</p></li>
+<li><p><strong>render_collision_mesh</strong> (<em>bool</em>) – True if rendering collision meshes in camera. False otherwise.</p></li>
+<li><p><strong>render_visual_mesh</strong> (<em>bool</em>) – True if rendering visual meshes in camera. False otherwise.</p></li>
+<li><p><strong>render_gpu_device_id</strong> (<em>int</em>) – corresponds to the GPU device id to use for offscreen rendering.
+Defaults to -1, in which case the device will be inferred from environment variables
+(GPUS or CUDA_VISIBLE_DEVICES).</p></li>
+<li><p><strong>control_freq</strong> (<em>float</em>) – how many control signals to receive in every second. This sets the amount of
+simulation time that passes between every action input.</p></li>
+<li><p><strong>horizon</strong> (<em>int</em>) – Every episode lasts for exactly &#64;horizon timesteps.</p></li>
+<li><p><strong>ignore_done</strong> (<em>bool</em>) – True if never terminating the environment (ignore &#64;horizon).</p></li>
+<li><p><strong>hard_reset</strong> (<em>bool</em>) – If True, re-loads model, sim, and render object upon a reset call, else,
+only calls sim.reset and resets all robosuite-internal variables</p></li>
+<li><p><strong>camera_names</strong> (<em>str</em><em> or </em><em>list of str</em>) – <p>name of camera to be rendered. Should either be single str if
+same name is to be used for all cameras’ rendering or else it should be a list of cameras to render.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>At least one camera must be specified if &#64;use_camera_obs is True.</p>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>To render all robots’ cameras of a certain type (e.g.: “robotview” or “eye_in_hand”), use the
+convention “all-{name}” (e.g.: “all-robotview”) to automatically render all camera images from each
+robot’s camera list).</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>camera_heights</strong> (<em>int</em><em> or </em><em>list of int</em>) – height of camera frame. Should either be single int if
+same height is to be used for all cameras’ frames or else it should be a list of the same length as
+“camera names” param.</p></li>
+<li><p><strong>camera_widths</strong> (<em>int</em><em> or </em><em>list of int</em>) – width of camera frame. Should either be single int if
+same width is to be used for all cameras’ frames or else it should be a list of the same length as
+“camera names” param.</p></li>
+<li><p><strong>camera_depths</strong> (<em>bool</em><em> or </em><em>list of bool</em>) – True if rendering RGB-D, and RGB otherwise. Should either be single
+bool if same depth setting is to be used for all cameras or else it should be a list of the same length as
+“camera names” param.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ValueError</strong> – [Camera obs require offscreen renderer]</p></li>
+<li><p><strong>ValueError</strong> – [Camera name must be specified to use camera obs]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.environments.manipulation.nut_assembly">
+<span id="robosuite-environments-manipulation-nut-assembly-module"></span><h2>robosuite.environments.manipulation.nut_assembly module<a class="headerlink" href="#module-robosuite.environments.manipulation.nut_assembly" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.environments.manipulation.nut_assembly.NutAssembly">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.manipulation.nut_assembly.</code><code class="sig-name descname">NutAssembly</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robots</span></em>, <em class="sig-param"><span class="n">env_configuration</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">controller_configs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gripper_types</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">initialization_noise</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">table_full_size</span><span class="o">=</span><span class="default_value">0.8, 0.8, 0.05</span></em>, <em class="sig-param"><span class="n">table_friction</span><span class="o">=</span><span class="default_value">1, 0.005, 0.0001</span></em>, <em class="sig-param"><span class="n">use_camera_obs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">use_object_obs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">reward_scale</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">reward_shaping</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">placement_initializer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">single_object_mode</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">nut_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">has_renderer</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">has_offscreen_renderer</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_camera</span><span class="o">=</span><span class="default_value">'frontview'</span></em>, <em class="sig-param"><span class="n">render_collision_mesh</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">render_visual_mesh</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_gpu_device_id</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">control_freq</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">horizon</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">ignore_done</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">hard_reset</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">camera_names</span><span class="o">=</span><span class="default_value">'agentview'</span></em>, <em class="sig-param"><span class="n">camera_heights</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_widths</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_depths</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.nut_assembly.NutAssembly" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.environments.manipulation.single_arm_env.SingleArmEnv" title="robosuite.environments.manipulation.single_arm_env.SingleArmEnv"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.environments.manipulation.single_arm_env.SingleArmEnv</span></code></a></p>
+<p>This class corresponds to the nut assembly task for a single robot arm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robots</strong> (<em>str</em><em> or </em><em>list of str</em>) – Specification for specific robot arm(s) to be instantiated within this env
+(e.g: “Sawyer” would generate one arm; [“Panda”, “Panda”, “Sawyer”] would generate three robot arms)
+Note: Must be a single single-arm robot!</p></li>
+<li><p><strong>env_configuration</strong> (<em>str</em>) – Specifies how to position the robots within the environment (default is “default”).
+For most single arm environments, this argument has no impact on the robot setup.</p></li>
+<li><p><strong>controller_configs</strong> (<em>str</em><em> or </em><em>list of dict</em>) – If set, contains relevant controller parameters for creating a
+custom controller. Else, uses the default controller for this specific task. Should either be single
+dict if same controller is to be used for all robots or else it should be a list of the same length as
+“robots” param</p></li>
+<li><p><strong>gripper_types</strong> (<em>str</em><em> or </em><em>list of str</em>) – type of gripper, used to instantiate
+gripper models from gripper factory. Default is “default”, which is the default grippers(s) associated
+with the robot(s) the ‘robots’ specification. None removes the gripper, and any other (valid) model
+overrides the default gripper. Should either be single str if same gripper type is to be used for all
+robots or else it should be a list of the same length as “robots” param</p></li>
+<li><p><strong>initialization_noise</strong> (<em>dict</em><em> or </em><em>list of dict</em>) – <p>Dict containing the initialization noise parameters.
+The expected keys and corresponding value types are specified below:</p>
+<dl class="field-list simple">
+<dt class="field-odd"><cite>’magnitude’</cite></dt>
+<dd class="field-odd"><p>The scale factor of uni-variate random noise applied to each of a robot’s given initial
+joint positions. Setting this value to <cite>None</cite> or 0.0 results in no noise being applied.
+If “gaussian” type of noise is applied then this magnitude scales the standard deviation applied,
+If “uniform” type of noise is applied then this magnitude sets the bounds of the sampling range</p>
+</dd>
+<dt class="field-even"><cite>’type’</cite></dt>
+<dd class="field-even"><p>Type of noise to apply. Can either specify “gaussian” or “uniform”</p>
+</dd>
+</dl>
+<p>Should either be single dict if same noise value is to be used for all robots or else it should be a
+list of the same length as “robots” param</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>Specifying “default” will automatically use the default noise settings.
+Specifying None will automatically create the required dict with “magnitude” set to 0.0.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>table_full_size</strong> (<em>3-tuple</em>) – x, y, and z dimensions of the table.</p></li>
+<li><p><strong>table_friction</strong> (<em>3-tuple</em>) – the three mujoco friction parameters for
+the table.</p></li>
+<li><p><strong>use_camera_obs</strong> (<em>bool</em>) – if True, every observation includes rendered image(s)</p></li>
+<li><p><strong>use_object_obs</strong> (<em>bool</em>) – if True, include object (cube) information in
+the observation.</p></li>
+<li><p><strong>reward_scale</strong> (<em>None</em><em> or </em><em>float</em>) – Scales the normalized reward function by the amount specified.
+If None, environment reward remains unnormalized</p></li>
+<li><p><strong>reward_shaping</strong> (<em>bool</em>) – if True, use dense rewards.</p></li>
+<li><p><strong>placement_initializer</strong> (<a class="reference internal" href="robosuite.utils.html#robosuite.utils.placement_samplers.ObjectPositionSampler" title="robosuite.utils.placement_samplers.ObjectPositionSampler"><em>ObjectPositionSampler</em></a>) – if provided, will
+be used to place objects on every reset, else a UniformRandomSampler
+is used by default.</p></li>
+<li><p><strong>single_object_mode</strong> (<em>int</em>) – <p>specifies which version of the task to do. Note that
+the observations change accordingly.</p>
+<dl class="field-list simple">
+<dt class="field-odd"><cite>0</cite></dt>
+<dd class="field-odd"><p>corresponds to the full task with both types of nuts.</p>
+</dd>
+<dt class="field-even"><cite>1</cite></dt>
+<dd class="field-even"><p>corresponds to an easier task with only one type of nut initialized
+on the table with every reset. The type is randomized on every reset.</p>
+</dd>
+<dt class="field-odd"><cite>2</cite></dt>
+<dd class="field-odd"><p>corresponds to an easier task with only one type of nut initialized
+on the table with every reset. The type is kept constant and will not
+change between resets.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>nut_type</strong> (<em>string</em>) – if provided, should be either “round” or “square”. Determines
+which type of nut (round or square) will be spawned on every environment
+reset. Only used if &#64;single_object_mode is 2.</p></li>
+<li><p><strong>has_renderer</strong> (<em>bool</em>) – If true, render the simulation state in
+a viewer instead of headless mode.</p></li>
+<li><p><strong>has_offscreen_renderer</strong> (<em>bool</em>) – True if using off-screen rendering</p></li>
+<li><p><strong>render_camera</strong> (<em>str</em>) – Name of camera to render if <cite>has_renderer</cite> is True. Setting this value to ‘None’
+will result in the default angle being applied, which is useful as it can be dragged / panned by
+the user using the mouse</p></li>
+<li><p><strong>render_collision_mesh</strong> (<em>bool</em>) – True if rendering collision meshes in camera. False otherwise.</p></li>
+<li><p><strong>render_visual_mesh</strong> (<em>bool</em>) – True if rendering visual meshes in camera. False otherwise.</p></li>
+<li><p><strong>render_gpu_device_id</strong> (<em>int</em>) – corresponds to the GPU device id to use for offscreen rendering.
+Defaults to -1, in which case the device will be inferred from environment variables
+(GPUS or CUDA_VISIBLE_DEVICES).</p></li>
+<li><p><strong>control_freq</strong> (<em>float</em>) – how many control signals to receive in every second. This sets the amount of
+simulation time that passes between every action input.</p></li>
+<li><p><strong>horizon</strong> (<em>int</em>) – Every episode lasts for exactly &#64;horizon timesteps.</p></li>
+<li><p><strong>ignore_done</strong> (<em>bool</em>) – True if never terminating the environment (ignore &#64;horizon).</p></li>
+<li><p><strong>hard_reset</strong> (<em>bool</em>) – If True, re-loads model, sim, and render object upon a reset call, else,
+only calls sim.reset and resets all robosuite-internal variables</p></li>
+<li><p><strong>camera_names</strong> (<em>str</em><em> or </em><em>list of str</em>) – <p>name of camera to be rendered. Should either be single str if
+same name is to be used for all cameras’ rendering or else it should be a list of cameras to render.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>At least one camera must be specified if &#64;use_camera_obs is True.</p>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>To render all robots’ cameras of a certain type (e.g.: “robotview” or “eye_in_hand”), use the
+convention “all-{name}” (e.g.: “all-robotview”) to automatically render all camera images from each
+robot’s camera list).</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>camera_heights</strong> (<em>int</em><em> or </em><em>list of int</em>) – height of camera frame. Should either be single int if
+same height is to be used for all cameras’ frames or else it should be a list of the same length as
+“camera names” param.</p></li>
+<li><p><strong>camera_widths</strong> (<em>int</em><em> or </em><em>list of int</em>) – width of camera frame. Should either be single int if
+same width is to be used for all cameras’ frames or else it should be a list of the same length as
+“camera names” param.</p></li>
+<li><p><strong>camera_depths</strong> (<em>bool</em><em> or </em><em>list of bool</em>) – True if rendering RGB-D, and RGB otherwise. Should either be single
+bool if same depth setting is to be used for all cameras or else it should be a list of the same length as
+“camera names” param.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>AssertionError</strong> – [Invalid nut type specified]</p></li>
+<li><p><strong>AssertionError</strong> – [Invalid number of robots specified]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.environments.manipulation.nut_assembly.NutAssembly.on_peg">
+<code class="sig-name descname">on_peg</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj_pos</span></em>, <em class="sig-param"><span class="n">peg_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.nut_assembly.NutAssembly.on_peg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.manipulation.nut_assembly.NutAssembly.reward">
+<code class="sig-name descname">reward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.nut_assembly.NutAssembly.reward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reward function for the task.</p>
+<p>Sparse un-normalized reward:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>a discrete reward of 1.0 per nut if it is placed around its correct peg</p></li>
+</ul>
+</div></blockquote>
+<p>Un-normalized components if using reward shaping, where the maximum is returned if not solved:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Reaching: in [0, 0.1], proportional to the distance between the gripper and the closest nut</p></li>
+<li><p>Grasping: in {0, 0.35}, nonzero if the gripper is grasping a nut</p></li>
+<li><p>Lifting: in {0, [0.35, 0.5]}, nonzero only if nut is grasped; proportional to lifting height</p></li>
+<li><p>Hovering: in {0, [0.5, 0.7]}, nonzero only if nut is lifted; proportional to distance from nut to peg</p></li>
+</ul>
+</div></blockquote>
+<p>Note that a successfully completed task (nut around peg) will return 1.0 per nut irregardless of whether the
+environment is using sparse or shaped rewards</p>
+<p>Note that the final reward is normalized and scaled by reward_scale / 2.0 (or 1.0 if only a single nut is
+being used) as well so that the max score is equal to reward_scale</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>action</strong> (<em>np.array</em>) – [NOT USED]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>reward value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.manipulation.nut_assembly.NutAssembly.staged_rewards">
+<code class="sig-name descname">staged_rewards</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.nut_assembly.NutAssembly.staged_rewards" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates staged rewards based on current physical states.
+Stages consist of reaching, grasping, lifting, and hovering.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>(float) reaching reward</p></li>
+<li><p>(float) grasping reward</p></li>
+<li><p>(float) lifting reward</p></li>
+<li><p>(float) hovering reward</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>4-tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.manipulation.nut_assembly.NutAssembly.visualize">
+<code class="sig-name descname">visualize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vis_settings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.nut_assembly.NutAssembly.visualize" title="Permalink to this definition">¶</a></dt>
+<dd><p>In addition to super call, visualize gripper site proportional to the distance to the closest nut.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vis_settings</strong> (<em>dict</em>) – Visualization keywords mapped to T/F, determining whether that specific
+component should be visualized. Should have “grippers” keyword as well as any other relevant
+options specified.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.environments.manipulation.nut_assembly.NutAssemblyRound">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.manipulation.nut_assembly.</code><code class="sig-name descname">NutAssemblyRound</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.nut_assembly.NutAssemblyRound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.environments.manipulation.nut_assembly.NutAssembly" title="robosuite.environments.manipulation.nut_assembly.NutAssembly"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.environments.manipulation.nut_assembly.NutAssembly</span></code></a></p>
+<p>Easier version of task - place one round nut into its peg.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.environments.manipulation.nut_assembly.NutAssemblySingle">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.manipulation.nut_assembly.</code><code class="sig-name descname">NutAssemblySingle</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.nut_assembly.NutAssemblySingle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.environments.manipulation.nut_assembly.NutAssembly" title="robosuite.environments.manipulation.nut_assembly.NutAssembly"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.environments.manipulation.nut_assembly.NutAssembly</span></code></a></p>
+<p>Easier version of task - place either one round nut or one square nut into its peg.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.environments.manipulation.nut_assembly.NutAssemblySquare">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.manipulation.nut_assembly.</code><code class="sig-name descname">NutAssemblySquare</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.nut_assembly.NutAssemblySquare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.environments.manipulation.nut_assembly.NutAssembly" title="robosuite.environments.manipulation.nut_assembly.NutAssembly"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.environments.manipulation.nut_assembly.NutAssembly</span></code></a></p>
+<p>Easier version of task - place one square nut into its peg.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.environments.manipulation.pick_place">
+<span id="robosuite-environments-manipulation-pick-place-module"></span><h2>robosuite.environments.manipulation.pick_place module<a class="headerlink" href="#module-robosuite.environments.manipulation.pick_place" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.environments.manipulation.pick_place.PickPlace">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.manipulation.pick_place.</code><code class="sig-name descname">PickPlace</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robots</span></em>, <em class="sig-param"><span class="n">env_configuration</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">controller_configs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gripper_types</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">initialization_noise</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">table_full_size</span><span class="o">=</span><span class="default_value">0.39, 0.49, 0.82</span></em>, <em class="sig-param"><span class="n">table_friction</span><span class="o">=</span><span class="default_value">1, 0.005, 0.0001</span></em>, <em class="sig-param"><span class="n">bin1_pos</span><span class="o">=</span><span class="default_value">0.1, - 0.25, 0.8</span></em>, <em class="sig-param"><span class="n">bin2_pos</span><span class="o">=</span><span class="default_value">0.1, 0.28, 0.8</span></em>, <em class="sig-param"><span class="n">use_camera_obs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">use_object_obs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">reward_scale</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">reward_shaping</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">single_object_mode</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">object_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">has_renderer</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">has_offscreen_renderer</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_camera</span><span class="o">=</span><span class="default_value">'frontview'</span></em>, <em class="sig-param"><span class="n">render_collision_mesh</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">render_visual_mesh</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_gpu_device_id</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">control_freq</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">horizon</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">ignore_done</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">hard_reset</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">camera_names</span><span class="o">=</span><span class="default_value">'agentview'</span></em>, <em class="sig-param"><span class="n">camera_heights</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_widths</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_depths</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.pick_place.PickPlace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.environments.manipulation.single_arm_env.SingleArmEnv" title="robosuite.environments.manipulation.single_arm_env.SingleArmEnv"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.environments.manipulation.single_arm_env.SingleArmEnv</span></code></a></p>
+<p>This class corresponds to the pick place task for a single robot arm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robots</strong> (<em>str</em><em> or </em><em>list of str</em>) – Specification for specific robot arm(s) to be instantiated within this env
+(e.g: “Sawyer” would generate one arm; [“Panda”, “Panda”, “Sawyer”] would generate three robot arms)
+Note: Must be a single single-arm robot!</p></li>
+<li><p><strong>env_configuration</strong> (<em>str</em>) – Specifies how to position the robots within the environment (default is “default”).
+For most single arm environments, this argument has no impact on the robot setup.</p></li>
+<li><p><strong>controller_configs</strong> (<em>str</em><em> or </em><em>list of dict</em>) – If set, contains relevant controller parameters for creating a
+custom controller. Else, uses the default controller for this specific task. Should either be single
+dict if same controller is to be used for all robots or else it should be a list of the same length as
+“robots” param</p></li>
+<li><p><strong>gripper_types</strong> (<em>str</em><em> or </em><em>list of str</em>) – type of gripper, used to instantiate
+gripper models from gripper factory. Default is “default”, which is the default grippers(s) associated
+with the robot(s) the ‘robots’ specification. None removes the gripper, and any other (valid) model
+overrides the default gripper. Should either be single str if same gripper type is to be used for all
+robots or else it should be a list of the same length as “robots” param</p></li>
+<li><p><strong>initialization_noise</strong> (<em>dict</em><em> or </em><em>list of dict</em>) – <p>Dict containing the initialization noise parameters.
+The expected keys and corresponding value types are specified below:</p>
+<dl class="field-list simple">
+<dt class="field-odd"><cite>’magnitude’</cite></dt>
+<dd class="field-odd"><p>The scale factor of uni-variate random noise applied to each of a robot’s given initial
+joint positions. Setting this value to <cite>None</cite> or 0.0 results in no noise being applied.
+If “gaussian” type of noise is applied then this magnitude scales the standard deviation applied,
+If “uniform” type of noise is applied then this magnitude sets the bounds of the sampling range</p>
+</dd>
+<dt class="field-even"><cite>’type’</cite></dt>
+<dd class="field-even"><p>Type of noise to apply. Can either specify “gaussian” or “uniform”</p>
+</dd>
+</dl>
+<p>Should either be single dict if same noise value is to be used for all robots or else it should be a
+list of the same length as “robots” param</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>Specifying “default” will automatically use the default noise settings.
+Specifying None will automatically create the required dict with “magnitude” set to 0.0.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>table_full_size</strong> (<em>3-tuple</em>) – x, y, and z dimensions of the table.</p></li>
+<li><p><strong>table_friction</strong> (<em>3-tuple</em>) – the three mujoco friction parameters for
+the table.</p></li>
+<li><p><strong>bin1_pos</strong> (<em>3-tuple</em>) – Absolute cartesian coordinates of the bin initially holding the objects</p></li>
+<li><p><strong>bin2_pos</strong> (<em>3-tuple</em>) – Absolute cartesian coordinates of the goal bin</p></li>
+<li><p><strong>use_camera_obs</strong> (<em>bool</em>) – if True, every observation includes rendered image(s)</p></li>
+<li><p><strong>use_object_obs</strong> (<em>bool</em>) – if True, include object (cube) information in
+the observation.</p></li>
+<li><p><strong>reward_scale</strong> (<em>None</em><em> or </em><em>float</em>) – Scales the normalized reward function by the amount specified.
+If None, environment reward remains unnormalized</p></li>
+<li><p><strong>reward_shaping</strong> (<em>bool</em>) – if True, use dense rewards.</p></li>
+<li><p><strong>single_object_mode</strong> (<em>int</em>) – <p>specifies which version of the task to do. Note that
+the observations change accordingly.</p>
+<dl class="field-list simple">
+<dt class="field-odd"><cite>0</cite></dt>
+<dd class="field-odd"><p>corresponds to the full task with all types of objects.</p>
+</dd>
+<dt class="field-even"><cite>1</cite></dt>
+<dd class="field-even"><p>corresponds to an easier task with only one type of object initialized
+on the table with every reset. The type is randomized on every reset.</p>
+</dd>
+<dt class="field-odd"><cite>2</cite></dt>
+<dd class="field-odd"><p>corresponds to an easier task with only one type of object initialized
+on the table with every reset. The type is kept constant and will not
+change between resets.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>object_type</strong> (<em>string</em>) – if provided, should be one of “milk”, “bread”, “cereal”,
+or “can”. Determines which type of object will be spawned on every
+environment reset. Only used if &#64;single_object_mode is 2.</p></li>
+<li><p><strong>has_renderer</strong> (<em>bool</em>) – If true, render the simulation state in
+a viewer instead of headless mode.</p></li>
+<li><p><strong>has_offscreen_renderer</strong> (<em>bool</em>) – True if using off-screen rendering</p></li>
+<li><p><strong>render_camera</strong> (<em>str</em>) – Name of camera to render if <cite>has_renderer</cite> is True. Setting this value to ‘None’
+will result in the default angle being applied, which is useful as it can be dragged / panned by
+the user using the mouse</p></li>
+<li><p><strong>render_collision_mesh</strong> (<em>bool</em>) – True if rendering collision meshes in camera. False otherwise.</p></li>
+<li><p><strong>render_visual_mesh</strong> (<em>bool</em>) – True if rendering visual meshes in camera. False otherwise.</p></li>
+<li><p><strong>render_gpu_device_id</strong> (<em>int</em>) – corresponds to the GPU device id to use for offscreen rendering.
+Defaults to -1, in which case the device will be inferred from environment variables
+(GPUS or CUDA_VISIBLE_DEVICES).</p></li>
+<li><p><strong>control_freq</strong> (<em>float</em>) – how many control signals to receive in every second. This sets the amount of
+simulation time that passes between every action input.</p></li>
+<li><p><strong>horizon</strong> (<em>int</em>) – Every episode lasts for exactly &#64;horizon timesteps.</p></li>
+<li><p><strong>ignore_done</strong> (<em>bool</em>) – True if never terminating the environment (ignore &#64;horizon).</p></li>
+<li><p><strong>hard_reset</strong> (<em>bool</em>) – If True, re-loads model, sim, and render object upon a reset call, else,
+only calls sim.reset and resets all robosuite-internal variables</p></li>
+<li><p><strong>camera_names</strong> (<em>str</em><em> or </em><em>list of str</em>) – <p>name of camera to be rendered. Should either be single str if
+same name is to be used for all cameras’ rendering or else it should be a list of cameras to render.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>At least one camera must be specified if &#64;use_camera_obs is True.</p>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>To render all robots’ cameras of a certain type (e.g.: “robotview” or “eye_in_hand”), use the
+convention “all-{name}” (e.g.: “all-robotview”) to automatically render all camera images from each
+robot’s camera list).</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>camera_heights</strong> (<em>int</em><em> or </em><em>list of int</em>) – height of camera frame. Should either be single int if
+same height is to be used for all cameras’ frames or else it should be a list of the same length as
+“camera names” param.</p></li>
+<li><p><strong>camera_widths</strong> (<em>int</em><em> or </em><em>list of int</em>) – width of camera frame. Should either be single int if
+same width is to be used for all cameras’ frames or else it should be a list of the same length as
+“camera names” param.</p></li>
+<li><p><strong>camera_depths</strong> (<em>bool</em><em> or </em><em>list of bool</em>) – True if rendering RGB-D, and RGB otherwise. Should either be single
+bool if same depth setting is to be used for all cameras or else it should be a list of the same length as
+“camera names” param.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>AssertionError</strong> – [Invalid object type specified]</p></li>
+<li><p><strong>AssertionError</strong> – [Invalid number of robots specified]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.environments.manipulation.pick_place.PickPlace.not_in_bin">
+<code class="sig-name descname">not_in_bin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj_pos</span></em>, <em class="sig-param"><span class="n">bin_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.pick_place.PickPlace.not_in_bin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.manipulation.pick_place.PickPlace.reward">
+<code class="sig-name descname">reward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.pick_place.PickPlace.reward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reward function for the task.</p>
+<p>Sparse un-normalized reward:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>a discrete reward of 1.0 per object if it is placed in its correct bin</p></li>
+</ul>
+</div></blockquote>
+<p>Un-normalized components if using reward shaping, where the maximum is returned if not solved:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Reaching: in [0, 0.1], proportional to the distance between the gripper and the closest object</p></li>
+<li><p>Grasping: in {0, 0.35}, nonzero if the gripper is grasping an object</p></li>
+<li><p>Lifting: in {0, [0.35, 0.5]}, nonzero only if object is grasped; proportional to lifting height</p></li>
+<li><p>Hovering: in {0, [0.5, 0.7]}, nonzero only if object is lifted; proportional to distance from object to bin</p></li>
+</ul>
+</div></blockquote>
+<p>Note that a successfully completed task (object in bin) will return 1.0 per object irregardless of whether the
+environment is using sparse or shaped rewards</p>
+<p>Note that the final reward is normalized and scaled by reward_scale / 4.0 (or 1.0 if only a single object is
+being used) as well so that the max score is equal to reward_scale</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>action</strong> (<em>np.array</em>) – [NOT USED]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>reward value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.manipulation.pick_place.PickPlace.staged_rewards">
+<code class="sig-name descname">staged_rewards</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.pick_place.PickPlace.staged_rewards" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns staged rewards based on current physical states.
+Stages consist of reaching, grasping, lifting, and hovering.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>(float) reaching reward</p></li>
+<li><p>(float) grasping reward</p></li>
+<li><p>(float) lifting reward</p></li>
+<li><p>(float) hovering reward</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>4-tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.manipulation.pick_place.PickPlace.visualize">
+<code class="sig-name descname">visualize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vis_settings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.pick_place.PickPlace.visualize" title="Permalink to this definition">¶</a></dt>
+<dd><p>In addition to super call, visualize gripper site proportional to the distance to the closest object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vis_settings</strong> (<em>dict</em>) – Visualization keywords mapped to T/F, determining whether that specific
+component should be visualized. Should have “grippers” keyword as well as any other relevant
+options specified.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.environments.manipulation.pick_place.PickPlaceBread">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.manipulation.pick_place.</code><code class="sig-name descname">PickPlaceBread</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.pick_place.PickPlaceBread" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.environments.manipulation.pick_place.PickPlace" title="robosuite.environments.manipulation.pick_place.PickPlace"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.environments.manipulation.pick_place.PickPlace</span></code></a></p>
+<p>Easier version of task - place one bread into its bin.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.environments.manipulation.pick_place.PickPlaceCan">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.manipulation.pick_place.</code><code class="sig-name descname">PickPlaceCan</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.pick_place.PickPlaceCan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.environments.manipulation.pick_place.PickPlace" title="robosuite.environments.manipulation.pick_place.PickPlace"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.environments.manipulation.pick_place.PickPlace</span></code></a></p>
+<p>Easier version of task - place one can into its bin.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.environments.manipulation.pick_place.PickPlaceCereal">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.manipulation.pick_place.</code><code class="sig-name descname">PickPlaceCereal</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.pick_place.PickPlaceCereal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.environments.manipulation.pick_place.PickPlace" title="robosuite.environments.manipulation.pick_place.PickPlace"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.environments.manipulation.pick_place.PickPlace</span></code></a></p>
+<p>Easier version of task - place one cereal into its bin.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.environments.manipulation.pick_place.PickPlaceMilk">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.manipulation.pick_place.</code><code class="sig-name descname">PickPlaceMilk</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.pick_place.PickPlaceMilk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.environments.manipulation.pick_place.PickPlace" title="robosuite.environments.manipulation.pick_place.PickPlace"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.environments.manipulation.pick_place.PickPlace</span></code></a></p>
+<p>Easier version of task - place one milk into its bin.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.environments.manipulation.pick_place.PickPlaceSingle">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.manipulation.pick_place.</code><code class="sig-name descname">PickPlaceSingle</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.pick_place.PickPlaceSingle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.environments.manipulation.pick_place.PickPlace" title="robosuite.environments.manipulation.pick_place.PickPlace"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.environments.manipulation.pick_place.PickPlace</span></code></a></p>
+<p>Easier version of task - place one object into its bin.
+A new object is sampled on every reset.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.environments.manipulation.single_arm_env">
+<span id="robosuite-environments-manipulation-single-arm-env-module"></span><h2>robosuite.environments.manipulation.single_arm_env module<a class="headerlink" href="#module-robosuite.environments.manipulation.single_arm_env" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.environments.manipulation.single_arm_env.SingleArmEnv">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.manipulation.single_arm_env.</code><code class="sig-name descname">SingleArmEnv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robots</span></em>, <em class="sig-param"><span class="n">env_configuration</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">controller_configs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mount_types</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">gripper_types</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">initialization_noise</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_camera_obs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">has_renderer</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">has_offscreen_renderer</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_camera</span><span class="o">=</span><span class="default_value">'frontview'</span></em>, <em class="sig-param"><span class="n">render_collision_mesh</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">render_visual_mesh</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_gpu_device_id</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">control_freq</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">horizon</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">ignore_done</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">hard_reset</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">camera_names</span><span class="o">=</span><span class="default_value">'agentview'</span></em>, <em class="sig-param"><span class="n">camera_heights</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_widths</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_depths</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.single_arm_env.SingleArmEnv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.environments.manipulation.manipulation_env.ManipulationEnv" title="robosuite.environments.manipulation.manipulation_env.ManipulationEnv"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.environments.manipulation.manipulation_env.ManipulationEnv</span></code></a></p>
+<p>A manipulation environment intended for a single robot arm.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.environments.manipulation.stack">
+<span id="robosuite-environments-manipulation-stack-module"></span><h2>robosuite.environments.manipulation.stack module<a class="headerlink" href="#module-robosuite.environments.manipulation.stack" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.environments.manipulation.stack.Stack">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.manipulation.stack.</code><code class="sig-name descname">Stack</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robots</span></em>, <em class="sig-param"><span class="n">env_configuration</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">controller_configs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gripper_types</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">initialization_noise</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">table_full_size</span><span class="o">=</span><span class="default_value">0.8, 0.8, 0.05</span></em>, <em class="sig-param"><span class="n">table_friction</span><span class="o">=</span><span class="default_value">1.0, 0.005, 0.0001</span></em>, <em class="sig-param"><span class="n">use_camera_obs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">use_object_obs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">reward_scale</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">reward_shaping</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">placement_initializer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">has_renderer</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">has_offscreen_renderer</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_camera</span><span class="o">=</span><span class="default_value">'frontview'</span></em>, <em class="sig-param"><span class="n">render_collision_mesh</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">render_visual_mesh</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_gpu_device_id</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">control_freq</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">horizon</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">ignore_done</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">hard_reset</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">camera_names</span><span class="o">=</span><span class="default_value">'agentview'</span></em>, <em class="sig-param"><span class="n">camera_heights</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_widths</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_depths</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.stack.Stack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.environments.manipulation.single_arm_env.SingleArmEnv" title="robosuite.environments.manipulation.single_arm_env.SingleArmEnv"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.environments.manipulation.single_arm_env.SingleArmEnv</span></code></a></p>
+<p>This class corresponds to the stacking task for a single robot arm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robots</strong> (<em>str</em><em> or </em><em>list of str</em>) – Specification for specific robot arm(s) to be instantiated within this env
+(e.g: “Sawyer” would generate one arm; [“Panda”, “Panda”, “Sawyer”] would generate three robot arms)
+Note: Must be a single single-arm robot!</p></li>
+<li><p><strong>env_configuration</strong> (<em>str</em>) – Specifies how to position the robots within the environment (default is “default”).
+For most single arm environments, this argument has no impact on the robot setup.</p></li>
+<li><p><strong>controller_configs</strong> (<em>str</em><em> or </em><em>list of dict</em>) – If set, contains relevant controller parameters for creating a
+custom controller. Else, uses the default controller for this specific task. Should either be single
+dict if same controller is to be used for all robots or else it should be a list of the same length as
+“robots” param</p></li>
+<li><p><strong>gripper_types</strong> (<em>str</em><em> or </em><em>list of str</em>) – type of gripper, used to instantiate
+gripper models from gripper factory. Default is “default”, which is the default grippers(s) associated
+with the robot(s) the ‘robots’ specification. None removes the gripper, and any other (valid) model
+overrides the default gripper. Should either be single str if same gripper type is to be used for all
+robots or else it should be a list of the same length as “robots” param</p></li>
+<li><p><strong>initialization_noise</strong> (<em>dict</em><em> or </em><em>list of dict</em>) – <p>Dict containing the initialization noise parameters.
+The expected keys and corresponding value types are specified below:</p>
+<dl class="field-list simple">
+<dt class="field-odd"><cite>’magnitude’</cite></dt>
+<dd class="field-odd"><p>The scale factor of uni-variate random noise applied to each of a robot’s given initial
+joint positions. Setting this value to <cite>None</cite> or 0.0 results in no noise being applied.
+If “gaussian” type of noise is applied then this magnitude scales the standard deviation applied,
+If “uniform” type of noise is applied then this magnitude sets the bounds of the sampling range</p>
+</dd>
+<dt class="field-even"><cite>’type’</cite></dt>
+<dd class="field-even"><p>Type of noise to apply. Can either specify “gaussian” or “uniform”</p>
+</dd>
+</dl>
+<p>Should either be single dict if same noise value is to be used for all robots or else it should be a
+list of the same length as “robots” param</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>Specifying “default” will automatically use the default noise settings.
+Specifying None will automatically create the required dict with “magnitude” set to 0.0.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>table_full_size</strong> (<em>3-tuple</em>) – x, y, and z dimensions of the table.</p></li>
+<li><p><strong>table_friction</strong> (<em>3-tuple</em>) – the three mujoco friction parameters for
+the table.</p></li>
+<li><p><strong>use_camera_obs</strong> (<em>bool</em>) – if True, every observation includes rendered image(s)</p></li>
+<li><p><strong>use_object_obs</strong> (<em>bool</em>) – if True, include object (cube) information in
+the observation.</p></li>
+<li><p><strong>reward_scale</strong> (<em>None</em><em> or </em><em>float</em>) – Scales the normalized reward function by the amount specified.
+If None, environment reward remains unnormalized</p></li>
+<li><p><strong>reward_shaping</strong> (<em>bool</em>) – if True, use dense rewards.</p></li>
+<li><p><strong>placement_initializer</strong> (<a class="reference internal" href="robosuite.utils.html#robosuite.utils.placement_samplers.ObjectPositionSampler" title="robosuite.utils.placement_samplers.ObjectPositionSampler"><em>ObjectPositionSampler</em></a>) – if provided, will
+be used to place objects on every reset, else a UniformRandomSampler
+is used by default.</p></li>
+<li><p><strong>has_renderer</strong> (<em>bool</em>) – If true, render the simulation state in
+a viewer instead of headless mode.</p></li>
+<li><p><strong>has_offscreen_renderer</strong> (<em>bool</em>) – True if using off-screen rendering</p></li>
+<li><p><strong>render_camera</strong> (<em>str</em>) – Name of camera to render if <cite>has_renderer</cite> is True. Setting this value to ‘None’
+will result in the default angle being applied, which is useful as it can be dragged / panned by
+the user using the mouse</p></li>
+<li><p><strong>render_collision_mesh</strong> (<em>bool</em>) – True if rendering collision meshes in camera. False otherwise.</p></li>
+<li><p><strong>render_visual_mesh</strong> (<em>bool</em>) – True if rendering visual meshes in camera. False otherwise.</p></li>
+<li><p><strong>render_gpu_device_id</strong> (<em>int</em>) – corresponds to the GPU device id to use for offscreen rendering.
+Defaults to -1, in which case the device will be inferred from environment variables
+(GPUS or CUDA_VISIBLE_DEVICES).</p></li>
+<li><p><strong>control_freq</strong> (<em>float</em>) – how many control signals to receive in every second. This sets the amount of
+simulation time that passes between every action input.</p></li>
+<li><p><strong>horizon</strong> (<em>int</em>) – Every episode lasts for exactly &#64;horizon timesteps.</p></li>
+<li><p><strong>ignore_done</strong> (<em>bool</em>) – True if never terminating the environment (ignore &#64;horizon).</p></li>
+<li><p><strong>hard_reset</strong> (<em>bool</em>) – If True, re-loads model, sim, and render object upon a reset call, else,
+only calls sim.reset and resets all robosuite-internal variables</p></li>
+<li><p><strong>camera_names</strong> (<em>str</em><em> or </em><em>list of str</em>) – <p>name of camera to be rendered. Should either be single str if
+same name is to be used for all cameras’ rendering or else it should be a list of cameras to render.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>At least one camera must be specified if &#64;use_camera_obs is True.</p>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>To render all robots’ cameras of a certain type (e.g.: “robotview” or “eye_in_hand”), use the
+convention “all-{name}” (e.g.: “all-robotview”) to automatically render all camera images from each
+robot’s camera list).</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>camera_heights</strong> (<em>int</em><em> or </em><em>list of int</em>) – height of camera frame. Should either be single int if
+same height is to be used for all cameras’ frames or else it should be a list of the same length as
+“camera names” param.</p></li>
+<li><p><strong>camera_widths</strong> (<em>int</em><em> or </em><em>list of int</em>) – width of camera frame. Should either be single int if
+same width is to be used for all cameras’ frames or else it should be a list of the same length as
+“camera names” param.</p></li>
+<li><p><strong>camera_depths</strong> (<em>bool</em><em> or </em><em>list of bool</em>) – True if rendering RGB-D, and RGB otherwise. Should either be single
+bool if same depth setting is to be used for all cameras or else it should be a list of the same length as
+“camera names” param.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>AssertionError</strong> – [Invalid number of robots specified]</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.environments.manipulation.stack.Stack.reward">
+<code class="sig-name descname">reward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.stack.Stack.reward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reward function for the task.</p>
+<p>Sparse un-normalized reward:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>a discrete reward of 2.0 is provided if the red block is stacked on the green block</p></li>
+</ul>
+</div></blockquote>
+<p>Un-normalized components if using reward shaping:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Reaching: in [0, 0.25], to encourage the arm to reach the cube</p></li>
+<li><p>Grasping: in {0, 0.25}, non-zero if arm is grasping the cube</p></li>
+<li><p>Lifting: in {0, 1}, non-zero if arm has lifted the cube</p></li>
+<li><p>Aligning: in [0, 0.5], encourages aligning one cube over the other</p></li>
+<li><p>Stacking: in {0, 2}, non-zero if cube is stacked on other cube</p></li>
+</ul>
+</div></blockquote>
+<p>The reward is max over the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Reaching + Grasping</p></li>
+<li><p>Lifting + Aligning</p></li>
+<li><p>Stacking</p></li>
+</ul>
+</div></blockquote>
+<p>The sparse reward only consists of the stacking component.</p>
+<p>Note that the final reward is normalized and scaled by
+reward_scale / 2.0 as well so that the max score is equal to reward_scale</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>action</strong> (<em>np array</em>) – [NOT USED]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>reward value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.manipulation.stack.Stack.staged_rewards">
+<code class="sig-name descname">staged_rewards</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.stack.Stack.staged_rewards" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to calculate staged rewards based on current physical states.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>(float): reward for reaching and grasping</p></li>
+<li><p>(float): reward for lifting and aligning</p></li>
+<li><p>(float): reward for stacking</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>3-tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.manipulation.stack.Stack.visualize">
+<code class="sig-name descname">visualize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vis_settings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.stack.Stack.visualize" title="Permalink to this definition">¶</a></dt>
+<dd><p>In addition to super call, visualize gripper site proportional to the distance to the cube.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vis_settings</strong> (<em>dict</em>) – Visualization keywords mapped to T/F, determining whether that specific
+component should be visualized. Should have “grippers” keyword as well as any other relevant
+options specified.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.environments.manipulation.two_arm_env">
+<span id="robosuite-environments-manipulation-two-arm-env-module"></span><h2>robosuite.environments.manipulation.two_arm_env module<a class="headerlink" href="#module-robosuite.environments.manipulation.two_arm_env" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.environments.manipulation.two_arm_env.TwoArmEnv">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.manipulation.two_arm_env.</code><code class="sig-name descname">TwoArmEnv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robots</span></em>, <em class="sig-param"><span class="n">env_configuration</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">controller_configs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mount_types</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">gripper_types</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">initialization_noise</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_camera_obs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">has_renderer</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">has_offscreen_renderer</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_camera</span><span class="o">=</span><span class="default_value">'frontview'</span></em>, <em class="sig-param"><span class="n">render_collision_mesh</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">render_visual_mesh</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_gpu_device_id</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">control_freq</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">horizon</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">ignore_done</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">hard_reset</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">camera_names</span><span class="o">=</span><span class="default_value">'agentview'</span></em>, <em class="sig-param"><span class="n">camera_heights</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_widths</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_depths</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.two_arm_env.TwoArmEnv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.environments.manipulation.manipulation_env.ManipulationEnv" title="robosuite.environments.manipulation.manipulation_env.ManipulationEnv"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.environments.manipulation.manipulation_env.ManipulationEnv</span></code></a></p>
+<p>A manipulation environment intended for two robot arms.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.environments.manipulation.two_arm_handover">
+<span id="robosuite-environments-manipulation-two-arm-handover-module"></span><h2>robosuite.environments.manipulation.two_arm_handover module<a class="headerlink" href="#module-robosuite.environments.manipulation.two_arm_handover" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.environments.manipulation.two_arm_handover.TwoArmHandover">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.manipulation.two_arm_handover.</code><code class="sig-name descname">TwoArmHandover</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robots</span></em>, <em class="sig-param"><span class="n">env_configuration</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">controller_configs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gripper_types</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">initialization_noise</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">prehensile</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">table_full_size</span><span class="o">=</span><span class="default_value">0.8, 1.2, 0.05</span></em>, <em class="sig-param"><span class="n">table_friction</span><span class="o">=</span><span class="default_value">1.0, 0.005, 0.0001</span></em>, <em class="sig-param"><span class="n">use_camera_obs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">use_object_obs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">reward_scale</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">reward_shaping</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">placement_initializer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">has_renderer</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">has_offscreen_renderer</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_camera</span><span class="o">=</span><span class="default_value">'frontview'</span></em>, <em class="sig-param"><span class="n">render_collision_mesh</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">render_visual_mesh</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_gpu_device_id</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">control_freq</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">horizon</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">ignore_done</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">hard_reset</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">camera_names</span><span class="o">=</span><span class="default_value">'agentview'</span></em>, <em class="sig-param"><span class="n">camera_heights</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_widths</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_depths</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.two_arm_handover.TwoArmHandover" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.environments.manipulation.two_arm_env.TwoArmEnv" title="robosuite.environments.manipulation.two_arm_env.TwoArmEnv"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.environments.manipulation.two_arm_env.TwoArmEnv</span></code></a></p>
+<p>This class corresponds to the handover task for two robot arms.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robots</strong> (<em>str</em><em> or </em><em>list of str</em>) – Specification for specific robot arm(s) to be instantiated within this env
+(e.g: “Sawyer” would generate one arm; [“Panda”, “Panda”, “Sawyer”] would generate three robot arms)
+Note: Must be either 2 single single-arm robots or 1 bimanual robot!</p></li>
+<li><p><strong>env_configuration</strong> (<em>str</em>) – <p>Specifies how to position the robots within the environment. Can be either:</p>
+<dl class="field-list simple">
+<dt class="field-odd"><cite>’bimanual’</cite></dt>
+<dd class="field-odd"><p>Only applicable for bimanual robot setups. Sets up the (single) bimanual robot on the -x
+side of the table</p>
+</dd>
+<dt class="field-even"><cite>’single-arm-parallel’</cite></dt>
+<dd class="field-even"><p>Only applicable for multi single arm setups. Sets up the (two) single armed
+robots next to each other on the -x side of the table</p>
+</dd>
+<dt class="field-odd"><cite>’single-arm-opposed’</cite></dt>
+<dd class="field-odd"><p>Only applicable for multi single arm setups. Sets up the (two) single armed
+robots opposed from each others on the opposite +/-y sides of the table.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>that &quot;default&quot; corresponds to either &quot;bimanual&quot; if a bimanual robot is used</strong><strong> or </strong><strong>&quot;single-arm-opposed&quot; if two</strong> (<em>Note</em>) – </p></li>
+<li><p><strong>robots are used.</strong> (<em>single-arm</em>) – </p></li>
+<li><p><strong>controller_configs</strong> (<em>str</em><em> or </em><em>list of dict</em>) – If set, contains relevant controller parameters for creating a
+custom controller. Else, uses the default controller for this specific task. Should either be single
+dict if same controller is to be used for all robots or else it should be a list of the same length as
+“robots” param</p></li>
+<li><p><strong>gripper_types</strong> (<em>str</em><em> or </em><em>list of str</em>) – type of gripper, used to instantiate
+gripper models from gripper factory. Default is “default”, which is the default grippers(s) associated
+with the robot(s) the ‘robots’ specification. None removes the gripper, and any other (valid) model
+overrides the default gripper. Should either be single str if same gripper type is to be used for all
+robots or else it should be a list of the same length as “robots” param</p></li>
+<li><p><strong>initialization_noise</strong> (<em>dict</em><em> or </em><em>list of dict</em>) – <p>Dict containing the initialization noise parameters.
+The expected keys and corresponding value types are specified below:</p>
+<dl class="field-list simple">
+<dt class="field-odd"><cite>’magnitude’</cite></dt>
+<dd class="field-odd"><p>The scale factor of uni-variate random noise applied to each of a robot’s given initial
+joint positions. Setting this value to <cite>None</cite> or 0.0 results in no noise being applied.
+If “gaussian” type of noise is applied then this magnitude scales the standard deviation applied,
+If “uniform” type of noise is applied then this magnitude sets the bounds of the sampling range</p>
+</dd>
+<dt class="field-even"><cite>’type’</cite></dt>
+<dd class="field-even"><p>Type of noise to apply. Can either specify “gaussian” or “uniform”</p>
+</dd>
+</dl>
+<p>Should either be single dict if same noise value is to be used for all robots or else it should be a
+list of the same length as “robots” param</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>Specifying “default” will automatically use the default noise settings.
+Specifying None will automatically create the required dict with “magnitude” set to 0.0.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>prehensile</strong> (<em>bool</em>) – If true, handover object starts on the table. Else, the object starts in Arm0’s gripper</p></li>
+<li><p><strong>table_full_size</strong> (<em>3-tuple</em>) – x, y, and z dimensions of the table.</p></li>
+<li><p><strong>table_friction</strong> (<em>3-tuple</em>) – the three mujoco friction parameters for
+the table.</p></li>
+<li><p><strong>use_camera_obs</strong> (<em>bool</em>) – if True, every observation includes rendered image(s)</p></li>
+<li><p><strong>use_object_obs</strong> (<em>bool</em>) – if True, include object (cube) information in
+the observation.</p></li>
+<li><p><strong>reward_scale</strong> (<em>None</em><em> or </em><em>float</em>) – Scales the normalized reward function by the amount specified.
+If None, environment reward remains unnormalized</p></li>
+<li><p><strong>reward_shaping</strong> (<em>bool</em>) – if True, use dense rewards.</p></li>
+<li><p><strong>placement_initializer</strong> (<a class="reference internal" href="robosuite.utils.html#robosuite.utils.placement_samplers.ObjectPositionSampler" title="robosuite.utils.placement_samplers.ObjectPositionSampler"><em>ObjectPositionSampler</em></a>) – if provided, will
+be used to place objects on every reset, else a UniformRandomSampler
+is used by default.</p></li>
+<li><p><strong>has_renderer</strong> (<em>bool</em>) – If true, render the simulation state in
+a viewer instead of headless mode.</p></li>
+<li><p><strong>has_offscreen_renderer</strong> (<em>bool</em>) – True if using off-screen rendering</p></li>
+<li><p><strong>render_camera</strong> (<em>str</em>) – Name of camera to render if <cite>has_renderer</cite> is True. Setting this value to ‘None’
+will result in the default angle being applied, which is useful as it can be dragged / panned by
+the user using the mouse</p></li>
+<li><p><strong>render_collision_mesh</strong> (<em>bool</em>) – True if rendering collision meshes in camera. False otherwise.</p></li>
+<li><p><strong>render_visual_mesh</strong> (<em>bool</em>) – True if rendering visual meshes in camera. False otherwise.</p></li>
+<li><p><strong>render_gpu_device_id</strong> (<em>int</em>) – corresponds to the GPU device id to use for offscreen rendering.
+Defaults to -1, in which case the device will be inferred from environment variables
+(GPUS or CUDA_VISIBLE_DEVICES).</p></li>
+<li><p><strong>control_freq</strong> (<em>float</em>) – how many control signals to receive in every second. This sets the amount of
+simulation time that passes between every action input.</p></li>
+<li><p><strong>horizon</strong> (<em>int</em>) – Every episode lasts for exactly &#64;horizon timesteps.</p></li>
+<li><p><strong>ignore_done</strong> (<em>bool</em>) – True if never terminating the environment (ignore &#64;horizon).</p></li>
+<li><p><strong>hard_reset</strong> (<em>bool</em>) – If True, re-loads model, sim, and render object upon a reset call, else,
+only calls sim.reset and resets all robosuite-internal variables</p></li>
+<li><p><strong>camera_names</strong> (<em>str</em><em> or </em><em>list of str</em>) – <p>name of camera to be rendered. Should either be single str if
+same name is to be used for all cameras’ rendering or else it should be a list of cameras to render.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>At least one camera must be specified if &#64;use_camera_obs is True.</p>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>To render all robots’ cameras of a certain type (e.g.: “robotview” or “eye_in_hand”), use the
+convention “all-{name}” (e.g.: “all-robotview”) to automatically render all camera images from each
+robot’s camera list).</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>camera_heights</strong> (<em>int</em><em> or </em><em>list of int</em>) – height of camera frame. Should either be single int if
+same height is to be used for all cameras’ frames or else it should be a list of the same length as
+“camera names” param.</p></li>
+<li><p><strong>camera_widths</strong> (<em>int</em><em> or </em><em>list of int</em>) – width of camera frame. Should either be single int if
+same width is to be used for all cameras’ frames or else it should be a list of the same length as
+“camera names” param.</p></li>
+<li><p><strong>camera_depths</strong> (<em>bool</em><em> or </em><em>list of bool</em>) – True if rendering RGB-D, and RGB otherwise. Should either be single
+bool if same depth setting is to be used for all cameras or else it should be a list of the same length as
+“camera names” param.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ValueError</strong> – [Invalid number of robots specified]</p></li>
+<li><p><strong>ValueError</strong> – [Invalid env configuration]</p></li>
+<li><p><strong>ValueError</strong> – [Invalid robots for specified env configuration]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.environments.manipulation.two_arm_handover.TwoArmHandover.reward">
+<code class="sig-name descname">reward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.two_arm_handover.TwoArmHandover.reward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reward function for the task.</p>
+<p>Sparse un-normalized reward:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>a discrete reward of 2.0 is provided when only Arm 1 is gripping the handle and has the handle
+lifted above a certain threshold</p></li>
+</ul>
+</div></blockquote>
+<p>Un-normalized max-wise components if using reward shaping:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Arm0 Reaching: (1) in [0, 0.25] proportional to the distance between Arm 0 and the handle</p></li>
+<li><p>Arm0 Grasping: (2) in {0, 0.5}, nonzero if Arm 0 is gripping the hammer (any part).</p></li>
+<li><p>Arm0 Lifting: (3) in {0, 1.0}, nonzero if Arm 0 lifts the handle from the table past a certain threshold</p></li>
+<li><p>Arm0 Hovering: (4) in {0, [1.0, 1.25]}, nonzero only if Arm0 is actively lifting the hammer, and is
+proportional to the distance between the handle and Arm 1
+conditioned on the handle being lifted from the table and being grasped by Arm 0</p></li>
+<li><p>Mutual Grasping: (5) in {0, 1.5}, nonzero if both Arm 0 and Arm 1 are gripping the hammer (Arm 1 must be
+gripping the handle) while lifted above the table</p></li>
+<li><p>Handover: (6) in {0, 2.0}, nonzero when only Arm 1 is gripping the handle and has the handle
+lifted above the table</p></li>
+</ul>
+</div></blockquote>
+<p>Note that the final reward is normalized and scaled by reward_scale / 2.0 as
+well so that the max score is equal to reward_scale</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>action</strong> (<em>np array</em>) – [NOT USED]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>reward value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.environments.manipulation.two_arm_lift">
+<span id="robosuite-environments-manipulation-two-arm-lift-module"></span><h2>robosuite.environments.manipulation.two_arm_lift module<a class="headerlink" href="#module-robosuite.environments.manipulation.two_arm_lift" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.environments.manipulation.two_arm_lift.TwoArmLift">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.manipulation.two_arm_lift.</code><code class="sig-name descname">TwoArmLift</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robots</span></em>, <em class="sig-param"><span class="n">env_configuration</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">controller_configs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gripper_types</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">initialization_noise</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">table_full_size</span><span class="o">=</span><span class="default_value">0.8, 0.8, 0.05</span></em>, <em class="sig-param"><span class="n">table_friction</span><span class="o">=</span><span class="default_value">1.0, 0.005, 0.0001</span></em>, <em class="sig-param"><span class="n">use_camera_obs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">use_object_obs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">reward_scale</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">reward_shaping</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">placement_initializer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">has_renderer</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">has_offscreen_renderer</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_camera</span><span class="o">=</span><span class="default_value">'frontview'</span></em>, <em class="sig-param"><span class="n">render_collision_mesh</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">render_visual_mesh</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_gpu_device_id</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">control_freq</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">horizon</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">ignore_done</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">hard_reset</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">camera_names</span><span class="o">=</span><span class="default_value">'agentview'</span></em>, <em class="sig-param"><span class="n">camera_heights</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_widths</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_depths</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.two_arm_lift.TwoArmLift" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.environments.manipulation.two_arm_env.TwoArmEnv" title="robosuite.environments.manipulation.two_arm_env.TwoArmEnv"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.environments.manipulation.two_arm_env.TwoArmEnv</span></code></a></p>
+<p>This class corresponds to the lifting task for two robot arms.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robots</strong> (<em>str</em><em> or </em><em>list of str</em>) – Specification for specific robot arm(s) to be instantiated within this env
+(e.g: “Sawyer” would generate one arm; [“Panda”, “Panda”, “Sawyer”] would generate three robot arms)
+Note: Must be either 2 single single-arm robots or 1 bimanual robot!</p></li>
+<li><p><strong>env_configuration</strong> (<em>str</em>) – <p>Specifies how to position the robots within the environment. Can be either:</p>
+<dl class="field-list simple">
+<dt class="field-odd"><cite>’bimanual’</cite></dt>
+<dd class="field-odd"><p>Only applicable for bimanual robot setups. Sets up the (single) bimanual robot on the -x
+side of the table</p>
+</dd>
+<dt class="field-even"><cite>’single-arm-parallel’</cite></dt>
+<dd class="field-even"><p>Only applicable for multi single arm setups. Sets up the (two) single armed
+robots next to each other on the -x side of the table</p>
+</dd>
+<dt class="field-odd"><cite>’single-arm-opposed’</cite></dt>
+<dd class="field-odd"><p>Only applicable for multi single arm setups. Sets up the (two) single armed
+robots opposed from each others on the opposite +/-y sides of the table.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>that &quot;default&quot; corresponds to either &quot;bimanual&quot; if a bimanual robot is used</strong><strong> or </strong><strong>&quot;single-arm-opposed&quot; if two</strong> (<em>Note</em>) – </p></li>
+<li><p><strong>robots are used.</strong> (<em>single-arm</em>) – </p></li>
+<li><p><strong>controller_configs</strong> (<em>str</em><em> or </em><em>list of dict</em>) – If set, contains relevant controller parameters for creating a
+custom controller. Else, uses the default controller for this specific task. Should either be single
+dict if same controller is to be used for all robots or else it should be a list of the same length as
+“robots” param</p></li>
+<li><p><strong>gripper_types</strong> (<em>str</em><em> or </em><em>list of str</em>) – type of gripper, used to instantiate
+gripper models from gripper factory. Default is “default”, which is the default grippers(s) associated
+with the robot(s) the ‘robots’ specification. None removes the gripper, and any other (valid) model
+overrides the default gripper. Should either be single str if same gripper type is to be used for all
+robots or else it should be a list of the same length as “robots” param</p></li>
+<li><p><strong>initialization_noise</strong> (<em>dict</em><em> or </em><em>list of dict</em>) – <p>Dict containing the initialization noise parameters.
+The expected keys and corresponding value types are specified below:</p>
+<dl class="field-list simple">
+<dt class="field-odd"><cite>’magnitude’</cite></dt>
+<dd class="field-odd"><p>The scale factor of uni-variate random noise applied to each of a robot’s given initial
+joint positions. Setting this value to <cite>None</cite> or 0.0 results in no noise being applied.
+If “gaussian” type of noise is applied then this magnitude scales the standard deviation applied,
+If “uniform” type of noise is applied then this magnitude sets the bounds of the sampling range</p>
+</dd>
+<dt class="field-even"><cite>’type’</cite></dt>
+<dd class="field-even"><p>Type of noise to apply. Can either specify “gaussian” or “uniform”</p>
+</dd>
+</dl>
+<p>Should either be single dict if same noise value is to be used for all robots or else it should be a
+list of the same length as “robots” param</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>Specifying “default” will automatically use the default noise settings.
+Specifying None will automatically create the required dict with “magnitude” set to 0.0.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>table_full_size</strong> (<em>3-tuple</em>) – x, y, and z dimensions of the table.</p></li>
+<li><p><strong>table_friction</strong> (<em>3-tuple</em>) – the three mujoco friction parameters for
+the table.</p></li>
+<li><p><strong>use_camera_obs</strong> (<em>bool</em>) – if True, every observation includes rendered image(s)</p></li>
+<li><p><strong>use_object_obs</strong> (<em>bool</em>) – if True, include object (cube) information in
+the observation.</p></li>
+<li><p><strong>reward_scale</strong> (<em>None</em><em> or </em><em>float</em>) – Scales the normalized reward function by the amount specified.
+If None, environment reward remains unnormalized</p></li>
+<li><p><strong>reward_shaping</strong> (<em>bool</em>) – if True, use dense rewards.</p></li>
+<li><p><strong>placement_initializer</strong> (<a class="reference internal" href="robosuite.utils.html#robosuite.utils.placement_samplers.ObjectPositionSampler" title="robosuite.utils.placement_samplers.ObjectPositionSampler"><em>ObjectPositionSampler</em></a>) – if provided, will
+be used to place objects on every reset, else a UniformRandomSampler
+is used by default.</p></li>
+<li><p><strong>has_renderer</strong> (<em>bool</em>) – If true, render the simulation state in
+a viewer instead of headless mode.</p></li>
+<li><p><strong>has_offscreen_renderer</strong> (<em>bool</em>) – True if using off-screen rendering</p></li>
+<li><p><strong>render_camera</strong> (<em>str</em>) – Name of camera to render if <cite>has_renderer</cite> is True. Setting this value to ‘None’
+will result in the default angle being applied, which is useful as it can be dragged / panned by
+the user using the mouse</p></li>
+<li><p><strong>render_collision_mesh</strong> (<em>bool</em>) – True if rendering collision meshes in camera. False otherwise.</p></li>
+<li><p><strong>render_visual_mesh</strong> (<em>bool</em>) – True if rendering visual meshes in camera. False otherwise.</p></li>
+<li><p><strong>render_gpu_device_id</strong> (<em>int</em>) – corresponds to the GPU device id to use for offscreen rendering.
+Defaults to -1, in which case the device will be inferred from environment variables
+(GPUS or CUDA_VISIBLE_DEVICES).</p></li>
+<li><p><strong>control_freq</strong> (<em>float</em>) – how many control signals to receive in every second. This sets the amount of
+simulation time that passes between every action input.</p></li>
+<li><p><strong>horizon</strong> (<em>int</em>) – Every episode lasts for exactly &#64;horizon timesteps.</p></li>
+<li><p><strong>ignore_done</strong> (<em>bool</em>) – True if never terminating the environment (ignore &#64;horizon).</p></li>
+<li><p><strong>hard_reset</strong> (<em>bool</em>) – If True, re-loads model, sim, and render object upon a reset call, else,
+only calls sim.reset and resets all robosuite-internal variables</p></li>
+<li><p><strong>camera_names</strong> (<em>str</em><em> or </em><em>list of str</em>) – <p>name of camera to be rendered. Should either be single str if
+same name is to be used for all cameras’ rendering or else it should be a list of cameras to render.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>At least one camera must be specified if &#64;use_camera_obs is True.</p>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>To render all robots’ cameras of a certain type (e.g.: “robotview” or “eye_in_hand”), use the
+convention “all-{name}” (e.g.: “all-robotview”) to automatically render all camera images from each
+robot’s camera list).</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>camera_heights</strong> (<em>int</em><em> or </em><em>list of int</em>) – height of camera frame. Should either be single int if
+same height is to be used for all cameras’ frames or else it should be a list of the same length as
+“camera names” param.</p></li>
+<li><p><strong>camera_widths</strong> (<em>int</em><em> or </em><em>list of int</em>) – width of camera frame. Should either be single int if
+same width is to be used for all cameras’ frames or else it should be a list of the same length as
+“camera names” param.</p></li>
+<li><p><strong>camera_depths</strong> (<em>bool</em><em> or </em><em>list of bool</em>) – True if rendering RGB-D, and RGB otherwise. Should either be single
+bool if same depth setting is to be used for all cameras or else it should be a list of the same length as
+“camera names” param.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ValueError</strong> – [Invalid number of robots specified]</p></li>
+<li><p><strong>ValueError</strong> – [Invalid env configuration]</p></li>
+<li><p><strong>ValueError</strong> – [Invalid robots for specified env configuration]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.environments.manipulation.two_arm_lift.TwoArmLift.reward">
+<code class="sig-name descname">reward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.two_arm_lift.TwoArmLift.reward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reward function for the task.</p>
+<p>Sparse un-normalized reward:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>a discrete reward of 3.0 is provided if the pot is lifted and is parallel within 30 deg to the table</p></li>
+</ul>
+</div></blockquote>
+<p>Un-normalized summed components if using reward shaping:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Reaching: in [0, 0.5], per-arm component that is proportional to the distance between each arm and its
+respective pot handle, and exactly 0.5 when grasping the handle
+- Note that the agent only gets the lifting reward when flipping no more than 30 degrees.</p></li>
+<li><p>Grasping: in {0, 0.25}, binary per-arm component awarded if the gripper is grasping its correct handle</p></li>
+<li><p>Lifting: in [0, 1.5], proportional to the pot’s height above the table, and capped at a certain threshold</p></li>
+</ul>
+</div></blockquote>
+<p>Note that the final reward is normalized and scaled by reward_scale / 3.0 as
+well so that the max score is equal to reward_scale</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>action</strong> (<em>np array</em>) – [NOT USED]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>reward value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.environments.manipulation.two_arm_lift.TwoArmLift.visualize">
+<code class="sig-name descname">visualize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vis_settings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.two_arm_lift.TwoArmLift.visualize" title="Permalink to this definition">¶</a></dt>
+<dd><p>In addition to super call, visualize gripper site proportional to the distance to each handle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vis_settings</strong> (<em>dict</em>) – Visualization keywords mapped to T/F, determining whether that specific
+component should be visualized. Should have “grippers” keyword as well as any other relevant
+options specified.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.environments.manipulation.two_arm_peg_in_hole">
+<span id="robosuite-environments-manipulation-two-arm-peg-in-hole-module"></span><h2>robosuite.environments.manipulation.two_arm_peg_in_hole module<a class="headerlink" href="#module-robosuite.environments.manipulation.two_arm_peg_in_hole" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.environments.manipulation.two_arm_peg_in_hole.TwoArmPegInHole">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.manipulation.two_arm_peg_in_hole.</code><code class="sig-name descname">TwoArmPegInHole</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robots</span></em>, <em class="sig-param"><span class="n">env_configuration</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">controller_configs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gripper_types</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">initialization_noise</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">use_camera_obs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">use_object_obs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">reward_scale</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">reward_shaping</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">peg_radius</span><span class="o">=</span><span class="default_value">0.015, 0.03</span></em>, <em class="sig-param"><span class="n">peg_length</span><span class="o">=</span><span class="default_value">0.13</span></em>, <em class="sig-param"><span class="n">has_renderer</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">has_offscreen_renderer</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_camera</span><span class="o">=</span><span class="default_value">'frontview'</span></em>, <em class="sig-param"><span class="n">render_collision_mesh</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">render_visual_mesh</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_gpu_device_id</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">control_freq</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">horizon</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">ignore_done</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">hard_reset</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">camera_names</span><span class="o">=</span><span class="default_value">'agentview'</span></em>, <em class="sig-param"><span class="n">camera_heights</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_widths</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_depths</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.two_arm_peg_in_hole.TwoArmPegInHole" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.environments.manipulation.two_arm_env.TwoArmEnv" title="robosuite.environments.manipulation.two_arm_env.TwoArmEnv"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.environments.manipulation.two_arm_env.TwoArmEnv</span></code></a></p>
+<p>This class corresponds to the peg-in-hole task for two robot arms.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robots</strong> (<em>str</em><em> or </em><em>list of str</em>) – Specification for specific robot arm(s) to be instantiated within this env
+(e.g: “Sawyer” would generate one arm; [“Panda”, “Panda”, “Sawyer”] would generate three robot arms)
+Note: Must be either 2 single single-arm robots or 1 bimanual robot!</p></li>
+<li><p><strong>env_configuration</strong> (<em>str</em>) – <p>Specifies how to position the robots within the environment. Can be either:</p>
+<dl class="field-list simple">
+<dt class="field-odd"><cite>’bimanual’</cite></dt>
+<dd class="field-odd"><p>Only applicable for bimanual robot setups. Sets up the (single) bimanual robot on the -x
+side of the table</p>
+</dd>
+<dt class="field-even"><cite>’single-arm-parallel’</cite></dt>
+<dd class="field-even"><p>Only applicable for multi single arm setups. Sets up the (two) single armed
+robots next to each other on the -x side of the table</p>
+</dd>
+<dt class="field-odd"><cite>’single-arm-opposed’</cite></dt>
+<dd class="field-odd"><p>Only applicable for multi single arm setups. Sets up the (two) single armed
+robots opposed from each others on the opposite +/-y sides of the table.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>that &quot;default&quot; corresponds to either &quot;bimanual&quot; if a bimanual robot is used</strong><strong> or </strong><strong>&quot;single-arm-opposed&quot; if two</strong> (<em>Note</em>) – </p></li>
+<li><p><strong>robots are used.</strong> (<em>single-arm</em>) – </p></li>
+<li><p><strong>controller_configs</strong> (<em>str</em><em> or </em><em>list of dict</em>) – If set, contains relevant controller parameters for creating a
+custom controller. Else, uses the default controller for this specific task. Should either be single
+dict if same controller is to be used for all robots or else it should be a list of the same length as
+“robots” param</p></li>
+<li><p><strong>gripper_types</strong> (<em>str</em><em> or </em><em>list of str</em>) – type of gripper, used to instantiate gripper models from gripper factory.
+For this environment, setting a value other than the default (None) will raise an AssertionError, as
+this environment is not meant to be used with any gripper at all.</p></li>
+<li><p><strong>initialization_noise</strong> (<em>dict</em><em> or </em><em>list of dict</em>) – <p>Dict containing the initialization noise parameters.
+The expected keys and corresponding value types are specified below:</p>
+<dl class="field-list simple">
+<dt class="field-odd"><cite>’magnitude’</cite></dt>
+<dd class="field-odd"><p>The scale factor of uni-variate random noise applied to each of a robot’s given initial
+joint positions. Setting this value to <cite>None</cite> or 0.0 results in no noise being applied.
+If “gaussian” type of noise is applied then this magnitude scales the standard deviation applied,
+If “uniform” type of noise is applied then this magnitude sets the bounds of the sampling range</p>
+</dd>
+<dt class="field-even"><cite>’type’</cite></dt>
+<dd class="field-even"><p>Type of noise to apply. Can either specify “gaussian” or “uniform”</p>
+</dd>
+</dl>
+<p>Should either be single dict if same noise value is to be used for all robots or else it should be a
+list of the same length as “robots” param</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>Specifying “default” will automatically use the default noise settings.
+Specifying None will automatically create the required dict with “magnitude” set to 0.0.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>use_camera_obs</strong> (<em>bool</em><em> or </em><em>list of bool</em>) – if True, every observation for a specific robot includes a rendered</p></li>
+<li><p><strong>Should either be single bool if camera obs value is to be used for all</strong> (<em>image.</em>) – robots or else it should be a list of the same length as “robots” param</p></li>
+<li><p><strong>use_object_obs</strong> (<em>bool</em>) – if True, include object (cube) information in
+the observation.</p></li>
+<li><p><strong>reward_scale</strong> (<em>None</em><em> or </em><em>float</em>) – Scales the normalized reward function by the amount specified.
+If None, environment reward remains unnormalized</p></li>
+<li><p><strong>reward_shaping</strong> (<em>bool</em>) – if True, use dense rewards.</p></li>
+<li><p><strong>peg_radius</strong> (<em>2-tuple</em>) – low and high limits of the (uniformly sampled)
+radius of the peg</p></li>
+<li><p><strong>peg_length</strong> (<em>float</em>) – length of the peg</p></li>
+<li><p><strong>has_renderer</strong> (<em>bool</em>) – If true, render the simulation state in
+a viewer instead of headless mode.</p></li>
+<li><p><strong>has_offscreen_renderer</strong> (<em>bool</em>) – True if using off-screen rendering</p></li>
+<li><p><strong>render_camera</strong> (<em>str</em>) – Name of camera to render if <cite>has_renderer</cite> is True. Setting this value to ‘None’
+will result in the default angle being applied, which is useful as it can be dragged / panned by
+the user using the mouse</p></li>
+<li><p><strong>render_collision_mesh</strong> (<em>bool</em>) – True if rendering collision meshes in camera. False otherwise.</p></li>
+<li><p><strong>render_visual_mesh</strong> (<em>bool</em>) – True if rendering visual meshes in camera. False otherwise.</p></li>
+<li><p><strong>render_gpu_device_id</strong> (<em>int</em>) – corresponds to the GPU device id to use for offscreen rendering.
+Defaults to -1, in which case the device will be inferred from environment variables
+(GPUS or CUDA_VISIBLE_DEVICES).</p></li>
+<li><p><strong>control_freq</strong> (<em>float</em>) – how many control signals to receive in every second. This sets the amount of
+simulation time that passes between every action input.</p></li>
+<li><p><strong>horizon</strong> (<em>int</em>) – Every episode lasts for exactly &#64;horizon timesteps.</p></li>
+<li><p><strong>ignore_done</strong> (<em>bool</em>) – True if never terminating the environment (ignore &#64;horizon).</p></li>
+<li><p><strong>hard_reset</strong> (<em>bool</em>) – If True, re-loads model, sim, and render object upon a reset call, else,
+only calls sim.reset and resets all robosuite-internal variables</p></li>
+<li><p><strong>camera_names</strong> (<em>str</em><em> or </em><em>list of str</em>) – <p>name of camera to be rendered. Should either be single str if
+same name is to be used for all cameras’ rendering or else it should be a list of cameras to render.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>At least one camera must be specified if &#64;use_camera_obs is True.</p>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>To render all robots’ cameras of a certain type (e.g.: “robotview” or “eye_in_hand”), use the
+convention “all-{name}” (e.g.: “all-robotview”) to automatically render all camera images from each
+robot’s camera list).</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>camera_heights</strong> (<em>int</em><em> or </em><em>list of int</em>) – height of camera frame. Should either be single int if
+same height is to be used for all cameras’ frames or else it should be a list of the same length as
+“camera names” param.</p></li>
+<li><p><strong>camera_widths</strong> (<em>int</em><em> or </em><em>list of int</em>) – width of camera frame. Should either be single int if
+same width is to be used for all cameras’ frames or else it should be a list of the same length as
+“camera names” param.</p></li>
+<li><p><strong>camera_depths</strong> (<em>bool</em><em> or </em><em>list of bool</em>) – True if rendering RGB-D, and RGB otherwise. Should either be single
+bool if same depth setting is to be used for all cameras or else it should be a list of the same length as
+“camera names” param.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>AssertionError</strong> – [Gripper specified]</p></li>
+<li><p><strong>ValueError</strong> – [Invalid number of robots specified]</p></li>
+<li><p><strong>ValueError</strong> – [Invalid env configuration]</p></li>
+<li><p><strong>ValueError</strong> – [Invalid robots for specified env configuration]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.environments.manipulation.two_arm_peg_in_hole.TwoArmPegInHole.reward">
+<code class="sig-name descname">reward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.two_arm_peg_in_hole.TwoArmPegInHole.reward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reward function for the task.</p>
+<p>Sparse un-normalized reward:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>a discrete reward of 5.0 is provided if the peg is inside the plate’s hole
+- Note that we enforce that it’s inside at an appropriate angle (cos(theta) &gt; 0.95).</p></li>
+</ul>
+</div></blockquote>
+<p>Un-normalized summed components if using reward shaping:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Reaching: in [0, 1], to encourage the arms to approach each other</p></li>
+<li><p>Perpendicular Distance: in [0,1], to encourage the arms to approach each other</p></li>
+<li><p>Parallel Distance: in [0,1], to encourage the arms to approach each other</p></li>
+<li><p>Alignment: in [0, 1], to encourage having the right orientation between the peg and hole.</p></li>
+<li><p>Placement: in {0, 1}, nonzero if the peg is in the hole with a relatively correct alignment</p></li>
+</ul>
+</div></blockquote>
+<p>Note that the final reward is normalized and scaled by reward_scale / 5.0 as
+well so that the max score is equal to reward_scale</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.environments.manipulation.wipe">
+<span id="robosuite-environments-manipulation-wipe-module"></span><h2>robosuite.environments.manipulation.wipe module<a class="headerlink" href="#module-robosuite.environments.manipulation.wipe" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.environments.manipulation.wipe.Wipe">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.manipulation.wipe.</code><code class="sig-name descname">Wipe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robots</span></em>, <em class="sig-param"><span class="n">env_configuration</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">controller_configs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gripper_types</span><span class="o">=</span><span class="default_value">'WipingGripper'</span></em>, <em class="sig-param"><span class="n">initialization_noise</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">use_camera_obs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">use_object_obs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">reward_scale</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">reward_shaping</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">has_renderer</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">has_offscreen_renderer</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_camera</span><span class="o">=</span><span class="default_value">'frontview'</span></em>, <em class="sig-param"><span class="n">render_collision_mesh</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">render_visual_mesh</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_gpu_device_id</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">control_freq</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">horizon</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">ignore_done</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">hard_reset</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">camera_names</span><span class="o">=</span><span class="default_value">'agentview'</span></em>, <em class="sig-param"><span class="n">camera_heights</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_widths</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_depths</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">task_config</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.wipe.Wipe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.environments.manipulation.single_arm_env.SingleArmEnv" title="robosuite.environments.manipulation.single_arm_env.SingleArmEnv"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.environments.manipulation.single_arm_env.SingleArmEnv</span></code></a></p>
+<p>This class corresponds to the Wiping task for a single robot arm</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robots</strong> (<em>str</em><em> or </em><em>list of str</em>) – Specification for specific robot arm(s) to be instantiated within this env
+(e.g: “Sawyer” would generate one arm; [“Panda”, “Panda”, “Sawyer”] would generate three robot arms)
+Note: Must be a single single-arm robot!</p></li>
+<li><p><strong>env_configuration</strong> (<em>str</em>) – Specifies how to position the robots within the environment (default is “default”).
+For most single arm environments, this argument has no impact on the robot setup.</p></li>
+<li><p><strong>controller_configs</strong> (<em>str</em><em> or </em><em>list of dict</em>) – If set, contains relevant controller parameters for creating a
+custom controller. Else, uses the default controller for this specific task. Should either be single
+dict if same controller is to be used for all robots or else it should be a list of the same length as
+“robots” param</p></li>
+<li><p><strong>gripper_types</strong> (<em>str</em><em> or </em><em>list of str</em>) – type of gripper, used to instantiate
+gripper models from gripper factory.
+For this environment, setting a value other than the default (“WipingGripper”) will raise an
+AssertionError, as this environment is not meant to be used with any other alternative gripper.</p></li>
+<li><p><strong>initialization_noise</strong> (<em>dict</em><em> or </em><em>list of dict</em>) – <p>Dict containing the initialization noise parameters.
+The expected keys and corresponding value types are specified below:</p>
+<dl class="field-list simple">
+<dt class="field-odd"><cite>’magnitude’</cite></dt>
+<dd class="field-odd"><p>The scale factor of uni-variate random noise applied to each of a robot’s given initial
+joint positions. Setting this value to <cite>None</cite> or 0.0 results in no noise being applied.
+If “gaussian” type of noise is applied then this magnitude scales the standard deviation applied,
+If “uniform” type of noise is applied then this magnitude sets the bounds of the sampling range</p>
+</dd>
+<dt class="field-even"><cite>’type’</cite></dt>
+<dd class="field-even"><p>Type of noise to apply. Can either specify “gaussian” or “uniform”</p>
+</dd>
+</dl>
+<p>Should either be single dict if same noise value is to be used for all robots or else it should be a
+list of the same length as “robots” param</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>Specifying “default” will automatically use the default noise settings.
+Specifying None will automatically create the required dict with “magnitude” set to 0.0.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>use_camera_obs</strong> (<em>bool</em>) – if True, every observation includes rendered image(s)</p></li>
+<li><p><strong>use_object_obs</strong> (<em>bool</em>) – if True, include object (cube) information in
+the observation.</p></li>
+<li><p><strong>reward_scale</strong> (<em>None</em><em> or </em><em>float</em>) – Scales the normalized reward function by the amount specified.
+If None, environment reward remains unnormalized</p></li>
+<li><p><strong>reward_shaping</strong> (<em>bool</em>) – if True, use dense rewards.</p></li>
+<li><p><strong>has_renderer</strong> (<em>bool</em>) – If true, render the simulation state in
+a viewer instead of headless mode.</p></li>
+<li><p><strong>has_offscreen_renderer</strong> (<em>bool</em>) – True if using off-screen rendering</p></li>
+<li><p><strong>render_camera</strong> (<em>str</em>) – Name of camera to render if <cite>has_renderer</cite> is True. Setting this value to ‘None’
+will result in the default angle being applied, which is useful as it can be dragged / panned by
+the user using the mouse</p></li>
+<li><p><strong>render_collision_mesh</strong> (<em>bool</em>) – True if rendering collision meshes in camera. False otherwise.</p></li>
+<li><p><strong>render_visual_mesh</strong> (<em>bool</em>) – True if rendering visual meshes in camera. False otherwise.</p></li>
+<li><p><strong>render_gpu_device_id</strong> (<em>int</em>) – corresponds to the GPU device id to use for offscreen rendering.
+Defaults to -1, in which case the device will be inferred from environment variables
+(GPUS or CUDA_VISIBLE_DEVICES).</p></li>
+<li><p><strong>control_freq</strong> (<em>float</em>) – how many control signals to receive in every second. This sets the amount of
+simulation time that passes between every action input.</p></li>
+<li><p><strong>horizon</strong> (<em>int</em>) – Every episode lasts for exactly &#64;horizon timesteps.</p></li>
+<li><p><strong>ignore_done</strong> (<em>bool</em>) – True if never terminating the environment (ignore &#64;horizon).</p></li>
+<li><p><strong>hard_reset</strong> (<em>bool</em>) – If True, re-loads model, sim, and render object upon a reset call, else,
+only calls sim.reset and resets all robosuite-internal variables</p></li>
+<li><p><strong>camera_names</strong> (<em>str</em><em> or </em><em>list of str</em>) – <p>name of camera to be rendered. Should either be single str if
+same name is to be used for all cameras’ rendering or else it should be a list of cameras to render.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>At least one camera must be specified if &#64;use_camera_obs is True.</p>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>To render all robots’ cameras of a certain type (e.g.: “robotview” or “eye_in_hand”), use the
+convention “all-{name}” (e.g.: “all-robotview”) to automatically render all camera images from each
+robot’s camera list).</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>camera_heights</strong> (<em>int</em><em> or </em><em>list of int</em>) – height of camera frame. Should either be single int if
+same height is to be used for all cameras’ frames or else it should be a list of the same length as
+“camera names” param.</p></li>
+<li><p><strong>camera_widths</strong> (<em>int</em><em> or </em><em>list of int</em>) – width of camera frame. Should either be single int if
+same width is to be used for all cameras’ frames or else it should be a list of the same length as
+“camera names” param.</p></li>
+<li><p><strong>camera_depths</strong> (<em>bool</em><em> or </em><em>list of bool</em>) – True if rendering RGB-D, and RGB otherwise. Should either be single
+bool if same depth setting is to be used for all cameras or else it should be a list of the same length as
+“camera names” param.</p></li>
+<li><p><strong>task_config</strong> (<em>None</em><em> or </em><em>dict</em>) – Specifies the parameters relevant to this task. For a full list of expected
+parameters, see the default configuration dict at the top of this file.
+If None is specified, the default configuration will be used.</p></li>
+<li><p><strong>Raises</strong> – AssertionError: [Gripper specified]
+AssertionError: [Bad reward specification]
+AssertionError: [Invalid number of robots specified]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.environments.manipulation.wipe.Wipe.reward">
+<code class="sig-name descname">reward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.wipe.Wipe.reward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reward function for the task.</p>
+<p>Sparse un-normalized reward:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>a discrete reward of self.unit_wiped_reward is provided per single dirt (peg) wiped during this step</p></li>
+<li><p>a discrete reward of self.task_complete_reward is provided if all dirt is wiped</p></li>
+</ul>
+</div></blockquote>
+<p>Note that if the arm is either colliding or near its joint limit, a reward of 0 will be automatically given</p>
+<p>Un-normalized summed components if using reward shaping (individual components can be set to 0:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Reaching: in [0, self.distance_multiplier], proportional to distance between wiper and centroid of dirt
+and zero if the table has been fully wiped clean of all the dirt</p></li>
+<li><p>Table Contact: in {0, self.wipe_contact_reward}, non-zero if wiper is in contact with table</p></li>
+<li><p>Wiping: in {0, self.unit_wiped_reward}, non-zero for each dirt (peg) wiped during this step</p></li>
+<li><p>Cleaned: in {0, self.task_complete_reward}, non-zero if no dirt remains on the table</p></li>
+<li><p>Collision / Joint Limit Penalty: in {self.arm_limit_collision_penalty, 0}, nonzero if robot arm
+is colliding with an object
+- Note that if this value is nonzero, no other reward components can be added</p></li>
+<li><p>Large Force Penalty: in [-inf, 0], scaled by wiper force and directly proportional to
+self.excess_force_penalty_mul if the current force exceeds self.pressure_threshold_max</p></li>
+<li><p>Large Acceleration Penalty: in [-inf, 0], scaled by estimated wiper acceleration and directly
+proportional to self.ee_accel_penalty</p></li>
+</ul>
+</div></blockquote>
+<p>Note that the final per-step reward is normalized given the theoretical best episode return and then scaled:
+reward_scale * (horizon /
+(num_markers * unit_wiped_reward + horizon * (wipe_contact_reward + task_complete_reward)))</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>action</strong> (<em>np array</em>) – [NOT USED]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>reward value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.environments.manipulation">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robosuite.environments.manipulation" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="robosuite.models.html" class="btn btn-neutral float-right" title="robosuite.models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="robosuite.environments.html" class="btn btn-neutral float-left" title="robosuite.environments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright Stanford Univeristy and The University of Texas at Austin 2020
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
