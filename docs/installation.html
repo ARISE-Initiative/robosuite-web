@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation &mdash; robosuite 1.0.0 documentation</title>
+  <title>Installation &mdash; robosuite 1.2.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.0.0
+                1.2.0
               </div>
             
           
@@ -110,6 +110,7 @@
 <li class="toctree-l1"><a class="reference internal" href="modules/environments.html">Environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules/sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules/devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/renderers.html">Renderers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Simulation API</span></p>
 <ul>
@@ -120,8 +121,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Modeling API</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="modeling/mujoco_model.html">Mujoco Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modeling/robot_model.html">Robot Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modeling/gripper_model.html">Gripper Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modeling/object_model.html">Object Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modeling/arena.html">Arena</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modeling/task.html">Task</a></li>
@@ -134,6 +135,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="algorithms/benchmarking.html">Benchmarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithms/roboturk.html">RoboTurk Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
@@ -232,16 +234,16 @@
 <div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <p><strong>robosuite</strong> officially supports Mac OS X and Linux on Python 3. It can be run with an on-screen display for visualization or in a headless mode for model training, with or without a GPU.</p>
-<p>The base installation requires the MuJoCo physics engine (with <a class="reference external" href="https://github.com/openai/mujoco-py">mujoco-py</a>, refer to link for troubleshooting the installation and further instructions) and <a class="reference external" href="http://www.numpy.org/">numpy</a>. To avoid interfering with system packages, it is recommended to install it under a virtual environment by first running <code class="docutils literal notranslate"><span class="pre">virtualenv</span> <span class="pre">-p</span> <span class="pre">python3</span> <span class="pre">.</span> <span class="pre">&amp;&amp;</span> <span class="pre">source</span> <span class="pre">bin/activate</span></code>.</p>
+<p>The base installation requires the MuJoCo physics engine (with <a class="reference external" href="https://github.com/openai/mujoco-py">mujoco-py</a>, refer to link for troubleshooting the installation and further instructions) and <a class="reference external" href="http://www.numpy.org/">numpy</a>. To avoid interfering with systems, it is recommended to install it under a virtual environment by first running <code class="docutils literal notranslate"><span class="pre">virtualenv</span> <span class="pre">-p</span> <span class="pre">python3</span> <span class="pre">.</span> <span class="pre">&amp;&amp;</span> <span class="pre">source</span> <span class="pre">bin/activate</span></code>.</p>
 <p>First download MuJoCo 2.0 (<a class="reference external" href="https://www.roboti.us/download/mujoco200_linux.zip">Linux</a> and <a class="reference external" href="https://www.roboti.us/download/mujoco200_macos.zip">Mac OS X</a>) and unzip its contents into <code class="docutils literal notranslate"><span class="pre">~/.mujoco/mujoco200</span></code>, and copy your MuJoCo license key <code class="docutils literal notranslate"><span class="pre">~/.mujoco/mjkey.txt</span></code>. You can obtain a license key from <a class="reference external" href="https://www.roboti.us/license.html">here</a>.</p>
 <ul>
-<li><p>For Linux, you will need to install some packages to build <code class="docutils literal notranslate"><span class="pre">mujoco-py</span></code> (sourced from <a class="reference external" href="https://github.com/openai/mujoco-py/blob/master/Dockerfile">here</a>, with a couple missing packages added). If using <code class="docutils literal notranslate"><span class="pre">apt</span></code>, the required installation command is:</p>
+<li><p>For Linux, you will need to install somes to build <code class="docutils literal notranslate"><span class="pre">mujoco-py</span></code> (sourced from <a class="reference external" href="https://github.com/openai/mujoco-py/blob/master/Dockerfile">here</a>, with a couple missings added). If using <code class="docutils literal notranslate"><span class="pre">apt</span></code>, the required installation command is:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo apt install curl git libgl1-mesa-dev libgl1-mesa-glx libglew-dev <span class="se">\</span>
         libosmesa6-dev software-properties-common net-tools unzip vim <span class="se">\</span>
         virtualenv wget xpra xserver-xorg-dev libglfw3-dev patchelf
 </pre></div>
 </div>
-<p>Note that for older versions of Ubuntu (e.g., 14.04) there’s no libglfw3 package, in which case you need to <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">LD_LIBRARY_PATH=$HOME/.mujoco/mujoco200/bin</span></code> before proceeding to the next step.</p>
+<p>Note that for older versions of Ubuntu (e.g., 14.04) there’s no libglfw3, in which case you need to <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">LD_LIBRARY_PATH=$HOME/.mujoco/mujoco200/bin</span></code> before proceeding to the next step.</p>
 </li>
 </ul>
 <div class="section" id="install-from-pip">
@@ -273,7 +275,7 @@ $ <span class="nb">cd</span> robosuite
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ pip3 install -r requirements.txt
 </pre></div>
 </div>
-<p>This will also install our library as an editable package, such that local changes will be reflected elsewhere without having to reinstall the package.</p>
+<p>This will also install our library as an editable, such that local changes will be reflected elsewhere without having to reinstall the.</p>
 </li>
 <li><p>(Optional) We also provide add-on functionalities, such as <a class="reference external" href="https://github.com/openai/gym">OpenAI Gym</a> <a class="reference internal" href="source/robosuite.wrappers.html"><span class="doc">interfaces</span></a>, <a class="reference internal" href="source/robosuite.controllers.html"><span class="doc">inverse kinematics controllers</span></a> powered by <a class="reference external" href="http://bulletphysics.org">PyBullet</a>, and <a class="reference internal" href="source/robosuite.devices.html"><span class="doc">teleoperation</span></a> with <a class="reference external" href="https://www.3dconnexion.com/products/spacemouse.html">SpaceMouse</a> devices. To enable these additional features, please install the extra dependencies by running</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ pip3 install -r requirements-extra.txt

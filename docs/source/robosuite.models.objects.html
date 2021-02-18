@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>robosuite.models.objects &mdash; robosuite 1.0.0 documentation</title>
+  <title>robosuite.models.objects &mdash; robosuite 1.2.0 documentation</title>
   
 
   
@@ -40,8 +40,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="robosuite.models.robots" href="robosuite.models.robots.html" />
-    <link rel="prev" title="robosuite.models.grippers" href="robosuite.models.grippers.html" /> 
+    <link rel="next" title="robosuite.models.objects.composite" href="robosuite.models.objects.composite.html" />
+    <link rel="prev" title="robosuite.models.mounts" href="robosuite.models.mounts.html" />
 </head>
 
 <body class="wy-body-for-nav">
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.0.0
+                1.2.0
               </div>
             
           
@@ -106,6 +106,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/renderers.html">Renderers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Simulation API</span></p>
 <ul>
@@ -116,8 +117,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Modeling API</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/mujoco_model.html">Mujoco Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modeling/gripper_model.html">Gripper Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
@@ -125,27 +126,24 @@
 <p class="caption"><span class="caption-text">Source API</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="robosuite.html">robosuite</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="robosuite.controllers.html">robosuite.controllers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.devices.html">robosuite.devices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.environments.html">robosuite.environments</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="robosuite.models.html">robosuite.models</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="robosuite.models.arenas.html">robosuite.models.arenas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="robosuite.models.grippers.html">robosuite.models.grippers</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">robosuite.models.objects</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.models.objects.generated_objects">robosuite.models.objects.generated_objects</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.models.objects.objects">robosuite.models.objects.objects</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.models.objects.xml_objects">robosuite.models.objects.xml_objects</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="robosuite.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="robosuite.controllers.html">robosuite.controllers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.devices.html">robosuite.devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.environments.html">robosuite.environments</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="robosuite.models.html">robosuite.models</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="robosuite.models.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.models.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.models.html#module-robosuite.models.base">robosuite.models.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.models.html#module-robosuite.models.world">robosuite.models.world module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.models.html#module-robosuite.models">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="robosuite.models.robots.html">robosuite.models.robots</a></li>
-<li class="toctree-l3"><a class="reference internal" href="robosuite.models.tasks.html">robosuite.models.tasks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="robosuite.models.html#module-robosuite.models.base">robosuite.models.base</a></li>
-<li class="toctree-l3"><a class="reference internal" href="robosuite.models.html#module-robosuite.models.world">robosuite.models.world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.robots.html">robosuite.robots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.utils.html">robosuite.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.wrappers.html">robosuite.wrappers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.robots.html">robosuite.robots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.utils.html">robosuite.utils</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.wrappers.html">robosuite.wrappers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.html#module-robosuite">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -153,6 +151,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
@@ -252,870 +251,251 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="robosuite-models-objects">
-<h1>robosuite.models.objects<a class="headerlink" href="#robosuite-models-objects" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="module-robosuite.models.objects.generated_objects">
-<span id="robosuite-models-objects-generated-objects"></span><h2>robosuite.models.objects.generated_objects<a class="headerlink" href="#module-robosuite.models.objects.generated_objects" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt id="robosuite.models.objects.generated_objects.BallObject">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.generated_objects.</code><code class="sig-name descname">BallObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">size_max</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">size_min</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">density</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">friction</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rgba</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">solref</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">solimp</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">material</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.BallObject" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoGeneratedObject" title="robosuite.models.objects.objects.MujocoGeneratedObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoGeneratedObject</span></code></a></p>
-<p>A ball (sphere) object.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>size</strong> (<em>1-tuple of float</em>) – (radius) size parameters for this ball object</p>
-</dd>
-</dl>
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.BallObject.get_bottom_offset">
-<code class="sig-name descname">get_bottom_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.BallObject.get_bottom_offset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns vector from object center to object bottom.
-Helps us put objects on a surface.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>(dx, dy, dz) vector, eg. np.array([0, 0, -2])</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>np.array</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.BallObject.get_collision">
-<code class="sig-name descname">get_collision</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">site</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.BallObject.get_collision" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a ET.Element
-It is a &lt;body/&gt; subtree that defines all collision related fields
-of this object.
-Return should be a copy.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>site</strong> (<em>bool</em>) – Add a site (with name &#64;name when applicable) to the returned body</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>body</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ET.Element</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.BallObject.get_horizontal_radius">
-<code class="sig-name descname">get_horizontal_radius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.BallObject.get_horizontal_radius" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns scalar
-If object a,b has horizontal distance d
-a.get_horizontal_radius() + b.get_horizontal_radius() &lt; d
-should mean that a, b has no contact</p>
-<p>Helps us put objects programmatically without them flying away due to a huge initial contact force.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>radius</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.BallObject.get_top_offset">
-<code class="sig-name descname">get_top_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.BallObject.get_top_offset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns vector from object center to object top.
-Helps us put other objects on this object.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>(dx, dy, dz) vector, eg. np.array([0, 0, 2])</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>np.array</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.BallObject.get_visual">
-<code class="sig-name descname">get_visual</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">site</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.BallObject.get_visual" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a ET.Element
-It is a &lt;body/&gt; subtree that defines all visualization related fields
-of this object.
-Return should be a copy.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>site</strong> (<em>bool</em>) – Add a site (with name &#64;name when applicable) to the returned body</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>body</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ET.Element</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.BallObject.sanity_check">
-<code class="sig-name descname">sanity_check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.BallObject.sanity_check" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks to make sure inputted size is of correct length</p>
-<dl class="field-list simple">
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>AssertionError</strong> – [Invalid size length]</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt id="robosuite.models.objects.generated_objects.BoxObject">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.generated_objects.</code><code class="sig-name descname">BoxObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">size_max</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">size_min</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">density</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">friction</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rgba</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">solref</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">solimp</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">material</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.BoxObject" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoGeneratedObject" title="robosuite.models.objects.objects.MujocoGeneratedObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoGeneratedObject</span></code></a></p>
-<p>A box object.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>size</strong> (<em>3-tuple of float</em>) – (half-x, half-y, half-z) size parameters for this box object</p>
-</dd>
-</dl>
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.BoxObject.get_bottom_offset">
-<code class="sig-name descname">get_bottom_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.BoxObject.get_bottom_offset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns vector from object center to object bottom.
-Helps us put objects on a surface.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>(dx, dy, dz) vector, eg. np.array([0, 0, -2])</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>np.array</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.BoxObject.get_collision">
-<code class="sig-name descname">get_collision</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">site</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.BoxObject.get_collision" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a ET.Element
-It is a &lt;body/&gt; subtree that defines all collision related fields
-of this object.
-Return should be a copy.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>site</strong> (<em>bool</em>) – Add a site (with name &#64;name when applicable) to the returned body</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>body</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ET.Element</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.BoxObject.get_horizontal_radius">
-<code class="sig-name descname">get_horizontal_radius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.BoxObject.get_horizontal_radius" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns scalar
-If object a,b has horizontal distance d
-a.get_horizontal_radius() + b.get_horizontal_radius() &lt; d
-should mean that a, b has no contact</p>
-<p>Helps us put objects programmatically without them flying away due to a huge initial contact force.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>radius</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.BoxObject.get_top_offset">
-<code class="sig-name descname">get_top_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.BoxObject.get_top_offset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns vector from object center to object top.
-Helps us put other objects on this object.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>(dx, dy, dz) vector, eg. np.array([0, 0, 2])</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>np.array</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.BoxObject.get_visual">
-<code class="sig-name descname">get_visual</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">site</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.BoxObject.get_visual" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a ET.Element
-It is a &lt;body/&gt; subtree that defines all visualization related fields
-of this object.
-Return should be a copy.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>site</strong> (<em>bool</em>) – Add a site (with name &#64;name when applicable) to the returned body</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>body</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ET.Element</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.BoxObject.sanity_check">
-<code class="sig-name descname">sanity_check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.BoxObject.sanity_check" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks to make sure inputted size is of correct length</p>
-<dl class="field-list simple">
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>AssertionError</strong> – [Invalid size length]</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt id="robosuite.models.objects.generated_objects.CapsuleObject">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.generated_objects.</code><code class="sig-name descname">CapsuleObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">size_max</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">size_min</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">density</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">friction</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rgba</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">solref</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">solimp</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">material</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.CapsuleObject" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoGeneratedObject" title="robosuite.models.objects.objects.MujocoGeneratedObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoGeneratedObject</span></code></a></p>
-<p>A capsule object.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>size</strong> (<em>2-tuple of float</em>) – (radius, half-length) size parameters for this capsule object</p>
-</dd>
-</dl>
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.CapsuleObject.get_bottom_offset">
-<code class="sig-name descname">get_bottom_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.CapsuleObject.get_bottom_offset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns vector from object center to object bottom.
-Helps us put objects on a surface.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>(dx, dy, dz) vector, eg. np.array([0, 0, -2])</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>np.array</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.CapsuleObject.get_collision">
-<code class="sig-name descname">get_collision</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">site</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.CapsuleObject.get_collision" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a ET.Element
-It is a &lt;body/&gt; subtree that defines all collision related fields
-of this object.
-Return should be a copy.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>site</strong> (<em>bool</em>) – Add a site (with name &#64;name when applicable) to the returned body</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>body</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ET.Element</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.CapsuleObject.get_horizontal_radius">
-<code class="sig-name descname">get_horizontal_radius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.CapsuleObject.get_horizontal_radius" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns scalar
-If object a,b has horizontal distance d
-a.get_horizontal_radius() + b.get_horizontal_radius() &lt; d
-should mean that a, b has no contact</p>
-<p>Helps us put objects programmatically without them flying away due to a huge initial contact force.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>radius</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.CapsuleObject.get_top_offset">
-<code class="sig-name descname">get_top_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.CapsuleObject.get_top_offset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns vector from object center to object top.
-Helps us put other objects on this object.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>(dx, dy, dz) vector, eg. np.array([0, 0, 2])</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>np.array</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.CapsuleObject.get_visual">
-<code class="sig-name descname">get_visual</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">site</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.CapsuleObject.get_visual" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a ET.Element
-It is a &lt;body/&gt; subtree that defines all visualization related fields
-of this object.
-Return should be a copy.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>site</strong> (<em>bool</em>) – Add a site (with name &#64;name when applicable) to the returned body</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>body</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ET.Element</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.CapsuleObject.sanity_check">
-<code class="sig-name descname">sanity_check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.CapsuleObject.sanity_check" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks to make sure inputted size is of correct length</p>
-<dl class="field-list simple">
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>AssertionError</strong> – [Invalid size length]</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt id="robosuite.models.objects.generated_objects.CylinderObject">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.generated_objects.</code><code class="sig-name descname">CylinderObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">size_max</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">size_min</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">density</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">friction</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rgba</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">solref</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">solimp</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">material</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.CylinderObject" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoGeneratedObject" title="robosuite.models.objects.objects.MujocoGeneratedObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoGeneratedObject</span></code></a></p>
-<p>A cylinder object.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>size</strong> (<em>2-tuple of float</em>) – (radius, half-length) size parameters for this cylinder object</p>
-</dd>
-</dl>
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.CylinderObject.get_bottom_offset">
-<code class="sig-name descname">get_bottom_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.CylinderObject.get_bottom_offset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns vector from object center to object bottom.
-Helps us put objects on a surface.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>(dx, dy, dz) vector, eg. np.array([0, 0, -2])</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>np.array</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.CylinderObject.get_collision">
-<code class="sig-name descname">get_collision</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">site</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.CylinderObject.get_collision" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a ET.Element
-It is a &lt;body/&gt; subtree that defines all collision related fields
-of this object.
-Return should be a copy.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>site</strong> (<em>bool</em>) – Add a site (with name &#64;name when applicable) to the returned body</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>body</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ET.Element</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.CylinderObject.get_horizontal_radius">
-<code class="sig-name descname">get_horizontal_radius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.CylinderObject.get_horizontal_radius" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns scalar
-If object a,b has horizontal distance d
-a.get_horizontal_radius() + b.get_horizontal_radius() &lt; d
-should mean that a, b has no contact</p>
-<p>Helps us put objects programmatically without them flying away due to a huge initial contact force.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>radius</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.CylinderObject.get_top_offset">
-<code class="sig-name descname">get_top_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.CylinderObject.get_top_offset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns vector from object center to object top.
-Helps us put other objects on this object.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>(dx, dy, dz) vector, eg. np.array([0, 0, 2])</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>np.array</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.CylinderObject.get_visual">
-<code class="sig-name descname">get_visual</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">site</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.CylinderObject.get_visual" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a ET.Element
-It is a &lt;body/&gt; subtree that defines all visualization related fields
-of this object.
-Return should be a copy.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>site</strong> (<em>bool</em>) – Add a site (with name &#64;name when applicable) to the returned body</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>body</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ET.Element</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.CylinderObject.sanity_check">
-<code class="sig-name descname">sanity_check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.CylinderObject.sanity_check" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks to make sure inputted size is of correct length</p>
-<dl class="field-list simple">
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>AssertionError</strong> – [Invalid size length]</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt id="robosuite.models.objects.generated_objects.HammerObject">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.generated_objects.</code><code class="sig-name descname">HammerObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">handle_shape</span><span class="o">=</span><span class="default_value">'box'</span></em>, <em class="sig-param"><span class="n">handle_radius</span><span class="o">=</span><span class="default_value">0.015, 0.02</span></em>, <em class="sig-param"><span class="n">handle_length</span><span class="o">=</span><span class="default_value">0.1, 0.25</span></em>, <em class="sig-param"><span class="n">handle_density</span><span class="o">=</span><span class="default_value">100, 250</span></em>, <em class="sig-param"><span class="n">handle_friction</span><span class="o">=</span><span class="default_value">3.0, 5.0</span></em>, <em class="sig-param"><span class="n">head_density_ratio</span><span class="o">=</span><span class="default_value">2.0</span></em>, <em class="sig-param"><span class="n">use_texture</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">rgba_handle</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rgba_head</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rgba_face</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rgba_claw</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.HammerObject" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoGeneratedObject" title="robosuite.models.objects.objects.MujocoGeneratedObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoGeneratedObject</span></code></a></p>
-<p>Generates a Hammer object with a cylindrical or box-shaped handle, cubic head, cylindrical face and triangular claw
-(used in Handover task)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<em>str</em>) – Name of this Hammer object</p></li>
-<li><p><strong>handle_shape</strong> (<em>str</em>) – Either “box”, for a box-shaped handle, or “cylinder”, for a cylindrically-shaped handle</p></li>
-<li><p><strong>handle_radius</strong> (<em>float</em><em> or </em><em>2-array of float</em>) – Either specific or range of values to draw randomly from
-uniformly for the handle radius</p></li>
-<li><p><strong>handle_length</strong> (<em>float</em><em> or </em><em>2-array of float</em>) – Either specific or range of values to draw randomly from
-uniformly for the handle length</p></li>
-<li><p><strong>handle_density</strong> (<em>float</em><em> or </em><em>2-array of float</em>) – Either specific or range of values to draw randomly from
-uniformly for the handle density (in SI units). Note that this value is scaled x4 for the hammer head</p></li>
-<li><p><strong>handle_friction</strong> (<em>float</em><em> or </em><em>2-array of float</em>) – Either specific or range of values to draw randomly from
-uniformly for the handle friction. Note that Mujoco default values are used for the head</p></li>
-<li><p><strong>head_density_ratio</strong> (<em>float</em>) – Ratio of density of handle to head (including face and claw)</p></li>
-<li><p><strong>use_texture</strong> (<em>bool</em>) – If true, geoms will be defined by realistic textures and rgba values will be ignored</p></li>
-<li><p><strong>rgba_handle</strong> (<em>4-array</em><em> or </em><em>None</em>) – If specified, sets handle rgba values</p></li>
-<li><p><strong>rgba_head</strong> (<em>4-array</em><em> or </em><em>None</em>) – If specified, sets handle rgba values</p></li>
-<li><p><strong>rgba_face</strong> (<em>4-array</em><em> or </em><em>None</em>) – If specified, sets handle rgba values</p></li>
-<li><p><strong>rgba_claw</strong> (<em>4-array</em><em> or </em><em>None</em>) – If specified, sets handle rgba values</p></li>
-<li><p><strong>joints</strong> (<em>list of dict</em>) – array of dictionaries, where each dictionary corresponds to a joint that will be created
-for this object. The dictionary should specify the joint attributes (type, pos, etc.) according to
-the MuJoCo xml specification.</p></li>
+<div class="section" id="robosuite-models-objects-package">
+<h1>robosuite.models.objects<a class="headerlink" href="#robosuite-models-objects-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="robosuite.models.objects.composite.html">robosuite.models.objects.composite</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.objects.composite.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.objects.composite.html#module-robosuite.models.objects.composite.hammer">robosuite.models.objects.composite.hammer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.objects.composite.html#module-robosuite.models.objects.composite.pot_with_handles">robosuite.models.objects.composite.pot_with_handles module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.objects.composite.html#module-robosuite.models.objects.composite">Module contents</a></li>
 </ul>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – [Invalid handle shape]</p>
-</dd>
-</dl>
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.HammerObject.all_geoms">
-<em class="property">property </em><code class="sig-name descname">all_geoms</code><a class="headerlink" href="#robosuite.models.objects.generated_objects.HammerObject.all_geoms" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns:
-list of str: geom names corresponding to all hammer components</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.HammerObject.claw_geoms">
-<em class="property">property </em><code class="sig-name descname">claw_geoms</code><a class="headerlink" href="#robosuite.models.objects.generated_objects.HammerObject.claw_geoms" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns:
-list of str: geom names corresponding to hammer claw</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.HammerObject.face_geoms">
-<em class="property">property </em><code class="sig-name descname">face_geoms</code><a class="headerlink" href="#robosuite.models.objects.generated_objects.HammerObject.face_geoms" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns:
-list of str: geom names corresponding to hammer face</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.HammerObject.get_bottom_offset">
-<code class="sig-name descname">get_bottom_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.HammerObject.get_bottom_offset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns vector from object center to object bottom.
-Helps us put objects on a surface.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>(dx, dy, dz) vector, eg. np.array([0, 0, -2])</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>np.array</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.HammerObject.get_collision">
-<code class="sig-name descname">get_collision</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">site</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.HammerObject.get_collision" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a ET.Element
-It is a &lt;body/&gt; subtree that defines all collision related fields
-of this object.
-Return should be a copy.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>site</strong> (<em>bool</em>) – Add a site (with name &#64;name when applicable) to the returned body</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>body</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ET.Element</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.HammerObject.get_horizontal_radius">
-<code class="sig-name descname">get_horizontal_radius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.HammerObject.get_horizontal_radius" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns scalar
-If object a,b has horizontal distance d
-a.get_horizontal_radius() + b.get_horizontal_radius() &lt; d
-should mean that a, b has no contact</p>
-<p>Helps us put objects programmatically without them flying away due to a huge initial contact force.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>radius</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.HammerObject.get_top_offset">
-<code class="sig-name descname">get_top_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.HammerObject.get_top_offset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns vector from object center to object top.
-Helps us put other objects on this object.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>(dx, dy, dz) vector, eg. np.array([0, 0, 2])</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>np.array</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.HammerObject.get_visual">
-<code class="sig-name descname">get_visual</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">site</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.HammerObject.get_visual" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a ET.Element
-It is a &lt;body/&gt; subtree that defines all visualization related fields
-of this object.
-Return should be a copy.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>site</strong> (<em>bool</em>) – Add a site (with name &#64;name when applicable) to the returned body</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>body</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ET.Element</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.HammerObject.handle_distance">
-<em class="property">property </em><code class="sig-name descname">handle_distance</code><a class="headerlink" href="#robosuite.models.objects.generated_objects.HammerObject.handle_distance" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculates how wide the handle is</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>handle diameter</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.HammerObject.handle_geoms">
-<em class="property">property </em><code class="sig-name descname">handle_geoms</code><a class="headerlink" href="#robosuite.models.objects.generated_objects.HammerObject.handle_geoms" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns:
-list of str: geom names corresponding to hammer handle</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.HammerObject.head_geoms">
-<em class="property">property </em><code class="sig-name descname">head_geoms</code><a class="headerlink" href="#robosuite.models.objects.generated_objects.HammerObject.head_geoms" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns:
-list of str: geom names corresponding to hammer head</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.HammerObject.init_quat">
-<em class="property">property </em><code class="sig-name descname">init_quat</code><a class="headerlink" href="#robosuite.models.objects.generated_objects.HammerObject.init_quat" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generates a new random orientation for the hammer</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>(x, y, z, w) quaternion orientation for the hammer</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>np.array</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt id="robosuite.models.objects.generated_objects.PotWithHandlesObject">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.generated_objects.</code><code class="sig-name descname">PotWithHandlesObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">body_half_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">handle_radius</span><span class="o">=</span><span class="default_value">0.01</span></em>, <em class="sig-param"><span class="n">handle_length</span><span class="o">=</span><span class="default_value">0.09</span></em>, <em class="sig-param"><span class="n">handle_width</span><span class="o">=</span><span class="default_value">0.09</span></em>, <em class="sig-param"><span class="n">use_texture</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">rgba_body</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rgba_handle_1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rgba_handle_2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">solid_handle</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">thickness</span><span class="o">=</span><span class="default_value">0.01</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.PotWithHandlesObject" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoGeneratedObject" title="robosuite.models.objects.objects.MujocoGeneratedObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoGeneratedObject</span></code></a></p>
-<p>Generates the Pot object with side handles (used in TwoArmLift)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<em>str</em>) – Name of this Pot object</p></li>
-<li><p><strong>body_half_size</strong> (<em>None</em><em> or </em><em>3-array of float</em>) – If specified, defines the (x,y,z) half-dimensions of the main pot
-body. Otherwise, defaults to [0.07, 0.07, 0.07]</p></li>
-<li><p><strong>handle_radius</strong> (<em>float</em>) – Determines the pot handle radius</p></li>
-<li><p><strong>handle_length</strong> (<em>float</em>) – Determines the pot handle length</p></li>
-<li><p><strong>handle_width</strong> (<em>float</em>) – Determines the pot handle width</p></li>
-<li><p><strong>use_texture</strong> (<em>bool</em>) – If true, geoms will be defined by realistic textures and rgba values will be ignored</p></li>
-<li><p><strong>rgba_body</strong> (<em>4-array</em><em> or </em><em>None</em>) – If specified, sets pot body rgba values</p></li>
-<li><p><strong>rgba_handle_1</strong> (<em>4-array</em><em> or </em><em>None</em>) – If specified, sets handle 1 rgba values</p></li>
-<li><p><strong>rgba_handle_2</strong> (<em>4-array</em><em> or </em><em>None</em>) – If specified, sets handle 2 rgba values</p></li>
-<li><p><strong>solid_handle</strong> (<em>bool</em>) – If true, uses a single geom to represent the handle</p></li>
-<li><p><strong>thickness</strong> (<em>float</em>) – How thick to make the pot body walls</p></li>
-<li><p><strong>joints</strong> (<em>list of dict</em>) – array of dictionaries, where each dictionary corresponds to a joint that will be created
-for this object. The dictionary should specify the joint attributes (type, pos, etc.) according to
-the MuJoCo xml specification.</p></li>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="robosuite.models.objects.composite_body.html">robosuite.models.objects.composite_body</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.objects.composite_body.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.objects.composite_body.html#module-robosuite.models.objects.composite_body.hinged_box">robosuite.models.objects.composite_body.hinged_box module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.objects.composite_body.html#module-robosuite.models.objects.composite_body">Module contents</a></li>
 </ul>
-</dd>
-</dl>
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.PotWithHandlesObject.get_bottom_offset">
-<code class="sig-name descname">get_bottom_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.PotWithHandlesObject.get_bottom_offset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns vector from object center to object bottom.
-Helps us put objects on a surface.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>(dx, dy, dz) vector, eg. np.array([0, 0, -2])</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>np.array</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.PotWithHandlesObject.get_collision">
-<code class="sig-name descname">get_collision</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">site</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.PotWithHandlesObject.get_collision" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a ET.Element
-It is a &lt;body/&gt; subtree that defines all collision related fields
-of this object.
-Return should be a copy.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>site</strong> (<em>bool</em>) – Add a site (with name &#64;name when applicable) to the returned body</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>body</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ET.Element</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.PotWithHandlesObject.get_horizontal_radius">
-<code class="sig-name descname">get_horizontal_radius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.PotWithHandlesObject.get_horizontal_radius" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns scalar
-If object a,b has horizontal distance d
-a.get_horizontal_radius() + b.get_horizontal_radius() &lt; d
-should mean that a, b has no contact</p>
-<p>Helps us put objects programmatically without them flying away due to a huge initial contact force.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>radius</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.PotWithHandlesObject.get_top_offset">
-<code class="sig-name descname">get_top_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.PotWithHandlesObject.get_top_offset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns vector from object center to object top.
-Helps us put other objects on this object.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>(dx, dy, dz) vector, eg. np.array([0, 0, 2])</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>np.array</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.PotWithHandlesObject.get_visual">
-<code class="sig-name descname">get_visual</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">site</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.PotWithHandlesObject.get_visual" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a ET.Element
-It is a &lt;body/&gt; subtree that defines all visualization related fields
-of this object.
-Return should be a copy.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>site</strong> (<em>bool</em>) – Add a site (with name &#64;name when applicable) to the returned body</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>body</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ET.Element</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.PotWithHandlesObject.handle_1_geoms">
-<code class="sig-name descname">handle_1_geoms</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.PotWithHandlesObject.handle_1_geoms" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>geom names corresponding to handle 1</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>list of str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.PotWithHandlesObject.handle_2_geoms">
-<code class="sig-name descname">handle_2_geoms</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.PotWithHandlesObject.handle_2_geoms" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>geom names corresponding to handle 2</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>list of str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.PotWithHandlesObject.handle_distance">
-<em class="property">property </em><code class="sig-name descname">handle_distance</code><a class="headerlink" href="#robosuite.models.objects.generated_objects.PotWithHandlesObject.handle_distance" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculates how far apart the handles are</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>handle distance</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.generated_objects.PotWithHandlesObject.handle_geoms">
-<code class="sig-name descname">handle_geoms</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.PotWithHandlesObject.handle_geoms" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>geom names corresponding to both handles</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>list of str</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py function">
-<dt id="robosuite.models.objects.generated_objects.five_sided_box">
-<code class="sig-prename descclassname">robosuite.models.objects.generated_objects.</code><code class="sig-name descname">five_sided_box</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">size</span></em>, <em class="sig-param"><span class="n">rgba</span></em>, <em class="sig-param"><span class="n">group</span></em>, <em class="sig-param"><span class="n">thickness</span></em>, <em class="sig-param"><span class="n">material</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.five_sided_box" title="Permalink to this definition">¶</a></dt>
-<dd><p>Procedurally generates a five-sided (open) box</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>size</strong> (<em>3-array of float</em>) – the (x,y,z) half-size desired for the box</p></li>
-<li><p><strong>rgba</strong> (<em>4-array of float</em>) – rgba color for this box</p></li>
-<li><p><strong>group</strong> (<em>int</em>) – Mujoco group to assign these geoms</p></li>
-<li><p><strong>thickness</strong> (<em>float</em>) – wall thickness</p></li>
-<li><p><strong>material</strong> (<em>str</em>) – material for this box</p></li>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="robosuite.models.objects.primitive.html">robosuite.models.objects.primitive</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.objects.primitive.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.objects.primitive.html#module-robosuite.models.objects.primitive.ball">robosuite.models.objects.primitive.ball module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.objects.primitive.html#module-robosuite.models.objects.primitive.box">robosuite.models.objects.primitive.box module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.objects.primitive.html#module-robosuite.models.objects.primitive.capsule">robosuite.models.objects.primitive.capsule module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.objects.primitive.html#module-robosuite.models.objects.primitive.cylinder">robosuite.models.objects.primitive.cylinder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.models.objects.primitive.html#module-robosuite.models.objects.primitive">Module contents</a></li>
 </ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>array of geoms corresponding to the 5 sides of the generated box</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>list</p>
-</dd>
-</dl>
-</dd></dl>
-
+</li>
+</ul>
 </div>
-<div class="section" id="module-robosuite.models.objects.objects">
-<span id="robosuite-models-objects-objects"></span><h2>robosuite.models.objects.objects<a class="headerlink" href="#module-robosuite.models.objects.objects" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-robosuite.models.objects.generated_objects">
+<span id="robosuite-models-objects-generated-objects-module"></span><h2>robosuite.models.objects.generated_objects module<a class="headerlink" href="#module-robosuite.models.objects.generated_objects" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="robosuite.models.objects.objects.MujocoGeneratedObject">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.objects.</code><code class="sig-name descname">MujocoGeneratedObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rgba</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">density</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">friction</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">solref</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">solimp</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">material</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoGeneratedObject" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoObject" title="robosuite.models.objects.objects.MujocoObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoObject</span></code></a></p>
+<dt id="robosuite.models.objects.generated_objects.CompositeBodyObject">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.generated_objects.</code><code class="sig-name descname">CompositeBodyObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">objects</span></em>, <em class="sig-param"><span class="n">object_locations</span></em>, <em class="sig-param"><span class="n">object_quats</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">object_parents</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">body_joints</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sites</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.CompositeBodyObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoGeneratedObject" title="robosuite.models.objects.objects.MujocoGeneratedObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoGeneratedObject</span></code></a></p>
+<p>An object constructed out of multiple bodies to make more complex shapes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of overall object</p></li>
+<li><p><strong>objects</strong> (<a class="reference internal" href="#robosuite.models.objects.objects.MujocoObject" title="robosuite.models.objects.objects.MujocoObject"><em>MujocoObject</em></a><em> or </em><em>list of MujocoObjects</em>) – object(s) to combine to form the composite body object.
+Note that these objects will be added sequentially, so if an object is required to be nested relative to
+another object, that nested object should be listed after the parent object. Note that all top-level joints
+for any inputted objects are automatically stripped</p></li>
+<li><p><strong>object_locations</strong> (<em>list</em>) – list of body locations in the composite. Each
+location should be a list or tuple of 3 elements and all
+locations are taken relative to that object’s parent body. Giving None for a location results in (0,0,0)
+for that object.</p></li>
+<li><p><strong>object_quats</strong> (<em>None</em><em> or </em><em>list</em>) – list of (w, x, y, z) quaternions for each body. None results in (1,0,0,0) for
+that object.</p></li>
+<li><p><strong>object_parents</strong> (<em>None</em><em> or </em><em>list</em>) – Parent bodies to append each object to. Note that specifying “None” will
+automatically append all objects to the root body (“root”)</p></li>
+<li><p><strong>joints</strong> (<em>None</em><em> or </em><em>list</em>) – Joints to use for the top-level composite body object. If None, no joints will be used
+for this top-level object. If “default”, a single free joint will be added to the top-level body of this
+object. Otherwise, should be a list of dictionaries, where each dictionary should specify the specific
+joint attributes necessary. See <a class="reference external" href="http://www.mujoco.org/book/XMLreference.html#joint">http://www.mujoco.org/book/XMLreference.html#joint</a> for reference.</p></li>
+<li><p><strong>body_joints</strong> (<em>None</em><em> or </em><em>dict</em>) – If specified, maps body names to joint specifications to append to that
+body. If None, no extra joints will be used. If mapped value is “default”, a single free joint will be
+added to the specified body. Otherwise, should be a list of dictionaries, where each dictionary should
+specify the specific joint attributes necessary. See <a class="reference external" href="http://www.mujoco.org/book/XMLreference.html#joint">http://www.mujoco.org/book/XMLreference.html#joint</a>
+for reference.</p></li>
+<li><p><strong>sites</strong> (<em>None</em><em> or </em><em>list</em>) – list of sites to add to top-level composite body object. If None, only the default
+top-level object site will be used. Otherwise, should be a list of dictionaries, where each dictionary
+should specify the appropriate attributes for the given site.
+See <a class="reference external" href="http://www.mujoco.org/book/XMLreference.html#site">http://www.mujoco.org/book/XMLreference.html#site</a> for reference.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.models.objects.generated_objects.CompositeBodyObject.bottom_offset">
+<em class="property">property </em><code class="sig-name descname">bottom_offset</code><a class="headerlink" href="#robosuite.models.objects.generated_objects.CompositeBodyObject.bottom_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns vector from model root body to model bottom.
+Useful for, e.g. placing models on a surface.
+Must be defined by subclass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(dx, dy, dz) offset vector</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.generated_objects.CompositeBodyObject.horizontal_radius">
+<em class="property">property </em><code class="sig-name descname">horizontal_radius</code><a class="headerlink" href="#robosuite.models.objects.generated_objects.CompositeBodyObject.horizontal_radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns maximum distance from model root body to any radial point of the model.</p>
+<p>Helps us put models programmatically without them flying away due to a huge initial contact force.
+Must be defined by subclass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>radius</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.generated_objects.CompositeBodyObject.top_offset">
+<em class="property">property </em><code class="sig-name descname">top_offset</code><a class="headerlink" href="#robosuite.models.objects.generated_objects.CompositeBodyObject.top_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns vector from model root body to model top.
+Useful for, e.g. placing models on a surface.
+Must be defined by subclass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(dx, dy, dz) offset vector</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.models.objects.generated_objects.CompositeObject">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.generated_objects.</code><code class="sig-name descname">CompositeObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">total_size</span></em>, <em class="sig-param"><span class="n">geom_types</span></em>, <em class="sig-param"><span class="n">geom_sizes</span></em>, <em class="sig-param"><span class="n">geom_locations</span></em>, <em class="sig-param"><span class="n">geom_quats</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geom_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geom_rgbas</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geom_materials</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geom_frictions</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rgba</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">density</span><span class="o">=</span><span class="default_value">100.0</span></em>, <em class="sig-param"><span class="n">solref</span><span class="o">=</span><span class="default_value">0.02, 1.0</span></em>, <em class="sig-param"><span class="n">solimp</span><span class="o">=</span><span class="default_value">0.9, 0.95, 0.001</span></em>, <em class="sig-param"><span class="n">locations_relative_to_center</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">sites</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">obj_types</span><span class="o">=</span><span class="default_value">'all'</span></em>, <em class="sig-param"><span class="n">duplicate_collision_geoms</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.CompositeObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoGeneratedObject" title="robosuite.models.objects.objects.MujocoGeneratedObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoGeneratedObject</span></code></a></p>
+<p>An object constructed out of basic geoms to make more intricate shapes.</p>
+<p>Note that by default, specifying None for a specific geom element will usually set a value to the mujoco defaults.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of overall object</p></li>
+<li><p><strong>total_size</strong> (<em>list</em>) – (x, y, z) half-size in each dimension for the bounding box for
+this Composite object</p></li>
+<li><p><strong>geom_types</strong> (<em>list</em>) – list of geom types in the composite. Must correspond
+to MuJoCo geom primitives, such as “box” or “capsule”.</p></li>
+<li><p><strong>geom_locations</strong> (<em>list</em>) – list of geom locations in the composite. Each
+location should be a list or tuple of 3 elements and all
+locations are relative to the lower left corner of the total box
+(e.g. (0, 0, 0) corresponds to this corner).</p></li>
+<li><p><strong>geom_sizes</strong> (<em>list</em>) – list of geom sizes ordered the same as &#64;geom_locations</p></li>
+<li><p><strong>geom_quats</strong> (<em>None</em><em> or </em><em>list</em>) – list of (w, x, y, z) quaternions for each geom.</p></li>
+<li><p><strong>geom_names</strong> (<em>None</em><em> or </em><em>list</em>) – list of geom names ordered the same as &#64;geom_locations. The
+names will get appended with an underscore to the passed name in &#64;get_collision
+and &#64;get_visual</p></li>
+<li><p><strong>geom_rgbas</strong> (<em>None</em><em> or </em><em>list</em>) – list of geom colors ordered the same as &#64;geom_locations. If
+passed as an argument, &#64;rgba is ignored.</p></li>
+<li><p><strong>geom_materials</strong> (<em>None</em><em> or </em><em>list of CustomTexture</em>) – list of custom textures to use for this object material</p></li>
+<li><p><strong>geom_frictions</strong> (<em>None</em><em> or </em><em>list</em>) – list of geom frictions to use for each geom.</p></li>
+<li><p><strong>rgba</strong> (<em>None</em><em> or </em><em>list</em>) – (r, g, b, a) default values to use if geom-specific &#64;geom_rgbas isn’t specified for a given element</p></li>
+<li><p><strong>density</strong> (<em>float</em><em> or </em><em>list of float</em>) – either single value to use for all geom densities or geom-specific values</p></li>
+<li><p><strong>solref</strong> (<em>list</em><em> or </em><em>list of list</em>) – parameters used for the mujoco contact solver. Can be single set of values or
+element-specific values. See <a class="reference external" href="http://www.mujoco.org/book/modeling.html#CSolver">http://www.mujoco.org/book/modeling.html#CSolver</a> for details.</p></li>
+<li><p><strong>solimp</strong> (<em>list</em><em> or </em><em>list of list</em>) – parameters used for the mujoco contact solver. Can be single set of values or
+element-specific values. See <a class="reference external" href="http://www.mujoco.org/book/modeling.html#CSolver">http://www.mujoco.org/book/modeling.html#CSolver</a> for details.</p></li>
+<li><p><strong>locations_relative_to_center</strong> (<em>bool</em>) – If true, &#64;geom_locations will be considered relative to the center of the
+overall object bounding box defined by &#64;total_size. Else, the corner of this bounding box is considered the
+origin.</p></li>
+<li><p><strong>joints</strong> (<em>None</em><em> or </em><em>list</em>) – Joints to use for this composite object. If None, no joints will be used
+for this top-level object. If “default”, a single free joint will be added to this object.
+Otherwise, should be a list of dictionaries, where each dictionary should specify the specific
+joint attributes necessary. See <a class="reference external" href="http://www.mujoco.org/book/XMLreference.html#joint">http://www.mujoco.org/book/XMLreference.html#joint</a> for reference.</p></li>
+<li><p><strong>sites</strong> (<em>None</em><em> or </em><em>list</em>) – <dl class="simple">
+<dt>list of sites to add to this composite object. If None, only the default</dt><dd><p>object site will be used. Otherwise, should be a list of dictionaries, where each dictionary</p>
+</dd>
+</dl>
+<p>should specify the appropriate attributes for the given site.
+See <a class="reference external" href="http://www.mujoco.org/book/XMLreference.html#site">http://www.mujoco.org/book/XMLreference.html#site</a> for reference.</p>
+</p></li>
+<li><p><strong>obj_types</strong> (<em>str</em><em> or </em><em>list of str</em>) – either single obj_type for all geoms or geom-specific type. Choices are
+{“collision”, “visual”, “all”}</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.models.objects.generated_objects.CompositeObject.bottom_offset">
+<em class="property">property </em><code class="sig-name descname">bottom_offset</code><a class="headerlink" href="#robosuite.models.objects.generated_objects.CompositeObject.bottom_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns vector from model root body to model bottom.
+Useful for, e.g. placing models on a surface.
+Must be defined by subclass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(dx, dy, dz) offset vector</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.generated_objects.CompositeObject.get_bounding_box_size">
+<code class="sig-name descname">get_bounding_box_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.CompositeObject.get_bounding_box_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.generated_objects.CompositeObject.horizontal_radius">
+<em class="property">property </em><code class="sig-name descname">horizontal_radius</code><a class="headerlink" href="#robosuite.models.objects.generated_objects.CompositeObject.horizontal_radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns maximum distance from model root body to any radial point of the model.</p>
+<p>Helps us put models programmatically without them flying away due to a huge initial contact force.
+Must be defined by subclass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>radius</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.generated_objects.CompositeObject.in_box">
+<code class="sig-name descname">in_box</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">position</span></em>, <em class="sig-param"><span class="n">object_position</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.CompositeObject.in_box" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether the object is contained within this CompositeObject.
+Useful for when the CompositeObject has holes and the object should
+be within one of the holes. Makes an approximation by treating the
+object as a point, and the CompositeBoxObject as an axis-aligned grid.
+:param position: 3D body position of CompositeObject
+:param object_position: 3D position of object to test for insertion</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.generated_objects.CompositeObject.top_offset">
+<em class="property">property </em><code class="sig-name descname">top_offset</code><a class="headerlink" href="#robosuite.models.objects.generated_objects.CompositeObject.top_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns vector from model root body to model top.
+Useful for, e.g. placing models on a surface.
+Must be defined by subclass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(dx, dy, dz) offset vector</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.models.objects.generated_objects.PrimitiveObject">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.generated_objects.</code><code class="sig-name descname">PrimitiveObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rgba</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">density</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">friction</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">solref</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">solimp</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">material</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">obj_type</span><span class="o">=</span><span class="default_value">'all'</span></em>, <em class="sig-param"><span class="n">duplicate_collision_geoms</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.PrimitiveObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoGeneratedObject" title="robosuite.models.objects.objects.MujocoGeneratedObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoGeneratedObject</span></code></a></p>
 <p>Base class for all programmatically generated mujoco object
 i.e., every MujocoObject that does not have an corresponding xml file</p>
 <dl class="field-list simple">
@@ -1139,8 +519,104 @@ Otherwise, input is expected to be a CustomMaterial object</p>
 Mujoco texture / material tags, respectively</p>
 <p>Note that specifying a custom texture in this way automatically overrides any rgba values set</p>
 </p></li>
-<li><p><strong>joints</strong> (<em>list of dict</em>) – each dictionary corresponds to a joint that will be created for this object. The
-dictionary should specify the joint attributes (type, pos, etc.) according to the MuJoCo xml specification.</p></li>
+<li><p><strong>joints</strong> (<em>None</em><em> or </em><em>str</em><em> or </em><em>list of dict</em>) – Joints for this object. If None, no joint will be created. If “default”,
+a single (free) joint will be crated. Else, should be a list of dict, where each dictionary corresponds to
+a joint that will be created for this object. The dictionary should specify the joint attributes
+(type, pos, etc.) according to the MuJoCo xml specification.</p></li>
+<li><p><strong>obj_type</strong> (<em>str</em>) – <p>Geom elements to generate / extract for this object. Must be one of:</p>
+<dl class="field-list simple">
+<dt class="field-odd"><cite>’collision’</cite></dt>
+<dd class="field-odd"><p>Only collision geoms are returned (this corresponds to group 0 geoms)</p>
+</dd>
+<dt class="field-even"><cite>’visual’</cite></dt>
+<dd class="field-even"><p>Only visual geoms are returned (this corresponds to group 1 geoms)</p>
+</dd>
+<dt class="field-odd"><cite>’all’</cite></dt>
+<dd class="field-odd"><p>All geoms are returned</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>duplicate_collision_geoms</strong> (<em>bool</em>) – If set, will guarantee that each collision geom has a
+visual geom copy</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.models.objects.generated_objects.PrimitiveObject.bottom_offset">
+<code class="sig-name descname">bottom_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.PrimitiveObject.bottom_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns vector from model root body to model bottom.
+Useful for, e.g. placing models on a surface.
+Must be defined by subclass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(dx, dy, dz) offset vector</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.generated_objects.PrimitiveObject.horizontal_radius">
+<code class="sig-name descname">horizontal_radius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.PrimitiveObject.horizontal_radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns maximum distance from model root body to any radial point of the model.</p>
+<p>Helps us put models programmatically without them flying away due to a huge initial contact force.
+Must be defined by subclass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>radius</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.generated_objects.PrimitiveObject.top_offset">
+<code class="sig-name descname">top_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.generated_objects.PrimitiveObject.top_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns vector from model root body to model top.
+Useful for, e.g. placing models on a surface.
+Must be defined by subclass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(dx, dy, dz) offset vector</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.models.objects.objects">
+<span id="robosuite-models-objects-objects-module"></span><h2>robosuite.models.objects.objects module<a class="headerlink" href="#module-robosuite.models.objects.objects" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.models.objects.objects.MujocoGeneratedObject">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.objects.</code><code class="sig-name descname">MujocoGeneratedObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj_type</span><span class="o">=</span><span class="default_value">'all'</span></em>, <em class="sig-param"><span class="n">duplicate_collision_geoms</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoGeneratedObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoObject" title="robosuite.models.objects.objects.MujocoObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoObject</span></code></a></p>
+<p>Base class for all procedurally generated objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_type</strong> (<em>str</em>) – <p>Geom elements to generate / extract for this object. Must be one of:</p>
+<dl class="field-list simple">
+<dt class="field-odd"><cite>’collision’</cite></dt>
+<dd class="field-odd"><p>Only collision geoms are returned (this corresponds to group 0 geoms)</p>
+</dd>
+<dt class="field-even"><cite>’visual’</cite></dt>
+<dd class="field-even"><p>Only visual geoms are returned (this corresponds to group 1 geoms)</p>
+</dd>
+<dt class="field-odd"><cite>’all’</cite></dt>
+<dd class="field-odd"><p>All geoms are returned</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>duplicate_collision_geoms</strong> (<em>bool</em>) – If set, will guarantee that each collision geom has a
+visual geom copy</p></li>
 </ul>
 </dd>
 </dl>
@@ -1156,6 +632,39 @@ located in robosuite/models/assets/textures/</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>material</strong> (<a class="reference internal" href="robosuite.utils.html#robosuite.utils.mjcf_utils.CustomMaterial" title="robosuite.utils.mjcf_utils.CustomMaterial"><em>CustomMaterial</em></a>) – Material to add to this object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.objects.MujocoGeneratedObject.bottom_offset">
+<code class="sig-name descname">bottom_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoGeneratedObject.bottom_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns vector from model root body to model bottom.
+Useful for, e.g. placing models on a surface.
+Must be defined by subclass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(dx, dy, dz) offset vector</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.objects.MujocoGeneratedObject.exclude_from_prefixing">
+<code class="sig-name descname">exclude_from_prefixing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inp</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoGeneratedObject.exclude_from_prefixing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exclude all shared materials and their associated names from being prefixed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>inp</strong> (<em>ET.Element</em><em> or </em><em>str</em>) – Element or its attribute to check for prefixing.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if we should exclude the associated name(s) with &#64;inp from being prefixed with naming_prefix</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1189,6 +698,22 @@ located in robosuite/models/assets/textures/</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="robosuite.models.objects.objects.MujocoGeneratedObject.horizontal_radius">
+<code class="sig-name descname">horizontal_radius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoGeneratedObject.horizontal_radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns maximum distance from model root body to any radial point of the model.</p>
+<p>Helps us put models programmatically without them flying away due to a huge initial contact force.
+Must be defined by subclass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>radius</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="robosuite.models.objects.objects.MujocoGeneratedObject.sanity_check">
 <code class="sig-name descname">sanity_check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoGeneratedObject.sanity_check" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks if data provided makes sense.
@@ -1196,12 +721,28 @@ Called in __init__()
 For subclasses to inherit from</p>
 </dd></dl>
 
+<dl class="py method">
+<dt id="robosuite.models.objects.objects.MujocoGeneratedObject.top_offset">
+<code class="sig-name descname">top_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoGeneratedObject.top_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns vector from model root body to model top.
+Useful for, e.g. placing models on a surface.
+Must be defined by subclass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(dx, dy, dz) offset vector</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
 <dt id="robosuite.models.objects.objects.MujocoObject">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.objects.</code><code class="sig-name descname">MujocoObject</code><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.objects.</code><code class="sig-name descname">MujocoObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj_type</span><span class="o">=</span><span class="default_value">'all'</span></em>, <em class="sig-param"><span class="n">duplicate_collision_geoms</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="robosuite.models.html#robosuite.models.base.MujocoModel" title="robosuite.models.base.MujocoModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.base.MujocoModel</span></code></a></p>
 <p>Base class for all objects.</p>
 <p>We use Mujoco Objects to implement all objects that:</p>
 <blockquote>
@@ -1211,15 +752,50 @@ For subclasses to inherit from</p>
 </ol>
 </div></blockquote>
 <p>Typical methods return copy so the caller can all joints/attributes as wanted</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_type</strong> (<em>str</em>) – <p>Geom elements to generate / extract for this object. Must be one of:</p>
+<dl class="field-list simple">
+<dt class="field-odd"><cite>’collision’</cite></dt>
+<dd class="field-odd"><p>Only collision geoms are returned (this corresponds to group 0 geoms)</p>
+</dd>
+<dt class="field-even"><cite>’visual’</cite></dt>
+<dd class="field-even"><p>Only visual geoms are returned (this corresponds to group 1 geoms)</p>
+</dd>
+<dt class="field-odd"><cite>’all’</cite></dt>
+<dd class="field-odd"><p>All geoms are returned</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>duplicate_collision_geoms</strong> (<em>bool</em>) – If set, will guarantee that each collision geom has a
+visual geom copy</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="py method">
-<dt id="robosuite.models.objects.objects.MujocoObject.get_bottom_offset">
-<code class="sig-name descname">get_bottom_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.get_bottom_offset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns vector from object center to object bottom.
-Helps us put objects on a surface.
+<dt id="robosuite.models.objects.objects.MujocoObject.actuators">
+<em class="property">property </em><code class="sig-name descname">actuators</code><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.actuators" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+list: Actuator names for this model</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.objects.MujocoObject.bodies">
+<em class="property">property </em><code class="sig-name descname">bodies</code><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.bodies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+list: Body names for this model</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.objects.MujocoObject.bottom_offset">
+<em class="property">property </em><code class="sig-name descname">bottom_offset</code><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.bottom_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns vector from model root body to model bottom.
+Useful for, e.g. placing models on a surface.
 Must be defined by subclass.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>(dx, dy, dz) vector, eg. np.array([0, 0, -2])</p>
+<dd class="field-odd"><p>(dx, dy, dz) offset vector</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>np.array</p>
@@ -1228,41 +804,62 @@ Must be defined by subclass.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.models.objects.objects.MujocoObject.get_collision">
-<code class="sig-name descname">get_collision</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">site</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.get_collision" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a ET.Element
-It is a &lt;body/&gt; subtree that defines all collision related fields
-of this object.
-Return should be a copy.
-Must be defined by subclass.</p>
+<dt id="robosuite.models.objects.objects.MujocoObject.contact_geoms">
+<em class="property">property </em><code class="sig-name descname">contact_geoms</code><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.contact_geoms" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of names corresponding to the geoms used to determine contact with this model.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>site</strong> (<em>bool</em>) – Add a site (with name &#64;name when applicable) to the returned body</p>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>relevant contact geoms for this model</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>body</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ET.Element</p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.models.objects.objects.MujocoObject.get_horizontal_radius">
-<code class="sig-name descname">get_horizontal_radius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.get_horizontal_radius" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns scalar
-If object a,b has horizontal distance d
-a.get_horizontal_radius() + b.get_horizontal_radius() &lt; d
-should mean that a, b has no contact</p>
-<p>Helps us put objects programmatically without them flying away due to a huge initial contact force.
+<dt id="robosuite.models.objects.objects.MujocoObject.exclude_from_prefixing">
+<code class="sig-name descname">exclude_from_prefixing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inp</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.exclude_from_prefixing" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function that should take in either an ET.Element or its attribute (str) and return either True or False,
+determining whether the corresponding name / str to &#64;inp should have naming_prefix added to it.
 Must be defined by subclass.</p>
 <dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>inp</strong> (<em>ET.Element</em><em> or </em><em>str</em>) – Element or its attribute to check for prefixing.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if we should exclude the associated name(s) with &#64;inp from being prefixed with naming_prefix</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.objects.MujocoObject.get_joint_attrib_template">
+<em class="property">static </em><code class="sig-name descname">get_joint_attrib_template</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.get_joint_attrib_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns attribs of free joint</p>
+<dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>radius</p>
+<dd class="field-odd"><p>Dictionary of default joint attributes</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>float</p>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.objects.MujocoObject.get_obj">
+<code class="sig-name descname">get_obj</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.get_obj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the generated / extracted object, in XML ElementTree form.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Object in XML form.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>ET.Element</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1282,104 +879,10 @@ Must be defined by subclass.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.models.objects.objects.MujocoObject.get_top_offset">
-<code class="sig-name descname">get_top_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.get_top_offset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns vector from object center to object top.
-Helps us put other objects on this object.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>(dx, dy, dz) vector, eg. np.array([0, 0, 2])</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>np.array</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.objects.MujocoObject.get_visual">
-<code class="sig-name descname">get_visual</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">site</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.get_visual" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a ET.Element
-It is a &lt;body/&gt; subtree that defines all visualization related fields
-of this object.
-Return should be a copy.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>site</strong> (<em>bool</em>) – Add a site (with name &#64;name when applicable) to the returned body</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>body</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ET.Element</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt id="robosuite.models.objects.objects.MujocoXMLObject">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.objects.</code><code class="sig-name descname">MujocoXMLObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoXMLObject" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="robosuite.models.html#robosuite.models.base.MujocoXML" title="robosuite.models.base.MujocoXML"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.base.MujocoXML</span></code></a>, <a class="reference internal" href="#robosuite.models.objects.objects.MujocoObject" title="robosuite.models.objects.objects.MujocoObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoObject</span></code></a></p>
-<p>MujocoObjects that are loaded from xml files</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>fname</strong> (<em>str</em>) – XML File path</p></li>
-<li><p><strong>name</strong> (<em>None</em><em> or </em><em>str</em>) – Name of this MujocoXMLObject</p></li>
-<li><p><strong>joints</strong> (<em>list of dict</em>) – each dictionary corresponds to a joint that will be created for this object. The
-dictionary should specify the joint attributes (type, pos, etc.) according to the MuJoCo xml specification.</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py method">
-<dt id="robosuite.models.objects.objects.MujocoXMLObject.get_bottom_offset">
-<code class="sig-name descname">get_bottom_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoXMLObject.get_bottom_offset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns vector from object center to object bottom.
-Helps us put objects on a surface.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>(dx, dy, dz) vector, eg. np.array([0, 0, -2])</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>np.array</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.objects.MujocoXMLObject.get_collision">
-<code class="sig-name descname">get_collision</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">site</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoXMLObject.get_collision" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a ET.Element
-It is a &lt;body/&gt; subtree that defines all collision related fields
-of this object.
-Return should be a copy.
-Must be defined by subclass.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>site</strong> (<em>bool</em>) – Add a site (with name &#64;name when applicable) to the returned body</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>body</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ET.Element</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.models.objects.objects.MujocoXMLObject.get_horizontal_radius">
-<code class="sig-name descname">get_horizontal_radius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoXMLObject.get_horizontal_radius" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns scalar
-If object a,b has horizontal distance d
-a.get_horizontal_radius() + b.get_horizontal_radius() &lt; d
-should mean that a, b has no contact</p>
-<p>Helps us put objects programmatically without them flying away due to a huge initial contact force.
+<dt id="robosuite.models.objects.objects.MujocoObject.horizontal_radius">
+<em class="property">property </em><code class="sig-name descname">horizontal_radius</code><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.horizontal_radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns maximum distance from model root body to any radial point of the model.</p>
+<p>Helps us put models programmatically without them flying away due to a huge initial contact force.
 Must be defined by subclass.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1392,14 +895,109 @@ Must be defined by subclass.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.models.objects.objects.MujocoXMLObject.get_top_offset">
-<code class="sig-name descname">get_top_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoXMLObject.get_top_offset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns vector from object center to object top.
-Helps us put other objects on this object.
+<dt id="robosuite.models.objects.objects.MujocoObject.important_geoms">
+<em class="property">property </em><code class="sig-name descname">important_geoms</code><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.important_geoms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+dict: (Default is no important geoms; i.e.: empty dict)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.objects.MujocoObject.important_sensors">
+<em class="property">property </em><code class="sig-name descname">important_sensors</code><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.important_sensors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+dict: (Default is no sensors; i.e.: empty dict)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.objects.MujocoObject.important_sites">
+<em class="property">property </em><code class="sig-name descname">important_sites</code><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.important_sites" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+dict:</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd"><cite>obj</cite></dt>
+<dd class="field-odd"><p>Object default site</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.objects.MujocoObject.joints">
+<em class="property">property </em><code class="sig-name descname">joints</code><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.joints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+list: Joint names for this model</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.objects.MujocoObject.merge_assets">
+<code class="sig-name descname">merge_assets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.merge_assets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merges &#64;other’s assets in a custom logic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="robosuite.models.html#robosuite.models.base.MujocoXML" title="robosuite.models.base.MujocoXML"><em>MujocoXML</em></a><em> or </em><a class="reference internal" href="#robosuite.models.objects.objects.MujocoObject" title="robosuite.models.objects.objects.MujocoObject"><em>MujocoObject</em></a>) – other xml file whose assets will be merged into this one</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.objects.MujocoObject.name">
+<em class="property">property </em><code class="sig-name descname">name</code><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name for this model. Should be unique.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Unique name for this model.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.objects.MujocoObject.naming_prefix">
+<em class="property">property </em><code class="sig-name descname">naming_prefix</code><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.naming_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a standardized prefix to prevent naming collisions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Prefix unique to this model.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.objects.MujocoObject.root_body">
+<em class="property">property </em><code class="sig-name descname">root_body</code><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.root_body" title="Permalink to this definition">¶</a></dt>
+<dd><p>Root body name for this model. This should correspond to the top-level body element in the equivalent mujoco xml
+tree for this object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.objects.MujocoObject.sensors">
+<em class="property">property </em><code class="sig-name descname">sensors</code><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.sensors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+list: Sensor names for this model</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.objects.MujocoObject.sites">
+<em class="property">property </em><code class="sig-name descname">sites</code><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.sites" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+list: Site names for this model</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.objects.MujocoObject.top_offset">
+<em class="property">property </em><code class="sig-name descname">top_offset</code><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.top_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns vector from model root body to model top.
+Useful for, e.g. placing models on a surface.
 Must be defined by subclass.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>(dx, dy, dz) vector, eg. np.array([0, 0, 2])</p>
+<dd class="field-odd"><p>(dx, dy, dz) offset vector</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>np.array</p>
@@ -1408,22 +1006,104 @@ Must be defined by subclass.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.models.objects.objects.MujocoXMLObject.get_visual">
-<code class="sig-name descname">get_visual</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">site</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoXMLObject.get_visual" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a ET.Element
-It is a &lt;body/&gt; subtree that defines all visualization related fields
-of this object.
-Return should be a copy.
-Must be defined by subclass.</p>
+<dt id="robosuite.models.objects.objects.MujocoObject.visual_geoms">
+<em class="property">property </em><code class="sig-name descname">visual_geoms</code><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.visual_geoms" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of names corresponding to the geoms used for visual rendering of this model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>relevant visual geoms for this model</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.models.objects.objects.MujocoXMLObject">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.objects.</code><code class="sig-name descname">MujocoXMLObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">obj_type</span><span class="o">=</span><span class="default_value">'all'</span></em>, <em class="sig-param"><span class="n">duplicate_collision_geoms</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoXMLObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoObject" title="robosuite.models.objects.objects.MujocoObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoObject</span></code></a>, <a class="reference internal" href="robosuite.models.html#robosuite.models.base.MujocoXML" title="robosuite.models.base.MujocoXML"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.base.MujocoXML</span></code></a></p>
+<p>MujocoObjects that are loaded from xml files (by default, inherit all properties (e.g.: name)
+from MujocoObject class first!)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>site</strong> (<em>bool</em>) – Add a site (with name &#64;name when applicable) to the returned body</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fname</strong> (<em>str</em>) – XML File path</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Name of this MujocoXMLObject</p></li>
+<li><p><strong>joints</strong> (<em>None</em><em> or </em><em>str</em><em> or </em><em>list of dict</em>) – each dictionary corresponds to a joint that will be created for this
+object. The dictionary should specify the joint attributes (type, pos, etc.) according to the MuJoCo xml
+specification. If “default”, a single free-joint will be automatically generated. If None, no joints will
+be created.</p></li>
+<li><p><strong>obj_type</strong> (<em>str</em>) – <p>Geom elements to generate / extract for this object. Must be one of:</p>
+<dl class="field-list simple">
+<dt class="field-odd"><cite>’collision’</cite></dt>
+<dd class="field-odd"><p>Only collision geoms are returned (this corresponds to group 0 geoms)</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>body</p>
+<dt class="field-even"><cite>’visual’</cite></dt>
+<dd class="field-even"><p>Only visual geoms are returned (this corresponds to group 1 geoms)</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ET.Element</p>
+<dt class="field-odd"><cite>’all’</cite></dt>
+<dd class="field-odd"><p>All geoms are returned</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>duplicate_collision_geoms</strong> (<em>bool</em>) – If set, will guarantee that each collision geom has a
+visual geom copy</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.models.objects.objects.MujocoXMLObject.bottom_offset">
+<em class="property">property </em><code class="sig-name descname">bottom_offset</code><a class="headerlink" href="#robosuite.models.objects.objects.MujocoXMLObject.bottom_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns vector from model root body to model bottom.
+Useful for, e.g. placing models on a surface.
+Must be defined by subclass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(dx, dy, dz) offset vector</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.objects.MujocoXMLObject.exclude_from_prefixing">
+<code class="sig-name descname">exclude_from_prefixing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inp</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoXMLObject.exclude_from_prefixing" title="Permalink to this definition">¶</a></dt>
+<dd><p>By default, don’t exclude any from being prefixed</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.objects.MujocoXMLObject.horizontal_radius">
+<em class="property">property </em><code class="sig-name descname">horizontal_radius</code><a class="headerlink" href="#robosuite.models.objects.objects.MujocoXMLObject.horizontal_radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns maximum distance from model root body to any radial point of the model.</p>
+<p>Helps us put models programmatically without them flying away due to a huge initial contact force.
+Must be defined by subclass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>radius</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.models.objects.objects.MujocoXMLObject.top_offset">
+<em class="property">property </em><code class="sig-name descname">top_offset</code><a class="headerlink" href="#robosuite.models.objects.objects.MujocoXMLObject.top_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns vector from model root body to model top.
+Useful for, e.g. placing models on a surface.
+Must be defined by subclass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(dx, dy, dz) offset vector</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1432,24 +1112,24 @@ Must be defined by subclass.</p>
 
 </div>
 <div class="section" id="module-robosuite.models.objects.xml_objects">
-<span id="robosuite-models-objects-xml-objects"></span><h2>robosuite.models.objects.xml_objects<a class="headerlink" href="#module-robosuite.models.objects.xml_objects" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-models-objects-xml-objects-module"></span><h2>robosuite.models.objects.xml_objects module<a class="headerlink" href="#module-robosuite.models.objects.xml_objects" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="robosuite.models.objects.xml_objects.BottleObject">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">BottleObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.BottleObject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">BottleObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.BottleObject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoXMLObject" title="robosuite.models.objects.objects.MujocoXMLObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoXMLObject</span></code></a></p>
 <p>Bottle object</p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="robosuite.models.objects.xml_objects.BreadObject">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">BreadObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.BreadObject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">BreadObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.BreadObject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoXMLObject" title="robosuite.models.objects.objects.MujocoXMLObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoXMLObject</span></code></a></p>
 <p>Bread loaf object (used in PickPlace)</p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="robosuite.models.objects.xml_objects.BreadVisualObject">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">BreadVisualObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.BreadVisualObject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">BreadVisualObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.BreadVisualObject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoXMLObject" title="robosuite.models.objects.objects.MujocoXMLObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoXMLObject</span></code></a></p>
 <p>Visual fiducial of bread loaf (used in PickPlace)</p>
 <p>Fiducial objects are not involved in collision physics.
@@ -1458,14 +1138,14 @@ They provide a point of reference to indicate a position.</p>
 
 <dl class="py class">
 <dt id="robosuite.models.objects.xml_objects.CanObject">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">CanObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.CanObject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">CanObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.CanObject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoXMLObject" title="robosuite.models.objects.objects.MujocoXMLObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoXMLObject</span></code></a></p>
 <p>Coke can object (used in PickPlace)</p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="robosuite.models.objects.xml_objects.CanVisualObject">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">CanVisualObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.CanVisualObject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">CanVisualObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.CanVisualObject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoXMLObject" title="robosuite.models.objects.objects.MujocoXMLObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoXMLObject</span></code></a></p>
 <p>Visual fiducial of coke can (used in PickPlace)</p>
 <p>Fiducial objects are not involved in collision physics.
@@ -1474,14 +1154,14 @@ They provide a point of reference to indicate a position.</p>
 
 <dl class="py class">
 <dt id="robosuite.models.objects.xml_objects.CerealObject">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">CerealObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.CerealObject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">CerealObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.CerealObject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoXMLObject" title="robosuite.models.objects.objects.MujocoXMLObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoXMLObject</span></code></a></p>
 <p>Cereal box object (used in PickPlace)</p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="robosuite.models.objects.xml_objects.CerealVisualObject">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">CerealVisualObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.CerealVisualObject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">CerealVisualObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.CerealVisualObject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoXMLObject" title="robosuite.models.objects.objects.MujocoXMLObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoXMLObject</span></code></a></p>
 <p>Visual fiducial of cereal box (used in PickPlace)</p>
 <p>Fiducial objects are not involved in collision physics.
@@ -1490,7 +1170,7 @@ They provide a point of reference to indicate a position.</p>
 
 <dl class="py class">
 <dt id="robosuite.models.objects.xml_objects.DoorObject">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">DoorObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">friction</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">damping</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lock</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.DoorObject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">DoorObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">friction</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">damping</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lock</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.DoorObject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoXMLObject" title="robosuite.models.objects.objects.MujocoXMLObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoXMLObject</span></code></a></p>
 <p>Door with handle (used in Door)</p>
 <dl class="field-list simple">
@@ -1502,25 +1182,39 @@ They provide a point of reference to indicate a position.</p>
 </ul>
 </dd>
 </dl>
+<dl class="py method">
+<dt id="robosuite.models.objects.xml_objects.DoorObject.important_sites">
+<em class="property">property </em><code class="sig-name descname">important_sites</code><a class="headerlink" href="#robosuite.models.objects.xml_objects.DoorObject.important_sites" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+dict: In addition to any default sites for this object, also provides the following entries</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd"><cite>‘handle’</cite></dt>
+<dd class="field-odd"><p>Name of door handle location site</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
 <dt id="robosuite.models.objects.xml_objects.LemonObject">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">LemonObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.LemonObject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">LemonObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.LemonObject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoXMLObject" title="robosuite.models.objects.objects.MujocoXMLObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoXMLObject</span></code></a></p>
 <p>Lemon object</p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="robosuite.models.objects.xml_objects.MilkObject">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">MilkObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.MilkObject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">MilkObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.MilkObject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoXMLObject" title="robosuite.models.objects.objects.MujocoXMLObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoXMLObject</span></code></a></p>
 <p>Milk carton object (used in PickPlace)</p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="robosuite.models.objects.xml_objects.MilkVisualObject">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">MilkVisualObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.MilkVisualObject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">MilkVisualObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.MilkVisualObject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoXMLObject" title="robosuite.models.objects.objects.MujocoXMLObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoXMLObject</span></code></a></p>
 <p>Visual fiducial of milk carton (used in PickPlace).</p>
 <p>Fiducial objects are not involved in collision physics.
@@ -1529,25 +1223,56 @@ They provide a point of reference to indicate a position.</p>
 
 <dl class="py class">
 <dt id="robosuite.models.objects.xml_objects.PlateWithHoleObject">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">PlateWithHoleObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.PlateWithHoleObject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">PlateWithHoleObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.PlateWithHoleObject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoXMLObject" title="robosuite.models.objects.objects.MujocoXMLObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoXMLObject</span></code></a></p>
 <p>Square plate with a hole in the center (used in PegInHole)</p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="robosuite.models.objects.xml_objects.RoundNutObject">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">RoundNutObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.RoundNutObject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">RoundNutObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.RoundNutObject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoXMLObject" title="robosuite.models.objects.objects.MujocoXMLObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoXMLObject</span></code></a></p>
 <p>Round nut (used in NutAssembly)</p>
+<dl class="py method">
+<dt id="robosuite.models.objects.xml_objects.RoundNutObject.important_sites">
+<em class="property">property </em><code class="sig-name descname">important_sites</code><a class="headerlink" href="#robosuite.models.objects.xml_objects.RoundNutObject.important_sites" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+dict: In addition to any default sites for this object, also provides the following entries</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd"><cite>‘handle’</cite></dt>
+<dd class="field-odd"><p>Name of nut handle location site</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
 <dt id="robosuite.models.objects.xml_objects.SquareNutObject">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">SquareNutObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">joints</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.SquareNutObject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.objects.xml_objects.</code><code class="sig-name descname">SquareNutObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.xml_objects.SquareNutObject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robosuite.models.objects.objects.MujocoXMLObject" title="robosuite.models.objects.objects.MujocoXMLObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.objects.objects.MujocoXMLObject</span></code></a></p>
 <p>Square nut object (used in NutAssembly)</p>
+<dl class="py method">
+<dt id="robosuite.models.objects.xml_objects.SquareNutObject.important_sites">
+<em class="property">property </em><code class="sig-name descname">important_sites</code><a class="headerlink" href="#robosuite.models.objects.xml_objects.SquareNutObject.important_sites" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+dict: In addition to any default sites for this object, also provides the following entries</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd"><cite>‘handle’</cite></dt>
+<dd class="field-odd"><p>Name of nut handle location site</p>
+</dd>
+</dl>
+</div></blockquote>
 </dd></dl>
 
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.models.objects">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robosuite.models.objects" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -1559,10 +1284,10 @@ They provide a point of reference to indicate a position.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="robosuite.models.robots.html" class="btn btn-neutral float-right" title="robosuite.models.robots" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="robosuite.models.objects.composite.html" class="btn btn-neutral float-right" title="robosuite.models.objects.composite" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="robosuite.models.grippers.html" class="btn btn-neutral float-left" title="robosuite.models.grippers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="robosuite.models.mounts.html" class="btn btn-neutral float-left" title="robosuite.models.mounts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

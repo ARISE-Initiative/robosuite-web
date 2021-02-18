@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Overview &mdash; robosuite 1.0.0 documentation</title>
+  <title>Overview &mdash; robosuite 1.2.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.0.0
+                1.2.0
               </div>
             
           
@@ -106,6 +106,7 @@
 <li class="toctree-l1"><a class="reference internal" href="environments.html">Environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="renderers.html">Renderers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Simulation API</span></p>
 <ul>
@@ -116,8 +117,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Modeling API</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/mujoco_model.html">Mujoco Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modeling/gripper_model.html">Gripper Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
@@ -130,6 +131,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
@@ -229,8 +231,8 @@
 <h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
 <p><img alt="module_overview_diagram" src="../images/module_overview.png" /></p>
 <p>Our framework offers two main categories of APIs: 1) <strong>Modeling APIs</strong> for defining simulation environments in a modular and programmatic fashion, and 2) <strong>Simulation APIs</strong> for interfacing with external inputs such as from a <strong>Policy</strong> or an <strong>I/O Device</strong>. A <strong>Simulation Model</strong> specified by the Modeling APIs is instantiated by the <strong>MuJoCo Engine</strong> to create a simulation runtime, called <strong>Environment</strong>. The Environment generates observations through the <strong>Sensors</strong>, such as cameras and proprioception, and receives action commands from policies or devices through the <strong>Controllers</strong> of the <strong>Robots</strong>. The diagram above illustrates the key components in our framework and their relationships.</p>
-<p>A simulation model is defined by a <a class="reference internal" href="../modeling/task.html"><span class="doc">Task</span></a> object, which encapsulates three essential constituents of robotic simulation: <a class="reference internal" href="../modeling/robot_model.html"><span class="doc">Robot Model</span></a>s, <a class="reference internal" href="../modeling/object_model.html"><span class="doc">Object Model</span></a>s, and <a class="reference internal" href="../modeling/arena.html"><span class="doc">Arena</span></a>. A task may contain one or more robots, zero to many objects, and a single arena. The Robot Model loads models of robots and their corresponding <a class="reference internal" href="../modeling/gripper_model.html"><span class="doc">Gripper Model</span></a>s from XML files. The Object Model can be either loaded from 3D object assets or procedurally generated with programmatic APIs. The Arena defines the workspace of the robot, including the environment fixtures, such as a tabletop, and their placements. The task class combines these constituents into a single XML object in MuJoCo’s <a class="reference external" href="http://www.mujoco.org/book/XMLreference.html">MJCF modeling language</a>. This MJCF object is passed to the MuJoCo engine through the <a class="reference external" href="https://openai.github.io/mujoco-py/build/html/index.html">mujoco-py</a> library to instantiate the <a class="reference external" href="https://openai.github.io/mujoco-py/build/html/reference.html#mjsim-basic-simulation">MjSim</a> object for simulation runtime.</p>
-<p>The <a class="reference internal" href="environments.html"><span class="doc">Environment</span></a> object provides <a class="reference external" href="https://gym.openai.com/">OpenAI Gym</a>-style APIs for external inputs to interface with the simulation. External inputs correspond to the action commands used to control the <a class="reference internal" href="robots.html"><span class="doc">Robots</span></a> and their grippers, where the action spaces are specific to the <a class="reference internal" href="controllers.html"><span class="doc">Controllers</span></a> used by the robots. For instance, for joint-space controllers of a robot arm, the action space corresponds to the number of joints of the robot, and for operational space controllers, the action space corresponds to 3D Cartesian movement or 6D pose of the end-effector. These action commands can either be automatically generated by an algorithm (such as a deep neural network policy) or come from <a class="reference internal" href="devices.html"><span class="doc">I/O devices</span></a> for human teleoperation (such as the keyboard). The controllers of the robots are responsible for interpreting these action commands and transforming them into the low-level torques passing to the underlying physics engine, which performs internal computations to determine the next state of the simulation. <a class="reference internal" href="sensors.html"><span class="doc">Sensors</span></a> retrieve information from the MjSim object and generate observations as the physical signals that the robots receive as response to their actions. Our framework supports multimodal sensing modalities, such as RGB-D cameras, force-torque measurements, and proprioceptive data. In addition to these sensory data, environments also provide additional information about the task progress and success conditions, including reward functions (for reinforcement learning) and other meta-data. For more information, please check out the descriptions of the individual components in this section.</p>
+<p>A simulation model is defined by a <a class="reference internal" href="../modeling/task.html"><span class="doc">Task</span></a> object, which encapsulates three essential constituents of robotic simulation: <a class="reference internal" href="../modeling/robot_model.html"><span class="doc">Robot Model</span></a>s, <a class="reference internal" href="../modeling/object_model.html"><span class="doc">Object Model</span></a>s, and <a class="reference internal" href="../modeling/arena.html"><span class="doc">Arena</span></a>. A task may contain one or more robots, zero to many objects, and a single arena. The Robot Model loads models of robots and optionally other models as well; for example, the <a class="reference external" href="../modeling/robot_model.html#manipulator-model">Manipulator</a> robot model class also loads a corresponding <a class="reference external" href="../modeling/robot_model.html#gripper-model">Gripper Model</a>s from XML files. The Object Model can be either loaded from 3D object assets or procedurally generated with programmatic APIs. The Arena defines the workspace of the robot, including the environment fixtures, such as a tabletop, and their placements. The task class combines these constituents into a single XML object in MuJoCo’s <a class="reference external" href="http://www.mujoco.org/book/XMLreference.html">MJCF modeling language</a>. This MJCF object is passed to the MuJoCo engine through the <a class="reference external" href="https://openai.github.io/mujoco-py/build/html/index.html">mujoco-py</a> library to instantiate the <a class="reference external" href="https://openai.github.io/mujoco-py/build/html/reference.html#mjsim-basic-simulation">MjSim</a> object for simulation runtime.</p>
+<p>The <a class="reference internal" href="environments.html"><span class="doc">Environment</span></a> object provides <a class="reference external" href="https://gym.openai.com/">OpenAI Gym</a>-style APIs for external inputs to interface with the simulation. External inputs correspond to the action commands used to control the <a class="reference internal" href="robots.html"><span class="doc">Robots</span></a> and any actuators it owns (for example, in the case of a manipulator robot the arm joints and gripper), where the kinematic component of the action spaces are specific to the <a class="reference internal" href="controllers.html"><span class="doc">Controllers</span></a> used by the robots. For instance, for joint-space controllers of a robot manipulator arm, the action space corresponds to the number of joints of the robot, and for operational space controllers, the action space corresponds to 3D Cartesian movement or 6D pose of the end-effector. These action commands can either be automatically generated by an algorithm (such as a deep neural network policy) or come from <a class="reference internal" href="devices.html"><span class="doc">I/O devices</span></a> for human teleoperation (such as the keyboard). The controllers of the robots are responsible for interpreting these action commands and transforming them into the low-level torques passing to the underlying physics engine, which performs internal computations to determine the next state of the simulation. <a class="reference internal" href="sensors.html"><span class="doc">Sensors</span></a> retrieve information from the MjSim object and generate observations as the physical signals that the robots receive as response to their actions. Our framework supports multimodal sensing modalities, such as RGB-D cameras, force-torque measurements, and proprioceptive data, and also provides modular APIs to model realistic sensor dynamics. In addition to these sensory data, environments also provide additional information about the task progress and success conditions, including reward functions (for reinforcement learning) and other meta-data. For more information, please check out the descriptions of the individual components in this section.</p>
 </div>
 
 

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Quick Start &mdash; robosuite 1.0.0 documentation</title>
+  <title>Quick Start &mdash; robosuite 1.2.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.0.0
+                1.2.0
               </div>
             
           
@@ -110,6 +110,7 @@
 <li class="toctree-l1"><a class="reference internal" href="modules/environments.html">Environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules/sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules/devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/renderers.html">Renderers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Simulation API</span></p>
 <ul>
@@ -120,8 +121,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Modeling API</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="modeling/mujoco_model.html">Mujoco Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modeling/robot_model.html">Robot Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modeling/gripper_model.html">Gripper Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modeling/object_model.html">Object Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modeling/arena.html">Arena</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modeling/task.html">Task</a></li>
@@ -134,6 +135,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="algorithms/benchmarking.html">Benchmarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithms/roboturk.html">RoboTurk Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
@@ -234,16 +236,16 @@
 <div class="section" id="running-standardized-environments">
 <h2>Running Standardized Environments<a class="headerlink" href="#running-standardized-environments" title="Permalink to this headline">¶</a></h2>
 <p><strong>robosuite</strong> offers a set of standardized manipulation tasks for benchmarking purposes. These pre-defined environments can be easily instantiated with the <code class="docutils literal notranslate"><span class="pre">make</span></code> function. The APIs we provide to interact with our environments are simple and similar to the ones used by <a class="reference external" href="https://github.com/openai/gym/">OpenAI Gym</a>. Below is a minimalistic example of how to interact with an environment.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">robosuite</span> <span class="k">as</span> <span class="nn">suite</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">robosuite</span> <span class="kn">as</span> <span class="nn">suite</span>
 
 <span class="c1"># create environment instance</span>
 <span class="n">env</span> <span class="o">=</span> <span class="n">suite</span><span class="o">.</span><span class="n">make</span><span class="p">(</span>
     <span class="n">env_name</span><span class="o">=</span><span class="s2">&quot;Lift&quot;</span><span class="p">,</span> <span class="c1"># try with other tasks like &quot;Stack&quot; and &quot;Door&quot;</span>
     <span class="n">robots</span><span class="o">=</span><span class="s2">&quot;Panda&quot;</span><span class="p">,</span>  <span class="c1"># try with other robots like &quot;Sawyer&quot; and &quot;Jaco&quot;</span>
-    <span class="n">has_renderer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">has_offscreen_renderer</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">use_camera_obs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">has_renderer</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">has_offscreen_renderer</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+    <span class="n">use_camera_obs</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="c1"># reset the environment</span>
@@ -261,7 +263,7 @@
 </div>
 <div class="section" id="building-your-own-environments">
 <h2>Building Your Own Environments<a class="headerlink" href="#building-your-own-environments" title="Permalink to this headline">¶</a></h2>
-<p><strong>robosuite</strong> offers great flexibility in creating your own environments. A <a class="reference internal" href="modeling/task.html"><span class="doc">task</span></a> typically involves the participation of a <a class="reference internal" href="modeling/robot_model.html"><span class="doc">robot</span></a> with <a class="reference internal" href="modeling/gripper_model.html"><span class="doc">grippers</span></a> as its end-effectors, an <a class="reference internal" href="modeling/arena.html"><span class="doc">arena</span></a> (workspace), and <a class="reference internal" href="modeling/object_model.html"><span class="doc">objects</span></a> that the robot interacts with. For a detailed overview of our design architecture, please check out the <a class="reference internal" href="modules/overview.html"><span class="doc">Overview</span></a> page in Modules. Our Modeling APIs provide methods of composing these modularized elements into a scene, which can be loaded in MuJoCo for simulation. To build your own environments, we recommend you take a look at the <a class="reference internal" href="simulation/environment.html"><span class="doc">Environment classes</span></a> which have used these APIs to define robotics environments and tasks and the <a class="reference external" href="https://github.com/Unknown-Initiative/robosuite-dev/tree/master/robosuite/environments">source code</a> of our standardized environments. Below we walk through a step-by-step example of building a new tabletop manipulation environment with our APIs.</p>
+<p><strong>robosuite</strong> offers great flexibility in creating your own environments. A <a class="reference internal" href="modeling/task.html"><span class="doc">task</span></a> typically involves the participation of a <a class="reference internal" href="modeling/robot_model.html"><span class="doc">robot</span></a> with <a class="reference external" href="modeling/robot_model.html#gripper-model">grippers</a> as its end-effectors, an <a class="reference internal" href="modeling/arena.html"><span class="doc">arena</span></a> (workspace), and <a class="reference internal" href="modeling/object_model.html"><span class="doc">objects</span></a> that the robot interacts with. For a detailed overview of our design architecture, please check out the <a class="reference internal" href="modules/overview.html"><span class="doc">Overview</span></a> page in Modules. Our Modeling APIs provide methods of composing these modularized elements into a scene, which can be loaded in MuJoCo for simulation. To build your own environments, we recommend you take a look at the <a class="reference internal" href="simulation/environment.html"><span class="doc">Environment classes</span></a> which have used these APIs to define robotics environments and tasks and the <a class="reference external" href="https://github.com/ARISE-Initiative/robosuite/tree/master/robosuite/environments">source code</a> of our standardized environments. Below we walk through a step-by-step example of building a new tabletop manipulation environment with our APIs.</p>
 <p><strong>Step 1: Creating the world.</strong> All mujoco object definitions are housed in an xml. We create a <a class="reference internal" href="source/robosuite.models.html"><span class="doc">MujocoWorldBase</span></a> class to do it.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robosuite.models</span> <span class="kn">import</span> <span class="n">MujocoWorldBase</span>
 
@@ -313,7 +315,7 @@
 </pre></div>
 </div>
 <p>This is an <code class="docutils literal notranslate"><span class="pre">MjModel</span></code> instance that can then be used for simulation. For example,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mujoco_py</span> <span class="kn">import</span> <span class="n">MjSim</span><span class="p">,</span> <span class="n">MjViewer</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mujoco_py</span> <span class="k">import</span> <span class="n">MjSim</span><span class="p">,</span> <span class="n">MjViewer</span>
 
 <span class="n">sim</span> <span class="o">=</span> <span class="n">MjSim</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
 <span class="n">viewer</span> <span class="o">=</span> <span class="n">MjViewer</span><span class="p">(</span><span class="n">sim</span><span class="p">)</span>

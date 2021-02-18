@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Objects &mdash; robosuite 1.0.0 documentation</title>
+  <title>Objects &mdash; robosuite 1.2.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.0.0
+                1.2.0
               </div>
             
           
@@ -113,6 +113,7 @@
 <li class="toctree-l1"><a class="reference internal" href="environments.html">Environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="renderers.html">Renderers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Simulation API</span></p>
 <ul>
@@ -123,8 +124,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Modeling API</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/mujoco_model.html">Mujoco Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modeling/gripper_model.html">Gripper Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
@@ -137,6 +138,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
@@ -236,7 +238,7 @@
 <h1>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="how-to-create-a-custom-object">
 <h2>How to create a custom object<a class="headerlink" href="#how-to-create-a-custom-object" title="Permalink to this headline">¶</a></h2>
-<p>Objects, such as boxes and cans, are essential to building manipulation environments. We designed the <a class="reference external" href="../../../robosuite/models/objects/objects.py">MujocoObject</a> interfaces to standardize and simplify the procedure for importing 3D models into the scene or procedurally generate new objects. MuJoCo defines models via the <a class="reference external" href="http://www.mujoco.org/book/modeling.html">MJCF</a> XML format. These MJCF files can either be stored as XML files on disk and loaded into simulator, or be created on-the-fly by code prior to simulation. Based on these two mechanisms of how MJCF models are created, we offer two main ways of creating your own object:</p>
+<p>Objects, such as boxes and cans, are essential to building manipulation environments. We designed the <a class="reference external" href="../source/robosuite.models.objects.html#robosuite.models.objects.objects.MujocoObject">MujocoObject</a> interfaces to standardize and simplify the procedure for importing 3D models into the scene or procedurally generate new objects. MuJoCo defines models via the <a class="reference external" href="http://www.mujoco.org/book/modeling.html">MJCF</a> XML format. These MJCF files can either be stored as XML files on disk and loaded into simulator, or be created on-the-fly by code prior to simulation. Based on these two mechanisms of how MJCF models are created, we offer two main ways of creating your own object:</p>
 <ul class="simple">
 <li><p>Define an object in an MJCF XML file;</p></li>
 <li><p>Use procedural generation APIs to dynamically create an MJCF model.</p></li>
@@ -244,16 +246,31 @@
 </div>
 <div class="section" id="the-mujocoobject-class">
 <h2>The MujocoObject class<a class="headerlink" href="#the-mujocoobject-class" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MujocoObject</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MujocoObject</span><span class="p">(</span><span class="n">MujocoModel</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
-        <span class="k">pass</span>
+        
+        <span class="o">...</span>
+
+        <span class="c1"># Attributes that should be filled in within the subclass</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span> <span class="o">=</span> <span class="bp">None</span>
+
+        <span class="c1"># Attributes that are auto-filled by _get_object_properties call</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_root_body</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_bodies</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_joints</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_actuators</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sites</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_contact_geoms</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_visual_geoms</span> <span class="o">=</span> <span class="bp">None</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">MujocoObject</span></code> is the base class of all objects. One must note that it is not a subclass of <code class="docutils literal notranslate"><span class="pre">MujocoXML</span></code>. The XML of an object is generated through the call to <code class="docutils literal notranslate"><span class="pre">get_collision</span></code> and <code class="docutils literal notranslate"><span class="pre">get_visual</span></code>. Both calls take a boolean argument <code class="docutils literal notranslate"><span class="pre">site</span></code>, which adds a site to the center of the object if set. A site is helpful for locating the object in simulation.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">get_collision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">site</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<p><code class="docutils literal notranslate"><span class="pre">MujocoObject</span></code> is the base class of all objects. One must note that it is not a subclass of <code class="docutils literal notranslate"><span class="pre">MujocoXML</span></code>, but does extend from the unifying <code class="docutils literal notranslate"><span class="pre">MujocoModel</span></code> class from which all simulation models (including robots, grippers, etc.) should extend from. All of the attributes shown above prepended with a <code class="docutils literal notranslate"><span class="pre">_</span></code> are intended to be private variables and not accessed by external objects. Instead, any of these properties can be accessed via its public version, without the <code class="docutils literal notranslate"><span class="pre">_</span></code> (e.g.: to access all the object’s joints, call <code class="docutils literal notranslate"><span class="pre">obj.joints</span></code> instead of <code class="docutils literal notranslate"><span class="pre">obj._joints</span></code>). This is because all public attributes are automatically post-processed from their private counterparts and have naming prefixes appended to it.</p>
+<p>The XML of an object is generated once during initialization via the <code class="docutils literal notranslate"><span class="pre">_get_object_subtree</span></code> call, after which any external object can extract a reference to this XML via the <code class="docutils literal notranslate"><span class="pre">get_obj</span></code> call.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">_get_object_subtree</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span>
 
-    <span class="k">def</span> <span class="nf">get_visual</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">site</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span>
 </pre></div>
 </div>
@@ -271,20 +288,22 @@
 <p>This allows us to do things like the following.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">table_top</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 <span class="n">bottom_offset</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_bottom_offset</span><span class="p">()</span>
-<span class="n">pos</span> <span class="o">=</span> <span class="n">table_top</span> <span class="o">-</span> <span class="n">bottom_offset</span> <span class="c1"># pos + bottom_offset = table_top</span>
-<span class="n">obj_xml</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_visual</span><span class="p">()</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;pos&quot;</span><span class="p">,</span> <span class="n">array_to_string</span><span class="p">(</span><span class="n">pos</span><span class="p">))</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">table_top</span> <span class="o">-</span> <span class="n">bottom_offset</span>                             <span class="c1"># pos + bottom_offset = table_top</span>
+<span class="n">obj_xml</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_obj</span><span class="p">()</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;pos&quot;</span><span class="p">,</span> <span class="n">array_to_string</span><span class="p">(</span><span class="n">pos</span><span class="p">))</span>    <span class="c1"># Set the top-level body of this object</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="creating-a-xmlobject">
 <h2>Creating a XMLObject<a class="headerlink" href="#creating-a-xmlobject" title="Permalink to this headline">¶</a></h2>
-<p>One can use MuJoCo MJCF XML to generate an object, either as a composition of primitive <a class="reference external" href="http://mujoco.org/book/modeling.html#geom">geoms</a> or imported from STL files of triangulated <a class="reference external" href="http://www.mujoco.org/book/modeling.html#mesh">meshes</a>. An example is <code class="docutils literal notranslate"><span class="pre">robosuite.models.objects.xml_objects.BreadObject</span></code>. Its <a class="reference external" href="../../../robosuite/models/objects/xml_objects.py#L41">python definition</a> is short. Note that all <code class="docutils literal notranslate"><span class="pre">MujocoXMLOBject</span></code> classes require both a <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">joints</span></code> argument, the former which specifies the in-sim name of the object instantiated and the latter which specifies the joint parameters for that object.</p>
+<p>One can use MuJoCo MJCF XML to generate an object, either as a composition of primitive <a class="reference external" href="http://mujoco.org/book/modeling.html#geom">geoms</a> or imported from STL files of triangulated <a class="reference external" href="http://www.mujoco.org/book/modeling.html#mesh">meshes</a>. An example is <code class="docutils literal notranslate"><span class="pre">robosuite.models.objects.xml_objects.BreadObject</span></code>. Its <a class="reference external" href="https://github.com/ARISE-Initiative/robosuite/blob/master/robosuite/models/objects/xml_objects.py#L49">python definition</a> is short. Note that all <code class="docutils literal notranslate"><span class="pre">MujocoXMLObject</span></code> classes require both a <code class="docutils literal notranslate"><span class="pre">fname</span></code> and <code class="docutils literal notranslate"><span class="pre">name</span></code> argument, the former which specifies the filepath to the raw XML file and the latter which specifies the in-sim name of the object instantiated. The optional <code class="docutils literal notranslate"><span class="pre">joints</span></code> argument can also specify a custom set of joints to apply to the given object (defaults to “default”, which is a single free joint). Additionally, the type of object created can be specified via the <code class="docutils literal notranslate"><span class="pre">obj_type</span></code> argument, and must be one of (<code class="docutils literal notranslate"><span class="pre">'collision'</span></code>, <code class="docutils literal notranslate"><span class="pre">'visual'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'all'</span></code>). Lastly, setting <code class="docutils literal notranslate"><span class="pre">duplicate_collision_geoms</span></code> makes sure that all collision geoms automatically have an associated visual geom as well. Generally, the normal use case is to define a single class corresponding to a specific XML file, as shown below:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BreadObject</span><span class="p">(</span><span class="n">MujocoXMLObject</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">joints</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">xml_path_completion</span><span class="p">(</span><span class="s2">&quot;objects/bread.xml&quot;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">joints</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">xml_path_completion</span><span class="p">(</span><span class="s2">&quot;objects/bread.xml&quot;</span><span class="p">),</span>
+                         <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">joints</span><span class="o">=</span><span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;free&quot;</span><span class="p">,</span> <span class="n">damping</span><span class="o">=</span><span class="s2">&quot;0.0005&quot;</span><span class="p">)],</span>
+                         <span class="n">obj_type</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="n">duplicate_collision_geoms</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>So all the important definitions are in the <a class="reference external" href="../robosuite/models/assets/objects/bread.xml">bread.xml</a> file.</p>
+<p>In the corresponding XML file, a few key definitions must be present. The top-level, un-named body must contain as immediate children tags (a) the actual object bodie(s) (the top-level <strong>must</strong> be named <code class="docutils literal notranslate"><span class="pre">object</span></code>) and (b) three site tags named <code class="docutils literal notranslate"><span class="pre">bottom_site</span></code>, <code class="docutils literal notranslate"><span class="pre">top_site</span></code>, and <code class="docutils literal notranslate"><span class="pre">horizontal_radius_site</span></code> and whose <code class="docutils literal notranslate"><span class="pre">pos</span></code> values must be specified. The example for the <code class="docutils literal notranslate"><span class="pre">BreadObject</span></code>, <a class="reference external" href="https://github.com/ARISE-Initiative/robosuite/blob/master/robosuite/models/assets/objects/bread.xml">bread.xml</a>, is shown below:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;mujoco</span> <span class="na">model=</span><span class="s">&quot;bread&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;asset&gt;</span>
     <span class="nt">&lt;mesh</span> <span class="na">file=</span><span class="s">&quot;meshes/bread.stl&quot;</span> <span class="na">name=</span><span class="s">&quot;bread_mesh&quot;</span> <span class="na">scale=</span><span class="s">&quot;0.8 0.8 0.8&quot;</span><span class="nt">/&gt;</span>
@@ -293,12 +312,8 @@
   <span class="nt">&lt;/asset&gt;</span>
   <span class="nt">&lt;worldbody&gt;</span>
     <span class="nt">&lt;body&gt;</span>
-      <span class="nt">&lt;body</span> <span class="na">name=</span><span class="s">&quot;collision&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;geom</span> <span class="na">pos=</span><span class="s">&quot;0 0 0&quot;</span> <span class="na">mesh=</span><span class="s">&quot;bread_mesh&quot;</span> <span class="na">type=</span><span class="s">&quot;mesh&quot;</span> <span class="na">solimp=</span><span class="s">&quot;0.998 0.998 0.001&quot;</span> <span class="na">solref=</span><span class="s">&quot;0.001 1&quot;</span> <span class="na">density=</span><span class="s">&quot;50&quot;</span> <span class="na">friction=</span><span class="s">&quot;0.95 0.3 0.1&quot;</span>  <span class="na">material=</span><span class="s">&quot;bread&quot;</span> <span class="na">group=</span><span class="s">&quot;1&quot;</span> <span class="na">condim=</span><span class="s">&quot;4&quot;</span><span class="nt">/&gt;</span>
-      <span class="nt">&lt;/body&gt;</span>
-      <span class="nt">&lt;body</span> <span class="na">name=</span><span class="s">&quot;visual&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;geom</span> <span class="na">pos=</span><span class="s">&quot;0 0 0&quot;</span> <span class="na">mesh=</span><span class="s">&quot;bread_mesh&quot;</span> <span class="na">type=</span><span class="s">&quot;mesh&quot;</span> <span class="na">material=</span><span class="s">&quot;bread&quot;</span>  <span class="na">conaffinity=</span><span class="s">&quot;0&quot;</span> <span class="na">contype=</span><span class="s">&quot;0&quot;</span>  <span class="na">group=</span><span class="s">&quot;0&quot;</span> <span class="na">mass=</span><span class="s">&quot;0.0001&quot;</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;geom</span> <span class="na">pos=</span><span class="s">&quot;0 0 0&quot;</span> <span class="na">mesh=</span><span class="s">&quot;bread_mesh&quot;</span> <span class="na">type=</span><span class="s">&quot;mesh&quot;</span> <span class="na">material=</span><span class="s">&quot;bread&quot;</span>  <span class="na">conaffinity=</span><span class="s">&quot;0&quot;</span> <span class="na">contype=</span><span class="s">&quot;0&quot;</span>  <span class="na">group=</span><span class="s">&quot;1&quot;</span> <span class="na">mass=</span><span class="s">&quot;0.0001&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;body</span> <span class="na">name=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;geom</span> <span class="na">pos=</span><span class="s">&quot;0 0 0&quot;</span> <span class="na">mesh=</span><span class="s">&quot;bread_mesh&quot;</span> <span class="na">type=</span><span class="s">&quot;mesh&quot;</span> <span class="na">solimp=</span><span class="s">&quot;0.998 0.998 0.001&quot;</span> <span class="na">solref=</span><span class="s">&quot;0.001 1&quot;</span> <span class="na">density=</span><span class="s">&quot;50&quot;</span> <span class="na">friction=</span><span class="s">&quot;0.95 0.3 0.1&quot;</span>  <span class="na">material=</span><span class="s">&quot;bread&quot;</span> <span class="na">group=</span><span class="s">&quot;0&quot;</span> <span class="na">condim=</span><span class="s">&quot;4&quot;</span><span class="nt">/&gt;</span>
       <span class="nt">&lt;/body&gt;</span>
       <span class="nt">&lt;site</span> <span class="na">rgba=</span><span class="s">&quot;0 0 0 0&quot;</span> <span class="na">size=</span><span class="s">&quot;0.005&quot;</span> <span class="na">pos=</span><span class="s">&quot;0 0 -0.045&quot;</span> <span class="na">name=</span><span class="s">&quot;bottom_site&quot;</span><span class="nt">/&gt;</span>
       <span class="nt">&lt;site</span> <span class="na">rgba=</span><span class="s">&quot;0 0 0 0&quot;</span> <span class="na">size=</span><span class="s">&quot;0.005&quot;</span> <span class="na">pos=</span><span class="s">&quot;0 0 0.03&quot;</span> <span class="na">name=</span><span class="s">&quot;top_site&quot;</span><span class="nt">/&gt;</span>
@@ -308,57 +323,72 @@
 <span class="nt">&lt;/mujoco&gt;</span>
 </pre></div>
 </div>
+<p>Concretely,</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">get_collision</span></code> of <code class="docutils literal notranslate"><span class="pre">MujocoXmlObject</span></code> would look for the <code class="docutils literal notranslate"><span class="pre">&lt;body&gt;</span></code> tag with name <code class="docutils literal notranslate"><span class="pre">collision</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">get_visual</span></code> of <code class="docutils literal notranslate"><span class="pre">MujocoXmlObject</span></code> would look for the <code class="docutils literal notranslate"><span class="pre">&lt;body&gt;</span></code> tag with name <code class="docutils literal notranslate"><span class="pre">visual</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_get_object_subtree</span></code> looks for the object bodie(s) as defined by all nested bodie(s) beginning with the <code class="docutils literal notranslate"><span class="pre">object</span></code>-named body tag.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">bottom_site</span></code> should be the bottom of the object, i.e. contact point with the surface it is placed on.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">top_site</span></code> should be the top of the object, i.e. contact point if something is placed on it.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">horizontal_radius_site</span></code> can be any point on a circle in the x-y plane that does not intersect the object. This allows us to place multiple objects without having them collide into one another.</p></li>
-<li><p>These attributes will be parsed by the <code class="docutils literal notranslate"><span class="pre">MujocoXMLObject</span></code> class and conform to the <code class="docutils literal notranslate"><span class="pre">MujocoObject</span></code> interface.</p></li>
 </ul>
 </div>
 <div class="section" id="creating-a-procedurally-generated-object">
 <h2>Creating a procedurally generated object<a class="headerlink" href="#creating-a-procedurally-generated-object" title="Permalink to this headline">¶</a></h2>
-<p>Procedurally generated objects have been used in <a class="reference external" href="https://arxiv.org/abs/1802.09564">several</a> <a class="reference external" href="https://arxiv.org/abs/1806.09266">recent</a> <a class="reference external" href="https://arxiv.org/abs/1709.07857">works</a> to train control policies with improved robustness and generalization. Here you can programmatically generate an MJCF XML of an object from scratch using <code class="docutils literal notranslate"><span class="pre">xml.etree.ElementTree</span></code>, and compose an object of multiple geom primitives. The implementation is straightforward and interested readers should refer to <code class="docutils literal notranslate"><span class="pre">_get_collision</span></code> and <code class="docutils literal notranslate"><span class="pre">get_visual</span></code> method of <code class="docutils literal notranslate"><span class="pre">MujocoGeneratedObject</span></code>, defined <a class="reference external" href="../../../robosuite/models/objects/generated_objects.py">here</a>. Additionally, custom texture definitions are supported on a per-geom level, where specific texture images can be mapped to individual geoms. Our showcase example that incorporates all of these aspects is the <code class="docutils literal notranslate"><span class="pre">HammerObject</span></code> class which is composed of multiple texture-enabled geoms and utilized within the <code class="docutils literal notranslate"><span class="pre">TwoArmHandover</span></code> environment; its definition can be found <a class="reference external" href="../../../robosuite/models/objects/generated_objects.py#L13">here</a>.</p>
+<p>Procedurally generated objects have been used in <a class="reference external" href="https://arxiv.org/abs/1802.09564">several</a> <a class="reference external" href="https://arxiv.org/abs/1806.09266">recent</a> <a class="reference external" href="https://arxiv.org/abs/1709.07857">works</a> to train control policies with improved robustness and generalization. Here you can programmatically generate an MJCF XML of an object from scratch using <code class="docutils literal notranslate"><span class="pre">xml.etree.ElementTree</span></code>, and compose an object of multiple geom primitives. The base class for this type of object is <code class="docutils literal notranslate"><span class="pre">MujocoGeneratedObject</span></code>.
+<strong>robosuite</strong> natively supports all Mujoco primitive objects with procedurally-generated <code class="docutils literal notranslate"><span class="pre">PrimitiveObject</span></code> classes (<code class="docutils literal notranslate"><span class="pre">BoxObject</span></code>, <code class="docutils literal notranslate"><span class="pre">BallObject</span></code>, <code class="docutils literal notranslate"><span class="pre">CapsuleObject</span></code>, and <code class="docutils literal notranslate"><span class="pre">CylinderObject</span></code>).</p>
+<p>Additionally, <strong>robosuite</strong> supports custom, complex objects that can be defined by collections of primitive geoms (the <a class="reference external" href="../source/robosuite.models.objects.html#robosuite.models.objects.generated_objects.CompositeObject">CompositeObject</a> class) or even other objects (the <a class="reference external" href="../source/robosuite.models.objects.html#robosuite.models.objects.generated_objects.CompositeBodyObject">CompositeBodyObject</a> class). The APIs for each of these classes have been standardized for ease of usage, and interested readers should consult the docstrings for each of these classes, as well as provided examples of each class (<a class="reference external" href="https://github.com/ARISE-Initiative/robosuite/blob/master/robosuite/models/objects/composite/hammer.py#L10">HammerObject</a>, <a class="reference external" href="https://github.com/ARISE-Initiative/robosuite/blob/master/robosuite/models/objects/composite_body/hinged_box.py#L8">HingedBoxObject</a>).</p>
+<p>It should also be noted that all of the above classes extending from the <code class="docutils literal notranslate"><span class="pre">MujocoGenereatedObject</span></code> class automatically supports custom texture definitions on a per-geom level, where specific texture images can be mapped to individual geoms. The above <code class="docutils literal notranslate"><span class="pre">HammerObject</span></code> showcases an example applying custom textures to different geoms of the resulting object.</p>
 </div>
 <div class="section" id="placing-objects">
 <h2>Placing Objects<a class="headerlink" href="#placing-objects" title="Permalink to this headline">¶</a></h2>
-<p>Object locations are initialized on every environment reset using instances of the <code class="docutils literal notranslate"><span class="pre">ObjectPositionSampler</span></code> class. Object samplers use the <code class="docutils literal notranslate"><span class="pre">bottom_site</span></code> and <code class="docutils literal notranslate"><span class="pre">top_site</span></code> sites of each object in order to place objects on top of other objects, and the <code class="docutils literal notranslate"><span class="pre">horizontal_radius_site</span></code> site in order to ensure that objects do not collide with one another. The most basic sampler is the <code class="docutils literal notranslate"><span class="pre">UniformRandomSampler</span></code> class - this just uses rejection sampling to place objects randomly. As an example, consider the following code snippet from the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method of the <code class="docutils literal notranslate"><span class="pre">Lift</span></code> environment class.</p>
+<p>Object locations are initialized on every environment reset using instances of the <a class="reference external" href="../source/robosuite.utils.html#robosuite.utils.placement_samplers.ObjectPositionSampler">ObjectPositionSampler</a> class. Object samplers use the <code class="docutils literal notranslate"><span class="pre">bottom_site</span></code> and <code class="docutils literal notranslate"><span class="pre">top_site</span></code> sites of each object in order to place objects on top of other objects, and the <code class="docutils literal notranslate"><span class="pre">horizontal_radius_site</span></code> site in order to ensure that objects do not collide with one another. The most basic sampler is the <a class="reference external" href="../source/robosuite.utils.html#robosuite.utils.placement_samplers.UniformRandomSampler">UniformRandomSampler</a> class - this just uses rejection sampling to place objects randomly. As an example, consider the following code snippet from the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method of the <code class="docutils literal notranslate"><span class="pre">Lift</span></code> environment class.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">placement_initializer</span> <span class="o">=</span> <span class="n">UniformRandomSampler</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;ObjectSampler&quot;</span><span class="p">,</span>
+    <span class="n">mujoco_objects</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="p">,</span>
     <span class="n">x_range</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">],</span>
     <span class="n">y_range</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">],</span>
-    <span class="n">ensure_object_boundary_in_range</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">rotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">rotation_axis</span><span class="o">=</span><span class="s1">&#39;z&#39;</span><span class="p">,</span>
+    <span class="n">rotation</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+    <span class="n">ensure_object_boundary_in_range</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+    <span class="n">ensure_valid_placement</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">reference_pos</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">table_offset</span><span class="p">,</span>
     <span class="n">z_offset</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
-<p>This will sample the cube location uniformly at random in a box of size <code class="docutils literal notranslate"><span class="pre">0.03</span></code> with random z-rotation, and with an offset of <code class="docutils literal notranslate"><span class="pre">0.01</span></code> above the table surface.</p>
-<p>Another common sampler is the <code class="docutils literal notranslate"><span class="pre">SequentialCompositeSampler</span></code>, which is useful for composing multiple uniform random placement samplers together. As an example, consider the following code snippet from the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method of the <code class="docutils literal notranslate"><span class="pre">NutAssembly</span></code> environment class.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">placement_initializer</span> <span class="o">=</span> <span class="n">SequentialCompositeSampler</span><span class="p">()</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">placement_initializer</span><span class="o">.</span><span class="n">sample_on_top</span><span class="p">(</span>
-    <span class="s2">&quot;SquareNut0&quot;</span><span class="p">,</span>
-    <span class="n">surface_name</span><span class="o">=</span><span class="s2">&quot;table&quot;</span><span class="p">,</span>
-    <span class="n">x_range</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.115</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.11</span><span class="p">],</span>
-    <span class="n">y_range</span><span class="o">=</span><span class="p">[</span><span class="mf">0.11</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">],</span>
-    <span class="n">rotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">rotation_axis</span><span class="o">=</span><span class="s1">&#39;z&#39;</span><span class="p">,</span>
-    <span class="n">z_offset</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span>
-    <span class="n">ensure_object_boundary_in_range</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">placement_initializer</span><span class="o">.</span><span class="n">sample_on_top</span><span class="p">(</span>
-    <span class="s2">&quot;RoundNut0&quot;</span><span class="p">,</span>
-    <span class="n">surface_name</span><span class="o">=</span><span class="s2">&quot;table&quot;</span><span class="p">,</span>
-    <span class="n">x_range</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.115</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.11</span><span class="p">],</span>
-    <span class="n">y_range</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.225</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.11</span><span class="p">],</span>
-    <span class="n">rotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">rotation_axis</span><span class="o">=</span><span class="s1">&#39;z&#39;</span><span class="p">,</span>
-    <span class="n">z_offset</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span>
-    <span class="n">ensure_object_boundary_in_range</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="p">)</span>
+<p>This will sample the <code class="docutils literal notranslate"><span class="pre">self.cube</span></code>’s object location uniformly at random in a box of size <code class="docutils literal notranslate"><span class="pre">0.03</span></code> (<code class="docutils literal notranslate"><span class="pre">x_range</span></code>, <code class="docutils literal notranslate"><span class="pre">y_range</span></code>) with random (<code class="docutils literal notranslate"><span class="pre">rotation</span></code>) z-rotation (<code class="docutils literal notranslate"><span class="pre">rotation_axis</span></code>), and with an offset of <code class="docutils literal notranslate"><span class="pre">0.01</span></code> (<code class="docutils literal notranslate"><span class="pre">z_offset</span></code>) above the table surface location (<code class="docutils literal notranslate"><span class="pre">reference_pos</span></code>). The sampler will also make sure that the entire object boundary falls within the sampling box size (<code class="docutils literal notranslate"><span class="pre">ensure_object_boundary_in_range</span></code>) and does not collide with any placed objects (<code class="docutils literal notranslate"><span class="pre">ensure_valid_placement</span></code>).</p>
+<p>Another common sampler is the <a class="reference external" href="../source/robosuite.utils.html#robosuite.utils.placement_samplers.SequentialCompositeSampler">SequentialCompositeSampler</a>, which is useful for composing multiple arbitrary placement samplers together. As an example, consider the following code snippet from the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method of the <code class="docutils literal notranslate"><span class="pre">NutAssembly</span></code> environment class.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Establish named references to each nut object</span>
+<span class="n">nut_names</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;SquareNut&quot;</span><span class="p">,</span> <span class="s2">&quot;RoundNut&quot;</span><span class="p">)</span>
+
+<span class="c1"># Initialize the top-level sampler</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">placement_initializer</span> <span class="o">=</span> <span class="n">SequentialCompositeSampler</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;ObjectSampler&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create individual samplers per nut</span>
+<span class="k">for</span> <span class="n">nut_name</span><span class="p">,</span> <span class="n">default_y_range</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">nut_names</span><span class="p">,</span> <span class="p">([</span><span class="mf">0.11</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.225</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.11</span><span class="p">])):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">placement_initializer</span><span class="o">.</span><span class="n">append_sampler</span><span class="p">(</span>
+        <span class="n">sampler</span><span class="o">=</span><span class="n">UniformRandomSampler</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">f</span><span class="s2">&quot;{nut_name}Sampler&quot;</span><span class="p">,</span>
+            <span class="n">x_range</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.115</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.11</span><span class="p">],</span>
+            <span class="n">y_range</span><span class="o">=</span><span class="n">default_y_range</span><span class="p">,</span>
+            <span class="n">rotation</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+            <span class="n">rotation_axis</span><span class="o">=</span><span class="s1">&#39;z&#39;</span><span class="p">,</span>
+            <span class="n">ensure_object_boundary_in_range</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+            <span class="n">ensure_valid_placement</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+            <span class="n">reference_pos</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">table_offset</span><span class="p">,</span>
+            <span class="n">z_offset</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+   
+<span class="c1"># No objects have been assigned to any samplers yet, so we do that now</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">nut_cls</span><span class="p">,</span> <span class="n">nut_name</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">SquareNutObject</span><span class="p">,</span> <span class="n">RoundNutObject</span><span class="p">),</span>
+        <span class="n">nut_names</span><span class="p">,</span>
+<span class="p">)):</span>
+    <span class="n">nut</span> <span class="o">=</span> <span class="n">nut_cls</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">nut_name</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">placement_initializer</span><span class="o">.</span><span class="n">add_objects_to_sampler</span><span class="p">(</span><span class="n">sampler_name</span><span class="o">=</span><span class="n">f</span><span class="s2">&quot;{nut_name}Sampler&quot;</span><span class="p">,</span> <span class="n">mujoco_objects</span><span class="o">=</span><span class="n">nut</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The code snippet above results in two <code class="docutils literal notranslate"><span class="pre">UniformRandomSampler</span></code> instances being used to place the nuts onto the table surface - one for each type of nut. Notice this also allows the nuts to be initialized in separate regions of the table. The <code class="docutils literal notranslate"><span class="pre">SequentialCompositeSampler</span></code> makes it easy to compose multiple placement initializers together in order to specify how different objects should be initialized in an environment.</p>
+<p>The code snippet above results in two <code class="docutils literal notranslate"><span class="pre">UniformRandomSampler</span></code> instances being used to place the nuts onto the table surface - one for each type of nut. Notice this also allows the nuts to be initialized in separate regions of the table, and with arbitrary sampling settings. The <code class="docutils literal notranslate"><span class="pre">SequentialCompositeSampler</span></code> makes it easy to compose multiple placement initializers together and assign objects to each sub-sampler in a modular way.</p>
 </div>
 </div>
 

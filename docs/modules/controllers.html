@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Controllers &mdash; robosuite 1.0.0 documentation</title>
+  <title>Controllers &mdash; robosuite 1.2.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.0.0
+                1.2.0
               </div>
             
           
@@ -121,6 +121,7 @@
 <li class="toctree-l1"><a class="reference internal" href="environments.html">Environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="renderers.html">Renderers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Simulation API</span></p>
 <ul>
@@ -131,8 +132,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Modeling API</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/mujoco_model.html">Mujoco Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modeling/gripper_model.html">Gripper Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
@@ -145,6 +146,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
@@ -312,8 +314,8 @@ simulation step at simulation frequency, <span class="math notranslate nohighlig
 <p>Controller Type: <code class="docutils literal notranslate"><span class="pre">OSC_POSE</span></code></p>
 <p>Impedance: fixed</p>
 <p>Action Dimensions (not including gripper): <code class="docutils literal notranslate"><span class="pre">6</span></code></p>
-<p>In the <code class="docutils literal notranslate"><span class="pre">OSC_POSE</span></code> controller, the desired value is the 6D pose (position and orientation) of a controlled frame. We follow the formalism from <a class="reference external" href="https://ieeexplore.ieee.org/document/1087068">[Khatib87]</a>. Our control frame is always the <code class="docutils literal notranslate"><span class="pre">eef_site</span></code> defined in the <a class="reference external" href="../modeling/gripper_model.html">Gripper Model</a>, placed at the end of the last link for robots without gripper or between the fingers for robots with gripper. The operational space control framework (OSC) computes the necessary
-joint torques to minimize the error between the desired and the current pose of the <code class="docutils literal notranslate"><span class="pre">eef_site</span></code> with the minimal kinematic energy.</p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">OSC_POSE</span></code> controller, the desired value is the 6D pose (position and orientation) of a controlled frame. We follow the formalism from <a class="reference external" href="https://ieeexplore.ieee.org/document/1087068">[Khatib87]</a>. Our control frame is always the <code class="docutils literal notranslate"><span class="pre">eef_site</span></code> defined in the <a class="reference external" href="../modeling/robot_model.html#gripper-model">Gripper Model</a>, placed at the end of the last link for robots without gripper or between the fingers for robots with gripper. The operational space control framework (OSC) computes the
+necessary joint torques to minimize the error between the desired and the current pose of the <code class="docutils literal notranslate"><span class="pre">eef_site</span></code> with the minimal kinematic energy.</p>
 <p>Given a desired pose <span class="math notranslate nohighlight">\(\mathbf{x}_{\mathit{des}}\)</span> and the current end-effector pose, , we first compute the end-effector acceleration that would help minimize the error between both, assumed. PD (proportional-derivative) control schema to improve convergence and stability. For that, we first decompose into a desired position, <span class="math notranslate nohighlight">\(p_d \in \mathbb{R}^3\)</span>, and a desired orientation, <span class="math notranslate nohighlight">\(R_d \in \mathbb{SO}(3)\)</span>. The end-effector acceleration to minimize the error should increase with the
 difference between desired end-effector pose and current pose, <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(R\)</span> (proportional term), and decrease with the current end-effector velocity, <span class="math notranslate nohighlight">\(v\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span> (derivative term).</p>
 <p>We then compute the robot actuation (joint torques) to achieve the desired end-effector space accelerations leveraging the kinematic and dynamic models of the robot with the dynamically-consistent operational space formulation in <a class="reference external" href="https://journals.sagepub.com/doi/10.1177/027836499501400103">[Khatib1995a]</a>. First, we compute the wrenches at the end-effector that corresponds to the desired accelerations, <span class="math notranslate nohighlight">\({f}\in\mathbb{R}^{6}\)</span>. Then, we map the wrenches in end-effector space <span class="math notranslate nohighlight">\({f}\)</span>
@@ -342,7 +344,7 @@ to joint torque commands with the end-effector Jacobian at the current joint con
 </div>
 <div class="section" id="Configurations">
 <h2>Configurations<a class="headerlink" href="#Configurations" title="Permalink to this headline">¶</a></h2>
-<p>The config directory (found within the <a class="reference external" href="../source/robosuite.controllers">Controllers</a> module) provides a set of default configuration files that hold default examples of parameters relevant to individual controllers. Note that when creating your controller config templates of a certain type of controller, the listed parameters in the default example are required and should be specified accordingly.</p>
+<p>The config directory (found within the <a class="reference external" href="../source/robosuite.controllers.html">Controllers</a> module) provides a set of default configuration files that hold default examples of parameters relevant to individual controllers. Note that when creating your controller config templates of a certain type of controller, the listed parameters in the default example are required and should be specified accordingly.</p>
 <p>Note: Each robot has its own default controller configuration which is called by default unless a different controller config is called.</p>
 <p>Below, a brief overview and description of each subset of controller parameters are shown:</p>
 <ul class="simple">
@@ -364,19 +366,19 @@ to joint torque commands with the end-effector Jacobian at the current joint con
 <h2>Loading a Controller<a class="headerlink" href="#Loading-a-Controller" title="Permalink to this headline">¶</a></h2>
 <p>By default, if no controller configuration is specified during environment creation, then <code class="docutils literal notranslate"><span class="pre">JOINT_VELOCITY</span></code> controllers with robot-specific configurations will be used.</p>
 <p>Any controller can be used with its default configuration, and can be easily loaded into a given environment by calling its name as shown below (where <code class="docutils literal notranslate"><span class="pre">controller_name</span></code> is one of acceptable controller <code class="docutils literal notranslate"><span class="pre">type</span></code> strings):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">robosuite</span> <span class="k">as</span> <span class="nn">suite</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">robosuite</span> <span class="kn">as</span> <span class="nn">suite</span>
 <span class="kn">from</span> <span class="nn">robosuite</span> <span class="kn">import</span> <span class="n">load_controller_config</span>
 
 <span class="c1"># Load the desired controller&#39;s default config as a dict</span>
 <span class="n">config</span> <span class="o">=</span> <span class="n">load_controller_config</span><span class="p">(</span><span class="n">default_controller</span><span class="o">=</span><span class="n">controller_name</span><span class="p">)</span>
 
 <span class="c1"># Create environment</span>
-<span class="n">env</span> <span class="o">=</span> <span class="n">suite</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;Lift&quot;</span><span class="p">,</span> <span class="n">robots</span><span class="o">=</span><span class="s2">&quot;Panda&quot;</span><span class="p">,</span> <span class="n">controller_config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span> <span class="o">...</span> <span class="p">)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">suite</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;Lift&quot;</span><span class="p">,</span> <span class="n">robots</span><span class="o">=</span><span class="s2">&quot;Panda&quot;</span><span class="p">,</span> <span class="n">controller_configs</span><span class="o">=</span><span class="n">config</span><span class="p">,</span> <span class="o">...</span> <span class="p">)</span>
 </pre></div>
 </div>
-<p>A custom controller configuration can also be used by simply creating a new config (<code class="docutils literal notranslate"><span class="pre">.json</span></code>) file with the relevant parameters as specified above. All robosuite environments have an optional <code class="docutils literal notranslate"><span class="pre">controller_config</span></code> argument that can be used to pass in specific controller settings. Note that this is expected to be a <code class="docutils literal notranslate"><span class="pre">dict</span></code>, so the new configuration must be read in and parsed as a <code class="docutils literal notranslate"><span class="pre">dict</span></code> before passing it during the environment <code class="docutils literal notranslate"><span class="pre">robosuite.make(...)</span></code> call. A brief example script showing how
+<p>A custom controller configuration can also be used by simply creating a new config (<code class="docutils literal notranslate"><span class="pre">.json</span></code>) file with the relevant parameters as specified above. All robosuite environments have an optional <code class="docutils literal notranslate"><span class="pre">controller_configs</span></code> argument that can be used to pass in specific controller settings. Note that this is expected to be a <code class="docutils literal notranslate"><span class="pre">dict</span></code>, so the new configuration must be read in and parsed as a <code class="docutils literal notranslate"><span class="pre">dict</span></code> before passing it during the environment <code class="docutils literal notranslate"><span class="pre">robosuite.make(...)</span></code> call. A brief example script showing how
 to import a custom controller configuration is shown below.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">robosuite</span> <span class="k">as</span> <span class="nn">suite</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">robosuite</span> <span class="kn">as</span> <span class="nn">suite</span>
 <span class="kn">from</span> <span class="nn">robosuite</span> <span class="kn">import</span> <span class="n">load_controller_config</span>
 
 <span class="c1"># Path to config file</span>
@@ -386,7 +388,7 @@ to import a custom controller configuration is shown below.</p>
 <span class="n">config</span> <span class="o">=</span> <span class="n">load_controller_config</span><span class="p">(</span><span class="n">custom_fpath</span><span class="o">=</span><span class="n">controller_fpath</span><span class="p">)</span>
 
 <span class="c1"># Create environment</span>
-<span class="n">env</span> <span class="o">=</span> <span class="n">suite</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;Lift&quot;</span><span class="p">,</span> <span class="n">robots</span><span class="o">=</span><span class="s2">&quot;Panda&quot;</span><span class="p">,</span> <span class="n">controller_config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span> <span class="o">...</span> <span class="p">)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">suite</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;Lift&quot;</span><span class="p">,</span> <span class="n">robots</span><span class="o">=</span><span class="s2">&quot;Panda&quot;</span><span class="p">,</span> <span class="n">controller_configs</span><span class="o">=</span><span class="n">config</span><span class="p">,</span> <span class="o">...</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>

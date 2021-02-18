@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Arena &mdash; robosuite 1.0.0 documentation</title>
+  <title>Arena &mdash; robosuite 1.2.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.0.0
+                1.2.0
               </div>
             
           
@@ -106,6 +106,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/renderers.html">Renderers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Simulation API</span></p>
 <ul>
@@ -116,8 +117,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Modeling API</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="mujoco_model.html">Mujoco Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="robot_model.html">Robot Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gripper_model.html">Gripper Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="object_model.html">Object Model</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Arena</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#base-arena">Base Arena</a></li>
@@ -133,6 +134,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
@@ -230,6 +232,9 @@
 </style>
 <div class="section" id="arena">
 <h1>Arena<a class="headerlink" href="#arena" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">Arena</span></code> class serves as a base model for building the simulation environment.
+By default, this includes a ground plane and visual walls, and child classes extend this
+to additionally include other objects, e.g., a table or bins.</p>
 <div class="section" id="base-arena">
 <h2>Base Arena<a class="headerlink" href="#base-arena" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
@@ -254,9 +259,20 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.models.arenas.arena.Arena.add_pos_indicator">
-<code class="sig-name descname">add_pos_indicator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.arenas.arena.Arena.add_pos_indicator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adds a new position indicator.</p>
+<dt id="robosuite.models.arenas.arena.Arena.set_camera">
+<code class="sig-name descname">set_camera</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">camera_name</span></em>, <em class="sig-param"><span class="n">pos</span></em>, <em class="sig-param"><span class="n">quat</span></em>, <em class="sig-param"><span class="n">camera_attribs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.arenas.arena.Arena.set_camera" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a camera with &#64;camera_name. If the camera already exists, then this overwrites its pos and quat values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>camera_name</strong> (<em>str</em>) – Camera name to search for / create</p></li>
+<li><p><strong>pos</strong> (<em>3-array</em>) – (x,y,z) coordinates of camera in world frame</p></li>
+<li><p><strong>quat</strong> (<em>4-array</em>) – (w,x,y,z) quaternion of camera in world frame</p></li>
+<li><p><strong>camera_attribs</strong> (<em>dict</em>) – If specified, should be additional keyword-mapped attributes for this camera.
+See <a class="reference external" href="http://www.mujoco.org/book/XMLreference.html#camera">http://www.mujoco.org/book/XMLreference.html#camera</a> for exact attribute specifications.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>

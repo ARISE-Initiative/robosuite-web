@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Sensors &mdash; robosuite 1.0.0 documentation</title>
+  <title>Sensors &mdash; robosuite 1.2.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.0.0
+                1.2.0
               </div>
             
           
@@ -105,14 +105,12 @@
 <li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="environments.html">Environments</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Sensors</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#renderers">Renderers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#mjviewer">MjViewer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pygame">PyGame</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#mujoco-native-sensors">Mujoco-Native Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#observables">Observables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="renderers.html">Renderers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Simulation API</span></p>
 <ul>
@@ -123,8 +121,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Modeling API</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/mujoco_model.html">Mujoco Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modeling/gripper_model.html">Gripper Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
@@ -137,6 +135,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
@@ -234,20 +233,28 @@
 </style>
 <div class="section" id="sensors">
 <h1>Sensors<a class="headerlink" href="#sensors" title="Permalink to this headline">¶</a></h1>
-<p>The simulator generates virtual physical signals as response to a robot’s interactions. Virtual signals include images, force-torque measurements (from a force-torque sensor like the one included by default in the wrist of all <a class="reference internal" href="../modeling/gripper_model.html"><span class="doc">Gripper models</span></a>), pressure signals (e.g. from a sensor on the robot’s finger or on the environment), etc. Sensors (except cameras and joint sensors) are accessed via the function <code class="docutils literal notranslate"><span class="pre">get_sensor_measurement</span></code> provided the name of the sensor.</p>
+<p>Sensors are an important aspect of <strong>robosuite</strong>, and encompass an agent’s feedback from interaction with the environment. Mujoco provides low-level APIs to directly interface with raw simulation data, though we provide more a more realistic interface via the <code class="docutils literal notranslate"><span class="pre">Observable</span></code> class API to model obtained sensory information.</p>
+<div class="section" id="mujoco-native-sensors">
+<h2>Mujoco-Native Sensors<a class="headerlink" href="#mujoco-native-sensors" title="Permalink to this headline">¶</a></h2>
+<p>The simulator generates virtual physical signals as response to a robot’s interactions. Virtual signals include images, force-torque measurements (from a force-torque sensor like the one included by default in the wrist of all <a class="reference external" href="../modeling/robot_model.html#gripper-model">Gripper models</a>), pressure signals (e.g. from a sensor on the robot’s finger or on the environment), etc. Raw sensor information (except cameras and joint sensors) can be accessed via the function <code class="docutils literal notranslate"><span class="pre">get_sensor_measurement</span></code> provided the name of the sensor.</p>
 <p>Joint sensors provide information about the state of each robot’s joint including position and velocity. In MuJoCo these are not measured by sensors, but resolved and set by the simulator as the result of the actuation forces. Therefore, they are not accessed through the common <code class="docutils literal notranslate"><span class="pre">get_sensor_measurement</span></code> function but as properties of the <a class="reference internal" href="../simulation/robot.html"><span class="doc">Robot simulation API</span></a>, i.e., <code class="docutils literal notranslate"><span class="pre">_joint_positions</span></code> and <code class="docutils literal notranslate"><span class="pre">_joint_velocities</span></code>.</p>
 <p>Cameras bundle a name to a set of properties to render images of the environment such as the pose and pointing direction, field of view, and resolution. Inheriting from MuJoCo, cameras are defined in the <a class="reference internal" href="../modeling/robot_model.html"><span class="doc">robot</span></a> and <a class="reference internal" href="../modeling/arena.html"><span class="doc">arena models</span></a> and can be attached to any body. Images, as they would be generated from the cameras, are not accessed through <code class="docutils literal notranslate"><span class="pre">get_sensor_measurement</span></code> but via the renderer (see below). In a common user pipeline, images are not queried directly; we specify one or several cameras we want to use images from when we create the environment, and the images are generated and appended automatically to the observation dictionary.</p>
-<div class="section" id="renderers">
-<h2>Renderers<a class="headerlink" href="#renderers" title="Permalink to this headline">¶</a></h2>
-<p>Renderers compute virtual images of the environment based on the properties defined in the cameras. In <strong>robosuite</strong>, the user can select one of these two renderers:</p>
-<div class="section" id="mjviewer">
-<h3>MjViewer<a class="headerlink" href="#mjviewer" title="Permalink to this headline">¶</a></h3>
-<p>This is the default renderer from <a class="reference external" href="https://openai.github.io/mujoco-py/build/html/reference.html#mjviewer-3d-rendering">mujoco-py</a>. Based on <a class="reference external" href="https://www.opengl.org/">OpenGL</a>, our assets and environment definitions have been tuned to look good with this renderer.</p>
-<!-- ##### iGibson Renderer--><!--This renderer is included in the [iGibson simulator](http://svl.stanford.edu/igibson/). We include an initial (not optimized) set of alternative meshes (OBJ files instead of the STL used by MjViewer) to be used with this simulator. The iGibson simulator can be used in simple mode (renders only albedo) or in physics-based rendering (PBR) mode (renders additional properties such as metallic, or roughness).--> </div>
-<div class="section" id="pygame">
-<h3>PyGame<a class="headerlink" href="#pygame" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://www.pygame.org/news">PyGame</a> is a simple renderer that serves also as an alternative to MjViewer. A limitation of PyGame is that it can only render on-screen, limiting its applicability to train on computing clusters. However, it is useful for visualizing the robots’ behaviors in the system runtime where MjViewer is not supported.</p>
 </div>
+<div class="section" id="observables">
+<h2>Observables<a class="headerlink" href="#observables" title="Permalink to this headline">¶</a></h2>
+<p><strong>robosuite</strong> provides a realistic, customizable interface via the <a class="reference external" href="../source/robosuite.utils.html#robosuite.utils.observables.Observable">Observable</a> class API. Observables model realistic sensor sampling, in which ground truth data is sampled (<code class="docutils literal notranslate"><span class="pre">sensor</span></code>), passed through a corrupting function (<code class="docutils literal notranslate"><span class="pre">corrupter</span></code>), and then finally passed through a filtering function (<code class="docutils literal notranslate"><span class="pre">filter</span></code>). Moreover, each observable has its own <code class="docutils literal notranslate"><span class="pre">sampling_rate</span></code> and <code class="docutils literal notranslate"><span class="pre">delayer</span></code> function which simulates sensor delay. While default values are used to instantiate each observable during environment creation, each of these components can be modified by the user at runtime using <code class="docutils literal notranslate"><span class="pre">env.modify_observable(...)</span></code> . Moreover, each observable is assigned a modality, and are grouped together in the returned observation dictionary during the <code class="docutils literal notranslate"><span class="pre">env.step()</span></code> call. For example, if an environment consists of camera observations and a single robot’s proprioceptive observations, the observation dict structure might look as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;frontview_image&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">),</span>    <span class="c1"># this has modality &quot;image&quot;</span>
+    <span class="s2">&quot;frontview_depth&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">),</span>    <span class="c1"># this has modality &quot;image&quot;</span>
+    <span class="s2">&quot;robot0_joint_pos&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">),</span>   <span class="c1"># this has modality &quot;robot0_proprio&quot;</span>
+    <span class="s2">&quot;robot0_gripper_pos&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">),</span> <span class="c1"># this has modality &quot;robot0_proprio&quot;</span>
+    <span class="s2">&quot;image-state&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">),</span>           <span class="c1"># this is a concatenation of all image observations</span>
+    <span class="s2">&quot;robot0_proprio-state&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">),</span>  <span class="c1"># this is a concatenation of all robot0_proprio observations</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Note that for memory efficiency the <code class="docutils literal notranslate"><span class="pre">image-state</span></code> is not returned by default (this can be toggled in <code class="docutils literal notranslate"><span class="pre">robosuite/utils/macros.py</span></code>).</p>
+<p>Observables can also be used to model sensor corruption and delay, and refer the reader to the <a class="reference external" href="../algorithms/sim2real.html#sensors">Sensor Randomization</a> section for additional information.</p>
 </div>
 </div>
 

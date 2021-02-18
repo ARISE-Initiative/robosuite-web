@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Overview &mdash; robosuite 1.0.0 documentation</title>
+  <title>Overview &mdash; robosuite 1.2.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.0.0
+                1.2.0
               </div>
             
           
@@ -109,6 +109,7 @@
 <li class="toctree-l1"><a class="reference internal" href="modules/environments.html">Environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules/sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules/devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/renderers.html">Renderers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Simulation API</span></p>
 <ul>
@@ -119,8 +120,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Modeling API</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="modeling/mujoco_model.html">Mujoco Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modeling/robot_model.html">Robot Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modeling/gripper_model.html">Gripper Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modeling/object_model.html">Object Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modeling/arena.html">Arena</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modeling/task.html">Task</a></li>
@@ -133,6 +134,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="algorithms/benchmarking.html">Benchmarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithms/roboturk.html">RoboTurk Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
@@ -231,14 +233,14 @@
 <div class="section" id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
 <p><img alt="gallery of_environments" src="images/gallery.png" /></p>
-<p><strong>robosuite</strong> is a simulation framework powered by the <a class="reference external" href="http://mujoco.org/">MuJoCo</a> physics engine for robot learning. It also offers a suite of benchmark environments for reproducible research. The release or robosuite v1.0 features manipulation tasks with supports of procedural generation, advanced controllers, teleoperation, etc. This project is part of the broader <a class="reference external" href="https://github.com/ARISE-Initiative">Advancing Robot Intelligence through Simulated Environments (ARISE) Initiative</a>, with the aim of lowering the barriers of entry for cutting-edge research at the intersection of AI and Robotics.</p>
+<p><strong>robosuite</strong> is a simulation framework powered by the <a class="reference external" href="http://mujoco.org/">MuJoCo</a> physics engine for robot learning. It also offers a suite of benchmark environments for reproducible research. The release or robosuite v1.2 features manipulation tasks with supports of procedural generation, advanced controllers, teleoperation, etc. This project is part of the broader <a class="reference external" href="https://github.com/ARISE-Initiative">Advancing Robot Intelligence through Simulated Environments (ARISE) Initiative</a>, with the aim of lowering the barriers of entry for cutting-edge research at the intersection of AI and Robotics.</p>
 <p>Data-driven algorithms, such as reinforcement learning and imitation learning, provide a powerful and generic tool in robotics. These learning paradigms, fueled by new advances in deep learning, have achieved some exciting successes in a variety of robot control problems. However, the challenges of reproducibility and the limited accessibility of robot hardware (especially during a pandemic) have impaired research progress. The overarching goal of <strong>robosuite</strong> is to provide researchers with:</p>
 <ul class="simple">
 <li><p>a standardized set of benchmarking tasks for rigorous evaluation and algorithm development;</p></li>
 <li><p>a modular design that offers great flexibility to design new robot simulation environments;</p></li>
 <li><p>a high-quality implementation of robot controllers and off-the-shelf learning algorithms to lower the barriers to entry.</p></li>
 </ul>
-<p>This framework was originally developed since late 2017 by researchers in <a class="reference external" href="http://svl.stanford.edu/">Stanford Vision and Learning Lab</a> (SVL) as an internal tool for robot learning research. Now it is actively maintained and used for robotics research projects in SVL and the <a class="reference external" href="https://www.cs.utexas.edu/~yukez/">UT-Austin Robot Perception and Learning (RPL) Lab</a>.</p>
+<p>This framework was originally developed since late 2017 by researchers in <a class="reference external" href="http://svl.stanford.edu/">Stanford Vision and Learning Lab</a> (SVL) as an internal tool for robot learning research. Now it is actively maintained and used for robotics research projects in SVL and the <a class="reference external" href="http://rpl.cs.utexas.edu">UT-Austin Robot Perception and Learning (RPL) Lab</a>. We welcome community contributions to this project. For details please check out our <a class="reference external" href="https://github.com/ARISE-Initiative/robosuite/blob/master/CONTRIBUTING.md#">contributing guidelines</a>.</p>
 <p>This release of <strong>robosuite</strong> contains seven robot models, eight gripper models, six controller modes, and nine standardized tasks. It also offers a modular design of APIs for building new environments with procedural generation. We highlight these primary features below:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="modules/environments.html"><span class="doc">standardized tasks</span></a>: a set of standardized manipulation tasks of large diversity and varying complexity and RL benchmarking results for reproducible research;</p></li>
@@ -253,7 +255,7 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@inproceedings</span><span class="p">{</span><span class="n">robosuite2020</span><span class="p">,</span>
   <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">robosuite</span><span class="p">:</span> <span class="n">A</span> <span class="n">Modular</span> <span class="n">Simulation</span> <span class="n">Framework</span> <span class="ow">and</span> <span class="n">Benchmark</span> <span class="k">for</span> <span class="n">Robot</span> <span class="n">Learning</span><span class="p">},</span>
   <span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">Yuke</span> <span class="n">Zhu</span> <span class="ow">and</span> <span class="n">Josiah</span> <span class="n">Wong</span> <span class="ow">and</span> <span class="n">Ajay</span> <span class="n">Mandlekar</span> <span class="ow">and</span> <span class="n">Roberto</span> <span class="n">Mart</span>\<span class="s1">&#39;</span><span class="si">{i}</span><span class="s1">n-Mart</span><span class="se">\&#39;</span><span class="si">{i}</span><span class="s1">n},</span>
-  <span class="n">booktitle</span><span class="o">=</span><span class="p">{</span><span class="n">arXiv</span> <span class="n">preprint</span> <span class="n">arXiv:2009.12293</span><span class="p">},</span>
+  <span class="n">booktitle</span><span class="o">=</span><span class="p">{</span><span class="n">arXiv</span> <span class="n">preprint</span> <span class="n">arXiv</span><span class="p">:</span><span class="mf">2009.12293</span><span class="p">},</span>
   <span class="n">year</span><span class="o">=</span><span class="p">{</span><span class="mi">2020</span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>

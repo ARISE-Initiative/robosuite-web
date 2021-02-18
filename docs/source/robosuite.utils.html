@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>robosuite.utils &mdash; robosuite 1.0.0 documentation</title>
+  <title>robosuite.utils &mdash; robosuite 1.2.0 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="robosuite.wrappers" href="robosuite.wrappers.html" />
-    <link rel="prev" title="robosuite.robots" href="robosuite.robots.html" /> 
+    <link rel="prev" title="robosuite.robots" href="robosuite.robots.html" />
 </head>
 
 <body class="wy-body-for-nav">
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.0.0
+                1.2.0
               </div>
             
           
@@ -106,6 +106,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/renderers.html">Renderers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Simulation API</span></p>
 <ul>
@@ -116,8 +117,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Modeling API</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/mujoco_model.html">Mujoco Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modeling/gripper_model.html">Gripper Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
@@ -125,23 +126,34 @@
 <p class="caption"><span class="caption-text">Source API</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="robosuite.html">robosuite</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="robosuite.controllers.html">robosuite.controllers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.devices.html">robosuite.devices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.environments.html">robosuite.environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.models.html">robosuite.models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.robots.html">robosuite.robots</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">robosuite.utils</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.utils.control_utils">robosuite.utils.control_utils</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.utils.errors">robosuite.utils.errors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.utils.input_utils">robosuite.utils.input_utils</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.utils.mjcf_utils">robosuite.utils.mjcf_utils</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.utils.mjmod">robosuite.utils.mjmod</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.utils.mujoco_py_renderer">robosuite.utils.mujoco_py_renderer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.utils.numba">robosuite.utils.numba</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-robosuite.utils.transform_utils">robosuite.utils.transform_utils</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="robosuite.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="robosuite.controllers.html">robosuite.controllers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.devices.html">robosuite.devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.environments.html">robosuite.environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.models.html">robosuite.models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.robots.html">robosuite.robots</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">robosuite.utils</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.utils.buffers">robosuite.utils.buffers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.utils.control_utils">robosuite.utils.control_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.utils.errors">robosuite.utils.errors module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.utils.input_utils">robosuite.utils.input_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.utils.macros">robosuite.utils.macros module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.utils.mjcf_utils">robosuite.utils.mjcf_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.utils.mjmod">robosuite.utils.mjmod module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.utils.mujoco_py_renderer">robosuite.utils.mujoco_py_renderer module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.utils.numba">robosuite.utils.numba module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.utils.observables">robosuite.utils.observables module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.utils.placement_samplers">robosuite.utils.placement_samplers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.utils.robot_utils">robosuite.utils.robot_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.utils.transform_utils">robosuite.utils.transform_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-robosuite.utils">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.wrappers.html">robosuite.wrappers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.wrappers.html">robosuite.wrappers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.html#module-robosuite">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -149,6 +161,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
@@ -246,23 +259,27 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="robosuite-utils">
-<h1>robosuite.utils<a class="headerlink" href="#robosuite-utils" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="module-robosuite.utils.control_utils">
-<span id="robosuite-utils-control-utils"></span><h2>robosuite.utils.control_utils<a class="headerlink" href="#module-robosuite.utils.control_utils" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="robosuite-utils-package">
+<h1>robosuite.utils<a class="headerlink" href="#robosuite-utils-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-robosuite.utils.buffers">
+<span id="robosuite-utils-buffers-module"></span><h2>robosuite.utils.buffers module<a class="headerlink" href="#module-robosuite.utils.buffers" title="Permalink to this headline">¶</a></h2>
+<p>Collection of Buffer objects with general functionality</p>
 <dl class="py class">
-<dt id="robosuite.utils.control_utils.Buffer">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.control_utils.</code><code class="sig-name descname">Buffer</code><a class="headerlink" href="#robosuite.utils.control_utils.Buffer" title="Permalink to this definition">¶</a></dt>
+<dt id="robosuite.utils.buffers.Buffer">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.buffers.</code><code class="sig-name descname">Buffer</code><a class="headerlink" href="#robosuite.utils.buffers.Buffer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Abstract class for different kinds of data buffers. Minimum API should have a “push” and “clear” method</p>
 <dl class="py method">
-<dt id="robosuite.utils.control_utils.Buffer.clear">
-<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.control_utils.Buffer.clear" title="Permalink to this definition">¶</a></dt>
+<dt id="robosuite.utils.buffers.Buffer.clear">
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.buffers.Buffer.clear" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.utils.control_utils.Buffer.push">
-<code class="sig-name descname">push</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.control_utils.Buffer.push" title="Permalink to this definition">¶</a></dt>
+<dt id="robosuite.utils.buffers.Buffer.push">
+<code class="sig-name descname">push</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.buffers.Buffer.push" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pushes a new &#64;value to the buffer</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -274,9 +291,34 @@
 </dd></dl>
 
 <dl class="py class">
-<dt id="robosuite.utils.control_utils.DeltaBuffer">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.control_utils.</code><code class="sig-name descname">DeltaBuffer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dim</span></em>, <em class="sig-param"><span class="n">init_value</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.control_utils.DeltaBuffer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#robosuite.utils.control_utils.Buffer" title="robosuite.utils.control_utils.Buffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.utils.control_utils.Buffer</span></code></a></p>
+<dt id="robosuite.utils.buffers.DelayBuffer">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.buffers.</code><code class="sig-name descname">DelayBuffer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dim</span></em>, <em class="sig-param"><span class="n">length</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.buffers.DelayBuffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.utils.buffers.RingBuffer" title="robosuite.utils.buffers.RingBuffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.utils.buffers.RingBuffer</span></code></a></p>
+<p>Modified RingBuffer that returns delayed values when polled</p>
+<dl class="py method">
+<dt id="robosuite.utils.buffers.DelayBuffer.get_delayed_value">
+<code class="sig-name descname">get_delayed_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">delay</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.buffers.DelayBuffer.get_delayed_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns value &#64;delay increments behind most recent value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>delay</strong> (<em>int</em>) – How many steps backwards from most recent value to grab value. Note that this should not be
+greater than the buffer’s length</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>delayed value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.utils.buffers.DeltaBuffer">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.buffers.</code><code class="sig-name descname">DeltaBuffer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dim</span></em>, <em class="sig-param"><span class="n">init_value</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.buffers.DeltaBuffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.utils.buffers.Buffer" title="robosuite.utils.buffers.Buffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.utils.buffers.Buffer</span></code></a></p>
 <p>Simple 2-length buffer object to streamline grabbing delta values between “current” and “last” values</p>
 <p>Constructs delta object.</p>
 <dl class="field-list simple">
@@ -289,8 +331,8 @@ If None (default), last array will be filled with zeros</p></li>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="robosuite.utils.control_utils.DeltaBuffer.average">
-<em class="property">property </em><code class="sig-name descname">average</code><a class="headerlink" href="#robosuite.utils.control_utils.DeltaBuffer.average" title="Permalink to this definition">¶</a></dt>
+<dt id="robosuite.utils.buffers.DeltaBuffer.average">
+<em class="property">property </em><code class="sig-name descname">average</code><a class="headerlink" href="#robosuite.utils.buffers.DeltaBuffer.average" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the average between the current and last value</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -303,14 +345,14 @@ If None (default), last array will be filled with zeros</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.utils.control_utils.DeltaBuffer.clear">
-<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.control_utils.DeltaBuffer.clear" title="Permalink to this definition">¶</a></dt>
+<dt id="robosuite.utils.buffers.DeltaBuffer.clear">
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.buffers.DeltaBuffer.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clears last and current value</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.utils.control_utils.DeltaBuffer.delta">
-<em class="property">property </em><code class="sig-name descname">delta</code><a class="headerlink" href="#robosuite.utils.control_utils.DeltaBuffer.delta" title="Permalink to this definition">¶</a></dt>
+<dt id="robosuite.utils.buffers.DeltaBuffer.delta">
+<em class="property">property </em><code class="sig-name descname">delta</code><a class="headerlink" href="#robosuite.utils.buffers.DeltaBuffer.delta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the delta between last value and current value. If abs_value is set to True, then returns
 the absolute value between the values</p>
 <dl class="field-list simple">
@@ -327,8 +369,8 @@ the absolute value between the values</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.utils.control_utils.DeltaBuffer.push">
-<code class="sig-name descname">push</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.control_utils.DeltaBuffer.push" title="Permalink to this definition">¶</a></dt>
+<dt id="robosuite.utils.buffers.DeltaBuffer.push">
+<code class="sig-name descname">push</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.buffers.DeltaBuffer.push" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pushes a new value into the buffer; current becomes last and &#64;value becomes current</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -340,9 +382,9 @@ the absolute value between the values</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="robosuite.utils.control_utils.RingBuffer">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.control_utils.</code><code class="sig-name descname">RingBuffer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dim</span></em>, <em class="sig-param"><span class="n">length</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.control_utils.RingBuffer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#robosuite.utils.control_utils.Buffer" title="robosuite.utils.control_utils.Buffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.utils.control_utils.Buffer</span></code></a></p>
+<dt id="robosuite.utils.buffers.RingBuffer">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.buffers.</code><code class="sig-name descname">RingBuffer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dim</span></em>, <em class="sig-param"><span class="n">length</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.buffers.RingBuffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.utils.buffers.Buffer" title="robosuite.utils.buffers.Buffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.utils.buffers.Buffer</span></code></a></p>
 <p>Simple RingBuffer object to hold values to average (useful for, e.g.: filtering D component in PID control)</p>
 <p>Note that the buffer object is a 2D numpy array, where each row corresponds to
 individual entries into the buffer</p>
@@ -355,8 +397,8 @@ individual entries into the buffer</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="robosuite.utils.control_utils.RingBuffer.average">
-<em class="property">property </em><code class="sig-name descname">average</code><a class="headerlink" href="#robosuite.utils.control_utils.RingBuffer.average" title="Permalink to this definition">¶</a></dt>
+<dt id="robosuite.utils.buffers.RingBuffer.average">
+<em class="property">property </em><code class="sig-name descname">average</code><a class="headerlink" href="#robosuite.utils.buffers.RingBuffer.average" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the average of components in buffer</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -369,14 +411,28 @@ individual entries into the buffer</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.utils.control_utils.RingBuffer.clear">
-<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.control_utils.RingBuffer.clear" title="Permalink to this definition">¶</a></dt>
+<dt id="robosuite.utils.buffers.RingBuffer.clear">
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.buffers.RingBuffer.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clears buffer and reset pointer</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.utils.control_utils.RingBuffer.push">
-<code class="sig-name descname">push</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.control_utils.RingBuffer.push" title="Permalink to this definition">¶</a></dt>
+<dt id="robosuite.utils.buffers.RingBuffer.current">
+<em class="property">property </em><code class="sig-name descname">current</code><a class="headerlink" href="#robosuite.utils.buffers.RingBuffer.current" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the most recent value pushed to the buffer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Most recent value in buffer</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float or np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.buffers.RingBuffer.push">
+<code class="sig-name descname">push</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.buffers.RingBuffer.push" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pushes a new value into the buffer</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -387,6 +443,9 @@ individual entries into the buffer</p>
 
 </dd></dl>
 
+</div>
+<div class="section" id="module-robosuite.utils.control_utils">
+<span id="robosuite-utils-control-utils-module"></span><h2>robosuite.utils.control_utils module<a class="headerlink" href="#module-robosuite.utils.control_utils" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="robosuite.utils.control_utils.nullspace_torques">
 <code class="sig-prename descclassname">robosuite.utils.control_utils.</code><code class="sig-name descname">nullspace_torques</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mass_matrix</span></em>, <em class="sig-param"><span class="n">nullspace_matrix</span></em>, <em class="sig-param"><span class="n">initial_joint</span></em>, <em class="sig-param"><span class="n">joint_pos</span></em>, <em class="sig-param"><span class="n">joint_vel</span></em>, <em class="sig-param"><span class="n">joint_kp</span><span class="o">=</span><span class="default_value">10</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.control_utils.nullspace_torques" title="Permalink to this definition">¶</a></dt>
@@ -530,7 +589,7 @@ specified to define a global goal position</p>
 
 </div>
 <div class="section" id="module-robosuite.utils.errors">
-<span id="robosuite-utils-errors"></span><h2>robosuite.utils.errors<a class="headerlink" href="#module-robosuite.utils.errors" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-utils-errors-module"></span><h2>robosuite.utils.errors module<a class="headerlink" href="#module-robosuite.utils.errors" title="Permalink to this headline">¶</a></h2>
 <dl class="py exception">
 <dt id="robosuite.utils.errors.RandomizationError">
 <em class="property">exception </em><code class="sig-prename descclassname">robosuite.utils.errors.</code><code class="sig-name descname">RandomizationError</code><a class="headerlink" href="#robosuite.utils.errors.RandomizationError" title="Permalink to this definition">¶</a></dt>
@@ -561,7 +620,7 @@ specified to define a global goal position</p>
 
 </div>
 <div class="section" id="module-robosuite.utils.input_utils">
-<span id="robosuite-utils-input-utils"></span><h2>robosuite.utils.input_utils<a class="headerlink" href="#module-robosuite.utils.input_utils" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-utils-input-utils-module"></span><h2>robosuite.utils.input_utils module<a class="headerlink" href="#module-robosuite.utils.input_utils" title="Permalink to this headline">¶</a></h2>
 <p>Utility functions for grabbing user inputs</p>
 <dl class="py function">
 <dt id="robosuite.utils.input_utils.choose_controller">
@@ -664,11 +723,18 @@ correctly if the control type (e.g.: IK) is dependent on the environment setup. 
 </dd></dl>
 
 </div>
+<div class="section" id="module-robosuite.utils.macros">
+<span id="robosuite-utils-macros-module"></span><h2>robosuite.utils.macros module<a class="headerlink" href="#module-robosuite.utils.macros" title="Permalink to this headline">¶</a></h2>
+<p>Macro settings that can be imported and toggled. Internally, specific parts of the codebase rely on these settings
+for determining core functionality.</p>
+<p>To make sure global reference is maintained, should import these settings as:</p>
+<p><cite>import robosuite.utils.macros as macros</cite></p>
+</div>
 <div class="section" id="module-robosuite.utils.mjcf_utils">
-<span id="robosuite-utils-mjcf-utils"></span><h2>robosuite.utils.mjcf_utils<a class="headerlink" href="#module-robosuite.utils.mjcf_utils" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-utils-mjcf-utils-module"></span><h2>robosuite.utils.mjcf_utils module<a class="headerlink" href="#module-robosuite.utils.mjcf_utils" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="robosuite.utils.mjcf_utils.CustomMaterial">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">CustomMaterial</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">texture</span></em>, <em class="sig-param"><span class="n">tex_name</span></em>, <em class="sig-param"><span class="n">mat_name</span></em>, <em class="sig-param"><span class="n">tex_attrib</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mat_attrib</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.CustomMaterial" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">CustomMaterial</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">texture</span></em>, <em class="sig-param"><span class="n">tex_name</span></em>, <em class="sig-param"><span class="n">mat_name</span></em>, <em class="sig-param"><span class="n">tex_attrib</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mat_attrib</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">shared</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.CustomMaterial" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Simple class to instantiate the necessary parameters to define an appropriate texture / material combo</p>
 <p>Instantiates a nested dict holding necessary components for procedurally generating a texture / material combo</p>
@@ -680,19 +746,91 @@ correctly if the control type (e.g.: IK) is dependent on the environment setup. 
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>texture</strong> (<em>str</em><em> or </em><em>4-array</em>) – Name of texture file to be imported. If a string, should be part of ALL_TEXTURES
-If texture is a 4-array, then this argument will be interpreted as an rgba tuple value and a template
-png will be procedurally generated during object instantiation, with any additional
-texture / material attributes specified.
-Note the RGBA values are expected to be floats between 0 and 1</p></li>
+<li><p><strong>texture</strong> (<em>None</em><em> or </em><em>str</em><em> or </em><em>4-array</em>) – Name of texture file to be imported. If a string, should be part of
+ALL_TEXTURES. If texture is a 4-array, then this argument will be interpreted as an rgba tuple value and
+a template png will be procedurally generated during object instantiation, with any additional
+texture / material attributes specified. If None, no file will be linked and no rgba value will be set
+Note, if specified, the RGBA values are expected to be floats between 0 and 1</p></li>
 <li><p><strong>tex_name</strong> (<em>str</em>) – Name to reference the imported texture</p></li>
 <li><p><strong>mat_name</strong> (<em>str</em>) – Name to reference the imported material</p></li>
 <li><p><strong>tex_attrib</strong> (<em>dict</em>) – Any other optional mujoco texture specifications.</p></li>
 <li><p><strong>mat_attrib</strong> (<em>dict</em>) – Any other optional mujoco material specifications.</p></li>
+<li><p><strong>shared</strong> (<em>bool</em>) – If True, this material should not have any naming prefixes added to all names</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><p><strong>AssertionError</strong> – [Invalid texture]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.mjcf_utils.add_material">
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">add_material</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">root</span></em>, <em class="sig-param"><span class="n">naming_prefix</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">custom_material</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.add_material" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterates through all element(s) in &#64;root recursively and adds a material / texture to all visual geoms that don’t
+already have a material specified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>root</strong> (<em>ET.Element</em>) – Root of the xml element tree to start recursively searching through.</p></li>
+<li><p><strong>naming_prefix</strong> (<em>str</em>) – Adds this prefix to all material and texture names</p></li>
+<li><p><strong>custom_material</strong> (<em>None</em><em> or </em><a class="reference internal" href="#robosuite.utils.mjcf_utils.CustomMaterial" title="robosuite.utils.mjcf_utils.CustomMaterial"><em>CustomMaterial</em></a>) – If specified, will add this material to all visual geoms.
+Else, will add a default “no-change” material.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>(ET.Element, ET.Element, CustomMaterial, bool) (tex_element, mat_element, material, used)</dt><dd><p>corresponding to the added material and whether the material was actually used or not.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>4-tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.mjcf_utils.add_prefix">
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">add_prefix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">root</span></em>, <em class="sig-param"><span class="n">prefix</span></em>, <em class="sig-param"><span class="n">tags</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">attribs</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">exclude</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.add_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find all element(s) matching the requested &#64;tag, and appends &#64;prefix to all &#64;attributes if they exist.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>root</strong> (<em>ET.Element</em>) – Root of the xml element tree to start recursively searching through.</p></li>
+<li><p><strong>prefix</strong> (<em>str</em>) – Prefix to add to all specified attributes</p></li>
+<li><p><strong>tags</strong> (<em>str</em><em> or </em><em>list of str</em><em> or </em><em>set</em>) – Tag(s) to search for in this ElementTree. “Default” corresponds to all tags</p></li>
+<li><p><strong>attribs</strong> (<em>str</em><em> or </em><em>list of str</em><em> or </em><em>set</em>) – Element attribute(s) to append prefix to. “Default” corresponds
+to all attributes that reference names</p></li>
+<li><p><strong>exclude</strong> (<em>None</em><em> or </em><em>function</em>) – Filtering function that should take in an ET.Element or a string (attribute) and
+return True if we should exclude the given element / attribute from having any prefixes added</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.mjcf_utils.add_to_dict">
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">add_to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dic</span></em>, <em class="sig-param"><span class="n">fill_in_defaults</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">default_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.add_to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to add key-values to dictionary &#64;dic where each entry is its own array (list).
+:param dic: Dictionary to which new key / value pairs will be added. If the key already exists,</p>
+<blockquote>
+<div><p>will append the value to that key entry</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fill_in_defaults</strong> (<em>bool</em>) – If True, will automatically add &#64;default_value to all dictionary entries that are
+not explicitly specified in &#64;kwargs</p></li>
+<li><p><strong>default_value</strong> (<em>any</em>) – Default value to fill (None by default)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Modified dictionary</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -703,19 +841,123 @@ Note the RGBA values are expected to be floats between 0 and 1</p></li>
 <dd><p>Converts a numeric array into the string format in mujoco.</p>
 <p class="rubric">Examples</p>
 <p>[0, 1, 2] =&gt; “0 1 2”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>array</strong> (<em>n-array</em>) – Array to convert to a string</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>String equivalent of &#64;array</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.mjcf_utils.convert_to_string">
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">convert_to_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inp</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.convert_to_string" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Converts any type of {bool, int, float, list, tuple, array, string, <a href="#id1"><span class="problematic" id="id2">np.str_</span></a>} into an mujoco-xml compatible string.</dt><dd><p>Note that an input string / <a href="#id3"><span class="problematic" id="id4">np.str_</span></a> results in a no-op action.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>inp</strong> – Input to convert to string</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>String equivalent of &#64;inp</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.mjcf_utils.find_elements">
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">find_elements</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">root</span></em>, <em class="sig-param"><span class="n">tags</span></em>, <em class="sig-param"><span class="n">attribs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_first</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.find_elements" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find all element(s) matching the requested &#64;tag and &#64;attributes. If &#64;return_first is True, then will return the
+first element found matching the criteria specified. Otherwise, will return a list of elements that match the
+criteria.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>root</strong> (<em>ET.Element</em>) – Root of the xml element tree to start recursively searching through.</p></li>
+<li><p><strong>tags</strong> (<em>str</em><em> or </em><em>list of str</em><em> or </em><em>set</em>) – Tag(s) to search for in this ElementTree.</p></li>
+<li><p><strong>attribs</strong> (<em>None</em><em> or </em><em>dict of str</em>) – Element attribute(s) to check against for a filtered element. A match is
+considered found only if all attributes match. Each attribute key should have a corresponding value with
+which to compare against.</p></li>
+<li><p><strong>return_first</strong> (<em>bool</em>) – Whether to immediately return once the first matching element is found.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Matching element(s) found. Returns None if there was no match.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None or ET.Element or list of ET.Element</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.mjcf_utils.find_parent">
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">find_parent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">root</span></em>, <em class="sig-param"><span class="n">child</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.find_parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the parent element of the specified &#64;child node, recurisvely searching through &#64;root.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>root</strong> (<em>ET.Element</em>) – Root of the xml element tree to start recursively searching through.</p></li>
+<li><p><strong>child</strong> (<em>ET.Element</em>) – Child element whose parent is to be found</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Matching parent if found, else None</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None or ET.Element</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.mjcf_utils.get_size">
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">get_size</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">size</span></em>, <em class="sig-param"><span class="n">size_max</span></em>, <em class="sig-param"><span class="n">size_min</span></em>, <em class="sig-param"><span class="n">default_max</span></em>, <em class="sig-param"><span class="n">default_min</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.get_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper method for providing a size, or a range to randomize from</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> (<em>n-array</em>) – Array of numbers that explicitly define the size</p></li>
+<li><p><strong>size_max</strong> (<em>n-array</em>) – Array of numbers that define the custom max size from which to randomly sample</p></li>
+<li><p><strong>size_min</strong> (<em>n-array</em>) – Array of numbers that define the custom min size from which to randomly sample</p></li>
+<li><p><strong>default_max</strong> (<em>n-array</em>) – Array of numbers that define the default max size from which to randomly sample</p></li>
+<li><p><strong>default_min</strong> (<em>n-array</em>) – Array of numbers that define the default min size from which to randomly sample</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>size generated</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – [Inconsistent array sizes]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt id="robosuite.utils.mjcf_utils.new_actuator">
-<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">new_actuator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">joint</span></em>, <em class="sig-param"><span class="n">act_type</span><span class="o">=</span><span class="default_value">'actuator'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.new_actuator" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">new_actuator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">joint</span></em>, <em class="sig-param"><span class="n">act_type</span><span class="o">=</span><span class="default_value">'actuator'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.new_actuator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates an actuator tag with attributes specified by &#64;**kwargs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name for this actuator</p></li>
 <li><p><strong>joint</strong> (<em>str</em>) – type of actuator transmission.
 see all types here: <a class="reference external" href="http://mujoco.org/book/modeling.html#actuator">http://mujoco.org/book/modeling.html#actuator</a></p></li>
 <li><p><strong>act_type</strong> (<em>str</em>) – actuator type. Defaults to “actuator”</p></li>
-<li><p><strong>**kwargs</strong> (<em>dict</em>) – Any additional specified attributes for the new joint</p></li>
+<li><p><strong>**kwargs</strong> – Any additional specified attributes for the new joint</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -729,14 +971,14 @@ see all types here: <a class="reference external" href="http://mujoco.org/book/m
 
 <dl class="py function">
 <dt id="robosuite.utils.mjcf_utils.new_body">
-<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">new_body</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pos</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.new_body" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">new_body</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">pos</span><span class="o">=</span><span class="default_value">0, 0, 0</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.new_body" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a body element with attributes specified by &#64;**kwargs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<em>str</em>) – body name.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Name for this body</p></li>
 <li><p><strong>pos</strong> (<em>3-array</em>) – (x,y,z) 3d position of the body frame.</p></li>
-<li><p><strong>**kwargs</strong> (<em>dict</em>) – Any additional specified attributes for the new body</p></li>
+<li><p><strong>**kwargs</strong> – Any additional specified attributes for the new body</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -749,8 +991,30 @@ see all types here: <a class="reference external" href="http://mujoco.org/book/m
 </dd></dl>
 
 <dl class="py function">
+<dt id="robosuite.utils.mjcf_utils.new_element">
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">new_element</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.new_element" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new &#64;tag element with attributes specified by &#64;**kwargs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tag</strong> (<em>str</em>) – Type of element to create</p></li>
+<li><p><strong>name</strong> (<em>None</em><em> or </em><em>str</em>) – Name for this element. Should only be None for elements that do not have an explicit
+name attribute (e.g.: inertial elements)</p></li>
+<li><p><strong>**kwargs</strong> – Specified attributes for the new joint</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>new specified xml element</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ET.Element</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt id="robosuite.utils.mjcf_utils.new_geom">
-<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">new_geom</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geom_type</span></em>, <em class="sig-param"><span class="n">size</span></em>, <em class="sig-param"><span class="n">pos</span><span class="o">=</span><span class="default_value">0, 0, 0</span></em>, <em class="sig-param"><span class="n">rgba</span><span class="o">=</span><span class="default_value">[1, 0, 0, 1]</span></em>, <em class="sig-param"><span class="n">group</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.new_geom" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">new_geom</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">type</span></em>, <em class="sig-param"><span class="n">size</span></em>, <em class="sig-param"><span class="n">pos</span><span class="o">=</span><span class="default_value">0, 0, 0</span></em>, <em class="sig-param"><span class="n">group</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.new_geom" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a geom element with attributes specified by &#64;**kwargs.</p>
 <dl class="simple">
 <dt>NOTE: With the exception of &#64;geom_type, &#64;size, and &#64;pos, if any arg is set to</dt><dd><p>None, the value will automatically be popped before passing the values
@@ -760,14 +1024,14 @@ to create the appropriate XML</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>geom_type</strong> (<em>str</em>) – type of the geom.
+<li><p><strong>name</strong> (<em>str</em>) – Name for this geom</p></li>
+<li><p><strong>type</strong> (<em>str</em>) – type of the geom.
 see all types here: <a class="reference external" href="http://mujoco.org/book/modeling.html#geom">http://mujoco.org/book/modeling.html#geom</a></p></li>
-<li><p><strong>size</strong> (<em>array of float</em>) – geom size parameters.</p></li>
+<li><p><strong>size</strong> (<em>n-array of float</em>) – geom size parameters.</p></li>
 <li><p><strong>pos</strong> (<em>3-array</em>) – (x,y,z) 3d position of the site.</p></li>
-<li><p><strong>rgba</strong> (<em>4-array</em>) – (r,g,b,a) color and transparency. Defaults to solid red.</p></li>
 <li><p><strong>group</strong> (<em>int</em>) – the integrer group that the geom belongs to. useful for
 separating visual and physical elements.</p></li>
-<li><p><strong>**kwargs</strong> (<em>dict</em>) – Any additional specified attributes for the new geom</p></li>
+<li><p><strong>**kwargs</strong> – Any additional specified attributes for the new geom</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -781,15 +1045,14 @@ separating visual and physical elements.</p></li>
 
 <dl class="py function">
 <dt id="robosuite.utils.mjcf_utils.new_inertial">
-<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">new_inertial</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pos</span><span class="o">=</span><span class="default_value">0, 0, 0</span></em>, <em class="sig-param"><span class="n">mass</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.new_inertial" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">new_inertial</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pos</span><span class="o">=</span><span class="default_value">0, 0, 0</span></em>, <em class="sig-param"><span class="n">mass</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.new_inertial" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a inertial element with attributes specified by &#64;**kwargs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<em>str</em>) – [NOT USED]</p></li>
 <li><p><strong>pos</strong> (<em>3-array</em>) – (x,y,z) 3d position of the inertial frame.</p></li>
 <li><p><strong>mass</strong> (<em>float</em>) – The mass of inertial</p></li>
-<li><p><strong>**kwargs</strong> (<em>dict</em>) – Any additional specified attributes for the new inertial element</p></li>
+<li><p><strong>**kwargs</strong> – Any additional specified attributes for the new inertial element</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -803,11 +1066,14 @@ separating visual and physical elements.</p></li>
 
 <dl class="py function">
 <dt id="robosuite.utils.mjcf_utils.new_joint">
-<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">new_joint</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.new_joint" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">new_joint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.new_joint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a joint tag with attributes specified by &#64;**kwargs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>**kwargs</strong> (<em>dict</em>) – Specified attributes for the new joint</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name for this joint</p></li>
+<li><p><strong>**kwargs</strong> – Specified attributes for the new joint</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>new joint xml element</p>
@@ -830,11 +1096,11 @@ to create the appropriate XML</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<em>str</em>) – site name.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Name for this site</p></li>
 <li><p><strong>rgba</strong> (<em>4-array</em>) – (r,g,b,a) color and transparency. Defaults to solid red.</p></li>
 <li><p><strong>pos</strong> (<em>3-array</em>) – (x,y,z) 3d position of the site.</p></li>
 <li><p><strong>size</strong> (<em>array of float</em>) – site size (sites are spherical by default).</p></li>
-<li><p><strong>**kwargs</strong> (<em>dict</em>) – Any additional specified attributes for the new site</p></li>
+<li><p><strong>**kwargs</strong> – Any additional specified attributes for the new site</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -865,6 +1131,38 @@ in order to make sure that the STL files can be found.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt id="robosuite.utils.mjcf_utils.recolor_collision_geoms">
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">recolor_collision_geoms</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">root</span></em>, <em class="sig-param"><span class="n">rgba</span></em>, <em class="sig-param"><span class="n">exclude</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.recolor_collision_geoms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iteratively searches through all elements starting with &#64;root to find all geoms belonging to group 0 and set
+the corresponding rgba value to the specified &#64;rgba argument. Note: also removes any material values for these
+elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>root</strong> (<em>ET.Element</em>) – Root of the xml element tree to start recursively searching through</p></li>
+<li><p><strong>rgba</strong> (<em>4-array</em>) – (R, G, B, A) values to assign to all geoms with this group.</p></li>
+<li><p><strong>exclude</strong> (<em>None</em><em> or </em><em>function</em>) – Filtering function that should take in an ET.Element and
+return True if we should exclude the given element / attribute from having its collision geom impacted.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.mjcf_utils.save_sim_model">
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">save_sim_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sim</span></em>, <em class="sig-param"><span class="n">fname</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.save_sim_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the current model xml from &#64;sim at file location &#64;fname.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sim</strong> (<em>MjSim</em>) – XML file to save, in string form</p></li>
+<li><p><strong>fname</strong> (<em>str</em>) – Absolute filepath to the location to save the file</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt id="robosuite.utils.mjcf_utils.set_alpha">
 <code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">set_alpha</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em>, <em class="sig-param"><span class="n">alpha</span><span class="o">=</span><span class="default_value">0.1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.set_alpha" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets all a(lpha) field of the rgba attribute to be &#64;alpha
@@ -876,6 +1174,34 @@ used for managing display</p>
 <li><p><strong>node</strong> (<em>ET.Element</em>) – Specific node element within XML tree</p></li>
 <li><p><strong>alpha</strong> (<em>float</em>) – Value to set alpha value of rgba tuple</p></li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.mjcf_utils.sort_elements">
+<code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">sort_elements</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">root</span></em>, <em class="sig-param"><span class="n">parent</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">element_filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">_elements_dict</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.sort_elements" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility method to iteratively sort all elements based on &#64;tags. This XML ElementTree will be parsed such that
+all elements with the same key as returned by &#64;element_filter will be grouped as a list entry in the returned
+dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>root</strong> (<em>ET.Element</em>) – Root of the xml element tree to start recursively searching through</p></li>
+<li><p><strong>parent</strong> (<em>ET.Element</em>) – Parent of the root node. Default is None (no parent node initially)</p></li>
+<li><p><strong>element_filter</strong> (<em>None</em><em> or </em><em>function</em>) – Function used to filter the incoming elements. Should take in two
+ET.Elements (current_element, parent_element) and return a string filter_key if the element
+should be added to the list of values sorted by filter_key, and return None if no value should be added.
+If no element_filter is specified, defaults to self._element_filter.</p></li>
+<li><p><strong>_elements_dict</strong> (<em>dict</em>) – Dictionary that gets passed to recursive calls. Should not be modified externally by
+top-level call.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Filtered key-specific lists of the corresponding elements</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -904,7 +1230,7 @@ used for managing display</p>
 <code class="sig-prename descclassname">robosuite.utils.mjcf_utils.</code><code class="sig-name descname">xml_path_completion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xml_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjcf_utils.xml_path_completion" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Takes in a local xml path and returns a full path.</dt><dd><p>if &#64;xml_path is absolute, do nothing
-if &#64;xml_path is not absolute, load xml that is shipped by the package</p>
+if &#64;xml_path is not absolute, load xml that is shipped by the</p>
 </dd>
 </dl>
 <dl class="field-list simple">
@@ -922,7 +1248,7 @@ if &#64;xml_path is not absolute, load xml that is shipped by the package</p>
 
 </div>
 <div class="section" id="module-robosuite.utils.mjmod">
-<span id="robosuite-utils-mjmod"></span><h2>robosuite.utils.mjmod<a class="headerlink" href="#module-robosuite.utils.mjmod" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-utils-mjmod-module"></span><h2>robosuite.utils.mjmod module<a class="headerlink" href="#module-robosuite.utils.mjmod" title="Permalink to this headline">¶</a></h2>
 <p>Modder classes used for domain randomization. Largely based off of the mujoco-py
 implementation below.</p>
 <p><a class="reference external" href="https://github.com/openai/mujoco-py/blob/1fe312b09ae7365f0dd9d4d0e453f8da59fae0bf/mujoco_py/modder.py">https://github.com/openai/mujoco-py/blob/1fe312b09ae7365f0dd9d4d0e453f8da59fae0bf/mujoco_py/modder.py</a></p>
@@ -1139,6 +1465,353 @@ Default corresponds to around 5 degrees.</p></li>
 <li><p><strong>AssertionError</strong> – Invalid camera name</p></li>
 <li><p><strong>AssertionError</strong> – Invalid value</p></li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.utils.mjmod.DynamicsModder">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.mjmod.</code><code class="sig-name descname">DynamicsModder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sim</span></em>, <em class="sig-param"><span class="n">random_state</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">randomize_density</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">randomize_viscosity</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">density_perturbation_ratio</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">viscosity_perturbation_ratio</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">body_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">randomize_position</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">randomize_quaternion</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">randomize_inertia</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">randomize_mass</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">position_perturbation_size</span><span class="o">=</span><span class="default_value">0.02</span></em>, <em class="sig-param"><span class="n">quaternion_perturbation_size</span><span class="o">=</span><span class="default_value">0.02</span></em>, <em class="sig-param"><span class="n">inertia_perturbation_ratio</span><span class="o">=</span><span class="default_value">0.02</span></em>, <em class="sig-param"><span class="n">mass_perturbation_ratio</span><span class="o">=</span><span class="default_value">0.02</span></em>, <em class="sig-param"><span class="n">geom_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">randomize_friction</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">randomize_solref</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">randomize_solimp</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">friction_perturbation_ratio</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">solref_perturbation_ratio</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">solimp_perturbation_ratio</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">joint_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">randomize_stiffness</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">randomize_frictionloss</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">randomize_damping</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">randomize_armature</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">stiffness_perturbation_ratio</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">frictionloss_perturbation_size</span><span class="o">=</span><span class="default_value">0.05</span></em>, <em class="sig-param"><span class="n">damping_perturbation_size</span><span class="o">=</span><span class="default_value">0.01</span></em>, <em class="sig-param"><span class="n">armature_perturbation_size</span><span class="o">=</span><span class="default_value">0.01</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.DynamicsModder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.utils.mjmod.BaseModder" title="robosuite.utils.mjmod.BaseModder"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.utils.mjmod.BaseModder</span></code></a></p>
+<p>Modder for various dynamics properties of the mujoco model, such as friction, damping, etc.
+This can be used to modify parameters stored in MjModel (ie friction, damping, etc.) as
+well as optimizer parameters stored in PyMjOption (i.e.: medium density, viscosity, etc.)
+To modify a parameter, use the parameter to be changed as a keyword argument to
+self.mod and the new value as the value for that argument. Supports arbitrary many
+modifications in a single step. Example use:</p>
+<blockquote>
+<div><p>sim = MjSim(…)
+modder = DynamicsModder(sim)
+modder.mod(“element1_name”, “attr1”, new_value1)
+modder.mod(“element2_name”, “attr2”, new_value2)
+…
+modder.update()</p>
+</div></blockquote>
+<dl class="simple">
+<dt>NOTE: It is necessary to perform modder.update() after performing all modifications to make sure</dt><dd><p>the changes are propagated</p>
+</dd>
+</dl>
+<p>NOTE: A full list of supported randomizable parameters can be seen by calling modder.dynamics_parameters</p>
+<dl class="simple">
+<dt>NOTE: When modifying parameters belonging to MjModel.opt (e.g.: density, viscosity), no name should</dt><dd><p>be specified (set it as None in mod(…)). This is because opt does not have a name attribute
+associated with it</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sim</strong> (<em>MjSim</em>) – Mujoco sim instance</p></li>
+<li><p><strong>random_state</strong> (<em>RandomState</em>) – instance of np.random.RandomState</p></li>
+<li><p><strong>randomize_density</strong> (<em>bool</em>) – If True, randomizes global medium density</p></li>
+<li><p><strong>randomize_viscosity</strong> (<em>bool</em>) – If True, randomizes global medium viscosity</p></li>
+<li><p><strong>density_perturbation_ratio</strong> (<em>float</em>) – Relative (fraction) magnitude of default density randomization</p></li>
+<li><p><strong>viscosity_perturbation_ratio</strong> – Relative (fraction) magnitude of default viscosity randomization</p></li>
+<li><p><strong>body_names</strong> (<em>None</em><em> or </em><em>list of str</em>) – list of bodies to use for randomization. If not provided, all
+bodies in the model are randomized.</p></li>
+<li><p><strong>randomize_position</strong> (<em>bool</em>) – If True, randomizes body positions</p></li>
+<li><p><strong>randomize_quaternion</strong> (<em>bool</em>) – If True, randomizes body quaternions</p></li>
+<li><p><strong>randomize_inertia</strong> (<em>bool</em>) – If True, randomizes body inertias (only applicable for non-zero mass bodies)</p></li>
+<li><p><strong>randomize_mass</strong> (<em>bool</em>) – If True, randomizes body masses (only applicable for non-zero mass bodies)</p></li>
+<li><p><strong>position_perturbation_size</strong> (<em>float</em>) – Magnitude of body position randomization</p></li>
+<li><p><strong>quaternion_perturbation_size</strong> (<em>float</em>) – Magnitude of body quaternion randomization (angle in radians)</p></li>
+<li><p><strong>inertia_perturbation_ratio</strong> (<em>float</em>) – Relative (fraction) magnitude of body inertia randomization</p></li>
+<li><p><strong>mass_perturbation_ratio</strong> (<em>float</em>) – Relative (fraction) magnitude of body mass randomization</p></li>
+<li><p><strong>geom_names</strong> (<em>None</em><em> or </em><em>list of str</em>) – list of geoms to use for randomization. If not provided, all
+geoms in the model are randomized.</p></li>
+<li><p><strong>randomize_friction</strong> (<em>bool</em>) – If True, randomizes geom frictions</p></li>
+<li><p><strong>randomize_solref</strong> (<em>bool</em>) – If True, randomizes geom solrefs</p></li>
+<li><p><strong>randomize_solimp</strong> (<em>bool</em>) – If True, randomizes geom solimps</p></li>
+<li><p><strong>friction_perturbation_ratio</strong> (<em>float</em>) – Relative (fraction) magnitude of geom friction randomization</p></li>
+<li><p><strong>solref_perturbation_ratio</strong> (<em>float</em>) – Relative (fraction) magnitude of geom solref randomization</p></li>
+<li><p><strong>solimp_perturbation_ratio</strong> (<em>float</em>) – Relative (fraction) magnitude of geom solimp randomization</p></li>
+<li><p><strong>joint_names</strong> (<em>None</em><em> or </em><em>list of str</em>) – list of joints to use for randomization. If not provided, all
+joints in the model are randomized.</p></li>
+<li><p><strong>randomize_stiffness</strong> (<em>bool</em>) – If True, randomizes joint stiffnesses</p></li>
+<li><p><strong>randomize_frictionloss</strong> (<em>bool</em>) – If True, randomizes joint frictionlosses</p></li>
+<li><p><strong>randomize_damping</strong> (<em>bool</em>) – If True, randomizes joint dampings</p></li>
+<li><p><strong>randomize_armature</strong> (<em>bool</em>) – If True, randomizes joint armatures</p></li>
+<li><p><strong>stiffness_perturbation_ratio</strong> (<em>float</em>) – Relative (fraction) magnitude of joint stiffness randomization</p></li>
+<li><p><strong>frictionloss_perturbation_size</strong> (<em>float</em>) – Magnitude of joint frictionloss randomization</p></li>
+<li><p><strong>damping_perturbation_size</strong> (<em>float</em>) – Magnitude of joint damping randomization</p></li>
+<li><p><strong>armature_perturbation_size</strong> (<em>float</em>) – Magnitude of joint armature randomization</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.DynamicsModder.dynamics_parameters">
+<em class="property">property </em><code class="sig-name descname">dynamics_parameters</code><a class="headerlink" href="#robosuite.utils.mjmod.DynamicsModder.dynamics_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+set: All dynamics parameters that can be randomized using this modder.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.DynamicsModder.mod">
+<code class="sig-name descname">mod</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">attr</span></em>, <em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.DynamicsModder.mod" title="Permalink to this definition">¶</a></dt>
+<dd><p>General method to modify dynamics parameter &#64;attr to be new value &#64;val, associated with element &#64;name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of element to modify parameter. This can be a body, geom, or joint name. If modifying
+an opt parameter, this should be set to None</p></li>
+<li><p><strong>attr</strong> (<em>str</em>) – Name of the dynamics parameter to modify. Valid options are self.dynamics_parameters</p></li>
+<li><p><strong>val</strong> (<em>int</em><em> or </em><em>float</em><em> or </em><em>n-array</em>) – New value(s) to set for the given dynamics parameter. The type of this
+argument should match the expected type for the given parameter.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.DynamicsModder.mod_armature">
+<code class="sig-name descname">mod_armature</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.DynamicsModder.mod_armature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifies the &#64;name’s joint armature within the simulation.
+See <a class="reference external" href="http://www.mujoco.org/book/XMLreference.html#joint">http://www.mujoco.org/book/XMLreference.html#joint</a> for more details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name for this element.</p></li>
+<li><p><strong>val</strong> (<em>float</em>) – New armature.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.DynamicsModder.mod_damping">
+<code class="sig-name descname">mod_damping</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.DynamicsModder.mod_damping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifies the &#64;name’s joint damping within the simulation.
+See <a class="reference external" href="http://www.mujoco.org/book/XMLreference.html#joint">http://www.mujoco.org/book/XMLreference.html#joint</a> for more details.</p>
+<dl class="simple">
+<dt>NOTE: If the requested joint is a free joint, it will be ignored since it does not</dt><dd><p>make physical sense to have damping associated with this joint (air drag / damping
+is already captured implicitly by the medium density / viscosity values)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name for this element.</p></li>
+<li><p><strong>val</strong> (<em>float</em>) – New damping.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.DynamicsModder.mod_density">
+<code class="sig-name descname">mod_density</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">val</span><span class="o">=</span><span class="default_value">0.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.DynamicsModder.mod_density" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifies the global medium density of the simulation.
+See <a class="reference external" href="http://www.mujoco.org/book/XMLreference.html#option">http://www.mujoco.org/book/XMLreference.html#option</a> for more details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name for this element. Should be left as None (opt has no name attribute)</p></li>
+<li><p><strong>val</strong> (<em>float</em>) – New density value.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.DynamicsModder.mod_friction">
+<code class="sig-name descname">mod_friction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.DynamicsModder.mod_friction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifies the &#64;name’s geom friction within the simulation.
+See <a class="reference external" href="http://www.mujoco.org/book/XMLreference.html#geom">http://www.mujoco.org/book/XMLreference.html#geom</a> for more details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name for this element.</p></li>
+<li><p><strong>val</strong> (<em>3-array</em>) – New (sliding, torsional, rolling) friction values.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.DynamicsModder.mod_frictionloss">
+<code class="sig-name descname">mod_frictionloss</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.DynamicsModder.mod_frictionloss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifies the &#64;name’s joint frictionloss within the simulation.
+See <a class="reference external" href="http://www.mujoco.org/book/XMLreference.html#joint">http://www.mujoco.org/book/XMLreference.html#joint</a> for more details.</p>
+<dl class="simple">
+<dt>NOTE: If the requested joint is a free joint, it will be ignored since it does not</dt><dd><p>make physical sense to have friction loss associated with this joint (air drag / damping
+is already captured implicitly by the medium density / viscosity values)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name for this element.</p></li>
+<li><p><strong>val</strong> (<em>float</em>) – New friction loss.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.DynamicsModder.mod_inertia">
+<code class="sig-name descname">mod_inertia</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.DynamicsModder.mod_inertia" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifies the &#64;name’s relative body inertia within the simulation.
+See <a class="reference external" href="http://www.mujoco.org/book/XMLreference.html#body">http://www.mujoco.org/book/XMLreference.html#body</a> for more details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name for this element.</p></li>
+<li><p><strong>val</strong> (<em>3-array</em>) – New (ixx, iyy, izz) diagonal values in the inertia matrix.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.DynamicsModder.mod_mass">
+<code class="sig-name descname">mod_mass</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.DynamicsModder.mod_mass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifies the &#64;name’s mass within the simulation.
+See <a class="reference external" href="http://www.mujoco.org/book/XMLreference.html#body">http://www.mujoco.org/book/XMLreference.html#body</a> for more details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name for this element.</p></li>
+<li><p><strong>val</strong> (<em>float</em>) – New mass.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.DynamicsModder.mod_position">
+<code class="sig-name descname">mod_position</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">val</span><span class="o">=</span><span class="default_value">0, 0, 0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.DynamicsModder.mod_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifies the &#64;name’s relative body position within the simulation.
+See <a class="reference external" href="http://www.mujoco.org/book/XMLreference.html#body">http://www.mujoco.org/book/XMLreference.html#body</a> for more details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name for this element.</p></li>
+<li><p><strong>val</strong> (<em>3-array</em>) – New (x, y, z) relative position.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.DynamicsModder.mod_quaternion">
+<code class="sig-name descname">mod_quaternion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">val</span><span class="o">=</span><span class="default_value">1, 0, 0, 0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.DynamicsModder.mod_quaternion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifies the &#64;name’s relative body orientation (quaternion) within the simulation.
+See <a class="reference external" href="http://www.mujoco.org/book/XMLreference.html#body">http://www.mujoco.org/book/XMLreference.html#body</a> for more details.</p>
+<p>Note: This method automatically normalizes the inputted value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name for this element.</p></li>
+<li><p><strong>val</strong> (<em>4-array</em>) – New (w, x, y, z) relative quaternion.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.DynamicsModder.mod_solimp">
+<code class="sig-name descname">mod_solimp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.DynamicsModder.mod_solimp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifies the &#64;name’s geom contact solver impedance parameters within the simulation.
+See <a class="reference external" href="http://www.mujoco.org/book/modeling.html#CSolver">http://www.mujoco.org/book/modeling.html#CSolver</a> for more details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name for this element.</p></li>
+<li><p><strong>val</strong> (<em>5-array</em>) – New (dmin, dmax, width, midpoint, power) solimp values.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.DynamicsModder.mod_solref">
+<code class="sig-name descname">mod_solref</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.DynamicsModder.mod_solref" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifies the &#64;name’s geom contact solver parameters within the simulation.
+See <a class="reference external" href="http://www.mujoco.org/book/modeling.html#CSolver">http://www.mujoco.org/book/modeling.html#CSolver</a> for more details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name for this element.</p></li>
+<li><p><strong>val</strong> (<em>2-array</em>) – New (timeconst, dampratio) solref values.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.DynamicsModder.mod_stiffness">
+<code class="sig-name descname">mod_stiffness</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.DynamicsModder.mod_stiffness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifies the &#64;name’s joint stiffness within the simulation.
+See <a class="reference external" href="http://www.mujoco.org/book/XMLreference.html#joint">http://www.mujoco.org/book/XMLreference.html#joint</a> for more details.</p>
+<dl class="simple">
+<dt>NOTE: If the stiffness is already at 0, we IGNORE this value since a non-stiff joint (i.e.: free-turning)</dt><dd><p>joint is fundamentally different than a stiffened joint)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name for this element.</p></li>
+<li><p><strong>val</strong> (<em>float</em>) – New stiffness.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.DynamicsModder.mod_viscosity">
+<code class="sig-name descname">mod_viscosity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">val</span><span class="o">=</span><span class="default_value">0.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.DynamicsModder.mod_viscosity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifies the global medium viscosity of the simulation.
+See <a class="reference external" href="http://www.mujoco.org/book/XMLreference.html#option">http://www.mujoco.org/book/XMLreference.html#option</a> for more details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name for this element. Should be left as None (opt has no name attribute)</p></li>
+<li><p><strong>val</strong> (<em>float</em>) – New viscosity value.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.DynamicsModder.opt">
+<em class="property">property </em><code class="sig-name descname">opt</code><a class="headerlink" href="#robosuite.utils.mjmod.DynamicsModder.opt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+PyMjOption: MjModel sim options</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.DynamicsModder.randomize">
+<code class="sig-name descname">randomize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.DynamicsModder.randomize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Randomizes all enabled dynamics parameters in the simulation</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.DynamicsModder.restore_defaults">
+<code class="sig-name descname">restore_defaults</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.DynamicsModder.restore_defaults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restores the default values curently saved in this modder</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.DynamicsModder.save_defaults">
+<code class="sig-name descname">save_defaults</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.DynamicsModder.save_defaults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grabs the current values for all parameters in sim and stores them as default values</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.DynamicsModder.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.DynamicsModder.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Propagates the changes made up to this point through the simulation</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.mjmod.DynamicsModder.update_sim">
+<code class="sig-name descname">update_sim</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sim</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.DynamicsModder.update_sim" title="Permalink to this definition">¶</a></dt>
+<dd><p>In addition to super method, update internal default values to match the current values from
+(the presumably new) &#64;sim.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sim</strong> (<em>MjSim</em>) – MjSim object</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1441,55 +2114,6 @@ lights in the model are randomized.</p></li>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt id="robosuite.utils.mjmod.PhysicalParameterModder">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.mjmod.</code><code class="sig-name descname">PhysicalParameterModder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sim</span></em>, <em class="sig-param"><span class="n">random_state</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.PhysicalParameterModder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#robosuite.utils.mjmod.BaseModder" title="robosuite.utils.mjmod.BaseModder"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.utils.mjmod.BaseModder</span></code></a></p>
-<p>Modder for various physical parameters of the mujoco model
-can use to modify parameters stored in MjModel (ie friction, damping, etc.) as
-well as optimizer parameters like global friction multipliers (eg solimp, solref, etc)
-To modify a parameteter, use the parameter to be changed as a keyword argument to
-self.mod and the new value as the value for that argument. Supports arbitray many
-modifications in a single step.</p>
-<dl class="field-list simple">
-<dt class="field-odd">NOTE</dt>
-<dd class="field-odd"><p>It is necesary to perform sim.forward after performing the modification.</p>
-</dd>
-<dt class="field-even">NOTE</dt>
-<dd class="field-even"><p>Some parameters might not be able to be changed. users are to verify that
-after the call to forward that the parameter is indeed changed.</p>
-</dd>
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>sim</strong> (<em>MjSim</em>) – Mujoco sim instance</p></li>
-<li><p><strong>random_state</strong> (<em>RandomState</em>) – instance of np.random.RandomState, specific
-seed used to randomize these modifications without impacting other
-numpy seeds / randomizations</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py method">
-<dt id="robosuite.utils.mjmod.PhysicalParameterModder.mod">
-<code class="sig-name descname">mod</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mjmod.PhysicalParameterModder.mod" title="Permalink to this definition">¶</a></dt>
-<dd><p>Method to actually mod. Assumes passing in keyword arguments with key being the parameter to
-modify and the value being the value to set
-Feel free to add more as we see fit.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>**kwargs</strong> (<em>dict</em>) – Physical parameters to actually modify mid-sim</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="robosuite.utils.mjmod.PhysicalParameterModder.opt">
-<em class="property">property </em><code class="sig-name descname">opt</code><a class="headerlink" href="#robosuite.utils.mjmod.PhysicalParameterModder.opt" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns:
-?: MjModel sim options</p>
 </dd></dl>
 
 </dd></dl>
@@ -1884,7 +2508,7 @@ the texture modifications won’t take full effect.</p>
 
 </div>
 <div class="section" id="module-robosuite.utils.mujoco_py_renderer">
-<span id="robosuite-utils-mujoco-py-renderer"></span><h2>robosuite.utils.mujoco_py_renderer<a class="headerlink" href="#module-robosuite.utils.mujoco_py_renderer" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-utils-mujoco-py-renderer-module"></span><h2>robosuite.utils.mujoco_py_renderer module<a class="headerlink" href="#module-robosuite.utils.mujoco_py_renderer" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="robosuite.utils.mujoco_py_renderer.CustomMjViewer">
 <em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.mujoco_py_renderer.</code><code class="sig-name descname">CustomMjViewer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sim</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.mujoco_py_renderer.CustomMjViewer" title="Permalink to this definition">¶</a></dt>
@@ -2012,7 +2636,7 @@ the ESC callback to close the viewer.</p>
 
 </div>
 <div class="section" id="module-robosuite.utils.numba">
-<span id="robosuite-utils-numba"></span><h2>robosuite.utils.numba<a class="headerlink" href="#module-robosuite.utils.numba" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-utils-numba-module"></span><h2>robosuite.utils.numba module<a class="headerlink" href="#module-robosuite.utils.numba" title="Permalink to this headline">¶</a></h2>
 <p>Numba utils.</p>
 <dl class="py function">
 <dt id="robosuite.utils.numba.jit_decorator">
@@ -2020,8 +2644,660 @@ the ESC callback to close the viewer.</p>
 <dd></dd></dl>
 
 </div>
+<div class="section" id="module-robosuite.utils.observables">
+<span id="robosuite-utils-observables-module"></span><h2>robosuite.utils.observables module<a class="headerlink" href="#module-robosuite.utils.observables" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="robosuite.utils.observables.NO_CORRUPTION">
+<code class="sig-prename descclassname">robosuite.utils.observables.</code><code class="sig-name descname">NO_CORRUPTION</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inp</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.observables.NO_CORRUPTION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.observables.NO_DELAY">
+<code class="sig-prename descclassname">robosuite.utils.observables.</code><code class="sig-name descname">NO_DELAY</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.observables.NO_DELAY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.observables.NO_FILTER">
+<code class="sig-prename descclassname">robosuite.utils.observables.</code><code class="sig-name descname">NO_FILTER</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inp</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.observables.NO_FILTER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.utils.observables.Observable">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.observables.</code><code class="sig-name descname">Observable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">sensor</span></em>, <em class="sig-param"><span class="n">corrupter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">delayer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sampling_rate</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">enabled</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">active</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.observables.Observable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for all observables – defines interface for interacting with sensors</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name for this observable</p></li>
+<li><p><strong>sensor</strong> (function with <cite>sensor</cite> decorator) – Method to grab raw sensor data for this observable. Should take in a
+single dict argument (observation cache if a pre-computed value is required) and return the raw sensor data
+for the current timestep. Must handle case if inputted argument is empty ({}), and should have <cite>sensor</cite>
+decorator when defined</p></li>
+<li><p><strong>corrupter</strong> (<em>None</em><em> or </em><em>function</em>) – Method to corrupt the raw sensor data for this observable. Should take in
+the output of &#64;sensor and return the same type (corrupted data). If None, results in default no corruption</p></li>
+<li><p><strong>filter</strong> (<em>None</em><em> or </em><em>function</em>) – Method to filter the outputted reading for this observable. Should take in the output
+of &#64;corrupter and return the same type (filtered data). If None, results in default no filter. Note that
+this function can also double as an observer, where sampled data is recorded by this function.</p></li>
+<li><p><strong>delayer</strong> (<em>None</em><em> or </em><em>function</em>) – Method to delay the raw sensor data when polling this observable. Should take in
+no arguments and return a float, for the number of seconds to delay the measurement by. If None, results in
+default no delayer</p></li>
+<li><p><strong>sampling_rate</strong> (<em>float</em>) – Sampling rate for this observable (Hz)</p></li>
+<li><p><strong>enabled</strong> (<em>bool</em>) – Whether this sensor is enabled or not. If enabled, this observable’s values
+are continually computed / updated every time update() is called.</p></li>
+<li><p><strong>active</strong> (<em>bool</em>) – Whether this sensor is active or not. If active, this observable’s current
+observed value is returned from self.obs, otherwise self.obs returns None.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.utils.observables.Observable.is_active">
+<code class="sig-name descname">is_active</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.observables.Observable.is_active" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether observable is active or not. This observable is considered active if its current observation
+value is being returned in self.obs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this observable is active</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.observables.Observable.is_enabled">
+<code class="sig-name descname">is_enabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.observables.Observable.is_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether observable is enabled or not. This observable is considered enabled if its values
+are being continually computed / updated during each update() call.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this observable is enabled</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.observables.Observable.modality">
+<em class="property">property </em><code class="sig-name descname">modality</code><a class="headerlink" href="#robosuite.utils.observables.Observable.modality" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modality of this sensor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Modality name for this observable</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.observables.Observable.obs">
+<em class="property">property </em><code class="sig-name descname">obs</code><a class="headerlink" href="#robosuite.utils.observables.Observable.obs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Current observation from this observable</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>If active, current observed value from this observable. Otherwise, None</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None or float or np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.observables.Observable.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.observables.Observable.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets this observable’s internal values (but does not reset its sensor, corrupter, delayer, or filter)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.observables.Observable.set_active">
+<code class="sig-name descname">set_active</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">active</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.observables.Observable.set_active" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets whether this observable is active or not. If active, this observable’s current
+observed value is returned from self.obs, otherwise self.obs returns None.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>active</strong> (<em>bool</em>) – True if this observable should be active</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.observables.Observable.set_corrupter">
+<code class="sig-name descname">set_corrupter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">corrupter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.observables.Observable.set_corrupter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the corrupter for this observable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>corrupter</strong> (<em>None</em><em> or </em><em>function</em>) – Method to corrupt the raw sensor data for this observable. Should take in
+the output of self.sensor and return the same type (corrupted data).
+If None, results in default no corruption</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.observables.Observable.set_delayer">
+<code class="sig-name descname">set_delayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">delayer</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.observables.Observable.set_delayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the delayer for this observable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>delayer</strong> (<em>None</em><em> or </em><em>function</em>) – Method to delay the raw sensor data when polling this observable. Should take
+in no arguments and return a float, for the number of seconds to delay the measurement by.
+If None, results in default no filter</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.observables.Observable.set_enabled">
+<code class="sig-name descname">set_enabled</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">enabled</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.observables.Observable.set_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets whether this observable is enabled or not. If enabled, this observable’s values
+are continually computed / updated every time update() is called.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>enabled</strong> (<em>bool</em>) – True if this observable should be enabled</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.observables.Observable.set_filter">
+<code class="sig-name descname">set_filter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.observables.Observable.set_filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the filter for this observable. Note that this function can also double as an observer, where sampled
+data is recorded by this function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filter</strong> (<em>None</em><em> or </em><em>function</em>) – Method to filter the outputted reading for this observable. Should take in
+the output of &#64;corrupter and return the same type (filtered data).
+If None, results in default no filter</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.observables.Observable.set_sampling_rate">
+<code class="sig-name descname">set_sampling_rate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rate</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.observables.Observable.set_sampling_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the sampling rate for this observable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>rate</strong> (<em>int</em>) – New sampling rate for this observable (Hz)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.observables.Observable.set_sensor">
+<code class="sig-name descname">set_sensor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sensor</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.observables.Observable.set_sensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the sensor for this observable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sensor</strong> (<em>function with sensor decorator</em>) – Method to grab raw sensor data for this observable. Should take in
+a single dict argument (observation cache if a pre-computed value is required) and return the raw
+sensor data for the current timestep. Must handle case if inputted argument is empty ({}), and should
+have <cite>sensor</cite> decorator when defined</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.observables.Observable.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">timestep</span></em>, <em class="sig-param"><span class="n">obs_cache</span></em>, <em class="sig-param"><span class="n">force</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.observables.Observable.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates internal values for this observable, if enabled.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>timestep</strong> (<em>float</em>) – Amount of simulation time (in sec) that has passed since last call.</p></li>
+<li><p><strong>obs_cache</strong> (<em>dict</em>) – Observation cache mapping observable names to pre-computed values to pass to sensor. This
+will be updated in-place during this call.</p></li>
+<li><p><strong>force</strong> (<em>bool</em>) – If True, will force the observable to update its internal value to the newest value.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.observables.create_deterministic_corrupter">
+<code class="sig-prename descclassname">robosuite.utils.observables.</code><code class="sig-name descname">create_deterministic_corrupter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">corruption</span></em>, <em class="sig-param"><span class="n">low</span><span class="o">=</span><span class="default_value">- inf</span></em>, <em class="sig-param"><span class="n">high</span><span class="o">=</span><span class="default_value">inf</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.observables.create_deterministic_corrupter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a deterministic corrupter that applies the same corrupted value to all sensor values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>corruption</strong> (<em>float</em>) – Corruption to apply</p></li>
+<li><p><strong>low</strong> (<em>float</em>) – Minimum value for output for clipping</p></li>
+<li><p><strong>high</strong> (<em>float</em>) – Maximum value for output for clipping</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>corrupter</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>function</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.observables.create_deterministic_delayer">
+<code class="sig-prename descclassname">robosuite.utils.observables.</code><code class="sig-name descname">create_deterministic_delayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">delay</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.observables.create_deterministic_delayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a deterministic delayer that always returns the same delay value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>delay</strong> (<em>float</em>) – Delay value to return</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>delayer</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>function</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.observables.create_gaussian_noise_corrupter">
+<code class="sig-prename descclassname">robosuite.utils.observables.</code><code class="sig-name descname">create_gaussian_noise_corrupter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mean</span></em>, <em class="sig-param"><span class="n">std</span></em>, <em class="sig-param"><span class="n">low</span><span class="o">=</span><span class="default_value">- inf</span></em>, <em class="sig-param"><span class="n">high</span><span class="o">=</span><span class="default_value">inf</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.observables.create_gaussian_noise_corrupter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a corrupter that applies gaussian noise to a given input with mean &#64;mean and std dev &#64;std</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mean</strong> (<em>float</em>) – Mean of the noise to apply</p></li>
+<li><p><strong>std</strong> (<em>float</em>) – Standard deviation of the noise to apply</p></li>
+<li><p><strong>low</strong> (<em>float</em>) – Minimum value for output for clipping</p></li>
+<li><p><strong>high</strong> (<em>float</em>) – Maxmimum value for output for clipping</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>corrupter</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>function</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.observables.create_gaussian_sampled_delayer">
+<code class="sig-prename descclassname">robosuite.utils.observables.</code><code class="sig-name descname">create_gaussian_sampled_delayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mean</span></em>, <em class="sig-param"><span class="n">std</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.observables.create_gaussian_sampled_delayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a gaussian sampled delayer, with average delay &#64;mean which varies by standard deviation &#64;std</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mean</strong> (<em>float</em>) – Average delay</p></li>
+<li><p><strong>std</strong> (<em>float</em>) – Standard deviation of the delay variation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>delayer</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>function</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.observables.create_uniform_noise_corrupter">
+<code class="sig-prename descclassname">robosuite.utils.observables.</code><code class="sig-name descname">create_uniform_noise_corrupter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">min_noise</span></em>, <em class="sig-param"><span class="n">max_noise</span></em>, <em class="sig-param"><span class="n">low</span><span class="o">=</span><span class="default_value">- inf</span></em>, <em class="sig-param"><span class="n">high</span><span class="o">=</span><span class="default_value">inf</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.observables.create_uniform_noise_corrupter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a corrupter that applies uniform noise to a given input within range &#64;low to &#64;high</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_noise</strong> (<em>float</em>) – Minimum noise to apply</p></li>
+<li><p><strong>max_noise</strong> (<em>float</em>) – Maximum noise to apply</p></li>
+<li><p><strong>low</strong> (<em>float</em>) – Minimum value for output for clipping</p></li>
+<li><p><strong>high</strong> (<em>float</em>) – Maxmimum value for output for clipping</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>corrupter</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>function</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.observables.create_uniform_sampled_delayer">
+<code class="sig-prename descclassname">robosuite.utils.observables.</code><code class="sig-name descname">create_uniform_sampled_delayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">min_delay</span></em>, <em class="sig-param"><span class="n">max_delay</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.observables.create_uniform_sampled_delayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates uniformly sampled delayer, with minimum delay &#64;low and maximum delay &#64;high, both inclusive</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_delay</strong> (<em>float</em>) – Minimum possible delay</p></li>
+<li><p><strong>max_delay</strong> (<em>float</em>) – Maxmimum possible delay</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>delayer</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>function</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="robosuite.utils.observables.sensor">
+<code class="sig-prename descclassname">robosuite.utils.observables.</code><code class="sig-name descname">sensor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">modality</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.observables.sensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator that should be added to any sensors that will be an observable.</p>
+<p>Decorated functions should have signature:</p>
+<blockquote>
+<div><p>any = func(obs_cache)</p>
+</div></blockquote>
+<p>Where &#64;obs_cache is a dictionary mapping observable keys to pre-computed values, and &#64;any is either a scalar
+or array. This function should also handle the case if obs_cache is either None or an empty dict.</p>
+<p>An example use case is shown below:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nd">@sensor</span><span class="p">(</span><span class="n">modality</span><span class="o">=</span><span class="s2">&quot;proprio&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">joint_pos</span><span class="p">(</span><span class="n">obs_cache</span><span class="p">):</span>
+<span class="go">        # Always handle case if obs_cache is empty</span>
+<span class="go">        if not obs_cache:</span>
+<span class="go">            return np.zeros(7)</span>
+<span class="go">        # Otherwise, run necessary calculations and return output</span>
+<span class="go">        ...</span>
+<span class="go">        out = ...</span>
+<span class="go">        return out</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>modality</strong> (<em>str</em>) – Modality for this sensor</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>decorator function</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>function</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.utils.placement_samplers">
+<span id="robosuite-utils-placement-samplers-module"></span><h2>robosuite.utils.placement_samplers module<a class="headerlink" href="#module-robosuite.utils.placement_samplers" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="robosuite.utils.placement_samplers.ObjectPositionSampler">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.placement_samplers.</code><code class="sig-name descname">ObjectPositionSampler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">mujoco_objects</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ensure_object_boundary_in_range</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">ensure_valid_placement</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">reference_pos</span><span class="o">=</span><span class="default_value">0, 0, 0</span></em>, <em class="sig-param"><span class="n">z_offset</span><span class="o">=</span><span class="default_value">0.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.placement_samplers.ObjectPositionSampler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class of object placement sampler.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of this sampler.</p></li>
+<li><p><strong>mujoco_objects</strong> (<em>None</em><em> or </em><a class="reference internal" href="robosuite.models.objects.html#robosuite.models.objects.objects.MujocoObject" title="robosuite.models.objects.objects.MujocoObject"><em>MujocoObject</em></a><em> or </em><em>list of MujocoObject</em>) – single model or list of MJCF object models</p></li>
+<li><p><strong>ensure_object_boundary_in_range</strong> (<em>bool</em>) – If True, will ensure that the object is enclosed within a given boundary
+(should be implemented by subclass)</p></li>
+<li><p><strong>ensure_valid_placement</strong> (<em>bool</em>) – If True, will check for correct (valid) object placements</p></li>
+<li><p><strong>reference_pos</strong> (<em>3-array</em>) – global (x,y,z) position relative to which sampling will occur</p></li>
+<li><p><strong>z_offset</strong> (<em>float</em>) – Add a small z-offset to placements. This is useful for fixed objects
+that do not move (i.e. no free joint) to place them above the table.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.utils.placement_samplers.ObjectPositionSampler.add_objects">
+<code class="sig-name descname">add_objects</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mujoco_objects</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.placement_samplers.ObjectPositionSampler.add_objects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add additional objects to this sampler. Checks to make sure there’s no identical objects already stored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mujoco_objects</strong> (<a class="reference internal" href="robosuite.models.objects.html#robosuite.models.objects.objects.MujocoObject" title="robosuite.models.objects.objects.MujocoObject"><em>MujocoObject</em></a><em> or </em><em>list of MujocoObject</em>) – single model or list of MJCF object models</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.placement_samplers.ObjectPositionSampler.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.placement_samplers.ObjectPositionSampler.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets this sampler. Removes all mujoco objects from this sampler.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.placement_samplers.ObjectPositionSampler.sample">
+<code class="sig-name descname">sample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fixtures</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">reference</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">on_top</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.placement_samplers.ObjectPositionSampler.sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uniformly sample on a surface (not necessarily table surface).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fixtures</strong> (<em>dict</em>) – dictionary of current object placements in the scene as well as any other relevant
+obstacles that should not be in contact with newly sampled objects. Used to make sure newly
+generated placements are valid. Should be object names mapped to (pos, quat, MujocoObject)</p></li>
+<li><p><strong>reference</strong> (<em>str</em><em> or </em><em>3-tuple</em><em> or </em><em>None</em>) – if provided, sample relative placement. Can either be a string, which
+corresponds to an existing object found in &#64;fixtures, or a direct (x,y,z) value. If None, will sample
+relative to this sampler’s <cite>‘reference_pos’</cite> value.</p></li>
+<li><p><strong>on_top</strong> (<em>bool</em>) – if True, sample placement on top of the reference object.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>dictionary of all object placements, mapping object_names to (pos, quat, obj), including the</dt><dd><p>placements specified in &#64;fixtures. Note quat is in (w,x,y,z) form</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.utils.placement_samplers.SequentialCompositeSampler">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.placement_samplers.</code><code class="sig-name descname">SequentialCompositeSampler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.placement_samplers.SequentialCompositeSampler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.utils.placement_samplers.ObjectPositionSampler" title="robosuite.utils.placement_samplers.ObjectPositionSampler"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.utils.placement_samplers.ObjectPositionSampler</span></code></a></p>
+<p>Samples position for each object sequentially. Allows chaining
+multiple placement initializers together - so that object locations can
+be sampled on top of other objects or relative to other object placements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of this sampler.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.utils.placement_samplers.SequentialCompositeSampler.add_objects">
+<code class="sig-name descname">add_objects</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mujoco_objects</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.placement_samplers.SequentialCompositeSampler.add_objects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override super method to make sure user doesn’t call this (all objects should implicitly belong to sub-samplers)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.placement_samplers.SequentialCompositeSampler.add_objects_to_sampler">
+<code class="sig-name descname">add_objects_to_sampler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sampler_name</span></em>, <em class="sig-param"><span class="n">mujoco_objects</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.placement_samplers.SequentialCompositeSampler.add_objects_to_sampler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds specified &#64;mujoco_objects to sub-sampler with specified &#64;sampler_name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sampler_name</strong> (<em>str</em>) – Existing sub-sampler name</p></li>
+<li><p><strong>mujoco_objects</strong> (<a class="reference internal" href="robosuite.models.objects.html#robosuite.models.objects.objects.MujocoObject" title="robosuite.models.objects.objects.MujocoObject"><em>MujocoObject</em></a><em> or </em><em>list of MujocoObject</em>) – Object(s) to add</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.placement_samplers.SequentialCompositeSampler.append_sampler">
+<code class="sig-name descname">append_sampler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sampler</span></em>, <em class="sig-param"><span class="n">sample_args</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.placement_samplers.SequentialCompositeSampler.append_sampler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new placement initializer with corresponding &#64;sampler and arguments</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sampler</strong> (<a class="reference internal" href="#robosuite.utils.placement_samplers.ObjectPositionSampler" title="robosuite.utils.placement_samplers.ObjectPositionSampler"><em>ObjectPositionSampler</em></a>) – sampler to add</p></li>
+<li><p><strong>sample_args</strong> (<em>None</em><em> or </em><em>dict</em>) – If specified, should be additional arguments to pass to &#64;sampler’s sample()
+call. Should map corresponding sampler’s arguments to values (excluding &#64;fixtures argument)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – [Object name in samplers]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.placement_samplers.SequentialCompositeSampler.hide">
+<code class="sig-name descname">hide</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mujoco_objects</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.placement_samplers.SequentialCompositeSampler.hide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper method to remove an object from the workspace.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mujoco_objects</strong> (<a class="reference internal" href="robosuite.models.objects.html#robosuite.models.objects.objects.MujocoObject" title="robosuite.models.objects.objects.MujocoObject"><em>MujocoObject</em></a><em> or </em><em>list of MujocoObject</em>) – Object(s) to hide</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.placement_samplers.SequentialCompositeSampler.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.placement_samplers.SequentialCompositeSampler.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets this sampler. In addition to base method, iterates over all sub-samplers and resets them</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="robosuite.utils.placement_samplers.SequentialCompositeSampler.sample">
+<code class="sig-name descname">sample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fixtures</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">reference</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">on_top</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.placement_samplers.SequentialCompositeSampler.sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sample from each placement initializer sequentially, in the order
+that they were appended.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fixtures</strong> (<em>dict</em>) – dictionary of current object placements in the scene as well as any other relevant
+obstacles that should not be in contact with newly sampled objects. Used to make sure newly
+generated placements are valid. Should be object names mapped to (pos, quat, MujocoObject)</p></li>
+<li><p><strong>reference</strong> (<em>str</em><em> or </em><em>3-tuple</em><em> or </em><em>None</em>) – if provided, sample relative placement. This will override each
+sampler’s &#64;reference argument if not already specified. Can either be a string, which
+corresponds to an existing object found in &#64;fixtures, or a direct (x,y,z) value. If None, will sample
+relative to this sampler’s <cite>‘reference_pos’</cite> value.</p></li>
+<li><p><strong>on_top</strong> (<em>bool</em>) – if True, sample placement on top of the reference object. This will override each
+sampler’s &#64;on_top argument if not already specified. This corresponds to a sampled
+z-offset of the current sampled object’s bottom_offset + the reference object’s top_offset
+(if specified)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>dictionary of all object placements, mapping object_names to (pos, quat, obj), including the</dt><dd><p>placements specified in &#64;fixtures. Note quat is in (w,x,y,z) form</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="#robosuite.utils.errors.RandomizationError" title="robosuite.utils.errors.RandomizationError"><strong>RandomizationError</strong></a> – [Cannot place all objects]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="robosuite.utils.placement_samplers.UniformRandomSampler">
+<em class="property">class </em><code class="sig-prename descclassname">robosuite.utils.placement_samplers.</code><code class="sig-name descname">UniformRandomSampler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">mujoco_objects</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">x_range</span><span class="o">=</span><span class="default_value">0, 0</span></em>, <em class="sig-param"><span class="n">y_range</span><span class="o">=</span><span class="default_value">0, 0</span></em>, <em class="sig-param"><span class="n">rotation</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rotation_axis</span><span class="o">=</span><span class="default_value">'z'</span></em>, <em class="sig-param"><span class="n">ensure_object_boundary_in_range</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">ensure_valid_placement</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">reference_pos</span><span class="o">=</span><span class="default_value">0, 0, 0</span></em>, <em class="sig-param"><span class="n">z_offset</span><span class="o">=</span><span class="default_value">0.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.placement_samplers.UniformRandomSampler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.utils.placement_samplers.ObjectPositionSampler" title="robosuite.utils.placement_samplers.ObjectPositionSampler"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.utils.placement_samplers.ObjectPositionSampler</span></code></a></p>
+<p>Places all objects within the table uniformly random.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of this sampler.</p></li>
+<li><p><strong>mujoco_objects</strong> (<em>None</em><em> or </em><a class="reference internal" href="robosuite.models.objects.html#robosuite.models.objects.objects.MujocoObject" title="robosuite.models.objects.objects.MujocoObject"><em>MujocoObject</em></a><em> or </em><em>list of MujocoObject</em>) – single model or list of MJCF object models</p></li>
+<li><p><strong>x_range</strong> (<em>2-array of float</em>) – Specify the (min, max) relative x_range used to uniformly place objects</p></li>
+<li><p><strong>y_range</strong> (<em>2-array of float</em>) – Specify the (min, max) relative y_range used to uniformly place objects</p></li>
+<li><p><strong>rotation</strong> (<em>None</em><em> or </em><em>float</em><em> or </em><em>Iterable</em>) – <dl class="field-list simple">
+<dt class="field-odd"><cite>None</cite></dt>
+<dd class="field-odd"><p>Add uniform random random rotation</p>
+</dd>
+<dt class="field-even"><cite>Iterable (a,b)</cite></dt>
+<dd class="field-even"><p>Uniformly randomize rotation angle between a and b (in radians)</p>
+</dd>
+<dt class="field-odd"><cite>value</cite></dt>
+<dd class="field-odd"><p>Add fixed angle rotation</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>rotation_axis</strong> (<em>str</em>) – Can be ‘x’, ‘y’, or ‘z’. Axis about which to apply the requested rotation</p></li>
+<li><p><strong>ensure_object_boundary_in_range</strong> (<em>bool</em>) – <dl class="field-list simple">
+<dt class="field-odd"><cite>True</cite></dt>
+<dd class="field-odd"><p>The center of object is at position:
+[uniform(min x_range + radius, max x_range - radius)], [uniform(min x_range + radius, max x_range - radius)]</p>
+</dd>
+<dt class="field-even"><cite>False</cite></dt>
+<dd class="field-even"><p>[uniform(min x_range, max x_range)], [uniform(min x_range, max x_range)]</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>ensure_valid_placement</strong> (<em>bool</em>) – If True, will check for correct (valid) object placements</p></li>
+<li><p><strong>reference_pos</strong> (<em>3-array</em>) – global (x,y,z) position relative to which sampling will occur</p></li>
+<li><p><strong>z_offset</strong> (<em>float</em>) – Add a small z-offset to placements. This is useful for fixed objects
+that do not move (i.e. no free joint) to place them above the table.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="robosuite.utils.placement_samplers.UniformRandomSampler.sample">
+<code class="sig-name descname">sample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fixtures</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">reference</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">on_top</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.placement_samplers.UniformRandomSampler.sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uniformly sample relative to this sampler’s reference_pos or &#64;reference (if specified).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fixtures</strong> (<em>dict</em>) – dictionary of current object placements in the scene as well as any other relevant
+obstacles that should not be in contact with newly sampled objects. Used to make sure newly
+generated placements are valid. Should be object names mapped to (pos, quat, MujocoObject)</p></li>
+<li><p><strong>reference</strong> (<em>str</em><em> or </em><em>3-tuple</em><em> or </em><em>None</em>) – if provided, sample relative placement. Can either be a string, which
+corresponds to an existing object found in &#64;fixtures, or a direct (x,y,z) value. If None, will sample
+relative to this sampler’s <cite>‘reference_pos’</cite> value.</p></li>
+<li><p><strong>on_top</strong> (<em>bool</em>) – if True, sample placement on top of the reference object. This corresponds to a sampled
+z-offset of the current sampled object’s bottom_offset + the reference object’s top_offset
+(if specified)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>dictionary of all object placements, mapping object_names to (pos, quat, obj), including the</dt><dd><p>placements specified in &#64;fixtures. Note quat is in (w,x,y,z) form</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="#robosuite.utils.errors.RandomizationError" title="robosuite.utils.errors.RandomizationError"><strong>RandomizationError</strong></a> – [Cannot place all objects]</p></li>
+<li><p><strong>AssertionError</strong> – [Reference object name does not exist, invalid inputs]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-robosuite.utils.robot_utils">
+<span id="robosuite-utils-robot-utils-module"></span><h2>robosuite.utils.robot_utils module<a class="headerlink" href="#module-robosuite.utils.robot_utils" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="robosuite.utils.robot_utils.check_bimanual">
+<code class="sig-prename descclassname">robosuite.utils.robot_utils.</code><code class="sig-name descname">check_bimanual</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robot_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.robot_utils.check_bimanual" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility function that returns whether the inputted robot_name is a bimanual robot or not</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>robot_name</strong> (<em>str</em>) – Name of the robot to check</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the inputted robot is a bimanual robot</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
 <div class="section" id="module-robosuite.utils.transform_utils">
-<span id="robosuite-utils-transform-utils"></span><h2>robosuite.utils.transform_utils<a class="headerlink" href="#module-robosuite.utils.transform_utils" title="Permalink to this headline">¶</a></h2>
+<span id="robosuite-utils-transform-utils-module"></span><h2>robosuite.utils.transform_utils module<a class="headerlink" href="#module-robosuite.utils.transform_utils" title="Permalink to this headline">¶</a></h2>
 <p>Utility functions of matrix and vector transformations.</p>
 <p>NOTE: convention for quaternions is (x, y, z, w)</p>
 <dl class="py function">
@@ -2724,6 +4000,9 @@ between 0 and 1.</p>
 </dl>
 </dd></dl>
 
+</div>
+<div class="section" id="module-robosuite.utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robosuite.utils" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
