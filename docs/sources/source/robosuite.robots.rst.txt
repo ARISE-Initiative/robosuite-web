@@ -1,4 +1,4 @@
-robosuite.robots
+robosuite.robots package
 ========================
 
 Submodules

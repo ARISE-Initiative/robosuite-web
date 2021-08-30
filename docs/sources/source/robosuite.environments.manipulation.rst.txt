@@ -1,4 +1,4 @@
-robosuite.environments.manipulation
+robosuite.environments.manipulation package
 ===========================================
 
 Submodules

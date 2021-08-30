@@ -1,4 +1,4 @@
-robosuite.controllers.interpolators
+robosuite.controllers.interpolators package
 ===========================================
 
 Submodules

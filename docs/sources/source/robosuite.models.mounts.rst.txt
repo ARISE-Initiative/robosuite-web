@@ -1,4 +1,4 @@
-robosuite.models.mounts
+robosuite.models.mounts package
 ===============================
 
 Submodules

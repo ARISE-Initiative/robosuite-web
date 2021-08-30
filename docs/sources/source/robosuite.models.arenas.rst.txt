@@ -1,4 +1,4 @@
-robosuite.models.arenas
+robosuite.models.arenas package
 ===============================
 
 Submodules

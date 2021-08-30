@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Environment &mdash; robosuite 1.2.0 documentation</title>
+  <title>Environment &mdash; robosuite 1.2.1 documentation</title>
   
 
   
@@ -17,7 +17,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -27,13 +30,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
         <script src="../static/jquery.js"></script>
         <script src="../static/underscore.js"></script>
         <script src="../static/doctools.js"></script>
-        <script src="../static/language_data.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../static/js/theme.js"></script>
 
@@ -55,7 +56,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> robosuite
+            <a href="../index.html" class="icon icon-home"> robosuite
           
 
           
@@ -65,7 +66,7 @@
             
             
               <div class="version">
-                1.2.0
+                1.2.1
               </div>
             
           
@@ -90,25 +91,24 @@
               
             
             
-              <p class="caption"><span class="caption-text">Introduction</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../demos.html">Demo Showcases</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Modules</span></p>
+<p class="caption" role="heading"><span class="caption-text">Modules</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/robots.html">Robots</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/controllers.html">Controllers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/objects.html">Objects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/renderers.html">Renderers</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Simulation API</span></p>
+<p class="caption" role="heading"><span class="caption-text">Simulation API</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="robot.html">Robot</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Environment</a><ul>
@@ -120,7 +120,7 @@
 <li class="toctree-l1"><a class="reference internal" href="device.html">Device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="controller.html">Controller</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Modeling API</span></p>
+<p class="caption" role="heading"><span class="caption-text">Modeling API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/mujoco_model.html">Mujoco Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
@@ -128,18 +128,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Source API</span></p>
+<p class="caption" role="heading"><span class="caption-text">Source API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../source/robosuite.html">robosuite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/robosuite.html">robosuite package</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Algorithms</span></p>
+<p class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">Projects using robosuite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgements</a></li>
@@ -183,6 +183,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -194,7 +196,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../sources/simulation/environment.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -240,8 +242,8 @@ task environments which capture specific <code class="docutils literal notransla
 <div class="section" id="base-environment">
 <h2>Base Environment<a class="headerlink" href="#base-environment" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="robosuite.environments.base.MujocoEnv">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.base.</code><code class="sig-name descname">MujocoEnv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">has_renderer</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">has_offscreen_renderer</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_camera</span><span class="o">=</span><span class="default_value">'frontview'</span></em>, <em class="sig-param"><span class="n">render_collision_mesh</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">render_visual_mesh</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_gpu_device_id</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">control_freq</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">horizon</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">ignore_done</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">hard_reset</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.environments.base.MujocoEnv">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.environments.base.</span></span><span class="sig-name descname"><span class="pre">MujocoEnv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">has_renderer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_offscreen_renderer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_camera</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'frontview'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_collision_mesh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_visual_mesh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_gpu_device_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">control_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">horizon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_done</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hard_reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initializes a Mujoco Environment.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -273,8 +275,8 @@ only calls sim.reset and resets all robosuite-internal variables</p></li>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="robosuite.environments.base.MujocoEnv.initialize_time">
-<code class="sig-name descname">initialize_time</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">control_freq</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.initialize_time" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.environments.base.MujocoEnv.initialize_time">
+<span class="sig-name descname"><span class="pre">initialize_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">control_freq</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.initialize_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initializes the time constants used for simulation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -284,8 +286,8 @@ only calls sim.reset and resets all robosuite-internal variables</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.environments.base.MujocoEnv.set_model_postprocessor">
-<code class="sig-name descname">set_model_postprocessor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">postprocessor</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.set_model_postprocessor" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.environments.base.MujocoEnv.set_model_postprocessor">
+<span class="sig-name descname"><span class="pre">set_model_postprocessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">postprocessor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.set_model_postprocessor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the post-processor function that self.model will be passed to after load_model() is called during resets.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -296,8 +298,8 @@ return no arguments.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.environments.base.MujocoEnv.reset">
-<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.reset" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.environments.base.MujocoEnv.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.reset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resets simulation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -310,8 +312,8 @@ return no arguments.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.environments.base.MujocoEnv.step">
-<code class="sig-name descname">step</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.step" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.environments.base.MujocoEnv.step">
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.step" title="Permalink to this definition">¶</a></dt>
 <dd><p>Takes a step in simulation with control command &#64;action.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -336,8 +338,8 @@ return no arguments.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.environments.base.MujocoEnv.reward">
-<code class="sig-name descname">reward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.reward" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.environments.base.MujocoEnv.reward">
+<span class="sig-name descname"><span class="pre">reward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.reward" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reward should be a function of state and action</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -353,14 +355,14 @@ return no arguments.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.environments.base.MujocoEnv.render">
-<code class="sig-name descname">render</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.render" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.environments.base.MujocoEnv.render">
+<span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.render" title="Permalink to this definition">¶</a></dt>
 <dd><p>Renders to an on-screen window.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.environments.base.MujocoEnv.observation_spec">
-<code class="sig-name descname">observation_spec</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.observation_spec" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.environments.base.MujocoEnv.observation_spec">
+<span class="sig-name descname"><span class="pre">observation_spec</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.observation_spec" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an observation as observation specification.</p>
 <p>An alternative design is to return an OrderedDict where the keys
 are the observation names and the values are the shapes of observations.
@@ -377,8 +379,8 @@ current design is easier to use in practice.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.environments.base.MujocoEnv.clear_objects">
-<code class="sig-name descname">clear_objects</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">object_names</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.clear_objects" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.environments.base.MujocoEnv.clear_objects">
+<span class="sig-name descname"><span class="pre">clear_objects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object_names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.clear_objects" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clears objects with the name &#64;object_names out of the task space. This is useful
 for supporting task modes with single types of objects, as in
 &#64;self.single_object_mode without changing the model definition.</p>
@@ -390,8 +392,8 @@ for supporting task modes with single types of objects, as in
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.environments.base.MujocoEnv.visualize">
-<code class="sig-name descname">visualize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vis_settings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.visualize" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.environments.base.MujocoEnv.visualize">
+<span class="sig-name descname"><span class="pre">visualize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vis_settings</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.visualize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Do any needed visualization here</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -403,8 +405,8 @@ options specified.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.environments.base.MujocoEnv.reset_from_xml_string">
-<code class="sig-name descname">reset_from_xml_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xml_string</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.reset_from_xml_string" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.environments.base.MujocoEnv.reset_from_xml_string">
+<span class="sig-name descname"><span class="pre">reset_from_xml_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xml_string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.reset_from_xml_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reloads the environment from an XML description of the environment.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -414,8 +416,8 @@ options specified.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.environments.base.MujocoEnv.check_contact">
-<code class="sig-name descname">check_contact</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geoms_1</span></em>, <em class="sig-param"><span class="n">geoms_2</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.check_contact" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.environments.base.MujocoEnv.check_contact">
+<span class="sig-name descname"><span class="pre">check_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geoms_1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geoms_2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.check_contact" title="Permalink to this definition">¶</a></dt>
 <dd><p>Finds contact between two geom groups.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -437,8 +439,8 @@ any collision with &#64;geoms_1 to any other geom in the environment</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.environments.base.MujocoEnv.get_contacts">
-<code class="sig-name descname">get_contacts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.get_contacts" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.environments.base.MujocoEnv.get_contacts">
+<span class="sig-name descname"><span class="pre">get_contacts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.get_contacts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks for any contacts with &#64;model (as defined by &#64;model’s contact_geoms) and returns the set of
 geom names currently in contact with that model (excluding the geoms that are part of the model itself).</p>
 <dl class="field-list simple">
@@ -458,8 +460,8 @@ geom names currently in contact with that model (excluding the geoms that are pa
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.environments.base.MujocoEnv.modify_observable">
-<code class="sig-name descname">modify_observable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">observable_name</span></em>, <em class="sig-param"><span class="n">attribute</span></em>, <em class="sig-param"><span class="n">modifier</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.modify_observable" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.environments.base.MujocoEnv.modify_observable">
+<span class="sig-name descname"><span class="pre">modify_observable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">observable_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attribute</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modifier</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.modify_observable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Modifies observable with associated name &#64;observable_name, replacing the given &#64;attribute with &#64;modifier.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -476,14 +478,14 @@ match the function being replaced.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.environments.base.MujocoEnv.close">
-<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.close" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.environments.base.MujocoEnv.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.close" title="Permalink to this definition">¶</a></dt>
 <dd><p>Do any cleanup necessary here.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.environments.base.MujocoEnv.observation_modalities">
-<em class="property">property </em><code class="sig-name descname">observation_modalities</code><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.observation_modalities" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.environments.base.MujocoEnv.observation_modalities">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">observation_modalities</span></span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.observation_modalities" title="Permalink to this definition">¶</a></dt>
 <dd><p>Modalities for this environment’s observations</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -495,9 +497,9 @@ match the function being replaced.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.environments.base.MujocoEnv.observation_names">
-<em class="property">property </em><code class="sig-name descname">observation_names</code><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.observation_names" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.environments.base.MujocoEnv.observation_names">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">observation_names</span></span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.observation_names" title="Permalink to this definition">¶</a></dt>
 <dd><p>Grabs all names for this environment’s observables</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -509,9 +511,9 @@ match the function being replaced.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.environments.base.MujocoEnv.enabled_observables">
-<em class="property">property </em><code class="sig-name descname">enabled_observables</code><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.enabled_observables" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.environments.base.MujocoEnv.enabled_observables">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">enabled_observables</span></span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.enabled_observables" title="Permalink to this definition">¶</a></dt>
 <dd><p>Grabs all names of enabled observables for this environment. An observable is considered enabled if its values
 are being continually computed / updated at each simulation timestep.</p>
 <dl class="field-list simple">
@@ -524,9 +526,9 @@ are being continually computed / updated at each simulation timestep.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.environments.base.MujocoEnv.active_observables">
-<em class="property">property </em><code class="sig-name descname">active_observables</code><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.active_observables" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.environments.base.MujocoEnv.active_observables">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">active_observables</span></span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.active_observables" title="Permalink to this definition">¶</a></dt>
 <dd><p>Grabs all names of active observables for this environment. An observable is considered active if its value is
 being returned in the observation dict from _get_observations() call or from the step() call (assuming this
 observable is enabled).</p>
@@ -540,17 +542,17 @@ observable is enabled).</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.environments.base.MujocoEnv.action_spec">
-<em class="property">property </em><code class="sig-name descname">action_spec</code><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.action_spec" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.environments.base.MujocoEnv.action_spec">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">action_spec</span></span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.action_spec" title="Permalink to this definition">¶</a></dt>
 <dd><p>Action specification should be implemented in subclasses.</p>
 <p>Action space is represented by a tuple of (low, high), which are two numpy
 vectors that specify the min/max action limits per dimension.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.environments.base.MujocoEnv.action_dim">
-<em class="property">property </em><code class="sig-name descname">action_dim</code><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.action_dim" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.environments.base.MujocoEnv.action_dim">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">action_dim</span></span><a class="headerlink" href="#robosuite.environments.base.MujocoEnv.action_dim" title="Permalink to this definition">¶</a></dt>
 <dd><p>Size of the action space</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -568,8 +570,8 @@ vectors that specify the min/max action limits per dimension.</p>
 <div class="section" id="robot-environment">
 <h2>Robot Environment<a class="headerlink" href="#robot-environment" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="robosuite.environments.robot_env.RobotEnv">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.robot_env.</code><code class="sig-name descname">RobotEnv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robots</span></em>, <em class="sig-param"><span class="n">env_configuration</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">mount_types</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">controller_configs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">initialization_noise</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_camera_obs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">has_renderer</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">has_offscreen_renderer</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_camera</span><span class="o">=</span><span class="default_value">'frontview'</span></em>, <em class="sig-param"><span class="n">render_collision_mesh</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">render_visual_mesh</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_gpu_device_id</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">control_freq</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">horizon</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">ignore_done</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">hard_reset</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">camera_names</span><span class="o">=</span><span class="default_value">'agentview'</span></em>, <em class="sig-param"><span class="n">camera_heights</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_widths</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_depths</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">robot_configs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.robot_env.RobotEnv" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.environments.robot_env.RobotEnv">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.environments.robot_env.</span></span><span class="sig-name descname"><span class="pre">RobotEnv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robots</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_configuration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mount_types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controller_configs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initialization_noise</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_camera_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_renderer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_offscreen_renderer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_camera</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'frontview'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_collision_mesh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_visual_mesh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_gpu_device_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">control_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">horizon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_done</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hard_reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'agentview'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_heights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_widths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_depths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robot_configs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.robot_env.RobotEnv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initializes a robot environment in Mujoco.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -659,14 +661,14 @@ bool if same depth setting is to be used for all cameras or else it should be a 
 </dd>
 </dl>
 <dl class="py method">
-<dt id="robosuite.environments.robot_env.RobotEnv._load_robots">
-<code class="sig-name descname">_load_robots</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.robot_env.RobotEnv._load_robots" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.environments.robot_env.RobotEnv._load_robots">
+<span class="sig-name descname"><span class="pre">_load_robots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.robot_env.RobotEnv._load_robots" title="Permalink to this definition">¶</a></dt>
 <dd><p>Instantiates robots and stores them within the self.robots attribute</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.environments.robot_env.RobotEnv._check_robot_configuration">
-<code class="sig-name descname">_check_robot_configuration</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robots</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.robot_env.RobotEnv._check_robot_configuration" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.environments.robot_env.RobotEnv._check_robot_configuration">
+<span class="sig-name descname"><span class="pre">_check_robot_configuration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robots</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.robot_env.RobotEnv._check_robot_configuration" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sanity check to make sure inputted robots and the corresponding requested task/configuration combo is legal.
 Should be implemented in every specific task module</p>
 <dl class="field-list simple">
@@ -682,8 +684,8 @@ Should be implemented in every specific task module</p>
 <div class="section" id="manipulator-environment">
 <h2>Manipulator Environment<a class="headerlink" href="#manipulator-environment" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="robosuite.environments.manipulation.manipulation_env.ManipulationEnv">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.environments.manipulation.manipulation_env.</code><code class="sig-name descname">ManipulationEnv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">robots</span></em>, <em class="sig-param"><span class="n">env_configuration</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">controller_configs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mount_types</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">gripper_types</span><span class="o">=</span><span class="default_value">'default'</span></em>, <em class="sig-param"><span class="n">initialization_noise</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_camera_obs</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">has_renderer</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">has_offscreen_renderer</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_camera</span><span class="o">=</span><span class="default_value">'frontview'</span></em>, <em class="sig-param"><span class="n">render_collision_mesh</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">render_visual_mesh</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">render_gpu_device_id</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">control_freq</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">horizon</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">ignore_done</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">hard_reset</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">camera_names</span><span class="o">=</span><span class="default_value">'agentview'</span></em>, <em class="sig-param"><span class="n">camera_heights</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_widths</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">camera_depths</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.manipulation_env.ManipulationEnv" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.environments.manipulation.manipulation_env.ManipulationEnv">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.environments.manipulation.manipulation_env.</span></span><span class="sig-name descname"><span class="pre">ManipulationEnv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robots</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_configuration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controller_configs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mount_types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gripper_types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initialization_noise</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_camera_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_renderer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_offscreen_renderer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_camera</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'frontview'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_collision_mesh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_visual_mesh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_gpu_device_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">control_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">horizon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_done</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hard_reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'agentview'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_heights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_widths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_depths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.manipulation_env.ManipulationEnv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initializes a manipulation-specific robot environment in Mujoco.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -778,8 +780,8 @@ bool if same depth setting is to be used for all cameras or else it should be a 
 </dd>
 </dl>
 <dl class="py method">
-<dt id="robosuite.environments.manipulation.manipulation_env.ManipulationEnv._check_grasp">
-<code class="sig-name descname">_check_grasp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gripper</span></em>, <em class="sig-param"><span class="n">object_geoms</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.manipulation_env.ManipulationEnv._check_grasp" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.environments.manipulation.manipulation_env.ManipulationEnv._check_grasp">
+<span class="sig-name descname"><span class="pre">_check_grasp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gripper</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_geoms</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.manipulation_env.ManipulationEnv._check_grasp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks whether the specified gripper as defined by &#64;gripper is grasping the specified object in the environment.</p>
 <p>By default, this will return True if at least one geom in both the “left_fingerpad” and “right_fingerpad” geom
 groups are in contact with any geom specified by &#64;object_geoms. Custom gripper geom groups can be
@@ -788,7 +790,7 @@ specified with &#64;gripper as well.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>gripper</strong> (<a class="reference internal" href="../source/robosuite.models.grippers.html#robosuite.models.grippers.gripper_model.GripperModel" title="robosuite.models.grippers.gripper_model.GripperModel"><em>GripperModel</em></a><em> or </em><em>str</em><em> or </em><em>list of str</em><em> or </em><em>list of list of str</em>) – If a MujocoModel, this is specific</p></li>
-<li><p><strong>to check for grasping</strong> (<em>gripper</em>) – this sets custom gripper geom groups which together define a grasp. This can be a string
+<li><p><strong>grasping</strong> (<em>gripper to check for</em>) – this sets custom gripper geom groups which together define a grasp. This can be a string
 (one group of single gripper geom), a list of string (multiple groups of single gripper geoms) or a
 list of list of string (multiple groups of multiple gripper geoms). At least one geom from each group
 must be in contact with any geom in &#64;object_geoms for this method to return True.</p></li>
@@ -807,8 +809,8 @@ the object to check for contact.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.environments.manipulation.manipulation_env.ManipulationEnv._gripper_to_target">
-<code class="sig-name descname">_gripper_to_target</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gripper</span></em>, <em class="sig-param"><span class="n">target</span></em>, <em class="sig-param"><span class="n">target_type</span><span class="o">=</span><span class="default_value">'body'</span></em>, <em class="sig-param"><span class="n">return_distance</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.manipulation_env.ManipulationEnv._gripper_to_target" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.environments.manipulation.manipulation_env.ManipulationEnv._gripper_to_target">
+<span class="sig-name descname"><span class="pre">_gripper_to_target</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gripper</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'body'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.manipulation_env.ManipulationEnv._gripper_to_target" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the (x,y,z) Cartesian distance (target_pos - gripper_pos) from the specified &#64;gripper to the
 specified &#64;target. If &#64;return_distance is set, will return the Euclidean (scalar) distance instead.</p>
 <dl class="field-list simple">
@@ -832,8 +834,8 @@ refers to.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.environments.manipulation.manipulation_env.ManipulationEnv._visualize_gripper_to_target">
-<code class="sig-name descname">_visualize_gripper_to_target</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gripper</span></em>, <em class="sig-param"><span class="n">target</span></em>, <em class="sig-param"><span class="n">target_type</span><span class="o">=</span><span class="default_value">'body'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.manipulation_env.ManipulationEnv._visualize_gripper_to_target" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.environments.manipulation.manipulation_env.ManipulationEnv._visualize_gripper_to_target">
+<span class="sig-name descname"><span class="pre">_visualize_gripper_to_target</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gripper</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'body'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.environments.manipulation.manipulation_env.ManipulationEnv._visualize_gripper_to_target" title="Permalink to this definition">¶</a></dt>
 <dd><p>Colors the grip visualization site proportional to the Euclidean distance to the specified &#64;target.
 Colors go from red –&gt; green as the gripper gets closer.</p>
 <dl class="field-list simple">
@@ -859,37 +861,29 @@ refers to.</p></li>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="device.html" class="btn btn-neutral float-right" title="Device" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="robot.html" class="btn btn-neutral float-left" title="Robot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="device.html" class="btn btn-neutral float-right" title="Device" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="robot.html" class="btn btn-neutral float-left" title="Robot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright Stanford Univeristy and The University of Texas at Austin 2020
+        &#169; Copyright Stanford University and The University of Texas at Austin 2020.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

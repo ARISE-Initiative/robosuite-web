@@ -1,4 +1,4 @@
-robosuite.models.robots.manipulators
+robosuite.models.robots.manipulators package
 ============================================
 
 Submodules
