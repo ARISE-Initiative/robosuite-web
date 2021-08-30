@@ -1,4 +1,4 @@
-robosuite.models.tasks
+robosuite.models.tasks package
 ==============================
 
 Submodules

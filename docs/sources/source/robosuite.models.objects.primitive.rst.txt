@@ -1,4 +1,4 @@
-robosuite.models.objects.primitive
+robosuite.models.objects.primitive package
 ==========================================
 
 Submodules

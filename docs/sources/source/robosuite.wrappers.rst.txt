@@ -1,4 +1,4 @@
-robosuite.wrappers
+robosuite.wrappers package
 ==========================
 
 Submodules

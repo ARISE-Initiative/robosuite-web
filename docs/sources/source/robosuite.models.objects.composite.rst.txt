@@ -1,4 +1,4 @@
-robosuite.models.objects.composite
+robosuite.models.objects.composite package
 ==========================================
 
 Submodules

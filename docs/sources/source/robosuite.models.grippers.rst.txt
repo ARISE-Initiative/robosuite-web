@@ -1,4 +1,4 @@
-robosuite.models.grippers
+robosuite.models.grippers package
 =================================
 
 Submodules

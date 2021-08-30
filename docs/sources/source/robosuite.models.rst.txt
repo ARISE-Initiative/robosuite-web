@@ -1,4 +1,4 @@
-robosuite.models
+robosuite.models package
 ========================
 
 Subpackages

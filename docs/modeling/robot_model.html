@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Robot Model &mdash; robosuite 1.2.0 documentation</title>
+  <title>Robot Model &mdash; robosuite 1.2.1 documentation</title>
   
 
   
@@ -17,7 +17,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -27,13 +30,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
         <script src="../static/jquery.js"></script>
         <script src="../static/underscore.js"></script>
         <script src="../static/doctools.js"></script>
-        <script src="../static/language_data.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../static/js/theme.js"></script>
 
@@ -55,7 +56,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> robosuite
+            <a href="../index.html" class="icon icon-home"> robosuite
           
 
           
@@ -65,7 +66,7 @@
             
             
               <div class="version">
-                1.2.0
+                1.2.1
               </div>
             
           
@@ -90,32 +91,31 @@
               
             
             
-              <p class="caption"><span class="caption-text">Introduction</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../demos.html">Demo Showcases</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Modules</span></p>
+<p class="caption" role="heading"><span class="caption-text">Modules</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/robots.html">Robots</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/controllers.html">Controllers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/objects.html">Objects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/renderers.html">Renderers</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Simulation API</span></p>
+<p class="caption" role="heading"><span class="caption-text">Simulation API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../simulation/robot.html">Robot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../simulation/environment.html">Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../simulation/device.html">Device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../simulation/controller.html">Controller</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Modeling API</span></p>
+<p class="caption" role="heading"><span class="caption-text">Modeling API</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="mujoco_model.html">Mujoco Model</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Robot Model</a><ul>
@@ -129,18 +129,18 @@
 <li class="toctree-l1"><a class="reference internal" href="arena.html">Arena</a></li>
 <li class="toctree-l1"><a class="reference internal" href="task.html">Task</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Source API</span></p>
+<p class="caption" role="heading"><span class="caption-text">Source API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../source/robosuite.html">robosuite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/robosuite.html">robosuite package</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Algorithms</span></p>
+<p class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">Projects using robosuite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgements</a></li>
@@ -184,6 +184,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -195,7 +197,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../sources/modeling/robot_model.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -240,8 +242,8 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">RobotModel</span></code> class serves as a direct intermediary class that reads in information from a corresponding robot XML
 file and also contains relevant hard-coded information from that XML. This represents an arbitrary robot optionally equipped with a mount via the <code class="docutils literal notranslate"><span class="pre">MountModel</span></code> class and is the core modeling component of the higher-level <code class="docutils literal notranslate"><span class="pre">Robot</span></code> class used in simulation.</p>
 <dl class="py class">
-<dt id="robosuite.models.robots.robot_model.RobotModel">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.robots.robot_model.</code><code class="sig-name descname">RobotModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">idn</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.models.robots.robot_model.RobotModel">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.models.robots.robot_model.</span></span><span class="sig-name descname"><span class="pre">RobotModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base class for all robot models.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -252,8 +254,8 @@ file and also contains relevant hard-coded information from that XML. This repre
 </dd>
 </dl>
 <dl class="py method">
-<dt id="robosuite.models.robots.robot_model.RobotModel.set_base_xpos">
-<code class="sig-name descname">set_base_xpos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pos</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.set_base_xpos" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.models.robots.robot_model.RobotModel.set_base_xpos">
+<span class="sig-name descname"><span class="pre">set_base_xpos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.set_base_xpos" title="Permalink to this definition">¶</a></dt>
 <dd><p>Places the robot on position &#64;pos.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -263,8 +265,8 @@ file and also contains relevant hard-coded information from that XML. This repre
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.models.robots.robot_model.RobotModel.set_base_ori">
-<code class="sig-name descname">set_base_ori</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rot</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.set_base_ori" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.models.robots.robot_model.RobotModel.set_base_ori">
+<span class="sig-name descname"><span class="pre">set_base_ori</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.set_base_ori" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rotates robot by rotation &#64;rot from its original orientation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -274,8 +276,8 @@ file and also contains relevant hard-coded information from that XML. This repre
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.models.robots.robot_model.RobotModel.set_joint_attribute">
-<code class="sig-name descname">set_joint_attribute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attrib</span></em>, <em class="sig-param"><span class="n">values</span></em>, <em class="sig-param"><span class="n">force</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.set_joint_attribute" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.models.robots.robot_model.RobotModel.set_joint_attribute">
+<span class="sig-name descname"><span class="pre">set_joint_attribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attrib</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.set_joint_attribute" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets joint attributes, e.g.: friction loss, damping, etc.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -293,8 +295,8 @@ exists for this value, it will be skipped</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="robosuite.models.robots.robot_model.RobotModel.add_mount">
-<code class="sig-name descname">add_mount</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mount</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.add_mount" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.models.robots.robot_model.RobotModel.add_mount">
+<span class="sig-name descname"><span class="pre">add_mount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mount</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.add_mount" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mounts &#64;mount to arm.</p>
 <p>Throws error if robot already has a mount or if mount type is incorrect.</p>
 <dl class="field-list simple">
@@ -307,9 +309,9 @@ exists for this value, it will be skipped</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.models.robots.robot_model.RobotModel.dof">
-<em class="property">property </em><code class="sig-name descname">dof</code><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.dof" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.robots.robot_model.RobotModel.dof">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">dof</span></span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.dof" title="Permalink to this definition">¶</a></dt>
 <dd><p>Defines the number of DOF of the robot</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -321,9 +323,9 @@ exists for this value, it will be skipped</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.models.robots.robot_model.RobotModel.default_mount">
-<em class="property">property </em><code class="sig-name descname">default_mount</code><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.default_mount" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.robots.robot_model.RobotModel.default_mount">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">default_mount</span></span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.default_mount" title="Permalink to this definition">¶</a></dt>
 <dd><p>Defines the default mount type for this robot that gets added to root body (base)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -335,9 +337,9 @@ exists for this value, it will be skipped</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.models.robots.robot_model.RobotModel.default_controller_config">
-<em class="property">property </em><code class="sig-name descname">default_controller_config</code><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.default_controller_config" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.robots.robot_model.RobotModel.default_controller_config">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">default_controller_config</span></span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.default_controller_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Defines the name of default controller config file in the controllers/config directory for this robot.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -349,9 +351,9 @@ exists for this value, it will be skipped</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.models.robots.robot_model.RobotModel.init_qpos">
-<em class="property">property </em><code class="sig-name descname">init_qpos</code><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.init_qpos" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.robots.robot_model.RobotModel.init_qpos">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">init_qpos</span></span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.init_qpos" title="Permalink to this definition">¶</a></dt>
 <dd><p>Defines the default rest qpos of this robot</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -363,9 +365,9 @@ exists for this value, it will be skipped</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.models.robots.robot_model.RobotModel.base_xpos_offset">
-<em class="property">property </em><code class="sig-name descname">base_xpos_offset</code><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.base_xpos_offset" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.robots.robot_model.RobotModel.base_xpos_offset">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">base_xpos_offset</span></span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel.base_xpos_offset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Defines the dict of various (x,y,z) tuple offsets relative to specific arenas placed at (0,0,0)
 Assumes robot is facing forwards (in the +x direction) when determining offset. Should have entries for each
 arena case; i.e.: “bins”, “empty”, and “table”)</p>
@@ -383,9 +385,9 @@ arena case; i.e.: “bins”, “empty”, and “table”)</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.models.robots.robot_model.RobotModel._horizontal_radius">
-<em class="property">property </em><code class="sig-name descname">_horizontal_radius</code><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel._horizontal_radius" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.robots.robot_model.RobotModel._horizontal_radius">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">_horizontal_radius</span></span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel._horizontal_radius" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns maximum distance from model root body to any radial point of the model.</p>
 <p>Helps us put models programmatically without them flying away due to a huge initial contact force.
 Must be defined by subclass.</p>
@@ -399,23 +401,23 @@ Must be defined by subclass.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.models.robots.robot_model.RobotModel._important_sites">
-<em class="property">property </em><code class="sig-name descname">_important_sites</code><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel._important_sites" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.robots.robot_model.RobotModel._important_sites">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">_important_sites</span></span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel._important_sites" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns:
 dict: (Default is no important sites; i.e.: empty dict)</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.models.robots.robot_model.RobotModel._important_geoms">
-<em class="property">property </em><code class="sig-name descname">_important_geoms</code><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel._important_geoms" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.robots.robot_model.RobotModel._important_geoms">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">_important_geoms</span></span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel._important_geoms" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns:
 dict: (Default is no important geoms; i.e.: empty dict)</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.models.robots.robot_model.RobotModel._important_sensors">
-<em class="property">property </em><code class="sig-name descname">_important_sensors</code><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel._important_sensors" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.robots.robot_model.RobotModel._important_sensors">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">_important_sensors</span></span><a class="headerlink" href="#robosuite.models.robots.robot_model.RobotModel._important_sensors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns:
 dict: (Default is no sensors; i.e.: empty dict)</p>
 </dd></dl>
@@ -427,8 +429,8 @@ dict: (Default is no sensors; i.e.: empty dict)</p>
 <h2>Manipulator Model<a class="headerlink" href="#manipulator-model" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">ManipulatorModel</span></code> class extends from the base <code class="docutils literal notranslate"><span class="pre">RobotModel</span></code> class, and represents an armed, mounted robot with an optional gripper attached to its end effector. In conjunction with the corresponding <code class="docutils literal notranslate"><span class="pre">GripperModel</span></code> class and <code class="docutils literal notranslate"><span class="pre">MountModel</span></code> class, this serves as the core modeling component of the higher-level <code class="docutils literal notranslate"><span class="pre">Manipulator</span></code> class used in simulation.</p>
 <dl class="py class">
-<dt id="robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.robots.manipulators.manipulator_model.</code><code class="sig-name descname">ManipulatorModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">idn</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.models.robots.manipulators.manipulator_model.</span></span><span class="sig-name descname"><span class="pre">ManipulatorModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base class for all manipulator models (robot arm(s) with gripper(s)).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -439,8 +441,8 @@ dict: (Default is no sensors; i.e.: empty dict)</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel.add_gripper">
-<code class="sig-name descname">add_gripper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gripper</span></em>, <em class="sig-param"><span class="n">arm_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel.add_gripper" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel.add_gripper">
+<span class="sig-name descname"><span class="pre">add_gripper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gripper</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arm_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel.add_gripper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mounts &#64;gripper to arm.</p>
 <p>Throws error if robot already has a gripper or gripper type is incorrect.</p>
 <dl class="field-list simple">
@@ -456,9 +458,9 @@ dict: (Default is no sensors; i.e.: empty dict)</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel.default_gripper">
-<em class="property">property </em><code class="sig-name descname">default_gripper</code><a class="headerlink" href="#robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel.default_gripper" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel.default_gripper">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">default_gripper</span></span><a class="headerlink" href="#robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel.default_gripper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Defines the default gripper type for this robot that gets added to end effector</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -470,9 +472,9 @@ dict: (Default is no sensors; i.e.: empty dict)</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel.arm_type">
-<em class="property">property </em><code class="sig-name descname">arm_type</code><a class="headerlink" href="#robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel.arm_type" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel.arm_type">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">arm_type</span></span><a class="headerlink" href="#robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel.arm_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type of robot arm. Should be either “bimanual” or “single” (or something else if it gets added in the future)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -484,9 +486,9 @@ dict: (Default is no sensors; i.e.: empty dict)</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel.base_xpos_offset">
-<em class="property">property </em><code class="sig-name descname">base_xpos_offset</code><a class="headerlink" href="#robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel.base_xpos_offset" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel.base_xpos_offset">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">base_xpos_offset</span></span><a class="headerlink" href="#robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel.base_xpos_offset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Defines the dict of various (x,y,z) tuple offsets relative to specific arenas placed at (0,0,0)
 Assumes robot is facing forwards (in the +x direction) when determining offset. Should have entries for each
 manipulator arena case; i.e.: “bins”, “empty”, and “table”)</p>
@@ -512,32 +514,16 @@ if placed in the table arena</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel._important_sites">
-<em class="property">property </em><code class="sig-name descname">_important_sites</code><a class="headerlink" href="#robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel._important_sites" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel._important_sites">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">_important_sites</span></span><a class="headerlink" href="#robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel._important_sites" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns:
-dict:</p>
-<blockquote>
-<div><dl class="field-list simple">
-<dt class="field-odd"><cite>‘ee’</cite></dt>
-<dd class="field-odd"><p>Name of end effector site</p>
-</dd>
-<dt class="field-even"><cite>‘ee_x’</cite></dt>
-<dd class="field-even"><p>Name of end effector site (x-axis)</p>
-</dd>
-<dt class="field-odd"><cite>‘ee_y’</cite></dt>
-<dd class="field-odd"><p>Name of end effector site (y-axis)</p>
-</dd>
-<dt class="field-even"><cite>‘ee_z’</cite></dt>
-<dd class="field-even"><p>Name of end effector site (z-axis)</p>
-</dd>
-</dl>
-</div></blockquote>
+dict: (Default is no important sites; i.e.: empty dict)</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel._eef_name">
-<em class="property">property </em><code class="sig-name descname">_eef_name</code><a class="headerlink" href="#robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel._eef_name" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel._eef_name">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">_eef_name</span></span><a class="headerlink" href="#robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel._eef_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>XML eef name for this robot to which grippers can be attached. Note that these should be the raw
 string names directly pulled from a robot’s corresponding XML file, NOT the adjusted name with an
 auto-generated naming prefix</p>
@@ -558,8 +544,8 @@ auto-generated naming prefix</p>
 <h2>Gripper Model<a class="headerlink" href="#gripper-model" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">GripperModel</span></code> class serves as a direct intermediary class that reads in information from a corresponding gripper XML file and also contains relevant hard-coded information from that XML. In conjunction with the <code class="docutils literal notranslate"><span class="pre">ManipulatorModel</span></code> class, this serves as the core modeling component of the higher-level <cite>Manipulator</cite> class used in simulation.</p>
 <dl class="py class">
-<dt id="robosuite.models.grippers.gripper_model.GripperModel">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.grippers.gripper_model.</code><code class="sig-name descname">GripperModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">idn</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.models.grippers.gripper_model.GripperModel">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.models.grippers.gripper_model.</span></span><span class="sig-name descname"><span class="pre">GripperModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base class for grippers</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -570,16 +556,16 @@ auto-generated naming prefix</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="robosuite.models.grippers.gripper_model.GripperModel.format_action">
-<code class="sig-name descname">format_action</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.format_action" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.models.grippers.gripper_model.GripperModel.format_action">
+<span class="sig-name descname"><span class="pre">format_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.format_action" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given (-1,1) abstract control as np-array
 returns the (-1,1) control signals
 for underlying actuators as 1-d np array</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.models.grippers.gripper_model.GripperModel.speed">
-<em class="property">property </em><code class="sig-name descname">speed</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.speed" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.grippers.gripper_model.GripperModel.speed">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">speed</span></span><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.speed" title="Permalink to this definition">¶</a></dt>
 <dd><p>How quickly the gripper opens / closes</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -591,9 +577,9 @@ for underlying actuators as 1-d np array</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.models.grippers.gripper_model.GripperModel.dof">
-<em class="property">property </em><code class="sig-name descname">dof</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.dof" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.grippers.gripper_model.GripperModel.dof">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">dof</span></span><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.dof" title="Permalink to this definition">¶</a></dt>
 <dd><p>Defines the number of DOF of the gripper</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -605,9 +591,9 @@ for underlying actuators as 1-d np array</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.models.grippers.gripper_model.GripperModel.init_qpos">
-<em class="property">property </em><code class="sig-name descname">init_qpos</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.init_qpos" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.grippers.gripper_model.GripperModel.init_qpos">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">init_qpos</span></span><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel.init_qpos" title="Permalink to this definition">¶</a></dt>
 <dd><p>Defines the default rest (open) qpos of the gripper</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -619,9 +605,9 @@ for underlying actuators as 1-d np array</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.models.grippers.gripper_model.GripperModel._important_sites">
-<em class="property">property </em><code class="sig-name descname">_important_sites</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel._important_sites" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.grippers.gripper_model.GripperModel._important_sites">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">_important_sites</span></span><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel._important_sites" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sites used to aid visualization by human. (usually “grip_site” and “grip_cylinder”)
 (and should be hidden from robots)</p>
 <dl class="field-list simple">
@@ -633,6 +619,18 @@ for underlying actuators as 1-d np array</p>
 <dt class="field-even"><cite>’grip_cylinder’</cite></dt>
 <dd class="field-even"><p>Name of grip actuation z-axis location site</p>
 </dd>
+<dt class="field-odd"><cite>’ee’</cite></dt>
+<dd class="field-odd"><p>Name of end effector site</p>
+</dd>
+<dt class="field-even"><cite>’ee_x’</cite></dt>
+<dd class="field-even"><p>Name of end effector site (x-axis)</p>
+</dd>
+<dt class="field-odd"><cite>’ee_y’</cite></dt>
+<dd class="field-odd"><p>Name of end effector site (y-axis)</p>
+</dd>
+<dt class="field-even"><cite>’ee_z’</cite></dt>
+<dd class="field-even"><p>Name of end effector site (z-axis)</p>
+</dd>
 </dl>
 </p>
 </dd>
@@ -642,9 +640,9 @@ for underlying actuators as 1-d np array</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.models.grippers.gripper_model.GripperModel._important_geoms">
-<em class="property">property </em><code class="sig-name descname">_important_geoms</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel._important_geoms" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.grippers.gripper_model.GripperModel._important_geoms">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">_important_geoms</span></span><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel._important_geoms" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geoms corresponding to important components of the gripper (by default, left_finger, right_finger,
 left_fingerpad, right_fingerpad).
 Note that these are the raw string names directly pulled from a gripper’s corresponding XML file,
@@ -661,9 +659,9 @@ organized by keyword string entries into a dict</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.models.grippers.gripper_model.GripperModel._important_sensors">
-<em class="property">property </em><code class="sig-name descname">_important_sensors</code><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel._important_sensors" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.grippers.gripper_model.GripperModel._important_sensors">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">_important_sensors</span></span><a class="headerlink" href="#robosuite.models.grippers.gripper_model.GripperModel._important_sensors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sensor names for each gripper (usually “force_ee” and “torque_ee”)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -690,8 +688,8 @@ organized by keyword string entries into a dict</p>
 <h2>Mount Model<a class="headerlink" href="#mount-model" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">MountModel</span></code> class serves as a direct intermediary class that reads in information from a corresponding mount XML file and also contains relevant hard-coded information from that XML. In conjunction with the <code class="docutils literal notranslate"><span class="pre">RobotModel</span></code> class, this serves as the core modeling component of the higher-level Robot class used in simulation.</p>
 <dl class="py class">
-<dt id="robosuite.models.mounts.mount_model.MountModel">
-<em class="property">class </em><code class="sig-prename descclassname">robosuite.models.mounts.mount_model.</code><code class="sig-name descname">MountModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">idn</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.mounts.mount_model.MountModel" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="robosuite.models.mounts.mount_model.MountModel">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.models.mounts.mount_model.</span></span><span class="sig-name descname"><span class="pre">MountModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.mounts.mount_model.MountModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base class for mounts that will be attached to robots. Note that this model’s root body will be directly
 appended to the robot’s root body, so all offsets should be taken relative to that.</p>
 <dl class="field-list simple">
@@ -702,9 +700,9 @@ appended to the robot’s root body, so all offsets should be taken relative to 
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="robosuite.models.mounts.mount_model.MountModel.top_offset">
-<em class="property">property </em><code class="sig-name descname">top_offset</code><a class="headerlink" href="#robosuite.models.mounts.mount_model.MountModel.top_offset" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.mounts.mount_model.MountModel.top_offset">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">top_offset</span></span><a class="headerlink" href="#robosuite.models.mounts.mount_model.MountModel.top_offset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns vector from model root body to model top.
 This should correspond to the distance from the root body to the actual mounting surface
 location of this mount.</p>
@@ -718,9 +716,9 @@ location of this mount.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.models.mounts.mount_model.MountModel.horizontal_radius">
-<em class="property">property </em><code class="sig-name descname">horizontal_radius</code><a class="headerlink" href="#robosuite.models.mounts.mount_model.MountModel.horizontal_radius" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.mounts.mount_model.MountModel.horizontal_radius">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">horizontal_radius</span></span><a class="headerlink" href="#robosuite.models.mounts.mount_model.MountModel.horizontal_radius" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns maximum distance from model root body to any radial point of the model.</p>
 <p>Helps us put models programmatically without them flying away due to a huge initial contact force.
 Must be defined by subclass.</p>
@@ -734,23 +732,23 @@ Must be defined by subclass.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.models.mounts.mount_model.MountModel._important_sites">
-<em class="property">property </em><code class="sig-name descname">_important_sites</code><a class="headerlink" href="#robosuite.models.mounts.mount_model.MountModel._important_sites" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.mounts.mount_model.MountModel._important_sites">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">_important_sites</span></span><a class="headerlink" href="#robosuite.models.mounts.mount_model.MountModel._important_sites" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns:
 dict: (Default is no important sites; i.e.: empty dict)</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.models.mounts.mount_model.MountModel._important_geoms">
-<em class="property">property </em><code class="sig-name descname">_important_geoms</code><a class="headerlink" href="#robosuite.models.mounts.mount_model.MountModel._important_geoms" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.mounts.mount_model.MountModel._important_geoms">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">_important_geoms</span></span><a class="headerlink" href="#robosuite.models.mounts.mount_model.MountModel._important_geoms" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns:
 dict: (Default is no important geoms; i.e.: empty dict)</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="robosuite.models.mounts.mount_model.MountModel._important_sensors">
-<em class="property">property </em><code class="sig-name descname">_important_sensors</code><a class="headerlink" href="#robosuite.models.mounts.mount_model.MountModel._important_sensors" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.mounts.mount_model.MountModel._important_sensors">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">_important_sensors</span></span><a class="headerlink" href="#robosuite.models.mounts.mount_model.MountModel._important_sensors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns:
 dict: (Default is no sensors; i.e.: empty dict)</p>
 </dd></dl>
@@ -765,37 +763,29 @@ dict: (Default is no sensors; i.e.: empty dict)</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="object_model.html" class="btn btn-neutral float-right" title="Object Model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="mujoco_model.html" class="btn btn-neutral float-left" title="Mujoco Model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="object_model.html" class="btn btn-neutral float-right" title="Object Model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="mujoco_model.html" class="btn btn-neutral float-left" title="Mujoco Model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright Stanford Univeristy and The University of Texas at Austin 2020
+        &#169; Copyright Stanford University and The University of Texas at Austin 2020.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

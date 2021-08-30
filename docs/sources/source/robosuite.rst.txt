@@ -1,4 +1,4 @@
-robosuite
+robosuite package
 =================
 
 Subpackages
