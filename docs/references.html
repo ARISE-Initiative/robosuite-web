@@ -139,7 +139,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Projects using robosuite</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#reinforcement-learning">Reinforcement Learning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#imitation-learning-and-batch-offline-reinforcement-learning">Imitation Learning and Batch (Offline) Reinforcement Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#learning-from-demonstration">Learning from Demonstration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#benchmarks">Benchmarks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sim2real">Sim2Real</a></li>
 </ul>
@@ -254,10 +254,17 @@
 <li><p><a class="reference external" href="https://arxiv.org/abs/2010.14497">Conservative Safety Critics for Exploration</a>. Homanga Bharadhwaj, Aviral Kumar, Nicholas Rhinehart, Sergey Levine, Florian Shkurti, Animesh Garg</p></li>
 <li><p><a class="reference external" href="https://arxiv.org/abs/2008.13223">Deep Reinforcement Learning for Contact-Rich Skills Using Compliant Movement Primitives</a>. Oren Spector, Miriam Zacksenhouse</p></li>
 <li><p><a class="reference external" href="https://arxiv.org/abs/2009.11997">Continual Model-Based Reinforcement Learning with Hypernetworks</a>. Yizhou Huang, Kevin Xie, Homanga Bharadhwaj, Florian Shkurti</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2105.04607">Efficient Self-Supervised Data Collection for Offline Robot Learning</a>. Shadi Endrawis, Gal Leibovich, Guy Jacob, Gal Novik, Aviv Tamar</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2103.15793">LASER: Learning a Latent Action Space for Efficient Reinforcement Learning</a>. Arthur Allshire, Roberto Martín-Martín, Charles Lin, Shawn Manuel, Silvio Savarese, Animesh Garg</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2106.09678">SECANT: Self-Expert Cloning for Zero-Shot Generalization of Visual Policies</a>. Linxi Fan, Guanzhi Wang, De-An Huang, Zhiding Yu, Li Fei-Fei, Yuke Zhu, Anima Anandkumar</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2105.05484">Learning a Skill-sequence-dependent Policy for Long-horizon Manipulation Tasks</a>. Zhihao Li, Zhenglong Sun, Jionglong Su, Jiaming Zhang</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2106.00671">What Can I Do Here? Learning New Skills by Imagining Visual Affordances</a>. Alexander Khazatsky, Ashvin Nair, Daniel Jing, Sergey Levine</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2107.02339">Multi-Modal Mutual Information (MuMMI) Training for Robust Self-Supervised Deep Reinforcement Learning</a>. Kaiqi Chen, Yong Lee, Harold Soh</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2103.00375">Generalization Through Hand-Eye Coordination: An Action Space for Learning Spatially-Invariant Visuomotor Control</a>. Chen Wang, Rui Wang, Ajay Mandlekar, Li Fei-Fei, Silvio Savarese, Danfei Xu</p></li>
 </ul>
 </div>
-<div class="section" id="imitation-learning-and-batch-offline-reinforcement-learning">
-<h2>Imitation Learning and Batch (Offline) Reinforcement Learning<a class="headerlink" href="#imitation-learning-and-batch-offline-reinforcement-learning" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="learning-from-demonstration">
+<h2>Learning from Demonstration<a class="headerlink" href="#learning-from-demonstration" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://arxiv.org/abs/1811.02790">RoboTurk: A Crowdsourcing Platform for Robotic Skill Learning through Imitation</a>. Ajay Mandlekar, Yuke Zhu, Animesh Garg, Jonathan Booher, Max Spero, Albert Tung, Julian Gao, John Emmons, Anchit Gupta, Emre Orbay, Silvio Savarese, Li Fei-Fei</p></li>
 <li><p><a class="reference external" href="https://arxiv.org/abs/1911.05321">IRIS: Implicit Reinforcement without Interaction at Scale for Learning Control from Offline Robot Manipulation Data</a>. Ajay Mandlekar, Fabio Ramos, Byron Boots, Silvio Savarese, Li Fei-Fei, Animesh Garg, Dieter Fox</p></li>
@@ -266,14 +273,16 @@
 <li><p><a class="reference external" href="https://arxiv.org/abs/2008.07682">Residual Learning from Demonstration</a>. Todor Davchev, Kevin Sebastian Luck, Michael Burke, Franziska Meier, Stefan Schaal, Subramanian Ramamoorthy</p></li>
 <li><p><a class="reference external" href="https://proceedings.icml.cc/static/paper_files/icml/2020/577-Paper.pdf">Variational Imitation Learning with Diverse-quality Demonstrations</a>. Voot Tangkaratt, Bo Han, Mohammad Emtiyaz Khan, Masashi Sugiyama</p></li>
 <li><p><a class="reference external" href="https://corlconf.github.io/paper_463/">Transformers for One-Shot Visual Imitation</a>. Sudeep Dasari, Abhinav Gupta</p></li>
-<li><p><a class="reference external" href="https://arxiv.org/abs/2012.06738">Learning Multi-Arm Manipulation Through Collaborative Teleoperation</a> Albert Tung, Josiah Wong, Ajay Mandlekar, Roberto Martín-Martín, Yuke Zhu, Li Fei-Fei, Silvio Savarese</p></li>
-<li><p><a class="reference external" href="https://arxiv.org/abs/2012.06733">Human-in-the-Loop Imitation Learning using Remote Teleoperation</a> Ajay Mandlekar, Danfei Xu, Roberto Martín-Martín, Yuke Zhu, Li Fei-Fei, Silvio Savarese</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2012.06738">Learning Multi-Arm Manipulation Through Collaborative Teleoperation</a>. Albert Tung, Josiah Wong, Ajay Mandlekar, Roberto Martín-Martín, Yuke Zhu, Li Fei-Fei, Silvio Savarese</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2012.06733">Human-in-the-Loop Imitation Learning using Remote Teleoperation</a>. Ajay Mandlekar, Danfei Xu, Roberto Martín-Martín, Yuke Zhu, Li Fei-Fei, Silvio Savarese</p></li>
+<li><p><a class="reference external" href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2021/EECS-2021-96.pdf">Accelerate Then Imitate: Learning from Task and Motion Planing</a>. Michael McDonald, Dylan Hadfield-Menell</p></li>
 </ul>
 </div>
 <div class="section" id="benchmarks">
 <h2>Benchmarks<a class="headerlink" href="#benchmarks" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://arxiv.org/abs/1911.07246">IKEA Furniture Assembly Environment for Long-Horizon Complex Manipulation Tasks</a>. Youngwoon Lee, Edward S. Hu, Zhengyu Yang, Alex Yin, Joseph J. Lim</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2108.03298">What Matters in Learning from Offline Human Demonstrations for Robot Manipulation</a>. Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang, Rohun Kulkarni, Li Fei-Fei, Silvio Savarese, Yuke Zhu, Roberto Martín-Martín</p></li>
 </ul>
 </div>
 <div class="section" id="sim2real">
