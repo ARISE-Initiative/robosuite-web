@@ -1,77 +1,40 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Objects &mdash; robosuite 1.2.1 documentation</title>
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Objects &mdash; robosuite 1.3.0 documentation</title>
+
   <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
   <!--[if lt IE 9]>
     <script src="../static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
         <script src="../static/jquery.js"></script>
         <script src="../static/underscore.js"></script>
         <script src="../static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    
-    <script type="text/javascript" src="../static/js/theme.js"></script>
-
-    
+    <script src="../static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Environments" href="environments.html" />
     <link rel="prev" title="Controllers" href="controllers.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> robosuite
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
-                1.2.1
+                1.3.0
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -79,18 +42,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
@@ -148,71 +100,30 @@
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgements</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">robosuite</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Objects</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../sources/modules/objects.md.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -237,18 +148,18 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="objects">
-<h1>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="how-to-create-a-custom-object">
-<h2>How to create a custom object<a class="headerlink" href="#how-to-create-a-custom-object" title="Permalink to this headline">¶</a></h2>
+<section id="objects">
+<h1>Objects<a class="headerlink" href="#objects" title="Permalink to this headline"></a></h1>
+<section id="how-to-create-a-custom-object">
+<h2>How to create a custom object<a class="headerlink" href="#how-to-create-a-custom-object" title="Permalink to this headline"></a></h2>
 <p>Objects, such as boxes and cans, are essential to building manipulation environments. We designed the <a class="reference external" href="../source/robosuite.models.objects.html#robosuite.models.objects.objects.MujocoObject">MujocoObject</a> interfaces to standardize and simplify the procedure for importing 3D models into the scene or procedurally generate new objects. MuJoCo defines models via the <a class="reference external" href="http://www.mujoco.org/book/modeling.html">MJCF</a> XML format. These MJCF files can either be stored as XML files on disk and loaded into simulator, or be created on-the-fly by code prior to simulation. Based on these two mechanisms of how MJCF models are created, we offer two main ways of creating your own object:</p>
 <ul class="simple">
 <li><p>Define an object in an MJCF XML file;</p></li>
 <li><p>Use procedural generation APIs to dynamically create an MJCF model.</p></li>
 </ul>
-</div>
-<div class="section" id="the-mujocoobject-class">
-<h2>The MujocoObject class<a class="headerlink" href="#the-mujocoobject-class" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-mujocoobject-class">
+<h2>The MujocoObject class<a class="headerlink" href="#the-mujocoobject-class" title="Permalink to this headline"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MujocoObject</span><span class="p">(</span><span class="n">MujocoModel</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
         
@@ -295,9 +206,9 @@
 <span class="n">obj_xml</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">get_obj</span><span class="p">()</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;pos&quot;</span><span class="p">,</span> <span class="n">array_to_string</span><span class="p">(</span><span class="n">pos</span><span class="p">))</span>    <span class="c1"># Set the top-level body of this object</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="creating-a-xmlobject">
-<h2>Creating a XMLObject<a class="headerlink" href="#creating-a-xmlobject" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="creating-a-xmlobject">
+<h2>Creating a XMLObject<a class="headerlink" href="#creating-a-xmlobject" title="Permalink to this headline"></a></h2>
 <p>One can use MuJoCo MJCF XML to generate an object, either as a composition of primitive <a class="reference external" href="http://mujoco.org/book/modeling.html#geom">geoms</a> or imported from STL files of triangulated <a class="reference external" href="http://www.mujoco.org/book/modeling.html#mesh">meshes</a>. An example is <code class="docutils literal notranslate"><span class="pre">robosuite.models.objects.xml_objects.BreadObject</span></code>. Its <a class="reference external" href="https://github.com/ARISE-Initiative/robosuite/blob/master/robosuite/models/objects/xml_objects.py#L49">python definition</a> is short. Note that all <code class="docutils literal notranslate"><span class="pre">MujocoXMLObject</span></code> classes require both a <code class="docutils literal notranslate"><span class="pre">fname</span></code> and <code class="docutils literal notranslate"><span class="pre">name</span></code> argument, the former which specifies the filepath to the raw XML file and the latter which specifies the in-sim name of the object instantiated. The optional <code class="docutils literal notranslate"><span class="pre">joints</span></code> argument can also specify a custom set of joints to apply to the given object (defaults to “default”, which is a single free joint). Additionally, the type of object created can be specified via the <code class="docutils literal notranslate"><span class="pre">obj_type</span></code> argument, and must be one of (<code class="docutils literal notranslate"><span class="pre">'collision'</span></code>, <code class="docutils literal notranslate"><span class="pre">'visual'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'all'</span></code>). Lastly, setting <code class="docutils literal notranslate"><span class="pre">duplicate_collision_geoms</span></code> makes sure that all collision geoms automatically have an associated visual geom as well. Generally, the normal use case is to define a single class corresponding to a specific XML file, as shown below:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BreadObject</span><span class="p">(</span><span class="n">MujocoXMLObject</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
@@ -333,16 +244,16 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">top_site</span></code> should be the top of the object, i.e. contact point if something is placed on it.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">horizontal_radius_site</span></code> can be any point on a circle in the x-y plane that does not intersect the object. This allows us to place multiple objects without having them collide into one another.</p></li>
 </ul>
-</div>
-<div class="section" id="creating-a-procedurally-generated-object">
-<h2>Creating a procedurally generated object<a class="headerlink" href="#creating-a-procedurally-generated-object" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="creating-a-procedurally-generated-object">
+<h2>Creating a procedurally generated object<a class="headerlink" href="#creating-a-procedurally-generated-object" title="Permalink to this headline"></a></h2>
 <p>Procedurally generated objects have been used in <a class="reference external" href="https://arxiv.org/abs/1802.09564">several</a> <a class="reference external" href="https://arxiv.org/abs/1806.09266">recent</a> <a class="reference external" href="https://arxiv.org/abs/1709.07857">works</a> to train control policies with improved robustness and generalization. Here you can programmatically generate an MJCF XML of an object from scratch using <code class="docutils literal notranslate"><span class="pre">xml.etree.ElementTree</span></code>, and compose an object of multiple geom primitives. The base class for this type of object is <code class="docutils literal notranslate"><span class="pre">MujocoGeneratedObject</span></code>.
 <strong>robosuite</strong> natively supports all Mujoco primitive objects with procedurally-generated <code class="docutils literal notranslate"><span class="pre">PrimitiveObject</span></code> classes (<code class="docutils literal notranslate"><span class="pre">BoxObject</span></code>, <code class="docutils literal notranslate"><span class="pre">BallObject</span></code>, <code class="docutils literal notranslate"><span class="pre">CapsuleObject</span></code>, and <code class="docutils literal notranslate"><span class="pre">CylinderObject</span></code>).</p>
 <p>Additionally, <strong>robosuite</strong> supports custom, complex objects that can be defined by collections of primitive geoms (the <a class="reference external" href="../source/robosuite.models.objects.html#robosuite.models.objects.generated_objects.CompositeObject">CompositeObject</a> class) or even other objects (the <a class="reference external" href="../source/robosuite.models.objects.html#robosuite.models.objects.generated_objects.CompositeBodyObject">CompositeBodyObject</a> class). The APIs for each of these classes have been standardized for ease of usage, and interested readers should consult the docstrings for each of these classes, as well as provided examples of each class (<a class="reference external" href="https://github.com/ARISE-Initiative/robosuite/blob/master/robosuite/models/objects/composite/hammer.py#L10">HammerObject</a>, <a class="reference external" href="https://github.com/ARISE-Initiative/robosuite/blob/master/robosuite/models/objects/composite_body/hinged_box.py#L8">HingedBoxObject</a>).</p>
 <p>It should also be noted that all of the above classes extending from the <code class="docutils literal notranslate"><span class="pre">MujocoGenereatedObject</span></code> class automatically supports custom texture definitions on a per-geom level, where specific texture images can be mapped to individual geoms. The above <code class="docutils literal notranslate"><span class="pre">HammerObject</span></code> showcases an example applying custom textures to different geoms of the resulting object.</p>
-</div>
-<div class="section" id="placing-objects">
-<h2>Placing Objects<a class="headerlink" href="#placing-objects" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="placing-objects">
+<h2>Placing Objects<a class="headerlink" href="#placing-objects" title="Permalink to this headline"></a></h2>
 <p>Object locations are initialized on every environment reset using instances of the <a class="reference external" href="../source/robosuite.utils.html#robosuite.utils.placement_samplers.ObjectPositionSampler">ObjectPositionSampler</a> class. Object samplers use the <code class="docutils literal notranslate"><span class="pre">bottom_site</span></code> and <code class="docutils literal notranslate"><span class="pre">top_site</span></code> sites of each object in order to place objects on top of other objects, and the <code class="docutils literal notranslate"><span class="pre">horizontal_radius_site</span></code> site in order to ensure that objects do not collide with one another. The most basic sampler is the <a class="reference external" href="../source/robosuite.utils.html#robosuite.utils.placement_samplers.UniformRandomSampler">UniformRandomSampler</a> class - this just uses rejection sampling to place objects randomly. As an example, consider the following code snippet from the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method of the <code class="docutils literal notranslate"><span class="pre">Lift</span></code> environment class.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">placement_initializer</span> <span class="o">=</span> <span class="n">UniformRandomSampler</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;ObjectSampler&quot;</span><span class="p">,</span>
@@ -392,55 +303,38 @@
 </pre></div>
 </div>
 <p>The code snippet above results in two <code class="docutils literal notranslate"><span class="pre">UniformRandomSampler</span></code> instances being used to place the nuts onto the table surface - one for each type of nut. Notice this also allows the nuts to be initialized in separate regions of the table, and with arbitrary sampling settings. The <code class="docutils literal notranslate"><span class="pre">SequentialCompositeSampler</span></code> makes it easy to compose multiple placement initializers together and assign objects to each sub-sampler in a modular way.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="environments.html" class="btn btn-neutral float-right" title="Environments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="controllers.html" class="btn btn-neutral float-left" title="Controllers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="environments.html" class="btn btn-neutral float-right" title="Environments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright Stanford University and The University of Texas at Austin 2020.
-
-    </p>
+    <p>&#169; Copyright Stanford University and The University of Texas at Austin 2021.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

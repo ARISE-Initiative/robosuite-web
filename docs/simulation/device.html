@@ -1,77 +1,40 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Device &mdash; robosuite 1.2.1 documentation</title>
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Device &mdash; robosuite 1.3.0 documentation</title>
+
   <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
   <!--[if lt IE 9]>
     <script src="../static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
         <script src="../static/jquery.js"></script>
         <script src="../static/underscore.js"></script>
         <script src="../static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    
-    <script type="text/javascript" src="../static/js/theme.js"></script>
-
-    
+    <script src="../static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Controller" href="controller.html" />
     <link rel="prev" title="Environment" href="environment.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> robosuite
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
-                1.2.1
+                1.3.0
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -79,18 +42,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
@@ -146,71 +98,30 @@
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgements</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">robosuite</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Device</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../sources/simulation/device.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -235,37 +146,37 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="device">
-<h1>Device<a class="headerlink" href="#device" title="Permalink to this headline">¶</a></h1>
+<section id="device">
+<h1>Device<a class="headerlink" href="#device" title="Permalink to this headline"></a></h1>
 <p>Devices allow for direct real-time interfacing with the MuJoCo simulation. The current support devices are <code class="docutils literal notranslate"><span class="pre">Keyboard</span></code> and <code class="docutils literal notranslate"><span class="pre">SpaceMouse</span></code>.</p>
-<div class="section" id="base-device">
-<h2>Base Device<a class="headerlink" href="#base-device" title="Permalink to this headline">¶</a></h2>
+<section id="base-device">
+<h2>Base Device<a class="headerlink" href="#base-device" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="robosuite.devices.device.Device">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.devices.device.</span></span><span class="sig-name descname"><span class="pre">Device</span></span><a class="headerlink" href="#robosuite.devices.device.Device" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.devices.device.</span></span><span class="sig-name descname"><span class="pre">Device</span></span><a class="headerlink" href="#robosuite.devices.device.Device" title="Permalink to this definition"></a></dt>
 <dd><p>Base class for all robot controllers.
 Defines basic interface for all controllers to adhere to.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.devices.device.Device.start_control">
-<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">start_control</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.device.Device.start_control" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">start_control</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.device.Device.start_control" title="Permalink to this definition"></a></dt>
 <dd><p>Method that should be called externally before controller can
 start receiving commands.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.devices.device.Device.get_controller_state">
-<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">get_controller_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.device.Device.get_controller_state" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">get_controller_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.device.Device.get_controller_state" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the current state of the device, a dictionary of pos, orn, grasp, and reset.</p>
 </dd></dl>
 
 </dd></dl>
 
-</div>
-<div class="section" id="keyboard-device">
-<h2>Keyboard Device<a class="headerlink" href="#keyboard-device" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="keyboard-device">
+<h2>Keyboard Device<a class="headerlink" href="#keyboard-device" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="robosuite.devices.keyboard.Keyboard">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.devices.keyboard.</span></span><span class="sig-name descname"><span class="pre">Keyboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos_sensitivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_sensitivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.keyboard.Keyboard" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.devices.keyboard.</span></span><span class="sig-name descname"><span class="pre">Keyboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos_sensitivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_sensitivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.keyboard.Keyboard" title="Permalink to this definition"></a></dt>
 <dd><p>A minimalistic driver class for a Keyboard.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -277,7 +188,7 @@ start receiving commands.</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.devices.keyboard.Keyboard.get_controller_state">
-<span class="sig-name descname"><span class="pre">get_controller_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.keyboard.Keyboard.get_controller_state" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_controller_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.keyboard.Keyboard.get_controller_state" title="Permalink to this definition"></a></dt>
 <dd><p>Grabs the current state of the keyboard.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -291,7 +202,7 @@ start receiving commands.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.devices.keyboard.Keyboard.on_press">
-<span class="sig-name descname"><span class="pre">on_press</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scancode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mods</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.keyboard.Keyboard.on_press" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">on_press</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scancode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mods</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.keyboard.Keyboard.on_press" title="Permalink to this definition"></a></dt>
 <dd><p>Key handler for key presses.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -308,7 +219,7 @@ start receiving commands.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.devices.keyboard.Keyboard.on_release">
-<span class="sig-name descname"><span class="pre">on_release</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scancode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mods</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.keyboard.Keyboard.on_release" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">on_release</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scancode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mods</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.keyboard.Keyboard.on_release" title="Permalink to this definition"></a></dt>
 <dd><p>Key handler for key releases.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -325,18 +236,18 @@ start receiving commands.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.devices.keyboard.Keyboard._display_controls">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">_display_controls</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.keyboard.Keyboard._display_controls" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">_display_controls</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.keyboard.Keyboard._display_controls" title="Permalink to this definition"></a></dt>
 <dd><p>Method to pretty print controls.</p>
 </dd></dl>
 
 </dd></dl>
 
-</div>
-<div class="section" id="spacemouse-device">
-<h2>SpaceMouse Device<a class="headerlink" href="#spacemouse-device" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="spacemouse-device">
+<h2>SpaceMouse Device<a class="headerlink" href="#spacemouse-device" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="robosuite.devices.spacemouse.SpaceMouse">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.devices.spacemouse.</span></span><span class="sig-name descname"><span class="pre">SpaceMouse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vendor_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9583</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50735</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_sensitivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_sensitivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.devices.spacemouse.</span></span><span class="sig-name descname"><span class="pre">SpaceMouse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vendor_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9583</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50735</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_sensitivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_sensitivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse" title="Permalink to this definition"></a></dt>
 <dd><p>A minimalistic driver class for SpaceMouse with HID library.</p>
 <p>Note: Use hid.enumerate() to view all USB human interface devices (HID).
 Make sure SpaceMouse is detected before running the script.
@@ -353,7 +264,7 @@ You can look up its vendor/product id from this method.</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.devices.spacemouse.SpaceMouse.get_controller_state">
-<span class="sig-name descname"><span class="pre">get_controller_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse.get_controller_state" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_controller_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse.get_controller_state" title="Permalink to this definition"></a></dt>
 <dd><p>Grabs the current state of the 3D mouse.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -367,13 +278,13 @@ You can look up its vendor/product id from this method.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.devices.spacemouse.SpaceMouse.run">
-<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse.run" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse.run" title="Permalink to this definition"></a></dt>
 <dd><p>Listener method that keeps pulling new messages.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.devices.spacemouse.SpaceMouse.control">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">control</span></span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse.control" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">control</span></span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse.control" title="Permalink to this definition"></a></dt>
 <dd><p>Grabs current pose of Spacemouse</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -387,7 +298,7 @@ You can look up its vendor/product id from this method.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.devices.spacemouse.SpaceMouse.control_gripper">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">control_gripper</span></span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse.control_gripper" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">control_gripper</span></span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse.control_gripper" title="Permalink to this definition"></a></dt>
 <dd><p>Maps internal states into gripper commands.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -401,61 +312,44 @@ You can look up its vendor/product id from this method.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.devices.spacemouse.SpaceMouse._display_controls">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">_display_controls</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse._display_controls" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">_display_controls</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse._display_controls" title="Permalink to this definition"></a></dt>
 <dd><p>Method to pretty print controls.</p>
 </dd></dl>
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="controller.html" class="btn btn-neutral float-right" title="Controller" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="environment.html" class="btn btn-neutral float-left" title="Environment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="controller.html" class="btn btn-neutral float-right" title="Controller" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright Stanford University and The University of Texas at Austin 2020.
-
-    </p>
+    <p>&#169; Copyright Stanford University and The University of Texas at Austin 2021.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

@@ -1,77 +1,40 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Sensors &mdash; robosuite 1.2.1 documentation</title>
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sensors &mdash; robosuite 1.3.0 documentation</title>
+
   <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
   <!--[if lt IE 9]>
     <script src="../static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
         <script src="../static/jquery.js"></script>
         <script src="../static/underscore.js"></script>
         <script src="../static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    
-    <script type="text/javascript" src="../static/js/theme.js"></script>
-
-    
+    <script src="../static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="I/O Devices" href="devices.html" />
     <link rel="prev" title="Environments" href="environments.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> robosuite
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
-                1.2.1
+                1.3.0
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -79,18 +42,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
@@ -145,71 +97,30 @@
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgements</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">robosuite</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Sensors</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../sources/modules/sensors.md.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -234,79 +145,64 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="sensors">
-<h1>Sensors<a class="headerlink" href="#sensors" title="Permalink to this headline">¶</a></h1>
+<section id="sensors">
+<h1>Sensors<a class="headerlink" href="#sensors" title="Permalink to this headline"></a></h1>
 <p>Sensors are an important aspect of <strong>robosuite</strong>, and encompass an agent’s feedback from interaction with the environment. Mujoco provides low-level APIs to directly interface with raw simulation data, though we provide more a more realistic interface via the <code class="docutils literal notranslate"><span class="pre">Observable</span></code> class API to model obtained sensory information.</p>
-<div class="section" id="mujoco-native-sensors">
-<h2>Mujoco-Native Sensors<a class="headerlink" href="#mujoco-native-sensors" title="Permalink to this headline">¶</a></h2>
+<section id="mujoco-native-sensors">
+<h2>Mujoco-Native Sensors<a class="headerlink" href="#mujoco-native-sensors" title="Permalink to this headline"></a></h2>
 <p>The simulator generates virtual physical signals as response to a robot’s interactions. Virtual signals include images, force-torque measurements (from a force-torque sensor like the one included by default in the wrist of all <a class="reference external" href="../modeling/robot_model.html#gripper-model">Gripper models</a>), pressure signals (e.g. from a sensor on the robot’s finger or on the environment), etc. Raw sensor information (except cameras and joint sensors) can be accessed via the function <code class="docutils literal notranslate"><span class="pre">get_sensor_measurement</span></code> provided the name of the sensor.</p>
 <p>Joint sensors provide information about the state of each robot’s joint including position and velocity. In MuJoCo these are not measured by sensors, but resolved and set by the simulator as the result of the actuation forces. Therefore, they are not accessed through the common <code class="docutils literal notranslate"><span class="pre">get_sensor_measurement</span></code> function but as properties of the <a class="reference internal" href="../simulation/robot.html"><span class="doc">Robot simulation API</span></a>, i.e., <code class="docutils literal notranslate"><span class="pre">_joint_positions</span></code> and <code class="docutils literal notranslate"><span class="pre">_joint_velocities</span></code>.</p>
 <p>Cameras bundle a name to a set of properties to render images of the environment such as the pose and pointing direction, field of view, and resolution. Inheriting from MuJoCo, cameras are defined in the <a class="reference internal" href="../modeling/robot_model.html"><span class="doc">robot</span></a> and <a class="reference internal" href="../modeling/arena.html"><span class="doc">arena models</span></a> and can be attached to any body. Images, as they would be generated from the cameras, are not accessed through <code class="docutils literal notranslate"><span class="pre">get_sensor_measurement</span></code> but via the renderer (see below). In a common user pipeline, images are not queried directly; we specify one or several cameras we want to use images from when we create the environment, and the images are generated and appended automatically to the observation dictionary.</p>
-</div>
-<div class="section" id="observables">
-<h2>Observables<a class="headerlink" href="#observables" title="Permalink to this headline">¶</a></h2>
-<p><strong>robosuite</strong> provides a realistic, customizable interface via the <a class="reference external" href="../source/robosuite.utils.html#robosuite.utils.observables.Observable">Observable</a> class API. Observables model realistic sensor sampling, in which ground truth data is sampled (<code class="docutils literal notranslate"><span class="pre">sensor</span></code>), passed through a corrupting function (<code class="docutils literal notranslate"><span class="pre">corrupter</span></code>), and then finally passed through a filtering function (<code class="docutils literal notranslate"><span class="pre">filter</span></code>). Moreover, each observable has its own <code class="docutils literal notranslate"><span class="pre">sampling_rate</span></code> and <code class="docutils literal notranslate"><span class="pre">delayer</span></code> function which simulates sensor delay. While default values are used to instantiate each observable during environment creation, each of these components can be modified by the user at runtime using <code class="docutils literal notranslate"><span class="pre">env.modify_observable(...)</span></code> . Moreover, each observable is assigned a modality, and are grouped together in the returned observation dictionary during the <code class="docutils literal notranslate"><span class="pre">env.step()</span></code> call. For example, if an environment consists of camera observations and a single robot’s proprioceptive observations, the observation dict structure might look as follows:</p>
+</section>
+<section id="observables">
+<h2>Observables<a class="headerlink" href="#observables" title="Permalink to this headline"></a></h2>
+<p><strong>robosuite</strong> provides a realistic, customizable interface via the <a class="reference external" href="../source/robosuite.utils.html#robosuite.utils.observables.Observable">Observable</a> class API. Observables model realistic sensor sampling, in which ground truth data is sampled (<code class="docutils literal notranslate"><span class="pre">sensor</span></code>), passed through a corrupting function (<code class="docutils literal notranslate"><span class="pre">corrupter</span></code>), and then finally passed through a filtering function (<code class="docutils literal notranslate"><span class="pre">filter</span></code>). Moreover, each observable has its own <code class="docutils literal notranslate"><span class="pre">sampling_rate</span></code> and <code class="docutils literal notranslate"><span class="pre">delayer</span></code> function which simulates sensor delay. While default values are used to instantiate each observable during environment creation, each of these components can be modified by the user at runtime using <code class="docutils literal notranslate"><span class="pre">env.modify_observable(...)</span></code> . Moreover, each observable is assigned a modality, and are grouped together in the returned observation dictionary during the <code class="docutils literal notranslate"><span class="pre">env.step()</span></code> call. For example, if an environment consists of camera observations (RGB, depth, and instance segmentation) and a single robot’s proprioceptive observations, the observation dict structure might look as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;frontview_image&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">),</span>    <span class="c1"># this has modality &quot;image&quot;</span>
-    <span class="s2">&quot;frontview_depth&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">),</span>    <span class="c1"># this has modality &quot;image&quot;</span>
-    <span class="s2">&quot;robot0_joint_pos&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">),</span>   <span class="c1"># this has modality &quot;robot0_proprio&quot;</span>
-    <span class="s2">&quot;robot0_gripper_pos&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">),</span> <span class="c1"># this has modality &quot;robot0_proprio&quot;</span>
-    <span class="s2">&quot;image-state&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">),</span>           <span class="c1"># this is a concatenation of all image observations</span>
-    <span class="s2">&quot;robot0_proprio-state&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">),</span>  <span class="c1"># this is a concatenation of all robot0_proprio observations</span>
+    <span class="s2">&quot;frontview_image&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">),</span>                   <span class="c1"># this has modality &quot;image&quot;</span>
+    <span class="s2">&quot;frontview_depth&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">),</span>                   <span class="c1"># this has modality &quot;image&quot;</span>
+    <span class="s2">&quot;frontview_segmentation_instance&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">),</span>   <span class="c1"># this has modality &quot;image&quot;</span>
+    <span class="s2">&quot;robot0_joint_pos&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">),</span>                  <span class="c1"># this has modality &quot;robot0_proprio&quot;</span>
+    <span class="s2">&quot;robot0_gripper_pos&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">),</span>                <span class="c1"># this has modality &quot;robot0_proprio&quot;</span>
+    <span class="s2">&quot;image-state&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">),</span>                       <span class="c1"># this is a concatenation of all image observations</span>
+    <span class="s2">&quot;robot0_proprio-state&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">),</span>              <span class="c1"># this is a concatenation of all robot0_proprio observations</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>For more information on the vision ground-truth sensors supported, please see the <a class="reference internal" href="renderers.html"><span class="doc">Renderer</span></a> section.</p>
 <p>Note that for memory efficiency the <code class="docutils literal notranslate"><span class="pre">image-state</span></code> is not returned by default (this can be toggled in <code class="docutils literal notranslate"><span class="pre">robosuite/utils/macros.py</span></code>).</p>
 <p>Observables can also be used to model sensor corruption and delay, and refer the reader to the <a class="reference external" href="../algorithms/sim2real.html#sensors">Sensor Randomization</a> section for additional information.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="devices.html" class="btn btn-neutral float-right" title="I/O Devices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="environments.html" class="btn btn-neutral float-left" title="Environments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="devices.html" class="btn btn-neutral float-right" title="I/O Devices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright Stanford University and The University of Texas at Austin 2020.
-
-    </p>
+    <p>&#169; Copyright Stanford University and The University of Texas at Austin 2021.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

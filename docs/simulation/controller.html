@@ -1,77 +1,40 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Controller &mdash; robosuite 1.2.1 documentation</title>
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Controller &mdash; robosuite 1.3.0 documentation</title>
+
   <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
   <!--[if lt IE 9]>
     <script src="../static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
         <script src="../static/jquery.js"></script>
         <script src="../static/underscore.js"></script>
         <script src="../static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    
-    <script type="text/javascript" src="../static/js/theme.js"></script>
-
-    
+    <script src="../static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Mujoco Model" href="../modeling/mujoco_model.html" />
     <link rel="prev" title="Device" href="device.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> robosuite
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
-                1.2.1
+                1.3.0
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -79,18 +42,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
@@ -149,71 +101,30 @@
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgements</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">robosuite</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Controller</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../sources/simulation/controller.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -238,17 +149,17 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="controller">
-<h1>Controller<a class="headerlink" href="#controller" title="Permalink to this headline">¶</a></h1>
+<section id="controller">
+<h1>Controller<a class="headerlink" href="#controller" title="Permalink to this headline"></a></h1>
 <p>Every <code class="docutils literal notranslate"><span class="pre">Robot</span></code> is equipped with a controller, which determines both the action space as well as how its
 values are mapped into command torques. By default, all controllers have a pre-defined set of methods and
 properities, though specific controllers may extend and / or override the default functionality found in
 the base class.</p>
-<div class="section" id="base-controller">
-<h2>Base Controller<a class="headerlink" href="#base-controller" title="Permalink to this headline">¶</a></h2>
+<section id="base-controller">
+<h2>Base Controller<a class="headerlink" href="#base-controller" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="robosuite.controllers.base_controller.Controller">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.controllers.base_controller.</span></span><span class="sig-name descname"><span class="pre">Controller</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eef_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joint_indexes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actuator_range</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.controllers.base_controller.</span></span><span class="sig-name descname"><span class="pre">Controller</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eef_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joint_indexes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actuator_range</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller" title="Permalink to this definition"></a></dt>
 <dd><p>General controller interface.</p>
 <p>Requires reference to mujoco sim object, eef_name of specific robot, relevant joint_indexes to that robot, and
 whether an initial_joint is used for nullspace torques or not</p>
@@ -276,7 +187,7 @@ whether an initial_joint is used for nullspace torques or not</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.base_controller.Controller.run_controller">
-<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">run_controller</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller.run_controller" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">run_controller</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller.run_controller" title="Permalink to this definition"></a></dt>
 <dd><p>Abstract method that should be implemented in all subclass controllers, and should convert a given action
 into torques (pre gravity compensation) to be executed on the robot.
 Additionally, resets the self.new_update flag so that the next self.update call will occur</p>
@@ -284,7 +195,7 @@ Additionally, resets the self.new_update flag so that the next self.update call 
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.base_controller.Controller.scale_action">
-<span class="sig-name descname"><span class="pre">scale_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller.scale_action" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">scale_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller.scale_action" title="Permalink to this definition"></a></dt>
 <dd><p>Clips &#64;action to be within self.input_min and self.input_max, and then re-scale the values to be within
 the range self.output_min and self.output_max</p>
 <dl class="field-list simple">
@@ -302,7 +213,7 @@ the range self.output_min and self.output_max</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.base_controller.Controller.update">
-<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller.update" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller.update" title="Permalink to this definition"></a></dt>
 <dd><p>Updates the state of the robot arm, including end effector pose / orientation / velocity, joint pos/vel,
 jacobian, and mass matrix. By default, since this is a non-negligible computation, multiple redundant calls
 will be ignored via the self.new_update attribute flag. However, if the &#64;force flag is set, the update will
@@ -317,7 +228,7 @@ self.new_update flag</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.base_controller.Controller.update_base_pose">
-<span class="sig-name descname"><span class="pre">update_base_pose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_ori</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller.update_base_pose" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">update_base_pose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_ori</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller.update_base_pose" title="Permalink to this definition"></a></dt>
 <dd><p>Optional function to implement in subclass controllers that will take in &#64;base_pos and &#64;base_ori and update
 internal configuration to account for changes in the respective states. Useful for controllers e.g. IK, which
 is based on pybullet and requires knowledge of simulator state deviations between pybullet and mujoco</p>
@@ -333,7 +244,7 @@ is based on pybullet and requires knowledge of simulator state deviations betwee
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.base_controller.Controller.update_initial_joints">
-<span class="sig-name descname"><span class="pre">update_initial_joints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_joints</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller.update_initial_joints" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">update_initial_joints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_joints</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller.update_initial_joints" title="Permalink to this definition"></a></dt>
 <dd><p>Updates the internal attribute self.initial_joints. This is useful for updating changes in controller-specific
 behavior, such as with OSC where self.initial_joints is used for determine nullspace actions</p>
 <p>This function can also be extended by subclassed controllers for additional controller-specific updates</p>
@@ -346,7 +257,7 @@ behavior, such as with OSC where self.initial_joints is used for determine nulls
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.base_controller.Controller.clip_torques">
-<span class="sig-name descname"><span class="pre">clip_torques</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">torques</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller.clip_torques" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">clip_torques</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">torques</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller.clip_torques" title="Permalink to this definition"></a></dt>
 <dd><p>Clips the torques to be within the actuator limits</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -363,13 +274,13 @@ behavior, such as with OSC where self.initial_joints is used for determine nulls
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.base_controller.Controller.reset_goal">
-<span class="sig-name descname"><span class="pre">reset_goal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller.reset_goal" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reset_goal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller.reset_goal" title="Permalink to this definition"></a></dt>
 <dd><p>Resets the goal – usually by setting to the goal to all zeros, but in some cases may be different (e.g.: OSC)</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.base_controller.Controller.nums2array">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">nums2array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nums</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller.nums2array" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">nums2array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nums</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller.nums2array" title="Permalink to this definition"></a></dt>
 <dd><p>Convert input &#64;nums into numpy array of length &#64;dim. If &#64;nums is a single number, broadcasts it to the
 corresponding dimension size &#64;dim before converting into a numpy array</p>
 <dl class="field-list simple">
@@ -390,7 +301,7 @@ corresponding dimension size &#64;dim before converting into a numpy array</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.controllers.base_controller.Controller.torque_compensation">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">torque_compensation</span></span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller.torque_compensation" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">torque_compensation</span></span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller.torque_compensation" title="Permalink to this definition"></a></dt>
 <dd><p>Gravity compensation for this robot arm</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -404,7 +315,7 @@ corresponding dimension size &#64;dim before converting into a numpy array</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.controllers.base_controller.Controller.actuator_limits">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">actuator_limits</span></span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller.actuator_limits" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">actuator_limits</span></span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller.actuator_limits" title="Permalink to this definition"></a></dt>
 <dd><p>Torque limits for this controller</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -422,7 +333,7 @@ corresponding dimension size &#64;dim before converting into a numpy array</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.controllers.base_controller.Controller.control_limits">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">control_limits</span></span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller.control_limits" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">control_limits</span></span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller.control_limits" title="Permalink to this definition"></a></dt>
 <dd><p>Limits over this controller’s action space, which defaults to input min/max</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -440,7 +351,7 @@ corresponding dimension size &#64;dim before converting into a numpy array</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.controllers.base_controller.Controller.name">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller.name" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#robosuite.controllers.base_controller.Controller.name" title="Permalink to this definition"></a></dt>
 <dd><p>Name of this controller</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -454,12 +365,12 @@ corresponding dimension size &#64;dim before converting into a numpy array</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="joint-position-controller">
-<h2>Joint Position Controller<a class="headerlink" href="#joint-position-controller" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="joint-position-controller">
+<h2>Joint Position Controller<a class="headerlink" href="#joint-position-controller" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="robosuite.controllers.joint_pos.JointPositionController">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.controllers.joint_pos.</span></span><span class="sig-name descname"><span class="pre">JointPositionController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eef_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joint_indexes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actuator_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">damping_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">impedance_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'fixed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kp_limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">300)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">damping_ratio_limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">100)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qpos_limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.joint_pos.JointPositionController" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.controllers.joint_pos.</span></span><span class="sig-name descname"><span class="pre">JointPositionController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eef_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joint_indexes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actuator_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">damping_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">impedance_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'fixed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kp_limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">300)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">damping_ratio_limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">100)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qpos_limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.joint_pos.JointPositionController" title="Permalink to this definition"></a></dt>
 <dd><p>Controller for controlling robot arm via impedance control. Allows position control of the robot’s joints.</p>
 <p>NOTE: Control input actions assumed to be taken relative to the current joint positions. A given action to this
 controller is assumed to be of the form: (dpos_j0, dpos_j1, … , dpos_jn-1) for an n-joint robot</p>
@@ -529,7 +440,7 @@ via an argument dict that has additional extraneous arguments won’t raise an e
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.joint_pos.JointPositionController.set_goal">
-<span class="sig-name descname"><span class="pre">set_goal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_qpos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.joint_pos.JointPositionController.set_goal" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_goal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_qpos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.joint_pos.JointPositionController.set_goal" title="Permalink to this definition"></a></dt>
 <dd><p>Sets goal based on input &#64;action. If self.impedance_mode is not “fixed”, then the input will be parsed into the
 delta values to update the goal position / pose and the kp and/or damping_ratio values to be immediately updated
 internally before executing the proceeding control loop.</p>
@@ -562,13 +473,13 @@ internally before executing the proceeding control loop.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.joint_pos.JointPositionController.reset_goal">
-<span class="sig-name descname"><span class="pre">reset_goal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.joint_pos.JointPositionController.reset_goal" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reset_goal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.joint_pos.JointPositionController.reset_goal" title="Permalink to this definition"></a></dt>
 <dd><p>Resets joint position goal to be current position</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.controllers.joint_pos.JointPositionController.control_limits">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">control_limits</span></span><a class="headerlink" href="#robosuite.controllers.joint_pos.JointPositionController.control_limits" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">control_limits</span></span><a class="headerlink" href="#robosuite.controllers.joint_pos.JointPositionController.control_limits" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the limits over this controller’s action space, overrides the superclass property
 Returns the following (generalized for both high and low limits), based on the impedance mode:</p>
 <blockquote>
@@ -600,12 +511,12 @@ Returns the following (generalized for both high and low limits), based on the i
 
 </dd></dl>
 
-</div>
-<div class="section" id="joint-velocity-controller">
-<h2>Joint Velocity Controller<a class="headerlink" href="#joint-velocity-controller" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="joint-velocity-controller">
+<h2>Joint Velocity Controller<a class="headerlink" href="#joint-velocity-controller" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="robosuite.controllers.joint_vel.JointVelocityController">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.controllers.joint_vel.</span></span><span class="sig-name descname"><span class="pre">JointVelocityController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eef_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joint_indexes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actuator_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity_limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.joint_vel.JointVelocityController" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.controllers.joint_vel.</span></span><span class="sig-name descname"><span class="pre">JointVelocityController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eef_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joint_indexes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actuator_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity_limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.joint_vel.JointVelocityController" title="Permalink to this definition"></a></dt>
 <dd><p>Controller for controlling the robot arm’s joint velocities. This is simply a P controller with desired torques
 (pre gravity compensation) taken to be proportional to the velocity error of the robot joints.</p>
 <p>NOTE: Control input actions assumed to be taken as absolute joint velocities. A given action to this
@@ -656,7 +567,7 @@ via an argument dict that has additional extraneous arguments won’t raise an e
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.joint_vel.JointVelocityController.set_goal">
-<span class="sig-name descname"><span class="pre">set_goal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">velocities</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.joint_vel.JointVelocityController.set_goal" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_goal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">velocities</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.joint_vel.JointVelocityController.set_goal" title="Permalink to this definition"></a></dt>
 <dd><p>Sets goal based on input &#64;velocities.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -670,18 +581,18 @@ via an argument dict that has additional extraneous arguments won’t raise an e
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.joint_vel.JointVelocityController.reset_goal">
-<span class="sig-name descname"><span class="pre">reset_goal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.joint_vel.JointVelocityController.reset_goal" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reset_goal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.joint_vel.JointVelocityController.reset_goal" title="Permalink to this definition"></a></dt>
 <dd><p>Resets joint velocity goal to be all zeros</p>
 </dd></dl>
 
 </dd></dl>
 
-</div>
-<div class="section" id="joint-torque-controller">
-<h2>Joint Torque Controller<a class="headerlink" href="#joint-torque-controller" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="joint-torque-controller">
+<h2>Joint Torque Controller<a class="headerlink" href="#joint-torque-controller" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="robosuite.controllers.joint_tor.JointTorqueController">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.controllers.joint_tor.</span></span><span class="sig-name descname"><span class="pre">JointTorqueController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eef_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joint_indexes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actuator_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">torque_limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.joint_tor.JointTorqueController" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.controllers.joint_tor.</span></span><span class="sig-name descname"><span class="pre">JointTorqueController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eef_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joint_indexes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actuator_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">torque_limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.joint_tor.JointTorqueController" title="Permalink to this definition"></a></dt>
 <dd><p>Controller for controlling the robot arm’s joint torques. As the actuators at the mujoco sim level are already
 torque actuators, this “controller” usually simply “passes through” desired torques, though it also includes the
 typical input / output scaling and clipping, as well as interpolator features seen in other controllers classes
@@ -733,7 +644,7 @@ via an argument dict that has additional extraneous arguments won’t raise an e
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.joint_tor.JointTorqueController.set_goal">
-<span class="sig-name descname"><span class="pre">set_goal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">torques</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.joint_tor.JointTorqueController.set_goal" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_goal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">torques</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.joint_tor.JointTorqueController.set_goal" title="Permalink to this definition"></a></dt>
 <dd><p>Sets goal based on input &#64;torques.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -747,18 +658,18 @@ via an argument dict that has additional extraneous arguments won’t raise an e
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.joint_tor.JointTorqueController.reset_goal">
-<span class="sig-name descname"><span class="pre">reset_goal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.joint_tor.JointTorqueController.reset_goal" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reset_goal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.joint_tor.JointTorqueController.reset_goal" title="Permalink to this definition"></a></dt>
 <dd><p>Resets joint torque goal to be all zeros (pre-compensation)</p>
 </dd></dl>
 
 </dd></dl>
 
-</div>
-<div class="section" id="operation-space-controller">
-<h2>Operation Space Controller<a class="headerlink" href="#operation-space-controller" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="operation-space-controller">
+<h2>Operation Space Controller<a class="headerlink" href="#operation-space-controller" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="robosuite.controllers.osc.OperationalSpaceController">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.controllers.osc.</span></span><span class="sig-name descname"><span class="pre">OperationalSpaceController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eef_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joint_indexes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actuator_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.05,</span> <span class="pre">0.05,</span> <span class="pre">0.05,</span> <span class="pre">0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(-</span> <span class="pre">0.05,</span> <span class="pre">-</span> <span class="pre">0.05,</span> <span class="pre">-</span> <span class="pre">0.05,</span> <span class="pre">-</span> <span class="pre">0.5,</span> <span class="pre">-</span> <span class="pre">0.5,</span> <span class="pre">-</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">150</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">damping_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">impedance_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'fixed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kp_limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">300)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">damping_ratio_limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">100)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orientation_limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolator_pos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolator_ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">control_ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">control_delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uncouple_pos_ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.osc.OperationalSpaceController" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.controllers.osc.</span></span><span class="sig-name descname"><span class="pre">OperationalSpaceController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eef_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joint_indexes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actuator_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.05,</span> <span class="pre">0.05,</span> <span class="pre">0.05,</span> <span class="pre">0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(-</span> <span class="pre">0.05,</span> <span class="pre">-</span> <span class="pre">0.05,</span> <span class="pre">-</span> <span class="pre">0.05,</span> <span class="pre">-</span> <span class="pre">0.5,</span> <span class="pre">-</span> <span class="pre">0.5,</span> <span class="pre">-</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">150</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">damping_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">impedance_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'fixed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kp_limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">300)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">damping_ratio_limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">100)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orientation_limits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolator_pos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolator_ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">control_ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">control_delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uncouple_pos_ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.osc.OperationalSpaceController" title="Permalink to this definition"></a></dt>
 <dd><p>Controller for controlling robot arm via operational space control. Allows position and / or orientation control
 of the robot’s end effector. For detailed information as to the mathematical foundation for this controller, please
 reference <a class="reference external" href="http://khatib.stanford.edu/publications/pdfs/Khatib_1987_RA.pdf">http://khatib.stanford.edu/publications/pdfs/Khatib_1987_RA.pdf</a></p>
@@ -840,7 +751,7 @@ via an argument dict that has additional extraneous arguments won’t raise an e
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.osc.OperationalSpaceController.set_goal">
-<span class="sig-name descname"><span class="pre">set_goal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_pos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.osc.OperationalSpaceController.set_goal" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_goal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_pos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.osc.OperationalSpaceController.set_goal" title="Permalink to this definition"></a></dt>
 <dd><p>Sets goal based on input &#64;action. If self.impedance_mode is not “fixed”, then the input will be parsed into the
 delta values to update the goal position / pose and the kp and/or damping_ratio values to be immediately updated
 internally before executing the proceeding control loop.</p>
@@ -871,13 +782,13 @@ internally before executing the proceeding control loop.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.osc.OperationalSpaceController.reset_goal">
-<span class="sig-name descname"><span class="pre">reset_goal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.osc.OperationalSpaceController.reset_goal" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reset_goal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.osc.OperationalSpaceController.reset_goal" title="Permalink to this definition"></a></dt>
 <dd><p>Resets the goal to the current state of the robot</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.controllers.osc.OperationalSpaceController.control_limits">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">control_limits</span></span><a class="headerlink" href="#robosuite.controllers.osc.OperationalSpaceController.control_limits" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">control_limits</span></span><a class="headerlink" href="#robosuite.controllers.osc.OperationalSpaceController.control_limits" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the limits over this controller’s action space, overrides the superclass property
 Returns the following (generalized for both high and low limits), based on the impedance mode:</p>
 <blockquote>
@@ -909,12 +820,12 @@ Returns the following (generalized for both high and low limits), based on the i
 
 </dd></dl>
 
-</div>
-<div class="section" id="inverse-kinematics-controller">
-<h2>Inverse Kinematics Controller<a class="headerlink" href="#inverse-kinematics-controller" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="inverse-kinematics-controller">
+<h2>Inverse Kinematics Controller<a class="headerlink" href="#inverse-kinematics-controller" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="robosuite.controllers.ik.InverseKinematicsController">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.controllers.ik.</span></span><span class="sig-name descname"><span class="pre">InverseKinematicsController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eef_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joint_indexes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robot_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actuator_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eef_rot_offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bullet_server_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_urdf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ik_pos_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ik_ori_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolator_pos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolator_ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">converge_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.controllers.ik.</span></span><span class="sig-name descname"><span class="pre">InverseKinematicsController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eef_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joint_indexes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robot_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actuator_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eef_rot_offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bullet_server_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_urdf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ik_pos_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ik_ori_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolator_pos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolator_ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">converge_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController" title="Permalink to this definition"></a></dt>
 <dd><p>Controller for controlling robot arm via inverse kinematics. Allows position and orientation control of the
 robot’s end effector.</p>
 <p>Inverse kinematics solving is handled by pybullet.</p>
@@ -961,7 +872,7 @@ via an argument dict that has additional extraneous arguments won’t raise an e
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.ik.InverseKinematicsController.setup_inverse_kinematics">
-<span class="sig-name descname"><span class="pre">setup_inverse_kinematics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_urdf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController.setup_inverse_kinematics" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">setup_inverse_kinematics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_urdf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController.setup_inverse_kinematics" title="Permalink to this definition"></a></dt>
 <dd><p>This function is responsible for doing any setup for inverse kinematics.</p>
 <p>Inverse Kinematics maps end effector (EEF) poses to joint angles that are necessary to achieve those poses.</p>
 <dl class="field-list simple">
@@ -978,14 +889,14 @@ but should all reference the same (single) robot urdf within the bullet sim</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.ik.InverseKinematicsController.sync_state">
-<span class="sig-name descname"><span class="pre">sync_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController.sync_state" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">sync_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController.sync_state" title="Permalink to this definition"></a></dt>
 <dd><p>Syncs the internal Pybullet robot state to the joint positions of the
 robot being controlled.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.ik.InverseKinematicsController.sync_ik_robot">
-<span class="sig-name descname"><span class="pre">sync_ik_robot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">joint_positions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simulate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sync_last</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController.sync_ik_robot" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">sync_ik_robot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">joint_positions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simulate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sync_last</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController.sync_ik_robot" title="Permalink to this definition"></a></dt>
 <dd><p>Force the internal robot model to match the provided joint angles.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1003,7 +914,7 @@ is useful for directly controlling the roll at the end effector.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.ik.InverseKinematicsController.ik_robot_eef_joint_cartesian_pose">
-<span class="sig-name descname"><span class="pre">ik_robot_eef_joint_cartesian_pose</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController.ik_robot_eef_joint_cartesian_pose" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">ik_robot_eef_joint_cartesian_pose</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController.ik_robot_eef_joint_cartesian_pose" title="Permalink to this definition"></a></dt>
 <dd><p>Calculates the current cartesian pose of the last joint of the ik robot with respect to the base frame as
 a (pos, orn) tuple where orn is a x-y-z-w quaternion</p>
 <dl class="field-list simple">
@@ -1022,7 +933,7 @@ a (pos, orn) tuple where orn is a x-y-z-w quaternion</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.ik.InverseKinematicsController.get_control">
-<span class="sig-name descname"><span class="pre">get_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dpos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_targets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController.get_control" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dpos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_targets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController.get_control" title="Permalink to this definition"></a></dt>
 <dd><p>Returns joint velocities to control the robot after the target end effector
 position and orientation are updated from arguments &#64;dpos and &#64;rotation.
 If no arguments are provided, joint velocities will be computed based
@@ -1048,7 +959,7 @@ to the desired rotation from the current orientation of the end effector.</p></l
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.ik.InverseKinematicsController.inverse_kinematics">
-<span class="sig-name descname"><span class="pre">inverse_kinematics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_orientation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController.inverse_kinematics" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">inverse_kinematics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_orientation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController.inverse_kinematics" title="Permalink to this definition"></a></dt>
 <dd><p>Helper function to do inverse kinematics for a given target position and
 orientation in the PyBullet world frame.</p>
 <dl class="field-list simple">
@@ -1069,7 +980,7 @@ orientation in the PyBullet world frame.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.ik.InverseKinematicsController.joint_positions_for_eef_command">
-<span class="sig-name descname"><span class="pre">joint_positions_for_eef_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dpos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_targets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController.joint_positions_for_eef_command" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">joint_positions_for_eef_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dpos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_targets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController.joint_positions_for_eef_command" title="Permalink to this definition"></a></dt>
 <dd><p>This function runs inverse kinematics to back out target joint positions
 from the provided end effector command.</p>
 <dl class="field-list simple">
@@ -1093,7 +1004,7 @@ to the desired rotation from the current orientation of the end effector.</p></l
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.ik.InverseKinematicsController.bullet_base_pose_to_world_pose">
-<span class="sig-name descname"><span class="pre">bullet_base_pose_to_world_pose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose_in_base</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController.bullet_base_pose_to_world_pose" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">bullet_base_pose_to_world_pose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose_in_base</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController.bullet_base_pose_to_world_pose" title="Permalink to this definition"></a></dt>
 <dd><p>Convert a pose in the base frame to a pose in the world frame.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1110,7 +1021,7 @@ to the desired rotation from the current orientation of the end effector.</p></l
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.ik.InverseKinematicsController.set_goal">
-<span class="sig-name descname"><span class="pre">set_goal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_ik</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController.set_goal" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_goal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_ik</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController.set_goal" title="Permalink to this definition"></a></dt>
 <dd><p>Sets the internal goal state of this controller based on &#64;delta</p>
 <p>Note that this controller wraps a VelocityController, and so determines the desired velocities
 to achieve the inputted pose, and sets its internal setpoint in terms of joint velocities</p>
@@ -1127,13 +1038,13 @@ to achieve the inputted pose, and sets its internal setpoint in terms of joint v
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.ik.InverseKinematicsController.reset_goal">
-<span class="sig-name descname"><span class="pre">reset_goal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController.reset_goal" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reset_goal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController.reset_goal" title="Permalink to this definition"></a></dt>
 <dd><p>Resets the goal to the current pose of the robot</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.controllers.ik.InverseKinematicsController.control_limits">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">control_limits</span></span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController.control_limits" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">control_limits</span></span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController.control_limits" title="Permalink to this definition"></a></dt>
 <dd><p>The limits over this controller’s action space, as specified by self.ik_pos_limit and self.ik_ori_limit
 and overriding the superclass method</p>
 <dl class="field-list simple">
@@ -1152,7 +1063,7 @@ and overriding the superclass method</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.ik.InverseKinematicsController._clip_ik_input">
-<span class="sig-name descname"><span class="pre">_clip_ik_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dpos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController._clip_ik_input" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">_clip_ik_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dpos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController._clip_ik_input" title="Permalink to this definition"></a></dt>
 <dd><p>Helper function that clips desired ik input deltas into a valid range.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1178,7 +1089,7 @@ corresponding to the (relative) desired orientation of the end effector.</p></li
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.ik.InverseKinematicsController._make_input">
-<span class="sig-name descname"><span class="pre">_make_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">old_quat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController._make_input" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">_make_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">old_quat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController._make_input" title="Permalink to this definition"></a></dt>
 <dd><p>Helper function that returns a dictionary with keys dpos, rotation from a raw input
 array. The first three elements are taken to be displacement in position, and a
 quaternion indicating the change in rotation with respect to &#64;old_quat. Additionally clips &#64;action as well</p>
@@ -1195,7 +1106,7 @@ scaled axis-angle form)</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.controllers.ik.InverseKinematicsController._get_current_error">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">_get_current_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_point</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController._get_current_error" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">_get_current_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_point</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.controllers.ik.InverseKinematicsController._get_current_error" title="Permalink to this definition"></a></dt>
 <dd><p>Returns an array of differences between the desired joint positions and current
 joint positions. Useful for PID control.</p>
 <dl class="field-list simple">
@@ -1216,55 +1127,38 @@ joint positions. Useful for PID control.</p>
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../modeling/mujoco_model.html" class="btn btn-neutral float-right" title="Mujoco Model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="device.html" class="btn btn-neutral float-left" title="Device" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../modeling/mujoco_model.html" class="btn btn-neutral float-right" title="Mujoco Model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright Stanford University and The University of Texas at Austin 2020.
-
-    </p>
+    <p>&#169; Copyright Stanford University and The University of Texas at Austin 2021.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

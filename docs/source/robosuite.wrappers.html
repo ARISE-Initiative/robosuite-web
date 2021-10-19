@@ -1,77 +1,40 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>robosuite.wrappers package &mdash; robosuite 1.2.1 documentation</title>
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>robosuite.wrappers package &mdash; robosuite 1.3.0 documentation</title>
+
   <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
   <!--[if lt IE 9]>
     <script src="../static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
         <script src="../static/jquery.js"></script>
         <script src="../static/underscore.js"></script>
         <script src="../static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    
-    <script type="text/javascript" src="../static/js/theme.js"></script>
-
-    
+    <script src="../static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Benchmarking" href="../algorithms/benchmarking.html" />
     <link rel="prev" title="robosuite.utils package" href="robosuite.utils.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> robosuite
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
-                1.2.1
+                1.3.0
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -79,18 +42,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
@@ -132,6 +84,7 @@
 <li class="toctree-l3"><a class="reference internal" href="robosuite.devices.html">robosuite.devices package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="robosuite.environments.html">robosuite.environments package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="robosuite.models.html">robosuite.models package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.renderers.html">robosuite.renderers package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="robosuite.robots.html">robosuite.robots package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="robosuite.utils.html">robosuite.utils package</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">robosuite.wrappers package</a><ul>
@@ -164,73 +117,31 @@
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgements</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">robosuite</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="robosuite.html">robosuite package</a> &raquo;</li>
-        
       <li>robosuite.wrappers package</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../sources/source/robosuite.wrappers.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -255,28 +166,28 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="robosuite-wrappers-package">
-<h1>robosuite.wrappers package<a class="headerlink" href="#robosuite-wrappers-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="module-robosuite.wrappers.data_collection_wrapper">
-<span id="robosuite-wrappers-data-collection-wrapper-module"></span><h2>robosuite.wrappers.data_collection_wrapper module<a class="headerlink" href="#module-robosuite.wrappers.data_collection_wrapper" title="Permalink to this headline">¶</a></h2>
+<section id="robosuite-wrappers-package">
+<h1>robosuite.wrappers package<a class="headerlink" href="#robosuite-wrappers-package" title="Permalink to this headline"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-robosuite.wrappers.data_collection_wrapper">
+<span id="robosuite-wrappers-data-collection-wrapper-module"></span><h2>robosuite.wrappers.data_collection_wrapper module<a class="headerlink" href="#module-robosuite.wrappers.data_collection_wrapper" title="Permalink to this headline"></a></h2>
 <p>This file implements a wrapper for saving simulation states to disk.
 This data collection wrapper is useful for collecting demonstrations.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="robosuite.wrappers.data_collection_wrapper.DataCollectionWrapper">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.wrappers.data_collection_wrapper.</span></span><span class="sig-name descname"><span class="pre">DataCollectionWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">collect_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flush_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.data_collection_wrapper.DataCollectionWrapper" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.wrappers.data_collection_wrapper.</span></span><span class="sig-name descname"><span class="pre">DataCollectionWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">collect_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flush_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.data_collection_wrapper.DataCollectionWrapper" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robosuite.wrappers.wrapper.Wrapper" title="robosuite.wrappers.wrapper.Wrapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.wrappers.wrapper.Wrapper</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.data_collection_wrapper.DataCollectionWrapper.close">
-<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.data_collection_wrapper.DataCollectionWrapper.close" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.data_collection_wrapper.DataCollectionWrapper.close" title="Permalink to this definition"></a></dt>
 <dd><p>Override close method in order to flush left over data</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.data_collection_wrapper.DataCollectionWrapper.reset">
-<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.data_collection_wrapper.DataCollectionWrapper.reset" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.data_collection_wrapper.DataCollectionWrapper.reset" title="Permalink to this definition"></a></dt>
 <dd><p>Extends vanilla reset() function call to accommodate data collection</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -290,7 +201,7 @@ This data collection wrapper is useful for collecting demonstrations.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.data_collection_wrapper.DataCollectionWrapper.step">
-<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.data_collection_wrapper.DataCollectionWrapper.step" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.data_collection_wrapper.DataCollectionWrapper.step" title="Permalink to this definition"></a></dt>
 <dd><p>Extends vanilla step() function call to accommodate data collection</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -313,16 +224,16 @@ This data collection wrapper is useful for collecting demonstrations.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-robosuite.wrappers.demo_sampler_wrapper">
-<span id="robosuite-wrappers-demo-sampler-wrapper-module"></span><h2>robosuite.wrappers.demo_sampler_wrapper module<a class="headerlink" href="#module-robosuite.wrappers.demo_sampler_wrapper" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-robosuite.wrappers.demo_sampler_wrapper">
+<span id="robosuite-wrappers-demo-sampler-wrapper-module"></span><h2>robosuite.wrappers.demo_sampler_wrapper module<a class="headerlink" href="#module-robosuite.wrappers.demo_sampler_wrapper" title="Permalink to this headline"></a></h2>
 <p>This file contains a wrapper for sampling environment states
 from a set of demonstrations on every reset. The main use case is for
 altering the start state distribution of training episodes for
 learning RL policies.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="robosuite.wrappers.demo_sampler_wrapper.DemoSamplerWrapper">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.wrappers.demo_sampler_wrapper.</span></span><span class="sig-name descname"><span class="pre">DemoSamplerWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">demo_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">need_xml</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_traj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampling_schemes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('uniform',</span> <span class="pre">'random')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scheme_ratios</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.9,</span> <span class="pre">0.1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_loop_increment_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_loop_initial_window_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_loop_window_increment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.demo_sampler_wrapper.DemoSamplerWrapper" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.wrappers.demo_sampler_wrapper.</span></span><span class="sig-name descname"><span class="pre">DemoSamplerWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">demo_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">need_xml</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_traj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampling_schemes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('uniform',</span> <span class="pre">'random')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scheme_ratios</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.9,</span> <span class="pre">0.1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_loop_increment_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_loop_initial_window_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_loop_window_increment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.demo_sampler_wrapper.DemoSamplerWrapper" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robosuite.wrappers.wrapper.Wrapper" title="robosuite.wrappers.wrapper.Wrapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.wrappers.wrapper.Wrapper</span></code></a></p>
 <p>Initializes a wrapper that provides support for resetting the environment
 state to one from a demonstration. It also supports curriculums for
@@ -381,7 +292,7 @@ This number is in terms of number of demonstration time steps.</p></li>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.demo_sampler_wrapper.DemoSamplerWrapper.reset">
-<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.demo_sampler_wrapper.DemoSamplerWrapper.reset" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.demo_sampler_wrapper.DemoSamplerWrapper.reset" title="Permalink to this definition"></a></dt>
 <dd><p>Logic for sampling a state from the demonstration and resetting
 the simulation to that state.</p>
 <dl class="field-list simple">
@@ -396,7 +307,7 @@ the simulation to that state.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.demo_sampler_wrapper.DemoSamplerWrapper.sample">
-<span class="sig-name descname"><span class="pre">sample</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.demo_sampler_wrapper.DemoSamplerWrapper.sample" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">sample</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.demo_sampler_wrapper.DemoSamplerWrapper.sample" title="Permalink to this definition"></a></dt>
 <dd><p>This is the core sampling method. Samples a state from a
 demonstration, in accordance with the configuration.</p>
 <dl class="field-list simple">
@@ -415,14 +326,14 @@ demonstration, in accordance with the configuration.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-robosuite.wrappers.domain_randomization_wrapper">
-<span id="robosuite-wrappers-domain-randomization-wrapper-module"></span><h2>robosuite.wrappers.domain_randomization_wrapper module<a class="headerlink" href="#module-robosuite.wrappers.domain_randomization_wrapper" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-robosuite.wrappers.domain_randomization_wrapper">
+<span id="robosuite-wrappers-domain-randomization-wrapper-module"></span><h2>robosuite.wrappers.domain_randomization_wrapper module<a class="headerlink" href="#module-robosuite.wrappers.domain_randomization_wrapper" title="Permalink to this headline"></a></h2>
 <p>This file implements a wrapper for facilitating domain randomization over
 robosuite environments.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="robosuite.wrappers.domain_randomization_wrapper.DomainRandomizationWrapper">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.wrappers.domain_randomization_wrapper.</span></span><span class="sig-name descname"><span class="pre">DomainRandomizationWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomize_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomize_camera</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomize_lighting</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomize_dynamics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_randomization_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'geom_names':</span> <span class="pre">None,</span> <span class="pre">'local_material_interpolation':</span> <span class="pre">0.3,</span> <span class="pre">'local_rgb_interpolation':</span> <span class="pre">0.2,</span> <span class="pre">'randomize_local':</span> <span class="pre">True,</span> <span class="pre">'randomize_material':</span> <span class="pre">True,</span> <span class="pre">'randomize_skybox':</span> <span class="pre">True,</span> <span class="pre">'texture_variations':</span> <span class="pre">['rgb',</span> <span class="pre">'checker',</span> <span class="pre">'noise',</span> <span class="pre">'gradient']}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_randomization_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'camera_names':</span> <span class="pre">None,</span> <span class="pre">'fovy_perturbation_size':</span> <span class="pre">5.0,</span> <span class="pre">'position_perturbation_size':</span> <span class="pre">0.01,</span> <span class="pre">'randomize_fovy':</span> <span class="pre">True,</span> <span class="pre">'randomize_position':</span> <span class="pre">True,</span> <span class="pre">'randomize_rotation':</span> <span class="pre">True,</span> <span class="pre">'rotation_perturbation_size':</span> <span class="pre">0.087}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lighting_randomization_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'ambient_perturbation_size':</span> <span class="pre">0.1,</span> <span class="pre">'diffuse_perturbation_size':</span> <span class="pre">0.1,</span> <span class="pre">'direction_perturbation_size':</span> <span class="pre">0.35,</span> <span class="pre">'light_names':</span> <span class="pre">None,</span> <span class="pre">'position_perturbation_size':</span> <span class="pre">0.1,</span> <span class="pre">'randomize_active':</span> <span class="pre">True,</span> <span class="pre">'randomize_ambient':</span> <span class="pre">True,</span> <span class="pre">'randomize_diffuse':</span> <span class="pre">True,</span> <span class="pre">'randomize_direction':</span> <span class="pre">True,</span> <span class="pre">'randomize_position':</span> <span class="pre">True,</span> <span class="pre">'randomize_specular':</span> <span class="pre">True,</span> <span class="pre">'specular_perturbation_size':</span> <span class="pre">0.1}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamics_randomization_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'armature_perturbation_size':</span> <span class="pre">0.01,</span> <span class="pre">'body_names':</span> <span class="pre">None,</span> <span class="pre">'damping_perturbation_size':</span> <span class="pre">0.01,</span> <span class="pre">'density_perturbation_ratio':</span> <span class="pre">0.1,</span> <span class="pre">'friction_perturbation_ratio':</span> <span class="pre">0.1,</span> <span class="pre">'frictionloss_perturbation_size':</span> <span class="pre">0.05,</span> <span class="pre">'geom_names':</span> <span class="pre">None,</span> <span class="pre">'inertia_perturbation_ratio':</span> <span class="pre">0.02,</span> <span class="pre">'joint_names':</span> <span class="pre">None,</span> <span class="pre">'mass_perturbation_ratio':</span> <span class="pre">0.02,</span> <span class="pre">'position_perturbation_size':</span> <span class="pre">0.0015,</span> <span class="pre">'quaternion_perturbation_size':</span> <span class="pre">0.003,</span> <span class="pre">'randomize_armature':</span> <span class="pre">True,</span> <span class="pre">'randomize_damping':</span> <span class="pre">True,</span> <span class="pre">'randomize_density':</span> <span class="pre">True,</span> <span class="pre">'randomize_friction':</span> <span class="pre">True,</span> <span class="pre">'randomize_frictionloss':</span> <span class="pre">True,</span> <span class="pre">'randomize_inertia':</span> <span class="pre">True,</span> <span class="pre">'randomize_mass':</span> <span class="pre">True,</span> <span class="pre">'randomize_position':</span> <span class="pre">True,</span> <span class="pre">'randomize_quaternion':</span> <span class="pre">True,</span> <span class="pre">'randomize_solimp':</span> <span class="pre">True,</span> <span class="pre">'randomize_solref':</span> <span class="pre">True,</span> <span class="pre">'randomize_stiffness':</span> <span class="pre">True,</span> <span class="pre">'randomize_viscosity':</span> <span class="pre">True,</span> <span class="pre">'solimp_perturbation_ratio':</span> <span class="pre">0.1,</span> <span class="pre">'solref_perturbation_ratio':</span> <span class="pre">0.1,</span> <span class="pre">'stiffness_perturbation_ratio':</span> <span class="pre">0.1,</span> <span class="pre">'viscosity_perturbation_ratio':</span> <span class="pre">0.1}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomize_on_reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomize_every_n_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.domain_randomization_wrapper.DomainRandomizationWrapper" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.wrappers.domain_randomization_wrapper.</span></span><span class="sig-name descname"><span class="pre">DomainRandomizationWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomize_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomize_camera</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomize_lighting</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomize_dynamics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_randomization_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'geom_names':</span> <span class="pre">None,</span> <span class="pre">'local_material_interpolation':</span> <span class="pre">0.3,</span> <span class="pre">'local_rgb_interpolation':</span> <span class="pre">0.2,</span> <span class="pre">'randomize_local':</span> <span class="pre">True,</span> <span class="pre">'randomize_material':</span> <span class="pre">True,</span> <span class="pre">'randomize_skybox':</span> <span class="pre">True,</span> <span class="pre">'texture_variations':</span> <span class="pre">['rgb',</span> <span class="pre">'checker',</span> <span class="pre">'noise',</span> <span class="pre">'gradient']}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_randomization_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'camera_names':</span> <span class="pre">None,</span> <span class="pre">'fovy_perturbation_size':</span> <span class="pre">5.0,</span> <span class="pre">'position_perturbation_size':</span> <span class="pre">0.01,</span> <span class="pre">'randomize_fovy':</span> <span class="pre">True,</span> <span class="pre">'randomize_position':</span> <span class="pre">True,</span> <span class="pre">'randomize_rotation':</span> <span class="pre">True,</span> <span class="pre">'rotation_perturbation_size':</span> <span class="pre">0.087}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lighting_randomization_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'ambient_perturbation_size':</span> <span class="pre">0.1,</span> <span class="pre">'diffuse_perturbation_size':</span> <span class="pre">0.1,</span> <span class="pre">'direction_perturbation_size':</span> <span class="pre">0.35,</span> <span class="pre">'light_names':</span> <span class="pre">None,</span> <span class="pre">'position_perturbation_size':</span> <span class="pre">0.1,</span> <span class="pre">'randomize_active':</span> <span class="pre">True,</span> <span class="pre">'randomize_ambient':</span> <span class="pre">True,</span> <span class="pre">'randomize_diffuse':</span> <span class="pre">True,</span> <span class="pre">'randomize_direction':</span> <span class="pre">True,</span> <span class="pre">'randomize_position':</span> <span class="pre">True,</span> <span class="pre">'randomize_specular':</span> <span class="pre">True,</span> <span class="pre">'specular_perturbation_size':</span> <span class="pre">0.1}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamics_randomization_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'armature_perturbation_size':</span> <span class="pre">0.01,</span> <span class="pre">'body_names':</span> <span class="pre">None,</span> <span class="pre">'damping_perturbation_size':</span> <span class="pre">0.01,</span> <span class="pre">'density_perturbation_ratio':</span> <span class="pre">0.1,</span> <span class="pre">'friction_perturbation_ratio':</span> <span class="pre">0.1,</span> <span class="pre">'frictionloss_perturbation_size':</span> <span class="pre">0.05,</span> <span class="pre">'geom_names':</span> <span class="pre">None,</span> <span class="pre">'inertia_perturbation_ratio':</span> <span class="pre">0.02,</span> <span class="pre">'joint_names':</span> <span class="pre">None,</span> <span class="pre">'mass_perturbation_ratio':</span> <span class="pre">0.02,</span> <span class="pre">'position_perturbation_size':</span> <span class="pre">0.0015,</span> <span class="pre">'quaternion_perturbation_size':</span> <span class="pre">0.003,</span> <span class="pre">'randomize_armature':</span> <span class="pre">True,</span> <span class="pre">'randomize_damping':</span> <span class="pre">True,</span> <span class="pre">'randomize_density':</span> <span class="pre">True,</span> <span class="pre">'randomize_friction':</span> <span class="pre">True,</span> <span class="pre">'randomize_frictionloss':</span> <span class="pre">True,</span> <span class="pre">'randomize_inertia':</span> <span class="pre">True,</span> <span class="pre">'randomize_mass':</span> <span class="pre">True,</span> <span class="pre">'randomize_position':</span> <span class="pre">True,</span> <span class="pre">'randomize_quaternion':</span> <span class="pre">True,</span> <span class="pre">'randomize_solimp':</span> <span class="pre">True,</span> <span class="pre">'randomize_solref':</span> <span class="pre">True,</span> <span class="pre">'randomize_stiffness':</span> <span class="pre">True,</span> <span class="pre">'randomize_viscosity':</span> <span class="pre">True,</span> <span class="pre">'solimp_perturbation_ratio':</span> <span class="pre">0.1,</span> <span class="pre">'solref_perturbation_ratio':</span> <span class="pre">0.1,</span> <span class="pre">'stiffness_perturbation_ratio':</span> <span class="pre">0.1,</span> <span class="pre">'viscosity_perturbation_ratio':</span> <span class="pre">0.1}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomize_on_reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomize_every_n_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.domain_randomization_wrapper.DomainRandomizationWrapper" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robosuite.wrappers.wrapper.Wrapper" title="robosuite.wrappers.wrapper.Wrapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.wrappers.wrapper.Wrapper</span></code></a></p>
 <p>Wrapper that allows for domain randomization mid-simulation.</p>
 <dl class="field-list simple">
@@ -451,13 +362,13 @@ to 0 if randomization should happen manually (by calling &#64;randomize_domain)<
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.domain_randomization_wrapper.DomainRandomizationWrapper.randomize_domain">
-<span class="sig-name descname"><span class="pre">randomize_domain</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.domain_randomization_wrapper.DomainRandomizationWrapper.randomize_domain" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">randomize_domain</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.domain_randomization_wrapper.DomainRandomizationWrapper.randomize_domain" title="Permalink to this definition"></a></dt>
 <dd><p>Runs domain randomization over the environment.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.domain_randomization_wrapper.DomainRandomizationWrapper.reset">
-<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.domain_randomization_wrapper.DomainRandomizationWrapper.reset" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.domain_randomization_wrapper.DomainRandomizationWrapper.reset" title="Permalink to this definition"></a></dt>
 <dd><p>Extends superclass method to reset the domain randomizer.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -471,21 +382,21 @@ to 0 if randomization should happen manually (by calling &#64;randomize_domain)<
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.domain_randomization_wrapper.DomainRandomizationWrapper.restore_default_domain">
-<span class="sig-name descname"><span class="pre">restore_default_domain</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.domain_randomization_wrapper.DomainRandomizationWrapper.restore_default_domain" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">restore_default_domain</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.domain_randomization_wrapper.DomainRandomizationWrapper.restore_default_domain" title="Permalink to this definition"></a></dt>
 <dd><p>Restores the simulation model parameters saved
 in the last call to &#64;save_default_domain.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.domain_randomization_wrapper.DomainRandomizationWrapper.save_default_domain">
-<span class="sig-name descname"><span class="pre">save_default_domain</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.domain_randomization_wrapper.DomainRandomizationWrapper.save_default_domain" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">save_default_domain</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.domain_randomization_wrapper.DomainRandomizationWrapper.save_default_domain" title="Permalink to this definition"></a></dt>
 <dd><p>Saves the current simulation model parameters so
 that they can be restored later.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.domain_randomization_wrapper.DomainRandomizationWrapper.step">
-<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.domain_randomization_wrapper.DomainRandomizationWrapper.step" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.domain_randomization_wrapper.DomainRandomizationWrapper.step" title="Permalink to this definition"></a></dt>
 <dd><p>Extends vanilla step() function call to accommodate domain randomization</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -503,17 +414,23 @@ that they can be restored later.</p>
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.wrappers.domain_randomization_wrapper.DomainRandomizationWrapper.step_randomization">
+<span class="sig-name descname"><span class="pre">step_randomization</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.domain_randomization_wrapper.DomainRandomizationWrapper.step_randomization" title="Permalink to this definition"></a></dt>
+<dd><p>Steps the internal randomization state</p>
 </dd></dl>
 
-</div>
-<div class="section" id="module-robosuite.wrappers.gym_wrapper">
-<span id="robosuite-wrappers-gym-wrapper-module"></span><h2>robosuite.wrappers.gym_wrapper module<a class="headerlink" href="#module-robosuite.wrappers.gym_wrapper" title="Permalink to this headline">¶</a></h2>
+</dd></dl>
+
+</section>
+<section id="module-robosuite.wrappers.gym_wrapper">
+<span id="robosuite-wrappers-gym-wrapper-module"></span><h2>robosuite.wrappers.gym_wrapper module<a class="headerlink" href="#module-robosuite.wrappers.gym_wrapper" title="Permalink to this headline"></a></h2>
 <p>This file implements a wrapper for facilitating compatibility with OpenAI gym.
 This is useful when using these environments with code that assumes a gym-like
 interface.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="robosuite.wrappers.gym_wrapper.GymWrapper">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.wrappers.gym_wrapper.</span></span><span class="sig-name descname"><span class="pre">GymWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.gym_wrapper.GymWrapper" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.wrappers.gym_wrapper.</span></span><span class="sig-name descname"><span class="pre">GymWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.gym_wrapper.GymWrapper" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robosuite.wrappers.wrapper.Wrapper" title="robosuite.wrappers.wrapper.Wrapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.wrappers.wrapper.Wrapper</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">gym.core.Env</span></code></p>
 <p>Initializes the Gym wrapper. Mimics many of the required functionalities of the Wrapper class
 found in the gym.core module</p>
@@ -532,7 +449,7 @@ observation dictionary. Defaults to proprio-state and object-state.</p></li>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.gym_wrapper.GymWrapper.compute_reward">
-<span class="sig-name descname"><span class="pre">compute_reward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">achieved_goal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desired_goal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.gym_wrapper.GymWrapper.compute_reward" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">compute_reward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">achieved_goal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desired_goal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.gym_wrapper.GymWrapper.compute_reward" title="Permalink to this definition"></a></dt>
 <dd><p>Dummy function to be compatible with gym interface that simply returns environment reward</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -553,7 +470,7 @@ observation dictionary. Defaults to proprio-state and object-state.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.gym_wrapper.GymWrapper.reset">
-<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.gym_wrapper.GymWrapper.reset" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.gym_wrapper.GymWrapper.reset" title="Permalink to this definition"></a></dt>
 <dd><p>Extends env reset method to return flattened observation instead of normal OrderedDict.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -567,7 +484,7 @@ observation dictionary. Defaults to proprio-state and object-state.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.gym_wrapper.GymWrapper.seed">
-<span class="sig-name descname"><span class="pre">seed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.gym_wrapper.GymWrapper.seed" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">seed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.gym_wrapper.GymWrapper.seed" title="Permalink to this definition"></a></dt>
 <dd><p>Utility function to set numpy seed</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -581,7 +498,7 @@ observation dictionary. Defaults to proprio-state and object-state.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.gym_wrapper.GymWrapper.step">
-<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.gym_wrapper.GymWrapper.step" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.gym_wrapper.GymWrapper.step" title="Permalink to this definition"></a></dt>
 <dd><p>Extends vanilla step() function call to return flattened observation instead of normal OrderedDict.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -604,20 +521,20 @@ observation dictionary. Defaults to proprio-state and object-state.</p></li>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-robosuite.wrappers.visualization_wrapper">
-<span id="robosuite-wrappers-visualization-wrapper-module"></span><h2>robosuite.wrappers.visualization_wrapper module<a class="headerlink" href="#module-robosuite.wrappers.visualization_wrapper" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-robosuite.wrappers.visualization_wrapper">
+<span id="robosuite-wrappers-visualization-wrapper-module"></span><h2>robosuite.wrappers.visualization_wrapper module<a class="headerlink" href="#module-robosuite.wrappers.visualization_wrapper" title="Permalink to this headline"></a></h2>
 <p>This file implements a wrapper for visualizing important sites in a given environment.</p>
 <p>By default, this visualizes all sites possible for the environment. Visualization options
 for a given environment can be found by calling <cite>get_visualization_settings()</cite>, and can
 be set individually by calling <cite>set_visualization_setting(setting, visible)</cite>.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="robosuite.wrappers.visualization_wrapper.VisualizationWrapper">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.wrappers.visualization_wrapper.</span></span><span class="sig-name descname"><span class="pre">VisualizationWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indicator_configs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.visualization_wrapper.VisualizationWrapper" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.wrappers.visualization_wrapper.</span></span><span class="sig-name descname"><span class="pre">VisualizationWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indicator_configs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.visualization_wrapper.VisualizationWrapper" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#robosuite.wrappers.wrapper.Wrapper" title="robosuite.wrappers.wrapper.Wrapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.wrappers.wrapper.Wrapper</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.visualization_wrapper.VisualizationWrapper.get_indicator_names">
-<span class="sig-name descname"><span class="pre">get_indicator_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.visualization_wrapper.VisualizationWrapper.get_indicator_names" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_indicator_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.visualization_wrapper.VisualizationWrapper.get_indicator_names" title="Permalink to this definition"></a></dt>
 <dd><p>Gets all indicator object names for this environment.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -631,7 +548,7 @@ be set individually by calling <cite>set_visualization_setting(setting, visible)
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.visualization_wrapper.VisualizationWrapper.get_visualization_settings">
-<span class="sig-name descname"><span class="pre">get_visualization_settings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.visualization_wrapper.VisualizationWrapper.get_visualization_settings" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_visualization_settings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.visualization_wrapper.VisualizationWrapper.get_visualization_settings" title="Permalink to this definition"></a></dt>
 <dd><p>Gets all settings for visualizing this environment</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -645,7 +562,7 @@ be set individually by calling <cite>set_visualization_setting(setting, visible)
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.visualization_wrapper.VisualizationWrapper.reset">
-<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.visualization_wrapper.VisualizationWrapper.reset" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.visualization_wrapper.VisualizationWrapper.reset" title="Permalink to this definition"></a></dt>
 <dd><p>Extends vanilla reset() function call to accommodate visualization</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -659,7 +576,7 @@ be set individually by calling <cite>set_visualization_setting(setting, visible)
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.visualization_wrapper.VisualizationWrapper.set_indicator_pos">
-<span class="sig-name descname"><span class="pre">set_indicator_pos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indicator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.visualization_wrapper.VisualizationWrapper.set_indicator_pos" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_indicator_pos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indicator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.visualization_wrapper.VisualizationWrapper.set_indicator_pos" title="Permalink to this definition"></a></dt>
 <dd><p>Sets the specified &#64;indicator to the desired position &#64;pos</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -673,7 +590,7 @@ be set individually by calling <cite>set_visualization_setting(setting, visible)
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.visualization_wrapper.VisualizationWrapper.set_visualization_setting">
-<span class="sig-name descname"><span class="pre">set_visualization_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">setting</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visible</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.visualization_wrapper.VisualizationWrapper.set_visualization_setting" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_visualization_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">setting</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visible</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.visualization_wrapper.VisualizationWrapper.set_visualization_setting" title="Permalink to this definition"></a></dt>
 <dd><p>Sets the specified &#64;setting to have visibility = &#64;visible.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -687,7 +604,7 @@ be set individually by calling <cite>set_visualization_setting(setting, visible)
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.visualization_wrapper.VisualizationWrapper.step">
-<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.visualization_wrapper.VisualizationWrapper.step" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.visualization_wrapper.VisualizationWrapper.step" title="Permalink to this definition"></a></dt>
 <dd><p>Extends vanilla step() function call to accommodate visualization</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -710,14 +627,14 @@ be set individually by calling <cite>set_visualization_setting(setting, visible)
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-robosuite.wrappers.wrapper">
-<span id="robosuite-wrappers-wrapper-module"></span><h2>robosuite.wrappers.wrapper module<a class="headerlink" href="#module-robosuite.wrappers.wrapper" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-robosuite.wrappers.wrapper">
+<span id="robosuite-wrappers-wrapper-module"></span><h2>robosuite.wrappers.wrapper module<a class="headerlink" href="#module-robosuite.wrappers.wrapper" title="Permalink to this headline"></a></h2>
 <p>This file contains the base wrapper class for Mujoco environments.
 Wrappers are useful for data collection and logging. Highly recommended.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="robosuite.wrappers.wrapper.Wrapper">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.wrappers.wrapper.</span></span><span class="sig-name descname"><span class="pre">Wrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.wrapper.Wrapper" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.wrappers.wrapper.</span></span><span class="sig-name descname"><span class="pre">Wrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.wrapper.Wrapper" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Base class for all wrappers in robosuite.</p>
 <dl class="field-list simple">
@@ -727,7 +644,7 @@ Wrappers are useful for data collection and logging. Highly recommended.</p>
 </dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.wrappers.wrapper.Wrapper.action_dim">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">action_dim</span></span><a class="headerlink" href="#robosuite.wrappers.wrapper.Wrapper.action_dim" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">action_dim</span></span><a class="headerlink" href="#robosuite.wrappers.wrapper.Wrapper.action_dim" title="Permalink to this definition"></a></dt>
 <dd><p>By default, grabs the normal environment action_dim</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -741,7 +658,7 @@ Wrappers are useful for data collection and logging. Highly recommended.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.wrappers.wrapper.Wrapper.action_spec">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">action_spec</span></span><a class="headerlink" href="#robosuite.wrappers.wrapper.Wrapper.action_spec" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">action_spec</span></span><a class="headerlink" href="#robosuite.wrappers.wrapper.Wrapper.action_spec" title="Permalink to this definition"></a></dt>
 <dd><p>By default, grabs the normal environment action_spec</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -759,12 +676,12 @@ Wrappers are useful for data collection and logging. Highly recommended.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.wrapper.Wrapper.class_name">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">class_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.wrapper.Wrapper.class_name" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">class_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.wrapper.Wrapper.class_name" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.wrapper.Wrapper.observation_spec">
-<span class="sig-name descname"><span class="pre">observation_spec</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.wrapper.Wrapper.observation_spec" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">observation_spec</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.wrapper.Wrapper.observation_spec" title="Permalink to this definition"></a></dt>
 <dd><p>By default, grabs the normal environment observation_spec</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -778,7 +695,7 @@ Wrappers are useful for data collection and logging. Highly recommended.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.wrapper.Wrapper.render">
-<span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.wrapper.Wrapper.render" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.wrapper.Wrapper.render" title="Permalink to this definition"></a></dt>
 <dd><p>By default, run the normal environment render() function</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -789,7 +706,7 @@ Wrappers are useful for data collection and logging. Highly recommended.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.wrapper.Wrapper.reset">
-<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.wrapper.Wrapper.reset" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.wrapper.Wrapper.reset" title="Permalink to this definition"></a></dt>
 <dd><p>By default, run the normal environment reset() function</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -803,7 +720,7 @@ Wrappers are useful for data collection and logging. Highly recommended.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.wrappers.wrapper.Wrapper.step">
-<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.wrapper.Wrapper.step" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.wrappers.wrapper.Wrapper.step" title="Permalink to this definition"></a></dt>
 <dd><p>By default, run the normal environment step() function</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -826,7 +743,7 @@ Wrappers are useful for data collection and logging. Highly recommended.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.wrappers.wrapper.Wrapper.unwrapped">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">unwrapped</span></span><a class="headerlink" href="#robosuite.wrappers.wrapper.Wrapper.unwrapped" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">unwrapped</span></span><a class="headerlink" href="#robosuite.wrappers.wrapper.Wrapper.unwrapped" title="Permalink to this definition"></a></dt>
 <dd><p>Grabs unwrapped environment</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -840,58 +757,41 @@ Wrappers are useful for data collection and logging. Highly recommended.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-robosuite.wrappers">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robosuite.wrappers" title="Permalink to this headline">¶</a></h2>
-</div>
-</div>
+</section>
+<section id="module-robosuite.wrappers">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robosuite.wrappers" title="Permalink to this headline"></a></h2>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../algorithms/benchmarking.html" class="btn btn-neutral float-right" title="Benchmarking" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="robosuite.utils.html" class="btn btn-neutral float-left" title="robosuite.utils package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../algorithms/benchmarking.html" class="btn btn-neutral float-right" title="Benchmarking" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright Stanford University and The University of Texas at Austin 2020.
-
-    </p>
+    <p>&#169; Copyright Stanford University and The University of Texas at Austin 2021.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

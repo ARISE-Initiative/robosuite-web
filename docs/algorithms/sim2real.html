@@ -1,77 +1,40 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Sim-to-Real Transfer &mdash; robosuite 1.2.1 documentation</title>
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sim-to-Real Transfer &mdash; robosuite 1.3.0 documentation</title>
   <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
 
-  
-  
-
-  
-  
-
-  
-
-  
   <!--[if lt IE 9]>
     <script src="../static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
         <script src="../static/jquery.js"></script>
         <script src="../static/underscore.js"></script>
         <script src="../static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    
-    <script type="text/javascript" src="../static/js/theme.js"></script>
-
-    
+    <script src="../static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="RoboTurk Datasets" href="roboturk.html" />
     <link rel="prev" title="Human Demonstrations" href="demonstrations.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> robosuite
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
-                1.2.1
+                1.3.0
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -79,18 +42,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
@@ -152,71 +104,30 @@
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgements</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">robosuite</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Sim-to-Real Transfer</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../sources/algorithms/sim2real.md.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -241,11 +152,11 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="sim-to-real-transfer">
-<h1>Sim-to-Real Transfer<a class="headerlink" href="#sim-to-real-transfer" title="Permalink to this headline">¶</a></h1>
+<section id="sim-to-real-transfer">
+<h1>Sim-to-Real Transfer<a class="headerlink" href="#sim-to-real-transfer" title="Permalink to this headline"></a></h1>
 <p>This page covers the randomization techniques to narrow the reality gap of our robotics simulation. These techniques, which concerns about <a class="reference external" href="#visuals">visual observations</a>, <a class="reference external" href="#dynamics">system dynamics</a>, and <a class="reference external" href="#sensors">sensors</a>, are employed to improve the efficacy of transferring our simulation-trained models to the real world.</p>
-<div class="section" id="visuals">
-<h2>Visuals<a class="headerlink" href="#visuals" title="Permalink to this headline">¶</a></h2>
+<section id="visuals">
+<h2>Visuals<a class="headerlink" href="#visuals" title="Permalink to this headline"></a></h2>
 <p>It is well shown that randomizing the visuals in simulation can play an important role in sim2real applications. <strong>robosuite</strong> provides various <code class="docutils literal notranslate"><span class="pre">Modder</span></code> classes to control different aspects of the visual environment. This includes:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">CameraModder</span></code>: Modder for controlling camera parameters, including FOV and pose</p></li>
@@ -253,37 +164,37 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">LightingModder</span></code>: Modder for controlling lighting parameters, including light source properties and pose</p></li>
 </ul>
 <p>Each of these Modders can be used by the user to directly override default simulation settings, or to randomize their respective properties mid-sim. We provide <a class="reference external" href="../demos.html#domain-randomization">demo_domain_randomization.py</a> to showcase all of these modders being applied to randomize an environment during every sim step.</p>
-</div>
-<div class="section" id="dynamics">
-<h2>Dynamics<a class="headerlink" href="#dynamics" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="dynamics">
+<h2>Dynamics<a class="headerlink" href="#dynamics" title="Permalink to this headline"></a></h2>
 <p>In order to achieve reasonable runtime speeds, many physics simulation platforms often must simplify the underlying physics model. Mujoco is no different, and as a result, many parameters such as friction, damping, and contact constraints do not fully capture real-world dynamics.</p>
 <p>To better compensate for this, <strong>robosuite</strong> provides the <code class="docutils literal notranslate"><span class="pre">DynamicsModder</span></code> class, which can control individual dynamics parameters for each model within an environment. Theses parameters are sorted by element group, and briefly described below (for more information, please see <a class="reference external" href="http://www.mujoco.org/book/XMLreference.html">Mujoco XML Reference</a>):</p>
-<div class="section" id="opt-global-parameters">
-<h3>Opt (Global) Parameters<a class="headerlink" href="#opt-global-parameters" title="Permalink to this headline">¶</a></h3>
+<section id="opt-global-parameters">
+<h3>Opt (Global) Parameters<a class="headerlink" href="#opt-global-parameters" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">density</span></code>: Density of the medium (i.e.: air)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">viscosity</span></code>: Viscosity of the medium (i.e.: air)</p></li>
 </ul>
-</div>
-<div class="section" id="body-parameters">
-<h3>Body Parameters<a class="headerlink" href="#body-parameters" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="body-parameters">
+<h3>Body Parameters<a class="headerlink" href="#body-parameters" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">position</span></code>: (x, y, z) Position of the body relative to its parent body</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">quaternion</span></code>: (qw, qx, qy, qz) Quaternion of the body relative to its parent body</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">inertia</span></code>: (ixx, iyy, izz) diagonal components of the inertia matrix associated with this body</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">mass</span></code>: mass of the body</p></li>
 </ul>
-</div>
-<div class="section" id="geom-parameters">
-<h3>Geom Parameters<a class="headerlink" href="#geom-parameters" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="geom-parameters">
+<h3>Geom Parameters<a class="headerlink" href="#geom-parameters" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">friction</span></code>: (sliding, torsional, rolling) friction values for this geom</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">solref</span></code>: (timeconst, dampratio) contact solver values for this geom</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">solimp</span></code>: (dmin, dmax, width, midpoint, power) contact solver impedance values for this geom</p></li>
 </ul>
-</div>
-<div class="section" id="joint-parameters">
-<h3>Joint parameters<a class="headerlink" href="#joint-parameters" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="joint-parameters">
+<h3>Joint parameters<a class="headerlink" href="#joint-parameters" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">stiffness</span></code>: Stiffness for this joint</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">frictionloss</span></code>: Friction loss associated with this joint</p></li>
@@ -332,10 +243,10 @@
 </div>
 <p>Running <a class="reference external" href="../demos.html#domain-randomization">demo_domain_randomization.py</a> is another method for demo’ing (albeit an extreme example of) this functionality.</p>
 <p>Note that the modder already has some sanity checks in place to prevent presumably undesired / non-sensical behavior, such as adding damping / frictionloss to a free joint or setting a non-zero stiffness value to a joint that is normally non-stiff to begin with.</p>
-</div>
-</div>
-<div class="section" id="sensors">
-<h2>Sensors<a class="headerlink" href="#sensors" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="sensors">
+<h2>Sensors<a class="headerlink" href="#sensors" title="Permalink to this headline"></a></h2>
 <p>By default, Mujoco sensors are deterministic and delay-free, which is often an unrealistic assumption to make in the real world. To better close this domain gap, <strong>robosuite</strong> provides a realistic, customizable interface via the <a class="reference external" href="../source/robosuite.utils.html#module-robosuite.utils.observables">Observable</a> class API. Observables model realistic sensor sampling, in which ground truth data is sampled (<code class="docutils literal notranslate"><span class="pre">sensor</span></code>), passed through a corrupting function (<code class="docutils literal notranslate"><span class="pre">corrupter</span></code>), and then finally passed through a filtering function (<code class="docutils literal notranslate"><span class="pre">filter</span></code>). Moreover, each observable has its own <code class="docutils literal notranslate"><span class="pre">sampling_rate</span></code> and <code class="docutils literal notranslate"><span class="pre">delayer</span></code> function which simulates sensor delay. While default values are used to instantiate each observable during environment creation, each of these components can be modified by the user at runtime using <code class="docutils literal notranslate"><span class="pre">env.modify_observable(...)</span></code> . Moreover, each observable is assigned a modality, and are grouped together in the returned observation dictionary during the <code class="docutils literal notranslate"><span class="pre">env.step()</span></code> call. For example, if an environment consists of camera observations and a single robot’s proprioceptive observations, the observation dict structure might look as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;frontview_image&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">),</span>    <span class="c1"># this has modality &quot;image&quot;</span>
@@ -398,55 +309,38 @@
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Recorded value </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">buffer</span><span class="o">.</span><span class="n">buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="roboturk.html" class="btn btn-neutral float-right" title="RoboTurk Datasets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="demonstrations.html" class="btn btn-neutral float-left" title="Human Demonstrations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="roboturk.html" class="btn btn-neutral float-right" title="RoboTurk Datasets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright Stanford University and The University of Texas at Austin 2020.
-
-    </p>
+    <p>&#169; Copyright Stanford University and The University of Texas at Austin 2021.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

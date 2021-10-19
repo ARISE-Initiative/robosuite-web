@@ -1,77 +1,40 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Renderers &mdash; robosuite 1.2.1 documentation</title>
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renderers &mdash; robosuite 1.3.0 documentation</title>
+
   <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
   <!--[if lt IE 9]>
     <script src="../static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
         <script src="../static/jquery.js"></script>
         <script src="../static/underscore.js"></script>
         <script src="../static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    
-    <script type="text/javascript" src="../static/js/theme.js"></script>
-
-    
+    <script src="../static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Robot" href="../simulation/robot.html" />
     <link rel="prev" title="I/O Devices" href="devices.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> robosuite
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
-                1.2.1
+                1.3.0
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -79,18 +42,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
@@ -108,8 +60,18 @@
 <li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devices.html">I/O Devices</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Renderers</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#mjviewer">MjViewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mujoco-py">mujoco-py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nvisii">NVISII</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-the-nvisii-renderer">Using the NVISII renderer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#igibson">iGibson</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-the-igibson-renderer">Using the iGibson Renderer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#requirements-to-use-the-igibson-renderer">Requirements to use the iGibson Renderer</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#pygame">PyGame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#renderer-profiling">Renderer Profiling</a></li>
 </ul>
 </li>
 </ul>
@@ -145,71 +107,30 @@
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgements</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">robosuite</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Renderers</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../sources/modules/renderers.md.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -234,65 +155,170 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="renderers">
-<h1>Renderers<a class="headerlink" href="#renderers" title="Permalink to this headline">¶</a></h1>
-<p>Renderers are used to visualize the simulation, and can be used either in on-screen mode or headless (off-screen) mode. Renderers are also responsible for generating image-based observations that are returned from a given environment, and compute virtual images of the environment based on the properties defined in the cameras. In <strong>robosuite</strong>, the user can select one of these two renderers:</p>
-<div class="section" id="mjviewer">
-<h2>MjViewer<a class="headerlink" href="#mjviewer" title="Permalink to this headline">¶</a></h2>
-<p>This is the default renderer from <a class="reference external" href="https://openai.github.io/mujoco-py/build/html/reference.html#mjviewer-3d-rendering">mujoco-py</a>. Based on <a class="reference external" href="https://www.opengl.org/">OpenGL</a>, our assets and environment definitions have been tuned to look good with this renderer.</p>
-<!-- ##### iGibson Renderer--><!--This renderer is included in the [iGibson simulator](http://svl.stanford.edu/igibson/). We include an initial (not optimized) set of alternative meshes (OBJ files instead of the STL used by MjViewer) to be used with this simulator. The iGibson simulator can be used in simple mode (renders only albedo) or in physics-based rendering (PBR) mode (renders additional properties such as metallic, or roughness).--> </div>
-<div class="section" id="pygame">
-<h2>PyGame<a class="headerlink" href="#pygame" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://www.pygame.org/news">PyGame</a> is a simple renderer that serves also as an alternative to MjViewer. A limitation of PyGame is that it can only render on-screen, limiting its applicability to train on computing clusters. However, it is useful for visualizing the robots’ behaviors in the system runtime where MjViewer is not supported.</p>
-</div>
-</div>
+<section id="renderers">
+<h1>Renderers<a class="headerlink" href="#renderers" title="Permalink to this headline"></a></h1>
+<p><a class="reference internal" href="../source/robosuite.renderers.html"><span class="doc">Renderers</span></a> are used to visualize the simulation, and can be used either in on-screen mode or headless (off-screen) mode. Renderers are also responsible for generating image-based observations that are returned from a given environment, and compute virtual images of the environment based on the properties defined in the cameras.</p>
+<p>Currently, the following ground-truth vision modalities are supported across the three renderers, MjViewer, NVISII, and iGibson:</p>
+<ul class="simple">
+<li><p><strong>RGB</strong>: Standard 3-channel color frames with values in range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">255]</span></code>. This is set during environment construction with the <code class="docutils literal notranslate"><span class="pre">use_camera_obs</span></code> argument.</p></li>
+<li><p><strong>Depth</strong>: 1-channel frame with normalized values in range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code>. This is set during environment construction with the <code class="docutils literal notranslate"><span class="pre">camera_depths</span></code> argument.</p></li>
+<li><p><strong>Segmentation</strong>: 1-channel frames with pixel values corresponding to integer IDs for various objects. Segmentation can
+occur by class, instance, or geom, and is set during environment construction with the <code class="docutils literal notranslate"><span class="pre">camera_segmentations</span></code> argument.</p></li>
+</ul>
+<p>Additional modalities are supported by a subset of the renderers. In <strong>robosuite</strong>, the user has the following rendering options:</p>
+<p><img alt="Comparison of renderer options" src="../images/renderers.png" /></p>
+<section id="mujoco-py">
+<h2>mujoco-py<a class="headerlink" href="#mujoco-py" title="Permalink to this headline"></a></h2>
+<p>MujocoRenderer is the default onscreen (MjViewer) and offscreen (MjRenderContextOffscreen) renderer supported by <a class="reference external" href="https://openai.github.io/mujoco-py/build/html/reference.html#mjviewer-3d-rendering">mujoco-py</a>. Based on <a class="reference external" href="https://www.opengl.org/">OpenGL</a>, our assets and environment definitions have been tuned to look good with this renderer.</p>
+</section>
+<section id="nvisii">
+<h2>NVISII<a class="headerlink" href="#nvisii" title="Permalink to this headline"></a></h2>
+<p>NVISIIRenderer is a ray tracing-based renderer. It is primarily used for training perception models and visualizing results in high quality. Through <a class="reference external" href="https://github.com/owl-project/NVISII">NVISII</a>, we can obtain different vision modalities, including depth, segmentations, surface normals, texture coordinates, and texture positioning.</p>
+<p><img alt="NVISII renderer vision modalities" src="../images/vision_modalities_nvisii.png" /></p>
+<section id="using-the-nvisii-renderer">
+<h3>Using the NVISII renderer<a class="headerlink" href="#using-the-nvisii-renderer" title="Permalink to this headline"></a></h3>
+<p>Installing NVISII can be done using the command <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">nvisii</span></code>. Note that NVISII requires users’ drivers to be up to date. Please refer <a class="reference external" href="https://github.com/owl-project/NVISII">here</a> for more information. You can try the NVISII renderer with the <code class="docutils literal notranslate"><span class="pre">demo_renderers.py</span></code> <a class="reference external" href="../demos.html#rendering-options">script</a> and learn about the APIs for obtaining vision modalities with <code class="docutils literal notranslate"><span class="pre">demo_nvisii_modalities.py</span></code>.</p>
+</section>
+</section>
+<section id="igibson">
+<h2>iGibson<a class="headerlink" href="#igibson" title="Permalink to this headline"></a></h2>
+<p>iGibsonRenderer uses a <a class="reference external" href="https://en.wikipedia.org/wiki/Physically_based_rendering">physically based rendering</a> (PBR), a computer graphics technique that seeks to render images in a way that models the flow of light in the real world. The original <a class="reference external" href="http://svl.stanford.edu/igibson/">iGibson</a> environment combines fast visual rendering with physics simulation based on Bullet. We have created a version of robosuite that uses only the renderer of iGibson. This renderer supports faster image generation with optimization, and the generation of a variety of vision modalities like depth, surface normal, and segmentation. It is capable of rendering and returning <a class="reference external" href="https://pytorch.org/docs/stable/tensors.html">PyTorch tensors</a>, allowing for tensor-to-tensor rendering that reduces the tensor copying time between CPU and GPU accelerating substantially the process of training models for exampe with reinforcement learning.</p>
+<p><img alt="iGibson renderer vision modalities" src="../images/vision_modalities_igibson.png" /></p>
+<section id="using-the-igibson-renderer">
+<h3>Using the iGibson Renderer<a class="headerlink" href="#using-the-igibson-renderer" title="Permalink to this headline"></a></h3>
+<p>Installing iGibson can be done using the command <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">igibson</span></code>. Please refer to the <a class="reference external" href="http://svl.stanford.edu/igibson/docs/installation.html">iGibson installation guide</a> for a step by step guide. You can try the iGibson renderer with the <code class="docutils literal notranslate"><span class="pre">demo_renderers.py</span></code> <a class="reference external" href="../demos.html#rendering-options">script</a> and learn about the APIs for obtaining vision modalities with <code class="docutils literal notranslate"><span class="pre">demo_igibson_modalities.py</span></code>.</p>
+</section>
+<section id="requirements-to-use-the-igibson-renderer">
+<h3>Requirements to use the iGibson Renderer<a class="headerlink" href="#requirements-to-use-the-igibson-renderer" title="Permalink to this headline"></a></h3>
+<p>Using iGibson’s PBR requires Linux or Windows machines; you can still use the iGibson renderer with Mac OS X but it won’t be PBR, it goes back to classic OpenGL rendering. Apart from that, the minimum system requirements are the following:</p>
+<ul class="simple">
+<li><p>Linux</p>
+<ul>
+<li><p>Ubuntu 16.04</p></li>
+<li><p>Nvidia GPU with VRAM &gt; 6.0GB</p></li>
+<li><p>Nvidia driver &gt;= 384</p></li>
+<li><p>CUDA &gt;= 9.0, CuDNN &gt;= v7</p></li>
+<li><p>libegl-dev (Debian/Ubuntu: vendor neutral GL dispatch library – EGL support)</p></li>
+</ul>
+</li>
+<li><p>Windows</p>
+<ul>
+<li><p>Windows 10</p></li>
+<li><p>Nvidia GPU with VRAM &gt; 6.0GB</p></li>
+<li><p>Nvidia driver &gt;= 384</p></li>
+<li><p>CUDA &gt;= 9.0, CuDNN &gt;= v7</p></li>
+</ul>
+</li>
+<li><p>Mac OS X</p>
+<ul>
+<li><p>Tested on 10.15</p></li>
+<li><p>PBR features not supported</p></li>
+</ul>
+</li>
+</ul>
+<p>Other system configurations may work, but have not been extensively tested.</p>
+</section>
+</section>
+<section id="pygame">
+<h2>PyGame<a class="headerlink" href="#pygame" title="Permalink to this headline"></a></h2>
+<p><a class="reference external" href="https://www.pygame.org/news">PyGame</a> is a simple renderer that serves also as an alternative to MjViewer for rendering onscreen. A limitation of PyGame is that it can only render on-screen, limiting its applicability to train on computing clusters. This is because PyGame still relies on the MjRenderContextOffscreen to render frames offscreen, from which PyGame then maps to its native onscreen renderer. However, it is useful for visualizing the robots’ behaviors in the system runtime where MjViewer is not supported. Check out this <a class="reference external" href="../demos.html#pygame-renderer">demo script</a> for an example of using the PyGame renderer.</p>
+</section>
+<section id="renderer-profiling">
+<h2>Renderer Profiling<a class="headerlink" href="#renderer-profiling" title="Permalink to this headline"></a></h2>
+<p>The following table shows the estimated frame rate of each renderer in frames per second (FPS). The profiling was conducted on a machine with Ubuntu 18.04, Intel Core i9-900K CPU&#64;3.60GHz, and Nvidia RTX. The FPS numbers of each rendering option are reported below. These numbers are estimated on the Door environment with IIWA robot and Joint Velocity controller and 256x256 image size. In the table, R2T means render2tensor and R2N means render2numpy, which are two modes offered by the iGibson renderer.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th></th>
+<th align="center">mujoco-py</th>
+<th align="center">iGibson<br>(R2T optimized)</th>
+<th align="center">iGibson<br>(R2T)</th>
+<th align="center">iGibson<br>(R2N)</th>
+<th align="center">NVISII</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simulation + rendering</td>
+<td align="center">62</td>
+<td align="center">64</td>
+<td align="center">58</td>
+<td align="center">45</td>
+<td align="center">0.5</td>
+</tr>
+<tr>
+<td>Rendering only</td>
+<td align="center">508</td>
+<td align="center">1392</td>
+<td align="center">285</td>
+<td align="center">271</td>
+<td align="center">0.5</td>
+</tr>
+</tbody>
+</table><p>For the same environment setup, we profiled the renderer on a machine with Ubuntu 18.04, Intel Core i7-8700K CPU&#64;3.70GHz
+and Nvidia GTX 1080ti.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th></th>
+<th align="center">mujoco-py</th>
+<th align="center">iGibson<br>(R2T optimized)</th>
+<th align="center">iGibson<br>(R2T)</th>
+<th align="center">iGibson<br>(R2N)</th>
+<th align="center">NVISII</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simulation + rendering</td>
+<td align="center">65</td>
+<td align="center">62</td>
+<td align="center">45</td>
+<td align="center">41</td>
+<td align="center">0.4</td>
+</tr>
+<tr>
+<td>Rendering only</td>
+<td align="center">1000</td>
+<td align="center">1500</td>
+<td align="center">250</td>
+<td align="center">205</td>
+<td align="center">0.4</td>
+</tr>
+</tbody>
+</table><p>In practice, both mujoco-py and iGibson renderers are well-suited for vision-based policy learning. In comparison, iGibson offers a faster rendering speed and additional functionalities for perception research. You might also find that iGibson has better cross-platform compatibility than the generic mujoco-py renderer, but it requires iGibson as a dependency. NVISII is best suited for photorealistic rendering; however, the ray-tracing computation substantially slows down its rendering speed compared to the other two renderers. It is mainly intended for perception tasks and qualitative visualizations, rather than online policy training.</p>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../simulation/robot.html" class="btn btn-neutral float-right" title="Robot" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="devices.html" class="btn btn-neutral float-left" title="I/O Devices" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../simulation/robot.html" class="btn btn-neutral float-right" title="Robot" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright Stanford University and The University of Texas at Austin 2020.
-
-    </p>
+    <p>&#169; Copyright Stanford University and The University of Texas at Austin 2021.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
