@@ -12,7 +12,7 @@ videoId: "robosuite-video-faster.mp4"
 **robosuite** is a simulation framework powered by the [MuJoCo](http://mujoco.org/) physics engine for robot learning. It also offers a suite of benchmark environments for reproducible research. The current release (v1.3) features rendering tools, ground-truth of vision modalities, and camera utilities. This project is part of the broader [Advancing Robot Intelligence through Simulated Environments (ARISE) Initiative](https://github.com/ARISE-Initiative), with the aim of lowering the barriers of entry for cutting-edge research at the intersection of AI and Robotics.
 
 # New Releases
-- [10/19/2021] **v1.3**: Ray tracing and physically based rendering tools :sparkles: and access to additional vision modalities [video spotlight]() [release notes](https://github.com/ARISE-Initiative/robosuite/releases/tag/v1.3)
+- [10/19/2021] **v1.3**: Ray tracing and physically based rendering tools :sparkles: and access to additional vision modalities [video spotlight](https://www.youtube.com/watch?v=2xesly6JrQ8) [release notes](https://github.com/ARISE-Initiative/robosuite/releases/tag/v1.3)
 
 - [02/17/2021] **v1.2**: Added observable sensor models :eyes: and dynamics randomization [release notes](https://github.com/ARISE-Initiative/robosuite/releases/tag/v1.2)
 
