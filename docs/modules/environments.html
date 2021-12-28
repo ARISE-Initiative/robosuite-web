@@ -5,10 +5,9 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Environments &mdash; robosuite 1.3.0 documentation</title>
-
-  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
+      <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -282,7 +281,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">object-state</span></code> : task-specific object observations. For example, the <code class="docutils literal notranslate"><span class="pre">TwoArmLift</span></code> environment provides the pose of the pot, the position of each handle, and the relative position of each robot gripper with respect to each handle. The shape for this modality is flat (e.g. <code class="docutils literal notranslate"><span class="pre">(N,)</span></code>).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">{camera_name}_image</span></code> : image observations for camera with name <code class="docutils literal notranslate"><span class="pre">camera_name</span></code>. The shape for this modality is <code class="docutils literal notranslate"><span class="pre">(H,</span> <span class="pre">W,</span> <span class="pre">3)</span></code> where <code class="docutils literal notranslate"><span class="pre">H</span></code> and <code class="docutils literal notranslate"><span class="pre">W</span></code> are the height and width of the image respectively. By default, the returned image convention is mujoco’s native <code class="docutils literal notranslate"><span class="pre">opengl</span></code> (”flipped”). This can alternatively be set to <code class="docutils literal notranslate"><span class="pre">opencv</span></code> convention (unflipped) via the <code class="docutils literal notranslate"><span class="pre">IMAGE_CONVENTION</span></code> macro in <code class="docutils literal notranslate"><span class="pre">macros.py</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">{camera_name}_depth</span></code> : depth image observations for camera with name <code class="docutils literal notranslate"><span class="pre">camera_name</span></code>. The shape for this modality is <code class="docutils literal notranslate"><span class="pre">(H,</span> <span class="pre">W)</span></code> where <code class="docutils literal notranslate"><span class="pre">H</span></code> and <code class="docutils literal notranslate"><span class="pre">W</span></code> are the height and width of the image respectively. By default, the returned image convention is mujoco’s native <code class="docutils literal notranslate"><span class="pre">opengl</span></code> (”flipped”). This can alternatively be set to <code class="docutils literal notranslate"><span class="pre">opencv</span></code> convention (unflipped) via the <code class="docutils literal notranslate"><span class="pre">IMAGE_CONVENTION</span></code> macro in <code class="docutils literal notranslate"><span class="pre">macros.py</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">image-state</span></code> : (optional) stacked image observations. Note that this is disabled by default, and can be toggled via the <code class="docutils literal notranslate"><span class="pre">CONCATENATE_IMAGES</span></code> macro in <code class="docutils literal notranslate"><span class="pre">macros.py</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">image-state</span></code> : (optional) stacked image observations. Note that this is disabled by default, and can be toggled via the <code class="docutils literal notranslate"><span class="pre">CONCATENATEimages</span></code> macro in <code class="docutils literal notranslate"><span class="pre">macros.py</span></code>.</p></li>
 </ul>
 </section>
 <section id="rewards-and-termination">
