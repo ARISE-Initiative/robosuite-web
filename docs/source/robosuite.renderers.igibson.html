@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>robosuite.renderers.igibson package &mdash; robosuite 1.3.0 documentation</title>
+  <title>robosuite.renderers.igibson package &mdash; robosuite 1.3.1 documentation</title>
       <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
@@ -32,7 +32,7 @@
             <a href="../index.html" class="icon icon-home"> robosuite
           </a>
               <div class="version">
-                1.3.0
+                1.3.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -168,80 +168,8 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
 </section>
-<section id="module-robosuite.renderers.igibson.igibson_renderer">
-<span id="robosuite-renderers-igibson-igibson-renderer-module"></span><h2>robosuite.renderers.igibson.igibson_renderer module<a class="headerlink" href="#module-robosuite.renderers.igibson.igibson_renderer" title="Permalink to this headline"></a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="robosuite.renderers.igibson.igibson_renderer.check_camera_obs">
-<span class="sig-prename descclassname"><span class="pre">robosuite.renderers.igibson.igibson_renderer.</span></span><span class="sig-name descname"><span class="pre">check_camera_obs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">use_camera_obs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.igibson.igibson_renderer.check_camera_obs" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="robosuite.renderers.igibson.igibson_renderer.check_modes">
-<span class="sig-prename descclassname"><span class="pre">robosuite.renderers.igibson.igibson_renderer.</span></span><span class="sig-name descname"><span class="pre">check_modes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.igibson.igibson_renderer.check_modes" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="robosuite.renderers.igibson.igibson_renderer.check_render2tensor">
-<span class="sig-prename descclassname"><span class="pre">robosuite.renderers.igibson.igibson_renderer.</span></span><span class="sig-name descname"><span class="pre">check_render2tensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">render2tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.igibson.igibson_renderer.check_render2tensor" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="robosuite.renderers.igibson.igibson_renderer.check_render_mode">
-<span class="sig-prename descclassname"><span class="pre">robosuite.renderers.igibson.igibson_renderer.</span></span><span class="sig-name descname"><span class="pre">check_render_mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">render_mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.igibson.igibson_renderer.check_render_mode" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="robosuite.renderers.igibson.igibson_renderer.check_segmentation_type">
-<span class="sig-prename descclassname"><span class="pre">robosuite.renderers.igibson.igibson_renderer.</span></span><span class="sig-name descname"><span class="pre">check_segmentation_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">segmentation_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.igibson.igibson_renderer.check_segmentation_type" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="robosuite.renderers.igibson.igibson_renderer.iGibsonRenderer">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.renderers.igibson.igibson_renderer.</span></span><span class="sig-name descname"><span class="pre">iGibsonRenderer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gui'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1280</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">720</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_pbr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_shadow</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msaa</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render2tensor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimized</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">light_dimming_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device_idx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_obs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vision_modalities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['rgb']</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.igibson.igibson_renderer.iGibsonRenderer" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="robosuite.renderers.html#robosuite.renderers.base.Renderer" title="robosuite.renderers.base.Renderer"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.renderers.base.Renderer</span></code></a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="robosuite.renderers.igibson.igibson_renderer.iGibsonRenderer.close">
-<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.igibson.igibson_renderer.iGibsonRenderer.close" title="Permalink to this definition"></a></dt>
-<dd><p>Releases the iGibson renderer.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="robosuite.renderers.igibson.igibson_renderer.iGibsonRenderer.render">
-<span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.igibson.igibson_renderer.iGibsonRenderer.render" title="Permalink to this definition"></a></dt>
-<dd><p>Update the viewer of the iGibson renderer.
-Call to render is made inside viewer’s update.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="robosuite.renderers.igibson.igibson_renderer.iGibsonRenderer.reset">
-<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.igibson.igibson_renderer.iGibsonRenderer.reset" title="Permalink to this definition"></a></dt>
-<dd><p>Reset the renderer with initial states for environment</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="robosuite.renderers.igibson.igibson_renderer.iGibsonRenderer.set_camera_pos_quat">
-<span class="sig-name descname"><span class="pre">set_camera_pos_quat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.igibson.igibson_renderer.iGibsonRenderer.set_camera_pos_quat" title="Permalink to this definition"></a></dt>
-<dd><p>Set renderer position and quaternion.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>pos</strong> (<em>[</em><em>list</em><em>]</em>) – pos array of the camera.</p></li>
-<li><p><strong>quat</strong> (<em>[</em><em>list</em><em>]</em>) – quat array of the camera.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="robosuite.renderers.igibson.igibson_renderer.iGibsonRenderer.update">
-<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.igibson.igibson_renderer.iGibsonRenderer.update" title="Permalink to this definition"></a></dt>
-<dd><p>Updates the states for the wrapper given a certain action
-:param action: the action the robot should take
-:type action: np-array</p>
-</dd></dl>
-
-</dd></dl>
-
+<section id="robosuite-renderers-igibson-igibson-renderer-module">
+<h2>robosuite.renderers.igibson.igibson_renderer module<a class="headerlink" href="#robosuite-renderers-igibson-igibson-renderer-module" title="Permalink to this headline"></a></h2>
 </section>
 <section id="module-robosuite.renderers.igibson.igibson_utils">
 <span id="robosuite-renderers-igibson-igibson-utils-module"></span><h2>robosuite.renderers.igibson.igibson_utils module<a class="headerlink" href="#module-robosuite.renderers.igibson.igibson_utils" title="Permalink to this headline"></a></h2>
@@ -430,7 +358,7 @@ self.segmentation type.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright Stanford University and The University of Texas at Austin 2021.</p>
+    <p>&#169; Copyright Stanford University and The University of Texas at Austin 2022.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

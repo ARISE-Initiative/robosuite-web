@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Renderers &mdash; robosuite 1.3.0 documentation</title>
+  <title>Renderers &mdash; robosuite 1.3.1 documentation</title>
       <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
@@ -32,7 +32,7 @@
             <a href="../index.html" class="icon icon-home"> robosuite
           </a>
               <div class="version">
-                1.3.0
+                1.3.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -189,7 +189,7 @@ occur by class, instance, or geom, and is set during environment construction wi
 </section>
 <section id="requirements-to-use-the-igibson-renderer">
 <h3>Requirements to use the iGibson Renderer<a class="headerlink" href="#requirements-to-use-the-igibson-renderer" title="Permalink to this headline"></a></h3>
-<p>Using iGibson’s PBR requires Linux or Windows machines; you can still use the iGibson renderer with Mac OS X but it won’t be PBR, it goes back to classic OpenGL rendering. Apart from that, the minimum system requirements are the following:</p>
+<p>Using iGibson’s PBR requires Linux or Windows machines; you can still use the iGibson renderer with macOS but it won’t be PBR, it goes back to classic OpenGL rendering. Apart from that, the minimum system requirements are the following:</p>
 <ul class="simple">
 <li><p>Linux</p>
 <ul>
@@ -208,13 +208,14 @@ occur by class, instance, or geom, and is set during environment construction wi
 <li><p>CUDA &gt;= 9.0, CuDNN &gt;= v7</p></li>
 </ul>
 </li>
-<li><p>Mac OS X</p>
+<li><p>macOS</p>
 <ul>
 <li><p>Tested on 10.15</p></li>
 <li><p>PBR features not supported</p></li>
 </ul>
 </li>
 </ul>
+<p><strong>NOTE</strong>: Since PBR is not supported on macOS, colors and textures will look flat. More realistic renderings can be obtained on Linux and Windows.</p>
 <p>Other system configurations may work, but have not been extensively tested.</p>
 </section>
 </section>
@@ -300,7 +301,7 @@ and Nvidia GTX 1080ti.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright Stanford University and The University of Texas at Austin 2021.</p>
+    <p>&#169; Copyright Stanford University and The University of Texas at Austin 2022.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
