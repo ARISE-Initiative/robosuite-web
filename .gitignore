@@ -126,3 +126,5 @@ debug_*
 .tabnine_root
 .jekyll-cache/
 _site
+.bundle
+vendor

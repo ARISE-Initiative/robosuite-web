@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>robosuite.models.arenas package &mdash; robosuite 1.3.1 documentation</title>
+      <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
+        <script src="../static/jquery.js"></script>
+        <script src="../static/underscore.js"></script>
+        <script src="../static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="robosuite.models.grippers package" href="robosuite.models.grippers.html" />
+    <link rel="prev" title="robosuite.models package" href="robosuite.models.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> robosuite
+          </a>
+              <div class="version">
+                1.3.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demos.html">Demo Showcases</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/robots.html">Robots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/controllers.html">Controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/renderers.html">Renderers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Simulation API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/robot.html">Robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/device.html">Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/controller.html">Controller</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modeling API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/mujoco_model.html">Mujoco Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Source API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="robosuite.html">robosuite package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="robosuite.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="robosuite.controllers.html">robosuite.controllers package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.devices.html">robosuite.devices package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.environments.html">robosuite.environments package</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="robosuite.models.html">robosuite.models package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="robosuite.models.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.models.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.models.html#module-robosuite.models.base">robosuite.models.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.models.html#module-robosuite.models.world">robosuite.models.world module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.models.html#module-robosuite.models">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.renderers.html">robosuite.renderers package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.robots.html">robosuite.robots package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.utils.html">robosuite.utils package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.wrappers.html">robosuite.wrappers package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.html#module-robosuite">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Projects using robosuite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">robosuite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="robosuite.html">robosuite package</a> &raquo;</li>
+          <li><a href="robosuite.models.html">robosuite.models package</a> &raquo;</li>
+      <li>robosuite.models.arenas package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../sources/source/robosuite.models.arenas.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="robosuite-models-arenas-package">
+<h1>robosuite.models.arenas package<a class="headerlink" href="#robosuite-models-arenas-package" title="Permalink to this headline"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-robosuite.models.arenas.arena">
+<span id="robosuite-models-arenas-arena-module"></span><h2>robosuite.models.arenas.arena module<a class="headerlink" href="#module-robosuite.models.arenas.arena" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="robosuite.models.arenas.arena.Arena">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.models.arenas.arena.</span></span><span class="sig-name descname"><span class="pre">Arena</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.arenas.arena.Arena" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="robosuite.models.html#robosuite.models.base.MujocoXML" title="robosuite.models.base.MujocoXML"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.base.MujocoXML</span></code></a></p>
+<p>Base arena class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.arenas.arena.Arena.set_camera">
+<span class="sig-name descname"><span class="pre">set_camera</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">camera_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_attribs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.arenas.arena.Arena.set_camera" title="Permalink to this definition"></a></dt>
+<dd><p>Sets a camera with &#64;camera_name. If the camera already exists, then this overwrites its pos and quat values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>camera_name</strong> (<em>str</em>) – Camera name to search for / create</p></li>
+<li><p><strong>pos</strong> (<em>3-array</em>) – (x,y,z) coordinates of camera in world frame</p></li>
+<li><p><strong>quat</strong> (<em>4-array</em>) – (w,x,y,z) quaternion of camera in world frame</p></li>
+<li><p><strong>camera_attribs</strong> (<em>dict</em>) – If specified, should be additional keyword-mapped attributes for this camera.
+See <a class="reference external" href="http://www.mujoco.org/book/XMLreference.html#camera">http://www.mujoco.org/book/XMLreference.html#camera</a> for exact attribute specifications.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.arenas.arena.Arena.set_origin">
+<span class="sig-name descname"><span class="pre">set_origin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.arenas.arena.Arena.set_origin" title="Permalink to this definition"></a></dt>
+<dd><p>Applies a constant offset to all objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>offset</strong> (<em>3-tuple</em>) – (x,y,z) offset to apply to all nodes in this XML</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-robosuite.models.arenas.bins_arena">
+<span id="robosuite-models-arenas-bins-arena-module"></span><h2>robosuite.models.arenas.bins_arena module<a class="headerlink" href="#module-robosuite.models.arenas.bins_arena" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="robosuite.models.arenas.bins_arena.BinsArena">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.models.arenas.bins_arena.</span></span><span class="sig-name descname"><span class="pre">BinsArena</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bin1_pos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.1,</span> <span class="pre">-</span> <span class="pre">0.5,</span> <span class="pre">0.8)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_full_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.39,</span> <span class="pre">0.49,</span> <span class="pre">0.82)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_friction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">0.005,</span> <span class="pre">0.0001)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.arenas.bins_arena.BinsArena" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.models.arenas.arena.Arena" title="robosuite.models.arenas.arena.Arena"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.arenas.arena.Arena</span></code></a></p>
+<p>Workspace that contains two bins placed side by side.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bin1_pos</strong> (<em>3-tuple</em>) – (x,y,z) position to place bin1</p></li>
+<li><p><strong>table_full_size</strong> (<em>3-tuple</em>) – (L,W,H) full dimensions of the table</p></li>
+<li><p><strong>table_friction</strong> (<em>3-tuple</em>) – (sliding, torsional, rolling) friction parameters of the table</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.arenas.bins_arena.BinsArena.configure_location">
+<span class="sig-name descname"><span class="pre">configure_location</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.arenas.bins_arena.BinsArena.configure_location" title="Permalink to this definition"></a></dt>
+<dd><p>Configures correct locations for this arena</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-robosuite.models.arenas.empty_arena">
+<span id="robosuite-models-arenas-empty-arena-module"></span><h2>robosuite.models.arenas.empty_arena module<a class="headerlink" href="#module-robosuite.models.arenas.empty_arena" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="robosuite.models.arenas.empty_arena.EmptyArena">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.models.arenas.empty_arena.</span></span><span class="sig-name descname"><span class="pre">EmptyArena</span></span><a class="headerlink" href="#robosuite.models.arenas.empty_arena.EmptyArena" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.models.arenas.arena.Arena" title="robosuite.models.arenas.arena.Arena"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.arenas.arena.Arena</span></code></a></p>
+<p>Empty workspace.</p>
+</dd></dl>
+
+</section>
+<section id="module-robosuite.models.arenas.pegs_arena">
+<span id="robosuite-models-arenas-pegs-arena-module"></span><h2>robosuite.models.arenas.pegs_arena module<a class="headerlink" href="#module-robosuite.models.arenas.pegs_arena" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="robosuite.models.arenas.pegs_arena.PegsArena">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.models.arenas.pegs_arena.</span></span><span class="sig-name descname"><span class="pre">PegsArena</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_full_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.45,</span> <span class="pre">0.69,</span> <span class="pre">0.05)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_friction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">0.005,</span> <span class="pre">0.0001)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.arenas.pegs_arena.PegsArena" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.models.arenas.table_arena.TableArena" title="robosuite.models.arenas.table_arena.TableArena"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.arenas.table_arena.TableArena</span></code></a></p>
+<p>Workspace that contains a tabletop with two fixed pegs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table_full_size</strong> (<em>3-tuple</em>) – (L,W,H) full dimensions of the table</p></li>
+<li><p><strong>table_friction</strong> (<em>3-tuple</em>) – (sliding, torsional, rolling) friction parameters of the table</p></li>
+<li><p><strong>table_offset</strong> (<em>3-tuple</em>) – (x,y,z) offset from center of arena when placing table.
+Note that the z value sets the upper limit of the table</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-robosuite.models.arenas.table_arena">
+<span id="robosuite-models-arenas-table-arena-module"></span><h2>robosuite.models.arenas.table_arena module<a class="headerlink" href="#module-robosuite.models.arenas.table_arena" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="robosuite.models.arenas.table_arena.TableArena">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.models.arenas.table_arena.</span></span><span class="sig-name descname"><span class="pre">TableArena</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_full_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.8,</span> <span class="pre">0.8,</span> <span class="pre">0.05)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_friction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">0.005,</span> <span class="pre">0.0001)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0.8)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_legs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xml</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'arenas/table_arena.xml'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.arenas.table_arena.TableArena" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.models.arenas.arena.Arena" title="robosuite.models.arenas.arena.Arena"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.arenas.arena.Arena</span></code></a></p>
+<p>Workspace that contains an empty table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table_full_size</strong> (<em>3-tuple</em>) – (L,W,H) full dimensions of the table</p></li>
+<li><p><strong>table_friction</strong> (<em>3-tuple</em>) – (sliding, torsional, rolling) friction parameters of the table</p></li>
+<li><p><strong>table_offset</strong> (<em>3-tuple</em>) – (x,y,z) offset from center of arena when placing table.
+Note that the z value sets the upper limit of the table</p></li>
+<li><p><strong>has_legs</strong> (<em>bool</em>) – whether the table has legs or not</p></li>
+<li><p><strong>xml</strong> (<em>str</em>) – xml file to load arena</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.arenas.table_arena.TableArena.configure_location">
+<span class="sig-name descname"><span class="pre">configure_location</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.arenas.table_arena.TableArena.configure_location" title="Permalink to this definition"></a></dt>
+<dd><p>Configures correct locations for this arena</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.arenas.table_arena.TableArena.table_top_abs">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">table_top_abs</span></span><a class="headerlink" href="#robosuite.models.arenas.table_arena.TableArena.table_top_abs" title="Permalink to this definition"></a></dt>
+<dd><p>Grabs the absolute position of table top</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(x,y,z) table position</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-robosuite.models.arenas.wipe_arena">
+<span id="robosuite-models-arenas-wipe-arena-module"></span><h2>robosuite.models.arenas.wipe_arena module<a class="headerlink" href="#module-robosuite.models.arenas.wipe_arena" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="robosuite.models.arenas.wipe_arena.WipeArena">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.models.arenas.wipe_arena.</span></span><span class="sig-name descname"><span class="pre">WipeArena</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_full_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.8,</span> <span class="pre">0.8,</span> <span class="pre">0.05)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_friction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.01,</span> <span class="pre">0.005,</span> <span class="pre">0.0001)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0.8)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coverage_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_markers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_friction_std</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">two_clusters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.arenas.wipe_arena.WipeArena" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.models.arenas.table_arena.TableArena" title="robosuite.models.arenas.table_arena.TableArena"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.models.arenas.table_arena.TableArena</span></code></a></p>
+<p>Workspace that contains an empty table with visual markers on its surface.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table_full_size</strong> (<em>3-tuple</em>) – (L,W,H) full dimensions of the table</p></li>
+<li><p><strong>table_friction</strong> (<em>3-tuple</em>) – (sliding, torsional, rolling) friction parameters of the table</p></li>
+<li><p><strong>table_offset</strong> (<em>3-tuple</em>) – (x,y,z) offset from center of arena when placing table.
+Note that the z value sets the upper limit of the table</p></li>
+<li><p><strong>coverage_factor</strong> (<em>float</em>) – Fraction of table that will be sampled for dirt placement</p></li>
+<li><p><strong>num_markers</strong> (<em>int</em>) – Number of dirt (peg) particles to generate in a path on the table</p></li>
+<li><p><strong>table_friction_std</strong> (<em>float</em>) – Standard deviation to sample for the peg friction</p></li>
+<li><p><strong>line_width</strong> (<em>float</em>) – Diameter of dirt path trace</p></li>
+<li><p><strong>two_clusters</strong> (<em>bool</em>) – If set, will generate two separate dirt paths with half the number of sensors in each</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.arenas.wipe_arena.WipeArena.configure_location">
+<span class="sig-name descname"><span class="pre">configure_location</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.arenas.wipe_arena.WipeArena.configure_location" title="Permalink to this definition"></a></dt>
+<dd><p>Configures correct locations for this arena</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.arenas.wipe_arena.WipeArena.reset_arena">
+<span class="sig-name descname"><span class="pre">reset_arena</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.arenas.wipe_arena.WipeArena.reset_arena" title="Permalink to this definition"></a></dt>
+<dd><p>Reset the visual marker locations in the environment. Requires &#64;sim (MjSim) reference to be passed in so that
+the Mujoco sim can be directly modified</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sim</strong> (<em>MjSim</em>) – Simulation instance containing this arena and visual markers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.arenas.wipe_arena.WipeArena.sample_path_pos">
+<span class="sig-name descname"><span class="pre">sample_path_pos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.arenas.wipe_arena.WipeArena.sample_path_pos" title="Permalink to this definition"></a></dt>
+<dd><p>Helper function to add a sampled dirt (peg) position to a pre-existing dirt path, whose most
+recent dirt position is defined by &#64;pos</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pos</strong> (<em>np.array</em>) – (x,y) value of most recent dirt position</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the (x,y) value of the newly sampled dirt position to add to the current dirt path</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.arenas.wipe_arena.WipeArena.sample_start_pos">
+<span class="sig-name descname"><span class="pre">sample_start_pos</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.arenas.wipe_arena.WipeArena.sample_start_pos" title="Permalink to this definition"></a></dt>
+<dd><p>Helper function to return sampled start position of a new dirt (peg) location</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the (x,y) value of the newly sampled dirt starting location</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-robosuite.models.arenas">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robosuite.models.arenas" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="robosuite.models.html" class="btn btn-neutral float-left" title="robosuite.models package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="robosuite.models.grippers.html" class="btn btn-neutral float-right" title="robosuite.models.grippers package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Stanford University and The University of Texas at Austin 2022.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

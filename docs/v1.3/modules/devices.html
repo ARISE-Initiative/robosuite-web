@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I/O Devices &mdash; robosuite 1.3.1 documentation</title>
+      <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
+        <script src="../static/jquery.js"></script>
+        <script src="../static/underscore.js"></script>
+        <script src="../static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Renderers" href="renderers.html" />
+    <link rel="prev" title="Sensors" href="sensors.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> robosuite
+          </a>
+              <div class="version">
+                1.3.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demos.html">Demo Showcases</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robots.html">Robots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controllers.html">Controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">I/O Devices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#keyboard">Keyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dconnexion-spacemouse">3Dconnexion SpaceMouse</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="renderers.html">Renderers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Simulation API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/robot.html">Robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/device.html">Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/controller.html">Controller</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modeling API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/mujoco_model.html">Mujoco Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Source API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/robosuite.html">robosuite package</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Projects using robosuite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">robosuite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>I/O Devices</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../sources/modules/devices.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="i-o-devices">
+<h1>I/O Devices<a class="headerlink" href="#i-o-devices" title="Permalink to this headline"></a></h1>
+<p>Devices are used to read user input and teleoperate simulated robots in real-time. This is achieved by either using a keyboard or a <a class="reference external" href="https://www.3dconnexion.com/spacemouse_compact/en/">SpaceMouse</a>, and whose teleoperation capabilities can be demonstrated with the <a class="reference external" href="../demos.html#teleoperation">demo_device_control.py</a> script. More generally, we support any interface that implements the <a class="reference internal" href="../simulation/device.html"><span class="doc">Device</span></a> abstract base class. In order to support your own custom device, simply subclass this base class and implement the required methods.</p>
+<section id="keyboard">
+<h2>Keyboard<a class="headerlink" href="#keyboard" title="Permalink to this headline"></a></h2>
+<p>We support keyboard input through the GLFW window created by the mujoco-py renderer.</p>
+<p><strong>Keyboard controls</strong></p>
+<p>Note that the rendering window must be active for these commands to work.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center">Keys</th>
+<th align="center">Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">q</td>
+<td align="center">reset simulation</td>
+</tr>
+<tr>
+<td align="center">spacebar</td>
+<td align="center">toggle gripper (open/close)</td>
+</tr>
+<tr>
+<td align="center">w-a-s-d</td>
+<td align="center">move arm horizontally in x-y plane</td>
+</tr>
+<tr>
+<td align="center">r-f</td>
+<td align="center">move arm vertically</td>
+</tr>
+<tr>
+<td align="center">z-x</td>
+<td align="center">rotate arm about x-axis</td>
+</tr>
+<tr>
+<td align="center">t-g</td>
+<td align="center">rotate arm about y-axis</td>
+</tr>
+<tr>
+<td align="center">c-v</td>
+<td align="center">rotate arm about z-axis</td>
+</tr>
+<tr>
+<td align="center">ESC</td>
+<td align="center">quit</td>
+</tr>
+</tbody>
+</table></section>
+<section id="dconnexion-spacemouse">
+<h2>3Dconnexion SpaceMouse<a class="headerlink" href="#dconnexion-spacemouse" title="Permalink to this headline"></a></h2>
+<p>We support the use of a <a class="reference external" href="https://www.3dconnexion.com/spacemouse_compact/en/">SpaceMouse</a> as well.</p>
+<p><strong>3Dconnexion SpaceMouse controls</strong></p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center">Control</th>
+<th align="center">Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Right button</td>
+<td align="center">reset simulation</td>
+</tr>
+<tr>
+<td align="center">Left button (hold)</td>
+<td align="center">close gripper</td>
+</tr>
+<tr>
+<td align="center">Move mouse laterally</td>
+<td align="center">move arm horizontally in x-y plane</td>
+</tr>
+<tr>
+<td align="center">Move mouse vertically</td>
+<td align="center">move arm vertically</td>
+</tr>
+<tr>
+<td align="center">Twist mouse about an axis</td>
+<td align="center">rotate arm about a corresponding axis</td>
+</tr>
+<tr>
+<td align="center">ESC (keyboard)</td>
+<td align="center">quit</td>
+</tr>
+</tbody>
+</table></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sensors.html" class="btn btn-neutral float-left" title="Sensors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="renderers.html" class="btn btn-neutral float-right" title="Renderers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Stanford University and The University of Texas at Austin 2022.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

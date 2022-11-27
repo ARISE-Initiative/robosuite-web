@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mujoco Model &mdash; robosuite 1.3.1 documentation</title>
+      <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
+        <script src="../static/jquery.js"></script>
+        <script src="../static/underscore.js"></script>
+        <script src="../static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Robot Model" href="robot_model.html" />
+    <link rel="prev" title="Controller" href="../simulation/controller.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> robosuite
+          </a>
+              <div class="version">
+                1.3.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demos.html">Demo Showcases</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/robots.html">Robots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/controllers.html">Controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/renderers.html">Renderers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Simulation API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/robot.html">Robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/device.html">Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/controller.html">Controller</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modeling API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Mujoco Model</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#base-mujoco-model">Base Mujoco Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#xml-mujoco-model">XML Mujoco Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="robot_model.html">Robot Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="object_model.html">Object Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena.html">Arena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="task.html">Task</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Source API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/robosuite.html">robosuite package</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Projects using robosuite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">robosuite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Mujoco Model</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../sources/modeling/mujoco_model.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="mujoco-model">
+<h1>Mujoco Model<a class="headerlink" href="#mujoco-model" title="Permalink to this headline"></a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">MujocoModel</span></code> class is the foundational class from which all other model classes extend from in robosuite. This class represents a standardized API for all models used in simulation and is the core modeling component that other model classes build upon. The <code class="docutils literal notranslate"><span class="pre">MujocoXMLModel</span></code> is an extension of this class that represents models based on an XML file.</p>
+<section id="base-mujoco-model">
+<h2>Base Mujoco Model<a class="headerlink" href="#base-mujoco-model" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="robosuite.models.base.MujocoModel">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.models.base.</span></span><span class="sig-name descname"><span class="pre">MujocoModel</span></span><a class="headerlink" href="#robosuite.models.base.MujocoModel" title="Permalink to this definition"></a></dt>
+<dd><p>Base class for all simulation models used in mujoco.</p>
+<p>Standardizes core API for accessing models’ relevant geoms, names, etc.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.base.MujocoModel.correct_naming">
+<span class="sig-name descname"><span class="pre">correct_naming</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.base.MujocoModel.correct_naming" title="Permalink to this definition"></a></dt>
+<dd><p>Corrects all strings in &#64;names by adding the naming prefix to it and returns the name-corrected values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>names</strong> (<em>str</em><em>, </em><em>list</em><em>, or </em><em>dict</em>) – Name(s) to be corrected</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>TypeError</strong> – [Invalid input type]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.base.MujocoModel.set_sites_visibility">
+<span class="sig-name descname"><span class="pre">set_sites_visibility</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visible</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.base.MujocoModel.set_sites_visibility" title="Permalink to this definition"></a></dt>
+<dd><p>Set all site visual states for this model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sim</strong> (<em>MjSim</em>) – Current active mujoco simulation instance</p></li>
+<li><p><strong>visible</strong> (<em>bool</em>) – If True, will visualize model sites. Else, will hide the sites.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.base.MujocoModel.exclude_from_prefixing">
+<span class="sig-name descname"><span class="pre">exclude_from_prefixing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.base.MujocoModel.exclude_from_prefixing" title="Permalink to this definition"></a></dt>
+<dd><p>A function that should take in an arbitrary input and return either True or False, determining whether the
+corresponding name to &#64;inp should have naming_prefix added to it. Must be defined by subclass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>inp</strong> (<em>any</em>) – Arbitrary input, depending on subclass. Can be str, ET.Element, etc.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if we should exclude the associated name(s) with &#64;inp from being prefixed with naming_prefix</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.base.MujocoModel.name">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#robosuite.models.base.MujocoModel.name" title="Permalink to this definition"></a></dt>
+<dd><p>Name for this model. Should be unique.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Unique name for this model.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.base.MujocoModel.naming_prefix">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">naming_prefix</span></span><a class="headerlink" href="#robosuite.models.base.MujocoModel.naming_prefix" title="Permalink to this definition"></a></dt>
+<dd><p>Generates a standardized prefix to prevent naming collisions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Prefix unique to this model.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.base.MujocoModel.root_body">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">root_body</span></span><a class="headerlink" href="#robosuite.models.base.MujocoModel.root_body" title="Permalink to this definition"></a></dt>
+<dd><p>Root body name for this model. This should correspond to the top-level body element in the equivalent mujoco xml
+tree for this object.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.base.MujocoModel.bodies">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">bodies</span></span><a class="headerlink" href="#robosuite.models.base.MujocoModel.bodies" title="Permalink to this definition"></a></dt>
+<dd><p>Returns:
+list: Body names for this model</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.base.MujocoModel.joints">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">joints</span></span><a class="headerlink" href="#robosuite.models.base.MujocoModel.joints" title="Permalink to this definition"></a></dt>
+<dd><p>Returns:
+list: Joint names for this model</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.base.MujocoModel.actuators">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">actuators</span></span><a class="headerlink" href="#robosuite.models.base.MujocoModel.actuators" title="Permalink to this definition"></a></dt>
+<dd><p>Returns:
+list: Actuator names for this model</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.base.MujocoModel.sites">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">sites</span></span><a class="headerlink" href="#robosuite.models.base.MujocoModel.sites" title="Permalink to this definition"></a></dt>
+<dd><p>Returns:
+list: Site names for this model</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.base.MujocoModel.sensors">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">sensors</span></span><a class="headerlink" href="#robosuite.models.base.MujocoModel.sensors" title="Permalink to this definition"></a></dt>
+<dd><p>Returns:
+list: Sensor names for this model</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.base.MujocoModel.contact_geoms">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">contact_geoms</span></span><a class="headerlink" href="#robosuite.models.base.MujocoModel.contact_geoms" title="Permalink to this definition"></a></dt>
+<dd><p>List of names corresponding to the geoms used to determine contact with this model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>relevant contact geoms for this model</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.base.MujocoModel.visual_geoms">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">visual_geoms</span></span><a class="headerlink" href="#robosuite.models.base.MujocoModel.visual_geoms" title="Permalink to this definition"></a></dt>
+<dd><p>List of names corresponding to the geoms used for visual rendering of this model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>relevant visual geoms for this model</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.base.MujocoModel.important_geoms">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">important_geoms</span></span><a class="headerlink" href="#robosuite.models.base.MujocoModel.important_geoms" title="Permalink to this definition"></a></dt>
+<dd><p>Geoms corresponding to important components of this model. String keywords should be mapped to lists of geoms.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Important set of geoms, where each set of geoms are grouped as a list and are
+organized by keyword string entries into a dict</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict of list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.base.MujocoModel.important_sites">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">important_sites</span></span><a class="headerlink" href="#robosuite.models.base.MujocoModel.important_sites" title="Permalink to this definition"></a></dt>
+<dd><p>used to aid visualization during sim).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>Important site geoms, where each specific geom name is mapped from keyword string entries</dt><dd><p>in the dict</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Dict of sites corresponding to the important site geoms (e.g.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.base.MujocoModel.important_sensors">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">important_sensors</span></span><a class="headerlink" href="#robosuite.models.base.MujocoModel.important_sensors" title="Permalink to this definition"></a></dt>
+<dd><p>Dict of important sensors enabled for this model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>Important sensors for this model, where each specific sensor name is mapped from keyword string</dt><dd><p>entries in the dict</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.base.MujocoModel.bottom_offset">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">bottom_offset</span></span><a class="headerlink" href="#robosuite.models.base.MujocoModel.bottom_offset" title="Permalink to this definition"></a></dt>
+<dd><p>Returns vector from model root body to model bottom.
+Useful for, e.g. placing models on a surface.
+Must be defined by subclass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(dx, dy, dz) offset vector</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.base.MujocoModel.top_offset">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">top_offset</span></span><a class="headerlink" href="#robosuite.models.base.MujocoModel.top_offset" title="Permalink to this definition"></a></dt>
+<dd><p>Returns vector from model root body to model top.
+Useful for, e.g. placing models on a surface.
+Must be defined by subclass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(dx, dy, dz) offset vector</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.base.MujocoModel.horizontal_radius">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">horizontal_radius</span></span><a class="headerlink" href="#robosuite.models.base.MujocoModel.horizontal_radius" title="Permalink to this definition"></a></dt>
+<dd><p>Returns maximum distance from model root body to any radial point of the model.</p>
+<p>Helps us put models programmatically without them flying away due to a huge initial contact force.
+Must be defined by subclass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>radius</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="xml-mujoco-model">
+<h2>XML Mujoco Model<a class="headerlink" href="#xml-mujoco-model" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="robosuite.models.base.MujocoXMLModel">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.models.base.</span></span><span class="sig-name descname"><span class="pre">MujocoXMLModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.base.MujocoXMLModel" title="Permalink to this definition"></a></dt>
+<dd><p>Base class for all MujocoModels that are based on a raw XML file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fname</strong> (<em>str</em>) – Path to relevant xml file from which to create this robot instance</p></li>
+<li><p><strong>idn</strong> (<em>int</em><em> or </em><em>str</em>) – Number or some other unique identification string for this model instance</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.base.MujocoXMLModel.base_offset">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">base_offset</span></span><a class="headerlink" href="#robosuite.models.base.MujocoXMLModel.base_offset" title="Permalink to this definition"></a></dt>
+<dd><p>Provides position offset of root body.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(x,y,z) pos value of root_body body element. If no pos in element, returns all zeros.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>3-array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.base.MujocoXMLModel.contact_geom_rgba">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">contact_geom_rgba</span></span><a class="headerlink" href="#robosuite.models.base.MujocoXMLModel.contact_geom_rgba" title="Permalink to this definition"></a></dt>
+<dd><p>RGBA color to assign to all contact geoms for this model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(r,g,b,a) values from 0 to 1 for this model’s set of contact geoms</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>4-array</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../simulation/controller.html" class="btn btn-neutral float-left" title="Controller" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="robot_model.html" class="btn btn-neutral float-right" title="Robot Model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Stanford University and The University of Texas at Austin 2022.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

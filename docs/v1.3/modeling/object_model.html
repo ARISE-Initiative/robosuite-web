@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Object Model &mdash; robosuite 1.3.1 documentation</title>
+      <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
+        <script src="../static/jquery.js"></script>
+        <script src="../static/underscore.js"></script>
+        <script src="../static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Arena" href="arena.html" />
+    <link rel="prev" title="Robot Model" href="robot_model.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> robosuite
+          </a>
+              <div class="version">
+                1.3.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demos.html">Demo Showcases</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/robots.html">Robots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/controllers.html">Controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/renderers.html">Renderers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Simulation API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/robot.html">Robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/device.html">Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/controller.html">Controller</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modeling API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="mujoco_model.html">Mujoco Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robot_model.html">Robot Model</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Object Model</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#base-object-model">Base Object Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#xml-object-model">XML Object Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generated-object-model">Generated Object Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arena.html">Arena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="task.html">Task</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Source API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../source/robosuite.html">robosuite package</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Projects using robosuite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">robosuite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Object Model</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../sources/modeling/object_model.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="object-model">
+<h1>Object Model<a class="headerlink" href="#object-model" title="Permalink to this headline"></a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">MujocoObject</span></code> class serves as a catch-all base class that is used to capture individual simulation objects to
+instantiate within a given simulation. This is done in one of two ways via extended classes – the <code class="docutils literal notranslate"><span class="pre">MujocoXMLObject</span></code>
+reads in information from a corresponding object XML file, whereas the <code class="docutils literal notranslate"><span class="pre">MujocoGeneratedObject</span></code> proecedurally generates a
+custom object using a suite of utility mj modeling functions. In conjunction with the <code class="docutils literal notranslate"><span class="pre">RobotModel</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">Arena</span></code> classes, these classes serve as the basis for forming the higher level <code class="docutils literal notranslate"><span class="pre">Task</span></code> class which is used to
+ultimately generate the <code class="docutils literal notranslate"><span class="pre">MjSim</span></code> simulation object.</p>
+<section id="base-object-model">
+<h2>Base Object Model<a class="headerlink" href="#base-object-model" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="robosuite.models.objects.objects.MujocoObject">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.models.objects.objects.</span></span><span class="sig-name descname"><span class="pre">MujocoObject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duplicate_collision_geoms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject" title="Permalink to this definition"></a></dt>
+<dd><p>Base class for all objects.</p>
+<p>We use Mujoco Objects to implement all objects that:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>may appear for multiple times in a task</p></li>
+<li><p>can be swapped between different tasks</p></li>
+</ol>
+</div></blockquote>
+<p>Typical methods return copy so the caller can all joints/attributes as wanted</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_type</strong> (<em>str</em>) – <p>Geom elements to generate / extract for this object. Must be one of:</p>
+<dl class="field-list simple">
+<dt class="field-odd"><cite>’collision’</cite></dt>
+<dd class="field-odd"><p>Only collision geoms are returned (this corresponds to group 0 geoms)</p>
+</dd>
+<dt class="field-even"><cite>’visual’</cite></dt>
+<dd class="field-even"><p>Only visual geoms are returned (this corresponds to group 1 geoms)</p>
+</dd>
+<dt class="field-odd"><cite>’all’</cite></dt>
+<dd class="field-odd"><p>All geoms are returned</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>duplicate_collision_geoms</strong> (<em>bool</em>) – If set, will guarantee that each collision geom has a
+visual geom copy</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.objects.objects.MujocoObject.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duplicate_collision_geoms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.objects.objects.MujocoObject.merge_assets">
+<span class="sig-name descname"><span class="pre">merge_assets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.merge_assets" title="Permalink to this definition"></a></dt>
+<dd><p>Merges &#64;other’s assets in a custom logic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="../source/robosuite.models.html#robosuite.models.base.MujocoXML" title="robosuite.models.base.MujocoXML"><em>MujocoXML</em></a><em> or </em><a class="reference internal" href="../source/robosuite.models.objects.html#robosuite.models.objects.objects.MujocoObject" title="robosuite.models.objects.objects.MujocoObject"><em>MujocoObject</em></a>) – other xml file whose assets will be merged into this one</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.objects.objects.MujocoObject.get_obj">
+<span class="sig-name descname"><span class="pre">get_obj</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.get_obj" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the generated / extracted object, in XML ElementTree form.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Object in XML form.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>ET.Element</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.objects.objects.MujocoObject.exclude_from_prefixing">
+<span class="sig-name descname"><span class="pre">exclude_from_prefixing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.exclude_from_prefixing" title="Permalink to this definition"></a></dt>
+<dd><p>A function that should take in either an ET.Element or its attribute (str) and return either True or False,
+determining whether the corresponding name / str to &#64;inp should have naming_prefix added to it.
+Must be defined by subclass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>inp</strong> (<em>ET.Element</em><em> or </em><em>str</em>) – Element or its attribute to check for prefixing.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if we should exclude the associated name(s) with &#64;inp from being prefixed with naming_prefix</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.objects.objects.MujocoObject._get_object_subtree">
+<span class="sig-name descname"><span class="pre">_get_object_subtree</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject._get_object_subtree" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a ET.Element
+It is a &lt;body/&gt; subtree that defines all collision and / or visualization related fields
+of this object.
+Return should be a copy.
+Must be defined by subclass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>body</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>ET.Element</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.objects.objects.MujocoObject._get_object_properties">
+<span class="sig-name descname"><span class="pre">_get_object_properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject._get_object_properties" title="Permalink to this definition"></a></dt>
+<dd><p>Helper function to extract relevant object properties (bodies, joints, contact/visual geoms, etc…) from this
+object’s XML tree. Assumes the self._obj attribute has already been filled.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.objects.objects.MujocoObject.important_geoms">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">important_geoms</span></span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.important_geoms" title="Permalink to this definition"></a></dt>
+<dd><p>Returns:
+dict: (Default is no important geoms; i.e.: empty dict)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.objects.objects.MujocoObject.important_sites">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">important_sites</span></span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.important_sites" title="Permalink to this definition"></a></dt>
+<dd><p>Returns:
+dict:</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd"><cite>obj</cite></dt>
+<dd class="field-odd"><p>Object default site</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.objects.objects.MujocoObject.important_sensors">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">important_sensors</span></span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.important_sensors" title="Permalink to this definition"></a></dt>
+<dd><p>Returns:
+dict: (Default is no sensors; i.e.: empty dict)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.objects.objects.MujocoObject.get_site_attrib_template">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">get_site_attrib_template</span></span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.get_site_attrib_template" title="Permalink to this definition"></a></dt>
+<dd><p>Returns attribs of spherical site used to mark body origin</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dictionary of default site attributes</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.models.objects.objects.MujocoObject.get_joint_attrib_template">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">get_joint_attrib_template</span></span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoObject.get_joint_attrib_template" title="Permalink to this definition"></a></dt>
+<dd><p>Returns attribs of free joint</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dictionary of default joint attributes</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="xml-object-model">
+<h2>XML Object Model<a class="headerlink" href="#xml-object-model" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="robosuite.models.objects.objects.MujocoXMLObject">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.models.objects.objects.</span></span><span class="sig-name descname"><span class="pre">MujocoXMLObject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duplicate_collision_geoms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoXMLObject" title="Permalink to this definition"></a></dt>
+<dd><p>MujocoObjects that are loaded from xml files (by default, inherit all properties (e.g.: name)
+from MujocoObject class first!)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fname</strong> (<em>str</em>) – XML File path</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Name of this MujocoXMLObject</p></li>
+<li><p><strong>joints</strong> (<em>None</em><em> or </em><em>str</em><em> or </em><em>list of dict</em>) – each dictionary corresponds to a joint that will be created for this
+object. The dictionary should specify the joint attributes (type, pos, etc.) according to the MuJoCo xml
+specification. If “default”, a single free-joint will be automatically generated. If None, no joints will
+be created.</p></li>
+<li><p><strong>obj_type</strong> (<em>str</em>) – <p>Geom elements to generate / extract for this object. Must be one of:</p>
+<dl class="field-list simple">
+<dt class="field-odd"><cite>’collision’</cite></dt>
+<dd class="field-odd"><p>Only collision geoms are returned (this corresponds to group 0 geoms)</p>
+</dd>
+<dt class="field-even"><cite>’visual’</cite></dt>
+<dd class="field-even"><p>Only visual geoms are returned (this corresponds to group 1 geoms)</p>
+</dd>
+<dt class="field-odd"><cite>’all’</cite></dt>
+<dd class="field-odd"><p>All geoms are returned</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>duplicate_collision_geoms</strong> (<em>bool</em>) – If set, will guarantee that each collision geom has a
+visual geom copy</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.objects.objects.MujocoXMLObject.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duplicate_collision_geoms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoXMLObject.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.objects.objects.MujocoXMLObject._duplicate_visual_from_collision">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">_duplicate_visual_from_collision</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoXMLObject._duplicate_visual_from_collision" title="Permalink to this definition"></a></dt>
+<dd><p>Helper function to duplicate a geom element to be a visual element. Namely, this corresponds to the
+following attribute requirements: group=1, conaffinity/contype=0, no mass, name appended with “_visual”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>element</strong> (<em>ET.Element</em>) – element to duplicate as a visual geom</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>duplicated element</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>element (ET.Element)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.objects.objects.MujocoXMLObject._get_geoms">
+<span class="sig-name descname"><span class="pre">_get_geoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoXMLObject._get_geoms" title="Permalink to this definition"></a></dt>
+<dd><p>Helper function to recursively search through element tree starting at &#64;root and returns
+a list of (parent, child) tuples where the child is a geom element</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>root</strong> (<em>ET.Element</em>) – Root of xml element tree to start recursively searching through</p></li>
+<li><p><strong>_parent</strong> (<em>ET.Element</em>) – Parent of the root element tree. Should not be used externally; only set
+during the recursive call</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>array of (parent, child) tuples where the child element is a geom type</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="generated-object-model">
+<h2>Generated Object Model<a class="headerlink" href="#generated-object-model" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="robosuite.models.objects.objects.MujocoGeneratedObject">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.models.objects.objects.</span></span><span class="sig-name descname"><span class="pre">MujocoGeneratedObject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duplicate_collision_geoms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoGeneratedObject" title="Permalink to this definition"></a></dt>
+<dd><p>Base class for all procedurally generated objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_type</strong> (<em>str</em>) – <p>Geom elements to generate / extract for this object. Must be one of:</p>
+<dl class="field-list simple">
+<dt class="field-odd"><cite>’collision’</cite></dt>
+<dd class="field-odd"><p>Only collision geoms are returned (this corresponds to group 0 geoms)</p>
+</dd>
+<dt class="field-even"><cite>’visual’</cite></dt>
+<dd class="field-even"><p>Only visual geoms are returned (this corresponds to group 1 geoms)</p>
+</dd>
+<dt class="field-odd"><cite>’all’</cite></dt>
+<dd class="field-odd"><p>All geoms are returned</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>duplicate_collision_geoms</strong> (<em>bool</em>) – If set, will guarantee that each collision geom has a
+visual geom copy</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.objects.objects.MujocoGeneratedObject.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duplicate_collision_geoms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoGeneratedObject.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.objects.objects.MujocoGeneratedObject.sanity_check">
+<span class="sig-name descname"><span class="pre">sanity_check</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoGeneratedObject.sanity_check" title="Permalink to this definition"></a></dt>
+<dd><p>Checks if data provided makes sense.
+Called in __init__()
+For subclasses to inherit from</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.objects.objects.MujocoGeneratedObject.get_collision_attrib_template">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">get_collision_attrib_template</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoGeneratedObject.get_collision_attrib_template" title="Permalink to this definition"></a></dt>
+<dd><p>Generates template with collision attributes for a given geom</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Initial template with <cite>‘pos’</cite> and <cite>‘group’</cite> already specified</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.objects.objects.MujocoGeneratedObject.get_visual_attrib_template">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">get_visual_attrib_template</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoGeneratedObject.get_visual_attrib_template" title="Permalink to this definition"></a></dt>
+<dd><p>Generates template with visual attributes for a given geom</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Initial template with <cite>‘conaffinity’</cite>, <cite>‘contype’</cite>, and <cite>‘group’</cite> already specified</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.models.objects.objects.MujocoGeneratedObject.append_material">
+<span class="sig-name descname"><span class="pre">append_material</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">material</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.objects.objects.MujocoGeneratedObject.append_material" title="Permalink to this definition"></a></dt>
+<dd><p>Adds a new texture / material combination to the assets subtree of this XML
+Input is expected to be a CustomMaterial object</p>
+<p>See <a class="reference external" href="http://www.mujoco.org/book/XMLreference.html#asset">http://www.mujoco.org/book/XMLreference.html#asset</a> for specific details on attributes expected for
+Mujoco texture / material tags, respectively</p>
+<p>Note that the “file” attribute for the “texture” tag should be specified relative to the textures directory
+located in robosuite/models/assets/textures/</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>material</strong> (<a class="reference internal" href="../source/robosuite.utils.html#robosuite.utils.mjcf_utils.CustomMaterial" title="robosuite.utils.mjcf_utils.CustomMaterial"><em>CustomMaterial</em></a>) – Material to add to this object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="robot_model.html" class="btn btn-neutral float-left" title="Robot Model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="arena.html" class="btn btn-neutral float-right" title="Arena" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Stanford University and The University of Texas at Austin 2022.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

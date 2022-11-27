@@ -1,0 +1,808 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Projects using robosuite &#8212; robosuite 1.4.0 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="static/pygments.css" />
+    <link rel="stylesheet" href="static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="static/css/theme.css" />
+    <link rel="stylesheet" type="text/css" href="static/theme_overrides.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script src="static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
+    <script src="static/jquery.js"></script>
+    <script src="static/underscore.js"></script>
+    <script src="static/doctools.js"></script>
+    <script src="static/scripts/sphinx-book-theme.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Acknowledgements" href="acknowledgement.html" />
+    <link rel="prev" title="RoboTurk Datasets" href="algorithms/roboturk.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">robosuite 1.4.0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="quickstart.html">
+   Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="demos.html">
+   Demo Showcases
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="modules/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modules/robots.html">
+   Robots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modules/controllers.html">
+   Controllers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modules/objects.html">
+   Objects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modules/environments.html">
+   Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modules/sensors.html">
+   Sensors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modules/devices.html">
+   I/O Devices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modules/renderers.html">
+   Renderers
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Simulation API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="simulation/robot.html">
+   Robot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="simulation/environment.html">
+   Environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="simulation/device.html">
+   Device
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="simulation/controller.html">
+   Controller
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modeling API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="modeling/mujoco_model.html">
+   Mujoco Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modeling/robot_model.html">
+   Robot Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modeling/object_model.html">
+   Object Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modeling/arena.html">
+   Arena
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modeling/task.html">
+   Task
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Source API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="source/robosuite.html">
+   robosuite package
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="source/robosuite.controllers.html">
+     robosuite.controllers package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="source/robosuite.controllers.interpolators.html">
+       robosuite.controllers.interpolators package
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="source/robosuite.devices.html">
+     robosuite.devices package
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="source/robosuite.environments.html">
+     robosuite.environments package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="source/robosuite.environments.manipulation.html">
+       robosuite.environments.manipulation package
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="source/robosuite.models.html">
+     robosuite.models package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="source/robosuite.models.arenas.html">
+       robosuite.models.arenas package
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="source/robosuite.models.grippers.html">
+       robosuite.models.grippers package
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="source/robosuite.models.mounts.html">
+       robosuite.models.mounts package
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="source/robosuite.models.objects.html">
+       robosuite.models.objects package
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="source/robosuite.models.objects.composite.html">
+         robosuite.models.objects.composite package
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="source/robosuite.models.objects.composite_body.html">
+         robosuite.models.objects.composite_body package
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="source/robosuite.models.objects.primitive.html">
+         robosuite.models.objects.primitive package
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="source/robosuite.models.robots.html">
+       robosuite.models.robots package
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="source/robosuite.models.robots.manipulators.html">
+         robosuite.models.robots.manipulators package
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="source/robosuite.models.tasks.html">
+       robosuite.models.tasks package
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="source/robosuite.renderers.html">
+     robosuite.renderers package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="source/robosuite.renderers.context.html">
+       robosuite.renderers.context package
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="source/robosuite.renderers.igibson.html">
+       robosuite.renderers.igibson package
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="source/robosuite.renderers.nvisii.html">
+       robosuite.renderers.nvisii package
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="source/robosuite.robots.html">
+     robosuite.robots package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="source/robosuite.utils.html">
+     robosuite.utils package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="source/robosuite.wrappers.html">
+     robosuite.wrappers package
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algorithms
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="algorithms/benchmarking.html">
+   Benchmarking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="algorithms/demonstrations.html">
+   Human Demonstrations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="algorithms/sim2real.html">
+   Sim-to-Real Transfer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="algorithms/roboturk.html">
+   RoboTurk Datasets
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Projects using robosuite
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="acknowledgement.html">
+   Acknowledgements
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="sources/references.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   2022
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   2021
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   2020
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   2019
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   2018
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Projects using robosuite</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   2022
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   2021
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   2020
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   2019
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   2018
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="projects-using-robosuite">
+<h1>Projects using robosuite<a class="headerlink" href="#projects-using-robosuite" title="Permalink to this headline">#</a></h1>
+<p>A list of references of projects and papers that use <strong>robosuite</strong>. If you would like to add your work to this list, please send the paper information to Yuke Zhu (<a class="reference external" href="mailto:yukez&#37;&#52;&#48;cs&#46;utexas&#46;edu">yukez<span>&#64;</span>cs<span>&#46;</span>utexas<span>&#46;</span>edu</a>).</p>
+<section id="id1">
+<h2>2022<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://arxiv.org/abs/2211.08416">Robot Learning on the Job: Human-in-the-Loop Autonomy and Learning During Deployment</a>. Huihan Liu, Soroush Nasiriany, Lance Zhang, Zhiyao Bao, Yuke Zhu</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2211.07945">Geometric Impedance Control on SE(3) for Robotic Manipulators</a>. Joohwan Seo, Nikhil Potu, Surya Prakash, Alexander Rose, Roberto Horowitz</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2210.12631">Guided Skill Learning and Abstraction for Long-Horizon Manipulation</a>. Shuo Cheng, Danfei Xu</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2210.11339">VIOLA: Imitation Learning for Vision-Based Manipulation with Object Proposal Priors</a>. Yifeng Zhu, Abhishek Joshi, Peter Stone, Yuke Zhu</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2210.07432">Monte Carlo Augmented Actor-Critic for Sparse Reward Deep Reinforcement Learning from Suboptimal Demonstrations</a>. Albert Wilcox, Ashwin Balakrishna, Jules Dedieu, Wyame Benslimane, Daniel S. Brown, Ken Goldberg</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2209.15205">ASPiRe: Adaptive Skill Priors for Reinforcement Learning</a>. Mengda Xu, Manuela Veloso, Shuran Song</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2209.09174">Active Predicting Coding: Brain-Inspired Reinforcement Learning for Sparse Reward Robotic Control Problems</a>. Alexander Ororbia, Ankur Mali</p></li>
+<li><p><a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0921889022001506">Spatial and Temporal Features Unified Self-Supervised Representation Learning Network</a>. Rahul Choudhary, Rahee Walambe, Ketan Kotecha</p></li>
+<li><p><a class="reference external" href="https://openreview.net/forum?id=VHia4Cint7">HERD: Continuous Human-to-Robot Evolution for Learning from Human Demonstration</a>. Xingyu Liu, Deepak Pathak, Kris M. Kitani</p></li>
+<li><p><a class="reference external" href="https://openreview.net/forum?id=H6rr_CGzV9y">A Dual Representation Framework for Robot Learning with Human Guidance</a>. Ruohan Zhang, Dhruva Bansal, Yilun Hao, Ayano Hiranaka, Jialu Gao, Chen Wang, Roberto Martín-Martín, Li Fei-Fei, Jiajun Wu</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2207.04136">CompoSuite: A Compositional Reinforcement Learning Benchmark</a>. Jorge A. Mendez, Marcel Hussing, Meghna Gummadi, Eric Eaton</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2206.13452">Causal Dynamics Learning for Task-Independent State Abstraction</a>. Zizhao Wang, Xuesu Xiao, Zifan Xu, Yuke Zhu, Peter Stone</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2206.11299">Latent Policies for Adversarial Imitation Learning</a>. Tianyu Wang, Nikhil Karnwal, Nikolay Atanasov</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2205.14850">Play it by Ear: Learning Skills amidst Occlusion through Audio-Visual Imitation Learning</a>. Maximilian Du, Olivia Y. Lee, Suraj Nair, Chelsea Finn</p></li>
+<li><p><a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/9812019">Visuotactile-RL: Learning Multimodal Manipulation Policies with Deep Reinforcement Learning</a>. Johanna Hansen, Francois Hogan, Dmitriy Rivkin, David Meger, Michael Jenkin, Gregory Dudek</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2203.00494">DreamingV2: Reinforcement Learning with Discrete World Models without Reconstruction</a>. Masashi Okada, Tadahiro Taniguchi</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2202.08227">Ditto: Building Digital Twins of Articulated Objects from Interaction</a>. Zhenyu Jiang, Cheng-Chun Hsu, Yuke Zhu</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2202.03481">A Ranking Game for Imitation Learning</a>. Harshit Sikchi, Akanksha Saran, Wonjoon Goo, Scott Niekum</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2211.01500">Learning to Grasp the Ungraspable with Emergent Extrinsic Dexterity</a>. Wenxuan Zhou, David Held</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2209.13605">Efficiently Learning Recoveries from Failures Under Partial Observability</a>. Shivam Vats, Maxim Likhachev, Oliver Kroemer</p></li>
+<li><p><a class="reference external" href="https://openreview.net/forum?id=7YXXt9lRls">Learning Representations via a Robust Behavioral Metric for Deep Reinforcement Learning</a>. Jianda Chen, Sinno Pan</p></li>
+<li><p><a class="reference external" href="https://openreview.net/forum?id=WJbw_C-pCox">Synthesizing Adversarial Visual Scenarios for Model-Based Robotic Control</a>. Shubhankar Agarwal, Sandeep P. Chinchali</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>2021<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://arxiv.org/abs/2112.03386">Guided Imitation of Task and Motion Planning</a>. Michael McDonald, Dylan Hadfield-Menell</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2111.03987">V-MAO: Generative Modeling for Multi-Arm Manipulation of Articulated Objects</a>. Xingyu Liu, Kris M. Kitani</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2111.01365">Koopman Q-learning: Offline Reinforcement Learning via Symmetries of Dynamics</a>. Matthias Weissenbacher, Samarth Sinha, Animesh Garg, Yoshinobu Kawahara</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2111.00765">Validate on Sim, Detect on Real – Model Selection for Domain Randomization</a>. Gal Leibovich, Guy Jacob, Shadi Endrawis, Gal Novik, Aviv Tamar</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2110.15360">Accelerating Robotic Reinforcement Learning via Parameterized Action Primitives</a>. Murtaza Dalal, Deepak Pathak, Ruslan Salakhutdinov</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2110.13423">Towards More Generalizable One-shot Visual Imitation Learning</a>. Zhao Mandi, Fangchen Liu, Kimin Lee, Pieter Abbeel</p></li>
+<li><p><a class="reference external" href="https://www.mdpi.com/2076-3417/11/21/10227">Decentralized Multi-Agent Control of a Manipulator in Continuous Task Learning</a>. Asad Ali Shahid, Jorge Said Vidal Sesin, Damjan Pecioski, Francesco Braghin, Dario Piga, Loris Roveda</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2110.03655">Augmenting Reinforcement Learning with Behavior Primitives for Diverse Manipulation Tasks</a>. Soroush Nasiriany, Huihan Liu, Yuke Zhu</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2109.13841">Bottom-Up Skill Discovery from Unsegmented Demonstrations for Long-Horizon Robot Manipulation</a>. Yifeng Zhu, Peter Stone, Yuke Zhu</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2109.09180">Lifelong Robotic Reinforcement Learning by Retaining Experiences</a>. Annie Xie, Chelsea Finn</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2109.08273">ThriftyDAgger: Budget-Aware Novelty and Risk Gating for Interactive Imitation Learning</a>. Ryan Hoque, Ashwin Balakrishna, Ellen Novoseller, Albert Wilcox, Daniel S. Brown, Ken Goldberg</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2108.03298">What Matters in Learning from Offline Human Demonstrations for Robot Manipulation</a>. Ajay Mandlekar, Danfei Xu, Josiah Wong, Soroush Nasiriany, Chen Wang, Rohun Kulkarni, Li Fei-Fei, Silvio Savarese, Yuke Zhu, Roberto Martín-Martín</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2107.02339">Multi-Modal Mutual Information (MuMMI) Training for Robust Self-Supervised Deep Reinforcement Learning</a>. Kaiqi Chen, Yong Lee, Harold Soh</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2106.09678">SECANT: Self-Expert Cloning for Zero-Shot Generalization of Visual Policies</a>. Linxi Fan, Guanzhi Wang, De-An Huang, Zhiding Yu, Li Fei-Fei, Yuke Zhu, Anima Anandkumar</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2106.00671">What Can I Do Here? Learning New Skills by Imagining Visual Affordances</a>. Alexander Khazatsky, Ashvin Nair, Daniel Jing, Sergey Levine</p></li>
+<li><p><a class="reference external" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9439456">Calibration-Free Monocular Vision-Based Robot Manipulations With Occlusion Awareness</a>. Yongle Luo, Kun Dong, Lili Zhao, Zhiyong Sun, Erkang Cheng, Honglin Kan, Chao Zhou, Bo Song</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2105.05484">Learning a Skill-sequence-dependent Policy for Long-horizon Manipulation Tasks</a>. Zhihao Li, Zhenglong Sun, Jionglong Su, Jiaming Zhang</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2105.04607">Efficient Self-Supervised Data Collection for Offline Robot Learning</a>. Shadi Endrawis, Gal Leibovich, Guy Jacob, Gal Novik, Aviv Tamar</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2105.00580">Learning Visually Guided Latent Actions for Assistive Teleoperation</a>. Siddharth Karamcheti, Albert J. Zhai, Dylan P. Losey, Dorsa Sadigh</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2103.15793">LASER: Learning a Latent Action Space for Efficient Reinforcement Learning</a>. Arthur Allshire, Roberto Martín-Martín, Charles Lin, Shawn Manuel, Silvio Savarese, Animesh Garg</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2103.06326">S4RL: Surprisingly Simple Self-Supervision for Offline Reinforcement Learning</a>. Samarth Sinha, Ajay Mandlekar, Animesh Garg</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2103.00375">Generalization Through Hand-Eye Coordination: An Action Space for Learning Spatially-Invariant Visuomotor Control</a>. Chen Wang, Rui Wang, Ajay Mandlekar, Li Fei-Fei, Silvio Savarese, Danfei Xu</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2101.02725">Interpreting Contact Interactions to Overcome Failure in Robot Assembly Tasks</a>. Peter A. Zachares, Michelle A. Lee, Wenzhao Lian, Jeannette Bohg</p></li>
+<li><p><a class="reference external" href="https://ieeexplore.ieee.org/document/9636547">Learning Contact-Rich Assembly Skills Using Residual Admittance Policy</a>. Oren Spector, Miriam Zacksenhouse</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2012.06738">Learning Multi-Arm Manipulation Through Collaborative Teleoperation</a>. Albert Tung, Josiah Wong, Ajay Mandlekar, Roberto Martín-Martín, Yuke Zhu, Li Fei-Fei, Silvio Savarese</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2110.00704">OSCAR: Data-Driven Operational Space Control for Adaptive and Robust Robot Manipulation</a>. Josiah Wong, Viktor Makoviychuk, Anima Anandkumar, Yuke Zhu</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2109.04307">OPIRL: Sample Efficient Off-Policy Inverse Reinforcement Learning via Distribution Matching</a>. Hana Hoshino, Kei Ota, Asako Kanezaki, Rio Yokota</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2111.02767">RLDS: an Ecosystem to Generate, Share and Use Datasets in Reinforcement Learning</a>. Sabela Ramos, Sertan Girgin, Léonard Hussenot, Damien Vincent, Hanna Yakubovich, Daniel Toyama, Anita Gergely, Piotr Stanczyk, Raphael Marinier, Jeremiah Harmsen, Olivier Pietquin, Nikola Momchev</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2109.12103">RMPs for Safe Impedance Control in Contact-Rich Manipulation</a>. Seiji Shaw, Ben Abbatematteo, George Konidaris</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2110.09904">Learning Robotic Manipulation Skills Using an Adaptive Force-Impedance Action Space</a>. Maximilian Ulmer, Elie Aljalbout, Sascha Schwarz, Sami Haddadin</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>2020<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.mdpi.com/2218-6581/10/1/46">On the Impact of Gravity Compensation on Reinforcement Learning in Goal-Reaching Tasks for Robotic Manipulators</a>. Jonathan Fugal, Jihye Bae, Hasan A. Poonawala</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2012.06738">Learning Multi-Arm Manipulation Through Collaborative Teleoperation</a>. Albert Tung, Josiah Wong, Ajay Mandlekar, Roberto Martín-Martín, Yuke Zhu, Li Fei-Fei, Silvio Savarese</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2012.06733">Human-in-the-Loop Imitation Learning using Remote Teleoperation</a>. Ajay Mandlekar, Danfei Xu, Roberto Martín-Martín, Yuke Zhu, Li Fei-Fei, Silvio Savarese</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2011.05970">Transformers for One-Shot Visual Imitation</a>. Sudeep Dasari, Abhinav Gupta</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2010.14497">Conservative Safety Critics for Exploration</a>. Homanga Bharadhwaj, Aviral Kumar, Nicholas Rhinehart, Sergey Levine, Florian Shkurti, Animesh Garg</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2009.11997">Continual Model-Based Reinforcement Learning with Hypernetworks</a>. Yizhou Huang, Kevin Xie, Homanga Bharadhwaj, Florian Shkurti</p></li>
+<li><p><a class="reference external" href="http://rllab.snu.ac.kr/publications/papers/2020_icra_gads.pdf">Hierarchical 6-DoF Grasping with Approaching Direction Selection</a>. Yunho Choi, Hogun Kee, Kyungjae Lee, JaeGoo Choy, Junhong Min, Sohee Lee, Songhwai Oh</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2008.07682">Residual Learning from Demonstration</a>. Todor Davchev, Kevin Sebastian Luck, Michael Burke, Franziska Meier, Stefan Schaal, Subramanian Ramamoorthy</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2008.06686">Crossing the Gap: A Deep Dive into Zero-Shot Sim-to-Real Transfer for Dynamics</a>. Eugene Valassakis, Zihan Ding, Edward Johns</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2008.13223">Deep Reinforcement Learning for Contact-Rich Skills Using Compliant Movement Primitives</a>. Oren Spector, Miriam Zacksenhouse</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2006.16232">Learning Robot Skills with Temporal Variational Inference</a>. Tanmay Shankar, Abhinav Gupta</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2006.13205">Long-Horizon Visual Planning with Goal-Conditioned Hierarchical Predictors</a>. Karl Pertsch, Oleh Rybkin, Frederik Ebert, Chelsea Finn, Dinesh Jayaraman, Sergey Levine</p></li>
+<li><p><a class="reference external" href="https://proceedings.icml.cc/static/paper_files/icml/2020/577-Paper.pdf">Variational Imitation Learning with Diverse-quality Demonstrations</a>. Voot Tangkaratt, Bo Han, Mohammad Emtiyaz Khan, Masashi Sugiyama</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2003.02740">Balance Between Efficient and Effective Learning: Dense2Sparse Reward Shaping for Robot Manipulation with Environment Uncertainty</a>. Yongle Luo, Kun Dong, Lili Zhao, Zhiyong Sun, Chao Zhou, Bo Song</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2002.05189">Intrinsic Motivation for Encouraging Synergistic Behavior</a>. Rohan Chitnis, Shubham Tulsiani, Saurabh Gupta, Abhinav Gupta</p></li>
+<li><p><a class="reference external" href="https://ieeexplore.ieee.org/document/9282951">Learning Continuous Control Actions for Robotic Grasping with Reinforcement Learning</a>. Asad Ali Shahid, Loris Roveda, Dario Piga, Francesco Braghin</p></li>
+<li><p><a class="reference external" href="https://ieeexplore.ieee.org/document/9207153">Combining Reinforcement Learning and Rule-based Method to Manipulate Objects in Clutter</a>. Yiwen Chen, Zhaojie Ju, Chenguang Yang</p></li>
+<li><p><a class="reference external" href="https://ieeexplore.ieee.org/document/9327251">Research on Complex Robot Manipulation Tasks Based on Hindsight Trust Region Policy Optimization</a>. Deyu Yang, Hanbo Zhang, Xuguang Lan</p></li>
+</ul>
+</section>
+<section id="id4">
+<h2>2019<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://arxiv.org/abs/1912.07670">To Follow or not to Follow: Selective Imitation Learning from Observations</a>. Youngwoon Lee, Edward S. Hu, Zhengyu Yang, Joseph J. Lim</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1911.07246">IKEA Furniture Assembly Environment for Long-Horizon Complex Manipulation Tasks</a>. Youngwoon Lee, Edward S. Hu, Zhengyu Yang, Alex Yin, Joseph J. Lim</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1911.05321">IRIS: Implicit Reinforcement without Interaction at Scale for Learning Control from Offline Robot Manipulation Data</a>. Ajay Mandlekar, Fabio Ramos, Byron Boots, Silvio Savarese, Li Fei-Fei, Animesh Garg, Dieter Fox</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1910.05396">Network Randomization: A Simple Technique for Generalization in Deep Reinforcement Learning</a>. Kimin Lee, Kibok Lee, Jinwoo Shin, Honglak Lee</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1909.13874">Efficient Bimanual Manipulation Using Learned Task Schemas</a>. Rohan Chitnis, Shubham Tulsiani, Saurabh Gupta, Abhinav Gupta</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1909.12989">SURREAL-System: Fully-Integrated Stack for Distributed Deep Reinforcement Learning</a>. Linxi Fan*, Yuke Zhu*, Jiren Zhu, Zihua Liu, Orien Zeng, Anchit Gupta, Joan Creus-Costa, Silvio Savarese, Li Fei-Fei</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1907.10247">Memory Based Trajectory-conditioned Policies for Learning from Sparse Rewards</a>. Yijie Guo, Jongwook Choi, Marcin Moczulski, Shengyu Feng, Samy Bengio, Mohammad Norouzi, Honglak Lee</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1906.08880">Variable Impedance Control in End-Effector Space: An Action Space for Reinforcement Learning in Contact-Rich Tasks</a>. Roberto Martín-Martín, Michelle A. Lee, Rachel Gardner, Silvio Savarese, Jeannette Bohg, Animesh Garg</p></li>
+</ul>
+</section>
+<section id="id5">
+<h2>2018<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://arxiv.org/abs/1811.02790">RoboTurk: A Crowdsourcing Platform for Robotic Skill Learning through Imitation</a>. Ajay Mandlekar, Yuke Zhu, Animesh Garg, Jonathan Booher, Max Spero, Albert Tung, Julian Gao, John Emmons, Anchit Gupta, Emre Orbay, Silvio Savarese, Li Fei-Fei</p></li>
+<li><p><a class="reference external" href="http://svl.stanford.edu/assets/papers/fan2018corl.pdf">SURREAL: Open-Source Reinforcement Learning Framework and Robot Manipulation Benchmark</a>. Linxi Fan*, Yuke Zhu*, Jiren Zhu, Zihua Liu, Orien Zeng, Anchit Gupta, Joan Creus-Costa, Silvio Savarese, Li Fei-Fei</p></li>
+</ul>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="algorithms/roboturk.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">RoboTurk Datasets</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="acknowledgement.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Acknowledgements</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Yuke Zhu, Josiah Wong, Ajay Mandlekar, Roberto Martín-Martín, Abhishek Joshi, Soroush Nasiriany, Yifeng Zhu<br/>
+  
+      &copy; Copyright Stanford University and The University of Texas at Austin 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

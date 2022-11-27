@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick Start &mdash; robosuite 1.3.1 documentation</title>
+      <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="static/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
+        <script src="static/jquery.js"></script>
+        <script src="static/underscore.js"></script>
+        <script src="static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Demo Showcases" href="demos.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> robosuite
+          </a>
+              <div class="version">
+                1.3.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#running-standardized-environments">Running Standardized Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-your-own-environments">Building Your Own Environments</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demos.html">Demo Showcases</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/robots.html">Robots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/controllers.html">Controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/renderers.html">Renderers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Simulation API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="simulation/robot.html">Robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simulation/environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simulation/device.html">Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simulation/controller.html">Controller</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modeling API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modeling/mujoco_model.html">Mujoco Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeling/robot_model.html">Robot Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeling/object_model.html">Object Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeling/arena.html">Arena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeling/task.html">Task</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Source API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="source/robosuite.html">robosuite package</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="algorithms/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms/roboturk.html">RoboTurk Datasets</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Projects using robosuite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgement.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">robosuite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Quick Start</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="sources/quickstart.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="quick-start">
+<h1>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline"></a></h1>
+<section id="running-standardized-environments">
+<h2>Running Standardized Environments<a class="headerlink" href="#running-standardized-environments" title="Permalink to this headline"></a></h2>
+<p><strong>robosuite</strong> offers a set of standardized manipulation tasks for benchmarking purposes. These pre-defined environments can be easily instantiated with the <code class="docutils literal notranslate"><span class="pre">make</span></code> function. The APIs we provide to interact with our environments are simple and similar to the ones used by <a class="reference external" href="https://github.com/openai/gym/">OpenAI Gym</a>. Below is a minimalistic example of how to interact with an environment.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">robosuite</span> <span class="k">as</span> <span class="nn">suite</span>
+
+<span class="c1"># create environment instance</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">suite</span><span class="o">.</span><span class="n">make</span><span class="p">(</span>
+    <span class="n">env_name</span><span class="o">=</span><span class="s2">&quot;Lift&quot;</span><span class="p">,</span> <span class="c1"># try with other tasks like &quot;Stack&quot; and &quot;Door&quot;</span>
+    <span class="n">robots</span><span class="o">=</span><span class="s2">&quot;Panda&quot;</span><span class="p">,</span>  <span class="c1"># try with other robots like &quot;Sawyer&quot; and &quot;Jaco&quot;</span>
+    <span class="n">has_renderer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">has_offscreen_renderer</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">use_camera_obs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># reset the environment</span>
+<span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">action</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">robots</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">dof</span><span class="p">)</span> <span class="c1"># sample random action</span>
+    <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>  <span class="c1"># take action in the environment</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>  <span class="c1"># render on display</span>
+</pre></div>
+</div>
+<p>This script above creates a simulated environment with the on-screen renderer, which is useful for visualization and qualitative evaluation. The <code class="docutils literal notranslate"><span class="pre">step()</span></code> function takes an <code class="docutils literal notranslate"><span class="pre">action</span></code> as input and returns a tuple of <code class="docutils literal notranslate"><span class="pre">(obs,</span> <span class="pre">reward,</span> <span class="pre">done,</span> <span class="pre">info)</span></code> where <code class="docutils literal notranslate"><span class="pre">obs</span></code> is an <code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code> containing observations <code class="docutils literal notranslate"><span class="pre">[(name_string,</span> <span class="pre">np.array),</span> <span class="pre">...]</span></code>, <code class="docutils literal notranslate"><span class="pre">reward</span></code> is the immediate reward obtained per step, <code class="docutils literal notranslate"><span class="pre">done</span></code> is a Boolean flag indicating if the episode has terminated and <code class="docutils literal notranslate"><span class="pre">info</span></code> is a dictionary which contains additional metadata.</p>
+<p>Many other parameters can be configured for each environment. They provide functionalities such as headless rendering, getting pixel observations, changing camera settings, using reward shaping, and adding extra low-level observations. Please refer to <a class="reference internal" href="modules/environments.html"><span class="doc">Environment</span></a> modules and the <a class="reference internal" href="simulation/environment.html"><span class="doc">Environment class</span></a> APIs for further details.</p>
+<p>Demo scripts that showcase various features of <strong>robosuite</strong> are available <a class="reference internal" href="demos.html"><span class="doc">here</span></a>. The purpose of each script and usage instructions can be found at the beginning of each file.</p>
+</section>
+<section id="building-your-own-environments">
+<h2>Building Your Own Environments<a class="headerlink" href="#building-your-own-environments" title="Permalink to this headline"></a></h2>
+<p><strong>robosuite</strong> offers great flexibility in creating your own environments. A <a class="reference internal" href="modeling/task.html"><span class="doc">task</span></a> typically involves the participation of a <a class="reference internal" href="modeling/robot_model.html"><span class="doc">robot</span></a> with <a class="reference external" href="modeling/robot_model.html#gripper-model">grippers</a> as its end-effectors, an <a class="reference internal" href="modeling/arena.html"><span class="doc">arena</span></a> (workspace), and <a class="reference internal" href="modeling/object_model.html"><span class="doc">objects</span></a> that the robot interacts with. For a detailed overview of our design architecture, please check out the <a class="reference internal" href="modules/overview.html"><span class="doc">Overview</span></a> page in Modules. Our Modeling APIs provide methods of composing these modularized elements into a scene, which can be loaded in MuJoCo for simulation. To build your own environments, we recommend you take a look at the <a class="reference internal" href="simulation/environment.html"><span class="doc">Environment classes</span></a> which have used these APIs to define robotics environments and tasks and the <a class="reference external" href="https://github.com/ARISE-Initiative/robosuite/tree/master/robosuite/environments">source code</a> of our standardized environments. Below we walk through a step-by-step example of building a new tabletop manipulation environment with our APIs.</p>
+<p><strong>Step 1: Creating the world.</strong> All mujoco object definitions are housed in an xml. We create a <a class="reference internal" href="source/robosuite.models.html"><span class="doc">MujocoWorldBase</span></a> class to do it.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robosuite.models</span> <span class="kn">import</span> <span class="n">MujocoWorldBase</span>
+
+<span class="n">world</span> <span class="o">=</span> <span class="n">MujocoWorldBase</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Step 2: Creating the robot.</strong> The class housing the xml of a robot can be created as follows.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robosuite.models.robots</span> <span class="kn">import</span> <span class="n">Panda</span>
+
+<span class="n">mujoco_robot</span> <span class="o">=</span> <span class="n">Panda</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>We can add a gripper to the robot by creating a gripper instance and calling the add_gripper method on a robot.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robosuite.models.grippers</span> <span class="kn">import</span> <span class="n">gripper_factory</span>
+
+<span class="n">gripper</span> <span class="o">=</span> <span class="n">gripper_factory</span><span class="p">(</span><span class="s1">&#39;PandaGripper&#39;</span><span class="p">)</span>
+<span class="n">mujoco_robot</span><span class="o">.</span><span class="n">add_gripper</span><span class="p">(</span><span class="n">gripper</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To add the robot to the world, we place the robot on to a desired position and merge it into the world</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mujoco_robot</span><span class="o">.</span><span class="n">set_base_xpos</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">world</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">mujoco_robot</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Step 3: Creating the table.</strong> We can initialize the <a class="reference internal" href="source/robosuite.models.arenas.html"><span class="doc">TableArena</span></a> instance that creates a table and the floorplane</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robosuite.models.arenas</span> <span class="kn">import</span> <span class="n">TableArena</span>
+
+<span class="n">mujoco_arena</span> <span class="o">=</span> <span class="n">TableArena</span><span class="p">()</span>
+<span class="n">mujoco_arena</span><span class="o">.</span><span class="n">set_origin</span><span class="p">([</span><span class="mf">0.8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">world</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">mujoco_arena</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Step 4: Adding the object.</strong> For details of <code class="docutils literal notranslate"><span class="pre">MujocoObject</span></code>, refer to the documentation about <a class="reference internal" href="modeling/object_model.html"><span class="doc">MujocoObject</span></a>, we can create a ball and add it to the world.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robosuite.models.objects</span> <span class="kn">import</span> <span class="n">BallObject</span>
+<span class="kn">from</span> <span class="nn">robosuite.utils.mjcf_utils</span> <span class="kn">import</span> <span class="n">new_joint</span>
+
+<span class="n">sphere</span> <span class="o">=</span> <span class="n">BallObject</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;sphere&quot;</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="mf">0.04</span><span class="p">],</span>
+    <span class="n">rgba</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">get_obj</span><span class="p">()</span>
+<span class="n">sphere</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;pos&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0 0 1.0&#39;</span><span class="p">)</span>
+<span class="n">world</span><span class="o">.</span><span class="n">worldbody</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sphere</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Step 5: Running Simulation.</strong> Once we have created the object, we can obtain a <code class="docutils literal notranslate"><span class="pre">mujoco_py</span></code> model by running</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">&quot;mujoco_py&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is an <code class="docutils literal notranslate"><span class="pre">MjModel</span></code> instance that can then be used for simulation. For example,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mujoco_py</span> <span class="kn">import</span> <span class="n">MjSim</span><span class="p">,</span> <span class="n">MjViewer</span>
+
+<span class="n">sim</span> <span class="o">=</span> <span class="n">MjSim</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<span class="n">viewer</span> <span class="o">=</span> <span class="n">MjViewer</span><span class="p">(</span><span class="n">sim</span><span class="p">)</span>
+<span class="n">viewer</span><span class="o">.</span><span class="n">vopt</span><span class="o">.</span><span class="n">geomgroup</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># disable visualization of collision mesh</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+  <span class="n">sim</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">ctrl</span><span class="p">[:]</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">sim</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+  <span class="n">viewer</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="demos.html" class="btn btn-neutral float-right" title="Demo Showcases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Stanford University and The University of Texas at Austin 2022.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
