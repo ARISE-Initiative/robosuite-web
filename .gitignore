@@ -124,7 +124,10 @@ debug_*
 *.swp
 
 .tabnine_root
-.jekyll-cache/
+.jekyll-cache
 _site
 .bundle
 vendor
+
+.sass-cache
+Gemfile.lock
