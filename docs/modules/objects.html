@@ -1,156 +1,657 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Objects &mdash; robosuite 1.3.1 documentation</title>
-      <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
-        <script src="../static/jquery.js"></script>
-        <script src="../static/underscore.js"></script>
-        <script src="../static/doctools.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="../static/js/theme.js"></script>
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Objects &#8212; robosuite 1.4 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/theme.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
+    <script src="../static/jquery.js"></script>
+    <script src="../static/underscore.js"></script>
+    <script src="../static/doctools.js"></script>
+    <script src="../static/scripts/sphinx-book-theme.js"></script>
+    <script src="../static/js/custom.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Environments" href="environments.html" />
-    <link rel="prev" title="Controllers" href="controllers.html" /> 
-</head>
+    <link rel="prev" title="Controllers" href="controllers.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> robosuite
-          </a>
-              <div class="version">
-                1.3.1
-              </div>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demos.html">Demo Showcases</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Modules</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="robots.html">Robots</a></li>
-<li class="toctree-l1"><a class="reference internal" href="controllers.html">Controllers</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Objects</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-create-a-custom-object">How to create a custom object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#the-mujocoobject-class">The MujocoObject class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creating-a-xmlobject">Creating a XMLObject</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creating-a-procedurally-generated-object">Creating a procedurally generated object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#placing-objects">Placing Objects</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="environments.html">Environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="devices.html">I/O Devices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="renderers.html">Renderers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Simulation API</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../simulation/robot.html">Robot</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../simulation/environment.html">Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../simulation/device.html">Device</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../simulation/controller.html">Controller</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Modeling API</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../modeling/mujoco_model.html">Mujoco Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Source API</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../source/robosuite.html">robosuite package</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../references.html">Projects using robosuite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgements</a></li>
-</ul>
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-        </div>
-      </div>
-    </nav>
+    
+    <div class="container-fluid" id="banner"></div>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">robosuite</a>
-      </nav>
+    
 
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Objects</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="../sources/modules/objects.md.txt" rel="nofollow"> View page source</a>
-      </li>
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../static/robosuite_color.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robosuite 1.4 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../quickstart.html">
+   Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../demos.html">
+   Demo Showcases
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="robots.html">
+   Robots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="controllers.html">
+   Controllers
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Objects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="environments.html">
+   Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sensors.html">
+   Sensors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="devices.html">
+   I/O Devices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="renderers.html">
+   Renderers
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Simulation API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../simulation/robot.html">
+   Robot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../simulation/environment.html">
+   Environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../simulation/device.html">
+   Device
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../simulation/controller.html">
+   Controller
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modeling API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modeling/mujoco_model.html">
+   Mujoco Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modeling/robot_model.html">
+   Robot Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modeling/object_model.html">
+   Object Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modeling/arena.html">
+   Arena
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modeling/task.html">
+   Task
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Source API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../source/robosuite.html">
+   robosuite package
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../source/robosuite.controllers.html">
+     robosuite.controllers package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../source/robosuite.controllers.interpolators.html">
+       robosuite.controllers.interpolators package
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../source/robosuite.devices.html">
+     robosuite.devices package
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../source/robosuite.environments.html">
+     robosuite.environments package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../source/robosuite.environments.manipulation.html">
+       robosuite.environments.manipulation package
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../source/robosuite.models.html">
+     robosuite.models package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../source/robosuite.models.arenas.html">
+       robosuite.models.arenas package
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../source/robosuite.models.grippers.html">
+       robosuite.models.grippers package
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../source/robosuite.models.mounts.html">
+       robosuite.models.mounts package
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../source/robosuite.models.objects.html">
+       robosuite.models.objects package
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../source/robosuite.models.objects.composite.html">
+         robosuite.models.objects.composite package
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../source/robosuite.models.objects.composite_body.html">
+         robosuite.models.objects.composite_body package
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../source/robosuite.models.objects.primitive.html">
+         robosuite.models.objects.primitive package
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../source/robosuite.models.robots.html">
+       robosuite.models.robots package
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../source/robosuite.models.robots.manipulators.html">
+         robosuite.models.robots.manipulators package
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../source/robosuite.models.tasks.html">
+       robosuite.models.tasks package
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../source/robosuite.renderers.html">
+     robosuite.renderers package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../source/robosuite.renderers.context.html">
+       robosuite.renderers.context package
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../source/robosuite.renderers.nvisii.html">
+       robosuite.renderers.nvisii package
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../source/robosuite.robots.html">
+     robosuite.robots package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../source/robosuite.utils.html">
+     robosuite.utils package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../source/robosuite.wrappers.html">
+     robosuite.wrappers package
+    </a>
+   </li>
   </ul>
-  <hr/>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algorithms
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algorithms/benchmarking.html">
+   Benchmarking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algorithms/demonstrations.html">
+   Human Demonstrations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algorithms/sim2real.html">
+   Sim-to-Real Transfer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algorithms/roboturk.html">
+   RoboTurk Datasets
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Projects using robosuite
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../acknowledgement.html">
+   Acknowledgements
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
   
-<style>
-/* CSS overrides for sphinx_rtd_theme */
 
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
 
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
+</label>
 
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
 
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="objects">
-<h1>Objects<a class="headerlink" href="#objects" title="Permalink to this headline"></a></h1>
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../sources/modules/objects.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-create-a-custom-object">
+   How to create a custom object
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-mujocoobject-class">
+   The MujocoObject class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-xmlobject">
+   Creating a XMLObject
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-procedurally-generated-object">
+   Creating a procedurally generated object
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#placing-objects">
+   Placing Objects
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Objects</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-create-a-custom-object">
+   How to create a custom object
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-mujocoobject-class">
+   The MujocoObject class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-xmlobject">
+   Creating a XMLObject
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-procedurally-generated-object">
+   Creating a procedurally generated object
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#placing-objects">
+   Placing Objects
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="objects">
+<h1>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">#</a></h1>
 <section id="how-to-create-a-custom-object">
-<h2>How to create a custom object<a class="headerlink" href="#how-to-create-a-custom-object" title="Permalink to this headline"></a></h2>
+<h2>How to create a custom object<a class="headerlink" href="#how-to-create-a-custom-object" title="Permalink to this headline">#</a></h2>
 <p>Objects, such as boxes and cans, are essential to building manipulation environments. We designed the <a class="reference external" href="../source/robosuite.models.objects.html#robosuite.models.objects.objects.MujocoObject">MujocoObject</a> interfaces to standardize and simplify the procedure for importing 3D models into the scene or procedurally generate new objects. MuJoCo defines models via the <a class="reference external" href="http://www.mujoco.org/book/modeling.html">MJCF</a> XML format. These MJCF files can either be stored as XML files on disk and loaded into simulator, or be created on-the-fly by code prior to simulation. Based on these two mechanisms of how MJCF models are created, we offer two main ways of creating your own object:</p>
 <ul class="simple">
 <li><p>Define an object in an MJCF XML file;</p></li>
@@ -158,7 +659,7 @@
 </ul>
 </section>
 <section id="the-mujocoobject-class">
-<h2>The MujocoObject class<a class="headerlink" href="#the-mujocoobject-class" title="Permalink to this headline"></a></h2>
+<h2>The MujocoObject class<a class="headerlink" href="#the-mujocoobject-class" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MujocoObject</span><span class="p">(</span><span class="n">MujocoModel</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
         
@@ -207,7 +708,7 @@
 </div>
 </section>
 <section id="creating-a-xmlobject">
-<h2>Creating a XMLObject<a class="headerlink" href="#creating-a-xmlobject" title="Permalink to this headline"></a></h2>
+<h2>Creating a XMLObject<a class="headerlink" href="#creating-a-xmlobject" title="Permalink to this headline">#</a></h2>
 <p>One can use MuJoCo MJCF XML to generate an object, either as a composition of primitive <a class="reference external" href="http://mujoco.org/book/modeling.html#geom">geoms</a> or imported from STL files of triangulated <a class="reference external" href="http://www.mujoco.org/book/modeling.html#mesh">meshes</a>. An example is <code class="docutils literal notranslate"><span class="pre">robosuite.models.objects.xml_objects.BreadObject</span></code>. Its <a class="reference external" href="https://github.com/ARISE-Initiative/robosuite/blob/master/robosuite/models/objects/xml_objects.py#L49">python definition</a> is short. Note that all <code class="docutils literal notranslate"><span class="pre">MujocoXMLObject</span></code> classes require both a <code class="docutils literal notranslate"><span class="pre">fname</span></code> and <code class="docutils literal notranslate"><span class="pre">name</span></code> argument, the former which specifies the filepath to the raw XML file and the latter which specifies the in-sim name of the object instantiated. The optional <code class="docutils literal notranslate"><span class="pre">joints</span></code> argument can also specify a custom set of joints to apply to the given object (defaults to “default”, which is a single free joint). Additionally, the type of object created can be specified via the <code class="docutils literal notranslate"><span class="pre">obj_type</span></code> argument, and must be one of (<code class="docutils literal notranslate"><span class="pre">'collision'</span></code>, <code class="docutils literal notranslate"><span class="pre">'visual'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'all'</span></code>). Lastly, setting <code class="docutils literal notranslate"><span class="pre">duplicate_collision_geoms</span></code> makes sure that all collision geoms automatically have an associated visual geom as well. Generally, the normal use case is to define a single class corresponding to a specific XML file, as shown below:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BreadObject</span><span class="p">(</span><span class="n">MujocoXMLObject</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
@@ -245,14 +746,14 @@
 </ul>
 </section>
 <section id="creating-a-procedurally-generated-object">
-<h2>Creating a procedurally generated object<a class="headerlink" href="#creating-a-procedurally-generated-object" title="Permalink to this headline"></a></h2>
+<h2>Creating a procedurally generated object<a class="headerlink" href="#creating-a-procedurally-generated-object" title="Permalink to this headline">#</a></h2>
 <p>Procedurally generated objects have been used in <a class="reference external" href="https://arxiv.org/abs/1802.09564">several</a> <a class="reference external" href="https://arxiv.org/abs/1806.09266">recent</a> <a class="reference external" href="https://arxiv.org/abs/1709.07857">works</a> to train control policies with improved robustness and generalization. Here you can programmatically generate an MJCF XML of an object from scratch using <code class="docutils literal notranslate"><span class="pre">xml.etree.ElementTree</span></code>, and compose an object of multiple geom primitives. The base class for this type of object is <code class="docutils literal notranslate"><span class="pre">MujocoGeneratedObject</span></code>.
 <strong>robosuite</strong> natively supports all Mujoco primitive objects with procedurally-generated <code class="docutils literal notranslate"><span class="pre">PrimitiveObject</span></code> classes (<code class="docutils literal notranslate"><span class="pre">BoxObject</span></code>, <code class="docutils literal notranslate"><span class="pre">BallObject</span></code>, <code class="docutils literal notranslate"><span class="pre">CapsuleObject</span></code>, and <code class="docutils literal notranslate"><span class="pre">CylinderObject</span></code>).</p>
 <p>Additionally, <strong>robosuite</strong> supports custom, complex objects that can be defined by collections of primitive geoms (the <a class="reference external" href="../source/robosuite.models.objects.html#robosuite.models.objects.generated_objects.CompositeObject">CompositeObject</a> class) or even other objects (the <a class="reference external" href="../source/robosuite.models.objects.html#robosuite.models.objects.generated_objects.CompositeBodyObject">CompositeBodyObject</a> class). The APIs for each of these classes have been standardized for ease of usage, and interested readers should consult the docstrings for each of these classes, as well as provided examples of each class (<a class="reference external" href="https://github.com/ARISE-Initiative/robosuite/blob/master/robosuite/models/objects/composite/hammer.py#L10">HammerObject</a>, <a class="reference external" href="https://github.com/ARISE-Initiative/robosuite/blob/master/robosuite/models/objects/composite_body/hinged_box.py#L8">HingedBoxObject</a>).</p>
 <p>It should also be noted that all of the above classes extending from the <code class="docutils literal notranslate"><span class="pre">MujocoGenereatedObject</span></code> class automatically supports custom texture definitions on a per-geom level, where specific texture images can be mapped to individual geoms. The above <code class="docutils literal notranslate"><span class="pre">HammerObject</span></code> showcases an example applying custom textures to different geoms of the resulting object.</p>
 </section>
 <section id="placing-objects">
-<h2>Placing Objects<a class="headerlink" href="#placing-objects" title="Permalink to this headline"></a></h2>
+<h2>Placing Objects<a class="headerlink" href="#placing-objects" title="Permalink to this headline">#</a></h2>
 <p>Object locations are initialized on every environment reset using instances of the <a class="reference external" href="../source/robosuite.utils.html#robosuite.utils.placement_samplers.ObjectPositionSampler">ObjectPositionSampler</a> class. Object samplers use the <code class="docutils literal notranslate"><span class="pre">bottom_site</span></code> and <code class="docutils literal notranslate"><span class="pre">top_site</span></code> sites of each object in order to place objects on top of other objects, and the <code class="docutils literal notranslate"><span class="pre">horizontal_radius_site</span></code> site in order to ensure that objects do not collide with one another. The most basic sampler is the <a class="reference external" href="../source/robosuite.utils.html#robosuite.utils.placement_samplers.UniformRandomSampler">UniformRandomSampler</a> class - this just uses rejection sampling to place objects randomly. As an example, consider the following code snippet from the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method of the <code class="docutils literal notranslate"><span class="pre">Lift</span></code> environment class.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">placement_initializer</span> <span class="o">=</span> <span class="n">UniformRandomSampler</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;ObjectSampler&quot;</span><span class="p">,</span>
@@ -306,34 +807,50 @@
 </section>
 
 
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="controllers.html" class="btn btn-neutral float-left" title="Controllers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="environments.html" class="btn btn-neutral float-right" title="Environments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright Stanford University and The University of Texas at Austin 2022.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="controllers.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Controllers</p>
         </div>
-      </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+    </a>
+    <a class='right-next' id="next-link" href="environments.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Environments</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By the robosuite core team<br/>
+  
+      &copy; Copyright Stanford University and The University of Texas at Austin 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
 
-</body>
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
 </html>

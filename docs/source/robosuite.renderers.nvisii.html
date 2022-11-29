@@ -1,188 +1,673 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>robosuite.renderers.nvisii package &mdash; robosuite 1.3.1 documentation</title>
-      <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../static/theme_overrides.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
-        <script src="../static/jquery.js"></script>
-        <script src="../static/underscore.js"></script>
-        <script src="../static/doctools.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="../static/js/theme.js"></script>
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>robosuite.renderers.nvisii package &#8212; robosuite 1.4 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/theme.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
+    <script src="../static/jquery.js"></script>
+    <script src="../static/underscore.js"></script>
+    <script src="../static/doctools.js"></script>
+    <script src="../static/scripts/sphinx-book-theme.js"></script>
+    <script src="../static/js/custom.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="robosuite.robots package" href="robosuite.robots.html" />
-    <link rel="prev" title="robosuite.renderers.mujoco package" href="robosuite.renderers.mujoco.html" /> 
-</head>
+    <link rel="prev" title="robosuite.renderers.context package" href="robosuite.renderers.context.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> robosuite
-          </a>
-              <div class="version">
-                1.3.1
-              </div>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demos.html">Demo Showcases</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Modules</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/robots.html">Robots</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/controllers.html">Controllers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/objects.html">Objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/renderers.html">Renderers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Simulation API</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../simulation/robot.html">Robot</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../simulation/environment.html">Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../simulation/device.html">Device</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../simulation/controller.html">Controller</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Modeling API</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../modeling/mujoco_model.html">Mujoco Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Source API</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="robosuite.html">robosuite package</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="robosuite.html#subpackages">Subpackages</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="robosuite.controllers.html">robosuite.controllers package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="robosuite.devices.html">robosuite.devices package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="robosuite.environments.html">robosuite.environments package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="robosuite.models.html">robosuite.models package</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="robosuite.renderers.html">robosuite.renderers package</a><ul class="current">
-<li class="toctree-l4 current"><a class="reference internal" href="robosuite.renderers.html#subpackages">Subpackages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robosuite.renderers.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robosuite.renderers.html#module-robosuite.renderers.base">robosuite.renderers.base module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robosuite.renderers.html#module-robosuite.renderers.base_parser">robosuite.renderers.base_parser module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="robosuite.renderers.html#module-robosuite.renderers">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="robosuite.robots.html">robosuite.robots package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="robosuite.utils.html">robosuite.utils package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="robosuite.wrappers.html">robosuite.wrappers package</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="robosuite.html#module-robosuite">Module contents</a></li>
-</ul>
-</li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../references.html">Projects using robosuite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgements</a></li>
-</ul>
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-        </div>
-      </div>
-    </nav>
+    
+    <div class="container-fluid" id="banner"></div>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">robosuite</a>
-      </nav>
+    
 
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="robosuite.html">robosuite package</a> &raquo;</li>
-          <li><a href="robosuite.renderers.html">robosuite.renderers package</a> &raquo;</li>
-      <li>robosuite.renderers.nvisii package</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="../sources/source/robosuite.renderers.nvisii.rst.txt" rel="nofollow"> View page source</a>
-      </li>
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../static/robosuite_color.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robosuite 1.4 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../quickstart.html">
+   Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../demos.html">
+   Demo Showcases
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/robots.html">
+   Robots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/controllers.html">
+   Controllers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/objects.html">
+   Objects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/environments.html">
+   Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/sensors.html">
+   Sensors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/devices.html">
+   I/O Devices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/renderers.html">
+   Renderers
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Simulation API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../simulation/robot.html">
+   Robot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../simulation/environment.html">
+   Environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../simulation/device.html">
+   Device
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../simulation/controller.html">
+   Controller
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modeling API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modeling/mujoco_model.html">
+   Mujoco Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modeling/robot_model.html">
+   Robot Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modeling/object_model.html">
+   Object Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modeling/arena.html">
+   Arena
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modeling/task.html">
+   Task
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Source API
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="robosuite.html">
+   robosuite package
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="robosuite.controllers.html">
+     robosuite.controllers package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="robosuite.controllers.interpolators.html">
+       robosuite.controllers.interpolators package
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="robosuite.devices.html">
+     robosuite.devices package
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="robosuite.environments.html">
+     robosuite.environments package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="robosuite.environments.manipulation.html">
+       robosuite.environments.manipulation package
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="robosuite.models.html">
+     robosuite.models package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="robosuite.models.arenas.html">
+       robosuite.models.arenas package
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="robosuite.models.grippers.html">
+       robosuite.models.grippers package
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="robosuite.models.mounts.html">
+       robosuite.models.mounts package
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="robosuite.models.objects.html">
+       robosuite.models.objects package
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="robosuite.models.objects.composite.html">
+         robosuite.models.objects.composite package
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="robosuite.models.objects.composite_body.html">
+         robosuite.models.objects.composite_body package
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="robosuite.models.objects.primitive.html">
+         robosuite.models.objects.primitive package
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="robosuite.models.robots.html">
+       robosuite.models.robots package
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="robosuite.models.robots.manipulators.html">
+         robosuite.models.robots.manipulators package
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="robosuite.models.tasks.html">
+       robosuite.models.tasks package
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="robosuite.renderers.html">
+     robosuite.renderers package
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="robosuite.renderers.context.html">
+       robosuite.renderers.context package
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       robosuite.renderers.nvisii package
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="robosuite.robots.html">
+     robosuite.robots package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="robosuite.utils.html">
+     robosuite.utils package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="robosuite.wrappers.html">
+     robosuite.wrappers package
+    </a>
+   </li>
   </ul>
-  <hr/>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algorithms
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algorithms/benchmarking.html">
+   Benchmarking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algorithms/demonstrations.html">
+   Human Demonstrations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algorithms/sim2real.html">
+   Sim-to-Real Transfer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algorithms/roboturk.html">
+   RoboTurk Datasets
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Projects using robosuite
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../acknowledgement.html">
+   Acknowledgements
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
   
-<style>
-/* CSS overrides for sphinx_rtd_theme */
 
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
 
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
+</label>
 
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
 
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="robosuite-renderers-nvisii-package">
-<h1>robosuite.renderers.nvisii package<a class="headerlink" href="#robosuite-renderers-nvisii-package" title="Permalink to this headline"></a></h1>
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../sources/source/robosuite.renderers.nvisii.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robosuite.renderers.nvisii.nvisii_renderer">
+   robosuite.renderers.nvisii.nvisii_renderer module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robosuite.renderers.nvisii.nvisii_utils">
+   robosuite.renderers.nvisii.nvisii_utils module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robosuite.renderers.nvisii.parser">
+   robosuite.renderers.nvisii.parser module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robosuite.renderers.nvisii">
+   Module contents
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>robosuite.renderers.nvisii package</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robosuite.renderers.nvisii.nvisii_renderer">
+   robosuite.renderers.nvisii.nvisii_renderer module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robosuite.renderers.nvisii.nvisii_utils">
+   robosuite.renderers.nvisii.nvisii_utils module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robosuite.renderers.nvisii.parser">
+   robosuite.renderers.nvisii.parser module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-robosuite.renderers.nvisii">
+   Module contents
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="robosuite-renderers-nvisii-package">
+<h1>robosuite.renderers.nvisii package<a class="headerlink" href="#robosuite-renderers-nvisii-package" title="Permalink to this headline">#</a></h1>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="module-robosuite.renderers.nvisii.nvisii_renderer">
-<span id="robosuite-renderers-nvisii-nvisii-renderer-module"></span><h2>robosuite.renderers.nvisii.nvisii_renderer module<a class="headerlink" href="#module-robosuite.renderers.nvisii.nvisii_renderer" title="Permalink to this headline"></a></h2>
+<span id="robosuite-renderers-nvisii-nvisii-renderer-module"></span><h2>robosuite.renderers.nvisii.nvisii_renderer module<a class="headerlink" href="#module-robosuite.renderers.nvisii.nvisii_renderer" title="Permalink to this headline">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.renderers.nvisii.nvisii_renderer.</span></span><span class="sig-name descname"><span class="pre">NVISIIRenderer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'images/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_noise</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'videos/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'robosuite_video_0.mp4'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_fps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vision_modalities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.renderers.nvisii.nvisii_renderer.</span></span><span class="sig-name descname"><span class="pre">NVISIIRenderer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'images/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_noise</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'videos/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'robosuite_video_0.mp4'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_fps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vision_modalities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robosuite.renderers.html#robosuite.renderers.base.Renderer" title="robosuite.renderers.base.Renderer"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.renderers.base.Renderer</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.close">
-<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.close" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.close" title="Permalink to this definition">#</a></dt>
 <dd><p>Deinitializes the nvisii rendering environment</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.get_pixel_obs">
-<span class="sig-name descname"><span class="pre">get_pixel_obs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.get_pixel_obs" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_pixel_obs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.get_pixel_obs" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the pixel observations from the given renderer</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -196,7 +681,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.randomize_colors">
-<span class="sig-name descname"><span class="pre">randomize_colors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bright</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.randomize_colors" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">randomize_colors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bright</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.randomize_colors" title="Permalink to this definition">#</a></dt>
 <dd><p>Modified from <a class="reference external" href="https://github.com/matterport/Mask_RCNN/blob/master/mrcnn/visualize.py#L59">https://github.com/matterport/Mask_RCNN/blob/master/mrcnn/visualize.py#L59</a>
 Generate random colors.
 To get visually distinct colors, generate them in HSV space then
@@ -205,7 +690,7 @@ convert to RGB.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.render">
-<span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">render_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'png'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.render" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">render_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'png'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.render" title="Permalink to this definition">#</a></dt>
 <dd><p>Renders an image of the NVISII renderer</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -216,28 +701,28 @@ convert to RGB.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.render_data_to_file">
-<span class="sig-name descname"><span class="pre">render_data_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.render_data_to_file" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">render_data_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.render_data_to_file" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.render_segmentation_data">
-<span class="sig-name descname"><span class="pre">render_segmentation_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.render_segmentation_data" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">render_segmentation_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.render_segmentation_data" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.render_to_file">
-<span class="sig-name descname"><span class="pre">render_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.render_to_file" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">render_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.render_to_file" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.reset">
-<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.reset" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.reset" title="Permalink to this definition">#</a></dt>
 <dd><p>Reset the renderer with initial states for environment</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.segmentation_to_rgb">
-<span class="sig-name descname"><span class="pre">segmentation_to_rgb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seg_im</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_colors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.segmentation_to_rgb" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">segmentation_to_rgb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seg_im</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_colors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.segmentation_to_rgb" title="Permalink to this definition">#</a></dt>
 <dd><p>Helper function to visualize segmentations as RGB frames.
 NOTE: assumes that geom IDs go up to 255 at most - if not,
 multiple geoms might be assigned to the same color.</p>
@@ -245,12 +730,12 @@ multiple geoms might be assigned to the same color.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.set_camera_pos_quat">
-<span class="sig-name descname"><span class="pre">set_camera_pos_quat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.set_camera_pos_quat" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">set_camera_pos_quat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.set_camera_pos_quat" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.tag_in_name">
-<span class="sig-name descname"><span class="pre">tag_in_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.tag_in_name" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">tag_in_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.tag_in_name" title="Permalink to this definition">#</a></dt>
 <dd><p>Checks if one of the tags in body tags in the name</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -261,7 +746,7 @@ multiple geoms might be assigned to the same color.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.update">
-<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.update" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.update" title="Permalink to this definition">#</a></dt>
 <dd><p>Updates the states for the wrapper given a certain action</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -274,10 +759,10 @@ multiple geoms might be assigned to the same color.</p>
 
 </section>
 <section id="module-robosuite.renderers.nvisii.nvisii_utils">
-<span id="robosuite-renderers-nvisii-nvisii-utils-module"></span><h2>robosuite.renderers.nvisii.nvisii_utils module<a class="headerlink" href="#module-robosuite.renderers.nvisii.nvisii_utils" title="Permalink to this headline"></a></h2>
+<span id="robosuite-renderers-nvisii-nvisii-utils-module"></span><h2>robosuite.renderers.nvisii.nvisii_utils module<a class="headerlink" href="#module-robosuite.renderers.nvisii.nvisii_utils" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.nvisii_utils.load_object">
-<span class="sig-prename descclassname"><span class="pre">robosuite.renderers.nvisii.nvisii_utils.</span></span><span class="sig-name descname"><span class="pre">load_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_quat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_rgba</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_tex_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_tex_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meshes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_utils.load_object" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">robosuite.renderers.nvisii.nvisii_utils.</span></span><span class="sig-name descname"><span class="pre">load_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_quat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_rgba</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_tex_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_tex_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meshes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.nvisii_utils.load_object" title="Permalink to this definition">#</a></dt>
 <dd><p>Function that initializes the meshes in the memory.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -302,50 +787,50 @@ a mesh and there is no specified material.</p></li>
 
 </section>
 <section id="module-robosuite.renderers.nvisii.parser">
-<span id="robosuite-renderers-nvisii-parser-module"></span><h2>robosuite.renderers.nvisii.parser module<a class="headerlink" href="#module-robosuite.renderers.nvisii.parser" title="Permalink to this headline"></a></h2>
+<span id="robosuite-renderers-nvisii-parser-module"></span><h2>robosuite.renderers.nvisii.parser module<a class="headerlink" href="#module-robosuite.renderers.nvisii.parser" title="Permalink to this headline">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.parser.Components">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.renderers.nvisii.parser.</span></span><span class="sig-name descname"><span class="pre">Components</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent_body_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_quat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Components" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.renderers.nvisii.parser.</span></span><span class="sig-name descname"><span class="pre">Components</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent_body_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_quat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Components" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
-<dl class="py property">
+<dl class="py attribute">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.parser.Components.dynamic">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">dynamic</span></span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Components.dynamic" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">dynamic</span></span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Components.dynamic" title="Permalink to this definition">#</a></dt>
 <dd><p>Alias for field number 6</p>
 </dd></dl>
 
-<dl class="py property">
+<dl class="py attribute">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.parser.Components.element_id">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">element_id</span></span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Components.element_id" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">element_id</span></span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Components.element_id" title="Permalink to this definition">#</a></dt>
 <dd><p>Alias for field number 2</p>
 </dd></dl>
 
-<dl class="py property">
+<dl class="py attribute">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.parser.Components.geom_index">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">geom_index</span></span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Components.geom_index" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">geom_index</span></span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Components.geom_index" title="Permalink to this definition">#</a></dt>
 <dd><p>Alias for field number 1</p>
 </dd></dl>
 
-<dl class="py property">
+<dl class="py attribute">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.parser.Components.geom_pos">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">geom_pos</span></span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Components.geom_pos" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">geom_pos</span></span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Components.geom_pos" title="Permalink to this definition">#</a></dt>
 <dd><p>Alias for field number 4</p>
 </dd></dl>
 
-<dl class="py property">
+<dl class="py attribute">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.parser.Components.geom_quat">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">geom_quat</span></span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Components.geom_quat" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">geom_quat</span></span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Components.geom_quat" title="Permalink to this definition">#</a></dt>
 <dd><p>Alias for field number 5</p>
 </dd></dl>
 
-<dl class="py property">
+<dl class="py attribute">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.parser.Components.obj">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">obj</span></span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Components.obj" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">obj</span></span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Components.obj" title="Permalink to this definition">#</a></dt>
 <dd><p>Alias for field number 0</p>
 </dd></dl>
 
-<dl class="py property">
+<dl class="py attribute">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.parser.Components.parent_body_name">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">parent_body_name</span></span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Components.parent_body_name" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">parent_body_name</span></span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Components.parent_body_name" title="Permalink to this definition">#</a></dt>
 <dd><p>Alias for field number 3</p>
 </dd></dl>
 
@@ -353,49 +838,49 @@ a mesh and there is no specified material.</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.parser.Parser">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.renderers.nvisii.parser.</span></span><span class="sig-name descname"><span class="pre">Parser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">renderer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segmentation_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Parser" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.renderers.nvisii.parser.</span></span><span class="sig-name descname"><span class="pre">Parser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">renderer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segmentation_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Parser" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="robosuite.renderers.html#robosuite.renderers.base_parser.BaseParser" title="robosuite.renderers.base_parser.BaseParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.renderers.base_parser.BaseParser</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.parser.Parser.create_class_mapping">
-<span class="sig-name descname"><span class="pre">create_class_mapping</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Parser.create_class_mapping" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">create_class_mapping</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Parser.create_class_mapping" title="Permalink to this definition">#</a></dt>
 <dd><p>Create class name to index mapping for both semantic and instance
 segmentation.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.parser.Parser.get_class_id">
-<span class="sig-name descname"><span class="pre">get_class_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geom_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Parser.get_class_id" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_class_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geom_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Parser.get_class_id" title="Permalink to this definition">#</a></dt>
 <dd><p>Given index of the geom object get the class id based on
 self.segmentation type.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.parser.Parser.parse_geometries">
-<span class="sig-name descname"><span class="pre">parse_geometries</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Parser.parse_geometries" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">parse_geometries</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Parser.parse_geometries" title="Permalink to this definition">#</a></dt>
 <dd><p>Iterate through each goemetry and load it in the NVISII renderer.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.parser.Parser.parse_materials">
-<span class="sig-name descname"><span class="pre">parse_materials</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Parser.parse_materials" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">parse_materials</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Parser.parse_materials" title="Permalink to this definition">#</a></dt>
 <dd><p>Parse all materials and use texture mapping to initialize materials</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.parser.Parser.parse_meshes">
-<span class="sig-name descname"><span class="pre">parse_meshes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Parser.parse_meshes" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">parse_meshes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Parser.parse_meshes" title="Permalink to this definition">#</a></dt>
 <dd><p>Create mapping of meshes.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.parser.Parser.parse_textures">
-<span class="sig-name descname"><span class="pre">parse_textures</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Parser.parse_textures" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">parse_textures</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Parser.parse_textures" title="Permalink to this definition">#</a></dt>
 <dd><p>Parse and load all textures and store them</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.renderers.nvisii.parser.Parser.tag_in_name">
-<span class="sig-name descname"><span class="pre">tag_in_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Parser.tag_in_name" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">tag_in_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.renderers.nvisii.parser.Parser.tag_in_name" title="Permalink to this definition">#</a></dt>
 <dd><p>Checks if one of the tags in body tags in the name</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -411,39 +896,55 @@ self.segmentation type.</p>
 
 </section>
 <section id="module-robosuite.renderers.nvisii">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robosuite.renderers.nvisii" title="Permalink to this headline"></a></h2>
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robosuite.renderers.nvisii" title="Permalink to this headline">#</a></h2>
 </section>
 </section>
 
 
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="robosuite.renderers.mujoco.html" class="btn btn-neutral float-left" title="robosuite.renderers.mujoco package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="robosuite.robots.html" class="btn btn-neutral float-right" title="robosuite.robots package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright Stanford University and The University of Texas at Austin 2022.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="robosuite.renderers.context.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">robosuite.renderers.context package</p>
         </div>
-      </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+    </a>
+    <a class='right-next' id="next-link" href="robosuite.robots.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">robosuite.robots package</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By the robosuite core team<br/>
+  
+      &copy; Copyright Stanford University and The University of Texas at Austin 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
 
-</body>
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
 </html>
