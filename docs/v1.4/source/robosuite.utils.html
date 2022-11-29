@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>robosuite.utils package &#8212; robosuite 1.4.0 documentation</title>
+    <title>robosuite.utils package &#8212; robosuite 1.4 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -23,7 +23,6 @@
     <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
     <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../static/css/theme.css" />
-    <link rel="stylesheet" type="text/css" href="../static/theme_overrides.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -34,6 +33,7 @@
     <script src="../static/underscore.js"></script>
     <script src="../static/doctools.js"></script>
     <script src="../static/scripts/sphinx-book-theme.js"></script>
+    <script src="../static/js/custom.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -75,9 +75,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robosuite 1.4.0 documentation</h1>
+      <img src="../static/robosuite_color.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robosuite 1.4 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -365,11 +370,6 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="robosuite.renderers.igibson.html">
-       robosuite.renderers.igibson package
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="robosuite.renderers.nvisii.html">
        robosuite.renderers.nvisii package
       </a>
@@ -600,7 +600,7 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#robosuite-utils-input-utils-module">
+  <a class="reference internal nav-link" href="#module-robosuite.utils.input_utils">
    robosuite.utils.input_utils module
   </a>
  </li>
@@ -704,7 +704,7 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#robosuite-utils-input-utils-module">
+  <a class="reference internal nav-link" href="#module-robosuite.utils.input_utils">
    robosuite.utils.input_utils module
   </a>
  </li>
@@ -782,7 +782,8 @@ title="Print to PDF"
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Wrapper class for a MuJoCo ‘mjData’ instance.
 MjData contains all of the dynamic variables and intermediate results produced
-by the simulation. These are expected to change on each simulation timestep.</p>
+by the simulation. These are expected to change on each simulation timestep.
+The properties without docstrings are defined in mujoco source code from <a class="reference external" href="https://github.com/deepmind/mujoco/blob/062cb53a4a14b2a7a900453613a7ce498728f9d8/include/mujoco/mjdata.h#L126">https://github.com/deepmind/mujoco/blob/062cb53a4a14b2a7a900453613a7ce498728f9d8/include/mujoco/mjdata.h#L126</a>.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.D_colind">
 <em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">D_colind</span></span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.D_colind" title="Permalink to this definition">#</a></dt>
@@ -1107,142 +1108,478 @@ so we explicitly expose this as a property</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_body_jacp">
 <span class="sig-name descname"><span class="pre">get_body_jacp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_body_jacp" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Query the position jacobian of a mujoco body using a name string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a mujoco body</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The jacp value of the mujoco body</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>jacp (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_body_jacr">
 <span class="sig-name descname"><span class="pre">get_body_jacr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_body_jacr" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Query the rotation jacobian of a mujoco body using a name string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a mujoco body</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The jacr value of the mujoco body</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>jacr (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_body_xmat">
 <span class="sig-name descname"><span class="pre">get_body_xmat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_body_xmat" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Query the rotation of a mujoco body in a rotation matrix using a name string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a mujoco body</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The xmat value of the mujoco body</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>xmat (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_body_xpos">
 <span class="sig-name descname"><span class="pre">get_body_xpos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_body_xpos" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Query cartesian position of a mujoco body using a name string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a mujoco body</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The xpos value of the mujoco body</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>xpos (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_body_xquat">
 <span class="sig-name descname"><span class="pre">get_body_xquat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_body_xquat" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Query the rotation of a mujoco body in quaternion (in wxyz convention) using a name string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a mujoco body</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The xquat value of the mujoco body</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>xquat (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_body_xvelp">
 <span class="sig-name descname"><span class="pre">get_body_xvelp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_body_xvelp" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Query the translational velocity of a mujoco body using a name string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a mujoco body</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The translational velocity of the mujoco body.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>xvelp (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_body_xvelr">
 <span class="sig-name descname"><span class="pre">get_body_xvelr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_body_xvelr" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Query the rotational velocity of a mujoco body using a name string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a mujoco body</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The rotational velocity of the mujoco body.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>xvelr (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_camera_xmat">
 <span class="sig-name descname"><span class="pre">get_camera_xmat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_camera_xmat" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get the rotation of a camera in a rotation matrix using name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a camera</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The 3x3 rotation matrix of a camera</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>cam_xmat (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_camera_xpos">
 <span class="sig-name descname"><span class="pre">get_camera_xpos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_camera_xpos" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get the cartesian position of a camera using name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a camera</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The cartesian position of a camera</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>cam_xpos (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_geom_jacp">
 <span class="sig-name descname"><span class="pre">get_geom_jacp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_geom_jacp" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Query the position jacobian of a mujoco geom using a name string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a mujoco geom</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The jacp value of the mujoco geom</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>jacp (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_geom_jacr">
 <span class="sig-name descname"><span class="pre">get_geom_jacr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_geom_jacr" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Query the rotation jacobian of a mujoco geom using a name string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a mujoco geom</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The jacr value of the mujoco geom</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>jacr (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_geom_xmat">
 <span class="sig-name descname"><span class="pre">get_geom_xmat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_geom_xmat" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Query the rotation of a mujoco geom in a rotation matrix using a name string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a mujoco geom</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The 3x3 rotation matrix of the mujoco geom.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>geom_xmat (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_geom_xpos">
 <span class="sig-name descname"><span class="pre">get_geom_xpos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_geom_xpos" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Query the cartesian position of a mujoco geom using a name string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a mujoco geom</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The cartesian position of the mujoco body.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>geom_xpos (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_geom_xvelp">
 <span class="sig-name descname"><span class="pre">get_geom_xvelp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_geom_xvelp" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Query the translational velocity of a mujoco geom using a name string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a mujoco geom</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The translational velocity of the mujoco geom</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>xvelp (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_geom_xvelr">
 <span class="sig-name descname"><span class="pre">get_geom_xvelr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_geom_xvelr" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Query the rotational velocity of a mujoco geom using a name string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a mujoco geom</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The rotational velocity of the mujoco geom</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>xvelr (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_joint_qpos">
 <span class="sig-name descname"><span class="pre">get_joint_qpos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_joint_qpos" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get the position of a joint using name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a joint</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The current position of a joint.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>qpos (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_joint_qvel">
 <span class="sig-name descname"><span class="pre">get_joint_qvel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_joint_qvel" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get the velocity of a joint using name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a joint</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The current velocity of a joint.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>qvel (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_light_xdir">
 <span class="sig-name descname"><span class="pre">get_light_xdir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_light_xdir" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get the direction of a light source using name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a light</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The direction vector of the lightsource</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>light_xdir (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_light_xpos">
 <span class="sig-name descname"><span class="pre">get_light_xpos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_light_xpos" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get cartesian position of a light source</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a lighting source</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The cartesian position of the light source</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>light_xpos (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_mocap_pos">
 <span class="sig-name descname"><span class="pre">get_mocap_pos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_mocap_pos" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get the position of a mocap body using name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a joint</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The current position of a mocap body.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>mocap_pos (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_mocap_quat">
 <span class="sig-name descname"><span class="pre">get_mocap_quat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_mocap_quat" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get the quaternion of a mocap body using name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a joint</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The current quaternion of a mocap body.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>mocap_quat (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_sensor">
 <span class="sig-name descname"><span class="pre">get_sensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_sensor" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get the data of a sensor using name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a sensor</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The sensor data vector</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>sensordata (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_site_jacp">
 <span class="sig-name descname"><span class="pre">get_site_jacp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_site_jacp" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Query the position jacobian of a mujoco site using a name string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a mujoco site</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The jacp value of the mujoco site</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>jacp (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_site_jacr">
 <span class="sig-name descname"><span class="pre">get_site_jacr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_site_jacr" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Query the rotation jacobian of a mujoco site using a name string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a mujoco site</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The jacr value of the mujoco site</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>jacr (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_site_xmat">
 <span class="sig-name descname"><span class="pre">get_site_xmat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_site_xmat" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Query the rotation of a mujoco site in a rotation matrix using a name string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a mujoco site</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The 3x3 rotation matrix of the mujoco site.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>site_xmat (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_site_xpos">
 <span class="sig-name descname"><span class="pre">get_site_xpos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_site_xpos" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Query the cartesian position of a mujoco site using a name string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a mujoco site</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The carteisan position of the mujoco site</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>site_xpos (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_site_xvelp">
 <span class="sig-name descname"><span class="pre">get_site_xvelp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_site_xvelp" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Query the translational velocity of a mujoco site using a name string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a mujoco site</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The translational velocity of the mujoco site</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>xvelp (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.get_site_xvelr">
 <span class="sig-name descname"><span class="pre">get_site_xvelr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.get_site_xvelr" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Query the rotational velocity of a mujoco site using a name string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of a mujoco site</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The rotational velocity of the mujoco site</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>xvelr (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.jnt">
@@ -1463,23 +1800,58 @@ so we explicitly expose this as a property</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.set_joint_qpos">
 <span class="sig-name descname"><span class="pre">set_joint_qpos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.set_joint_qpos" title="Permalink to this definition">#</a></dt>
-<dd><p>See <a class="reference external" href="https://github.com/openai/mujoco-py/blob/ab86d331c9a77ae412079c6e58b8771fe63747fc/mujoco_py/generated/wrappers.pxi#L2821">https://github.com/openai/mujoco-py/blob/ab86d331c9a77ae412079c6e58b8771fe63747fc/mujoco_py/generated/wrappers.pxi#L2821</a></p>
+<dd><p>Set the velocities of a joint using name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – The name of a joint</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – The desired joint velocity of a joint.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.set_joint_qvel">
 <span class="sig-name descname"><span class="pre">set_joint_qvel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.set_joint_qvel" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Set the velocities of a mjo using name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – The name of a joint</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – The desired joint velocity of a joint.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.set_mocap_pos">
 <span class="sig-name descname"><span class="pre">set_mocap_pos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.set_mocap_pos" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Set the quaternion of a mocap body using name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – The name of a joint</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – The desired joint position of a mocap body.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.set_mocap_quat">
 <span class="sig-name descname"><span class="pre">set_mocap_quat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjData.set_mocap_quat" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Set the quaternion of a mocap body using name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – The name of a joint</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – The desired joint quaternion of a mocap body.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjData.site">
@@ -1749,7 +2121,8 @@ changed occasionally, although this is done explicitly by the user.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.actuator_id2name">
 <span class="sig-name descname"><span class="pre">actuator_id2name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjModel.actuator_id2name" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get actuator name from actuator id.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.actuator_length0">
@@ -1764,7 +2137,8 @@ changed occasionally, although this is done explicitly by the user.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.actuator_name2id">
 <span class="sig-name descname"><span class="pre">actuator_name2id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjModel.actuator_name2id" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get actuator id from actuator name.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.actuator_plugin">
@@ -1814,7 +2188,8 @@ changed occasionally, although this is done explicitly by the user.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.body_id2name">
 <span class="sig-name descname"><span class="pre">body_id2name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjModel.body_id2name" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get body name from mujoco body id.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.body_inertia">
@@ -1859,7 +2234,8 @@ changed occasionally, although this is done explicitly by the user.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.body_name2id">
 <span class="sig-name descname"><span class="pre">body_name2id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjModel.body_name2id" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get body id from mujoco body name.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.body_parentid">
@@ -1979,12 +2355,14 @@ changed occasionally, although this is done explicitly by the user.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.camera_id2name">
 <span class="sig-name descname"><span class="pre">camera_id2name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjModel.camera_id2name" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get camera name from camera id.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.camera_name2id">
 <span class="sig-name descname"><span class="pre">camera_name2id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjModel.camera_name2id" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get camera id from  camera name.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.dof_M0">
@@ -2170,7 +2548,8 @@ changed occasionally, although this is done explicitly by the user.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.geom_id2name">
 <span class="sig-name descname"><span class="pre">geom_id2name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjModel.geom_id2name" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get geom name from  geom id.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.geom_margin">
@@ -2185,7 +2564,8 @@ changed occasionally, although this is done explicitly by the user.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.geom_name2id">
 <span class="sig-name descname"><span class="pre">geom_name2id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjModel.geom_name2id" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get geom id from  geom name.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.geom_pos">
@@ -2389,12 +2769,14 @@ Returns:
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.joint_id2name">
 <span class="sig-name descname"><span class="pre">joint_id2name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjModel.joint_id2name" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get joint name from mujoco joint id.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.joint_name2id">
 <span class="sig-name descname"><span class="pre">joint_name2id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjModel.joint_name2id" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get joint id from joint name.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.key">
@@ -2504,7 +2886,8 @@ Returns:
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.light_id2name">
 <span class="sig-name descname"><span class="pre">light_id2name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjModel.light_id2name" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get light name from light id.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.light_mode">
@@ -2514,7 +2897,8 @@ Returns:
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.light_name2id">
 <span class="sig-name descname"><span class="pre">light_name2id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjModel.light_name2id" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get light id from light name.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.light_pos">
@@ -2630,12 +3014,14 @@ Returns:
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.mesh_id2name">
 <span class="sig-name descname"><span class="pre">mesh_id2name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjModel.mesh_id2name" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get mesh name from  mesh id.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.mesh_name2id">
 <span class="sig-name descname"><span class="pre">mesh_name2id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjModel.mesh_name2id" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get mesh id from mesh name.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.mesh_normal">
@@ -3225,12 +3611,14 @@ Returns:
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.sensor_id2name">
 <span class="sig-name descname"><span class="pre">sensor_id2name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjModel.sensor_id2name" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get sensor name from sensor id.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.sensor_name2id">
 <span class="sig-name descname"><span class="pre">sensor_name2id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjModel.sensor_name2id" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get sensor id from sensor name.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.sensor_needstage">
@@ -3295,7 +3683,8 @@ Returns:
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.site_id2name">
 <span class="sig-name descname"><span class="pre">site_id2name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjModel.site_id2name" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get site name from site id.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.site_matid">
@@ -3305,7 +3694,8 @@ Returns:
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.site_name2id">
 <span class="sig-name descname"><span class="pre">site_name2id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjModel.site_name2id" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get site id from site name.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.site_pos">
@@ -3485,7 +3875,8 @@ Returns:
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.tendon_id2name">
 <span class="sig-name descname"><span class="pre">tendon_id2name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjModel.tendon_id2name" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get tendon name from tendon id.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.tendon_invweight0">
@@ -3520,7 +3911,8 @@ Returns:
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.tendon_name2id">
 <span class="sig-name descname"><span class="pre">tendon_name2id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.binding_utils.MjModel.tendon_name2id" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get tendon id from tendon name.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.utils.binding_utils.MjModel.tendon_num">
@@ -4021,7 +4413,7 @@ individual entries into the buffer</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>env</strong> (<a class="reference internal" href="../simulation/environment.html#robosuite.environments.base.MujocoEnv" title="robosuite.environments.base.MujocoEnv"><em>MujocoEnv</em></a>) – Mujoco environment to modify camera</p></li>
+<li><p><strong>env</strong> (<a class="reference internal" href="robosuite.environments.html#robosuite.environments.base.MujocoEnv" title="robosuite.environments.base.MujocoEnv"><em>MujocoEnv</em></a>) – Mujoco environment to modify camera</p></li>
 <li><p><strong>camera</strong> (<em>str</em>) – Which camera to mobilize during playback, e.g.: frontview, agentview, etc.</p></li>
 <li><p><strong>init_camera_pos</strong> (<em>None</em><em> or </em><em>3-array</em>) – If specified, should be the (x,y,z) global cartesian pos to
 initialize camera to</p></li>
@@ -4562,36 +4954,169 @@ specified to define a global goal position</p>
 </dd></dl>
 
 </section>
-<section id="robosuite-utils-input-utils-module">
-<h2>robosuite.utils.input_utils module<a class="headerlink" href="#robosuite-utils-input-utils-module" title="Permalink to this headline">#</a></h2>
+<section id="module-robosuite.utils.input_utils">
+<span id="robosuite-utils-input-utils-module"></span><h2>robosuite.utils.input_utils module<a class="headerlink" href="#module-robosuite.utils.input_utils" title="Permalink to this headline">#</a></h2>
+<p>Utility functions for grabbing user inputs</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="robosuite.utils.input_utils.choose_controller">
+<span class="sig-prename descclassname"><span class="pre">robosuite.utils.input_utils.</span></span><span class="sig-name descname"><span class="pre">choose_controller</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.input_utils.choose_controller" title="Permalink to this definition">#</a></dt>
+<dd><p>Prints out controller options, and returns the requested controller name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Chosen controller name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robosuite.utils.input_utils.choose_environment">
+<span class="sig-prename descclassname"><span class="pre">robosuite.utils.input_utils.</span></span><span class="sig-name descname"><span class="pre">choose_environment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.input_utils.choose_environment" title="Permalink to this definition">#</a></dt>
+<dd><p>Prints out environment options, and returns the selected env_name choice</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Chosen environment name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robosuite.utils.input_utils.choose_multi_arm_config">
+<span class="sig-prename descclassname"><span class="pre">robosuite.utils.input_utils.</span></span><span class="sig-name descname"><span class="pre">choose_multi_arm_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.input_utils.choose_multi_arm_config" title="Permalink to this definition">#</a></dt>
+<dd><p>Prints out multi-arm environment configuration options, and returns the requested config name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Requested multi-arm configuration name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robosuite.utils.input_utils.choose_robots">
+<span class="sig-prename descclassname"><span class="pre">robosuite.utils.input_utils.</span></span><span class="sig-name descname"><span class="pre">choose_robots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exclude_bimanual</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.input_utils.choose_robots" title="Permalink to this definition">#</a></dt>
+<dd><p>Prints out robot options, and returns the requested robot. Restricts options to single-armed robots if
+&#64;exclude_bimanual is set to True (False by default)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>exclude_bimanual</strong> (<em>bool</em>) – If set, excludes bimanual robots from the robot options</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested robot name</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robosuite.utils.input_utils.input2action">
+<span class="sig-prename descclassname"><span class="pre">robosuite.utils.input_utils.</span></span><span class="sig-name descname"><span class="pre">input2action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">active_arm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'right'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_configuration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.input_utils.input2action" title="Permalink to this definition">#</a></dt>
+<dd><p>Converts an input from an active device into a valid action sequence that can be fed into an env.step() call</p>
+<p>If a reset is triggered from the device, immediately returns None. Else, returns the appropriate action</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>device</strong> (<a class="reference internal" href="robosuite.devices.html#robosuite.devices.device.Device" title="robosuite.devices.device.Device"><em>Device</em></a>) – A device from which user inputs can be converted into actions. Can be either a Spacemouse or
+Keyboard device class</p></li>
+<li><p><strong>robot</strong> (<a class="reference internal" href="robosuite.robots.html#robosuite.robots.robot.Robot" title="robosuite.robots.robot.Robot"><em>Robot</em></a>) – Which robot we’re controlling</p></li>
+<li><p><strong>active_arm</strong> (<em>str</em>) – Only applicable for multi-armed setups (e.g.: multi-arm environments or bimanual robots).
+Allows inputs to be converted correctly if the control type (e.g.: IK) is dependent on arm choice.
+Choices are {right, left}</p></li>
+<li><p><strong>env_configuration</strong> (<em>str</em><em> or </em><em>None</em>) – Only applicable for multi-armed environments. Allows inputs to be converted
+correctly if the control type (e.g.: IK) is dependent on the environment setup. Options are:
+{bimanual, single-arm-parallel, single-arm-opposed}</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><dl class="simple">
+<dt>(None or np.array): Action interpreted from &#64;device including any gripper action(s). None if we get a</dt><dd><p>reset signal from the device</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>(None or int): 1 if desired close, -1 if desired open gripper state. None if get a reset signal from the</dt><dd><p>device</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>2-tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="module-robosuite.utils.log_utils">
 <span id="robosuite-utils-log-utils-module"></span><h2>robosuite.utils.log_utils module<a class="headerlink" href="#module-robosuite.utils.log_utils" title="Permalink to this headline">#</a></h2>
 <p>This file contains utility classes and functions for logging to stdout and stderr
 Adapted from robomimic: <a class="reference external" href="https://github.com/ARISE-Initiative/robomimic/blob/master/robomimic/utils/log_utils.py">https://github.com/ARISE-Initiative/robomimic/blob/master/robomimic/utils/log_utils.py</a></p>
-<dl class="py function">
-<dt class="sig sig-object py" id="robosuite.utils.log_utils.flush_warnings">
-<span class="sig-prename descclassname"><span class="pre">robosuite.utils.log_utils.</span></span><span class="sig-name descname"><span class="pre">flush_warnings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.log_utils.flush_warnings" title="Permalink to this definition">#</a></dt>
-<dd><p>This function flushes all warnings from the global warning buffer to the terminal and
-clears the global registry.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="robosuite.utils.log_utils.ConsoleFormatter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.utils.log_utils.</span></span><span class="sig-name descname"><span class="pre">ConsoleFormatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fmt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datefmt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'%'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.log_utils.ConsoleFormatter" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">logging.Formatter</span></code></p>
+<p>Formatter class of logging for console logging.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robosuite.utils.log_utils.ConsoleFormatter.FORMATS">
+<span class="sig-name descname"><span class="pre">FORMATS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{10:</span> <span class="pre">'[robosuite</span> <span class="pre">%(levelname)s]</span> <span class="pre">%(message)s</span> <span class="pre">(%(filename)s:%(lineno)d)',</span> <span class="pre">20:</span> <span class="pre">'%(message)s',</span> <span class="pre">30:</span> <span class="pre">'\x1b[1m\x1b[33m[robosuite</span> <span class="pre">%(levelname)s]</span> <span class="pre">\x1b[0m%(message)s</span> <span class="pre">(%(filename)s:%(lineno)d)',</span> <span class="pre">40:</span> <span class="pre">'\x1b[1m\x1b[31m[robosuite</span> <span class="pre">%(levelname)s]</span> <span class="pre">\x1b[0m%(message)s</span> <span class="pre">(%(filename)s:%(lineno)d)',</span> <span class="pre">50:</span> <span class="pre">'\x1b[7m\x1b[1m\x1b[31m[robosuite</span> <span class="pre">%(levelname)s]</span> <span class="pre">\x1b[0m%(message)s</span> <span class="pre">(%(filename)s:%(lineno)d)'}</span></em><a class="headerlink" href="#robosuite.utils.log_utils.ConsoleFormatter.FORMATS" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.utils.log_utils.ConsoleFormatter.format">
+<span class="sig-name descname"><span class="pre">format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.log_utils.ConsoleFormatter.format" title="Permalink to this definition">#</a></dt>
+<dd><p>Apply custom fomatting on LogRecord object record.</p>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="robosuite.utils.log_utils.log_warning">
-<span class="sig-prename descclassname"><span class="pre">robosuite.utils.log_utils.</span></span><span class="sig-name descname"><span class="pre">log_warning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'yellow'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_now</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.log_utils.log_warning" title="Permalink to this definition">#</a></dt>
-<dd><p>This function logs a warning message by recording it in a global warning buffer.
-The global registry will be maintained until &#64;flush_warnings is called, at
-which point the warnings will get printed to the terminal.
-:param message: warning message to display
-:type message: str
-:param color: color of message - defaults to “yellow”
-:type color: str
-:param print_now: if True (default), will print to terminal immediately, in</p>
-<blockquote>
-<div><p>addition to adding it to the global warning buffer</p>
-</div></blockquote>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robosuite.utils.log_utils.DefaultLogger">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.utils.log_utils.</span></span><span class="sig-name descname"><span class="pre">DefaultLogger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'robosuite_logs'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">console_logging_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'INFO'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_logging_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.log_utils.DefaultLogger" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Default logger class in robosuite codebase.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.utils.log_utils.DefaultLogger.get_logger">
+<span class="sig-name descname"><span class="pre">get_logger</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.log_utils.DefaultLogger.get_logger" title="Permalink to this definition">#</a></dt>
+<dd><p>_summary_</p>
 <dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The retrieved logger whose name equals self.logger_name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#robosuite.utils.log_utils.DefaultLogger" title="robosuite.utils.log_utils.DefaultLogger">DefaultLogger</a></p>
+</dd>
 </dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robosuite.utils.log_utils.FileFormatter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.utils.log_utils.</span></span><span class="sig-name descname"><span class="pre">FileFormatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fmt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datefmt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'%'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.log_utils.FileFormatter" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">logging.Formatter</span></code></p>
+<p>Formatter class of logging for file logging.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robosuite.utils.log_utils.FileFormatter.FORMATS">
+<span class="sig-name descname"><span class="pre">FORMATS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{10:</span> <span class="pre">'\x1b[1m\x1b[32m[robosuite</span> <span class="pre">%(levelname)s</span> <span class="pre">-</span> <span class="pre">%(asctime)s]</span> <span class="pre">\x1b[0m%(message)s</span> <span class="pre">(%(filename)s:%(lineno)d)',</span> <span class="pre">20:</span> <span class="pre">'\x1b[1m\x1b[32m[robosuite</span> <span class="pre">%(levelname)s</span> <span class="pre">-</span> <span class="pre">%(asctime)s]</span> <span class="pre">\x1b[0m%(message)s</span> <span class="pre">(%(filename)s:%(lineno)d)',</span> <span class="pre">30:</span> <span class="pre">'\x1b[1m\x1b[33m[robosuite</span> <span class="pre">%(levelname)s</span> <span class="pre">-</span> <span class="pre">%(asctime)s]</span> <span class="pre">\x1b[0m%(message)s</span> <span class="pre">(%(filename)s:%(lineno)d)',</span> <span class="pre">40:</span> <span class="pre">'\x1b[1m\x1b[31m[robosuite</span> <span class="pre">%(levelname)s</span> <span class="pre">-</span> <span class="pre">%(asctime)s]</span> <span class="pre">\x1b[0m%(message)s</span> <span class="pre">(%(filename)s:%(lineno)d)',</span> <span class="pre">50:</span> <span class="pre">'\x1b[1m\x1b[31m[robosuite</span> <span class="pre">%(levelname)s</span> <span class="pre">-</span> <span class="pre">%(asctime)s]</span> <span class="pre">\x1b[0m%(message)s</span> <span class="pre">(%(filename)s:%(lineno)d)'}</span></em><a class="headerlink" href="#robosuite.utils.log_utils.FileFormatter.FORMATS" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.utils.log_utils.FileFormatter.format">
+<span class="sig-name descname"><span class="pre">format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.utils.log_utils.FileFormatter.format" title="Permalink to this definition">#</a></dt>
+<dd><p>Apply custom fomatting on LogRecord object record.</p>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -7811,7 +8336,7 @@ between 0 and 1.</p>
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Yuke Zhu, Josiah Wong, Ajay Mandlekar, Roberto Martín-Martín, Abhishek Joshi, Soroush Nasiriany, Yifeng Zhu<br/>
+    By the robosuite core team<br/>
   
       &copy; Copyright Stanford University and The University of Texas at Austin 2022.<br/>
 </p>

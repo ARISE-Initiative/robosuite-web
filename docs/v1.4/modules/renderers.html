@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Renderers &#8212; robosuite 1.4.0 documentation</title>
+    <title>Renderers &#8212; robosuite 1.4 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -23,7 +23,6 @@
     <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
     <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../static/css/theme.css" />
-    <link rel="stylesheet" type="text/css" href="../static/theme_overrides.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -34,6 +33,7 @@
     <script src="../static/underscore.js"></script>
     <script src="../static/doctools.js"></script>
     <script src="../static/scripts/sphinx-book-theme.js"></script>
+    <script src="../static/js/custom.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -75,9 +75,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robosuite 1.4.0 documentation</h1>
+      <img src="../static/robosuite_color.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robosuite 1.4 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -365,11 +370,6 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../source/robosuite.renderers.igibson.html">
-       robosuite.renderers.igibson package
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../source/robosuite.renderers.nvisii.html">
        robosuite.renderers.nvisii package
       </a>
@@ -587,23 +587,6 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#igibson">
-   iGibson
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-the-igibson-renderer">
-     Using the iGibson Renderer
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#requirements-to-use-the-igibson-renderer">
-     Requirements to use the iGibson Renderer
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#renderer-profiling">
    Renderer Profiling
   </a>
@@ -645,23 +628,6 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#igibson">
-   iGibson
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-the-igibson-renderer">
-     Using the iGibson Renderer
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#requirements-to-use-the-igibson-renderer">
-     Requirements to use the iGibson Renderer
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#renderer-profiling">
    Renderer Profiling
   </a>
@@ -679,7 +645,7 @@ title="Print to PDF"
   <section id="renderers">
 <h1>Renderers<a class="headerlink" href="#renderers" title="Permalink to this headline">#</a></h1>
 <p><a class="reference internal" href="../source/robosuite.renderers.html"><span class="doc">Renderers</span></a> are used to visualize the simulation, and can be used either in on-screen mode or headless (off-screen) mode. Renderers are also responsible for generating image-based observations that are returned from a given environment, and compute virtual images of the environment based on the properties defined in the cameras.</p>
-<p>Currently, the following ground-truth vision modalities are supported across the three renderers, MuJoCo, NVISII, and iGibson:</p>
+<p>Currently, the following ground-truth vision modalities are supported across the two renderers, MuJoCo, and NVISII:</p>
 <ul class="simple">
 <li><p><strong>RGB</strong>: Standard 3-channel color frames with values in range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">255]</span></code>. This is set during environment construction with the <code class="docutils literal notranslate"><span class="pre">use_camera_obs</span></code> argument.</p></li>
 <li><p><strong>Depth</strong>: 1-channel frame with normalized values in range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code>. This is set during environment construction with the <code class="docutils literal notranslate"><span class="pre">camera_depths</span></code> argument.</p></li>
@@ -701,57 +667,14 @@ occur by class, instance, or geom, and is set during environment construction wi
 <p>Installing NVISII can be done using the command <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">nvisii</span></code>. Note that NVISII requires users’ drivers to be up to date. Please refer <a class="reference external" href="https://github.com/owl-project/NVISII">here</a> for more information. You can try the NVISII renderer with the <code class="docutils literal notranslate"><span class="pre">demo_renderers.py</span></code> <a class="reference external" href="../demos.html#rendering-options">script</a> and learn about the APIs for obtaining vision modalities with <code class="docutils literal notranslate"><span class="pre">demo_nvisii_modalities.py</span></code>.</p>
 </section>
 </section>
-<section id="igibson">
-<h2>iGibson<a class="headerlink" href="#igibson" title="Permalink to this headline">#</a></h2>
-<p>iGibsonRenderer uses a <a class="reference external" href="https://en.wikipedia.org/wiki/Physically_based_rendering">physically based rendering</a> (PBR), a computer graphics technique that seeks to render images in a way that models the flow of light in the real world. The original <a class="reference external" href="http://svl.stanford.edu/igibson/">iGibson</a> environment combines fast visual rendering with physics simulation based on Bullet. We have created a version of robosuite that uses only the renderer of iGibson. This renderer supports faster image generation with optimization, and the generation of a variety of vision modalities like depth, surface normal, and segmentation. It is capable of rendering and returning <a class="reference external" href="https://pytorch.org/docs/stable/tensors.html">PyTorch tensors</a>, allowing for tensor-to-tensor rendering that reduces the tensor copying time between CPU and GPU accelerating substantially the process of training models for exampe with reinforcement learning.</p>
-<p><img alt="iGibson renderer vision modalities" src="../images/vision_modalities_igibson.png" /></p>
-<section id="using-the-igibson-renderer">
-<h3>Using the iGibson Renderer<a class="headerlink" href="#using-the-igibson-renderer" title="Permalink to this headline">#</a></h3>
-<p>Installing iGibson can be done using the command <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">igibson</span></code>. Please refer to the <a class="reference external" href="http://svl.stanford.edu/igibson/docs/installation.html">iGibson installation guide</a> for a step by step guide. You can try the iGibson renderer with the <code class="docutils literal notranslate"><span class="pre">demo_renderers.py</span></code> <a class="reference external" href="../demos.html#rendering-options">script</a> and learn about the APIs for obtaining vision modalities with <code class="docutils literal notranslate"><span class="pre">demo_igibson_modalities.py</span></code>.</p>
-</section>
-<section id="requirements-to-use-the-igibson-renderer">
-<h3>Requirements to use the iGibson Renderer<a class="headerlink" href="#requirements-to-use-the-igibson-renderer" title="Permalink to this headline">#</a></h3>
-<p>Using iGibson’s PBR requires Linux or Windows machines; you can still use the iGibson renderer with macOS but it won’t be PBR, it goes back to classic OpenGL rendering. Apart from that, the minimum system requirements are the following:</p>
-<ul class="simple">
-<li><p>Linux</p>
-<ul>
-<li><p>Ubuntu 16.04</p></li>
-<li><p>Nvidia GPU with VRAM &gt; 6.0GB</p></li>
-<li><p>Nvidia driver &gt;= 384</p></li>
-<li><p>CUDA &gt;= 9.0, CuDNN &gt;= v7</p></li>
-<li><p>libegl-dev (Debian/Ubuntu: vendor neutral GL dispatch library – EGL support)</p></li>
-</ul>
-</li>
-<li><p>Windows</p>
-<ul>
-<li><p>Windows 10</p></li>
-<li><p>Nvidia GPU with VRAM &gt; 6.0GB</p></li>
-<li><p>Nvidia driver &gt;= 384</p></li>
-<li><p>CUDA &gt;= 9.0, CuDNN &gt;= v7</p></li>
-</ul>
-</li>
-<li><p>macOS</p>
-<ul>
-<li><p>Tested on 10.15</p></li>
-<li><p>PBR features not supported</p></li>
-</ul>
-</li>
-</ul>
-<p><strong>NOTE</strong>: Since PBR is not supported on macOS, colors and textures will look flat. More realistic renderings can be obtained on Linux and Windows.</p>
-<p>Other system configurations may work, but have not been extensively tested.</p>
-</section>
-</section>
 <section id="renderer-profiling">
 <h2>Renderer Profiling<a class="headerlink" href="#renderer-profiling" title="Permalink to this headline">#</a></h2>
-<p>The following table shows the estimated frame rate of each renderer in frames per second (FPS). The profiling was conducted on a machine with Ubuntu 18.04, Intel Core i9-900K CPU&#64;3.60GHz, and Nvidia RTX. The FPS numbers of each rendering option are reported below. These numbers are estimated on the Door environment with IIWA robot and Joint Velocity controller and 256x256 image size. In the table, R2T means render2tensor and R2N means render2numpy, which are two modes offered by the iGibson renderer.</p>
+<p>The following table shows the estimated frame rate of each renderer in frames per second (FPS). The profiling was conducted on a machine with Ubuntu 18.04, Intel Core i9-900K CPU&#64;3.60GHz, and Nvidia RTX. The FPS numbers of each rendering option are reported below. These numbers are estimated on the Door environment with IIWA robot and Joint Velocity controller and 256x256 image size.</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
 <th></th>
 <th style="text-align: center;">mujoco</th>
-<th style="text-align: center;">iGibson<br>(R2T optimized)</th>
-<th style="text-align: center;">iGibson<br>(R2T)</th>
-<th style="text-align: center;">iGibson<br>(R2N)</th>
 <th style="text-align: center;">NVISII</th>
 </tr>
 </thead>
@@ -759,17 +682,11 @@ occur by class, instance, or geom, and is set during environment construction wi
 <tr>
 <td>Simulation + rendering</td>
 <td style="text-align: center;">62</td>
-<td style="text-align: center;">64</td>
-<td style="text-align: center;">58</td>
-<td style="text-align: center;">45</td>
 <td style="text-align: center;">0.5</td>
 </tr>
 <tr>
 <td>Rendering only</td>
 <td style="text-align: center;">508</td>
-<td style="text-align: center;">1392</td>
-<td style="text-align: center;">285</td>
-<td style="text-align: center;">271</td>
 <td style="text-align: center;">0.5</td>
 </tr>
 </tbody>
@@ -780,9 +697,6 @@ and Nvidia GTX 1080ti.</p>
 <tr>
 <th></th>
 <th style="text-align: center;">mujoco</th>
-<th style="text-align: center;">iGibson<br>(R2T optimized)</th>
-<th style="text-align: center;">iGibson<br>(R2T)</th>
-<th style="text-align: center;">iGibson<br>(R2N)</th>
 <th style="text-align: center;">NVISII</th>
 </tr>
 </thead>
@@ -790,21 +704,15 @@ and Nvidia GTX 1080ti.</p>
 <tr>
 <td>Simulation + rendering</td>
 <td style="text-align: center;">65</td>
-<td style="text-align: center;">62</td>
-<td style="text-align: center;">45</td>
-<td style="text-align: center;">41</td>
 <td style="text-align: center;">0.4</td>
 </tr>
 <tr>
 <td>Rendering only</td>
 <td style="text-align: center;">1000</td>
-<td style="text-align: center;">1500</td>
-<td style="text-align: center;">250</td>
-<td style="text-align: center;">205</td>
 <td style="text-align: center;">0.4</td>
 </tr>
 </tbody>
-</table><p>In practice, both mujoco and iGibson renderers are well-suited for vision-based policy learning. In comparison, iGibson offers a faster rendering speed and additional functionalities for perception research. You might also find that iGibson has better cross-platform compatibility than the generic mujoco renderer, but it requires iGibson as a dependency. NVISII is best suited for photorealistic rendering; however, the ray-tracing computation substantially slows down its rendering speed compared to the other two renderers. It is mainly intended for perception tasks and qualitative visualizations, rather than online policy training.</p>
+</table><p>In practice, mujoco renderer is best-suited for vision-based policy learning. NVISII is best suited for photorealistic rendering; however, the ray-tracing computation substantially slows down its rendering speed compared to the other two renderers. It is mainly intended for perception tasks and qualitative visualizations, rather than online policy training.</p>
 </section>
 </section>
 
@@ -837,7 +745,7 @@ and Nvidia GTX 1080ti.</p>
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Yuke Zhu, Josiah Wong, Ajay Mandlekar, Roberto Martín-Martín, Abhishek Joshi, Soroush Nasiriany, Yifeng Zhu<br/>
+    By the robosuite core team<br/>
   
       &copy; Copyright Stanford University and The University of Texas at Austin 2022.<br/>
 </p>

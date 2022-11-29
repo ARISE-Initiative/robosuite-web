@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Demo Showcases &#8212; robosuite 1.4.0 documentation</title>
+    <title>Demo Showcases &#8212; robosuite 1.4 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -23,7 +23,6 @@
     <link rel="stylesheet" type="text/css" href="static/pygments.css" />
     <link rel="stylesheet" href="static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="static/css/theme.css" />
-    <link rel="stylesheet" type="text/css" href="static/theme_overrides.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -34,6 +33,7 @@
     <script src="static/underscore.js"></script>
     <script src="static/doctools.js"></script>
     <script src="static/scripts/sphinx-book-theme.js"></script>
+    <script src="static/js/custom.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -75,9 +75,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robosuite 1.4.0 documentation</h1>
+      <img src="static/robosuite_color.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robosuite 1.4 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -362,11 +367,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="source/robosuite.renderers.context.html">
        robosuite.renderers.context package
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="source/robosuite.renderers.igibson.html">
-       robosuite.renderers.igibson package
       </a>
      </li>
      <li class="toctree-l3">
@@ -890,18 +890,16 @@ will switch the current arm being controlled every time the gripper input is pre
 </section>
 <section id="rendering-options">
 <h2>Rendering Options<a class="headerlink" href="#rendering-options" title="Permalink to this headline">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">demo_renderers.py</span></code> script shows how to use different renderers with the simulation environments. Our current version supports three rendering options: MuJoCo (default), NVISII, and iGibson renderers. More information about these renderers can be found in the <a class="reference internal" href="modules/renderers.html"><span class="doc">Renderer</span></a> module. Example:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python demo_renderers.py --renderer igibson
+<p>The <code class="docutils literal notranslate"><span class="pre">demo_renderers.py</span></code> script shows how to use different renderers with the simulation environments. Our current version supports two rendering options: MuJoCo (default), and NVISII. More information about these renderers can be found in the <a class="reference internal" href="modules/renderers.html"><span class="doc">Renderer</span></a> module. Example:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python demo_renderers.py --renderer nvisii
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">--renderer</span></code> flag can be set to <code class="docutils literal notranslate"><span class="pre">mujoco</span></code> (default), <code class="docutils literal notranslate"><span class="pre">nvisii</span></code> and <code class="docutils literal notranslate"><span class="pre">igibson</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">--renderer</span></code> flag can be set to <code class="docutils literal notranslate"><span class="pre">mujoco</span></code> (default), and <code class="docutils literal notranslate"><span class="pre">nvisii</span></code>.</p>
 </section>
 <section id="vision-modalities">
 <h2>Vision Modalities<a class="headerlink" href="#vision-modalities" title="Permalink to this headline">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">demo_igibson_modalities.py</span></code> and <code class="docutils literal notranslate"><span class="pre">demo_nvisii_modalities.py</span></code> scripts illustrate how to obtain vision modalities from the iGibson renderer and NVISII renderer respectively. This script uses the flags specified and renders that particular vision modality. Example:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python demo_igibson_modalities.py --vision-modality segmentation --segmentation-level instance
-
-$ python demo_nvisii_modalities.py --vision-modality depth
+<p>The <code class="docutils literal notranslate"><span class="pre">demo_nvisii_modalities.py</span></code> scripts illustrate how to obtain vision modalities from the NVISII renderer respectively. This script uses the flags specified and renders that particular vision modality. Example:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python demo_nvisii_modalities.py --vision-modality depth
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">--vision-modality</span></code> flag can be set to <code class="docutils literal notranslate"><span class="pre">depth</span></code>, <code class="docutils literal notranslate"><span class="pre">normal</span></code>, <code class="docutils literal notranslate"><span class="pre">segmentation</span></code> or <code class="docutils literal notranslate"><span class="pre">rgb</span></code> (default).
@@ -938,7 +936,7 @@ The <code class="docutils literal notranslate"><span class="pre">-segmentation-l
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Yuke Zhu, Josiah Wong, Ajay Mandlekar, Roberto Martín-Martín, Abhishek Joshi, Soroush Nasiriany, Yifeng Zhu<br/>
+    By the robosuite core team<br/>
   
       &copy; Copyright Stanford University and The University of Texas at Austin 2022.<br/>
 </p>

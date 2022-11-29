@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Installation &#8212; robosuite 1.4.0 documentation</title>
+    <title>Installation &#8212; robosuite 1.4 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -23,7 +23,6 @@
     <link rel="stylesheet" type="text/css" href="static/pygments.css" />
     <link rel="stylesheet" href="static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="static/css/theme.css" />
-    <link rel="stylesheet" type="text/css" href="static/theme_overrides.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -34,6 +33,7 @@
     <script src="static/underscore.js"></script>
     <script src="static/doctools.js"></script>
     <script src="static/scripts/sphinx-book-theme.js"></script>
+    <script src="static/js/custom.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -75,9 +75,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robosuite 1.4.0 documentation</h1>
+      <img src="static/robosuite_color.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robosuite 1.4 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -365,11 +370,6 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="source/robosuite.renderers.igibson.html">
-       robosuite.renderers.igibson package
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="source/robosuite.renderers.nvisii.html">
        robosuite.renderers.nvisii package
       </a>
@@ -624,29 +624,28 @@ title="Print to PDF"
 <p>The base installation requires the MuJoCo physics engine (with <a class="reference external" href="https://github.com/deepmind/mujoco">mujoco</a>, refer to link for troubleshooting the installation and further instructions) and <a class="reference external" href="http://www.numpy.org/">numpy</a>. To avoid interfering with system packages, it is recommended to install it under a virtual environment by first running <code class="docutils literal notranslate"><span class="pre">virtualenv</span> <span class="pre">-p</span> <span class="pre">python3</span> <span class="pre">.</span> <span class="pre">&amp;&amp;</span> <span class="pre">source</span> <span class="pre">bin/activate</span></code> or setting up a Conda environment by installing <a class="reference external" href="https://www.anaconda.com/">Anaconda</a> and running <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">robosuite</span> <span class="pre">python=3.8</span></code>.</p>
 <section id="install-from-pip">
 <h2>Install from pip<a class="headerlink" href="#install-from-pip" title="Permalink to this headline">#</a></h2>
-<ol class="simple">
-<li><p>After setting up mujoco, robosuite can be installed with</p></li>
-</ol>
+<ol>
+<li><p>After setting up mujoco, robosuite can be installed with</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ pip install robosuite
 </pre></div>
 </div>
-<ol class="simple">
-<li><p>Test your installation with</p></li>
-</ol>
+</li>
+<li><p>Test your installation with</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python -m robosuite.demos.demo_random_action
 </pre></div>
 </div>
+</li>
+</ol>
 </section>
 <section id="install-from-source">
 <h2>Install from source<a class="headerlink" href="#install-from-source" title="Permalink to this headline">#</a></h2>
-<ol class="simple">
-<li><p>Clone the robosuite repository</p></li>
-</ol>
+<ol>
+<li><p>Clone the robosuite repository</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/ARISE-Initiative/robosuite.git
 $ <span class="nb">cd</span> robosuite
 </pre></div>
 </div>
-<ol>
+</li>
 <li><p>Install the base requirements with</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ pip3 install -r requirements.txt
 </pre></div>
@@ -658,11 +657,12 @@ $ <span class="nb">cd</span> robosuite
 </pre></div>
 </div>
 </li>
-<li><p>Test your installation with</p></li>
-</ol>
+<li><p>Test your installation with</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python robosuite/demos/demo_random_action.py
 </pre></div>
 </div>
+</li>
+</ol>
 </section>
 </section>
 
@@ -695,7 +695,7 @@ $ <span class="nb">cd</span> robosuite
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Yuke Zhu, Josiah Wong, Ajay Mandlekar, Roberto Martín-Martín, Abhishek Joshi, Soroush Nasiriany, Yifeng Zhu<br/>
+    By the robosuite core team<br/>
   
       &copy; Copyright Stanford University and The University of Texas at Austin 2022.<br/>
 </p>

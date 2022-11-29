@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; robosuite 1.4.0 documentation</title>
+    <title>Index &#8212; robosuite 1.4 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -22,7 +22,6 @@
     <link rel="stylesheet" type="text/css" href="static/pygments.css" />
     <link rel="stylesheet" href="static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="static/css/theme.css" />
-    <link rel="stylesheet" type="text/css" href="static/theme_overrides.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -33,6 +32,7 @@
     <script src="static/underscore.js"></script>
     <script src="static/doctools.js"></script>
     <script src="static/scripts/sphinx-book-theme.js"></script>
+    <script src="static/js/custom.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" />
@@ -72,9 +72,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robosuite 1.4.0 documentation</h1>
+      <img src="static/robosuite_color.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robosuite 1.4 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -362,11 +367,6 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="source/robosuite.renderers.igibson.html">
-       robosuite.renderers.igibson package
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="source/robosuite.renderers.nvisii.html">
        robosuite.renderers.nvisii package
       </a>
@@ -574,6 +574,12 @@ title="Fullscreen mode"
 </li>
       <li><a href="simulation/controller.html#robosuite.controllers.ik.InverseKinematicsController._clip_ik_input">_clip_ik_input() (robosuite.controllers.ik.InverseKinematicsController method)</a>
 </li>
+      <li><a href="simulation/device.html#robosuite.devices.keyboard.Keyboard._display_controls">_display_controls() (robosuite.devices.keyboard.Keyboard static method)</a>
+
+      <ul>
+        <li><a href="simulation/device.html#robosuite.devices.spacemouse.SpaceMouse._display_controls">(robosuite.devices.spacemouse.SpaceMouse static method)</a>
+</li>
+      </ul></li>
       <li><a href="modeling/object_model.html#robosuite.models.objects.objects.MujocoXMLObject._duplicate_visual_from_collision">_duplicate_visual_from_collision() (robosuite.models.objects.objects.MujocoXMLObject static method)</a>
 </li>
       <li><a href="modeling/robot_model.html#robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel._eef_name">_eef_name (robosuite.models.robots.manipulators.manipulator_model.ManipulatorModel property)</a>
@@ -724,8 +730,6 @@ title="Fullscreen mode"
         <li><a href="source/robosuite.wrappers.html#robosuite.wrappers.wrapper.Wrapper.action_spec">(robosuite.wrappers.wrapper.Wrapper property)</a>
 </li>
       </ul></li>
-      <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.igibson_utils.MujocoCamera.activate">activate() (robosuite.renderers.igibson.igibson_utils.MujocoCamera method)</a>
-</li>
       <li><a href="simulation/environment.html#robosuite.environments.base.MujocoEnv.active_observables">active_observables (robosuite.environments.base.MujocoEnv property)</a>, <a href="source/robosuite.environments.html#robosuite.environments.base.MujocoEnv.active_observables">[1]</a>
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjData.actuator">actuator (robosuite.utils.binding_utils.MjData property)</a>
@@ -776,10 +780,10 @@ title="Fullscreen mode"
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjModel.actuator_lengthrange">actuator_lengthrange (robosuite.utils.binding_utils.MjModel property)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="simulation/controller.html#robosuite.controllers.base_controller.Controller.actuator_limits">actuator_limits (robosuite.controllers.base_controller.Controller property)</a>, <a href="source/robosuite.controllers.html#robosuite.controllers.base_controller.Controller.actuator_limits">[1]</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjData.actuator_moment">actuator_moment (robosuite.utils.binding_utils.MjData property)</a>
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjModel.actuator_name2id">actuator_name2id() (robosuite.utils.binding_utils.MjModel method)</a>
@@ -826,8 +830,6 @@ title="Fullscreen mode"
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.mjcf_utils.add_to_dict">add_to_dict() (in module robosuite.utils.mjcf_utils)</a>
 </li>
-      <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.igibson_utils.adjust_convention">adjust_convention() (in module robosuite.renderers.igibson.igibson_utils)</a>
-</li>
       <li><a href="source/robosuite.models.objects.composite.html#robosuite.models.objects.composite.hammer.HammerObject.all_geoms">all_geoms (robosuite.models.objects.composite.hammer.HammerObject property)</a>
 </li>
       <li><a href="modeling/object_model.html#robosuite.models.objects.objects.MujocoGeneratedObject.append_material">append_material() (robosuite.models.objects.objects.MujocoGeneratedObject method)</a>, <a href="source/robosuite.models.objects.html#robosuite.models.objects.objects.MujocoGeneratedObject.append_material">[1]</a>
@@ -865,6 +867,8 @@ title="Fullscreen mode"
 </li>
       </ul></li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.transform_utils.axisangle2quat">axisangle2quat() (in module robosuite.utils.transform_utils)</a>
+</li>
+      <li><a href="source/robosuite.devices.html#robosuite.devices.spacemouse.AxisSpec">AxisSpec (class in robosuite.devices.spacemouse)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -950,10 +954,10 @@ title="Fullscreen mode"
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjModel.body_mocapid">body_mocapid (robosuite.utils.binding_utils.MjModel property)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjModel.body_name2id">body_name2id() (robosuite.utils.binding_utils.MjModel method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjModel.body_parentid">body_parentid (robosuite.utils.binding_utils.MjModel property)</a>
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjModel.body_plugin">body_plugin (robosuite.utils.binding_utils.MjModel property)</a>
@@ -1028,6 +1032,10 @@ title="Fullscreen mode"
 </li>
       <li><a href="simulation/controller.html#robosuite.controllers.ik.InverseKinematicsController.bullet_base_pose_to_world_pose">bullet_base_pose_to_world_pose() (robosuite.controllers.ik.InverseKinematicsController method)</a>, <a href="source/robosuite.controllers.html#robosuite.controllers.ik.InverseKinematicsController.bullet_base_pose_to_world_pose">[1]</a>
 </li>
+      <li><a href="source/robosuite.devices.html#robosuite.devices.spacemouse.AxisSpec.byte1">byte1 (robosuite.devices.spacemouse.AxisSpec attribute)</a>
+</li>
+      <li><a href="source/robosuite.devices.html#robosuite.devices.spacemouse.AxisSpec.byte2">byte2 (robosuite.devices.spacemouse.AxisSpec attribute)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -1100,21 +1108,21 @@ title="Fullscreen mode"
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjData.cfrc_int">cfrc_int (robosuite.utils.binding_utils.MjData property)</a>
 </li>
-      <li><a href="source/robosuite.utils.html#robosuite.utils.robot_utils.check_bimanual">check_bimanual() (in module robosuite.utils.robot_utils)</a>
+      <li><a href="source/robosuite.devices.html#robosuite.devices.spacemouse.AxisSpec.channel">channel (robosuite.devices.spacemouse.AxisSpec attribute)</a>
 </li>
-      <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.igibson_renderer.check_camera_obs">check_camera_obs() (in module robosuite.renderers.igibson.igibson_renderer)</a>
+      <li><a href="source/robosuite.utils.html#robosuite.utils.robot_utils.check_bimanual">check_bimanual() (in module robosuite.utils.robot_utils)</a>
 </li>
       <li><a href="simulation/environment.html#robosuite.environments.base.MujocoEnv.check_contact">check_contact() (robosuite.environments.base.MujocoEnv method)</a>, <a href="source/robosuite.environments.html#robosuite.environments.base.MujocoEnv.check_contact">[1]</a>
 </li>
-      <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.igibson_renderer.check_modes">check_modes() (in module robosuite.renderers.igibson.igibson_renderer)</a>
-</li>
       <li><a href="simulation/robot.html#robosuite.robots.robot.Robot.check_q_limits">check_q_limits() (robosuite.robots.robot.Robot method)</a>, <a href="source/robosuite.robots.html#robosuite.robots.robot.Robot.check_q_limits">[1]</a>
 </li>
-      <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.igibson_renderer.check_render2tensor">check_render2tensor() (in module robosuite.renderers.igibson.igibson_renderer)</a>
+      <li><a href="source/robosuite.utils.html#robosuite.utils.input_utils.choose_controller">choose_controller() (in module robosuite.utils.input_utils)</a>
 </li>
-      <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.igibson_renderer.check_render_mode">check_render_mode() (in module robosuite.renderers.igibson.igibson_renderer)</a>
+      <li><a href="source/robosuite.utils.html#robosuite.utils.input_utils.choose_environment">choose_environment() (in module robosuite.utils.input_utils)</a>
 </li>
-      <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.igibson_renderer.check_segmentation_type">check_segmentation_type() (in module robosuite.renderers.igibson.igibson_renderer)</a>
+      <li><a href="source/robosuite.utils.html#robosuite.utils.input_utils.choose_multi_arm_config">choose_multi_arm_config() (in module robosuite.utils.input_utils)</a>
+</li>
+      <li><a href="source/robosuite.utils.html#robosuite.utils.input_utils.choose_robots">choose_robots() (in module robosuite.utils.input_utils)</a>
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjData.cinert">cinert (robosuite.utils.binding_utils.MjData property)</a>
 </li>
@@ -1147,8 +1155,6 @@ title="Fullscreen mode"
 </li>
         <li><a href="source/robosuite.renderers.html#robosuite.renderers.base.Renderer.close">(robosuite.renderers.base.Renderer method)</a>
 </li>
-        <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.igibson_renderer.iGibsonRenderer.close">(robosuite.renderers.igibson.igibson_renderer.iGibsonRenderer method)</a>
-</li>
         <li><a href="source/robosuite.renderers.nvisii.html#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.close">(robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer method)</a>
 </li>
         <li><a href="source/robosuite.utils.html#robosuite.utils.opencv_renderer.OpenCVRenderer.close">(robosuite.utils.opencv_renderer.OpenCVRenderer method)</a>
@@ -1178,6 +1184,8 @@ title="Fullscreen mode"
       </ul></li>
       <li><a href="source/robosuite.controllers.html#robosuite.controllers.ik.PyBulletServer.connect">connect() (robosuite.controllers.ik.PyBulletServer method)</a>
 </li>
+      <li><a href="source/robosuite.utils.html#robosuite.utils.log_utils.ConsoleFormatter">ConsoleFormatter (class in robosuite.utils.log_utils)</a>
+</li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjData.contact">contact (robosuite.utils.binding_utils.MjData property)</a>
 </li>
       <li><a href="modeling/mujoco_model.html#robosuite.models.base.MujocoXMLModel.contact_geom_rgba">contact_geom_rgba (robosuite.models.base.MujocoXMLModel property)</a>, <a href="source/robosuite.models.html#robosuite.models.base.MujocoXMLModel.contact_geom_rgba">[1]</a>
@@ -1198,6 +1206,8 @@ title="Fullscreen mode"
         <li><a href="source/robosuite.models.objects.html#robosuite.models.objects.objects.MujocoObject.contact_geoms">(robosuite.models.objects.objects.MujocoObject property)</a>
 </li>
       </ul></li>
+      <li><a href="simulation/device.html#robosuite.devices.spacemouse.SpaceMouse.control">control (robosuite.devices.spacemouse.SpaceMouse property)</a>, <a href="source/robosuite.devices.html#robosuite.devices.spacemouse.SpaceMouse.control">[1]</a>
+</li>
       <li><a href="simulation/robot.html#robosuite.robots.bimanual.Bimanual.control">control() (robosuite.robots.bimanual.Bimanual method)</a>, <a href="source/robosuite.robots.html#robosuite.robots.bimanual.Bimanual.control">[1]</a>
 
       <ul>
@@ -1208,6 +1218,8 @@ title="Fullscreen mode"
         <li><a href="simulation/robot.html#robosuite.robots.single_arm.SingleArm.control">(robosuite.robots.single_arm.SingleArm method)</a>, <a href="source/robosuite.robots.html#robosuite.robots.single_arm.SingleArm.control">[1]</a>
 </li>
       </ul></li>
+      <li><a href="simulation/device.html#robosuite.devices.spacemouse.SpaceMouse.control_gripper">control_gripper (robosuite.devices.spacemouse.SpaceMouse property)</a>, <a href="source/robosuite.devices.html#robosuite.devices.spacemouse.SpaceMouse.control_gripper">[1]</a>
+</li>
       <li><a href="simulation/controller.html#robosuite.controllers.base_controller.Controller.control_limits">control_limits (robosuite.controllers.base_controller.Controller property)</a>, <a href="source/robosuite.controllers.html#robosuite.controllers.base_controller.Controller.control_limits">[1]</a>
 
       <ul>
@@ -1222,6 +1234,8 @@ title="Fullscreen mode"
 </li>
       <li><a href="source/robosuite.controllers.html#robosuite.controllers.controller_factory.controller_factory">controller_factory() (in module robosuite.controllers.controller_factory)</a>
 </li>
+      <li><a href="source/robosuite.devices.html#robosuite.devices.spacemouse.convert">convert() (in module robosuite.devices.spacemouse)</a>
+</li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.transform_utils.convert_quat">convert_quat() (in module robosuite.utils.transform_utils)</a>
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.mjcf_utils.convert_to_string">convert_to_string() (in module robosuite.utils.mjcf_utils)</a>
@@ -1230,12 +1244,8 @@ title="Fullscreen mode"
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjData.crb">crb (robosuite.utils.binding_utils.MjData property)</a>
 </li>
-      <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.parser.Parser.create_class_mapping">create_class_mapping() (robosuite.renderers.igibson.parser.Parser method)</a>
-
-      <ul>
-        <li><a href="source/robosuite.renderers.nvisii.html#robosuite.renderers.nvisii.parser.Parser.create_class_mapping">(robosuite.renderers.nvisii.parser.Parser method)</a>
+      <li><a href="source/robosuite.renderers.nvisii.html#robosuite.renderers.nvisii.parser.Parser.create_class_mapping">create_class_mapping() (robosuite.renderers.nvisii.parser.Parser method)</a>
 </li>
-      </ul></li>
       <li><a href="source/robosuite.models.html#robosuite.models.base.MujocoXML.create_default_element">create_default_element() (robosuite.models.base.MujocoXML method)</a>
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.observables.create_deterministic_corrupter">create_deterministic_corrupter() (in module robosuite.utils.observables)</a>
@@ -1277,8 +1287,6 @@ title="Fullscreen mode"
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjData.D_rownnz">D_rownnz (robosuite.utils.binding_utils.MjData property)</a>
 </li>
       <li><a href="source/robosuite.wrappers.html#robosuite.wrappers.data_collection_wrapper.DataCollectionWrapper">DataCollectionWrapper (class in robosuite.wrappers.data_collection_wrapper)</a>
-</li>
-      <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.igibson_utils.MujocoCamera.deactivate">deactivate() (robosuite.renderers.igibson.igibson_utils.MujocoCamera method)</a>
 </li>
       <li><a href="source/robosuite.models.robots.manipulators.html#robosuite.models.robots.manipulators.baxter_robot.Baxter.default_controller_config">default_controller_config (robosuite.models.robots.manipulators.baxter_robot.Baxter property)</a>
 
@@ -1338,6 +1346,8 @@ title="Fullscreen mode"
         <li><a href="modeling/robot_model.html#robosuite.models.robots.robot_model.RobotModel.default_mount">(robosuite.models.robots.robot_model.RobotModel property)</a>, <a href="source/robosuite.models.robots.html#robosuite.models.robots.robot_model.RobotModel.default_mount">[1]</a>
 </li>
       </ul></li>
+      <li><a href="source/robosuite.utils.html#robosuite.utils.log_utils.DefaultLogger">DefaultLogger (class in robosuite.utils.log_utils)</a>
+</li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.buffers.DelayBuffer">DelayBuffer (class in robosuite.utils.buffers)</a>
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.buffers.DeltaBuffer.delta">delta (robosuite.utils.buffers.DeltaBuffer property)</a>
@@ -1350,7 +1360,7 @@ title="Fullscreen mode"
 </li>
       <li><a href="source/robosuite.wrappers.html#robosuite.wrappers.demo_sampler_wrapper.DemoSamplerWrapper">DemoSamplerWrapper (class in robosuite.wrappers.demo_sampler_wrapper)</a>
 </li>
-      <li><a href="source/robosuite.devices.html#robosuite.devices.device.Device">Device (class in robosuite.devices.device)</a>
+      <li><a href="simulation/device.html#robosuite.devices.device.Device">Device (class in robosuite.devices.device)</a>, <a href="source/robosuite.devices.html#robosuite.devices.device.Device">[1]</a>
 </li>
       <li><a href="source/robosuite.controllers.html#robosuite.controllers.ik.PyBulletServer.disconnect">disconnect() (robosuite.controllers.ik.PyBulletServer method)</a>
 </li>
@@ -1564,16 +1574,22 @@ title="Fullscreen mode"
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="source/robosuite.models.objects.composite.html#robosuite.models.objects.composite.hammer.HammerObject.face_geoms">face_geoms (robosuite.models.objects.composite.hammer.HammerObject property)</a>
 </li>
+      <li><a href="source/robosuite.utils.html#robosuite.utils.log_utils.FileFormatter">FileFormatter (class in robosuite.utils.log_utils)</a>
+</li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.mjcf_utils.find_elements">find_elements() (in module robosuite.utils.mjcf_utils)</a>
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.mjcf_utils.find_parent">find_parent() (in module robosuite.utils.mjcf_utils)</a>
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjSimState.flatten">flatten() (robosuite.utils.binding_utils.MjSimState method)</a>
 </li>
-      <li><a href="source/robosuite.utils.html#robosuite.utils.log_utils.flush_warnings">flush_warnings() (in module robosuite.utils.log_utils)</a>
-</li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.transform_utils.force_in_A_to_force_in_B">force_in_A_to_force_in_B() (in module robosuite.utils.transform_utils)</a>
 </li>
+      <li><a href="source/robosuite.utils.html#robosuite.utils.log_utils.ConsoleFormatter.format">format() (robosuite.utils.log_utils.ConsoleFormatter method)</a>
+
+      <ul>
+        <li><a href="source/robosuite.utils.html#robosuite.utils.log_utils.FileFormatter.format">(robosuite.utils.log_utils.FileFormatter method)</a>
+</li>
+      </ul></li>
       <li><a href="modeling/robot_model.html#robosuite.models.grippers.gripper_model.GripperModel.format_action">format_action() (robosuite.models.grippers.gripper_model.GripperModel method)</a>, <a href="source/robosuite.models.grippers.html#robosuite.models.grippers.gripper_model.GripperModel.format_action">[1]</a>
 
       <ul>
@@ -1612,6 +1628,12 @@ title="Fullscreen mode"
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="source/robosuite.utils.html#robosuite.utils.log_utils.ConsoleFormatter.FORMATS">FORMATS (robosuite.utils.log_utils.ConsoleFormatter attribute)</a>
+
+      <ul>
+        <li><a href="source/robosuite.utils.html#robosuite.utils.log_utils.FileFormatter.FORMATS">(robosuite.utils.log_utils.FileFormatter attribute)</a>
+</li>
+      </ul></li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjSim.forward">forward() (robosuite.utils.binding_utils.MjSim method)</a>
 </li>
       <li><a href="source/robosuite.renderers.context.html#robosuite.renderers.context.egl_context.EGLGLContext.free">free() (robosuite.renderers.context.egl_context.EGLGLContext method)</a>
@@ -1752,12 +1774,8 @@ title="Fullscreen mode"
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.mjmod.TextureModder.get_checker_matrices">get_checker_matrices() (robosuite.utils.mjmod.TextureModder method)</a>
 </li>
-      <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.parser.Parser.get_class_id">get_class_id() (robosuite.renderers.igibson.parser.Parser method)</a>
-
-      <ul>
-        <li><a href="source/robosuite.renderers.nvisii.html#robosuite.renderers.nvisii.parser.Parser.get_class_id">(robosuite.renderers.nvisii.parser.Parser method)</a>
+      <li><a href="source/robosuite.renderers.nvisii.html#robosuite.renderers.nvisii.parser.Parser.get_class_id">get_class_id() (robosuite.renderers.nvisii.parser.Parser method)</a>
 </li>
-      </ul></li>
       <li><a href="modeling/object_model.html#robosuite.models.objects.objects.MujocoGeneratedObject.get_collision_attrib_template">get_collision_attrib_template() (robosuite.models.objects.objects.MujocoGeneratedObject static method)</a>, <a href="source/robosuite.models.objects.html#robosuite.models.objects.objects.MujocoGeneratedObject.get_collision_attrib_template">[1]</a>
 
       <ul>
@@ -1768,18 +1786,24 @@ title="Fullscreen mode"
 </li>
       <li><a href="simulation/controller.html#robosuite.controllers.ik.InverseKinematicsController.get_control">get_control() (robosuite.controllers.ik.InverseKinematicsController method)</a>, <a href="source/robosuite.controllers.html#robosuite.controllers.ik.InverseKinematicsController.get_control">[1]</a>
 </li>
-      <li><a href="source/robosuite.devices.html#robosuite.devices.device.Device.get_controller_state">get_controller_state() (robosuite.devices.device.Device method)</a>
+      <li><a href="simulation/device.html#robosuite.devices.device.Device.get_controller_state">get_controller_state() (robosuite.devices.device.Device method)</a>, <a href="source/robosuite.devices.html#robosuite.devices.device.Device.get_controller_state">[1]</a>
+
+      <ul>
+        <li><a href="simulation/device.html#robosuite.devices.keyboard.Keyboard.get_controller_state">(robosuite.devices.keyboard.Keyboard method)</a>, <a href="source/robosuite.devices.html#robosuite.devices.keyboard.Keyboard.get_controller_state">[1]</a>
 </li>
+        <li><a href="simulation/device.html#robosuite.devices.spacemouse.SpaceMouse.get_controller_state">(robosuite.devices.spacemouse.SpaceMouse method)</a>, <a href="source/robosuite.devices.html#robosuite.devices.spacemouse.SpaceMouse.get_controller_state">[1]</a>
+</li>
+      </ul></li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.buffers.DelayBuffer.get_delayed_value">get_delayed_value() (robosuite.utils.buffers.DelayBuffer method)</a>
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.mjmod.LightingModder.get_diffuse">get_diffuse() (robosuite.utils.mjmod.LightingModder method)</a>
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.mjmod.LightingModder.get_dir">get_dir() (robosuite.utils.mjmod.LightingModder method)</a>
 </li>
-      <li><a href="source/robosuite.models.html#robosuite.models.base.MujocoXML.get_element_names">get_element_names() (robosuite.models.base.MujocoXML method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="source/robosuite.models.html#robosuite.models.base.MujocoXML.get_element_names">get_element_names() (robosuite.models.base.MujocoXML method)</a>
+</li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.mjmod.CameraModder.get_fovy">get_fovy() (robosuite.utils.mjmod.CameraModder method)</a>
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjData.get_geom_jacp">get_geom_jacp() (robosuite.utils.binding_utils.MjData method)</a>
@@ -1824,6 +1848,8 @@ title="Fullscreen mode"
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.mjmod.LightingModder.get_lightid">get_lightid() (robosuite.utils.mjmod.LightingModder method)</a>
 </li>
+      <li><a href="source/robosuite.utils.html#robosuite.utils.log_utils.DefaultLogger.get_logger">get_logger() (robosuite.utils.log_utils.DefaultLogger method)</a>
+</li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.mjmod.TextureModder.get_material">get_material() (robosuite.utils.mjmod.TextureModder method)</a>
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjData.get_mocap_pos">get_mocap_pos() (robosuite.utils.binding_utils.MjData method)</a>
@@ -1850,8 +1876,6 @@ title="Fullscreen mode"
         <li><a href="source/robosuite.utils.html#robosuite.utils.mjmod.LightingModder.get_pos">(robosuite.utils.mjmod.LightingModder method)</a>
 </li>
       </ul></li>
-      <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.igibson_utils.MujocoCamera.get_pose">get_pose() (robosuite.renderers.igibson.igibson_utils.MujocoCamera method)</a>
-</li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.transform_utils.get_pose_error">get_pose_error() (in module robosuite.utils.transform_utils)</a>
 </li>
       <li><a href="source/robosuite.controllers.html#robosuite.controllers.controller_factory.get_pybullet_server">get_pybullet_server() (in module robosuite.controllers.controller_factory)</a>
@@ -1889,8 +1913,6 @@ title="Fullscreen mode"
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjSim.get_state">get_state() (robosuite.utils.binding_utils.MjSim method)</a>
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.mjmod.TextureModder.get_texture">get_texture() (robosuite.utils.mjmod.TextureModder method)</a>
-</li>
-      <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.igibson_utils.get_texture_id">get_texture_id() (in module robosuite.renderers.igibson.igibson_utils)</a>
 </li>
       <li><a href="modeling/object_model.html#robosuite.models.objects.objects.MujocoGeneratedObject.get_visual_attrib_template">get_visual_attrib_template() (robosuite.models.objects.objects.MujocoGeneratedObject static method)</a>, <a href="source/robosuite.models.objects.html#robosuite.models.objects.objects.MujocoGeneratedObject.get_visual_attrib_template">[1]</a>
 </li>
@@ -2012,8 +2034,6 @@ title="Fullscreen mode"
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="source/robosuite.utils.html#robosuite.utils.mjmod.Texture.id">id (robosuite.utils.mjmod.Texture attribute)</a>
 </li>
-      <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.igibson_renderer.iGibsonRenderer">iGibsonRenderer (class in robosuite.renderers.igibson.igibson_renderer)</a>
-</li>
       <li><a href="source/robosuite.models.robots.manipulators.html#robosuite.models.robots.manipulators.iiwa_robot.IIWA">IIWA (class in robosuite.models.robots.manipulators.iiwa_robot)</a>
 </li>
       <li><a href="simulation/controller.html#robosuite.controllers.ik.InverseKinematicsController.ik_robot_eef_joint_cartesian_pose">ik_robot_eef_joint_cartesian_pose() (robosuite.controllers.ik.InverseKinematicsController method)</a>, <a href="source/robosuite.controllers.html#robosuite.controllers.ik.InverseKinematicsController.ik_robot_eef_joint_cartesian_pose">[1]</a>
@@ -2098,6 +2118,8 @@ title="Fullscreen mode"
 </li>
       <li><a href="simulation/environment.html#robosuite.environments.base.MujocoEnv.initialize_time">initialize_time() (robosuite.environments.base.MujocoEnv method)</a>, <a href="source/robosuite.environments.html#robosuite.environments.base.MujocoEnv.initialize_time">[1]</a>
 </li>
+      <li><a href="source/robosuite.utils.html#robosuite.utils.input_utils.input2action">input2action() (in module robosuite.utils.input_utils)</a>
+</li>
       <li><a href="source/robosuite.models.tasks.html#robosuite.models.tasks.task.Task.instances_to_ids">instances_to_ids (robosuite.models.tasks.task.Task property)</a>
 </li>
       <li><a href="source/robosuite.controllers.interpolators.html#robosuite.controllers.interpolators.base_interpolator.Interpolator">Interpolator (class in robosuite.controllers.interpolators.base_interpolator)</a>
@@ -2106,12 +2128,8 @@ title="Fullscreen mode"
 </li>
       <li><a href="simulation/controller.html#robosuite.controllers.ik.InverseKinematicsController">InverseKinematicsController (class in robosuite.controllers.ik)</a>, <a href="source/robosuite.controllers.html#robosuite.controllers.ik.InverseKinematicsController">[1]</a>
 </li>
-      <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.igibson_utils.MujocoCamera.is_active">is_active() (robosuite.renderers.igibson.igibson_utils.MujocoCamera method)</a>
-
-      <ul>
-        <li><a href="source/robosuite.utils.html#robosuite.utils.observables.Observable.is_active">(robosuite.utils.observables.Observable method)</a>
+      <li><a href="source/robosuite.utils.html#robosuite.utils.observables.Observable.is_active">is_active() (robosuite.utils.observables.Observable method)</a>
 </li>
-      </ul></li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.observables.Observable.is_enabled">is_enabled() (robosuite.utils.observables.Observable method)</a>
 </li>
   </ul></td>
@@ -2220,6 +2238,8 @@ title="Fullscreen mode"
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjModel.key_time">key_time (robosuite.utils.binding_utils.MjModel property)</a>
 </li>
+      <li><a href="simulation/device.html#robosuite.devices.keyboard.Keyboard">Keyboard (class in robosuite.devices.keyboard)</a>, <a href="source/robosuite.devices.html#robosuite.devices.keyboard.Keyboard">[1]</a>
+</li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjModel.keyframe">keyframe (robosuite.utils.binding_utils.MjModel property)</a>
 </li>
       <li><a href="source/robosuite.models.robots.manipulators.html#robosuite.models.robots.manipulators.kinova3_robot.Kinova3">Kinova3 (class in robosuite.models.robots.manipulators.kinova3_robot)</a>
@@ -2266,10 +2286,10 @@ title="Fullscreen mode"
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjModel.light_mode">light_mode (robosuite.utils.binding_utils.MjModel property)</a>
 </li>
-      <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjModel.light_name2id">light_name2id() (robosuite.utils.binding_utils.MjModel method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjModel.light_name2id">light_name2id() (robosuite.utils.binding_utils.MjModel method)</a>
+</li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjModel.light_pos">light_pos (robosuite.utils.binding_utils.MjModel property)</a>
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjModel.light_pos0">light_pos0 (robosuite.utils.binding_utils.MjModel property)</a>
@@ -2300,15 +2320,9 @@ title="Fullscreen mode"
         <li><a href="source/robosuite.robots.html#robosuite.robots.single_arm.SingleArm.load_model">(robosuite.robots.single_arm.SingleArm method)</a>
 </li>
       </ul></li>
-      <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.igibson_utils.load_object">load_object() (in module robosuite.renderers.igibson.igibson_utils)</a>
-
-      <ul>
-        <li><a href="source/robosuite.renderers.nvisii.html#robosuite.renderers.nvisii.nvisii_utils.load_object">(in module robosuite.renderers.nvisii.nvisii_utils)</a>
+      <li><a href="source/robosuite.renderers.nvisii.html#robosuite.renderers.nvisii.nvisii_utils.load_object">load_object() (in module robosuite.renderers.nvisii.nvisii_utils)</a>
 </li>
-      </ul></li>
       <li><a href="source/robosuite.renderers.html#robosuite.renderers.base.load_renderer_config">load_renderer_config() (in module robosuite.renderers.base)</a>
-</li>
-      <li><a href="source/robosuite.utils.html#robosuite.utils.log_utils.log_warning">log_warning() (in module robosuite.utils.log_utils)</a>
 </li>
       <li><a href="source/robosuite.models.grippers.html#robosuite.models.grippers.gripper_tester.GripperTester.loop">loop() (robosuite.models.grippers.gripper_tester.GripperTester method)</a>
 </li>
@@ -2506,7 +2520,13 @@ title="Fullscreen mode"
 </li>
         <li><a href="source/robosuite.controllers.html#module-robosuite.controllers.osc">robosuite.controllers.osc</a>
 </li>
+        <li><a href="source/robosuite.devices.html#module-robosuite.devices">robosuite.devices</a>
+</li>
         <li><a href="source/robosuite.devices.html#module-robosuite.devices.device">robosuite.devices.device</a>
+</li>
+        <li><a href="source/robosuite.devices.html#module-robosuite.devices.keyboard">robosuite.devices.keyboard</a>
+</li>
+        <li><a href="source/robosuite.devices.html#module-robosuite.devices.spacemouse">robosuite.devices.spacemouse</a>
 </li>
         <li><a href="source/robosuite.environments.html#module-robosuite.environments">robosuite.environments</a>
 </li>
@@ -2666,14 +2686,6 @@ title="Fullscreen mode"
 </li>
         <li><a href="source/robosuite.renderers.context.html#module-robosuite.renderers.context.glfw_context">robosuite.renderers.context.glfw_context</a>
 </li>
-        <li><a href="source/robosuite.renderers.igibson.html#module-robosuite.renderers.igibson">robosuite.renderers.igibson</a>
-</li>
-        <li><a href="source/robosuite.renderers.igibson.html#module-robosuite.renderers.igibson.igibson_renderer">robosuite.renderers.igibson.igibson_renderer</a>
-</li>
-        <li><a href="source/robosuite.renderers.igibson.html#module-robosuite.renderers.igibson.igibson_utils">robosuite.renderers.igibson.igibson_utils</a>
-</li>
-        <li><a href="source/robosuite.renderers.igibson.html#module-robosuite.renderers.igibson.parser">robosuite.renderers.igibson.parser</a>
-</li>
         <li><a href="source/robosuite.renderers.nvisii.html#module-robosuite.renderers.nvisii">robosuite.renderers.nvisii</a>
 </li>
         <li><a href="source/robosuite.renderers.nvisii.html#module-robosuite.renderers.nvisii.nvisii_renderer">robosuite.renderers.nvisii.nvisii_renderer</a>
@@ -2703,6 +2715,8 @@ title="Fullscreen mode"
         <li><a href="source/robosuite.utils.html#module-robosuite.utils.control_utils">robosuite.utils.control_utils</a>
 </li>
         <li><a href="source/robosuite.utils.html#module-robosuite.utils.errors">robosuite.utils.errors</a>
+</li>
+        <li><a href="source/robosuite.utils.html#module-robosuite.utils.input_utils">robosuite.utils.input_utils</a>
 </li>
         <li><a href="source/robosuite.utils.html#module-robosuite.utils.log_utils">robosuite.utils.log_utils</a>
 </li>
@@ -2745,8 +2759,6 @@ title="Fullscreen mode"
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.camera_utils.CameraMover.move_camera">move_camera() (robosuite.utils.camera_utils.CameraMover method)</a>
 </li>
-      <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.igibson_utils.MujocoCamera">MujocoCamera (class in robosuite.renderers.igibson.igibson_utils)</a>
-</li>
       <li><a href="simulation/environment.html#robosuite.environments.base.MujocoEnv">MujocoEnv (class in robosuite.environments.base)</a>, <a href="source/robosuite.environments.html#robosuite.environments.base.MujocoEnv">[1]</a>
 </li>
       <li><a href="modeling/object_model.html#robosuite.models.objects.objects.MujocoGeneratedObject">MujocoGeneratedObject (class in robosuite.models.objects.objects)</a>, <a href="source/robosuite.models.objects.html#robosuite.models.objects.objects.MujocoGeneratedObject">[1]</a>
@@ -2754,8 +2766,6 @@ title="Fullscreen mode"
       <li><a href="modeling/mujoco_model.html#robosuite.models.base.MujocoModel">MujocoModel (class in robosuite.models.base)</a>, <a href="source/robosuite.models.html#robosuite.models.base.MujocoModel">[1]</a>
 </li>
       <li><a href="modeling/object_model.html#robosuite.models.objects.objects.MujocoObject">MujocoObject (class in robosuite.models.objects.objects)</a>, <a href="source/robosuite.models.objects.html#robosuite.models.objects.objects.MujocoObject">[1]</a>
-</li>
-      <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.igibson_utils.MujocoRobot">MujocoRobot (class in robosuite.renderers.igibson.igibson_utils)</a>
 </li>
       <li><a href="source/robosuite.models.html#robosuite.models.world.MujocoWorldBase">MujocoWorldBase (class in robosuite.models.world)</a>
 </li>
@@ -3063,15 +3073,19 @@ title="Fullscreen mode"
 </li>
       <li><a href="source/robosuite.wrappers.html#robosuite.wrappers.gym_wrapper.GymWrapper.observation_space">observation_space (robosuite.wrappers.gym_wrapper.GymWrapper attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="simulation/environment.html#robosuite.environments.base.MujocoEnv.observation_spec">observation_spec() (robosuite.environments.base.MujocoEnv method)</a>, <a href="source/robosuite.environments.html#robosuite.environments.base.MujocoEnv.observation_spec">[1]</a>
 
       <ul>
         <li><a href="source/robosuite.wrappers.html#robosuite.wrappers.wrapper.Wrapper.observation_spec">(robosuite.wrappers.wrapper.Wrapper method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="source/robosuite.environments.manipulation.html#robosuite.environments.manipulation.nut_assembly.NutAssembly.on_peg">on_peg() (robosuite.environments.manipulation.nut_assembly.NutAssembly method)</a>
+</li>
+      <li><a href="simulation/device.html#robosuite.devices.keyboard.Keyboard.on_press">on_press() (robosuite.devices.keyboard.Keyboard method)</a>, <a href="source/robosuite.devices.html#robosuite.devices.keyboard.Keyboard.on_press">[1]</a>
+</li>
+      <li><a href="simulation/device.html#robosuite.devices.keyboard.Keyboard.on_release">on_release() (robosuite.devices.keyboard.Keyboard method)</a>, <a href="source/robosuite.devices.html#robosuite.devices.keyboard.Keyboard.on_release">[1]</a>
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.opencv_renderer.OpenCVRenderer">OpenCVRenderer (class in robosuite.utils.opencv_renderer)</a>
 </li>
@@ -3122,55 +3136,39 @@ title="Fullscreen mode"
       <li><a href="source/robosuite.renderers.nvisii.html#robosuite.renderers.nvisii.parser.Components.parent_body_name">parent_body_name (robosuite.renderers.nvisii.parser.Components attribute)</a>
 </li>
       <li><a href="source/robosuite.renderers.html#robosuite.renderers.base_parser.BaseParser.parse_cameras">parse_cameras() (robosuite.renderers.base_parser.BaseParser method)</a>
-
-      <ul>
-        <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.parser.Parser.parse_cameras">(robosuite.renderers.igibson.parser.Parser method)</a>
 </li>
-      </ul></li>
       <li><a href="source/robosuite.renderers.html#robosuite.renderers.base_parser.BaseParser.parse_geometries">parse_geometries() (robosuite.renderers.base_parser.BaseParser method)</a>
 
       <ul>
-        <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.parser.Parser.parse_geometries">(robosuite.renderers.igibson.parser.Parser method)</a>
-</li>
         <li><a href="source/robosuite.renderers.nvisii.html#robosuite.renderers.nvisii.parser.Parser.parse_geometries">(robosuite.renderers.nvisii.parser.Parser method)</a>
 </li>
       </ul></li>
       <li><a href="source/robosuite.renderers.html#robosuite.renderers.base_parser.BaseParser.parse_materials">parse_materials() (robosuite.renderers.base_parser.BaseParser method)</a>
 
       <ul>
-        <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.parser.Parser.parse_materials">(robosuite.renderers.igibson.parser.Parser method)</a>
-</li>
         <li><a href="source/robosuite.renderers.nvisii.html#robosuite.renderers.nvisii.parser.Parser.parse_materials">(robosuite.renderers.nvisii.parser.Parser method)</a>
 </li>
       </ul></li>
       <li><a href="source/robosuite.renderers.html#robosuite.renderers.base_parser.BaseParser.parse_meshes">parse_meshes() (robosuite.renderers.base_parser.BaseParser method)</a>
 
       <ul>
-        <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.parser.Parser.parse_meshes">(robosuite.renderers.igibson.parser.Parser method)</a>
-</li>
         <li><a href="source/robosuite.renderers.nvisii.html#robosuite.renderers.nvisii.parser.Parser.parse_meshes">(robosuite.renderers.nvisii.parser.Parser method)</a>
 </li>
       </ul></li>
       <li><a href="source/robosuite.renderers.html#robosuite.renderers.base_parser.BaseParser.parse_textures">parse_textures() (robosuite.renderers.base_parser.BaseParser method)</a>
 
       <ul>
-        <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.parser.Parser.parse_textures">(robosuite.renderers.igibson.parser.Parser method)</a>
-</li>
         <li><a href="source/robosuite.renderers.nvisii.html#robosuite.renderers.nvisii.parser.Parser.parse_textures">(robosuite.renderers.nvisii.parser.Parser method)</a>
 </li>
       </ul></li>
-      <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.parser.Parser">Parser (class in robosuite.renderers.igibson.parser)</a>
-
-      <ul>
-        <li><a href="source/robosuite.renderers.nvisii.html#robosuite.renderers.nvisii.parser.Parser">(class in robosuite.renderers.nvisii.parser)</a>
+      <li><a href="source/robosuite.renderers.nvisii.html#robosuite.renderers.nvisii.parser.Parser">Parser (class in robosuite.renderers.nvisii.parser)</a>
 </li>
-      </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="source/robosuite.models.arenas.html#robosuite.models.arenas.pegs_arena.PegsArena">PegsArena (class in robosuite.models.arenas.pegs_arena)</a>
 </li>
       <li><a href="source/robosuite.environments.manipulation.html#robosuite.environments.manipulation.pick_place.PickPlace">PickPlace (class in robosuite.environments.manipulation.pick_place)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="source/robosuite.environments.manipulation.html#robosuite.environments.manipulation.pick_place.PickPlaceBread">PickPlaceBread (class in robosuite.environments.manipulation.pick_place)</a>
 </li>
       <li><a href="source/robosuite.environments.manipulation.html#robosuite.environments.manipulation.pick_place.PickPlaceCan">PickPlaceCan (class in robosuite.environments.manipulation.pick_place)</a>
@@ -3311,8 +3309,6 @@ title="Fullscreen mode"
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.transform_utils.random_quat">random_quat() (in module robosuite.utils.transform_utils)</a>
 </li>
-      <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.igibson_utils.random_string">random_string() (in module robosuite.renderers.igibson.igibson_utils)</a>
-</li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.errors.RandomizationError">RandomizationError</a>
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.mjmod.CameraModder.randomize">randomize() (robosuite.utils.mjmod.CameraModder method)</a>
@@ -3342,8 +3338,6 @@ title="Fullscreen mode"
       <ul>
         <li><a href="source/robosuite.renderers.html#robosuite.renderers.base.Renderer.render">(robosuite.renderers.base.Renderer method)</a>
 </li>
-        <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.igibson_renderer.iGibsonRenderer.render">(robosuite.renderers.igibson.igibson_renderer.iGibsonRenderer method)</a>
-</li>
         <li><a href="source/robosuite.renderers.nvisii.html#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.render">(robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer method)</a>
 </li>
         <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjRenderContext.render">(robosuite.utils.binding_utils.MjRenderContext method)</a>
@@ -3369,8 +3363,6 @@ title="Fullscreen mode"
         <li><a href="source/robosuite.models.grippers.html#robosuite.models.grippers.gripper_tester.GripperTester.reset">(robosuite.models.grippers.gripper_tester.GripperTester method)</a>
 </li>
         <li><a href="source/robosuite.renderers.html#robosuite.renderers.base.Renderer.reset">(robosuite.renderers.base.Renderer method)</a>
-</li>
-        <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.igibson_renderer.iGibsonRenderer.reset">(robosuite.renderers.igibson.igibson_renderer.iGibsonRenderer method)</a>
 </li>
         <li><a href="source/robosuite.renderers.nvisii.html#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.reset">(robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer method)</a>
 </li>
@@ -3556,10 +3548,31 @@ title="Fullscreen mode"
 </li>
       </ul></li>
       <li>
+    robosuite.devices
+
+      <ul>
+        <li><a href="source/robosuite.devices.html#module-robosuite.devices">module</a>
+</li>
+      </ul></li>
+      <li>
     robosuite.devices.device
 
       <ul>
         <li><a href="source/robosuite.devices.html#module-robosuite.devices.device">module</a>
+</li>
+      </ul></li>
+      <li>
+    robosuite.devices.keyboard
+
+      <ul>
+        <li><a href="source/robosuite.devices.html#module-robosuite.devices.keyboard">module</a>
+</li>
+      </ul></li>
+      <li>
+    robosuite.devices.spacemouse
+
+      <ul>
+        <li><a href="source/robosuite.devices.html#module-robosuite.devices.spacemouse">module</a>
 </li>
       </ul></li>
       <li>
@@ -3807,6 +3820,8 @@ title="Fullscreen mode"
         <li><a href="source/robosuite.models.grippers.html#module-robosuite.models.grippers.robotiq_140_gripper">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     robosuite.models.grippers.robotiq_85_gripper
 
@@ -3821,8 +3836,6 @@ title="Fullscreen mode"
         <li><a href="source/robosuite.models.grippers.html#module-robosuite.models.grippers.robotiq_three_finger_gripper">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     robosuite.models.grippers.wiping_gripper
 
@@ -4118,34 +4131,6 @@ title="Fullscreen mode"
 </li>
       </ul></li>
       <li>
-    robosuite.renderers.igibson
-
-      <ul>
-        <li><a href="source/robosuite.renderers.igibson.html#module-robosuite.renderers.igibson">module</a>
-</li>
-      </ul></li>
-      <li>
-    robosuite.renderers.igibson.igibson_renderer
-
-      <ul>
-        <li><a href="source/robosuite.renderers.igibson.html#module-robosuite.renderers.igibson.igibson_renderer">module</a>
-</li>
-      </ul></li>
-      <li>
-    robosuite.renderers.igibson.igibson_utils
-
-      <ul>
-        <li><a href="source/robosuite.renderers.igibson.html#module-robosuite.renderers.igibson.igibson_utils">module</a>
-</li>
-      </ul></li>
-      <li>
-    robosuite.renderers.igibson.parser
-
-      <ul>
-        <li><a href="source/robosuite.renderers.igibson.html#module-robosuite.renderers.igibson.parser">module</a>
-</li>
-      </ul></li>
-      <li>
     robosuite.renderers.nvisii
 
       <ul>
@@ -4248,6 +4233,13 @@ title="Fullscreen mode"
 
       <ul>
         <li><a href="source/robosuite.utils.html#module-robosuite.utils.errors">module</a>
+</li>
+      </ul></li>
+      <li>
+    robosuite.utils.input_utils
+
+      <ul>
+        <li><a href="source/robosuite.utils.html#module-robosuite.utils.input_utils">module</a>
 </li>
       </ul></li>
       <li>
@@ -4400,6 +4392,8 @@ title="Fullscreen mode"
 </li>
       <li><a href="source/robosuite.models.objects.html#robosuite.models.objects.xml_objects.RoundNutObject">RoundNutObject (class in robosuite.models.objects.xml_objects)</a>
 </li>
+      <li><a href="simulation/device.html#robosuite.devices.spacemouse.SpaceMouse.run">run() (robosuite.devices.spacemouse.SpaceMouse method)</a>, <a href="source/robosuite.devices.html#robosuite.devices.spacemouse.SpaceMouse.run">[1]</a>
+</li>
       <li><a href="simulation/controller.html#robosuite.controllers.base_controller.Controller.run_controller">run_controller() (robosuite.controllers.base_controller.Controller method)</a>, <a href="source/robosuite.controllers.html#robosuite.controllers.base_controller.Controller.run_controller">[1]</a>
 
       <ul>
@@ -4464,7 +4458,11 @@ title="Fullscreen mode"
 </li>
       <li><a href="source/robosuite.models.robots.manipulators.html#robosuite.models.robots.manipulators.sawyer_robot.Sawyer">Sawyer (class in robosuite.models.robots.manipulators.sawyer_robot)</a>
 </li>
+      <li><a href="source/robosuite.devices.html#robosuite.devices.spacemouse.AxisSpec.scale">scale (robosuite.devices.spacemouse.AxisSpec attribute)</a>
+</li>
       <li><a href="simulation/controller.html#robosuite.controllers.base_controller.Controller.scale_action">scale_action() (robosuite.controllers.base_controller.Controller method)</a>, <a href="source/robosuite.controllers.html#robosuite.controllers.base_controller.Controller.scale_action">[1]</a>
+</li>
+      <li><a href="source/robosuite.devices.html#robosuite.devices.spacemouse.scale_to_control">scale_to_control() (in module robosuite.devices.spacemouse)</a>
 </li>
       <li><a href="source/robosuite.wrappers.html#robosuite.wrappers.gym_wrapper.GymWrapper.seed">seed() (robosuite.wrappers.gym_wrapper.GymWrapper method)</a>
 </li>
@@ -4543,8 +4541,6 @@ title="Fullscreen mode"
       <li><a href="source/robosuite.environments.html#robosuite.environments.base.MujocoEnv.set_camera_pos_quat">set_camera_pos_quat() (robosuite.environments.base.MujocoEnv method)</a>
 
       <ul>
-        <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.igibson_renderer.iGibsonRenderer.set_camera_pos_quat">(robosuite.renderers.igibson.igibson_renderer.iGibsonRenderer method)</a>
-</li>
         <li><a href="source/robosuite.renderers.nvisii.html#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.set_camera_pos_quat">(robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer method)</a>
 </li>
       </ul></li>
@@ -4764,6 +4760,8 @@ title="Fullscreen mode"
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.mjcf_utils.sort_elements">sort_elements() (in module robosuite.utils.mjcf_utils)</a>
 </li>
+      <li><a href="simulation/device.html#robosuite.devices.spacemouse.SpaceMouse">SpaceMouse (class in robosuite.devices.spacemouse)</a>, <a href="source/robosuite.devices.html#robosuite.devices.spacemouse.SpaceMouse">[1]</a>
+</li>
       <li><a href="modeling/robot_model.html#robosuite.models.grippers.gripper_model.GripperModel.speed">speed (robosuite.models.grippers.gripper_model.GripperModel property)</a>, <a href="source/robosuite.models.grippers.html#robosuite.models.grippers.gripper_model.GripperModel.speed">[1]</a>
 
       <ul>
@@ -4796,8 +4794,14 @@ title="Fullscreen mode"
         <li><a href="source/robosuite.environments.manipulation.html#robosuite.environments.manipulation.stack.Stack.staged_rewards">(robosuite.environments.manipulation.stack.Stack method)</a>
 </li>
       </ul></li>
-      <li><a href="source/robosuite.devices.html#robosuite.devices.device.Device.start_control">start_control() (robosuite.devices.device.Device method)</a>
+      <li><a href="simulation/device.html#robosuite.devices.device.Device.start_control">start_control() (robosuite.devices.device.Device method)</a>, <a href="source/robosuite.devices.html#robosuite.devices.device.Device.start_control">[1]</a>
+
+      <ul>
+        <li><a href="source/robosuite.devices.html#robosuite.devices.keyboard.Keyboard.start_control">(robosuite.devices.keyboard.Keyboard method)</a>
 </li>
+        <li><a href="source/robosuite.devices.html#robosuite.devices.spacemouse.SpaceMouse.start_control">(robosuite.devices.spacemouse.SpaceMouse method)</a>
+</li>
+      </ul></li>
       <li><a href="source/robosuite.models.grippers.html#robosuite.models.grippers.gripper_tester.GripperTester.start_simulation">start_simulation() (robosuite.models.grippers.gripper_tester.GripperTester method)</a>
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjModel.stat">stat (robosuite.utils.binding_utils.MjModel property)</a>
@@ -4829,8 +4833,6 @@ title="Fullscreen mode"
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjData.subtree_com">subtree_com (robosuite.utils.binding_utils.MjData property)</a>
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjData.subtree_linvel">subtree_linvel (robosuite.utils.binding_utils.MjData property)</a>
-</li>
-      <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.igibson_utils.MujocoCamera.switch">switch() (robosuite.renderers.igibson.igibson_utils.MujocoCamera method)</a>
 </li>
       <li><a href="simulation/controller.html#robosuite.controllers.ik.InverseKinematicsController.sync_ik_robot">sync_ik_robot() (robosuite.controllers.ik.InverseKinematicsController method)</a>, <a href="source/robosuite.controllers.html#robosuite.controllers.ik.InverseKinematicsController.sync_ik_robot">[1]</a>
 </li>
@@ -4922,8 +4924,6 @@ title="Fullscreen mode"
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjModel.tendon_width">tendon_width (robosuite.utils.binding_utils.MjModel property)</a>
 </li>
-      <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.igibson_utils.TensorObservable">TensorObservable (class in robosuite.renderers.igibson.igibson_utils)</a>
-</li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjModel.tex">tex (robosuite.utils.binding_utils.MjModel property)</a>
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjModel.tex_adr">tex_adr (robosuite.utils.binding_utils.MjModel property)</a>
@@ -4946,10 +4946,10 @@ title="Fullscreen mode"
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjModel.text_adr">text_adr (robosuite.utils.binding_utils.MjModel property)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjModel.text_data">text_data (robosuite.utils.binding_utils.MjModel property)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjModel.text_size">text_size (robosuite.utils.binding_utils.MjModel property)</a>
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.mjmod.Texture">Texture (class in robosuite.utils.mjmod)</a>
@@ -4961,6 +4961,8 @@ title="Fullscreen mode"
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjData.time">time (robosuite.utils.binding_utils.MjData property)</a>
 </li>
       <li><a href="source/robosuite.utils.html#robosuite.utils.binding_utils.MjData.timer">timer (robosuite.utils.binding_utils.MjData property)</a>
+</li>
+      <li><a href="source/robosuite.devices.html#robosuite.devices.spacemouse.to_int16">to_int16() (in module robosuite.devices.spacemouse)</a>
 </li>
       <li><a href="modeling/mujoco_model.html#robosuite.models.base.MujocoModel.top_offset">top_offset (robosuite.models.base.MujocoModel property)</a>, <a href="source/robosuite.models.html#robosuite.models.base.MujocoModel.top_offset">[1]</a>
 
@@ -5066,10 +5068,6 @@ title="Fullscreen mode"
 
       <ul>
         <li><a href="source/robosuite.renderers.html#robosuite.renderers.base.Renderer.update">(robosuite.renderers.base.Renderer method)</a>
-</li>
-        <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.igibson_renderer.iGibsonRenderer.update">(robosuite.renderers.igibson.igibson_renderer.iGibsonRenderer method)</a>
-</li>
-        <li><a href="source/robosuite.renderers.igibson.html#robosuite.renderers.igibson.igibson_utils.TensorObservable.update">(robosuite.renderers.igibson.igibson_utils.TensorObservable method)</a>
 </li>
         <li><a href="source/robosuite.renderers.nvisii.html#robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer.update">(robosuite.renderers.nvisii.nvisii_renderer.NVISIIRenderer method)</a>
 </li>
@@ -5235,7 +5233,7 @@ title="Fullscreen mode"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Yuke Zhu, Josiah Wong, Ajay Mandlekar, Roberto Martín-Martín, Abhishek Joshi, Soroush Nasiriany, Yifeng Zhu<br/>
+    By the robosuite core team<br/>
   
       &copy; Copyright Stanford University and The University of Texas at Austin 2022.<br/>
 </p>

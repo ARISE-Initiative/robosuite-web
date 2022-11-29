@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>I/O Devices &#8212; robosuite 1.4.0 documentation</title>
+    <title>I/O Devices &#8212; robosuite 1.4 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -23,7 +23,6 @@
     <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
     <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../static/css/theme.css" />
-    <link rel="stylesheet" type="text/css" href="../static/theme_overrides.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -34,6 +33,7 @@
     <script src="../static/underscore.js"></script>
     <script src="../static/doctools.js"></script>
     <script src="../static/scripts/sphinx-book-theme.js"></script>
+    <script src="../static/js/custom.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -75,9 +75,14 @@
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">robosuite 1.4.0 documentation</h1>
+      <img src="../static/robosuite_color.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robosuite 1.4 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -365,11 +370,6 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../source/robosuite.renderers.igibson.html">
-       robosuite.renderers.igibson package
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="../source/robosuite.renderers.nvisii.html">
        robosuite.renderers.nvisii package
       </a>
@@ -629,42 +629,42 @@ title="Print to PDF"
 <table border="1" class="docutils">
 <thead>
 <tr>
-<th style="text-align: center;">Keys</th>
-<th style="text-align: center;">Command</th>
+<th style="text-align: left;">Keys</th>
+<th style="text-align: left;">Command</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">q</td>
-<td style="text-align: center;">reset simulation</td>
+<td style="text-align: left;">q</td>
+<td style="text-align: left;">reset simulation</td>
 </tr>
 <tr>
-<td style="text-align: center;">spacebar</td>
-<td style="text-align: center;">toggle gripper (open/close)</td>
+<td style="text-align: left;">spacebar</td>
+<td style="text-align: left;">toggle gripper (open/close)</td>
 </tr>
 <tr>
-<td style="text-align: center;">w-a-s-d</td>
-<td style="text-align: center;">move arm horizontally in x-y plane</td>
+<td style="text-align: left;">w-a-s-d</td>
+<td style="text-align: left;">move arm horizontally in x-y plane</td>
 </tr>
 <tr>
-<td style="text-align: center;">r-f</td>
-<td style="text-align: center;">move arm vertically</td>
+<td style="text-align: left;">r-f</td>
+<td style="text-align: left;">move arm vertically</td>
 </tr>
 <tr>
-<td style="text-align: center;">z-x</td>
-<td style="text-align: center;">rotate arm about x-axis</td>
+<td style="text-align: left;">z-x</td>
+<td style="text-align: left;">rotate arm about x-axis</td>
 </tr>
 <tr>
-<td style="text-align: center;">t-g</td>
-<td style="text-align: center;">rotate arm about y-axis</td>
+<td style="text-align: left;">t-g</td>
+<td style="text-align: left;">rotate arm about y-axis</td>
 </tr>
 <tr>
-<td style="text-align: center;">c-v</td>
-<td style="text-align: center;">rotate arm about z-axis</td>
+<td style="text-align: left;">c-v</td>
+<td style="text-align: left;">rotate arm about z-axis</td>
 </tr>
 <tr>
-<td style="text-align: center;">ESC</td>
-<td style="text-align: center;">quit</td>
+<td style="text-align: left;">ESC</td>
+<td style="text-align: left;">quit</td>
 </tr>
 </tbody>
 </table></section>
@@ -675,34 +675,34 @@ title="Print to PDF"
 <table border="1" class="docutils">
 <thead>
 <tr>
-<th style="text-align: center;">Control</th>
-<th style="text-align: center;">Command</th>
+<th style="text-align: left;">Control</th>
+<th style="text-align: left;">Command</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">Right button</td>
-<td style="text-align: center;">reset simulation</td>
+<td style="text-align: left;">Right button</td>
+<td style="text-align: left;">reset simulation</td>
 </tr>
 <tr>
-<td style="text-align: center;">Left button (hold)</td>
-<td style="text-align: center;">close gripper</td>
+<td style="text-align: left;">Left button (hold)</td>
+<td style="text-align: left;">close gripper</td>
 </tr>
 <tr>
-<td style="text-align: center;">Move mouse laterally</td>
-<td style="text-align: center;">move arm horizontally in x-y plane</td>
+<td style="text-align: left;">Move mouse laterally</td>
+<td style="text-align: left;">move arm horizontally in x-y plane</td>
 </tr>
 <tr>
-<td style="text-align: center;">Move mouse vertically</td>
-<td style="text-align: center;">move arm vertically</td>
+<td style="text-align: left;">Move mouse vertically</td>
+<td style="text-align: left;">move arm vertically</td>
 </tr>
 <tr>
-<td style="text-align: center;">Twist mouse about an axis</td>
-<td style="text-align: center;">rotate arm about a corresponding axis</td>
+<td style="text-align: left;">Twist mouse about an axis</td>
+<td style="text-align: left;">rotate arm about a corresponding axis</td>
 </tr>
 <tr>
-<td style="text-align: center;">ESC (keyboard)</td>
-<td style="text-align: center;">quit</td>
+<td style="text-align: left;">ESC (keyboard)</td>
+<td style="text-align: left;">quit</td>
 </tr>
 </tbody>
 </table></section>
@@ -737,7 +737,7 @@ title="Print to PDF"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Yuke Zhu, Josiah Wong, Ajay Mandlekar, Roberto Martín-Martín, Abhishek Joshi, Soroush Nasiriany, Yifeng Zhu<br/>
+    By the robosuite core team<br/>
   
       &copy; Copyright Stanford University and The University of Texas at Austin 2022.<br/>
 </p>
