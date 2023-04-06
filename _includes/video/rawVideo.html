@@ -1,11 +1,8 @@
 <!-- Feel free to change the width and height to your desired video size. -->
 
 <div class="embed-container">
-  <iframe
-      width=640
-      height=480
-      src="{{ '/assets/' | append: include.fileName | absolute_url }}"
-      frameborder="0"
-      allowfullscreen="">
-  </iframe>
+  <video style="max-width: 100%; height: auto;" autoplay controls>
+    <source src="{{ '/assets/' | append: include.fileName | absolute_url }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 </div>
