@@ -1,417 +1,732 @@
 
 <!DOCTYPE html>
 
-
-<html lang="en" data-content_root="./" >
-
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Demo Showcases &#8212; robosuite 1.5 documentation</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
-  </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
-  
+    <title>Demo Showcases &#8212; robosuite 1.4 documentation</title>
+    
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=81f6180a" />
-  
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+    
+  <link rel="stylesheet"
+    href="static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="static/pygments.css" />
+    <link rel="stylesheet" href="static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="static/css/theme.css" />
+    
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script src="_static/documentation_options.js?v=9f1c6d22"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
+    <script src="static/jquery.js"></script>
+    <script src="static/underscore.js"></script>
+    <script src="static/doctools.js"></script>
+    <script src="static/scripts/sphinx-book-theme.js"></script>
+    <script src="static/js/custom.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'demos';</script>
-    <script src="_static/js/custom.js?v=4441fbbd"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Overview" href="modules/overview.html" />
-    <link rel="prev" title="Basic Usage" href="basicusage.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.5" />
+    <link rel="prev" title="Quick Start" href="quickstart.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-  
-  
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
-  
-  <dialog id="pst-search-dialog">
     
-<form class="bd-search d-flex align-items-center"
-      action="search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         placeholder="Search..."
-         aria-label="Search..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+    <div class="container-fluid" id="banner"></div>
 
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
+    
 
-  
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
-  
-
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
       
-      
-      
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-
-  
-    
-  
-
-<a class="navbar-brand logo" href="index.html">
-  
-  
-  
-  
-  
-    
-    
       
-    
-    
-    <img src="_static/robosuite_color.png" class="logo__image only-light" alt="robosuite 1.5 documentation - Home"/>
-    <img src="_static/robosuite_color.png" class="logo__image only-dark pst-js-only" alt="robosuite 1.5 documentation - Home"/>
-  
-  
-</a></div>
-        <div class="sidebar-primary-item">
-
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+      
+      <img src="static/robosuite_color.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">robosuite 1.4 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basicusage.html">Basic Usage</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Demo Showcases</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="quickstart.html">
+   Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Demo Showcases
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Modules</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="modules/overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules/robots.html">Robots</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules/objects.html">Objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules/environments.html">Environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules/sensors.html">Sensors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules/devices.html">I/O Devices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules/renderers.html">Renderers</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modules/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modules/robots.html">
+   Robots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modules/controllers.html">
+   Controllers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modules/objects.html">
+   Objects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modules/environments.html">
+   Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modules/sensors.html">
+   Sensors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modules/devices.html">
+   I/O Devices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modules/renderers.html">
+   Renderers
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Simulation API
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="tutorials/add_controller.html">Adding Third Party Controllers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/add_environment.html">Building Your Own Environments</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="simulation/robot.html">
+   Robot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="simulation/environment.html">
+   Environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="simulation/device.html">
+   Device
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="simulation/controller.html">
+   Controller
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Simulation API</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modeling API
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="simulation/robot.html">Robot</a></li>
-<li class="toctree-l1"><a class="reference internal" href="simulation/environment.html">Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="simulation/device.html">Device</a></li>
-<li class="toctree-l1"><a class="reference internal" href="simulation/controller.html">Controller</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modeling/mujoco_model.html">
+   Mujoco Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modeling/robot_model.html">
+   Robot Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modeling/object_model.html">
+   Object Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modeling/arena.html">
+   Arena
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modeling/task.html">
+   Task
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Modeling API</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Source API
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="modeling/mujoco_model.html">Mujoco Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modeling/robot_model.html">Robot Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modeling/object_model.html">Object Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modeling/arena.html">Arena</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modeling/task.html">Task</a></li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="source/robosuite.html">
+   robosuite package
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="source/robosuite.controllers.html">
+     robosuite.controllers package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="source/robosuite.controllers.interpolators.html">
+       robosuite.controllers.interpolators package
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="source/robosuite.devices.html">
+     robosuite.devices package
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="source/robosuite.environments.html">
+     robosuite.environments package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="source/robosuite.environments.manipulation.html">
+       robosuite.environments.manipulation package
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="source/robosuite.models.html">
+     robosuite.models package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="source/robosuite.models.arenas.html">
+       robosuite.models.arenas package
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="source/robosuite.models.grippers.html">
+       robosuite.models.grippers package
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="source/robosuite.models.mounts.html">
+       robosuite.models.mounts package
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="source/robosuite.models.objects.html">
+       robosuite.models.objects package
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="source/robosuite.models.objects.composite.html">
+         robosuite.models.objects.composite package
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="source/robosuite.models.objects.composite_body.html">
+         robosuite.models.objects.composite_body package
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="source/robosuite.models.objects.primitive.html">
+         robosuite.models.objects.primitive package
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="source/robosuite.models.robots.html">
+       robosuite.models.robots package
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="source/robosuite.models.robots.manipulators.html">
+         robosuite.models.robots.manipulators package
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="source/robosuite.models.tasks.html">
+       robosuite.models.tasks package
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="source/robosuite.renderers.html">
+     robosuite.renderers package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="source/robosuite.renderers.context.html">
+       robosuite.renderers.context package
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="source/robosuite.renderers.nvisii.html">
+       robosuite.renderers.nvisii package
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="source/robosuite.robots.html">
+     robosuite.robots package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="source/robosuite.utils.html">
+     robosuite.utils package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="source/robosuite.wrappers.html">
+     robosuite.wrappers package
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Source API</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algorithms
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="source/robosuite.html">robosuite package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="source/robosuite.controllers.html">robosuite.controllers package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="source/robosuite.controllers.interpolators.html">robosuite.controllers.interpolators package</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="algorithms/benchmarking.html">
+   Benchmarking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="algorithms/demonstrations.html">
+   Human Demonstrations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="algorithms/sim2real.html">
+   Sim-to-Real Transfer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="algorithms/roboturk.html">
+   RoboTurk Datasets
+  </a>
+ </li>
 </ul>
-</details></li>
-<li class="toctree-l2"><a class="reference internal" href="source/robosuite.devices.html">robosuite.devices package</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="source/robosuite.environments.html">robosuite.environments package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="source/robosuite.environments.manipulation.html">robosuite.environments.manipulation package</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="source/robosuite.models.html">robosuite.models package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="source/robosuite.models.arenas.html">robosuite.models.arenas package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="source/robosuite.models.grippers.html">robosuite.models.grippers package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="source/robosuite.models.mounts.html">robosuite.models.mounts package</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="source/robosuite.models.objects.html">robosuite.models.objects package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="source/robosuite.models.objects.composite.html">robosuite.models.objects.composite package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="source/robosuite.models.objects.composite_body.html">robosuite.models.objects.composite_body package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="source/robosuite.models.objects.primitive.html">robosuite.models.objects.primitive package</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="source/robosuite.models.robots.html">robosuite.models.robots package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="source/robosuite.models.robots.manipulators.html">robosuite.models.robots.manipulators package</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3"><a class="reference internal" href="source/robosuite.models.tasks.html">robosuite.models.tasks package</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="source/robosuite.renderers.html">robosuite.renderers package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
-</ul>
-</details></li>
-<li class="toctree-l2"><a class="reference internal" href="source/robosuite.robots.html">robosuite.robots package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="source/robosuite.utils.html">robosuite.utils package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="source/robosuite.wrappers.html">robosuite.wrappers package</a></li>
-</ul>
-</details></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="algorithms/benchmarking.html">Benchmarking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algorithms/demonstrations.html">Human Demonstrations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algorithms/roboturk.html">RoboTurk Datasets</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="references.html">Projects using robosuite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="acknowledgement.html">Acknowledgements</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="references.html">
+   Projects using robosuite
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="acknowledgement.html">
+   Acknowledgements
+  </a>
+ </li>
 </ul>
 
     </div>
 </nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
     </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
-
-
-      </div>
-      
-      <main id="main-content" class="bd-main" role="main">
-        
-        
-
-<div class="sbt-scroll-pixel-helper"></div>
-
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article d-print-none">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</button></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="_sources/demos.md" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.md</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
+          
 
 
-<button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
-
-
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
-</div></div>
-      
-    </div>
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="sources/demos.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
   
-</div>
-</div>
-              
-              
 
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>Demo Showcases</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-configuration">Environment Configuration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controller-test">Controller Test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-randomization">Domain Randomization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sensor-realism">Sensor Realism</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gripper-selection">Gripper Selection</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gripper-interaction-procedural-generation">Gripper Interaction &amp; Procedural Generation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trajectory-replay">Trajectory Replay</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#openai-gym-style-apis">OpenAI Gym-style APIs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teleoperation">Teleoperation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-recording">Video Recording</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rendering-options">Rendering Options</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-to-usd">Exporting to USD</a></li>
-</ul>
-            </nav>
-        </div>
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-              
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#environment-configuration">
+   Environment Configuration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#controller-test">
+   Controller Test
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#domain-randomization">
+   Domain Randomization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sensor-realism">
+   Sensor Realism
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gripper-selection">
+   Gripper Selection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gripper-interaction-procedural-generation">
+   Gripper Interaction &amp; Procedural Generation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trajectory-replay">
+   Trajectory Replay
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#openai-gym-style-apis">
+   OpenAI Gym-style APIs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#teleoperation">
+   Teleoperation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-recording">
+   Video Recording
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rendering-options">
+   Rendering Options
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vision-modalities">
+   Vision Modalities
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Demo Showcases</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#environment-configuration">
+   Environment Configuration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#controller-test">
+   Controller Test
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#domain-randomization">
+   Domain Randomization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sensor-realism">
+   Sensor Realism
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gripper-selection">
+   Gripper Selection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gripper-interaction-procedural-generation">
+   Gripper Interaction &amp; Procedural Generation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trajectory-replay">
+   Trajectory Replay
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#openai-gym-style-apis">
+   OpenAI Gym-style APIs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#teleoperation">
+   Teleoperation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-recording">
+   Video Recording
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rendering-options">
+   Rendering Options
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vision-modalities">
+   Vision Modalities
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
                 
-<div id="searchbox"></div>
-                <article class="bd-article">
-                  
+              <div>
+                
   <section id="demo-showcases">
-<h1>Demo Showcases<a class="headerlink" href="#demo-showcases" title="Link to this heading">#</a></h1>
+<h1>Demo Showcases<a class="headerlink" href="#demo-showcases" title="Permalink to this headline">#</a></h1>
 <p>We provide a collection of <a class="reference external" href="https://github.com/ARISE-Initiative/robosuite/tree/master/robosuite/demos">demo scripts</a> to showcase the functionalities in <strong>robosuite</strong>.</p>
 <section id="environment-configuration">
-<h2>Environment Configuration<a class="headerlink" href="#environment-configuration" title="Link to this heading">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">demo_random_action.py</span></code> script is the starter demo script that you should try first. It highlights the modular design of our simulated environments. It enables users to create new simulation instances by choosing one <a class="reference internal" href="modules/environments.html"><span class="doc">environment</span></a>, one or more <a class="reference internal" href="modules/robots.html"><span class="doc">robots</span></a>, and their <a class="reference internal" href="modules/controllers.html"><span class="doc">controllers</span></a> from the command line. The script creates an environment instance and controls the robots with uniform random actions drawn from the controller-specific action space. The list of all environments, robots, controllers, and gripper types supported in the current version of <strong>robosuite</strong> are defined by <code class="docutils literal notranslate"><span class="pre">suite.ALL_ENVIRONMENTS</span></code>, <code class="docutils literal notranslate"><span class="pre">suite.ALL_ROBOTS</span></code>, <code class="docutils literal notranslate"><span class="pre">suite.</span> <span class="pre">ALL_PART_CONTROLLERS</span></code>, and <code class="docutils literal notranslate"><span class="pre">suite.ALL_GRIPPERS</span></code> respectively.</p>
+<h2>Environment Configuration<a class="headerlink" href="#environment-configuration" title="Permalink to this headline">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">demo_random_action.py</span></code> sciprt is the starter demo script that you should try first. It highlights the modular design of our simulated environments. It enables users to create new simulation instances by choosing one <a class="reference internal" href="modules/environments.html"><span class="doc">environment</span></a>, one or more <a class="reference internal" href="modules/robots.html"><span class="doc">robots</span></a>, and their <a class="reference internal" href="modules/controllers.html"><span class="doc">controllers</span></a> from the command line. The script creates an environment instance and controls the robots with uniform random actions drawn from the controller-specific action space. The list of all environments, robots, controllers, and gripper types supported in the current version of <strong>robosuite</strong> are defined by <code class="docutils literal notranslate"><span class="pre">suite.ALL_ENVIRONMENTS</span></code>, <code class="docutils literal notranslate"><span class="pre">suite.ALL_ROBOTS</span></code>, <code class="docutils literal notranslate"><span class="pre">suite.ALL_CONTROLLERS</span></code>, and <code class="docutils literal notranslate"><span class="pre">suite.ALL_GRIPPERS</span></code> respectively.</p>
 </section>
 <section id="controller-test">
-<h2>Controller Test<a class="headerlink" href="#controller-test" title="Link to this heading">#</a></h2>
+<h2>Controller Test<a class="headerlink" href="#controller-test" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">demo_control.py</span></code> script demonstrates the various functionalities of each controller available within <strong>robosuite</strong>.
 For a given controller, runs through each dimension and executes a perturbation <code class="docutils literal notranslate"><span class="pre">test_value</span></code> from its
 neutral (stationary) value for a certain amount of time “steps_per_action”, and then returns to all neutral values
@@ -444,33 +759,33 @@ For example, given that the expected action space of the <code class="docutils l
 </ul>
 </section>
 <section id="domain-randomization">
-<h2>Domain Randomization<a class="headerlink" href="#domain-randomization" title="Link to this heading">#</a></h2>
+<h2>Domain Randomization<a class="headerlink" href="#domain-randomization" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">demo_domain_randomization.py</span></code> script showcases our domain randomization functionality. Domain randomization can be easily enabled by wrapping an environment with the <a class="reference internal" href="source/robosuite.wrappers.html"><span class="doc">DomainRandomizationWrapper</span></a>. At this moment, the randomization functionality focuses on visual variations, including colors, textures, and camera viewpoints.</p>
-<p><img alt="collection of grippers" src="_images/domain_randomization.png" /></p>
+<p><img alt="collection of grippers" src="images/domain_randomization.png" /></p>
 </section>
 <section id="sensor-realism">
-<h2>Sensor Realism<a class="headerlink" href="#sensor-realism" title="Link to this heading">#</a></h2>
+<h2>Sensor Realism<a class="headerlink" href="#sensor-realism" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">demo_sensor_corruption.py</span></code> script shows how the <a class="reference internal" href="modules/sensors.html"><span class="doc">Observable</span></a> functionality can be used to model sensor corruption and delay. The <a class="reference internal" href="modules/sensors.html"><span class="doc">Observable</span></a> class provides easy-to-use interface for simulating real-world sensor noises, variable sensor delays, and sampling frequencies of realistic sensors. These techniques are useful for improving the generalization and robustness of the policies trained on robosuite, facilitating sim2real transfer to the real hardware. For example, see Appendix B of <a class="reference external" href="https://arxiv.org/abs/1802.09564">Zhu et al. RSS’2018</a> and Section V of <a class="reference external" href="https://arxiv.org/abs/1804.10332">Tan et al. RSS’2018</a>.</p>
 </section>
 <section id="gripper-selection">
-<h2>Gripper Selection<a class="headerlink" href="#gripper-selection" title="Link to this heading">#</a></h2>
+<h2>Gripper Selection<a class="headerlink" href="#gripper-selection" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">demo_gripper_selection.py</span></code> script shows you how to select gripper for an environment. This is controlled by <code class="docutils literal notranslate"><span class="pre">gripper_type</span></code> keyword argument. The set of all grippers is defined by the global variable <code class="docutils literal notranslate"><span class="pre">robosuite.ALL_GRIPPERS</span></code>.</p>
-<p><img alt="collection of grippers" src="_images/gripper_collection.png" /></p>
+<p><img alt="collection of grippers" src="images/gripper_collection.png" /></p>
 </section>
 <section id="gripper-interaction-procedural-generation">
-<h2>Gripper Interaction &amp; Procedural Generation<a class="headerlink" href="#gripper-interaction-procedural-generation" title="Link to this heading">#</a></h2>
+<h2>Gripper Interaction &amp; Procedural Generation<a class="headerlink" href="#gripper-interaction-procedural-generation" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">demo_gripper_interaction.py</span></code> script illustrates the process of importing grippers into a scene and making it interact
 with the objects with actuators. It also shows how to procedurally generate a scene with the Modeling APIs of the MJCF utility functions.</p>
 </section>
 <section id="trajectory-replay">
-<h2>Trajectory Replay<a class="headerlink" href="#trajectory-replay" title="Link to this heading">#</a></h2>
+<h2>Trajectory Replay<a class="headerlink" href="#trajectory-replay" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">demo_collect_and_playback_data.py</span></code> shows how to record robot roll-out trajectory data with the <a class="reference internal" href="source/robosuite.wrappers.html"><span class="doc">DataCollectionWrapper</span></a> wrapper and play them back. This wrapper records and stores the environment states in a trajectory to temporary files in <code class="docutils literal notranslate"><span class="pre">.npz</span></code> format (default path: <code class="docutils literal notranslate"><span class="pre">/tmp</span></code>). During playback, it loads the stored states from disk and resets the simulator to these states. Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python demo_collect_and_playback_data.py --environment Door
 </pre></div>
 </div>
 </section>
 <section id="openai-gym-style-apis">
-<h2>OpenAI Gym-style APIs<a class="headerlink" href="#openai-gym-style-apis" title="Link to this heading">#</a></h2>
+<h2>OpenAI Gym-style APIs<a class="headerlink" href="#openai-gym-style-apis" title="Permalink to this headline">#</a></h2>
 <p>This <code class="docutils literal notranslate"><span class="pre">demo_gym_functionality.py</span></code> script shows how to adapt an environment to be compatible with the <a class="reference external" href="https://gym.openai.com/">OpenAI Gym</a>-style APIs. This is useful when using learning pipelines that require supporting these APIs. For instance, this can be used with <a class="reference external" href="https://github.com/openai/baselines">OpenAI Baselines</a> to train agents with RL. We base this script off of some code snippets found in the <a class="reference external" href="https://gym.openai.com/docs/">Getting Started with Gym</a> section of the OpenAI gym documentation. The following snippet was used to demo basic functionality in OpenAI Gym.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gym</span>
 <span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;CartPole-v0&#39;</span><span class="p">)</span>
@@ -489,7 +804,7 @@ with the objects with actuators. It also shows how to procedurally generate a sc
 <p>To adapt the <strong>robosuite</strong> APIs to be compatible with OpenAI Gym’s style, this script demonstrates how this can be easily achieved by using the <a class="reference internal" href="source/robosuite.wrappers.html"><span class="doc">GymWrapper</span></a>.</p>
 </section>
 <section id="teleoperation">
-<h2>Teleoperation<a class="headerlink" href="#teleoperation" title="Link to this heading">#</a></h2>
+<h2>Teleoperation<a class="headerlink" href="#teleoperation" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">demo_device_control.py</span></code> scripts shows how to teleoperate robot with <a class="reference internal" href="modules/devices.html"><span class="doc">control devices</span></a>, such as keyboard or SpaceMouse. The user input device can be set by the <code class="docutils literal notranslate"><span class="pre">--device</span></code> argument, with the following two options:</p>
 <ul>
 <li><p><strong>Keyboard</strong>
@@ -516,7 +831,7 @@ Download and install the <a class="reference external" href="https://www.3dconne
 </li>
 </ul>
 <p>Additionally, <code class="docutils literal notranslate"><span class="pre">--pos_sensitivity</span></code> and <code class="docutils literal notranslate"><span class="pre">--rot_sensitivity</span></code> provide relative gains for increasing / decreasing the user input
-device sensitivity. The <code class="docutils literal notranslate"><span class="pre">--controller</span></code> argument determines the choice of using either inverse kinematics controller (<code class="docutils literal notranslate"><span class="pre">ik</span></code>) or operational space controller (<code class="docutils literal notranslate"><span class="pre">osc</span></code>). The main difference is that user inputs with <code class="docutils literal notranslate"><span class="pre">ik</span></code>’s rotations are always taken relative to eef coordinate frame, whereas user inputs with <code class="docutils literal notranslate"><span class="pre">osc</span></code>’s rotations are taken relative to global frame (i.e., static / camera frame of reference). <code class="docutils literal notranslate"><span class="pre">osc</span></code> also tends to be more computationally efficient since <code class="docutils literal notranslate"><span class="pre">ik</span></code> relies on the backend <a class="reference external" href="https://github.com/kevinzakka/mink">mink</a> IK solver.</p>
+device sensitivity. The <code class="docutils literal notranslate"><span class="pre">--controller</span></code> argument determines the choice of using either inverse kinematics controller (<code class="docutils literal notranslate"><span class="pre">ik</span></code>) or operational space controller (<code class="docutils literal notranslate"><span class="pre">osc</span></code>). The main difference is that user inputs with <code class="docutils literal notranslate"><span class="pre">ik</span></code>’s rotations are always taken relative to eef coordinate frame, whereas user inputs with <code class="docutils literal notranslate"><span class="pre">osc</span></code>’s rotations are taken relative to global frame (i.e., static / camera frame of reference). <code class="docutils literal notranslate"><span class="pre">osc</span></code> also tends to be more computationally efficient since <code class="docutils literal notranslate"><span class="pre">ik</span></code> relies on the backend <a class="reference external" href="https://github.com/StanfordVL/bullet3">pybullet</a> IK solver.</p>
 <p>Furthermore, please choose environment specifics with the following arguments:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--environment</span></code>: Task to perform, e.g., <code class="docutils literal notranslate"><span class="pre">Lift</span></code>, <code class="docutils literal notranslate"><span class="pre">TwoArmPegInHole</span></code>, <code class="docutils literal notranslate"><span class="pre">NutAssembly</span></code>, etc.</p></li>
@@ -526,13 +841,15 @@ checks, such that a <code class="docutils literal notranslate"><span class="pre"
 bimanual robot name, according to the specified configuration (see below), and all other environments will
 only accept a single single-armed robot name</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--config</span></code>: Exclusively applicable and only should be specified for <code class="docutils literal notranslate"><span class="pre">TwoArm...</span></code> environments. Specifies the robot
-configuration desired for the task when two robots are inputted. Options are {<code class="docutils literal notranslate"><span class="pre">parallel</span></code> and <code class="docutils literal notranslate"><span class="pre">opposed</span></code>}</p>
+configuration desired for the task. Options are {<code class="docutils literal notranslate"><span class="pre">bimanual</span></code>, <code class="docutils literal notranslate"><span class="pre">single-arm-parallel</span></code>, and <code class="docutils literal notranslate"><span class="pre">single-arm-opposed</span></code>}</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">parallel</span></code>: Sets up the environment such that two robots are stationed next to
-each other facing the same direction. Expects a 2-tuple of robot names to be specified
+<li><p><code class="docutils literal notranslate"><span class="pre">bimanual</span></code>: Sets up the environment for a single bimanual robot. Expects a single bimanual robot name to
+be specified in the <code class="docutils literal notranslate"><span class="pre">--robots</span></code> argument</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">single-arm-parallel</span></code>: Sets up the environment such that two single-armed robots are stationed next to
+each other facing the same direction. Expects a 2-tuple of single-armed robot names to be specified
 in the <code class="docutils literal notranslate"><span class="pre">--robots</span></code> argument.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">opposed</span></code>: Sets up the environment such that two robots are stationed opposed from
-each other, facing each other from opposite directions. Expects a 2-tuple of robot names
+<li><p><code class="docutils literal notranslate"><span class="pre">single-arm-opposed</span></code>: Sets up the environment such that two single-armed robots are stationed opposed from
+each other, facing each other from opposite directions. Expects a 2-tuple of single-armed robot names
 to be specified in the <code class="docutils literal notranslate"><span class="pre">--robots</span></code> argument.</p></li>
 </ul>
 </li>
@@ -559,181 +876,82 @@ will switch the current arm being controlled every time the gripper input is pre
 <ul class="simple">
 <li><p>For two-arm multi single-arm robot environment:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python demo_device_control.py --environment TwoArmLift --robots Sawyer Sawyer --config parallel --controller osc
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python demo_device_control.py --environment TwoArmLift --robots Sawyer Sawyer --config single-arm-parallel --controller osc
 </pre></div>
 </div>
 <p>In <strong>robosuite</strong>, we use this teleoperation script extensively for debugging environment designs, tuning reward functions, and collecting human demonstration data.</p>
 </section>
 <section id="video-recording">
-<h2>Video Recording<a class="headerlink" href="#video-recording" title="Link to this heading">#</a></h2>
+<h2>Video Recording<a class="headerlink" href="#video-recording" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">demo_video_recording.py</span></code> script shows how to record a video of robot roll-out with the <code class="docutils literal notranslate"><span class="pre">imageio</span></code> library. This script uses offscreen rendering. This is useful for generating qualitative videos of robot policy behaviors. The generated video is in the mp4 format. Example:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>demo_video_recording.py<span class="w"> </span>--environment<span class="w"> </span>Lift<span class="w"> </span>--robots<span class="w"> </span>Panda
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python demo_video_recording.py --environment Lift --robots Panda
 </pre></div>
 </div>
 </section>
 <section id="rendering-options">
-<h2>Rendering Options<a class="headerlink" href="#rendering-options" title="Link to this heading">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">demo_renderers.py</span></code> script shows how to use different renderers with the simulation environments. Our current version supports the default MuJoCo renderer. More information about these renderers can be found in the <a class="reference internal" href="modules/renderers.html"><span class="doc">Renderer</span></a> module. Example:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>demo_renderers.py<span class="w"> </span>--renderer<span class="w"> </span>default
+<h2>Rendering Options<a class="headerlink" href="#rendering-options" title="Permalink to this headline">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">demo_renderers.py</span></code> script shows how to use different renderers with the simulation environments. Our current version supports two rendering options: MuJoCo (default), and NVISII. More information about these renderers can be found in the <a class="reference internal" href="modules/renderers.html"><span class="doc">Renderer</span></a> module. Example:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python demo_renderers.py --renderer nvisii
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">--renderer</span></code> flag can be set to <code class="docutils literal notranslate"><span class="pre">mujoco</span></code> or `default(default)</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">--renderer</span></code> flag can be set to <code class="docutils literal notranslate"><span class="pre">mujoco</span></code> (default), and <code class="docutils literal notranslate"><span class="pre">nvisii</span></code>.</p>
 </section>
-<section id="exporting-to-usd">
-<h2>Exporting to USD<a class="headerlink" href="#exporting-to-usd" title="Link to this heading">#</a></h2>
-<p>Exporting to USD allows users to render <strong>robosuite</strong> trajectories in external renderers such as NVIDIA Omniverse and Blender. In order to export to USD you must install the required dependencies for the exporter.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>usd-core<span class="w"> </span>pillow<span class="w"> </span>tqdm
+<section id="vision-modalities">
+<h2>Vision Modalities<a class="headerlink" href="#vision-modalities" title="Permalink to this headline">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">demo_nvisii_modalities.py</span></code> scripts illustrate how to obtain vision modalities from the NVISII renderer respectively. This script uses the flags specified and renders that particular vision modality. Example:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ python demo_nvisii_modalities.py --vision-modality depth
 </pre></div>
 </div>
-<p>Once the dependencies are installed, the USD exporter can be imported via <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">robosuite.utils.usd</span> <span class="pre">import</span> <span class="pre">exporter</span></code>. The <code class="docutils literal notranslate"><span class="pre">USDExporter</span></code> class in the <code class="docutils literal notranslate"><span class="pre">exporter</span></code> module handles exporting all nessecary assets and USD files associated with a <strong>robosuite</strong> trajectory.</p>
-<p>First, instantiate a <strong>robosuite</strong> environment. Each environment has an MjModel and MjData instance associated with it. These attributes can be retrieved using</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">sim</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">_model</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">sim</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">_data</span>
-</pre></div>
-</div>
-<p>Both <code class="docutils literal notranslate"><span class="pre">model</span></code> and <code class="docutils literal notranslate"><span class="pre">data</span></code> are used by the USD exporter. Once a robosuite environment is defined, create a <code class="docutils literal notranslate"><span class="pre">USDExporter</span></code> object with the following arguments.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">model</span></code> (required): an MjModel instance.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">max_geom</span></code>: Optional integer specifying the maximum number of geoms that
-can be rendered in the same scene. If None this will be chosen
-automatically based on the estimated maximum number of renderable
-geoms in the model.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">output_directory_name</span></code>: name of root directory to store outputted frames
-and assets generated by the USD renderer.
-and assets by the USD renderer.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">light_intensity</span></code>: default intensity of the lights in the external renderer.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">shareable</span></code>: use relative paths to assets instead of absolute paths to allow
-files to be shared across users.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">online</span></code>: set to true if using USD exporter for online rendering. This value
-is set to true when rendering with Isaac Sim. If online is set to true, shareable must be false.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">framerate</span></code>: framerate of the exported scene when rendered</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">camera_names</span></code>: list of fixed cameras defined in the mujoco model to render.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stage</span></code>: predefined stage to add objects in the scene to.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">verbose</span></code>: decides whether to print updates.</p></li>
-</ul>
-<p><code class="docutils literal notranslate"><span class="pre">USDExporter</span></code> is adapted from <a class="reference external" href="https://github.com/google-deepmind/mujoco">MuJoCo</a>. In order to add a new frame in the outputted USD trajectory, call <code class="docutils literal notranslate"><span class="pre">update_scene</span></code> in the <code class="docutils literal notranslate"><span class="pre">exporter</span></code> module.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">exp</span> <span class="o">=</span> <span class="n">exporter</span><span class="o">.</span><span class="n">USDExporter</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">output_directory_name</span><span class="o">=</span><span class="s2">&quot;usd_demo&quot;</span><span class="p">)</span>
-<span class="n">exp</span><span class="o">.</span><span class="n">update_scene</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>This updates all geoms in the scene with their current poses from simulation. To save a USD trajectory, use the <code class="docutils literal notranslate"><span class="pre">save_scene</span></code> method.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">exp</span><span class="o">.</span><span class="n">save_scene</span><span class="p">(</span><span class="n">filetype</span><span class="o">=</span><span class="s2">&quot;usd&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Users are able to save scenes as .usd, .usda, or .usdc files. For a more comprehensive example of the USD renderer, please refer to the <a class="reference external" href="#"><code class="docutils literal notranslate"><span class="pre">demo_usd_export.py</span></code></a> script. This demonstration allows users to teleoperate a robot with a device (i.e. keyboard or spacemouse) and save the collected trajectory as a USD file.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">--vision-modality</span></code> flag can be set to <code class="docutils literal notranslate"><span class="pre">depth</span></code>, <code class="docutils literal notranslate"><span class="pre">normal</span></code>, <code class="docutils literal notranslate"><span class="pre">segmentation</span></code> or <code class="docutils literal notranslate"><span class="pre">rgb</span></code> (default).
+The <code class="docutils literal notranslate"><span class="pre">-segmentation-level</span></code> flag can be set only when <code class="docutils literal notranslate"><span class="pre">--vision-modality</span></code> is set to <code class="docutils literal notranslate"><span class="pre">segmentation</span></code>. It can set to <code class="docutils literal notranslate"><span class="pre">instance</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span></code>, or <code class="docutils literal notranslate"><span class="pre">element</span></code>.</p>
 </section>
 </section>
 
 
-                </article>
+              </div>
               
-
-              
-              
-              
-              
-                <footer class="prev-next-footer d-print-none">
-                  
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="basicusage.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Basic Usage</p>
-      </div>
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="quickstart.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Quick Start</p>
+        </div>
     </a>
-    <a class="right-next"
-       href="modules/overview.html"
-       title="next page">
-      <div class="prev-next-info">
+    <a class='right-next' id="next-link" href="modules/overview.html" title="next page">
+    <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Overview</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
-                </footer>
-              
-            </div>
-            
-            
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-configuration">Environment Configuration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controller-test">Controller Test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-randomization">Domain Randomization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sensor-realism">Sensor Realism</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gripper-selection">Gripper Selection</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gripper-interaction-procedural-generation">Gripper Interaction &amp; Procedural Generation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trajectory-replay">Trajectory Replay</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#openai-gym-style-apis">OpenAI Gym-style APIs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teleoperation">Teleoperation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-recording">Video Recording</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rendering-options">Rendering Options</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-to-usd">Exporting to USD</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By the robosuite core team
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-
-  <p class="copyright">
-    
-      © Copyright Stanford University and The University of Texas at Austin 2022.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
+            </footer>
+        </div>
     </div>
-  </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By the robosuite core team<br/>
+  
+      &copy; Copyright Stanford University and The University of Texas at Austin 2024.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  <footer class="bd-footer">
-  </footer>
+
   </body>
 </html>
