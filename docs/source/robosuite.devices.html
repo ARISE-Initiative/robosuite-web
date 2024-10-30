@@ -1,675 +1,516 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>robosuite.devices package &#8212; robosuite 1.4 documentation</title>
-    
+    <title>robosuite.devices package &#8212; robosuite 1.5 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-
-    <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
-    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../static/css/theme.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=81f6180a" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
-    <script src="../static/jquery.js"></script>
-    <script src="../static/underscore.js"></script>
-    <script src="../static/doctools.js"></script>
-    <script src="../static/scripts/sphinx-book-theme.js"></script>
-    <script src="../static/js/custom.js"></script>
+    <script src="../_static/documentation_options.js?v=9f1c6d22"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'source/robosuite.devices';</script>
+    <script src="../_static/js/custom.js?v=4441fbbd"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="robosuite.environments package" href="robosuite.environments.html" />
     <link rel="prev" title="robosuite.controllers.interpolators package" href="robosuite.controllers.interpolators.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="1.5" />
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
     
-    <div class="container-fluid" id="banner"></div>
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
 
-    
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../static/robosuite_color.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">robosuite 1.4 documentation</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Introduction
- </span>
-</p>
+    
+    
+    <img src="../_static/robosuite_color.png" class="logo__image only-light" alt="robosuite 1.5 documentation - Home"/>
+    <img src="../_static/robosuite_color.png" class="logo__image only-dark pst-js-only" alt="robosuite 1.5 documentation - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../overview.html">
-   Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../installation.html">
-   Installation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../quickstart.html">
-   Quick Start
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../demos.html">
-   Demo Showcases
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basicusage.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demos.html">Demo Showcases</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Modules
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Modules</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../modules/overview.html">
-   Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../modules/robots.html">
-   Robots
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../modules/controllers.html">
-   Controllers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../modules/objects.html">
-   Objects
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../modules/environments.html">
-   Environments
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../modules/sensors.html">
-   Sensors
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../modules/devices.html">
-   I/O Devices
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../modules/renderers.html">
-   Renderers
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/robots.html">Robots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/devices.html">I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/renderers.html">Renderers</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Simulation API
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../simulation/robot.html">
-   Robot
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../simulation/environment.html">
-   Environment
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../simulation/device.html">
-   Device
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../simulation/controller.html">
-   Controller
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/add_controller.html">Adding Third Party Controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/add_environment.html">Building Your Own Environments</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Modeling API
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Simulation API</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../modeling/mujoco_model.html">
-   Mujoco Model
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../modeling/robot_model.html">
-   Robot Model
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../modeling/object_model.html">
-   Object Model
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../modeling/arena.html">
-   Arena
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../modeling/task.html">
-   Task
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/robot.html">Robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/device.html">Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation/controller.html">Controller</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Source API
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Modeling API</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../modeling/mujoco_model.html">Mujoco Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/task.html">Task</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Source API</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="robosuite.html">
-   robosuite package
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="robosuite.controllers.html">
-     robosuite.controllers package
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-    <label for="toctree-checkbox-2">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="robosuite.controllers.interpolators.html">
-       robosuite.controllers.interpolators package
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     robosuite.devices package
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="robosuite.environments.html">
-     robosuite.environments package
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label for="toctree-checkbox-3">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="robosuite.environments.manipulation.html">
-       robosuite.environments.manipulation package
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="robosuite.models.html">
-     robosuite.models package
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-    <label for="toctree-checkbox-4">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="robosuite.models.arenas.html">
-       robosuite.models.arenas package
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="robosuite.models.grippers.html">
-       robosuite.models.grippers package
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="robosuite.models.mounts.html">
-       robosuite.models.mounts package
-      </a>
-     </li>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="robosuite.models.objects.html">
-       robosuite.models.objects package
-      </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-      <label for="toctree-checkbox-5">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="robosuite.models.objects.composite.html">
-         robosuite.models.objects.composite package
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="robosuite.models.objects.composite_body.html">
-         robosuite.models.objects.composite_body package
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="robosuite.models.objects.primitive.html">
-         robosuite.models.objects.primitive package
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="robosuite.models.robots.html">
-       robosuite.models.robots package
-      </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-      <label for="toctree-checkbox-6">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="robosuite.models.robots.manipulators.html">
-         robosuite.models.robots.manipulators package
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="robosuite.models.tasks.html">
-       robosuite.models.tasks package
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="robosuite.renderers.html">
-     robosuite.renderers package
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-    <label for="toctree-checkbox-7">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="robosuite.renderers.context.html">
-       robosuite.renderers.context package
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="robosuite.renderers.nvisii.html">
-       robosuite.renderers.nvisii package
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="robosuite.robots.html">
-     robosuite.robots package
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="robosuite.utils.html">
-     robosuite.utils package
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="robosuite.wrappers.html">
-     robosuite.wrappers package
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="robosuite.html">robosuite package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="robosuite.controllers.html">robosuite.controllers package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.controllers.interpolators.html">robosuite.controllers.interpolators package</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Algorithms
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../algorithms/benchmarking.html">
-   Benchmarking
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../algorithms/demonstrations.html">
-   Human Demonstrations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../algorithms/sim2real.html">
-   Sim-to-Real Transfer
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../algorithms/roboturk.html">
-   RoboTurk Datasets
-  </a>
- </li>
+</details></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">robosuite.devices package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="robosuite.environments.html">robosuite.environments package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.environments.manipulation.html">robosuite.environments.manipulation package</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Miscellaneous
- </span>
-</p>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="robosuite.models.html">robosuite.models package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.models.arenas.html">robosuite.models.arenas package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.models.grippers.html">robosuite.models.grippers package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.models.mounts.html">robosuite.models.mounts package</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="robosuite.models.objects.html">robosuite.models.objects package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.models.objects.composite.html">robosuite.models.objects.composite package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.models.objects.composite_body.html">robosuite.models.objects.composite_body package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.models.objects.primitive.html">robosuite.models.objects.primitive package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="robosuite.models.robots.html">robosuite.models.robots package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="robosuite.models.robots.manipulators.html">robosuite.models.robots.manipulators package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="robosuite.models.tasks.html">robosuite.models.tasks package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="robosuite.renderers.html">robosuite.renderers package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.robots.html">robosuite.robots package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.utils.html">robosuite.utils package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robosuite.wrappers.html">robosuite.wrappers package</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../references.html">
-   Projects using robosuite
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../acknowledgement.html">
-   Acknowledgements
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/benchmarking.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/demonstrations.html">Human Demonstrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/sim2real.html">Sim-to-Real Transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/roboturk.html">RoboTurk Datasets</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Projects using robosuite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgements</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/source/robosuite.devices.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
 
-          
 
 
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../sources/source/robosuite.devices.rst.txt"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.rst</span>
-</a>
 
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button>
 
-      </li>
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
       
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
+    </div>
   
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#submodules">
-   Submodules
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-robosuite.devices.device">
-   robosuite.devices.device module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-robosuite.devices.keyboard">
-   robosuite.devices.keyboard module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-robosuite.devices.spacemouse">
-   robosuite.devices.spacemouse module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-robosuite.devices">
-   Module contents
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>robosuite.devices package</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#submodules">
-   Submodules
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-robosuite.devices.device">
-   robosuite.devices.device module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-robosuite.devices.keyboard">
-   robosuite.devices.keyboard module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-robosuite.devices.spacemouse">
-   robosuite.devices.spacemouse module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-robosuite.devices">
-   Module contents
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>robosuite.devices package</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-robosuite.devices.device">robosuite.devices.device module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.device.Device"><code class="docutils literal notranslate"><span class="pre">Device</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.device.Device.active_arm"><code class="docutils literal notranslate"><span class="pre">Device.active_arm</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.device.Device.active_arm_index"><code class="docutils literal notranslate"><span class="pre">Device.active_arm_index</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.device.Device.base_mode"><code class="docutils literal notranslate"><span class="pre">Device.base_mode</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.device.Device.get_arm_action"><code class="docutils literal notranslate"><span class="pre">Device.get_arm_action()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.device.Device.get_controller_state"><code class="docutils literal notranslate"><span class="pre">Device.get_controller_state()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.device.Device.grasp"><code class="docutils literal notranslate"><span class="pre">Device.grasp</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.device.Device.input2action"><code class="docutils literal notranslate"><span class="pre">Device.input2action()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.device.Device.start_control"><code class="docutils literal notranslate"><span class="pre">Device.start_control()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-robosuite.devices.keyboard">robosuite.devices.keyboard module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.keyboard.Keyboard"><code class="docutils literal notranslate"><span class="pre">Keyboard</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.keyboard.Keyboard.get_controller_state"><code class="docutils literal notranslate"><span class="pre">Keyboard.get_controller_state()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.keyboard.Keyboard.on_press"><code class="docutils literal notranslate"><span class="pre">Keyboard.on_press()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.keyboard.Keyboard.on_release"><code class="docutils literal notranslate"><span class="pre">Keyboard.on_release()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.keyboard.Keyboard.start_control"><code class="docutils literal notranslate"><span class="pre">Keyboard.start_control()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-robosuite.devices.spacemouse">robosuite.devices.spacemouse module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.AxisSpec"><code class="docutils literal notranslate"><span class="pre">AxisSpec</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.AxisSpec.byte1"><code class="docutils literal notranslate"><span class="pre">AxisSpec.byte1</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.AxisSpec.byte2"><code class="docutils literal notranslate"><span class="pre">AxisSpec.byte2</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.AxisSpec.channel"><code class="docutils literal notranslate"><span class="pre">AxisSpec.channel</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.AxisSpec.scale"><code class="docutils literal notranslate"><span class="pre">AxisSpec.scale</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.SpaceMouse"><code class="docutils literal notranslate"><span class="pre">SpaceMouse</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.SpaceMouse.control"><code class="docutils literal notranslate"><span class="pre">SpaceMouse.control</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.SpaceMouse.control_gripper"><code class="docutils literal notranslate"><span class="pre">SpaceMouse.control_gripper</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.SpaceMouse.get_controller_state"><code class="docutils literal notranslate"><span class="pre">SpaceMouse.get_controller_state()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.SpaceMouse.on_press"><code class="docutils literal notranslate"><span class="pre">SpaceMouse.on_press()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.SpaceMouse.on_release"><code class="docutils literal notranslate"><span class="pre">SpaceMouse.on_release()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.SpaceMouse.run"><code class="docutils literal notranslate"><span class="pre">SpaceMouse.run()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.SpaceMouse.start_control"><code class="docutils literal notranslate"><span class="pre">SpaceMouse.start_control()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.convert"><code class="docutils literal notranslate"><span class="pre">convert()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.scale_to_control"><code class="docutils literal notranslate"><span class="pre">scale_to_control()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.to_int16"><code class="docutils literal notranslate"><span class="pre">to_int16()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-robosuite.devices">Module contents</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section id="robosuite-devices-package">
-<h1>robosuite.devices package<a class="headerlink" href="#robosuite-devices-package" title="Permalink to this headline">#</a></h1>
+<h1>robosuite.devices package<a class="headerlink" href="#robosuite-devices-package" title="Link to this heading">#</a></h1>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
 </section>
 <section id="module-robosuite.devices.device">
-<span id="robosuite-devices-device-module"></span><h2>robosuite.devices.device module<a class="headerlink" href="#module-robosuite.devices.device" title="Permalink to this headline">#</a></h2>
+<span id="robosuite-devices-device-module"></span><h2>robosuite.devices.device module<a class="headerlink" href="#module-robosuite.devices.device" title="Link to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="robosuite.devices.device.Device">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.devices.device.</span></span><span class="sig-name descname"><span class="pre">Device</span></span><a class="headerlink" href="#robosuite.devices.device.Device" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robosuite.devices.device.</span></span><span class="sig-name descname"><span class="pre">Device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.device.Device" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Base class for all robot controllers.
-Defines basic interface for all controllers to adhere to.</p>
+Defines basic interface for all controllers to adhere to.
+Also contains shared logic for managing multiple and/or multiarmed robots.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.devices.device.Device.active_arm">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">active_arm</span></span><a class="headerlink" href="#robosuite.devices.device.Device.active_arm" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.devices.device.Device.active_arm_index">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">active_arm_index</span></span><a class="headerlink" href="#robosuite.devices.device.Device.active_arm_index" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.devices.device.Device.base_mode">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">base_mode</span></span><a class="headerlink" href="#robosuite.devices.device.Device.base_mode" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.devices.device.Device.get_arm_action">
+<span class="sig-name descname"><span class="pre">get_arm_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_delta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_update_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'target'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.device.Device.get_arm_action" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.devices.device.Device.get_controller_state">
-<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">get_controller_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.device.Device.get_controller_state" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_controller_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="headerlink" href="#robosuite.devices.device.Device.get_controller_state" title="Link to this definition">#</a></dt>
 <dd><p>Returns the current state of the device, a dictionary of pos, orn, grasp, and reset.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="robosuite.devices.device.Device.grasp">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">grasp</span></span><a class="headerlink" href="#robosuite.devices.device.Device.grasp" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.devices.device.Device.input2action">
+<span class="sig-name descname"><span class="pre">input2action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mirror_actions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#robosuite.devices.device.Device.input2action" title="Link to this definition">#</a></dt>
+<dd><p>Converts an input from an active device into a valid action sequence that can be fed into an env.step() call</p>
+<p>If a reset is triggered from the device, immediately returns None. Else, returns the appropriate action</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mirror_actions</strong> (<em>bool</em>) – actions corresponding to viewing robot from behind.
+first axis: left/right. second axis: back/forward. third axis: down/up.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Dictionary of actions to be fed into env.step()</dt><dd><p>if reset is triggered, returns None</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[Dict]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.devices.device.Device.start_control">
-<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">start_control</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.device.Device.start_control" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start_control</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.device.Device.start_control" title="Link to this definition">#</a></dt>
 <dd><p>Method that should be called externally before controller can
 start receiving commands.</p>
 </dd></dl>
@@ -678,20 +519,28 @@ start receiving commands.</p>
 
 </section>
 <section id="module-robosuite.devices.keyboard">
-<span id="robosuite-devices-keyboard-module"></span><h2>robosuite.devices.keyboard module<a class="headerlink" href="#module-robosuite.devices.keyboard" title="Permalink to this headline">#</a></h2>
+<span id="robosuite-devices-keyboard-module"></span><h2>robosuite.devices.keyboard module<a class="headerlink" href="#module-robosuite.devices.keyboard" title="Link to this heading">#</a></h2>
 <p>Driver class for Keyboard controller.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="robosuite.devices.keyboard.Keyboard">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.devices.keyboard.</span></span><span class="sig-name descname"><span class="pre">Keyboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos_sensitivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_sensitivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.keyboard.Keyboard" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#robosuite.devices.device.Device" title="robosuite.devices.device.Device"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.devices.device.Device</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robosuite.devices.keyboard.</span></span><span class="sig-name descname"><span class="pre">Keyboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_sensitivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_sensitivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.keyboard.Keyboard" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.devices.device.Device" title="robosuite.devices.device.Device"><code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code></a></p>
 <p>A minimalistic driver class for a Keyboard.
-:param pos_sensitivity: Magnitude of input position command scaling
-:type pos_sensitivity: float
-:param rot_sensitivity: Magnitude of scale input rotation commands scaling
-:type rot_sensitivity: float</p>
+:param env: The environment which contains the robot(s) to control</p>
+<blockquote>
+<div><p>using this device.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pos_sensitivity</strong> (<em>float</em>) – Magnitude of input position command scaling</p></li>
+<li><p><strong>rot_sensitivity</strong> (<em>float</em>) – Magnitude of scale input rotation commands scaling</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.devices.keyboard.Keyboard.get_controller_state">
-<span class="sig-name descname"><span class="pre">get_controller_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.keyboard.Keyboard.get_controller_state" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_controller_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.keyboard.Keyboard.get_controller_state" title="Link to this definition">#</a></dt>
 <dd><p>Grabs the current state of the keyboard.
 :returns: A dictionary containing dpos, orn, unmodified orn, grasp, and reset
 :rtype: dict</p>
@@ -699,7 +548,7 @@ start receiving commands.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.devices.keyboard.Keyboard.on_press">
-<span class="sig-name descname"><span class="pre">on_press</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.keyboard.Keyboard.on_press" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">on_press</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.keyboard.Keyboard.on_press" title="Link to this definition">#</a></dt>
 <dd><p>Key handler for key presses.
 :param key: key that was pressed
 :type key: str</p>
@@ -707,7 +556,7 @@ start receiving commands.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.devices.keyboard.Keyboard.on_release">
-<span class="sig-name descname"><span class="pre">on_release</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.keyboard.Keyboard.on_release" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">on_release</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.keyboard.Keyboard.on_release" title="Link to this definition">#</a></dt>
 <dd><p>Key handler for key releases.
 :param key: key that was pressed
 :type key: str</p>
@@ -715,7 +564,7 @@ start receiving commands.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.devices.keyboard.Keyboard.start_control">
-<span class="sig-name descname"><span class="pre">start_control</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.keyboard.Keyboard.start_control" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">start_control</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.keyboard.Keyboard.start_control" title="Link to this definition">#</a></dt>
 <dd><p>Method that should be called externally before controller can
 start receiving commands.</p>
 </dd></dl>
@@ -724,7 +573,7 @@ start receiving commands.</p>
 
 </section>
 <section id="module-robosuite.devices.spacemouse">
-<span id="robosuite-devices-spacemouse-module"></span><h2>robosuite.devices.spacemouse module<a class="headerlink" href="#module-robosuite.devices.spacemouse" title="Permalink to this headline">#</a></h2>
+<span id="robosuite-devices-spacemouse-module"></span><h2>robosuite.devices.spacemouse module<a class="headerlink" href="#module-robosuite.devices.spacemouse" title="Link to this heading">#</a></h2>
 <p>Driver class for SpaceMouse controller.</p>
 <p>This class provides a driver support to SpaceMouse on macOS.
 In particular, we assume you are using a SpaceMouse Wireless by default.</p>
@@ -743,29 +592,29 @@ vendor id and product id that correspond to the device.</p></li>
 </dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="robosuite.devices.spacemouse.AxisSpec">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.devices.spacemouse.</span></span><span class="sig-name descname"><span class="pre">AxisSpec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">byte1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">byte2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.AxisSpec" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robosuite.devices.spacemouse.</span></span><span class="sig-name descname"><span class="pre">AxisSpec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">byte1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">byte2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.AxisSpec" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="robosuite.devices.spacemouse.AxisSpec.byte1">
-<span class="sig-name descname"><span class="pre">byte1</span></span><a class="headerlink" href="#robosuite.devices.spacemouse.AxisSpec.byte1" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">byte1</span></span><a class="headerlink" href="#robosuite.devices.spacemouse.AxisSpec.byte1" title="Link to this definition">#</a></dt>
 <dd><p>Alias for field number 1</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="robosuite.devices.spacemouse.AxisSpec.byte2">
-<span class="sig-name descname"><span class="pre">byte2</span></span><a class="headerlink" href="#robosuite.devices.spacemouse.AxisSpec.byte2" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">byte2</span></span><a class="headerlink" href="#robosuite.devices.spacemouse.AxisSpec.byte2" title="Link to this definition">#</a></dt>
 <dd><p>Alias for field number 2</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="robosuite.devices.spacemouse.AxisSpec.channel">
-<span class="sig-name descname"><span class="pre">channel</span></span><a class="headerlink" href="#robosuite.devices.spacemouse.AxisSpec.channel" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">channel</span></span><a class="headerlink" href="#robosuite.devices.spacemouse.AxisSpec.channel" title="Link to this definition">#</a></dt>
 <dd><p>Alias for field number 0</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="robosuite.devices.spacemouse.AxisSpec.scale">
-<span class="sig-name descname"><span class="pre">scale</span></span><a class="headerlink" href="#robosuite.devices.spacemouse.AxisSpec.scale" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">scale</span></span><a class="headerlink" href="#robosuite.devices.spacemouse.AxisSpec.scale" title="Link to this definition">#</a></dt>
 <dd><p>Alias for field number 3</p>
 </dd></dl>
 
@@ -773,17 +622,17 @@ vendor id and product id that correspond to the device.</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="robosuite.devices.spacemouse.SpaceMouse">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">robosuite.devices.spacemouse.</span></span><span class="sig-name descname"><span class="pre">SpaceMouse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vendor_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9583</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50735</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_sensitivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_sensitivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#robosuite.devices.device.Device" title="robosuite.devices.device.Device"><code class="xref py py-class docutils literal notranslate"><span class="pre">robosuite.devices.device.Device</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robosuite.devices.spacemouse.</span></span><span class="sig-name descname"><span class="pre">SpaceMouse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vendor_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9583</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50734</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_sensitivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_sensitivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#robosuite.devices.device.Device" title="robosuite.devices.device.Device"><code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code></a></p>
 <p>A minimalistic driver class for SpaceMouse with HID library.</p>
 <p>Note: Use hid.enumerate() to view all USB human interface devices (HID).
 Make sure SpaceMouse is detected before running the script.
 You can look up its vendor/product id from this method.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>vendor_id</strong> (<em>int</em>) – HID device vendor id</p></li>
-<li><p><strong>product_id</strong> (<em>int</em>) – HID device product id</p></li>
+<li><p><strong>env</strong> (<a class="reference internal" href="robosuite.environments.html#robosuite.environments.robot_env.RobotEnv" title="robosuite.environments.robot_env.RobotEnv"><em>RobotEnv</em></a>) – The environment which contains the robot(s) to control
+using this device.</p></li>
 <li><p><strong>pos_sensitivity</strong> (<em>float</em>) – Magnitude of input position command scaling</p></li>
 <li><p><strong>rot_sensitivity</strong> (<em>float</em>) – Magnitude of scale input rotation commands scaling</p></li>
 </ul>
@@ -791,13 +640,13 @@ You can look up its vendor/product id from this method.</p>
 </dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.devices.spacemouse.SpaceMouse.control">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">control</span></span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse.control" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">control</span></span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse.control" title="Link to this definition">#</a></dt>
 <dd><p>Grabs current pose of Spacemouse</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>6-DoF control value</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>np.array</p>
 </dd>
 </dl>
@@ -805,13 +654,13 @@ You can look up its vendor/product id from this method.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="robosuite.devices.spacemouse.SpaceMouse.control_gripper">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">control_gripper</span></span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse.control_gripper" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">control_gripper</span></span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse.control_gripper" title="Link to this definition">#</a></dt>
 <dd><p>Maps internal states into gripper commands.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Whether we’re using single click and hold or not</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>float</p>
 </dd>
 </dl>
@@ -819,27 +668,43 @@ You can look up its vendor/product id from this method.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.devices.spacemouse.SpaceMouse.get_controller_state">
-<span class="sig-name descname"><span class="pre">get_controller_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse.get_controller_state" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_controller_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse.get_controller_state" title="Link to this definition">#</a></dt>
 <dd><p>Grabs the current state of the 3D mouse.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A dictionary containing dpos, orn, unmodified orn, grasp, and reset</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="robosuite.devices.spacemouse.SpaceMouse.on_press">
+<span class="sig-name descname"><span class="pre">on_press</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse.on_press" title="Link to this definition">#</a></dt>
+<dd><p>Key handler for key presses.
+:param key: key that was pressed
+:type key: str</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robosuite.devices.spacemouse.SpaceMouse.on_release">
+<span class="sig-name descname"><span class="pre">on_release</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse.on_release" title="Link to this definition">#</a></dt>
+<dd><p>Key handler for key releases.
+:param key: key that was pressed
+:type key: str</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="robosuite.devices.spacemouse.SpaceMouse.run">
-<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse.run" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse.run" title="Link to this definition">#</a></dt>
 <dd><p>Listener method that keeps pulling new messages.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="robosuite.devices.spacemouse.SpaceMouse.start_control">
-<span class="sig-name descname"><span class="pre">start_control</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse.start_control" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">start_control</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.SpaceMouse.start_control" title="Link to this definition">#</a></dt>
 <dd><p>Method that should be called externally before controller can
 start receiving commands.</p>
 </dd></dl>
@@ -848,19 +713,19 @@ start receiving commands.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="robosuite.devices.spacemouse.convert">
-<span class="sig-prename descclassname"><span class="pre">robosuite.devices.spacemouse.</span></span><span class="sig-name descname"><span class="pre">convert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.convert" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">robosuite.devices.spacemouse.</span></span><span class="sig-name descname"><span class="pre">convert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.convert" title="Link to this definition">#</a></dt>
 <dd><p>Converts SpaceMouse message to commands.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>b1</strong> (<em>int</em>) – 8-bit byte</p></li>
 <li><p><strong>b2</strong> (<em>int</em>) – 8-bit byte</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Scaled value from Spacemouse message</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -868,10 +733,10 @@ start receiving commands.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="robosuite.devices.spacemouse.scale_to_control">
-<span class="sig-prename descclassname"><span class="pre">robosuite.devices.spacemouse.</span></span><span class="sig-name descname"><span class="pre">scale_to_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">350.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_v</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_v</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.scale_to_control" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">robosuite.devices.spacemouse.</span></span><span class="sig-name descname"><span class="pre">scale_to_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">350.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_v</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_v</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.scale_to_control" title="Link to this definition">#</a></dt>
 <dd><p>Normalize raw HID readings to target range.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<em>int</em>) – Raw reading from HID</p></li>
 <li><p><strong>axis_scale</strong> (<em>float</em>) – (Inverted) scaling factor for mapping raw input value</p></li>
@@ -879,10 +744,10 @@ start receiving commands.</p>
 <li><p><strong>max_v</strong> (<em>float</em>) – Maximum limit after scaling</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Clipped, scaled input from HID</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -890,19 +755,19 @@ start receiving commands.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="robosuite.devices.spacemouse.to_int16">
-<span class="sig-prename descclassname"><span class="pre">robosuite.devices.spacemouse.</span></span><span class="sig-name descname"><span class="pre">to_int16</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.to_int16" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">robosuite.devices.spacemouse.</span></span><span class="sig-name descname"><span class="pre">to_int16</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.devices.spacemouse.to_int16" title="Link to this definition">#</a></dt>
 <dd><p>Convert two 8 bit bytes to a signed 16 bit integer.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>y1</strong> (<em>int</em>) – 8-bit byte</p></li>
 <li><p><strong>y2</strong> (<em>int</em>) – 8-bit byte</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>16-bit integer</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -910,55 +775,157 @@ start receiving commands.</p>
 
 </section>
 <section id="module-robosuite.devices">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robosuite.devices" title="Permalink to this headline">#</a></h2>
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robosuite.devices" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="robosuite.controllers.interpolators.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">robosuite.controllers.interpolators package</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="robosuite.controllers.interpolators.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">robosuite.controllers.interpolators package</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="robosuite.environments.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="robosuite.environments.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">robosuite.environments package</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-robosuite.devices.device">robosuite.devices.device module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.device.Device"><code class="docutils literal notranslate"><span class="pre">Device</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.device.Device.active_arm"><code class="docutils literal notranslate"><span class="pre">Device.active_arm</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.device.Device.active_arm_index"><code class="docutils literal notranslate"><span class="pre">Device.active_arm_index</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.device.Device.base_mode"><code class="docutils literal notranslate"><span class="pre">Device.base_mode</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.device.Device.get_arm_action"><code class="docutils literal notranslate"><span class="pre">Device.get_arm_action()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.device.Device.get_controller_state"><code class="docutils literal notranslate"><span class="pre">Device.get_controller_state()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.device.Device.grasp"><code class="docutils literal notranslate"><span class="pre">Device.grasp</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.device.Device.input2action"><code class="docutils literal notranslate"><span class="pre">Device.input2action()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.device.Device.start_control"><code class="docutils literal notranslate"><span class="pre">Device.start_control()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-robosuite.devices.keyboard">robosuite.devices.keyboard module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.keyboard.Keyboard"><code class="docutils literal notranslate"><span class="pre">Keyboard</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.keyboard.Keyboard.get_controller_state"><code class="docutils literal notranslate"><span class="pre">Keyboard.get_controller_state()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.keyboard.Keyboard.on_press"><code class="docutils literal notranslate"><span class="pre">Keyboard.on_press()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.keyboard.Keyboard.on_release"><code class="docutils literal notranslate"><span class="pre">Keyboard.on_release()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.keyboard.Keyboard.start_control"><code class="docutils literal notranslate"><span class="pre">Keyboard.start_control()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-robosuite.devices.spacemouse">robosuite.devices.spacemouse module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.AxisSpec"><code class="docutils literal notranslate"><span class="pre">AxisSpec</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.AxisSpec.byte1"><code class="docutils literal notranslate"><span class="pre">AxisSpec.byte1</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.AxisSpec.byte2"><code class="docutils literal notranslate"><span class="pre">AxisSpec.byte2</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.AxisSpec.channel"><code class="docutils literal notranslate"><span class="pre">AxisSpec.channel</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.AxisSpec.scale"><code class="docutils literal notranslate"><span class="pre">AxisSpec.scale</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.SpaceMouse"><code class="docutils literal notranslate"><span class="pre">SpaceMouse</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.SpaceMouse.control"><code class="docutils literal notranslate"><span class="pre">SpaceMouse.control</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.SpaceMouse.control_gripper"><code class="docutils literal notranslate"><span class="pre">SpaceMouse.control_gripper</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.SpaceMouse.get_controller_state"><code class="docutils literal notranslate"><span class="pre">SpaceMouse.get_controller_state()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.SpaceMouse.on_press"><code class="docutils literal notranslate"><span class="pre">SpaceMouse.on_press()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.SpaceMouse.on_release"><code class="docutils literal notranslate"><span class="pre">SpaceMouse.on_release()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.SpaceMouse.run"><code class="docutils literal notranslate"><span class="pre">SpaceMouse.run()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.SpaceMouse.start_control"><code class="docutils literal notranslate"><span class="pre">SpaceMouse.start_control()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.convert"><code class="docutils literal notranslate"><span class="pre">convert()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.scale_to_control"><code class="docutils literal notranslate"><span class="pre">scale_to_control()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.devices.spacemouse.to_int16"><code class="docutils literal notranslate"><span class="pre">to_int16()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-robosuite.devices">Module contents</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By the robosuite core team<br/>
-  
-      &copy; Copyright Stanford University and The University of Texas at Austin 2024.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By the robosuite core team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright Stanford University and The University of Texas at Austin 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
