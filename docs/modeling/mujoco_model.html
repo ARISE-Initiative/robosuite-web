@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Mujoco Model &#8212; robosuite 1.5 documentation</title>
+    <title>MuJoCo Model &#8212; robosuite 1.5 documentation</title>
   
   
   
@@ -184,7 +184,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Modeling API</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Mujoco Model</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">MuJoCo Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="robot_model.html">Robot Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="object_model.html">Object Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arena.html">Arena</a></li>
@@ -370,7 +370,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Mujoco Model</h1>
+    <h1>MuJoCo Model</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -380,7 +380,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#base-mujoco-model">Base Mujoco Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#base-mujoco-model">Base MuJoCo Model</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.models.base.MujocoModel"><code class="docutils literal notranslate"><span class="pre">MujocoModel</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.models.base.MujocoModel.correct_naming"><code class="docutils literal notranslate"><span class="pre">MujocoModel.correct_naming()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.models.base.MujocoModel.set_sites_visibility"><code class="docutils literal notranslate"><span class="pre">MujocoModel.set_sites_visibility()</span></code></a></li>
@@ -405,7 +405,7 @@
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xml-mujoco-model">XML Mujoco Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xml-mujoco-model">XML MuJoCo Model</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.models.base.MujocoXMLModel"><code class="docutils literal notranslate"><span class="pre">MujocoXMLModel</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.models.base.MujocoXMLModel.base_offset"><code class="docutils literal notranslate"><span class="pre">MujocoXMLModel.base_offset</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.models.base.MujocoXMLModel.contact_geom_rgba"><code class="docutils literal notranslate"><span class="pre">MujocoXMLModel.contact_geom_rgba</span></code></a></li>
@@ -425,10 +425,10 @@
                 <article class="bd-article">
                   
   <section id="mujoco-model">
-<h1>Mujoco Model<a class="headerlink" href="#mujoco-model" title="Link to this heading">#</a></h1>
+<h1>MuJoCo Model<a class="headerlink" href="#mujoco-model" title="Link to this heading">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">MujocoModel</span></code> class is the foundational class from which all other model classes extend from in robosuite. This class represents a standardized API for all models used in simulation and is the core modeling component that other model classes build upon. The <code class="docutils literal notranslate"><span class="pre">MujocoXMLModel</span></code> is an extension of this class that represents models based on an XML file.</p>
 <section id="base-mujoco-model">
-<h2>Base Mujoco Model<a class="headerlink" href="#base-mujoco-model" title="Link to this heading">#</a></h2>
+<h2>Base MuJoCo Model<a class="headerlink" href="#base-mujoco-model" title="Link to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="robosuite.models.base.MujocoModel">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robosuite.models.base.</span></span><span class="sig-name descname"><span class="pre">MujocoModel</span></span><a class="headerlink" href="#robosuite.models.base.MujocoModel" title="Link to this definition">#</a></dt>
@@ -684,7 +684,7 @@ Must be defined by subclass.</p>
 
 </section>
 <section id="xml-mujoco-model">
-<h2>XML Mujoco Model<a class="headerlink" href="#xml-mujoco-model" title="Link to this heading">#</a></h2>
+<h2>XML MuJoCo Model<a class="headerlink" href="#xml-mujoco-model" title="Link to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="robosuite.models.base.MujocoXMLModel">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robosuite.models.base.</span></span><span class="sig-name descname"><span class="pre">MujocoXMLModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#robosuite.models.base.MujocoXMLModel" title="Link to this definition">#</a></dt>
@@ -776,7 +776,7 @@ Must be defined by subclass.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#base-mujoco-model">Base Mujoco Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#base-mujoco-model">Base MuJoCo Model</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.models.base.MujocoModel"><code class="docutils literal notranslate"><span class="pre">MujocoModel</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.models.base.MujocoModel.correct_naming"><code class="docutils literal notranslate"><span class="pre">MujocoModel.correct_naming()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.models.base.MujocoModel.set_sites_visibility"><code class="docutils literal notranslate"><span class="pre">MujocoModel.set_sites_visibility()</span></code></a></li>
@@ -801,7 +801,7 @@ Must be defined by subclass.</p>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xml-mujoco-model">XML Mujoco Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xml-mujoco-model">XML MuJoCo Model</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.models.base.MujocoXMLModel"><code class="docutils literal notranslate"><span class="pre">MujocoXMLModel</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.models.base.MujocoXMLModel.base_offset"><code class="docutils literal notranslate"><span class="pre">MujocoXMLModel.base_offset</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robosuite.models.base.MujocoXMLModel.contact_geom_rgba"><code class="docutils literal notranslate"><span class="pre">MujocoXMLModel.contact_geom_rgba</span></code></a></li>
@@ -833,7 +833,7 @@ By the robosuite core team
 
   <p class="copyright">
     
-      © Copyright Stanford University and The University of Texas at Austin 2022.
+      © Copyright Stanford University and The University of Texas at Austin 2024.
       <br/>
     
   </p>
