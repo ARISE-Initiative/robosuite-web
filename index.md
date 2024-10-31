@@ -10,7 +10,7 @@ videoId: "robosuite-v1.5-video.mp4"
 ![pull figure]({{ 'assets/images/gallery_logo.jpg' | absolute_url }})
 
 **robosuite** is a simulation framework powered by the [MuJoCo](http://mujoco.org/) physics engine for robot learning. It also offers a suite of benchmark environments for reproducible research.
-The current release (v1.5) features diverse robot embodiments (including humanoids), custom robot composition, composite controllers (including whole body controllers), more teleoperation devices, photo-realistic rendering. 
+The current release (v1.5) features diverse robot embodiments (including humanoids), custom robot composition, composite controllers (including whole body controllers), more teleoperation devices and photo-realistic rendering. 
 This project is part of the broader [Advancing Robot Intelligence through Simulated Environments (ARISE) Initiative](https://github.com/ARISE-Initiative), with the aim of lowering the barriers of entry for cutting-edge research at the intersection of AI and Robotics.
 
 # New Releases
