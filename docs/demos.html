@@ -42,7 +42,7 @@
 <link rel="preload" as="script" href="static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
     <script src="static/documentation_options.js?v=9f1c6d22"></script>
-    <script src="static/doctools.js?v=9a2dae69"></script>
+    <script src="static/doctools.js?v=9bcbadda"></script>
     <script src="static/sphinx_highlight.js?v=dc90522c"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
@@ -184,7 +184,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Modeling API</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="modeling/mujoco_model.html">MuJoCo Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeling/mujoco_model.html">Mujoco Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modeling/robot_model.html">Robot Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modeling/object_model.html">Object Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modeling/arena.html">Arena</a></li>
@@ -406,7 +406,9 @@
   <section id="demo-showcases">
 <h1>Demo Showcases<a class="headerlink" href="#demo-showcases" title="Link to this heading">#</a></h1>
 <p>We provide a collection of <a class="reference external" href="https://github.com/ARISE-Initiative/robosuite/tree/master/robosuite/demos">demo scripts</a> to showcase the functionalities in <strong>robosuite</strong>.</p>
-<section id="environment-configuration">
+<div class="admonition warning">
+<p class="admonition-title">Attention Mac users!</p><p>For these scripts, Mac users who wish to use the default mjviewer renderer need to prepend the “python” command with “mj”: <code class="docutils literal notranslate"><span class="pre">mjpython</span> <span class="pre">...</span></code></p>
+</div><section id="environment-configuration">
 <h2>Environment Configuration<a class="headerlink" href="#environment-configuration" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">demo_random_action.py</span></code> script is the starter demo script that you should try first. It highlights the modular design of our simulated environments. It enables users to create new simulation instances by choosing one <a class="reference internal" href="modules/environments.html"><span class="doc">environment</span></a>, one or more <a class="reference internal" href="modules/robots.html"><span class="doc">robots</span></a>, and their <a class="reference internal" href="modules/controllers.html"><span class="doc">controllers</span></a> from the command line. The script creates an environment instance and controls the robots with uniform random actions drawn from the controller-specific action space. The list of all environments, robots, controllers, and gripper types supported in the current version of <strong>robosuite</strong> are defined by <code class="docutils literal notranslate"><span class="pre">suite.ALL_ENVIRONMENTS</span></code>, <code class="docutils literal notranslate"><span class="pre">suite.ALL_ROBOTS</span></code>, <code class="docutils literal notranslate"><span class="pre">suite.</span> <span class="pre">ALL_PART_CONTROLLERS</span></code>, and <code class="docutils literal notranslate"><span class="pre">suite.ALL_GRIPPERS</span></code> respectively.</p>
 </section>
@@ -706,7 +708,7 @@ By the robosuite core team
 
   <p class="copyright">
     
-      © Copyright Stanford University and The University of Texas at Austin 2024.
+      © Copyright Stanford University and The University of Texas at Austin 2022.
       <br/>
     
   </p>

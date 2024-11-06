@@ -42,7 +42,7 @@
 <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
     <script src="../static/documentation_options.js?v=9f1c6d22"></script>
-    <script src="../static/doctools.js?v=9a2dae69"></script>
+    <script src="../static/doctools.js?v=9bcbadda"></script>
     <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
@@ -184,7 +184,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Modeling API</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../modeling/mujoco_model.html">MuJoCo Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/mujoco_model.html">Mujoco Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/robot_model.html">Robot Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/object_model.html">Object Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modeling/arena.html">Arena</a></li>
@@ -530,7 +530,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">object-state</span></code> : task-specific object observations. For example, the <code class="docutils literal notranslate"><span class="pre">TwoArmLift</span></code> environment provides the pose of the pot, the position of each handle, and the relative position of each robot gripper with respect to each handle. The shape for this modality is flat (e.g. <code class="docutils literal notranslate"><span class="pre">(N,)</span></code>).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">{camera_name}_image</span></code> : image observations for camera with name <code class="docutils literal notranslate"><span class="pre">camera_name</span></code>. The shape for this modality is <code class="docutils literal notranslate"><span class="pre">(H,</span> <span class="pre">W,</span> <span class="pre">3)</span></code> where <code class="docutils literal notranslate"><span class="pre">H</span></code> and <code class="docutils literal notranslate"><span class="pre">W</span></code> are the height and width of the image respectively. By default, the returned image convention is mujoco’s native <code class="docutils literal notranslate"><span class="pre">opengl</span></code> (”flipped”). This can alternatively be set to <code class="docutils literal notranslate"><span class="pre">opencv</span></code> convention (unflipped) via the <code class="docutils literal notranslate"><span class="pre">IMAGE_CONVENTION</span></code> macro in <code class="docutils literal notranslate"><span class="pre">macros.py</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">{camera_name}_depth</span></code> : depth image observations for camera with name <code class="docutils literal notranslate"><span class="pre">camera_name</span></code>. The shape for this modality is <code class="docutils literal notranslate"><span class="pre">(H,</span> <span class="pre">W)</span></code> where <code class="docutils literal notranslate"><span class="pre">H</span></code> and <code class="docutils literal notranslate"><span class="pre">W</span></code> are the height and width of the image respectively. By default, the returned image convention is mujoco’s native <code class="docutils literal notranslate"><span class="pre">opengl</span></code> (”flipped”). This can alternatively be set to <code class="docutils literal notranslate"><span class="pre">opencv</span></code> convention (unflipped) via the <code class="docutils literal notranslate"><span class="pre">IMAGE_CONVENTION</span></code> macro in <code class="docutils literal notranslate"><span class="pre">macros.py</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">image-state</span></code> : (optional) stacked image observations. Note that this is disabled by default, and can be toggled via the <code class="docutils literal notranslate"><span class="pre">CONCATENATEimages</span></code> macro in <code class="docutils literal notranslate"><span class="pre">macros.py</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">image-state</span></code> : (optional) stacked image observations. Note that this is disabled by default, and can be toggled via the <code class="docutils literal notranslate"><span class="pre">CONCATENATE_IMAGES</span></code> macro in <code class="docutils literal notranslate"><span class="pre">macros.py</span></code>.</p></li>
 </ul>
 </section>
 <section id="rewards-and-termination">
@@ -789,7 +789,7 @@ By the robosuite core team
 
   <p class="copyright">
     
-      © Copyright Stanford University and The University of Texas at Austin 2024.
+      © Copyright Stanford University and The University of Texas at Austin 2022.
       <br/>
     
   </p>

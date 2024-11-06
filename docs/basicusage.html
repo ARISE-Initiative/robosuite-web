@@ -42,7 +42,7 @@
 <link rel="preload" as="script" href="static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
     <script src="static/documentation_options.js?v=9f1c6d22"></script>
-    <script src="static/doctools.js?v=9a2dae69"></script>
+    <script src="static/doctools.js?v=9bcbadda"></script>
     <script src="static/sphinx_highlight.js?v=dc90522c"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
@@ -184,7 +184,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Modeling API</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="modeling/mujoco_model.html">MuJoCo Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeling/mujoco_model.html">Mujoco Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modeling/robot_model.html">Robot Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modeling/object_model.html">Object Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modeling/arena.html">Arena</a></li>
@@ -397,7 +397,9 @@
 <section id="running-standardized-environments">
 <h2>Running Standardized Environments<a class="headerlink" href="#running-standardized-environments" title="Link to this heading">#</a></h2>
 <p><strong>robosuite</strong> offers a set of standardized manipulation tasks for benchmarking purposes. These pre-defined environments can be easily instantiated with the <code class="docutils literal notranslate"><span class="pre">make</span></code> function. The APIs we provide to interact with our environments are simple and similar to the ones used by <a class="reference external" href="https://github.com/openai/gym/">OpenAI Gym</a>. Below is a minimalistic example of how to interact with an environment.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="admonition warning">
+<p class="admonition-title">Attention Mac users!</p><p>Mac users who wish to use the default mjviewer renderer need to prepend the “python” command with “mj”: <code class="docutils literal notranslate"><span class="pre">mjpython</span> <span class="pre">...</span></code></p>
+</div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">robosuite</span> <span class="k">as</span> <span class="nn">suite</span>
 
 <span class="c1"># create environment instance</span>
@@ -413,7 +415,7 @@
 <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
-    <span class="n">action</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="o">*</span><span class="n">env</span><span class="o">.</span><span class="n">action_spec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">action</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="o">*</span><span class="n">env</span><span class="o">.</span><span class="n">action_spec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.1</span>
     <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>  <span class="c1"># take action in the environment</span>
     <span class="n">env</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>  <span class="c1"># render on display</span>
 </pre></div>
@@ -495,7 +497,7 @@ By the robosuite core team
 
   <p class="copyright">
     
-      © Copyright Stanford University and The University of Texas at Austin 2024.
+      © Copyright Stanford University and The University of Texas at Austin 2022.
       <br/>
     
   </p>

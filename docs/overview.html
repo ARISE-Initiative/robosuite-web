@@ -42,7 +42,7 @@
 <link rel="preload" as="script" href="static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
     <script src="static/documentation_options.js?v=9f1c6d22"></script>
-    <script src="static/doctools.js?v=9a2dae69"></script>
+    <script src="static/doctools.js?v=9bcbadda"></script>
     <script src="static/sphinx_highlight.js?v=dc90522c"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
@@ -184,7 +184,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Modeling API</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="modeling/mujoco_model.html">MuJoCo Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeling/mujoco_model.html">Mujoco Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modeling/robot_model.html">Robot Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modeling/object_model.html">Object Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modeling/arena.html">Arena</a></li>
@@ -395,31 +395,32 @@
   <section id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h1>
 <p><img alt="gallery of_environments" src="images/gallery.png" /></p>
-<p><strong>robosuite</strong> is a simulation framework powered by the <a class="reference external" href="http://mujoco.org/">MuJoCo</a> physics engine for robot learning. It also offers a suite of benchmark environments for reproducible research. The current release (v1.5) features diverse robot embodiments (including humanoids), custom robot composition, composite controllers (including whole body controllers), more teleoperation devices and photo-realistic rendering. This project is part of the broader <a class="reference external" href="https://github.com/ARISE-Initiative">Advancing Robot Intelligence through Simulated Environments (ARISE) Initiative</a>, with the aim of lowering the barriers of entry for cutting-edge research at the intersection of AI and Robotics.</p>
-<p>Data-driven algorithms, such as reinforcement learning and imitation learning, provide a powerful and generic tool in robotics. These learning paradigms, fueled by new advances in deep learning, have achieved some exciting successes in a variety of robot control problems. However, the challenges of reproducibility and the limited accessibility of robot hardware (especially during a pandemic) have impaired research progress. The overarching goal of <strong>robosuite</strong> is to provide researchers with:</p>
+<p><strong>robosuite</strong> is a simulation framework powered by the <a class="reference external" href="http://mujoco.org/">MuJoCo</a> physics engine for robot learning. It also offers a suite of benchmark environments for reproducible research. The current release (v1.5) features support for diverse robot embodiments (including humanoids), custom robot composition, composite controllers (including whole body controllers), more teleoperation devices, photo-realistic rendering. This project is part of the broader <a class="reference external" href="https://github.com/ARISE-Initiative">Advancing Robot Intelligence through Simulated Environments (ARISE) Initiative</a>, with the aim of lowering the barriers of entry for cutting-edge research at the intersection of AI and Robotics.</p>
+<p>Data-driven algorithms, such as reinforcement learning and imitation learning, provide a powerful and generic tool in robotics. These learning paradigms, fueled by new advances in deep learning, have achieved some exciting successes in a variety of robot control problems. However, the challenges of reproducibility and the limited accessibility of robot hardware have impaired research progress. The overarching goal of <strong>robosuite</strong> is to provide researchers with:</p>
 <ul class="simple">
-<li><p>a standardized set of benchmarking tasks for rigorus evaluation and algorithm development;</p></li>
-<li><p>a modular design that offers great flexibility to design new robot simulation environments;</p></li>
+<li><p>a standardized set of benchmarking tasks for rigorous evaluation and algorithm development;</p></li>
+<li><p>a modular design that offers great flexibility in designing new robot simulation environments;</p></li>
 <li><p>a high-quality implementation of robot controllers and off-the-shelf learning algorithms to lower the barriers to entry.</p></li>
 </ul>
-<p>This framework was originally developed since late 2017 by researchers in <a class="reference external" href="http://svl.stanford.edu">Stanford Vision and Learning Lab</a> (SVL) as an internal tool for robot learning research. Now it is actively maintained and used for robotics research projects in SVL and the <a class="reference external" href="http://rpl.cs.utexas.edu">UT Robot Perception and Learning Lab</a> (RPL). We welcome community contributions to this project. For details please check out our <a class="reference external" href="https://github.com/ARISE-Initiative/robosuite/blob/master/CONTRIBUTING.md">contributing guidelines</a>.</p>
-<p>This release of <strong>robosuite</strong> contains seven robot models, eight gripper models, six controller modes, and nine standardized tasks. It also offers a modular design of APIs for building new environments with procedural generation. We highlight these primary features below:</p>
+<p>This framework was originally developed in late 2017 by researchers in <a class="reference external" href="http://svl.stanford.edu">Stanford Vision and Learning Lab</a> (SVL) as an internal tool for robot learning research. Now, it is actively maintained and used for robotics research projects in SVL, the <a class="reference external" href="http://rpl.cs.utexas.edu">UT Robot Perception and Learning Lab</a> (RPL) and NVIDIA <a class="reference external" href="https://research.nvidia.com/labs/gear/">Generalist Embodied Agent Research Group</a> (GEAR). We welcome community contributions to this project. For details, please check out our <a class="reference external" href="CONTRIBUTING">contributing guidelines</a>.</p>
+<p><strong>Robosuite</strong> offers a modular design of APIs for building new environments, robot embodiments, and robot controllers with procedural generation. We highlight these primary features below:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="modules/environments.html"><span class="doc">standardized tasks</span></a>: a set of standardized manipulation tasks of large diversity and varying complexity and RL benchmarking results for reproducible research;</p></li>
-<li><p><a class="reference internal" href="modules/overview.html"><span class="doc">procedural generation</span></a>: modular APIs for programmatically creating new environments and new tasks as combinations of robot models, arenas, and parameterized 3D objects;</p></li>
-<li><p><a class="reference internal" href="modules/controllers.html"><span class="doc">controller supports</span></a>: a selection of controller types to command the robots, such as joint-space velocity control, inverse kinematics control, operational space control, and 3D motion devices for teleoperation;</p></li>
-<li><p><a class="reference internal" href="modules/sensors.html"><span class="doc">multi-modal sensors</span></a>: heterogeneous types of sensory signals, including low-level physical states, RGB cameras, depth maps, and proprioception;</p></li>
-<li><p><a class="reference internal" href="algorithms/demonstrations.html"><span class="doc">human demonstrations</span></a>: utilities for collecting human demonstrations, replaying demonstration datasets, and leveraging demonstration data for learning.</p></li>
-<li><p><a class="reference internal" href="modules/renderers.html"><span class="doc">photorealistic rendering</span></a>: integration with advanced graphics tools that provide real-time photorealistic renderings of simulated scenes.</p></li>
+<li><p><strong>standardized tasks</strong>: a set of standardized manipulation tasks of large diversity and varying complexity and RL benchmarking results for reproducible research;</p></li>
+<li><p><strong>procedural generation</strong>: modular APIs for programmatically creating new environments and new tasks as combinations of robot models, arenas, and parameterized 3D objects. Check out our repo <a class="reference external" href="https://github.com/ARISE-Initiative/robosuite_models">robosuite_models</a> for extra robot models tailored to robosuite.</p></li>
+<li><p><strong>robot controllers</strong>: a selection of controller types to command the robots, such as joint-space velocity control, inverse kinematics control, operational space control, and whole body control;</p></li>
+<li><p><strong>teleoperation devices</strong>: a selection of teleoperation devices including keyboard, spacemouse and MuJoCo viewer drag-drop;</p></li>
+<li><p><strong>multi-modal sensors</strong>: heterogeneous types of sensory signals, including low-level physical states, RGB cameras, depth maps, and proprioception;</p></li>
+<li><p><strong>human demonstrations</strong>: utilities for collecting human demonstrations, replaying demonstration datasets, and leveraging demonstration data for learning. Check out our sister project <a class="reference external" href="https://arise-initiative.github.io/robomimic-web/">robomimic</a>;</p></li>
+<li><p><strong>photorealistic rendering</strong>: integration with advanced graphics tools that provide real-time photorealistic renderings of simulated scenes, including support for NVIDIA Isaac Sim rendering.</p></li>
 </ul>
 <section id="citation">
 <h2>Citation<a class="headerlink" href="#citation" title="Link to this heading">#</a></h2>
-<p>Please cite <a class="reference external" href="https://robosuite.ai">robosuite</a> if you use this framework in your publications:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@inproceedings</span><span class="p">{</span><span class="n">robosuite2020</span><span class="p">,</span>
-  <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">robosuite</span><span class="p">:</span> <span class="n">A</span> <span class="n">Modular</span> <span class="n">Simulation</span> <span class="n">Framework</span> <span class="ow">and</span> <span class="n">Benchmark</span> <span class="k">for</span> <span class="n">Robot</span> <span class="n">Learning</span><span class="p">},</span>
-  <span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">Yuke</span> <span class="n">Zhu</span> <span class="ow">and</span> <span class="n">Josiah</span> <span class="n">Wong</span> <span class="ow">and</span> <span class="n">Ajay</span> <span class="n">Mandlekar</span> <span class="ow">and</span> <span class="n">Roberto</span> <span class="n">Mart</span>\<span class="s1">&#39;</span><span class="si">{i}</span><span class="s1">n-Mart</span><span class="se">\&#39;</span><span class="si">{i}</span><span class="s1">n and Abhishek Joshi and Soroush Nasiriany and Yifeng Zhu},</span>
-  <span class="n">booktitle</span><span class="o">=</span><span class="p">{</span><span class="n">arXiv</span> <span class="n">preprint</span> <span class="n">arXiv</span><span class="p">:</span><span class="mf">2009.12293</span><span class="p">},</span>
-  <span class="n">year</span><span class="o">=</span><span class="p">{</span><span class="mi">2020</span><span class="p">}</span>
+<p>Please cite <a class="reference external" href="https://robosuite.ai"><strong>robosuite</strong></a> if you use this framework in your publications:</p>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">robosuite2020</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="p">=</span><span class="s">{robosuite: A Modular Simulation Framework and Benchmark for Robot Learning}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{Yuke Zhu and Josiah Wong and Ajay Mandlekar and Roberto Mart\&#39;{i}n-Mart\&#39;{i}n and Abhishek Joshi and Kevin Lin and Soroush Nasiriany and Yifeng Zhu}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">booktitle</span><span class="p">=</span><span class="s">{arXiv preprint arXiv:2009.12293}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">year</span><span class="p">=</span><span class="s">{2020}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -497,7 +498,7 @@ By the robosuite core team
 
   <p class="copyright">
     
-      © Copyright Stanford University and The University of Texas at Austin 2024.
+      © Copyright Stanford University and The University of Texas at Austin 2022.
       <br/>
     
   </p>
