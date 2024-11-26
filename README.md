@@ -1,5 +1,1 @@
-# robosuite project homepage
-
-For more information, please visit [robosuite.ai](http://robosuite.ai/)
-
-Theme adapted from [Cayman](https://github.com/pages-themes/cayman)
+This repository has been deprecetated. Please refer to the [gh-pages branch](https://github.com/ARISE-Initiative/robosuite/tree/gh-pages) in the public robosuite repo for documentation.
